@@ -1,0 +1,36 @@
+CRAY-2
+Vector Register, Parallel,
+Shared-Memory Architecture
+
+Architecture. This is a four-processor (quadrant) vector machine with
+pipelining and overlapping but no chaining. There are more segments in the
+pipes than in the other CRAYs. Multitasking primitives have same syntax as the
+X-MP. The system has a 4.1-ns clock cycle time. Memory is 256 Mwords of
+256K DRAM in 128 banks. The bank busy time is 57 clocks. and the scalar
+memory access time is 59 clocks. Local memory is 16 Kwords, 4 clocks from
+local memory to vector registers. Vector references from local memory must be
+with unit stride. There are 8 vector registers each with 64 elements.
+
+Overheads for vector operations are large:
+63 cycles for vector load
+22 cycles for vector multiply
+22 cycles for vector add
+63 cycles for vector store
+
+Recent enhancements to the CRAY-2 include a 512-Mword memory and models
+with 128-Mword static RAM. Other improvements include implementing functional units
+in VLSI (and cutting latency time by half ), a large instruction buffer,
+reduced branch time, and faster issue rates for certain sequences of instructions.
+
+Configurations. Cray has an ongoing commitment to high-speed peripherals 
+and fast network links. HSX is a 100Mbytes/s link for connecting CRAYs
+together. CRAYs can be linked to Ultra Corporations 1.6-Gbit Ultra bus in
+addition to standard connections with Ethernet (TCP/IP), and VME buses. The
+DD-40 disks each hold 5 Gbytes and have a transfer rate of 10Mbytes/s. The
+machine is liquid-cooled using inert fluorocarbon.
+
+Software.
+Unix-based OX (called UNICOS)
+C compiler
+CFT2 (Fortran compiler)
+CF77

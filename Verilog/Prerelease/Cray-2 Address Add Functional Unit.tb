@@ -1,0 +1,102 @@
+//*****************************************
+//  TESTBENCH ADDRESS ADD FUNCTIONAL UNIT
+//*****************************************
+// DESCRIPTION: Testbench for the Address Add Functional Unit 
+// which performs 32-bit integer sum and difference (No Overflow).
+
+//Test Bench
+module address_add_fu_tb;
+ //Inputs to DUT
+ reg [31:0] i_Aj;  //Aj register (input)
+ reg [31:0] i_Ak;  //Ak register (input)
+ reg [6:0] i_Instr;//Instr register (input) 
+ reg clk;          //Clock signal (input)
+
+ //Output from DUT
+ wire [31:0] o_Ai; //Ai register (output)
+  
+ //Initialize DUT
+ address_add_fu test_address_add_fu(i_Aj, i_Ak, i_Instr, clk, o_Ai);  
+   
+ //Generate 50Mhz clock 
+ initial
+  begin
+   clk=0; //Initialize clock
+   forever
+    begin
+     #10 clk = ~ clk; // Clock cycle
+    end
+  end  
+  
+ //Temp registers & variables
+ int i,j; //Temp counters
+  
+ //Initialize values
+ initial begin
+  i_Aj = 32'b0;
+  i_Ak = 32'b0;
+  i_Instr = 7'o0;
+ end
+ 
+ //Cycle through test cases
+  always @(posedge clk)
+  begin
+    $display("\t****\tTEST BENCH START\t****\t");
+    $display("\t****\tStart sum test\t****\t");
+    for (i=0; i<33; i=i+1)
+     begin
+      for (j=0; j<33; j=j+1)
+       begin
+        i_Aj = 2**i-1;
+        i_Ak = 2**j-1;
+        i_Instr = 7'o020; //020'o (h10), performs sum of Aj and Ak.
+        @(posedge clk);
+        #110 $display("\tT=%0d, Inst=%0o, Sj=%0d, Sk=%0d, Si=%0d",$time, i_Instr,i_Aj,i_Ak,o_Ai);
+       end
+     end
+    for (i=0; i<33; i=i+1)
+     begin
+      for (j=0; j<33; j=j+1)
+       begin
+        i_Aj = 2**i;
+        i_Ak = 2**j;
+        i_Instr = 7'o020; //020'o (h10), performs sum of Aj and Ak.
+        @(posedge clk);
+        #110 $display("\tT=%0d, Inst=%0o, Sj=%0d, Sk=%0d, Si=%0d",$time, i_Instr,i_Aj,i_Ak,o_Ai); 
+       end
+     end
+    $display("\t****\tFinish sum test\t****\t");
+    $display("\t****\tStart difference test\t****\t");
+    for (i=0; i<33; i=i+1)
+     begin
+      for (j=0; j<33; j=j+1)
+       begin
+        i_Aj = 2**i-1;
+        i_Ak = 2**j-1;
+         i_Instr = 7'o021; //020'o (h10), performs difference of Aj and Ak.
+        @(posedge clk);
+        #110 $display("\tT=%0d, Inst=%0o, Sj=%0d, Sk=%0d, Si=%0d",$time, i_Instr,i_Aj,i_Ak,o_Ai); 
+       end
+     end
+    for (i=0; i<33; i=i+1)
+     begin
+      for (j=0; j<33; j=j+1)
+       begin
+        i_Aj = 2**i;
+        i_Ak = 2**j;
+         i_Instr = 7'o021; //020'o (h10), performs difference of Aj and Ak.
+        @(posedge clk);
+        #110 $display("\tT=%0d, Inst=%0o, Sj=%0d, Sk=%0d, Si=%0d",$time, i_Instr,i_Aj,i_Ak,o_Ai); 
+       end
+     end
+    $display("\t****\tFinish difference test\t****\t");    
+    $display("\t****\tTEST BENCH FINISH\t****\t");
+    $finish;
+  end
+
+ //Log output 
+ initial begin
+  $dumpfile ("address_add_fu.vcd"); 
+  $dumpvars; 
+ end 
+endmodule

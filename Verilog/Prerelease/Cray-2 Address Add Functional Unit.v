@@ -1,16 +1,17 @@
-//******************************************
-//       ADDRESS SUM/DIFF UNIT
-//******************************************
-// DESCRIPTION: The address sum/diff unit performs 32-bit integer sum and difference. 
+//*******************************
+//  ADDRESS ADD FUNCTIONAL UNIT
+//*******************************
+// DESCRIPTION: The Address Add Functional Unit performs 
+// 32-bit integer sum and difference. 
 //
-// INSTRUCTION: Addition - 020'o (10'h), Subtraction - 021'o (11'h). 
+// INSTRUCTION: Addition - 020'o (10'h) sum Aj and Ak  
+// INSTRUCTION: Subtraction - 021'o (11'h) subtract Ak from Aj
 //
 // INPUT : Operands from register Aj and Ak
 // OUTPUT: Register Ai
-//
 // ERRORS: No overflow is detected in the unit.
 //
-// FUCNTIONAL TIME: 2 Cycles
+// FUNCTIONAL TIME: 2 Cycles
 //
 // NOTES: 
 // Two's complement subtraction is used for 021'o (11'h)
@@ -19,7 +20,7 @@
 // 
 // TBD: Replace with efficient adder 
 //
-module address_sum_diff(i_Aj, i_Ak, i_Instr, clk, o_Ai);
+module address_add_fu(i_Aj, i_Ak, i_Instr, clk, o_Ai);
  parameter size = 32; //Size is the width of adder
  parameter level = 5; //Number of pipeline stages
 

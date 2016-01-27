@@ -9,3 +9,4 @@ This project will be made of a a number of phases:
 3) Software emulation of the verilog code for verification
 4) Recovery and/or creation of basic OS & C compiler for the system
 5) Testing on FPGAs
+

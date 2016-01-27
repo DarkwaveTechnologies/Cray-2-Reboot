@@ -1,0 +1,838 @@
+---  AAA = IAA + IDA + IAR .  O                Coefficient input
+---  AAB = IDB + IAB .                      register from FA
+---  AAC = IDC + IAC .                      coefficient add
+---  AAD = IDD + IAD .                      (logical sum)
+---  AAE = IDE + IAE .
+---  AAF = IDF + IAF .                      ia-ic = shifted operand
+---  AAG = IDG + IAG .                      id-if = unshift operand
+---  AAH = IDH + IAH .
+---  AAI = IDI + IAI .                       
+---  AAJ = IDJ + IAJ .
+---  AAK = IDK + IAK .
+---  AAL = IDL + IAL .
+---  AAM = IDM + IAM .
+---  AAN = IDN + IAN .
+---  AAO = IDO + IAO .
+---  AAP = IDP + IAP .
+---  AAQ = IAA ida iar + iaa IDA iar + iaa ida IAR + IAA IDA IAR .
+---  aar = iaa + ida + iar .
+
+---  ABA = IEA + IBA .
+---  ABB = IEB + IBB .
+---  ABC = IEC + IBC .
+---  ABD = IED + IBD .
+---  ABE = IEE + IBE .
+---  ABF = IEF + IBF .
+---  ABG = IEG + IBG .
+---  ABH = IEH + IBH .
+---  ABI = IEI + IBI .
+---  ABJ = IEJ + IBJ .
+---  ABK = IEK + IBK .
+---  ABL = IEL + IBL .
+---  ABM = IEM + IBM .
+---  ABN = IEN + IBN .
+---  ABO = IEO + IBO .
+---  ABP = IEP + IBP .       
+                      
+---  ACA = IFA + ICA .
+---  ACB = IFB + ICB .
+---  ACC = IFC + ICC .
+---  ACD = IFD + ICD .
+---  ACE = IFE + ICE .
+---  ACF = IFF + ICF .
+---  ACG = IFG + ICG .
+---  ACH = IFH + ICH .
+---  ACI = IFI + ICI .
+---  ACJ = IFJ + ICJ .
+---  ACK = IFK + ICK .
+---  ACL = IFL + ICL .
+---  ACM = IFM + ICM .
+---  ACN = IFN + ICN .
+---  ACO = IFO + ICO .
+---  ACP = IFP + ICP .  47
+
+---  baa = IAA ida iar + iaa IDA iar + iaa ida IAR + iaa ida iar .   O
+
+---  BAB = IAB IDB .    
+---  BAC = IAC IDC .
+---  BAD = IAD IDD .                        ia-ic = shifted
+---  BAE = IAE IDE .                        id-if = unshiFte
+---  BAF = IAF IDF .
+---  BAG = IAG IDG .
+---  BAH = IAH IDH .
+---  BAI = IAI IDI .
+---  BAJ = IAJ IDJ .
+---  BAK = IAK IDK .
+---  BAL = IAL IDL .
+---  BAM = IAM IDM .
+---  BAN = IAN IDN .
+---  BAO = IAO IDO .
+---  BAP = IAP IDP .
+---  BBA = IBA IEA .
+---  BBB = IBB IEB .
+---  BBC = IBC IEC .
+---  BBD = IBD IED .
+---  BBE = IBE IEE .
+---  BBF = IBF IEF .
+---  BBG = IBG IEG .
+---  BBH = IBH IEH .
+---  BBI = IBI IEI .
+---  BBJ = IBJ IEJ .
+---  BBK = IBK IEK .
+---  BBL = IBL IEL .
+---  BBM = IBM IEM .
+---  BBN = IBN IEN .
+---  BBO = IBO IEO .
+---  BBP = IBP IEP .
+---  BCA = ICA IFA .
+---  BCB = ICB IFB .
+---  BCC = ICC IFC .
+---  BCD = ICD IFD .
+---  BCE = ICE IFE .
+---  BCF = ICF IFF .
+---  BCG = ICG IFG .
+---  BCH = ICH IFH .
+---  BCI = ICI IFI .
+---  BCJ = ICJ IFJ .
+---  BCK = ICK IFK .
+---  BCL = ICL IFL .
+---  BCM = ICM IFM .
+---  BCN = ICN IFN .
+---  BCO = ICO IFO .
+---  BCP = ICP IFP .  47
+---  cab = baa .                        propagated bit carry
+---  cac = bab baa + aab .                  without group carry
+---  cad = baa bab bac + aab bac + aac .
+---  cae = baa bab bac bad + aab bac bad + aac bad + aad .    Group carry
+---  CAF = AAA .
+---  CAG = AAB AAA + BAB .                  propagated bit
+---  CAH = AAA AAB AAC + BAB AAC + BAC .         with group carry
+---  cbb = bae .                        Group l
+---  cbc = baf bae + aaf .
+---  cbd = bae baf bag + aaf bag + aag .
+---  cbe = bae baf bag bah + aaf bag bah + aag bah + aah .
+---  CBF = AAE .
+---  CBG = AAF AAE + BAF .
+---  CBH = AAE AAF AAG + BAF AAG + BAG .
+---  ccb = bai .                        Group 2
+---  ccc = baj bai + aai .
+---  ccd = bai baj bak + aaj bak + aak .
+---  cce = bai baj bak bal + aaj bak bal + aak bal + aal .
+---  CCF = AAI .
+---  CCG = AAJ AAI + BAJ .
+---  CCH = AAI AAJ AAK + BAJ AAK + BAK .
+---  cdb = bam .                        Group 3
+---  cdc = ban bam + aan .
+---  cdd = bam ban bao + aan bao + aao .
+---  cde = bam ban bao bap + aan bao bap + aao bap + aap .
+---  CDF = AAM .
+---  CDG = AAN AAM + BAN .
+---  CDH = AAM AAN AAO + BAN AAO + BAO .
+---  ceb = bba .                        Group 4
+---  cec = bbb bba + abb .
+---  ced = bba bbb bbc + abb bbc + abc .
+---  cee = bba bbb bbc bbd + abb bbc bbd + abc bbd + abd .     
+---  CEF = ABA .
+---  CEG = ABB ABA + BBB .
+---  CEH = ABA ABB ABC + BBB ABC + BBC .
+---  cfb = bbe .                        Group 5
+---  cfc = bbf bbe + abf .
+---  cfd = bbe bbf bbg + abf bbg + abg .
+---  cfe = bbe bbf bbg bbh + abf bbg bbh + abg bbh + abh .
+---  CFF = ABE .
+---  CFG = ABF ABE + BBF .
+---  CFH = ABE ABF ABG + BBF ABG + BBG .
+---  cgb = bbi .                        Group 6
+---  cgc = bbj bbi + abj .
+---  cgd = bbi bbj bbk + abj bbk + abk .
+---  cge = bbi bbj bbk bbl + abj bbk bbl + abk bbl + abl .
+---  CGF = ABI .
+---  CGG = ABJ ABI + BBJ .
+---  CGH = ABI ABJ ABK + BBJ ABK + BBK .
+---  chb = bbm .                        Group 7
+---  chc = bbn bbm + abn .
+---  chd = bbm bbn bbo + abn bbo + abo .
+---  che = bbm bbn bbo bbp + abn bbo bbp + abo bbp + abp .
+---  CHF = ABM .
+---  CHG = ABN ABM + BBN .
+---  CHH = ABM ABN ABO + BBN ABO + BBO .
+---  cib = bca .                        Group 8
+---  cic = bcb bca + acb .
+---  cid = bca bcb bcc + acb bcc + acc .
+---  cie = bca bcb bcc bcd + acb bcc bcd + acc bcd + acd .
+---  CIF = ACA .
+---  CIG = ACB ACA + BCB .
+---  CIH = ACA ACB ACC + BCB ACC + BCC .
+---  cjb = bce .                        Group 9
+---  cjc = bcf bce + acf .
+---  cjd = bce bcf bcg + acf bcg + acg .
+---  cje = bce bcf bcg bch + acf bcg bch + acg bch + ach .
+---  CJF = ACE .
+---  CJG = ACF ACE + BCF .
+---  CJH = ACE ACF ACG + BCF ACG + BCG .
+---  ckb = bci .                        Group 10
+---  ckc = bcj bci + aci .
+---  ckd = bci bcj bck + acj bck + ack .
+---  cke = bci bcj bck bcl + acj bck bcl + ack bcl + acl  .
+---  CKF = ACI .
+---  CKG = ACJ ACI + BCJ .
+---  CKH = ACI ACJ ACK + BCJ ACK + BCK .
+---  clb = bcm .                        Group 11
+---  clc = bcn bcm + acn .
+---  cld = bcm bcn bco + acn bco + aco .
+---  cle = bcm bcn bco bcp + acn bco bcp + aco bcp + acp .
+---  CLF = ACM .
+---  CLG = ACN ACM + BCN .                     
+---  CLH = ACM ACN ACO + BCN ACO + BCO .
+---  EAA = AAQ .                        Group O
+---  EAB = AAB bab .                      Bit enables
+---  EAC = AAC bac .
+---  EAD = AAD bad .
+---  EAE = AAB AAC AAD .                 Group enables
+---  EBA = AAE bae .                      Group 1
+---  EBB = AAF baf .
+---  EBC = AAG bag .
+---  EBD = AAH bah .
+---  EBE = AAE AAF AAG AAH .
+---  ECA = AAI bai .                      Group 2
+---  ECB = AAJ baj .
+---  ECC = AAK bak .
+---  ECD = AAL bal .
+---  ECE = AAI AAJ AAK AAL .
+---  EDA = AAM bam .                      Group 3
+---  EDB = AAN ban .
+---  EDC = AAO bao .
+---  EDD = AAP bap .
+---  EDE = AAM AAN AAO AAP .
+---  EEA = ABA bba .                      Group 4
+---  EEB = ABB bbb .
+---  EEC = ABC bbc .
+---  EED = ABD bbd .
+---  EEE = ABA ABB ABC ABD .
+---  EFA = ABE bbe .                      Group 5
+---  EFB = ABF bbf .
+---  EFC = ABG bbg .
+---  EFD = ABH bbh .
+---  EFE = ABE ABF ABG ABH .
+---  EGA = ABI bbi .                      Group 6
+---  EGB = ABJ bbj .
+---  EGC = ABK bbk .
+---  EGD = ABL bbl .
+---  EGE = ABI ABJ ABK ABL .
+---  EHA = ABM bbm .                      Group 7
+---  EHB = ABN bbn .
+---  EHC = ABO bbo .
+---  EHD = ABP bbg .
+---  EHE = ABM ABN ABO ABP .
+---  EIA = ACA bca .                      Group 8
+---  EIB = ACB bcb .                             
+---  EIC = ACC bcc .
+---  EID = ACD bcd .
+---  EIE = ACA ACB ACC ACD .
+---  EJA = ACE bce .                      Group 9
+---  EJB = ACF bcf .
+---  EJC = ACG bcg .
+---  EJD = ACH bch .
+---  EJE = ACE ACF ACG ACH .
+---  EKA = ACI bci .                      Group 1O
+---  EKB = ACJ bcj .
+---  EKC = ACK bck .
+---  EKD = ACL bcl .
+---  EKE = ACI ACJ ACK ACL .
+---  ELA = ACM bcm .                     Group 11
+---  ELB = ACN bcn .
+---  ELC = ACO bco .
+---  ELD = ACP bcp .  
+---  ELE = ACM ACN ACO ACP .
+
+---  FAA = KAA jaa + KAE JAA .  O             Group O
+---  FAB = KAB jaa + KAF JAA .
+---  FAC = KAC jaa + KAG JAA .
+---  FAD = KAD jaa + KAH JAA .
+
+---  FBA = KBA jab + KBE JAB .               Group 1
+---  FBB = KBB jab + KBF JAB .
+---  FBC = KBC jab + KBG JAB .
+---  FBD = KBD jab + KBH JAB .
+
+---  FCA = KCA jac + KCE JAC .               Group 2
+---  FCB = KCB jac + KCF JAC .
+---  FCC = KCC jac + KCG JAC .
+---  FCD = KCD jac + KCH JAC .
+
+---  FDA = KDA jad + KDE JAD .               Group 3
+---  FDB = KDB jad + KDF JAD .
+---  FDC = KDC jad + KDG JAD .
+---  FDD = KDD jad + KDH JAD .
+
+---  FEA = KEA jae + KEE JAE .               Group 4
+---  FEB = KEB jae + KEF JAE .
+---  FEC = KEC jae + KEG JAE .
+---  FED = KED jae + KEH JAE .
+
+---  FFA = KFA jaf + KFE JAF .               Group 5
+---  FFB = KFB jaf + KFF JAF .
+---  FFC = KFC jaf + KFG JAF .
+---  FFD = KFD jaf + KFH JAF .      
+               
+---  FGA = KGA jag + KGE JAG .               Group 6
+---  FGB = KGB jag + KGF JAG .
+---  FGC = KGC jag + KGG JAG .
+---  FGD = KGD jag + KGH JAG .
+
+---  FHA = KHA jah + KHE JAH .               Group 7
+---  FHB = KHB jah + KHF JAH .
+---  FHC = KHC jah + KHG JAH .
+---  FHD = KHD jah + KHH JAH .
+
+---  FIA = KIA jai + KIE JAI .               Group 8
+---  FIB = KIB jai + KIF JAI .
+---  FIC = KIC jai + KIG JAI .
+---  FID = KID jai + KIH JAI .  35
+
+---  FJA = KJA jaj + KJE JAJ .  36                 Group 9
+---  FJB = KJB jaj + KJF JAJ .
+---  FJC = KJC jaj + KJG JAJ .
+---  FJD = KJD jaj + KJH JAJ .
+
+---  FKA = KKA jak + KKE JAK .                     Group 10
+---  FKB = KKB jak + KKF JAK .
+---  FKC = KKC jak + KKG JAK .
+---  FKD = KKD jak + KKH JAK .
+
+---  FLA = KLA jal + KLE JAL .                     Group 11
+---  FLB = KLB jal + KLF JAL .
+---  FLC = KLC jal + KLG JAL .
+---  FLD = KLD jal + KLH JAL .  47
+
+---  gba = cae .                               Propagated
+---  gca = cae cbe + ebe cbe .                      group carry
+---  gda = --- + *** cae cbe cce + ebe cbe cce + ece cce .
+
+---  GEA = CAE EBE ECE EDE + CBE ECE EDE + CCE EDE + CDE .  Section 0
+---  GEB = CAE EBE ECE EDE + CBE ECE EDE + CCE EDE + CDE .    carry
+---  GEC = CAE EBE ECE EDE + CBE ECE EDE + CCE EDE + CDE .
+---  GED = CAE EBE ECE EDE + CBE ECE EDE + CCE EDE + CDE .
+
+---  gfa = cee .                               Propagated
+---  gga = cfe cee + cfe efe .                      group carry
+---  gha = --- + *** cee cfe cge + efe cfe cge + ege cge .
+---  GIA = CEE EFE EGE EHE + CFE EGE EHE + CGE EHE + CHE .    Section 1
+---  GIB = CEE EFE EGE EHE + CFE EGE EHE + CGE EHE + CHE .    carry
+---  GIC = CEE EFE EGE EHE + CFE EGE EHE + CGE EHE + CHE .
+---  GID = CEE EFE EGE EHE + CFE EGE EHE + CGE EHE + CHE .
+
+---  gja = cie .                               Propagated
+---  gka = cje cie + cie eje .                      group carry
+---  gla = --- + *** cie cje cke + eje cje cke + eke cke .
+
+---  GMA = CIE EJE EKE ELE + CJE EKE ELE + CKE ELE + CLE .    Section 2
+---  GMB = CIE EJE EKE ELE + CJE EKE ELE + CKE ELE + CLE .    carry
+---  GMC = CIE EJE EKE ELE + CJE EKE ELE + CKE ELE + CLE .
+---  GMD = CIE EJE EKE ELE + CJE EKE ELE + CKE ELE + CLE .
+
+---  haa = eae .                         Intra section and
+---  hab = eae + ebe .                     section enables
+---  hac = eae + ebe + ece .
+---  had = eae + ebe + ece + ede .
+---  hae = eae + ebe + ece + ede .
+
+---  hba = eee .
+---  hbb = eee + efe .
+---  hbc = eee + efe + ege .
+---  hbd = eee + efe + ege + ehe .
+---  hbe = eee + efe + ege + ehe .
+
+---  hca = eie .
+---  hcb = eie + eje .
+---  hcc = eie + eje + eke .
+---  hcd = eie + eje + eke + ele .
+---  hce = eie + eje + eke + ele .
+
+---  JAA = GEA HBD HCD QAD + GID HCD QAD + GMC QAD .
+---  JAB = GEB HBE HCE HAA QAC + GIA HCE HAA QAC + GMB HAA QAC + GBA .
+---  JAC = GEA HBD HCD HAB QAD + GID HCD HAB QAD + GMC HAB QAD + GCA .
+---  JAD = GEB HBE HCE HAC QAC + GIA HCE HAC QAC + GMB HAC QAC + GDA .
+
+---  JAE = GIC HCD HAD QAD + GMC HAD QAD + GEA .
+---  JAF = GIB HCE QAC HAE HBA + GMB QAC HAE HBA + --- + GED HBA + GFA .
+---  JAG = GIC HCD QAF HAD HBB + GMA QAF HAD HBB + --- + GEC HBB + GGA .
+---  JAH = GIB HCE QAE HAE HBC + GMD QAE HAE HBC + --- + GED HBC + GHA .
+
+---  JAI = --- + GMA QAF HAD HBD + --- + GEC HBD + GID .
+---  JAJ = GMD HAE QAE HBE HCA + --- + GED HBE HCA + GIA HCA + GJA .
+---  JAK = GMA HAD QAF HBD HCB + --- + GEC HBD HCB + GEC HCB + GKA .
+---  JAL = GMD HAE QAE HBE HCC + --- + GED HBE HCC + GIB HCC + GLA .
+
+---  jam = --- + *** ged gic gmb + hbd gic gmb + hcd gmb . Carry across bin pt
+
+---  JBA = --- + *** gec gid gmd QAG + hbe gid gmd QAG + hce gmd QAG + --- + QCA .
+---  JBB = --- + *** ged gic gmb QAG + hbd gic gmb QAG + hcd gmb QAG + --- + QCA .
+---  JBC = --- + *** gec gid gmd QAG + hbe gid gmd QAG + hce gmd QAG + --- + QCA .
+
+---  KAA = EAA .                        Group 0
+---  KAB = cab EAB + CAB eab .                Result wo group carry
+---  KAC = cac EAC + CAC eac .
+---  KAD = cad EAD + CAD ead .
+
+---  KAE = eaa .                        Result with group carry
+---  KAF = caf EAB + CAF eab .
+---  KAG = cag EAC + CAG eac .
+---  KAH = cah EAD + CAH ead .
+
+---  KBA = EBA .                        Group 1
+---  KBB = cbb EBB + CBB ebb .                Without
+---  KBC = cbc EBC + CBC ebc .
+---  KBD = cbd EBD + CBD ebd .
+
+---  KBE = eba .                        With
+---  KBF = cbf EBB + CBF ebb .
+---  KBG = cbg EBC + CBG ebc .
+---  KBH = cbh EBD + CBH ebd .
+
+---  KCA = ECA .                        Group 2
+---  KCB = ccb ECB + CCB ecb .                Hithout
+---  KCC = ccc ECC + CCC ecc .
+---  KCD = ccd ECD + CCD ecd .
+
+---  KCE = eca .                        With
+---  KCF = ccf ECB + CCF ecb .
+---  KCG = ccg ECC + CCG ecc .
+---  KCH = cch ECD + CCH ecd .
+
+---  KDA = EDA .                        Group 3
+---  KDB = cdb EDB + CDB edb .                Without
+---  KDC = cdc EDC + CDC edc .
+---  KDD = cdd EDD + CDD edd .
+
+---  KDE = eda .                        With
+---  KDF = cdf EDB + CDF edb .
+---  KDG = cdg EDC + CDG edc .
+---  KDH = cdh EDD + CDH edd .
+
+---  KEA = EEA .                        Group 4
+---  KEB = ceb EEB + CEB eeb .                Without
+---  KEC = cec EEC + CEC eec .
+---  KED = ced EED + CED eed .
+
+---  KEE = eea .                        With
+---  KEF = cef EEB + CEF eeb .
+---  KEG = ceg EEC + CEG eec .
+---  KEH = ceh EED + CEH eed .
+
+---  KFA = EFA .                        Group 5
+---  KFB = cfb EFB + CFB efb .                Without
+---  KFC = cfc EFC + CFC efc .
+---  KFD = cfd EFD + CFD efd .
+
+---  KFE = efa .                        With
+---  KFF = cff EFB + CFF efb .
+---  KFG = cfg EFC + CFG efc .
+---  KFH = cfh EFD + CFH efd .
+
+---  KGA = EGA .                        Group 6
+---  KGB = cgb EGB + CGB egb .                Without   
+---  KGC = cgc EGC + CGC egc .
+---  KGD = cgd EGD + CGD egd .
+
+---  KGE = ega .                        With
+---  KGF = cgf EGB + CGF egb .
+---  KGG = cgg EGC + CGG egc .
+---  KGH = cgh EGD + CGH egd .
+
+---  KHA = EHA .                        Group 7
+---  KHB = chb EHB + CHB ehb .                Without
+---  KHC = chc EHC + CHC ehc .
+---  KHD = chd EHD + CHD ehd .
+
+---  KHE = eha .                        With
+---  KHF = chf EHB + CHF ehb .
+---  KHG = chg EHC + CHG ehc .
+---  KHH = chh EHD + CHH ehd .
+
+---  KIA = EIA .                         Group 8
+---  KIB = cib EIB + CIB eib .                Without
+---  KIC = cic EIC + CIC eic .
+---  KID = cid EID + CID eid .
+
+---  KIE = eia .                         With
+---  KIF = cif EIB + CIF eib .
+---  KIG = cig EIC + CIG eic .
+---  KIH = cih EID + CIH eid .
+
+---  KJA = EJA .                         Group 9
+---  KJB = cjb EJB + CJB ejb .                Without
+---  KJC = cjc EJC + CJC ejc .
+---  KJD = cjd EJD + CJD ejd .
+
+---  KJE = eja .                         With
+---  KJF = cjf EJB + CJF ejb .
+---  KJG = cjg EJC + CJG ejc .
+---  KJH = cjh EJD + CJH ejd .
+
+---  KKA = EKA .                         Group 1O
+---  KKB = ckb EKB + CKB ekb .                Without
+---  KKC = ckc EKC + CKC ekc .
+---  KKD = ckd EKD + CKD ekd .
+
+---  KKE = eka .                         With
+---  KKF = ckf EKB + CKF ekb .
+---  KKG = ckg EKC + CKG ekc .
+---  KKH = ckh EKD + CKH ekd .
+
+---  KLA = ELA .                         Group ll
+---  KLB = clb ELB + CLB elb .                Without
+---  KLC = clc ELC + CLC elc .
+---  KLD = cld ELD + CLD eld .
+
+---  KLE = ela .                         With
+---  KLF = clf ELB + CLF elb .
+---  KLG = clg ELC + CLG elc .
+---  KLH = clh ELD + CLH eld .
+
+---  MAA = kaa kab kac kad . grp O             Group leading zero count
+---  MAB = kba kbb kbc kbd .    l                     
+---  MAC = kca kcb kcc kcd .    2              (groups eq O)
+---  MAD = kda kdb kdc kdd .    3
+
+---  MAE = kea keb kec ked .    4
+---  MAF = kfa kfb kfc kfd .    5
+---  MAG = kga kgb kgc kgd .    6
+---  MAH = kha khb khc khd .    7
+
+---  MAI = kia kib kic kid .    8
+---  MAJ = kja kjb kjc kjd .    9
+---  MAK = kka kkb kkc kkd .    1O
+---  MAL = kla klb klc kld .    11
+
+---  MBA = kae kaf kag kah .    O
+---  MBB = kbe kbf kbg kbh .    1
+---  MBC = kce kcf kcg kch .    2
+---  MBD = kde kdf kdg kdh .    3
+
+---  MBE = kee kef keg keh .    4
+---  MBF = kfe kff kfg kfh .    5
+---  MBG = kge kgf kgg kgh .    6
+---  MBH = khe khf khg khh .    7
+
+---  MBI = kie kif kig kih .    8
+---  MBJ = kje kjf kjg kjh .    9
+---  MBK = kke kkf kkg kkh .    1O
+---  MBL = kle klf klg klh .    11
+
+                                   
+---  MCA = KAA KAB KAC KAD . grp O             Group complement  Section 0
+---  MCB = KBA KBB KBC KBD .    1             leading zero count, no carries
+---  MCC = KCA KCB KCC KCD .    2
+---  MCD = KDA KDB KDC KDD .    3             (complement eq 0)
+
+---  MCE = KEA KEB KEC KED .    4                         Section 1
+---  MCF = KFA KFB KFC KFD .    5
+---  MCG = KGA KGB KGC KGD .    6
+---  MCH = KHA KHB KHC KHD .    7
+
+---  MCI = KIA KIB KIC KID .    8                         Section 2
+---  MCJ = KJA KJB KJC KJD .    9
+---  MCK = KKA KKB KKC KKD .    1O
+---  MCL = KLA KLB KLC KLD .    11
+
+---  MDA = KAE KAF KAG KAH .    O        Section 0, With Carries, Complement 0
+---  MDB = KBE KBF KBG KBH .    1
+---  MDC = KCE KCF KCG KCH .    2
+---  MDD = KDE KDF KDG KDH .    3
+
+---  MDE = KEE KEF KEG KEH .    4        Section 1
+---  MDF = KFE KFF KFG KFH .    5
+---  MDG = KGE KGF KGG KGH .    6
+---  MDH = KHE KHF KHG KHH .    7
+
+---  MDI = KIE KIF KIG KIH .    8        Section 2
+---  MDJ = KJE KJF KJG KJH .    9
+---  MDK = KKE KKF KKG KKH .    10
+---  MDL = KLE KLF KLG KLH .    11
+
+---  naa = maa jaa + mba JAA + JBB .  16         Normal result
+---  nab = mab jab + mbb JAB + JBA .  12         Group leading zero count
+---  nac = mac jac + mbc JAC + JBB .  8
+---  nad = mad jad + mbd JAD + JBA .  4          (section O)
+
+---  nae = mae jae + mbe JAE + JBB .  16        (section l)
+---  naf = maf jaf + mbf JAF + JBA .  12
+---  nag = mag jag + mbg JAG + JBB .  8
+---  nah = mah jah + mbh JAH + JBA .  4
+
+---  nai = mai jai + mbi JAI + JBB .  16        (section 2)
+---  naj = maj jaj + mbj JAJ + JBA .  12
+---  nak = mak jak + mbk JAK + JBB .  8
+---  nal = mal jal + mbl JAL + JBA .  4
+
+---  nba = mca jaa + mda JAA + jbb .  16         Complemented result
+---  nbb = mcb jab + mdb JAB + jba .  12         Group leading zero count
+---  nbc = mcc jac + mdc JAC + jbb .  8
+---  nbd = mcd jad + mdd JAD + jba .  4          (section O)
+
+---  nbe = mce jae + mde JAE + jbb .  16         (section l)
+---  nbf = mcf jaf + mdf JAF + jba .  12
+---  nbg = mcg jag + mdg JAG + jbb .  8
+---  nbh = mch jah + mdh JAH + jba .  4
+
+---  nbi = mci jai + mdi JAI + jbb .  16         (section 2)
+---  nbj = mcj jaj + mdj JAJ + jba .  12
+---  nbk = mck jak + mdk JAK + jbb .  8
+---  nbl = mcl jal + mdl JAL + jba .  4
+
+---  OAA = FAA qba + faa QBA .  O             Coefficient add
+---  OAB = FAB qba + fab QBA .               results to FC
+---  OAC = FAC qba + fac QBA .
+---  OAD = FAD qba + fad QBA .
+---  OAE = FBA qbd + fba QBD .
+---  OAF = FBB qbd + fbb QBD .
+---  OAG = FBC qbd + fbc QBD .
+---  OAH = FBD qbd + fbd QBD .
+---  OAI = FCA qba + fca QBA .
+---  OAJ = FCB qba + fcb QBA .
+---  OAK = FCC qba + fcc QBA .
+---  OAL = FCD qba + fcd QBA .
+---  OAM = FDA qbd + fda QBD .
+---  OAN = FDB qbd + fdb QBD .
+---  OAO = FDC qbd + fdc QBD .
+---  OAP = FDD qbd + fdd QBD .  15
+
+---  OBA = FEA qba + fea QBA .  16
+---  OBB = FEB qba + feb QBA .
+---  OBC = FEC qba + fec QBA .
+---  OBD = FED qba + fed QBA .
+---  OBE = FFA qbd + ffa QBD .
+---  OBF = FFB qbd + ffb QBD .
+---  OBG = FFC qbd + ffc QBD .
+---  OBH = FFD qbd + ffd QBD .
+---  OBI = FGA qbb + fga QBB .
+---  OBJ = FGB qbb + fgb QBB .
+---  OBK = FGC qbb + fgc QBB .
+---  OBL = FGD qbb + fgd QBB .
+---  OBM = FHA qbc + fha QBC .
+---  OBN = FHB qbc + fhb QBC .
+---  OBO = FHC qbc + fhc QBC .
+---  OBP = FHD qbc + fhd QBC . 31
+
+---  OCA = FIA qbb + fia QBB . 32
+---  OCB = FIB qbb + fib QBB .
+---  OCC = FIC qbb + fic QBB .
+---  OCD = FID qbb + fid QBB .
+---  OCE = FJA qbc + fja QBC .
+---  OCF = FJB qbc + fjb QBC .                      
+---  OCG = FJC qbc + fjc QBC .
+---  OCH = FJD qbc + fjd QBC .
+---  OCI = FKA qbb + fka QBB .
+---  OCJ = FKB qbb + fkb QBB .
+---  OCK = FKC qbb + fkc QBB .
+---  OCL = FKD qbb + fkd QBB .
+---  OCM = FLA qbc + fla QBC .
+---  OCN = FLB qbc + flb QBC .
+---  OCO = FLC qbc + flc QBC .
+---  OCP = FLD qbc + fld QBC .  47
+
+---  ODA = PAB PAC .  2(5)                      Normalization count
+---  ODB = pab PAC .  2(4)                      to FC
+
+                         Sec0           Sec 1       Sec 2
+---  ODC = --- + --- + PFB PEB PEC + PGB peb PEC + PHB pec .   2(3)  8
+---  ODD = --- + --- + PFC PEB PEC + PGC peb PEC + PHC pec .   2(2)  4
+---  ode = --- + --- + pba PEB PEC + pca peb PEC + pda pec .   2(1)  12
+
+            15-12     11-8      7-4       3-0
+
+---  OEA = RAA PBA + RBA PBB + RCA PBC + RDA PBD . 2^O   Section O
+---  OEB = RAB PBA + RBB PBB + RCB PBC + RDB PBD . 2^1
+
+---  OFA = REA PCA + RFA PCB + RGA PCC + RHA PCD . 2^O   Section 1
+---  OFB = REB PCA + RFB PCB + RGB PCC + RHB PCD . 2^1
+
+---  OGA = RIA PDA + RJA PDB + RKA PDC + RLA PDD . 2^0   Section 2
+---  OGB = RIB PDA + RJB PDB + RKB PDC + RLB PDD . 2^1
+
+---  oha = qda .                       Toggle sign bit to FC
+---  OHB = QDB qga .                    Normalize shift eq -1 to FC
+
+---  OIA = qdb PAA PAC PAB .               Underflow to FC
+---  oja = qec .                       Go add to FC
+---  ojb = qfb .                       Unlike signs to FC
+
+---  paa = naa nba + nab nbb + nac nbc + nad nbd .      Section O 16 0's
+---  pab = nae nbe + naf nbf + nag nbg + nah nbh .      Section l 16 0's
+---  pac = nai nbi + naj nbj + nak nbk + nal nbl  .     Section 2 16 0's
+
+---  pba = nab nbb + nac nbc + nad nbd .                Section 0 12 0's
+---  pbb = NAB + NBB + nac nbc + nad nbd .                         8 0's
+---  pbc = NAC + NBC + nad nbd .                                   4 0's
+---  pbd = NAD + NBD .                                             0 0's
+
+---  pca = naf nbf + nag nbg + nah nbh .                Section l 12 0's
+---  pcb = NAF + NBF + nag nbg + nah nbh .                         8
+---  pcc = nah nbh + NAG + NBG .                                   4
+---  pcd = MAH + NBH .                                             0
+
+---  pda = naj nbj + nak nbk + nal nbl  .               Section 2 12 0's
+---  pdb = NAJ + NBJ + nak nbk + nal nbl  .                        8
+---  pdc = nal nbl + NAK + NBK .                                   4
+---  pdd = NAL + NBL .                                             0
+
+---  peb = nae nbe + naf nbf + nag nbg + nah nbh .      Section l 16 0's
+---  pec = nai nbi + naj nbj + nak nbk + nal nbl  .     Section 2 16 0's
+
+---  pfb = NAB + NBB + nac nbc + nad nbd .              Section O 8 0's
+---  pfc = NAC + NBC + nad nbd .                        Section 0 4 0's
+
+---  pgb = NAF + NBF + nag nbg + nah nbh .              Section l 12 0's copy
+---  pgc = nah nbh + NAG + NBG .                        Section 1  8 0's copy
+
+---  phb = NAJ + NBJ + nak nbk + nal nbl  .             Section 2 12 0's copy
+---  phc = nal nbl + NAK + NBK .                        Section 2  8 0's copy
+
+---  QAA = IJB IJA .                  Go add and subtract, cp 11 for 120,121
+                                            
+---  QAB = IJA .                      Subtract mode from FA ( j and k sign diff)
+
+---  QAC = QAA aar .                  Go add and subtract
+---  QAD = QAA aar .                  for instructions 120-1, 170-173
+---  QAE = QAA aar .                  subtract when signs for j and k differ
+---  QAF = QAA aar .
+
+---  QAG = QAA .                      Go sub cp 11
+---  QAH = QAA .
+
+---  qba = jbc .                     Complement the result of the
+---  qbb = jbc .                     coefficient add
+---  qbc = jbc .
+---  qbd = jbc .
+---  qbe = jbc .
+---  qbf = jbc .
+---  qbg = jbc .
+---  qbh = jbc .
+
+---  QCA = qaa QAB .                  Complement constant, Signs diff no fadd
+
+---  QDA = QAH JAM .
+---  QDB = qah JAM .                  Shift -1
+
+---  qea = ijb .                      Adder control from FA,120-121,170-3,
+                                           cp 11 for 120,121 cp 12 for 170-3
+---  qeb = qea .                      cp 12 or 13
+---  qec = qeb .                      cp 13 or 14
+
+---  QFA = QAB .                      Subtract mode, cp 12 or 13
+---  QFB = QFA .                      Subtract mode, cp 13 or 14
+
+---  qga = qca .                      Complement constant
+
+---  RAA = UAA qbf + UAB QBF .      bit O    group O
+---  RAB = fad fac qbf + FAD FAC QBF .    1
+---  RBA = UBA qbe + UBB QBE .                1
+---  RBB = fbd fbc qbe + FBD FBC QBE .
+---  RCA = UCA qbf + UCB QBF .                2
+---  RCB = fcd fcc qbf + FCD FCC QBF .
+---  RDA = UDA qbe + UDB QBE .                3
+---  RDB = fdd fdc qbe + FDD FDC QBE .
+---  REA = UEA qbf + UEB QBF .                4
+---  REB = fed fec qbf + FED FEC QBF .
+---  RFA = UFA qbe + UFB QBE .                5
+---  RFB = ffd ffc qbe + FFD FFC QBE .
+---  RGA = UGA qbh + UGB QBH .                6
+---  RGB = ffd fgc qbh + FGD FGC QBH .
+---  RHA = UHA qbg + UHB QBG .                7
+---  RHB = fhd fhc qbg + FHD FHC QBG .
+---  RIA = UIA qbh + UIB QBH .                8
+---  RIB = fid fic qbh + FID FIC QBH .
+---  RJA = UJA qbg + UJB QBG .                9
+---  RJB = fjd fjc qbg + FJD FJC QBG .
+---  RKA = UKA qbh + UKB QBH .                10
+---  RKB = fkd fkc qbh + FKD FKC QBH .
+---  RLA = ULA qbg + ULB QBG .                11
+---  RLB = fld flc qbg + FLD FLC QBG .
+
+---  saa = kac KAB + KAD . normal bit O           group O without carry
+---  sab = KAC kab + kad . complement bit O
+---  sac = kag KAF + KAH . normal bit O           group O with carry
+---  sad = KAG kaf + kah . complement bit O
+---  sba = kbc KBB + KBD .                   group 1
+---  sbb = KBC kbb + kbd .
+---  sbc = kbg KBF + KBH .
+---  sbd = KBG kbf + kbh .
+---  sca = kcc KCB + KCD .                   group 2
+---  scb = KCC kcb + kcd .
+---  scc = kcg KCF + KCH .
+---  scd = KCG kcf + kch .
+---  sda = kdc KDB + KDD .                   group 3
+---  sdb = KDC kdb + kdd .
+---  sdc = kdg KDF + KDH .
+---  sdd = KDG kdf + kdh .
+---  sea = kec KEB + KED .                   group 4
+---  seb = KEC keb + ked .
+---  sec = keg KEF + KEH .
+---  sed = KEG kef + keh .
+---  sfa = kfc KFB + KFD .                   group 5
+---  sfb = KFC kfb + kfd .
+---  sfc = kfg KFF + KFH .
+---  sfd = KFG kff + kfh .
+---  sga = kgc KGB + KGD .                   group 6
+---  sgb = KGC kgb + kgd .
+---  sgc = kgg KGF + KGH .
+---  sgd = KGG kgf + kgh .
+---  sha = khc KHB + KHD .                   group 7   
+---  shb = KHC khb + khd .
+---  shc = khg KHF + KHH .
+---  shd = KHG khf + khh .
+---  sia = kic KIB + KID .                   group 8
+---  sib = KIC kib + kid .
+---  sic = kig KIF + KIH .
+---  sid = KIG kif + kih .
+---  sja = kjc KJB + KJD .                   group 9
+---  sjb = KJC kjb + kid .
+---  sjc = kjg KJF + KJH .
+---  sjd = KJG kjf + kjh .
+---  ska = kkc KKB + KKD .                   group 10
+---  skb = KKC kkb + kkd .
+---  skc = kkg KKF + KKH .
+---  skd = KKG kkf + kkh .
+---  sla = klc KLB + KLD .                   group 11
+---  slb = KLC klb + kld .
+---  slc = klg KLF + KLH .
+---  sld = KLG klf + klh .
+
+---  UAA = SAA jaa + SAC JAA . normal bit O        group O
+---  UAB = SAB jaa + SAD JAA . complement bit O
+---  UBA = SBA jab + SBC JAB .                 group l
+---  UBB = SBB jab + SBD JAB .
+---  UCA = SCA jac + SCC JAC .                 group 2
+---  UCB = SCB jac + SCD JAC .
+---  UDA = SDA jad + SDC JAD .                 group 3
+---  UDB = SDB jad + SDD JAD .
+---  UEA = SEA jae + SEC JAE .                 group 4
+---  UEB = SEB jae + SED JAE .
+---  UFA = SFA jaf + SFC JAF .                 group 5
+---  UFB = SFB jaf + SFD JAF .
+---  UGA = SGA jag + SGC JAG .                 group 6
+---  UGB = SGB jag + SGD JAG .
+---  UHA = SHA jah + SHC JAH .                 group 7
+---  UHB = SHB jah + SHD JAH .
+---  UIA = SIA jai + SIC JAI .                 group 8
+---  UIB = SIB jai + SID JAI .
+---  UJA = SJA jaj + SJC JAJ .                 group 9
+---  UJB = SJB jaj + SJD JAJ .
+---  UKA = SKA jak + SKC JAK .                 group lO
+---  UKB = SKB jak + SKD JAK .
+---  ULA = SLA jal + SLC JAL .                 group ll
+---  ULB = SLB jal + SLD JAL .
+
+--- ZYA = IZZ / izz .
+--- ZYA = IZZ / izz .
+--- ZYB = IZZ / izz .
+--- ZYB = IZZ / izz .
+--- ZYC = IZZ / izz .
+--- ZYC = IZZ / izz .
+--- ZYD = IZZ / izz .
+--- ZYD = IZZ / izz .
+--- ZYE = IZZ / izz .
+--- ZYE = IZZ / izz .
+--- ZYF = IZZ / izz .
+--- ZYF = IZZ / izz .

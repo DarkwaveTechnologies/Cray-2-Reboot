@@ -1,4 +1,4 @@
-module bo( IZZ,
+module ea( IZZ,
  IAA, 
  IAB, 
  IAC, 

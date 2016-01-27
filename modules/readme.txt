@@ -45,4 +45,3 @@ VB		Vector shift
 VL		Vector Logical, Real-time counter, vector mask register
 VR		Scalar Logical, Scaler Register, Vector registers, 8 modules each with 8 bits
 WA		Local memory
-

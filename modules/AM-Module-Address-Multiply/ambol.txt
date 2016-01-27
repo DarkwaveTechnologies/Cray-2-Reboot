@@ -2,10 +2,8 @@
 * Boolean Definitions
 * Module: AM
 * Description: Address Multiply
-* Gen Revision:	1.0
-* Gen Date: 	2015.01.27
-* Orig Revision:	Unknown
-* Orig Date: 	Unknown
+* Revision: Unknown
+* Date: Unknown
 *
 ---  AAA = IAA tea + AAB TEA .    ak01  Ak Data and Ak Data Shifted
 ---  AAB = IAB tea + AAC TEA .    ak12

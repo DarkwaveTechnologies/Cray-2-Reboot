@@ -1,0 +1,965 @@
+*
+* Boolean Definitions
+* Module: GB
+* Description: Scalar Integer Shift
+* Revision:
+* Date:
+*
+---  AAA = IAA .  2^O                 Ak shift count
+---  AAB = IAB .  2^1
+---  AAC = IAC .  2^2
+---  AAD = IAD .  2^3
+---  AAE = IAE .  2^4
+---  AAF = IAF .  2^5
+---  AAG = IAG .  2^6
+
+---  AAH = IAH .                     Overflow from AR to VB
+---  AAI = IAI .
+---  AAJ = IAJ .
+
+---  CAA = INA .                     jk shift count register
+---  CAB = INB .
+---  CAC = INC .
+---  CAD = IND .
+---  CAE = INE .
+---  CAF = INF .
+
+---  CBA = CAA .                     jk count first delay
+---  CBB = CAB .
+---  CBC = CAC .
+---  CBD = CAD .
+---  CBE = CAE .
+---  CBF = CAF .
+
+---  CCA = CBA .                     jk count second delay
+---  CCB = CBB .
+---  CCC = CBC .
+---  CCD = CBD .
+---  CCE = CBE .
+---  CCF = CBF .
+
+---  CDA = CCA .                     jk count last delay register
+---  CDB = CCB .
+---  CDC = CCC .
+---  CDD = CCD .
+---  CDE = CCE .
+---  CDF = CCF .
+
+---  DAA = IIA TQA + DAA TRA .            S register data input
+---  DAB = IIB TQA + DAB TRA .            shift 64
+---  DAC = IIC TQA + DAC TRA .
+---  DAD = IID TQA + DAD TRA .
+
+---  DAE = IIE TMA + DAE TNA .
+---  DAF = IIF TMA + DAF TNA .
+---  DAG = IIG TMA + DAG TNA .
+---  DAH = IIH TMA + DAH TNA .
+
+---  DBA = III TQB + DBA TRB .            S register data input
+---  DBB = IIJ TQB + DBB TRB .            shift 64
+---  DBC = IIK TQB + DBC TRB .
+---  DBD = IIL TQB + DBD TRB .
+
+---  DBE = IIM TMB + DBE TNB .
+---  DBF = IIN TMB + DBF TNB .
+---  DBG = IIO TMB + DBG TNB .
+---  DBH = IIP TMB + DBH TNB .
+
+---  DCA = IJA TQC + DCA TRC .
+---  DCB = IJB TQC + DCB TRC .
+---  DCC = IJC TQC + DCC TRC .
+---  DCD = IJD TQC + DCD TRC .
+
+---  DCE = IJE TMC + DCE TNC .
+---  DCF = IJF TMC + DCF TNC .
+---  DCG = IJG TMC + DCG TNC .
+---  DCH = IJH TMC + DCH TNC .
+
+---  DDA = IJI TQD + DDA TRD .
+---  DDB = IJJ TQD + DDB TRD .
+---  DDC = IJK TQD + DDC TRD .
+---  DDD = IJL TQD + DDD TRD .
+
+---  DDE = IJM TMD + DDE TND .
+---  DDF = IJN TMD + DDF TND .
+---  DDG = IJO TMD + DDG TND .             
+---  DDH = IJP TMD + DDH TND .
+
+---  DEA = IKA TQE + DEA TRE .
+---  DEB = IKB TQE + DEB TRE .
+---  DEC = IKC TQE + DEC TRE .
+---  DED = IKD TQE + DED TRE .
+
+---  DEE = IKE TME + DEE TNE .
+---  DEF = IKF TME + DEF TNE .
+---  DEG = IKG TME + DEG TNE .
+---  DEH = IKH TME + DEH TNE .
+
+---  DFA = IKI TQF + DFA TRF .
+---  DFB = IKJ TQF + DFB TRF .
+---  DFC = IKK TQF + DFC TRF .
+---  DFD = IKL TQF + DFD TRF .
+
+---  DFE = IKM TMF + DFE TNF .
+---  DFF = IKN TMF + DFF TNF .
+---  DFG = IKO TMF + DFG TNF .
+---  DFH = IKP TMF + DFH TNF .
+
+---  DGA = ILA TQG + DGA TRG .
+---  DGB = ILB TQG + DGB TRG .
+---  DGC = ILC TQG + DGC TRG .
+---  DGD = ILD TQG + DGD TRG .
+
+---  DGE = ILE TMG + DGE TNG .
+---  DGF = ILF TMG + DGF TNG .
+---  DGG = ILF TMG + DGG TNG .
+---  DGH = ILH TMG + DGH TNG .
+
+---  DHA = ILI TQH + DHA TRH .
+---  DHB = ILJ TQH + DHB TRH .
+---  DHC = ILK TQH + DHC TRH .
+---  DHD = ILL TQH + DHD TRH .
+
+---  DHE = ILM TMH + DHE TNH .
+---  DHF = ILN TMH + DHF TNH .
+---  DHG = ILO TMH + DHG TNH .
+---  DHH = ILP TMH + DHH TNH .
+
+
+
+---  DIA = IIA TSA + DIA TTA .            S register data input and
+---  DIB = IIB TSA + DIB TTA .            shift 64
+---  DIC = IIC TSA + DIC TTA .
+---  DID = IID TSA + DID TTA .
+
+---  DIE = IIE TOA + DIE TPA .
+---  DIF = IIF TOA + DIF TPA .
+---  DIG = IIG TOA + DIG TPA .
+---  DIH = IIH TOA + DIH TPA .
+
+---  DJA = III TSB + DJA TTB .
+---  DJB = IIJ TSB + DJB TTB .
+---  DJC = IIK TSB + DJC TTB .
+---  DJD = IIL TSB + DJD TTB .
+
+---  DJE = IIM TOB + DJE TPB .
+---  DJF = IIN TOB + DJF TPB .
+---  DJG = IIO TOB + DJG TPB .
+---  DJH = IIP TOB + DJH TPB .
+
+---  DKA = IJA TSC + DKA TTC .
+---  DKB = IJB TSC + DKB TTC .
+---  DKC = IJC TSC + DKC TTC .
+---  DKD = IJD TSC + DKD TTC .
+
+---  DKE = IJE TOC + DKE TPC .
+---  DKF = IJF TOC + DKF TPC .
+---  DKG = IJG TOC + DKG TPC .             
+---  DKH = IJH TOC + DKH TPC .
+
+---  DLA = IJI TSD + DLA TTD .
+---  DLB = IJJ TSD + DLB TTD .
+---  DLC = IJK TSD + DLC TTD .
+---  DLD = IJL TSD + DLD TTD .
+
+---  DLE = IJM TOD + DLE TPD .
+---  DLF = IJN TOD + DLF TPD .
+---  DLG = IJO TOD + DLG TPD .
+---  DLH = IJP TOD + DLH TPD .
+
+---  DMA = IKA TSE + DMA TTE .
+---  DMB = IKB TSE + DMB TTE .
+---  DMC = IKC TSE + DMC TTE .
+---  DMD = IKD TSE + DMD TTE .
+
+---  DME = IKE TOE + DME TPE .
+---  DMF = IKF TOE + DMF TPE .
+---  DMG = IKG TOE + DMG TPE .
+---  DMH = IKH TOE + DMH TPE .
+
+---  DNA = IKI TSF + DNA TTF .
+---  DNB = IKJ TSF + DNB TTF .
+---  DNC = IKK TSF + DNC TTF .
+---  DND = IKL TSF + DND TTF .
+
+---  DNE = IKM TOF + DNE TPF .
+---  DNF = IKN TOF + DNF TPF .
+---  DNG = IKO TOF + DNG TPF .
+---  DNH = IKP TOF + DNH TPF .
+
+---  DOA = ILA TSG + DOA TTG .                   S reg data input
+---  DOB = ILB TSG + DOB TTG .                   and shift 64
+---  DOC = ILC TSG + DOC TTG .
+---  DOD = ILD TSG + DOD TTG .
+
+---  DOE = ILE TOG + DOE TPG .
+---  DOF = ILF TOG + DOF TPG .
+---  DOG = ILG TOG + DOG TPG .
+---  DOH = ILH TOG + DOH TPG .
+
+---  DPA = ILI TSH + DPA TTH .
+---  DPB = ILJ TSH + DPB TTH .
+---  DPC = ILK TSH + DPC TTH .
+---  DPD = ILL TSH + DPD TTH .
+---  DPE = ILM TOH + DPE TPH .
+---  DPF = ILN TOH + DPF TPH .
+---  DPG = ILO TOH + DPG TPH .
+
+                             QEB = cp4
+
+---  EAA = JCA + AAA QEB + CDA QBD .                2^0  Shift count
+---  EAB = JBB WAB + JCB wab + AAB QEB + CDB QBD .  2^1
+---  EAC = JBC WAC + JCC wac + AAC QEB + CDC QBD .  2^2
+---  EAD = JBD WAD + JCD wad + AAD QEB + CDD QBD .  2^3
+---  EAE = JBE WAE + JCE wae + AAE QEB + CDE QBD .  2^4
+---  EAF = JBF WAF + JCF waf + AAF QEB + CDF QBD .  2^5
+
+---  eba = EAD + EAC .                        Shift count decode
+---  ebb = EAD + eac .                        bits 2,3
+---  ebc = ead + EAC .
+---  ebd = ead + eac .
+---  ebe = EAD + EAC .                        2nd copy
+---  ebf = EAD + eac .
+---  ebg = ead + EAC .
+---  ebh = ead + eac .
+---  ebi = EAD + EAC .                        3rd copy
+---  ebj = EAD + eac .
+---  ebk = ead + EAC .
+---  ebl = ead + eac .
+
+---  eca = jga + EAB + EAA .       00              Shift count decode
+---  ecb = jga + EAB + eaa .       01            bits O,1
+---  ecc = jga + eab + EAA .       02                
+---  ecd = jga + eab + eaa .       03
+
+---  FAA = DAA TAA + DCA TBA + DEA TCA + DGA TDA .       Shift register
+---  FAB = DAB TAB + DCB TBB + DEB TCB + DGB TDB .       shift 0,16,32,48
+---  FAC = DAC TAC + DCC TBC + DEC TCC + DGC TDC .
+---  FAD = DAD TAD + DCD TBD + DED TCD + DGD TDD .
+---  FAE = DAE TAE + DCE TBE + DEE TCE + DGE TDE . 
+---  FAF = DAF TAF + DCF TBF + DEF TCF + DGF TDF .
+---  FAG = DAG TAG + DCG TBG + DEG TCG + DGG TDG . 
+---  FAH = DAH TAH + DCH TBH + DEH TCH + DGH TDH .
+
+---  FBA = DBA TAA + DDA TBA + DFA TCA + DHA TDA .    Shift reqister
+---  FBB = DBB TAB + DDB TBB + DFB TCB + DHB TDB .     shift 0,16,32,48
+---  FBC = DBC TAC + DDC TBC + DFC TCC + DHC TDC .
+---  FBD = DBD TAD + DDD TBD + DFD TCD + DHD TDD .
+---  FBE = DBE TAE + DDE TBE + DFE TCE + DHE TDE .
+---  FBF = DBF TAF + DDF TBF + DFF TCF + DHF TDF .
+---  FBG = DBG TAG + DDG TBG + DFG TCG + DHG TDG .
+---  FBH = DBH TAH + DDH TBH + DFH TCH + DHH TDH .
+
+
+---  FCA = DCA TAA + DEA TBA + DGA TCA + DIA TDA .  
+---  FCB = DCB TAB + DEB TBB + DGB TCB + DIB TDB .
+---  FCC = DCC TAC + DEC TBC + DGC TCC + DIC TDC .
+---  FCD = DCD TAD + DED TBD + DGD TCD + DID TDD .
+---  FCE = DCE TAE + DEE TBE + DGE TCE + DIE TDE .
+---  FCF = DCF TAF + DEF TBF + DGF TCF + DIF TDF .
+---  FCG = DCG TAG + DEG TBG + DGG TCG + DIG TDG .
+---  FCH = DCH TAH + DEH TBH + DGH TCH + DIH TDH .
+
+
+---  FDA = DDA TAA + DFA TBA + DHA TCA + DJA TDA .
+---  FDB = DDB TAB + DFB TBB + DHB TCB + DJB TDB .
+---  FDC = DDC TAC + DFC TBC + DHC TCC + DJC TDC .
+---  FDD = DDD TAD + DFD TBD + DHD TCD + DJD TDD .
+---  FDE = DDE TAE + DFE TBE + DHE TCE + DJE TDE .
+---  FDF = DDF TAF + DFF TBF + DHF TCF + DJF TDF .
+---  FDG = DDG TAG + DFG TBG + DHG TCG + DJG TDG .
+---  FDH = DDH TAH + DFH TBH + DHH TCH + DJH TDH .
+
+---  FEA = DEA TAA + DGA TBA + DIA TCA + DKA TDA .
+---  FEB = DEB TAB + DGB TBB + DIB TCB + DKB TDB .
+---  FEC = DEC TAC + DGC TBC + DIC TCC + DKC TDC .
+---  FED = DED TAD + DGD TBD + DID TCD + DKD TDD .
+---  FEE = DEE TAE + DGE TBE + DIE TCE + DKE TDE .
+---  FEF = DEF TAF + DGF TBF + DIF TCF + DKF TDF .
+---  FEG = DEG TAG + DGG TBG + DIG TCG + DKG TDG .
+---  FEH = DEH TAH + DGH TBH + DIH TCH + DKH TDH .
+
+---  FFA = DFA TAA + DHA TBA + DJA TCA + DLA TDA .
+---  FFB = DFB TAB + DHB TBB + DJB TCB + DLB TDB .
+---  FFC = DFC TAC + DHC TBC + DJC TCC + DLC TDC .
+---  FFD = DFD TAD + DHD TBD + DJD TCD + DLD TDD .
+---  FFE = DFE TAE + DHE TBE + DJE TCE + DLE TDE .
+---  FFF = DFF TAF + DHF TBF + DJF TCF + DLF TDF .
+---  FFG = DFG TAG + DHG TBG + DJG TCG + DLG TDG .
+---  FFH = DFH TAH + DHH TBH + DJH TCH + DLH TDH .
+
+
+---  FGA = DGA TAA + DIA TBA + DKA TCA + DMA TDA .
+---  FGB = DGB TAB + DIB TBB + DKB TCB + DMB TDB .
+---  FGC = DGC TAC + DIC TBC + DKC TCC + DMC TDC .
+---  FGD = DGD TAD + DID TBD + DKD TCD + DMD TDD .
+---  FGE = DGE TAE + DIE TBE + DKE TCE + DME TDE .
+---  FGF = DGF TAF + DIF TBF + DKF TCF + DMF TDF .
+---  FGG = DGG TAG + DIG TBG + DKG TCG + DMG TDG .
+---  FGH = DGH TAH + DIH TBH + DKH TCH + DMH TDH .
+
+---  FHA = DHA TAA + DJA TBA + DLA TCA + DNA TDA .
+---  FHB = DHB TAB + DJB TBB + DLB TCB + DNB TDB .
+---  FHC = DHC TAC + DJC TBC + DLC TCC + DNC TDC .
+---  FHD = DHD TAD + DJD TBD + DLD TCD + DND TDD .
+---  FHE = DHE TAE + DJE TBE + DLE TCE + DNE TDE .
+---  FHF = DHF TAF + DJF TBF + DLF TCF + DNF TDF .
+---  FHG = DHG TAG + DJG TBG + DLG TCG + DNG TDG .
+---  FHH = DHH TAH + DJH TBH + DLH TCH + DNH TDH .
+
+---  FIA = DIA TAA + DKA TBA + DMA TCA + DOA TDA .    Shift register
+---  FIB = DIB TAB + DKB TBB + DMB TCB + DOB TDB .    shift 0,16,32,48
+---  FIC = DIC TAC + DKC TBC + DMC TCC + DOC TDC .
+---  FID = DID TAD + DKD TBD + DMD TCD + DOD TDD .
+---  FIE = DIE TAE + DKE TBE + DME TCE + DOE TDE .
+---  FIF = DIF TAF + DKF TBF + DMF TCF + DOF TDF .
+---  FIG = DIG TAG + DKG TBG + DMG TCG + DOG TDG .
+---  FIH = DIH TAH + DKH TBH + DMH TCH + DOH TDH .
+
+---  FJA = DJA TAA + DLA TBA + DNA TCA + DPA TDA .
+---  FJB = DJB TAB + DLB TBB + DNB TCB + DPB TDB .
+---  FJC = DJC TAC + DLC TBC + DNC TCC + DPC TDC .
+
+
+---  FLA = DBA TAA + DDA TBA + DFA TCA + DHA TDA .
+---  FLB = DBB TAB + DDB TBB + DFB TCB + DHB TDB .
+---  FLC = DBC TAC + DDC TBC + DFC TCC + DHC TDC .
+---  FLD = DBD TAD + DDD TBD + DFD TCD + DHD TDD .
+---  FLE = DBE TAE + DDE TBE + DFE TCE + DHE TDE .
+---  FLF = DBF TAF + DDF TBF + DFF TCF + DHF TDF .
+---  FLG = DBG TAG + DDG TBG + DFG TCG + DHG TDG .
+---  FLH = DBH TAH + DDH TBH + DFH TCH + DHH TDH .
+
+---  FMA = DCA TAA + DEA TBA + DGA TCA + DIA TDA .
+---  FMB = DCB TAB + DEB TBB + DGB TCB + DIB TDB .
+---  FMC = DCC TAC + DEC TBC + DGC TCC + DIC TDC .
+---  FMD = DCD TAD + DED TBD + DGD TCD + DID TDD .
+---  FME = DCE TAE + DEE TBE + DGE TCE + DIE TDE .
+---  FMF = DCF TAF + DEF TBF + DGF TCF + DIF TDF .
+---  FMG = DCG TAG + DEG TBG + DGG TCG + DIG TDG .
+---  FMH = DCH TAH + DEH TBH + DGH TCH + DIH TDH .
+
+---  FNA = DDA TAA + DFA TBA + DHA TCA + DJA TDA .
+---  FNB = DDB TAB + DFB TBB + DHB TCB + DJB TDB .
+---  FNC = DDC TAC + DFC TBC + DHC TCC + DJC TDC .
+---  FND = DDD TAD + DFD TBD + DHD TCD + DJD TDD .
+---  FNE = DDE TAE + DFE TBE + DHE TCE + DJE TDE .
+---  FNF = DDF TAF + DFF TBF + DHF TCF + DJF TDF .
+---  FNG = DDG TAG + DFG TBG + DHG TCG + DJG TDG .
+---  FNH = DDH TAH + DFH TBH + DHH TCH + DJH TDH .
+
+
+---  FOA = DEA TAA + DGA TBA + DIA TCA + DKA TDA .
+---  FOB = DEB TAB + DGB TBB + DIB TCB + DKB TDB .
+---  FOC = DEC TAC + DGC TBC + DIC TCC + DKC TDC .
+---  FOD = DED TAD + DGD TBD + DID TCD + DKD TDD .
+---  FOE = DEE TAE + DGE TBE + DIE TCE + DKE TDE .
+---  FOF = DEF TAF + DGF TBF + DIF TCF + DKF TDF .
+---  FOG = DEG TAG + DGG TBG + DIG TCG + DKG TDG .
+---  FOH = DEH TAH + DGH TBH + DIH TCH + DKH TDH .
+
+---  FPA = DFA TAA + DHA TBA + DJA TCA + DLA TDA .
+---  FPB = DFB TAB + DHB TBB + DJB TCB + DLB TDB .
+---  FPC = DFC TAC + DHC TBC + DJC TCC + DLC TDC .
+---  FPD = DFD TAD + DHD TBD + DJD TCD + DLD TDD .
+---  FPE = DFE TAE + DHE TBE + DJE TCE + DLE TDE .
+---  FPF = DFF TAF + DHF TBF + DJF TCF + DLF TDF .
+---  FPG = DFG TAG + DHG TBG + DJG TCG + DLG TDG .
+---  FPH = DFH TAH + DHH TBH + DJH TCH + DLH TDH .
+
+---  FQA = DGA TAA + DIA TBA + DKA TCA + DMA TDA .    Shift register
+---  FQB = DGB TAB + DIB TBB + DKB TCB + DMB TDB .     shift O,16,32,48
+---  FQC = DGC TAC + DIC TBC + DKC TCC + DMC TDC .
+---  FQD = DGD TAD + DID TBD + DKD TCD + DMD TDD .
+---  FQE = DGE TAE + DIE TBE + DKE TCE + DME TDE .
+---  FQF = DGF TAF + DIF TBF + DKF TCF + DMF TDF .
+---  FQG = DGG TAG + DIG TBG + DKG TCG + DMG TDG .
+---  FQH = DGH TAH + DIH TBH + DKH TCH + DMH TDH .
+
+
+---  FRA = DHA TAA + DJA TBA + DLA TCA + DNA TDA .
+---  FRB = DHB TAB + DJB TBB + DLB TCB + DNB TDB .
+---  FRC = DHC TAC + DJC TBC + DLC TCC + DNC TDC .
+---  FRD = DHD TAD + DJD TBD + DLD TCD + DND TDD .
+---  FRE = DHE TAE + DJE TBE + DLE TCE + DNE TDE .
+---  FRF = DHF TAF + DJF TBF + DLF TCF + DNF TDF .
+---  FRG = DHG TAG + DJG TBG + DLG TCG + DNG TDG .
+---  FRH = DHH TAH + DJH TBH + DLH TCH + DNH TDH .
+
+---  FSA = DIA TAA + DKA TBA + DMA TCA + DOA TDA .
+---  FSB = DIB TAB + DKB TBB + DMB TCB + DOB TDB .
+---  FSC = DIC TAC + DKC TBC + DMC TCC + DOC TDC .
+---  FSD = DID TAD + DKD TBD + DMD TCD + DOD TDD .
+---  FSE = DIE TAE + DKE TBE + DME TCE + DOE TDE .
+---  FSF = DIF TAF + DKF TBF + DMF TCF + DOF TDF .
+---  FSG = DIG TAG + DKG TBG + DMG TCG + DOG TDG .
+---  FSH = DIH TAH + DKH TBH + DMH TCH + DOH TDH .
+
+---  FTA = DJA TAA + DLA TBA + DNA TCA + DPA TDA .
+---  FTB = DJB TAB + DLB TBB + DNB TCB + DPB TDB .
+---  FTC = DJC TAC + DLC TBC + DNC TCC + DPC TDC .
+---  FTD = DJD TAD + DLD TBD + DND TCD + DPD TDD .
+---  FTE = DJE TAE + DLE TBE + DNE TCE + DPE TDE .
+---  FTF = DJF TAF + DLF TBF + DNF TCF + DPF TDF .
+---  FTG = DJG TAG + DLG TBG + DNG TCG + DPG TDG .
+
+---  GAA = FAA TEA + FAE TFA + FBA TGA + FLE THA .    Shift register
+---  GAB = FAB TEB + FAF TFB + FBB TGB + FLF THB .    shift O,4,8,12
+---  GAC = FAC TEC + FAG TFC + FBC TGC + FLG THC .
+---  GAD = FAD TED + FAH TFD + FBD TGD + FLH THD .
+---  GAE = FAE TEE + FLA TFE + FBE TGE + FMA THE .
+---  GAF = FAF TEF + FLB TFF + FBF TGF + FMB THF .
+---  GAG = FAG TEG + FLC TFG + FBG TGG + FMC THG .    
+---  GAH = FAH TEH + FLD TFH + FBH TGH + FMD THH .
+
+---  GAL = FAD TED + FAH TFD + FBD TGD + FLH THD .
+---  GAM = FAE TEE + FLA TFE + FBE TGE + FMA THE .
+---  GAN = FAF TEF + FLB TFF + FBF TGF + FMB THF .
+---  GAO = FAG TEG + FLC TFG + FBG TGG + FMC THG .
+---  GAP = FAH TEH + FLD TFH + FBH TGH + FMD THH .
+
+---  GBA = FBA TEA + FLE TFA + FCA TGA + FME THA .
+---  GBB = FBB TEB + FLF TFB + FCB TGB + FMF THB .
+---  GBC = FBC TEC + FLG TFC + FCC TGC + FMG THC .
+---  GBD = FBD TED + FLH TFD + FCD TGD + FMH THD .
+---  GBE = FBE TEE + FMA TFE + FCE TGE + FNA THE .
+---  GBF = FBF TEF + FMB TFF + FCF TGF + FNB THF .
+---  GBG = FBG TEG + FMC TFG + FCG TGG + FNC THG .
+---  GBH = FBH TEH + FMD TFH + FCH TGH + FND THH .
+
+---  GBI = FBA TEA + FLE TFA + FCA TGA + FME THA .    Shift register
+---  GBJ = FBB TEB + FLF TFB + FCB TGB + FMF THB .    shift 0,4,8,12
+---  GBK = FBC TEC + FLG TFC + FCC TGC + FMG THC .
+---  GBL = FBD TED + FLH TFD + FCD TGD + FMH THD .
+---  GBM = FBE TEE + FMA TFE + FCE TGE + FNA THE .
+---  GBN = FBF TEF + FMB TFF + FCF TGF + FNB THF .
+---  GBO = FBG TEG + FMC TFG + FCG TGG + FNC THG .
+---  GBP = FBH TEH + FMD TFH + FCH TGH + FND THH .
+
+---  GBQ = FBA TEA + FLE TFA + FCA TGA + FME THA .
+---  GBR = FBB TEB + FLF TFB + FCB TGB + FMF THB .
+
+---  GCA = FCA TEA + FME TFA + FDA TGA + FNE THA .
+---  GCB = FCB TEB + FMF TFB + FDB TGB + FNF THB .
+---  GCC = FCC TEC + FMG TFC + FDC TGC + FNG THC .
+---  GCD = FCD TED + FMH TFD + FDD TGD + FNH THD .
+---  GCE = FCE TEE + FNA TFE + FDE TGE + FOA THE .
+---  GCF = FCF TEF + FNB TFF + FDF TGF + FOB THF .
+---  GCG = FCG TEG + FNC TFG + FDG TGG + FOC THG .
+---  GCH = FCH TEH + FND TFH + FDH TGH + FOD THH .
+
+---  GCI = FCA TEA + FME TFA + FDA TGA + FNE THA .
+---  GCJ = FCB TEB + FMF TFB + FDB TGB + FNF THB .
+---  GCK = FCC TEC + FMG TFC + FDC TGC + FNG THC .
+---  GCL = FCD TED + FMH TFD + FDD TGD + FNH THD .
+---  GCM = FCE TEE + FNA TFE + FDE TGE + FOA THE .
+---  GCN = FCF TEF + FNB TFF + FDF TGF + FOB THF .
+---  GCO = FCG TEG + FNC TFG + FDG TGG + FOC THG .
+---  GCP = FCH TEH + FND TFH + FDH TGH + FOD THH .
+---  GCQ = FCA TEA + FME TFA + FDA TGA + FNE THA .
+---  GCR = FCB TEB + FMF TFB + FDB TGB + FNF THB .
+
+---  GDA = FDA TEQ + FNE TFQ + FEA TGQ + FOE THQ .
+---  GDB = FDB TER + FNF TFR + FEB TGR + FOF THR .
+---  GDC = FDC TES + FNG TFS + FEC TGS + FOG THS .
+---  GDD = FDD TET + FNH TFT + FED TGT + FOH THT .
+---  GDE = FDE TEU + FOA TFU + FEE TGU + FPA THU .
+---  GDF = FDF TEV + FOB TFV + FEF TGV + FPB THV .
+---  GDG = FDG TEW + FOC TFH + FEG TGW + FPC THW .
+---  GDH = FDH TEX + FOD TFX + FEH TGX + FPD THX .
+
+---  GDI = FDA TEQ + FNE TFQ + FEA TGQ + FOE THQ .
+---  GDJ = FDB TER + FNF TFR + FEB TGR + FOF THR .
+---  GDK = FDC TES + FNG TFS + FEC TGS + FOG THS .
+---  GDL = FDD TET + FNH TFT + FED TGT + FOH THT .
+---  GDM = FDE TEU + FOA TFU + FEE TGU + FPA THU .
+---  GDN = FDF TEV + FOB TFV + FEF TGV + FPB THV .
+---  GDO = FDG TEW + FOC TFH + FEG TGW + FPC THW .
+---  GDP = FDH TEX + FOD TFX + FEH TGX + FPD THX .
+
+---  GDQ = FDA TEQ + FNE TFQ + FEA TGQ + FOE THQ .
+---  GDR = FDB TER + FNF TFR + FEB TGR + FOF THR .
+
+---  GEA = FEA TEQ + FOE TFQ + FFA TGQ + FPE THQ .
+---  GEB = FEB TER + FOF TFR + FFB TGR + FPF THR .
+---  GEC = FEC TES + FOG TFS + FFC TGS + FPG THS .
+---  GED = FED TET + FOH TFT + FFD TGT + FPH THT .
+---  GEE = FEE TEU + FPA TFU + FFE TGU + FQA THU .
+---  GEF = FEF TEV + FPB TFV + FFF TGV + FQB THV .
+---  GEG = FEG TEW + FPC TFW + FFG TGW + FQC THW .
+---  GEH = FEH TEX + FPD TFX + FFH TGX + FQD THX .
+
+---  GEI = FEA TEQ + FOE TFQ + FFA TGQ + FPE THQ .     Shift register
+---  GEJ = FEB TER + FOF TFR + FFB TGR + FPF THR .     shift 0,4,8,12
+---  GEK = FEC TES + FOG TFS + FFC TGS + FPG THS .
+---  GEL = FED TET + FOH TFT + FFD TGT + FPH THT .
+---  GEM = FEE TEU + FPA TFU + FFE TGU + FQA THU .
+---  GEN = FEF TEV + FPB TFV + FFF TGV + FQB THV .
+---  GEO = FEG TEW + FPC TFW + FFG TGW + FQC THW .
+---  GEP = FEH TEX + FPD TFX + FFH TGX + FQD THX .
+
+---  GEQ = FEA TEQ + FOE TFQ + FFA TGQ + FPE THQ .
+---  GER = FEB TER + FOF TFR + FFB TGR + FPF THR .
+---  GES = FEC TES + FOG TFS + FFC TGS + FPG THS .
+---  GET = FED TET + FOH TFT + FFD TGT + FPH THT .
+---  GEU = FEE TEU + FPA TFU + FFE TGU + FQA THU .
+---  GEV = FEF TEV + FPB TFV + FFF TGV + FQB THV .
+---  GEW = FEG TEW + FPC TFW + FFG TGW + FQC THW .
+---  GEX = FEH TEX + FPD TFX + FFH TGX + FQD THX .
+
+---  GFA = FFA TEQ + FPE TFQ + FGA TGQ + FQE THQ .
+---  GFB = FFB TER + FPF TFR + FGB TGR + FQF THR .
+---  GFC = FFC TES + FPG TFS + FGC TGS + FQG THS .
+---  GFD = FFD TET + FPH TFT + FGD TGT + FQH THT .
+---  GFE = FFE TEU + FQA TFU + FGE TGU + FRA THU .
+---  GFF = FFF TEV + FQB TFV + FGF TGV + FRB THV .
+---  GFG = FFG TEW + FQC TFW + FGG TGW + FRC THV .
+---  GFH = FFH TEX + FQD TFX + FGH TGX + FRD THX .
+
+---  GFI = FFA TEQ + FPE TFQ + FGA TGQ + FQE THQ .
+---  GFJ = FFB TER + FPF TFR + FGB TGR + FQF THR .
+---  GFK = FFC TES + FPG TFS + FGC TGS + FQG THS .
+---  GFL = FFD TET + FPH TFT + FGD TGT + FQH THT .
+---  GFM = FFE TEU + FQA TFU + FGE TGU + FRA THU .
+---  GFN = FFF TEV + FQB TFV + FGF TGV + FRB THV .
+---  GFO = FFG TEW + FQC TFW + FGG TGW + FRC THV .
+---  GFP = FFH TEX + FQD TFX + FGH TGX + FRD THX .
+
+---  GFQ = FFA TEQ + FPE TFQ + FGA TGQ + FQE THQ .
+---  GFR = FFB TER + FPF TFR + FGB TGR + FQF THR .
+
+---  GGA = FGA TEI + FQE TFI + FHA TGI + FRE THI .
+---  GGB = FGB TEJ + FQF TFJ + FHB TGJ + FRF THJ .
+---  GGC = FGC TEK + FQG TFX + FHC TGK + FRG THK .
+---  GGD = FGD TEL + FQH TFL + FHD TGL + FRH THL .
+---  GGE = FGE TEM + FRA TFM + FHE TGM + FSA THM .
+---  GGF = FGF TEN + FRB TFN + FHF TGN + FSB THN .
+---  GGG = FGG TEO + FRC TFO + FHG TGO + FSC THO .
+---  GGH = FGH TEP + FRD TFP + FHH TGP + FSD THP .
+
+---  GGI = FGA TEI + FQE TFI + FHA TGI + FRE THI .
+---  GGJ = FGB TEJ + FQF TFJ + FHB TGJ + FRF THJ .
+---  GGK = FGC TEK + FQG TFK + FHC TGK + FRG THK .
+---  GGL = FGD TEL + FQH TFL + FHD TGL + FRH THL .
+---  GGM = FGE TEM + FRA TFM + FHE TGM + FSA THM .
+---  GGN = FGF TEN + FRB TFN + FHF TGN + FSB THN .
+---  GGO = FGG TEO + FRC TFO + FHG TGO + FSC THO .
+---  GGP = FGH TEP + FRD TFP + FHH TGP + FSD THP .
+
+---  GGQ = FGA TEI + FQE TFI + FHA TGI + FRE THI .
+---  GGR = FGB TEJ + FQF TFJ + FHB TGJ + FRF THJ .
+
+---  GHA = FHA TEI + FRE TFI + FIA TGI + FSE THI .     Shift register
+---  GHB = FHB TEJ + FRF TFJ + FIB TGJ + FSF THJ .     shift 0,4,8,12
+---  GHC = FHC TEK + FRG TFK + FIC TGK + FSG THK .
+---  GHD = FHD TEL + FRH TFL + FID TGL + FSH THL .
+---  GHE = FHE TEM + FSA TFM + FIE TGM + FTA THM .
+---  GHF = FHF TEN + FSB TFN + FIF TGN + FTB THN .
+---  GHG = FHG TEO + FSC TFO + FIG TGO + FTC THO .
+---  GHH = FHH TEP + FSD TFP + FIH TGP + FTD THP .
+
+---  GHI = FHA TEI + FRE TFI + FIA TGI + FSE THI .
+---  GHJ = FHB TEJ + FRF TFJ + FIB TGJ + FSF THJ .
+---  GHK = FHC TEK + FRG TFK + FIC TGK + FSG THK .
+---  GHL = FHD TEL + FRH TFL + FID TGL + FSH THL .
+---  GHM = FHE TEM + FSA TFM + FIE TGM + FTA THM .
+---  GHN = FHF TEN + FSB TFN + FIF TGN + FTB THN .
+---  GHO = FHG TEO + FSC TFO + FIG TGO + FTC THO .
+---  GHP = FHH TEP + FSD TFP + FIH TGP + FTD THP .
+
+---  GHQ = FHA TEI + FRE TFI + FIA TGI + FSE THI .
+---  GHR = FHB TEJ + FRF TFJ + FIB TGJ + FSF THJ .
+
+---  GIA = FIA TEI + FSE TFI + FJA TGI + FTE THI .
+---  GIB = FIB TEJ + FSF TFJ + FJB TGJ + FTF THJ .
+---  GIC = FIC TEK + FSG TFK + FJC TGK + FTG THK .
+
+---  GII = FIA TEI + FSE TFI + FJA TGI + FTE THI .
+---  GIJ = FIB TEJ + FSF TFJ + FJB TGJ + FTF THJ .
+
+---  JAA = aag QEA .                    Ak left < 64
+---  JAB = AAG QEA .                    Ak left > or eq 64
+---  JAC = aag QEB .                    Ak right < 64
+---  JAD = AAG QEB .                    Ak right > or eq 64
+---  JAE = qcd QBE .                    jk data left shift
+---  JAF = QCD QBE .                    jk data right shift
+
+---  JBB = aab QEA .  2                  Ak left shift translations
+---  JBC = aac QEA .  4
+---  JBD = aad QEA .  8
+---  JBE = aae QEA .  16
+---  JBF = aaf QEA .  32
+
+---  JCA = AAA QEA .  1
+---  JCB = AAB QEA .  2
+---  JCC = AAC QEA .  4
+---  JCD = AAD QEA .  8
+---  JCE = AAE QEA .  16
+---  JCF = AAF QEA .  32
+
+---  jda = aaa aab aac aad aae aaf .          Ak any bit O-5 set
+---  JEA = eaf eae QED .                No shift of l6 or 32
+---  JEB = eaf EAE .                    Shift of 16 no shift
+---  JEC = EAF eae .                    Shift of 32 no shift
+---  JED = EAF EAE .                    Shift of 48
+---  JGA = QEC qga .                    Go shift & no overflow
+
+                0          1      2         3
+                4          5      6         7
+
+---  OAA = GAA TIA + GAB TJA + GAC TKA + GAL TLA .    Scalar data
+---  OAB = GAB TIB + GAC TJB + GAD TKB + GAM TLB .    shift O,1,2,3
+---  OAC = GAC TIC + GAD TJC + GAE TKC + GAN TLC .
+---  OAD = GAD TID + GAE TJD + GAF TKD + GAO TLD .
+---  OAE = GAE TIE + GAF TJE + GAG TKE + GAP TLE .
+---  OAF = GAF TIF + GAG TJF + GAH TKF + GBQ TLF .
+---  OAG = GAG TIG + GAH TJG + GBI TKG + GBR TLG .
+---  OAH = GAH TIH + GBA TJH + GBB TKH + GBK TLH .
+
+---  OBA = GBI TIA + GBJ TJA + GBC TKA + GBL TLA .
+---  OBB = GBJ TIB + GBC TJB + GBD TKB + GBM TLB .
+---  OBC = GBC TIC + GBD TJC + GBE TKC + GBN TLC .
+---  OBD = GBD TID + GBE TJD + GBF TKD + GBO TLD .
+---  OBE = GBE TIE + GBF TJE + GBG TKE + GBP TLE .
+---  OBF = GBF TIF + GBG TJF + GBH TKF + GCQ TLF .
+---  OBG = GBG TIG + GBH TJG + GCA TKG + GCR TLG .
+---  OBH = GBH TIH + GCA TJH + GCB TKH + GCK TLH .
+
+---  OCA = GCI TIA + GCB TJA + GCC TKA + GCL TLA .
+---  OCB = GCB TIB + GCC TJB + GCD TKB + GCM TLB .
+---  OCC = GCC TIC + GCD TJC + GCE TKC + GCN TLC .
+---  OCD = GCD TID + GCE TJD + GCF TKD + GCO TLD .
+---  OCE = GCE TIE + GCF TJE + GCG TKE + GCP TLE .
+---  OCF = GCF TIF + GCG TJF + GCH TKF + GDQ TLF .
+---  OCG = GCG TIG + GCH TJG + GDA TKG + GDR TLG .
+---  OCH = GCH TIH + GDA TJH + GDB TKH + GDK TLH .
+
+---  ODA = GDI TIA + GDJ TJA + GDC TKA + GDL TLA .
+---  ODB = GDJ TIB + GDC TJB + GDD TKB + GDM TLB .
+---  ODC = GDC TIC + GDD TJC + GDE TKC + GDN TLC .
+---  ODD = GDD TID + GDE TJD + GDF TKD + GDO TLD .
+---  ODE = GDE TIE + GDF TJE + GDG TKE + GDP TLE .
+---  ODF = GDF TIF + GDG TJF + GDH TKF + GEQ TLF .
+---  ODG = GDG TIG + GDH TJG + GEI TKG + GER TLG .
+---  ODH = GDH TIH + GEA TJH + GEB TKH + GEK TLH .
+
+---  OEA = GEI TIA + GEJ TJA + GES TKA + GEL TLA .
+---  OEB = GEJ TIB + GEC TJB + GET TKB + GEM TLB .
+---  OEC = GEC TIC + GED TJC + GEU TKC + GEN TLC .
+---  OED = GED TID + GEE TJD + GEV TKD + GEO TLD .
+---  OEE = GEE TIE + GEF TJE + GEW TKE + GEP TLE .
+---  OEF = GEF TIF + GEG TJF + GEX TKF + GFQ TLF .
+---  OEG = GEG TIG + GEH TJG + GFA TKG + GFR TLG .
+---  OEH = GEH TIH + GFA TJH + GFB TKH + GFK TLH .
+
+---  OFA = GFI TIA + GFJ TJA + GFC TKA + GFL TLA .
+---  OFB = GFJ TIB + GFC TJB + GFD TKB + GFM TLB .
+---  OFC = GFC TIC + GFD TJC + GFE TKC + GFN TLC .
+---  OFD = GFD TID + GFE TJD + GFF TKD + GFO TLD .
+---  OFE = GFE TIE + GFF TJE + GFG TKE + GFP TLE .
+---  OFF = GFF TIF + GFG TJF + GFH TKF + GGQ TLF .
+---  OFG = GFG TIG + GFH TJG + GGA TKG + GGR TLG .
+---  OFH = GFH TIH + GGA TJH + GGB TKH + GGK TLH .
+
+---  OGA = GGI TIA + GGJ TJA + GGC TKA + GGL TLA .     Scalar data
+---  OGB = GGJ TIB + GGC TJB + GGD TKB + GGM TLB .     shift O,l,2,3
+---  OGC = GGC TIC + GGD TJC + GGE TKC + GGN TLC .            
+---  OGD = GGD TID + GGE TJD + GGF TKD + GGO TLD .
+---  OGE = GGE TIE + GGF TJE + GGG TKE + GGP TLE .
+---  OGF = GGF TIF + GGG TJF + GGH TKF + GHQ TLF .
+---  OGG = GGG TIG + GGH TJG + GHA TKG + GHR TLG .
+---  OGH = GGH TIH + GHA TJH + GHB TKH + GHK TLH .
+
+---  OHA = GHI TIA + GHJ TJA + GHC TKA + GHL TLA .
+---  OHB = GHJ TIB + GHC TJB + GHD TKB + GHM TLB .
+---  OHC = GHC TIC + GHD TJC + GHE TKC + GHN TLC .
+---  OHD = GHD TID + GHE TJD + GHF TKD + GHO TLD .
+---  OHE = GHE TIE + GHF TJE + GHG TKE + GHP TLE .
+---  OHF = GHF TIF + GHG TJF + GHH TKF + GII TLF .
+---  OHG = GHG TIG + GHH TJG + GIA TKG + GIJ TLG .
+---  OHH = GHH TIH + GIA TJH + GIB TKH + GIC TLH .
+
+---  OKA = IAA .  2^O                       Ak count to VB
+---  OKB = IAB .  2^1
+---  OKC = IAC .  2^2
+---  OKD = IAD .  2^3
+---  OKE = IAE .  2^4
+---  OKF = IAF .  2^5
+---  OKG = IAG .  2^6
+
+---  OKH = AAH + IAI + IAJ .                   Ak shift overflow to VB
+---  ORA = IRA .                              Relay data
+---  ORB = IRB .
+---  ORC = IRC .
+---  ORD = IRD .
+---  ORE = IRE .
+---  ORF = IRF .
+---  ORG = IRG .
+---  ORH = IRH .
+---  ORI = IRI .
+---  ORJ = IRJ .
+---  ORK = IRK .
+---  ORL = IRL .
+---  ORM = IRM .
+---  ORN = IRN .
+---  ORO = IRO .
+---  ORP = IRP .
+---  QBA = ioc IOA .          Jk shift flags, Go Shift and F bit 1=0
+---  QBB = QBA .                           Instruction 110,111
+---  QBC = QBB .
+---  QBD = QBC .
+---  QBE = QBC .
+---  QCA = IOB .                Right shift flag, F field bit 0 = 1
+---  QCB = QCA .                           Instructions 111,113
+---  QCC = QCB .
+---  QCD = QCC .
+---  QDA = IOC IOA .         Ak shift flags, Go Shift and F bit 1 = 1
+---  QDB = QDA .                         Instructions 112,113
+---  QDC = QDB .
+---  QDD = QDC .
+---  qea = qdc + QCC .                   Ak left shift flag, cp 4
+---  qeb = qdc + qcc .                   Ak right Shift flag, cp 4
+---  qec = qdd qbd .                     Ak or jk data shift, cp 5
+---  qed = qdd qbd .
+---  QFA = JAA jda + JAC + JAF + QDC .    Lower reg entry translations
+---  QFB = JAA jda + JAC + JAF + QDC .
+---  QFC = JAA JDA + JAB jda + JAD .      Lower reg recycle translations
+---  QFD = JAA JDA + JAB jda + JAD .
+---  QFE = JAA JDA + JAE + QDC .          Upper reg entry translations
+---  QFF = JAA JDA + JAE + QDC .
+---  QFG = JAB + JAC .                    Upper reg recycle
+---  QFH = JAB + JAC .
+
+---  QGA = QDD AAH + QDD IAI + QDD IAJ .
+
+---  TAA = JEA .                        F register shift 0 gate
+---  TAB = JEA .
+---  TAC = JEA .
+---  TAD = JEA .
+---  TAE = JEA .
+---  TAF = JEA .
+---  TAG = JEA .
+---  TAH = JEA .
+---  TBA = JEB .                        F register shift 16 gate
+---  TBB = JEB .
+---  TBC = JEB .
+---  TBD = JEB .
+---  TBE = JEB .
+---  TBF = JEB .
+---  TBG = JEB .
+---  TBH = JEB .
+---  TCA = JEC .                        F register shift 32 gate
+---  TCB = JEC .
+---  TCC = JEC .
+---  TCD = JEC .
+---  TCE = JEC .
+---  TCF = JEC .
+---  TCG = JEC .
+---  TCH = JEC .
+---  TDA = JED .                        F register shift 48 gate
+---  TDB = JED .
+---  TDC = JED .
+---  TDD = JED .
+---  TDE = JED .
+---  TDF = JED .
+---  TDG = JED .
+---  TDH = JED .
+---  TEA = EBA .                        G register shift 0 gate
+---  TEB = EBA .
+---  TEC = EBA .
+---  TED = EBA .
+---  TEE = EBA .
+---  TEF = EBA .
+---  TEG = EBA .
+---  TEH = EBA .
+---  TEI = EBE .
+---  TEJ = EBE .
+---  TEK = EBE .
+---  TEL = EBE .
+---  TEM = EBE .
+---  TEN = EBE .
+---  TEO = EBE .
+---  TEP = EBE .
+---  TEQ = EBI .
+---  TER = EBI .
+---  TES = EBI .
+---  TET = EBI .
+---  TEU = EBI .
+---  TEV = EBI .                       
+---  TEW = EBI .
+---  TEX = EBI .
+---  TFA = EBB .                        G register shift 4 gate
+---  TFB = EBB .
+---  TFC = EBB .
+---  TFD = EBB .
+---  TFE = EBB .
+---  TFF = EBB .
+---  TFG = EBB .
+---  TFH = EBB .
+---  TFI = EBF .
+---  TFJ = EBF .
+---  TFK = EBF .
+---  TFL = EBF .
+---  TFM = EBF .
+---  TFN = EBF .
+---  TFO = EBF .
+---  TFP = EBF .
+---  TFQ = EBJ .
+---  TFR = EBJ .
+---  TFS = EBJ .
+---  TFT = EBJ .
+---  TFU = EBJ .
+---  TFV = EBJ .
+---  TFW = EBJ .
+---  TFX = EBJ .
+---  TGA = EBC .                        G register shift 8 gate
+---  TGB = EBC .
+---  TGC = EBC .
+---  TGD = EBC .
+---  TGE = EBC .
+---  TGF = EBC .
+---  TGG = EBC .
+---  TGH = EBC .
+---  TGI = EBG .
+---  TGJ = EBG .
+---  TGK = EBG .
+---  TGL = EBG .
+---  TGM = EBG .
+---  TGN = EBG .
+---  TGO = EBG .
+---  TGP = EBG .
+---  TGQ = EBK .
+---  TGR = EBK .
+---  TGS = EBK .
+---  TGT = EBK .
+---  TGU = EBK .
+---  TGV = EBK .
+---  TGW = EBK .
+---  TGX = EBK .
+---  THA = EBD .                        G register shift 12 gate
+---  THB = EBD .
+---  THC = EBD .
+---  THD = EBD .
+---  THE = EBD .
+---  THF = EBD .
+---  THG = EBD .
+---  THH = EBD .
+---  THI = EBH .
+---  THJ = EBH .
+---  THK = EBH .
+---  THL = EBH .
+---  THM = EBH .
+---  THN = EBH .
+---  THO = EBH .
+---  THP = EBH .
+---  THQ = EBL .
+---  THR = EBL .
+---  THS = EBL .
+---  THT = EBL .
+---  THU = EBL .
+---  THV = EBL .
+---  THW = EBL .
+---  THX = EBL .
+---  TIA = ECA .                     Output enable thru shift path 0
+---  TIB = ECA .
+---  TIC = ECA .
+---  TID = ECA .
+---  TIE = ECA .
+---  TIF = ECA .
+---  TIG = ECA .
+---  TIH = ECA .
+---  TJA = ECB .                     Output thru shift 1 path
+---  TJB = ECB .
+---  TJC = ECB .
+---  TJD = ECB .
+---  TJE = ECB .
+---  TJF = ECB .
+---  TJG = ECB .
+---  TJH = ECB .
+---  TKA = ECC .                     Output thru shift 2 path
+---  TKB = ECC .
+---  TKC = ECC .
+---  TKD = ECC .
+---  TKE = ECC .
+---  TKF = ECC .                      
+---  TKG = ECC .
+---  TKH = ECC .
+---  TLA = ECD .                     Output thru shift 3 path
+---  TLB = ECD .
+---  TLC = ECD .
+---  TLD = ECD .
+---  TLE = ECD .
+---  TLF = ECD .
+---  TLG = ECD .
+---  TLH = ECD .
+---  TMA = QFA .                     Enter data into lower register
+---  TMB = QFA .
+---  TMC = QFA .
+---  TMD = QFA .
+---  TME = QFB .
+---  TMF = QFB .
+---  TMG = QFB .
+---  TMH = QFB .
+---  TNA = QFC .                     Recycle data in lower register
+---  TNB = QFC .
+---  TNC = QFC .
+---  TND = QFC .
+---  TNE = QFD .                             
+---  TNF = QFD .
+---  TNG = QFD .
+---  TNH = QFD .
+---  TOA = QFE .                     Enter data into upper 
+---  TOB = QFE .                       register
+---  TOC = QFE .
+---  TOD = QFE .
+---  TOE = QFF .
+---  TOF = QFF .
+---  TOG = QFF .
+---  TOH = QFF .
+---  TPA = QFG .                     Recycle data in upper register
+---  TPB = QFG .
+---  TPC = QFG .
+---  TPD = QFG .
+---  TPE = QFH .
+---  TPF = QFH .
+---  TPG = QFH .
+---  TPH = QFH .
+---  tqa = qfa .                     Enter data into lower register
+---  tqb = qfa .
+---  tqc = qfa .
+---  tqd = qfa .
+---  tqe = qfb .
+---  tqf = qfb .
+---  tqg = qfb .
+---  tqh = qfb .
+---  tra = qfc .                     Recycle data in lower register
+---  trb = qfc .
+---  trc = qfc .
+---  trd = qfc .
+---  tre = qfd .
+---  trf = qfd .
+---  trg = qfd .
+---  trh = qfd .
+---  tsa = qfe .                     Enter data into upper register
+---  tsb = qfe .
+---  tsc = qfe .
+---  tsd = qfe .                         
+---  tse = qff .
+---  tsf = qff .
+---  tsg = qff .
+---  tsh = qff .
+---  tta = qfg .                     Recycle data in upper register
+---  ttb = qfg .
+---  ttc = qfg .
+---  ttd = qfg .
+---  tte = qfh .
+---  ttf = qfh .
+---  ttg = qfh .
+---  tth = qfh .
+
+---  wab = aaa .                       Sj ( lower data )
+---  wac = aab aaa .
+---  wad = aac aab aaa .               Entry decode on an Ak left -112 inst
+---  wae = xaa .
+---  waf = aae xaa .
+---  XAA = IAA + IAB + IAC + IAD .    Look ahead Ak, left shifts 1,2,4,8

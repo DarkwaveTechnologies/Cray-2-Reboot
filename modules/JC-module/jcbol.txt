@@ -1,0 +1,1001 @@
+*
+* Boolean Definitions
+* Module: JC
+* Description: Main Issue (VR Module Control)
+* Revision: 
+* Date: 
+*
+---  aaa = iee + IED + IEC .                 Memory arrival code-V0
+---  aab = iee + IED + iec .                     V1
+---  aac = iee + ied + IEC .                     V2
+---  aad = iee + ied + iec .                     V3
+---  aba = IEB + IEA .                       Bank O
+---  abb = IEB + iea .                        ''  1
+---  abc = ieb + EEA .                        ''  2
+---  abd = ieb + iea .                        ''  3
+
+                         Vector 0
+---  EAA = PBA .                            Bank O
+---  EAB = PBA .
+---  EAC = PBA .
+---  EAD = PBA .
+
+---  EAE = PBB .                            Bank l
+---  EAF = PBB .
+---  EAG = PBB .
+---  EAH = PBB .
+
+---  EAI = PBC .                            Bank 2
+---  EAJ = PBC .
+---  EAK = PBC .
+---  EAL = PBC .
+
+---  EAM = PBD .                            Bank 3
+---  EAN = PBD .
+---  EAO = PBD .
+---  EAP = PBD .
+
+---  eaq = pbb pbd .  2(O)                  Bank select
+---  ear = pbc pbd .  2(l)
+
+                       Vector 1
+---  ECA = PDA .                            Bank 0
+---  ECB = PDA .
+---  ECC = PDA .
+---  ECD = PDA .
+
+---  ECE = PDB .                            Bank 1
+---  ECF = PDB .
+---  ECG = PDB .
+---  ECH = PDB .
+
+---  ECI = PDC .                            Bank 2
+---  ECJ = PDC .
+---  ECK = PDC .
+---  ECL = PDC .
+
+---  ECM = PDD .                            Bank 3
+---  ECN = PDD .
+---  ECO = PDD .
+---  ECP = PDD .
+
+---  ecq = pdb pdd .
+---  ecr = pdc pdd .
+
+                          Vector 2
+---  EEA = PFA .                            Bank 0
+---  EEB = PFA .
+---  EEC = PFA .
+---  EED = PFA .                  
+              
+---  EEE = PFB .                            Bank 1
+---  EEF = PFB .
+---  EEG = PFB .
+---  EEH = PFB .
+
+---  EEI = PFC .                            Bank 2
+---  EEJ = PFC .
+---  EEK = PFC .
+---  EEL = PFC .
+
+---  EEM = PFD .                            Bank 3
+---  EEN = PFD .
+---  EEO = PFD .
+---  EEP = PFD .
+
+---  eeq = pfb pfd .
+---  eer = pfc pfd .
+
+                        Vector 3
+---  EGA = PHA .                            Bank 0
+---  EGB = PHA .
+---  EGC = PHA .
+---  EGD = PHA .
+
+---  EGE = PHB .                            Bank 1
+---  EGF = PHB .
+---  EGG = PHB .
+---  EGH = PHB .
+
+---  EGI = PHC .                            Bank 2
+---  EGJ = PHC .
+---  EGK = PHC .
+---  EGL = PHC .
+
+---  EGM = PHD .                            Bank 3
+---  EGN = PHD .
+---  EGO = PHD .
+---  EGP = PHD .
+
+---  egq = phb phd .
+---  egr = phc phd .                  
+         
+                          Vector 0
+ 
+---  GAA = QAE .                          Bank O
+---  GAB = QAE HAA .
+---  GAC = QAE HAA HAB .
+---  GAD = QAE HAA HAB HAC .
+---  GAE = QAF .                          Bank 1
+---  GAF = QAF HAE .
+---  GAG = QAF HAE HAF .
+---  GAH = QAF HAE HAF HAG .
+---  GAI = QAG .                          Bank 2
+---  GAJ = QAG HAI .
+---  GAK = QAG HAI HAJ .             
+---  GAL = QAG HAI HAJ HAK .
+---  GAM = QAH .                          Bank 3
+---  GAN = QAH HAM .
+---  GAO = QAH HAM HAN .
+---  GAP = QAH HAM HAN HAO .
+
+                              Vector 1
+---  GCA = QCE .                          Bank 0
+---  GCB = QCE HCA .
+---  GCC = QCE HCA HCB .
+---  GCD = QCE HCA HCB HCC .            
+            
+---  GCE = QCF .                          Bank 1
+---  GCF = QCF HCE .
+---  GCG = QCF HCE HCF .
+---  GCH = QCF HCE HCF HCG .
+
+---  GCI = QCG .                         Bank 2
+---  GCJ = QCG HCI .
+---  GCK = QCG HCI HCJ .
+---  GCL = QCG HCI HCJ HCK .
+
+---  GCM = QCH .                          Bank 3
+---  GCN = QCH HCM .
+---  GCO = QCH HCM HCN .
+---  GCP = QCH HCM HCN HCO .
+
+                        Vector 2
+---  GEA = QEE .                          Bank 0
+---  GEB = QEE HEA .
+---  GEC = QEE HEA HEB .
+---  GED = QEE HEA HEB HEC .
+
+---  GEE = QEF .                          Bank 1
+---  GEF = QEF HEE .
+---  GEG = QEF HEE HEF .
+---  GEH = QEF HEE HEF HEG .
+
+---  GEI = QEG .                          Bank 2
+---  GEJ = QEG HEI .
+---  GEK = QEG HEI HEJ .
+---  GEL = QEG HEI HEJ HEK .
+
+---  GEM = QEH .                          Bank 3
+---  GEN = QEH HEM .
+---  GEO = QEH HEM HEN .
+---  GEP = QEH HEM HEN HEO .
+
+                        Vector 3
+---  GGA = QGE .                          Bank 0
+---  GGB = QGE HGA .
+---  GGC = QGE HGA HGB .
+---  GGD = QGE HGA HGB HGC .
+
+---  GGE = QGF .                          Bank 1
+---  GGF = QGF HGE .
+---  GGG = QGF HGE HGF .
+---  GGH = QGF HGE HGF HGG .
+
+---  GGI = QGG .                          Bank 2
+---  GGJ = QGG HGI .
+---  GGK = QGG HGI HGJ .
+---  GGL = QGG HGI HGJ HGK .
+
+---  GGM = QGH .                         Bank 3
+---  GGN = QGH HGM .
+---  GGO = QGH HGM HGN .
+---  GGP = QGH HGM HGN HGO .
+
+                           Vector 0
+
+---  haa = haa gaa + HAA GAA + TAM .             Bank O
+---  hab = hab gab + HAB GAB + TAM .
+---  hac = hac gac + HAC GAC + TAM .
+---  had = had gad + HAD GAD + TAM .
+
+---  hae = hae gae + HAE GAE + TAN .             Bank l
+---  haf = haf gaf + HAF GAF + TAN .
+---  hag = hag gag + HAG GAG + TAN .
+---  hah = hah gah + HAH GAH + TAN .
+
+---  hai = hai gai + HAI GAI + TAO .             Bank 2
+---  haj = haj gaj + HAJ GAJ + TAO .
+---  hak = hak gak + HAK GAK + TAO .
+---  hal = hal gal + HAL GAL + TAO .
+
+---  ham = ham gam + HAM GAM + TAP .             Bank 3
+---  han = han gan + HAN GAN + TAP .
+---  hao = hao gao + HAO GAO + TAP .
+---  hap = hap gap + HAP GAP + TAP .
+
+---  hba = haa gaa + HAA GAA + TAM .             Bank 0
+---  hbb = hab gab + HAB GAB + TAM .
+---  hbc = hac gac + HAC GAC + TAM .
+---  hbd = had gad + HAD GAD + TAM .
+
+---  hbe = hae gae + HAE GAE + TAN .             Bank 1
+---  hbf = haf gaf + HAF GAF + TAN .
+---  hbg = hag gag + HAG GAG + TAN .
+---  hbh = hah gah + HAH GAH + TAN .
+
+---  hbi = hai gai + HAI GAI + TAO .             Bank 2
+---  hbj = haj gaj + HAJ GAJ + TAO .
+---  hbk = hak gak + HAK GAK + TAO .
+---  hbl = hal gal + HAL GAL + TAO .
+
+---  hbm = ham gam + HAM GAM + TAP .             Bank 3
+---  hbn = han gan + HAN GAN + TAP .
+---  hbo = hao gao + HAO GAO + TAP .
+---  hbp = hap gap + HAP GAP + TAP .
+
+                        Vector 1
+
+---  hca = hca gca + HCA GCA + TCM .             Bank 0
+---  hcb = hcb gcb + HCB GCB + TCM .
+---  hcc = hcc gcc + HCC GCC + TCM .
+---  hcd = hcd gcd + HCD GCD + TCM .
+
+---  hce = hce gce + HCE GCE + TCN .             Bank 1
+---  hcf = hcf gcf + HCF GCF + TCN .
+---  hcg = hcg gcg + HCG GCG + TCN .
+---  hch = hch gch + HCH GCH + TCN .
+
+---  hci = hci gci + HCI GCI + TCO .             Bank 2
+---  hcj = hcj gcj + HCJ GCJ + TCO .
+---  hck = hck gck + HCK GCK + TCO .
+---  hcl = hcl gcl + HCL GCL + TCO .
+
+---  hcm = hcm gcm + HCM GCM + TCP .             Bank 3
+---  hcn = hcn gcn + HCN GCN + TCP .
+---  hco = hco gco + HCO GCO + TCP .
+---  hcp = hcp gcp + HCP GCP + TCP .
+
+---  hda = hca gca + HCA GCA + TCM .             Bank 0
+---  hdb = hcb gcb + HCB GCB + TCM .
+---  hdc = hcc gcc + HCC GCC + TCM .
+---  hdd = hcd gcd + HCD GCD + TCM .                   
+
+---  hde = hce gce + HCE GCE + TCN .             Bank 1
+---  hdf = hcf gcf + HCF GCF + TCN .
+---  hdg = hcg gcg + HCG GCG + TCN .
+---  hdh = hch gch + HCH GCH + TCN .
+
+---  hdi = hci gci + HCI GCI + TCO .             Bank 2
+---  hdj = hcj gcj + HCJ GCJ + TCO .
+---  hdk = hck gck + HCK GCK + TCO .
+---  hdl = hcl gcl + HCL GCL + TCO .
+
+---  hdm = hcm gcm + HCM GCM + TCP .             Bank 3
+---  hdn = hcn gcn + HCN GCN + TCP .
+---  hdo = hco gco + HCO GCO + TCP .
+---  hdp = hcp gcp + HCP GCP + TCP .
+
+                   Vector 2
+
+---  hea = hea gea + HEA GEA + TEM .             Bank 0
+---  heb = heb geb + HEB GEB + TEM .
+---  hec = hec gec + HEC GEC + TEM .
+---  hed = hed ged + HED GED + TEM .
+
+---  hee = hee gee + HEE GEE + TEN .             Bank 1
+---  hef = hef gef + HEF GEF + TEN .
+---  heg = heg geg + HEG GEG + TEN .
+---  heh = heh geh + HEH GEH + TEN .
+
+---  hei = hei gei + HEI GEI + TEO .              Bank 2
+---  hej = hej gej + HEJ GEJ + TEO .
+---  hek = hek gek + HEK GEK + TEO .
+---  hel = hel gel + HEL GEL + TEO .
+
+---  hem = hem gem + HEM GEM + TEP .              Bank 3
+---  hen = hen gen + HEN GEN + TEP .
+---  heo = heo geo + HEO GEO + TEP .
+---  hep = hep gep + HEP GEP + TEP .
+
+                   Vector 3                 
+
+---  hfa = hea gea + HEA GEA + TEM .              Bank 0
+---  hfb = heb geb + HEB GEB + TEM .
+---  hfc = hec gec + HEC GEC + TEM .
+---  hfd = hed ged + HED GED + TEM .
+
+---  hfe = hee gee + HEE GEE + TEN .              Bank 1
+---  hff = hef gef + HEF GEF + TEN .
+---  hfg = heg geg + HEG GEG + TEN .
+---  hfh = heh geh + HEH GEH + TEN .
+
+---  hfi = hei gei + HEI GEI + TEO .              Bank 2
+---  hfj = hej gej + HEJ GEJ + TEO .
+---  hfk = hek gek + HEK GEK + TEO .
+---  hfl = hel gel + HEL GEL + TEO .
+
+---  hfm = hem gem + HEM GEM + TEP .              Bank 3
+---  hfn = hen gen + HEN GEN + TEP .
+---  hfo = heo geo + HEO GEO + TEP .
+---  hfp = hep gep + HEP GEP + TEP .
+
+---  hga = hga gga + HGA GGA + TGM .                Bank 0
+---  hgb = hgb ggb + HGB GGB + TGM .
+---  hgc = hgc ggc + HGC GGC + TGM .
+---  hgd = hgd ggd + HGD GGD + TGM .
+
+---  hge = hge gge + HGE GGE + TGN .                Bank 1
+---  hgf = hgf ggf + HGF GGF + TGN .
+---  hgg = hgg ggg + HGG GGG + TGN .
+---  hgh = hgh ggh + HGH GGH + TGN .
+
+---  hgi = hgi ggi + HGI GGI + TGO .                Bank 2
+---  hgj = hgj ggj + HGJ GGJ + TGO .
+---  hgk = hgk ggk + HGK GGK + TGO .
+---  hgl = hgl ggl + HGL GGL + TGO .
+
+---  hgm = hgm ggm + HGM GGM + TGP .                Bank 3
+---  hgn = hgn ggn + HGN GGN + TGP .
+---  hgo = hgo ggo + HGO GGO + TGP .
+---  hgp = hgp ggp + HGP GGP + TGP .
+
+---  hha = hga gga + HGA GGA + TGM .                 Bank 0
+---  hhb = hgb ggb + HGB GGB + TGM .
+---  hhc = hgc ggc + HGC GGC + TGM .
+---  hhd = hgd ggd + HGD GGD + TGM .
+
+---  hhe = hge gge + HGE GGE + TGN .                 Bank 1
+---  hhf = hgf ggf + HGF GGF + TGN .
+---  hhg = hgg ggg + HGG GGG + TGN .
+---  hhh = hgh ggh + HGH GGH + TGN .
+
+---  hhi = hgi ggi + HGI GGI + TGO .                  Bank 2
+---  hhj = hgj ggj + HGJ GGJ + TGO .
+---  hhk = hgk ggk + HGK GGK + TGO .
+---  hhl = hgl ggl + HGL GGL + TGO .
+
+---  hhm = hgm ggm + HGM GGM + TGP .                  Bank 3
+---  hhn = hgn ggn + HGN GGN + TGP .
+---  hho = hgo ggo + HGO GGO + TGP .
+---  hhp = hgp ggp + HGP GGP + TGP .
+
+                        Vector 0
+
+---  JAA = laa .                        Length translations
+---  JAB = LAB LAA + lab laa .             
+---  JAC = LAC LAA + LAC KAC + lac kac laa .
+---  JAD = LAD LBA + LAD KAD + lad kad lba .
+---  JAE = LAE LBA + LAE KAE + lae kae lba .
+---  JAF = LAF LBA + LAF KAF + laf kaf lba .
+---  JAG = LAA lab lac lad lae laf .
+
+---  jah = qal + QAJ .
+---  jba = gaa qai .                     Bank pointer circulation
+---  JBB = PAB qai .                    
+---  JBC = PAC qai .
+---  JBD = PAD qai  .
+---  JBE = PAD qam .
+---  JBF = PAA qam .
+---  JBG = PAB qam .
+---  JBH = PAC qam .
+
+                     Vector 1
+
+---  JCA = lca .                          Length translations
+---  JCB = LCB LCA + lcb lca .               
+---  JCC = LCC LCA + LCC KCC + lcc kcc lca .
+---  JCD = LCD LDA + LCD KCD + lcd kcd lda .
+---  JCE = LCE LDA + LCE KCE + lce kce lda .
+---  JCF = LCF LDA + LCF KCF + lcf kcf lda .
+---  JCG = LCA lcb lcc lcd lce lcf .
+
+---  jch = qcl + QCJ .
+---  jda = gca qci  .                       Bank pointer circulation
+---  JDB = PCB qci  .                      
+---  JDC = PCC qci  .
+---  JDD = PCD qci  .
+---  JDE = PCD qcm .
+---  JDF = PCA qcm .
+---  JDG = PCB qcm .
+---  JDH = PCC qcm .
+
+                  Vector 2
+---  JEA = lea .                          Length translations
+---  JEB = LEB LEA + leb lea .               
+---  JEC = LEC LEA + LEC KEC + lec kec lea .
+---  JED = LED LFA + LED KED + led ked lfa .
+---  JEE = LEE LFA + LEE KEE + lee kee lfa .
+---  JEF = LEF LFA + LEF KEF + lef kef lfa .
+---  JEG = LEA leb lec led lee lef .
+
+---  jeh = qel + QEJ .
+---  jfa = gea qei  .                       Bank pointer circulation
+---  JFB = PEB qei  .                       
+---  JFC = PEC qei  .
+---  JFD = PED qei  .
+---  JFE = PED qem .
+---  JFF = PEA qem .
+---  JFG = PEB qem .
+---  JFH = PEC qem .
+
+                  Vector 3
+---  JGA = lga .                          Lenqth translations
+---  JGB = LGB LGA + lgb lga .               
+---  JGC = LGC LGA + LGC KGC + lgc kgc lga .
+---  JGD = LGD LHA + LGD KGD + lgd kgd lha .
+---  JGE = LGE LHA + LGE KGE + lge kge lha .
+---  JGF = LGF LHA + LGF KGF + lgf kgf lha .
+---  JGG = LGA lgb lgc lgd lge lgf .
+
+---  jgh = qgl + QGJ .
+---  jha = gga qgi  .                      Bank pointer circulation
+---  JHB = PGB qgi  .                       Vector 3
+---  JHC = PGC qgi  .
+---  JHD = PGD qgi  .
+---  JHE = PGD qgm .
+---  JHF = PGA qgm .
+---  JHG = PGB qgm .
+---  JHH = PGC qgm .
+
+---  KAC = LBB .                          Vector O
+---  KAD = LBB + LBC .
+---  KAE = LBB + LBC + LBD .
+---  KAF = LBB + LBC + LBD + LBE .
+
+---  KCC = LDB .                          Vector l
+---  KCD = LDB + LDC .
+---  KCE = LDB + LDC + LDD .
+---  KCF = LDB + LDC + LDD + LDE .
+
+---  KEC = LFB .                          Vector 2
+---  KED = LFB + LFC .
+---  KEE = LFB + LFC + LFD .
+---  KEF = LFB + LFC + LFD + LFE .
+
+---  KGC = LHB .                          Vector 3
+---  KGD = LHB + LHC .
+---  KGE = LHB + LHC + LHD .
+---  KGF = LHB + LHC + LHD + LHE .
+
+---  LAA = LAA TAI tab + IFA tai + JAA TAB .        VO Length register
+---  LAB = LAB TAI tab + IFB tai + JAB TAB .        2(O) - 2(5)
+---  LAC = LAC TAI tab + IFC tai + JAC TAB .
+---  LAD = LAD TAJ tad + IFD taj + JAD TAD .
+---  LAE = LAE TAJ tad + IFE taj + JAE TAD .
+---  LAF = LAF TAJ tad + IFF taj + JAF TAD .
+---  LBA = LAA TAI tab + IFA tai + JAA TAB .
+---  LBB = LAB TAI tab + IFB tai + JAB TAB .
+---  LBC = LAC TAI tab + IFC tai + JAC TAB .
+---  LBD = LAD TAJ tad + IFD taj + JAD TAD .
+---  LBE = LAE TAJ tad + IFE taj + JAE TAD .
+
+---  LCA = LCA TCI tcb + IFA tci + JCA TCB .        Vector 1
+---  LCB = LCB TCI tcb + IFB tci + JCB TCB .
+---  LCC = LCC TCI tcb + IFC tci + JCC TCB .
+---  LCD = LCD TCJ tcd + IFD tcj + JCD TCD .
+---  LCE = LCE TCJ tcd + IFE tcj + JCE TCD .
+---  LCF = LCF TCJ tcd + IFF tcj + JCF TCD .
+---  LDA = LCA TCI tcb + IFA tci + JCA TCB .
+---  LDB = LCB TCI tcb + IFB tci + JCB TCB .
+---  LDC = LCC TCI tcb + IFC tci + JCC TCB .
+---  LDD = LCD TCJ tcd + IFD tcj + JCD TCD .      .
+---  LDE = LCE TCJ tcd + IFE tcj + JCE TCD .
+
+---  LEA = LEA TEI teb + IFA tei + JEA TEB .        Vector 2
+---  LEB = LEB TEI teb + IFB tei + JEB TEB .
+---  LEC = LEC TEI teb + IFC tei + JEC TEB .
+---  LED = LED TEJ ted + IFD tej + JED TED .
+---  LEE = LEE TEJ ted + IFE tej + JEE TED .
+---  LEF = LEF TEJ ted + IFF tej + JEF TED .
+---  LFA = LEA TEI teb + IFA tei + JEA TEB .
+---  LFB = LEB TEI teb + IFB tei + JEB TEB .
+---  LFC = LEC TEI teb + IFC tei + JEC TEB .
+---  LFD = LED TEJ ted + IFD tej + JED TED .
+---  LFE = LEE TEJ ted + IFE tej + JEE TED .
+
+---  LGA = LGA TGI tgb + IFA tgi + JGA TGB .        Vector 3
+---  LGB = LGB TGI tgb + IFB tgi + JGB TGB .
+---  LGC = LGC TGI tgb + IFC tgi + JGC TGB .
+---  LGD = LGD TGJ tgd + IFD tgj + JGD TGD .
+---  LGE = LGE TGJ tgd + IFE tgj + JGE TGD .
+---  LGF = LGF TGJ tgd + IFF tgj + JGF TGD .
+---  LHA = LGA TGI tgb + IFA tgi + JGA TGB .
+---  LHB = LGB TGI tgb + IFB tgi + JGB TGB .
+---  LHC = LGC TGI tgb + IFC tgi + JGC TGB .
+---  LHD = LGD TGJ tgd + IFD tgj + JGD TGD .
+---  LHE = LGE TGJ tgd + IFE tgj + JGE TGD .
+
+                          Vector 0,4 
+
+---  OAA = EAQ .                          2(O)  Bank Select
+---  OAB = EAQ .
+---  OAC = EAQ .
+---  OAD = EAQ .
+---  OAE = EAQ .
+---  OAF = EAQ .
+---  OAG = EAQ .
+---  OAH = EAQ .
+
+---  OAI = EAR .                          2(1)  Bank Select
+---  OAJ = EAR .
+---  OAK = EAR .
+---  OAL = EAR .
+---  OAM = EAR .
+---  OAN = EAR .
+---  OAO = EAR .
+---  OAP = EAR .
+
+
+---  OBA = HBA EAA + HBE EAE + HBI EAI + HBM EAM .    2(2) Chip Address
+---  OBB = HBA EAA + HBE EAE + HBI EAI + HBM EAM .
+---  OBC = HBA EAA + HBE EAE + HBI EAI + HBM EAM .
+---  OBD = HBA EAA + HBE EAE + HBI EAI + HBM EAM .
+---  OBE = HBA EAA + HBE EAE + HBI EAI + HBM EAM .
+---  OBF = HBA EAA + HBE EAE + HBI EAI + HBM EAM .
+---  OBG = HBA EAA + HBE EAE + HBI EAI + HBM EAM .
+---  OBH = HBA EAA + HBE EAE + HBI EAI + HBM EAM .
+
+---  OBI = HBB EAB + HBF EAF + HBJ EAJ + HBN EAN .    2(3)  Chip Address
+---  OBJ = HBB EAB + HBF EAF + HBJ EAJ + HBN EAN .
+---  OBK = HBB EAB + HBF EAF + HBJ EAJ + HBN EAN .
+---  OBL = HBB EAB + HBF EAF + HBJ EAJ + HBN EAN .
+---  OBM = HBB EAB + HBF EAF + HBJ EAJ + HBN EAN .
+---  OBN = HBB EAB + HBF EAF + HBJ EAJ + HBN EAN .
+---  OBO = HBB EAB + HBF EAF + HBJ EAJ + HBN EAN .
+---  OBP = HBB EAB + HBF EAF + HBJ EAJ + HBN EAN .
+
+---  OCA = HBC EAC + HBG EAG + HBK EAK + HBO EAO .     2(4)
+---  OCB = HBC EAC + HBG EAG + HBK EAK + HBO EAO .
+---  OCC = HBC EAC + HBG EAG + HBK EAK + HBO EAO .
+---  OCD = HBC EAC + HBG EAG + HBK EAK + HBO EAO .
+---  OCE = HBC EAC + HBG EAG + HBK EAK + HBO EAO .
+---  OCF = HBC EAC + HBG EAG + HBK EAK + HBO EAO .
+---  OCG = HBC EAC + HBG EAG + HBK EAK + HBO EAO .
+---  OCH = HBC EAC + HBG EAG + HBK EAK + HBO EAO .
+
+---  OCI = HBD EAD + HBH EAH + HBL EAL + HBP EAP .     2(5)
+---  OCJ = HBD EAD + HBH EAH + HBL EAL + HBP EAP .
+---  OCK = HBD EAD + HBH EAH + HBL EAL + HBP EAP .
+---  OCL = HBD EAD + HBH EAH + HBL EAL + HBP EAP .
+---  OCM = HBD EAD + HBH EAH + HBL EAL + HBP EAP .
+---  OCN = HBD EAD + HBH EAH + HBL EAL + HBP EAP .
+---  OCO = HBD EAD + HBH EAH + HBL EAL + HBP EAP .
+---  OCP = HBD EAD + HBH EAH + HBL EAL + HBP EAP .
+
+---  ODA = QAK .                          V0 Write Mode
+---  ODB = QAK .
+---  ODC = QAK .
+---  ODD = QAK .
+---  ODE = QAK .
+---  ODF = QAK .
+---  ODG = QAK .
+---  ODH = QAK .
+
+---  ODI = TAE .                          VO Go vector step
+---  ODJ = TAE .
+---  ODK = TAE .
+---  ODL = TAE .
+---  ODM = TAE .
+---  ODN = TAE .
+---  ODO = TAE .
+---  ODP = TAE .
+
+                      Vector 1,5
+
+---  OEA = ECQ .                          2(O)  Bank Select
+---  OEB = ECQ .
+---  OEC = ECQ .
+---  OED = ECQ .
+---  OEE = ECQ .
+---  OEF = ECQ .
+---  OEG = ECQ .
+---  OEH = ECQ .
+
+---  OEI = ECR .                          2(l)  Bank Select
+---  OEJ = ECR .            
+---  OEK = ECR .
+---  OEL = ECR .
+---  OEM = ECR .
+---  OEN = ECR .
+---  OEO = ECR .
+---  OEP = ECR .
+
+              
+---  OFA = HDA ECA + HDE ECE + HDI ECI + HDM ECM .     2(2) Chip Address
+---  OFB = HDA ECA + HDE ECE + HDI ECI + HDM ECM .
+---  OFC = HDA ECA + HDE ECE + HDI ECI + HDM ECM .
+---  OFD = HDA ECA + HDE ECE + HDI ECI + HDM ECM .
+---  OFE = HDA ECA + HDE ECE + HDI ECI + HDM ECM .
+---  OFF = HDA ECA + HDE ECE + HDI ECI + HDM ECM .
+---  OFG = HDA ECA + HDE ECE + HDI ECI + HDM ECM .
+---  OFH = HDA ECA + HDE ECE + HDI ECI + HDM ECM .
+
+---  OFI = HDB ECB + HDF ECF + HDJ ECJ + HDN ECN .     2(3) Chip Addres
+---  OFJ = HDB ECB + HDF ECF + HDJ ECJ + HDN ECM .
+---  OFK = HDB ECB + HDF ECF + HDJ ECJ + HDN ECN .
+---  OFL = HDB ECB + HDF ECF + HDJ ECJ + HDN ECN .
+---  OFM = HDB ECB + HDF ECF + HDJ ECJ + HDN ECN .
+---  OFN = HDB ECB + HDF ECF + HDJ ECJ + HDN ECN .
+---  OFO = HDB ECB + HDF ECF + HDJ ECJ + HDN ECN .
+---  OFP = HDB ECB + HDF ECF + HDJ ECJ + HDN ECN .
+
+---  OGA = HDC ECC + HDG ECG + HDK ECK + HDO ECO .     2(4)
+---  OGB = HDC ECC + HDG ECG + HDK ECK + HDO ECO .
+---  OGC = HDC ECC + HDG ECG + HDK ECK + HDO ECO .
+---  OGD = HDC ECC + HDG ECG + HDK ECK + HDO ECO .
+---  OGE = HDC ECC + HDG ECG + HDK ECK + HDO ECO .
+---  OGF = HDC ECC + HDG ECG + HDK ECK + HDO ECO .
+---  OGG = HDC ECC + HDG ECG + HDK ECK + HDO ECO .
+---  OGH = HDC ECC + HDG ECG + HDK ECK + HDO ECO .
+
+---  OGI = HDD ECD + HDH ECH + HDL ECL + HDP ECP .     2(5)
+---  OGJ = HDD ECD + HDH ECH + HDL ECL + HDP ECP .
+---  OGK = HDD ECD + HDH ECH + HDL ECL + HDP ECP .
+---  OGL = HDD ECD + HDH ECH + HDL ECL + HDP ECP .
+---  OGM = HDD ECD + HDH ECH + HDL ECL + HDP ECP .
+---  OGN = HDD ECD + HDH ECH + HDL ECL + HDP ECP .
+---  OGO = HDD ECD + HDH ECH + HDL ECL + HDP ECP .
+---  OGP = HDD ECD + HDH ECH + HDL ECL + HDP ECP .
+
+---  OHA = QCK .                          V1 Write mode
+---  OHB = QCK .
+---  OHC = QCK .
+---  OHD = QCK .
+---  OHE = QCK .
+---  OHF = QCK .
+---  OHG = QCK .
+---  OHH = QCK .
+
+---  OHI = TCE .                          Vl Go vector step
+---  OHJ = TCE .
+---  OHK = TCE .
+---  OHL = TCE .
+---  OHM = TCE .
+---  OHN = TCE .
+---  OHO = TCE .
+---  OHP = TCE .
+
+                     Vector 2,6
+
+---  OIA = EEQ .                           Bank Select 2(0)
+---  OIB = EEQ .
+---  OIC = EEQ .
+---  OID = EEQ .
+---  OIE = EEQ .
+---  OIF = EEQ .
+---  OIG = EEQ .
+---  OIH = EEQ .
+
+---  OII = EER .                           Bank Select  2(1)
+---  OIJ = EER .
+---  OIK = EER .
+---  OIL = EER .
+---  OIM = EER .
+---  OIN = EER .
+---  OIO = EER .
+---  OIP = EER .
+
+---  OJA = HFA EEA + HFE EEE + HFI EEI + HFM EEM .     2(2) Chip Address
+---  OJB = HFA EEA + HFE EEE + HFI EEI + HFM EEM .
+---  OJC = HFA EEA + HFE EEE + HFI EEI + HFM EEM .
+---  OJD = HFA EEA + HFE EEE + HFI EEI + HFM EEM .
+---  OJE = HFA EEA + HFE EEE + HFI EEI + HFM EEM .
+---  OJF = HFA EEA + HFE EEE + HFI EEI + HFM EEM .
+---  OJG = HFA EEA + HFE EEE + HFI EEI + HFM EEM .
+---  OJH = HFA EEA + HFE EEE + HFI EEI + HFM EEM .
+
+---  OJI = HFB EEB + HFF EEF + HFJ EEJ + HFN EEN .     2(3)
+---  OJJ = HFB EEB + HFF EEF + HFJ EEJ + HFN EEN .
+---  OJK = HFB EEB + HFF EEF + HFJ EEJ + HFN EEN .
+---  OJL = HFB EEB + HFF EEF + HFJ EEJ + HFN EEN .
+---  OJM = HFB EEB + HFF EEF + HFJ EEJ + HFN EEN .
+---  OJN = HFB EEB + HFF EEF + HFJ EEJ + HFN EEN .
+---  OJO = HFB EEB + HFF EEF + HFJ EEJ + HFN EEN .
+---  OJP = HFB EEB + HFF EEF + HFJ EEJ + HFN EEN .
+
+---  OKA = HFC EEC + HFG EEG + HFK EEK + HFO EEO .     2(4)
+---  OKB = HFC EEC + HFG EEG + HFK EEK + HFO EEO .
+---  OKC = HFC EEC + HFG EEG + HFK EEK + HFO EEO .
+---  OKD = HFC EEC + HFG EEG + HFK EEK + HFO EEO .
+---  OKE = HFC EEC + HFG EEG + HFK EEK + HFO EEO .
+---  OKF = HFC EEC + HFG EEG + HFK EEK + HFO EEO .
+---  OKG = HFC EEC + HFG EEG + HFK EEK + HFO EEO .
+---  OKH = HFC EEC + HFG EEG + HFK EEK + HFO EEO .
+
+---  OKI = HFD EED + HFH EEH + HFL EEL + HFP EEP .     2(5)
+---  OKJ = HFD EED + HFH EEH + HFL EEL + HFP EEP .
+---  OKK = HFD EED + HFH EEH + HFL EEL + HFP EEP .
+---  OKL = HFD EED + HFH EEH + HFL EEL + HFP EEP .
+---  OKM = HFD EED + HFH EEH + HFL EEL + HFP EEP .
+---  OKN = HFD EED + HFH EEH + HFL EEL + HFP EEP .
+---  OKO = HFD EED + HFH EEH + HFL EEL + HFP EEP .
+---  OKP = HFD EED + HFH EEH + HFL EEL + HFP EEP .
+
+---  OLA = QEK .                           V2 Write mode
+---  OLB = QEK .
+---  OLC = QEK .
+---  OLD = QEK .
+---  OLE = QEK .
+---  OLF = QEK .
+---  OLG = QEK .
+---  OLH = QEK .
+
+---  OLI = TEE .                           V2 Go vector
+---  OLJ = TEE .
+---  OLK = TEE .
+---  OLL = TEE .
+---  OLM = TEE .
+---  OLN = TEE .
+---  OLO = TEE .
+---  OLP = TEE .
+
+              Vector 3, 7
+
+---  OMA = EGQ .                           Bank Select 2(O)
+---  OMB = EGQ .
+---  OMC = EGQ .
+---  OMD = EGQ .
+---  OME = EGQ .
+---  OMF = EGQ .
+---  OMG = EGQ .
+---  OMH = EGQ .
+
+---  OMI = EGR .                           Bank Select  2(1)
+---  OMJ = EGR .
+---  OMK = EGR .
+---  OML = EGR .                                 
+---  OMM = EGR .
+---  OMN = EGR .
+---  OMO = EGR .
+---  OMP = EGR .
+
+              -- Vector 3 ,7 controls
+
+---  ONA = HHA EGA + HHE EGE + HHI EGI + HHM EGM .     2(2) Chip Address
+---  ONB = HHA EGA + HHE EGE + HHI EGI + HHM EGM .
+---  ONC = HHA EGA + HHE EGE + HHI EGI + HHM EGM .
+---  OND = HHA EGA + HHE EGE + HHI EGI + HHM EGM .
+---  ONE = HHA EGA + HHE EGE + HHI EGI + HHM EGM .
+---  ONF = HHA EGA + HHE EGE + HHI EGI + HHM EGM .
+---  ONG = HHA EGA + HHE EGE + HHI EGI + HHM EGM .
+---  ONH = HHA EGA + HHE EGE + HHI EGI + HHM EGM .
+
+---  ONI = HHB EGB + HHF EGF + HHJ EGJ + HHN EGN .     2(3)
+---  ONJ = HHB EGB + HHF EGF + HHJ EGJ + HHN EGN .
+---  ONK = HHB EGB + HHF EGF + HHJ EGJ + HHN EGN .
+---  ONL = HHB EGB + HHF EGF + HHJ EGJ + HHN EGN .
+---  ONM = HHB EGB + HHF EGF + HHJ EGJ + HHN EGN .
+---  ONN = HHB EGB + HHF EGF + HHJ EGJ + HHN EGN .
+---  ONO = HHB EGB + HHF EGF + HHJ EGJ + HHN EGN .
+---  ONP = HHB EGB + HHF EGF + HHJ EGJ + HHN EGN .
+
+---  OOA = HHC EGC + HHG EGG + HHK EGK + HHO EGO .    2(4)
+---  OOB = HHC EGC + HHG EGG + HHK EGK + HHO EGO .
+---  OOC = HHC EGC + HHG EGG + HHK EGK + HHO EGO .
+---  OOD = HHC EGC + HHG EGG + HHK EGK + HHO EGO .
+---  OOE = HHC EGC + HHG EGG + HHK EGK + HHO EGO .
+---  OOF = HHC EGC + HHG EGG + HHK EGK + HHO EGO .
+---  OOG = HHC EGC + HHG EGG + HHK EGK + HHO EGO .
+---  OOH = HHC EGC + HHG EGG + HHK EGK + HHO EGO .
+
+---  OOI = HHD EGD + HHH EGH + HHL EGL + HHP EGP .    2(5)
+---  OOJ = HHD EGD + HHH EGH + HHL EGL + HHP EGP .
+---  OOK = HHD EGD + HHH EGH + HHL EGL + HHP EGP .
+---  OOL = HHD EGD + HHH EGH + HHL EGL + HHP EGP .
+---  OOM = HHD EGD + HHH EGH + HHL EGL + HHP EGP .
+---  OON = HHD EGD + HHH EGH + HHL EGL + HHP EGP .
+---  OOO = HHD EGD + HHH EGH + HHL EGL + HHP EGP .
+---  OOP = HHD EGD + HHH EGH + HHL EGL + HHP EGP .
+
+---  OPA = QGK .                          V3 Write Mode
+---  OPB = QGK .
+---  OPC = QGK .
+---  OPD = QGK .
+---  OPE = QGK .
+---  OPF = QGK .
+---  OPG = QGK .
+---  OPH = QGK .
+
+---  OPI = TGE .                          V3 Go vector
+---  OPJ = TGE .
+---  OPK = TGE .
+---  OPL = TGE .
+---  OPM = TGE .
+---  OPN = TGE .
+---  OPO = TGE .
+---  OPP = TGE .
+
+
+---  OQA = TAC JAG jah + QIA + JAH QNB .           Vector O release
+---  OQB = TCC JCG JCH + QIA + JCH QNB .           ''    1
+---  OQC = TEC JEG jeh + QIA + JEH QNB .           Vector 2 release
+---  OQD = TGC JGG jgh + QIA + JGH QNB .           ''    3
+
+---  PAA = JBA tak taa + ABA TAK + JBE TAA .  O      Vector O
+---  PAB = JBB tak taa + ABB TAK + JBF TAA .  1
+---  PAC = JBC tak taa + ABC TAK + JBG TAA .  2
+---  PAD = JBD tak taa + ABD TAK + JBH TAA .  3
+---  PBA = JBA tak taa + ABA TAK + JBE TAA .  O
+---  PBB = JBB tak taa + ABB TAK + JBF TAA .  1
+---  PBC = JBC tak taa + ABC TAK + JBG TAA .  2
+---  PBD = JBD tak taa + ABD TAK + JBH TAA .  3
+
+---  PCA = JDA tck tca + ABA TCK + JDE TCA .        Vector l
+---  PCB = JDB tck tca + ABB TCK + JDF TCA .
+---  PCC = JDC tck tca + ABC TCK + JDG TCA .
+---  PCD = JDD tck tca + ABD TCK + JDH TCA .
+---  PDA = JDA tck tca + ABA TCK + JDE TCA .
+---  PDB = JDB tck tca + ABB TCK + JDF TCA .
+---  PDC = JDC tck tca + ABC TCK + JDG TCA .
+---  PDD = JDD tck tca + ABD TCK + JDH TCA .
+
+---  PEA = JFA tek tea + ABA TEK + JFE TEA .        Vector 2
+---  PEB = JFB tek tea + ABB TEK + JFF TEA .
+---  PEC = JFC tek tea + ABC TEK + JFG TEA .
+---  PED = JFD tek tea + ABD TEK + JFH TEA .
+---  PFA = JFA tek tea + ABA TEK + JFE TEA .
+---  PFB = JFB tek tea + ABB TEK + JFF TEA .
+---  PFC = JFC tek tea + ABC TEK + JFG TEA .
+---  PFD = JFD tek tea + ABD TEK + JFH TEA .
+
+---  PGA = JHA tgk tga + ABA TGK + JHE TGA .        Vector 3
+---  PGB = JHB tgk tga + ABB TGK + JHF TGA .
+---  PGC = JHC tgk tga + ABC TGK + JHG TGA .
+---  PGD = JHD tgk tga + ABD TGK + JHH TGA .
+---  PHA = JHA tgk tga + ABA TGK + JHE TGA .
+---  PHB = JHB tgk tga + ABB TGK + JHF TGA .
+---  PHC = JHC tgk tga + ABC TGK + JHG TGA .
+---  PHD = JHD tgk tga + ABD TGK + JHH TGA .
+
+                      Vector 0
+
+---  qaa = iaa + iab + iba .                          Enable reference
+---  QAB = QAA qla + QAA jag + QAB qac + QAB jag .    Continue read
+---  QAC = ica icb + QAA QJA + QAD .                  Enable pointer
+---  QAD = QAA QJA + QAB QAD .
+---  qae = tac + paa .                                Increment Bank 0 add
+---  qaf = tac + pab .                                    "      "   1 "
+---  qag = tae + pac .                                    "      "   2 "
+---  qah = tae + pad .                                    "      "   3 "
+---  QAI = TAC JAG jah + QIA + JAH QNB .           Release Vector 0
+---  QAJ = QAJ qai + QAN QKB .                     Express write
+---  QAK = QKA IBA + QAK qai .                     Go write
+---  QAL = QAL jag jah + JAH qnb + IDA .           Write from memory
+---  QAM = AAA .
+---  qan = iba .                                   Go Vector 0
+---  QAP = QAJ + QNA .                             Enable write
+
+                        Vector 1
+
+---  qba = iaa + iab + iba .                       Begin read
+---  QBB = QAA qla + QAA jag + QAB qac + QAB jag . Continue read
+---  qca = iaa + iab + ibb .                       
+---  QCB = QCA qla + QCA jcg + QCB qcc + QCB jcg .
+---  QCC = ica icb + QCA QJA  + QCD .              Enable pointer
+---  QCD = QCA QJA + QCB QCD .
+---  qce = tcc + pca .                             Increment Bank 0 addr
+---  qcf = tcc + pcb .                                            1
+---  qcg = tce + pcc .                                            2
+---  qch = tce + pcd .                                            3
+---  QCI = TCC JCG JCH + QIA + JCH QNB .
+---  QCJ = QCJ gci + QCN QKB .
+---  QCK = QKA IBB + QCK gci  .                    Go Write
+---  QCL = QCL jcg jch + JCH qnb + IDB .           Write from memory
+---  QCM = AAB .
+---  qcn = ibb .                                    Go Vector 1
+---  QCP = QCJ + QNA .                              Enable write
+
+                          Vector 2
+
+---  qda = iaa + iab + ibb .                        Begin read
+---  QDB = QCA qla + QCA jcg + QCB qcc + QCB jcg .  Continue read
+---  qea = iaa + iab + ibc .
+---  QEB = QEA qla + QEA jeg + QEB qec + QEB jeg .
+---  QEC = ica icb + QEA QJA + QED .                Enable pointer
+---  QED = QEA QJA + QEB QED .      
+---  qee = tec + pea .                              Increment Bank 0 addr
+---  qef = tec + peb .                                             1
+---  qeg = tee + pec .                                             2
+---  qeh = tee + ped .                                             3
+---  QEI = TEC JEG jeh + QIA + JEH QNB .
+---  QEJ = QEJ qei + QEN QKB .        
+---  QEK = QEK qei + *** + QKA IBC .                 Go Write
+---  QEL = QEL jeg jeh + JEH qnb + IDC .             Write from memory
+---  QEM = AAC .
+---  qen = ibc .                                       Go Vector 2
+---  QEP = QEJ + QNA .                                 Enable write
+
+                          Vector 3
+
+---  qfa = iaa + iab + ibc .
+---  QFB = QEA qla + QEA jeg + QEB qec + QEB jeg .
+---  qga = iaa + iab + ibd .
+---  QGB = QGA qla + QGA jgg + QGB qgc + QGB jgg .
+---  QGC = ica icb + QGA QJA + QGD .
+---  QGD = QGA QJA + QGB QGD .
+---  qge = tgc + pga .                                Increment Bank 0 addr
+---  qgf = tgc + pgb .                                               1
+---  qgg = tge + pgc .                                               2
+---  qgh = tge + pgd .                                               3
+---  QGI = TGC JGG jgh + QIA + JGH QNB .
+---  QGJ = QGJ qgi + QGN QKB .
+---  QGK = QKA IBD + QGK qgi .
+---  QGL = QGL jgg jgh + JGH qnb + IDD .
+---  QGM = AAD .
+---  qgn = ibd .                                      Go Vector 3
+---  QGP = QGJ + QNA .                                Enable write
+
+---  qha = iaa + iab + ibd .
+---  QHB = QGA qla + QGA jgg + QGB qgc + QGB jgg .
+
+---  QIA = IGA .                           Dead start
+---  qja = ibe .                           Local read enable
+---  QKA = IAA IAB .                       Go issue
+---  qkb = qka + ibe .                     Express read
+---  qla = ICA ibe + ICB ibe .             Enable read
+---  qlb = ICA ibe + ICB ibe .
+
+---  QNA = IHA .                           Enable iota
+---  QNB = IHB + QIA .                     Release iota
+
+                          Vector 0
+
+---  TAA = QBA QLA + QBB QAC + QAL QAP + QAM .       
+---  TAB = QBA QLA + QBB QAC + QAL QAP + QAM .
+---  TAC = QBA QLA + QBB QAC + QAL QAP + QAM .
+---  TAD = QBA QLA + QBB QAC + QAL QAP + QAM .
+---  TAE = QBA QLA + QBB QAC + QAL QAP + QAM .
+---  tai = qaa qab qak .
+---  taj = qaa qab qak .
+---  TAK = AAA .
+---  TAM = QAI .                           Clear H terms
+---  TAN = QAI .
+---  TAO = QAI .
+---  TAP = QAI .
+
+                             Vector 1
+
+---  TCA = QDA QLA + QDB QCC + QCL QCP + QCM .      
+---  TCB = QDA QLA + QDB QCC + QCL QCP + QCM .
+---  TCC = QDA QLA + QDB QCC + QCL QCP + QCM .
+---  TCD = QDA QLA + QDB QCC + QCL QCP + QCM .
+---  TCE = QDA QLA + QDB QCC + QCL QCP + QCM .
+---  tci = qca qcb qck .
+---  tcj = qca qcb qck .
+---  TCK = AAB .
+---  TCM = QCI .                           Clear H terms
+---  TCN = QCI .
+---  TCO = QCI .
+---  TCP = QCI .
+
+                               Vector 2
+
+---  TEA = QFA QLB + QFB QEC + QEL QEP + QEM .       
+---  TEB = QFA QLB + QFB QEC + QEL QEP + QEM .
+---  TEC = QFA QLB + QFB QEC + QEL QEP + QEM .
+---  TED = QFA QLB + QFB QEC + QEL QEP + QEM .
+---  TEE = QFA QLB + QFB QEC + QEL QEP + QEM .
+---  tei = qea qeb qek .
+---  tej = qea qeb qek .
+---  TEK = AAC .
+---  TEM = QEI .                           Clear H terms
+---  TEN = QEI .
+---  TEO = QEI .
+---  TEP = QEI .
+
+                                 Vector 3
+
+---  TGA = QHA QLB + QHB QGC + QGL QGP + QGM .      
+---  TGB = QHA QLB + QHB QGC + QGL QGP + QGM .
+---  TGC = QHA QLB + QHB QGC + QGL QGP + QGM .
+---  TGD = QHA QLB + QHB QGC + QGL QGP + QGM .
+---  TGE = QHA QLB + QHB QGC + QGL QGP + QGM .
+---  tgi = qga qgb qgk .
+---  tgj = qga qgb qgk .
+---  TGK = AAD .
+---  TGM = QGI .                           Clear H terms
+---  TGN = QGI .
+---  TGO = QGI .
+---  TGP = QGI .
+

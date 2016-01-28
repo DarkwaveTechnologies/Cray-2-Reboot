@@ -1,0 +1,366 @@
+*
+* Connector Definitions
+* Module: IE
+* Description: Instruction Buffers
+* Revision:
+* Date: 52186001.0000 - 12.01.87
+*  
+ZAA ZAB - OAA .
+ZAC ZAD - IFE .
+ZAE ZAF - *** .
+ZAG ZAH - IEH .
+
+ZAI ZAJ - IAA .
+ZAK ZAL - IAI .
+ZAM ZAN - OAI .
+ZAO ZAP - OKJ .
+
+ZAQ ZAR - *** .
+ZAS ZAT - *** .
+ZAU ZAV - OBA .
+ZAW ZAX - OBI .
+
+ZBA ZBB - IBA .
+ZBC ZBD - IBI .
+ZBE ZBF - OEA .
+ZBG ZBH - OEI .
+
+ZBI ZBJ - OFA .
+ZBK ZBL - OFI .
+ZBM ZBN - OGA .
+ZBO ZBP - OGI .
+
+ZBQ ZBR - OHA .
+ZBS ZBT - OHI .
+ZBU ZBV - ICA .
+ZBW ZBX - ICI .
+
+ZCA ZCB - OCA .
+ZCC ZCD - OCI .
+ZCE ZCF - OKB .
+ZCG ZCH - *** .
+
+ZCI ZCJ - *** .
+ZCK ZCL - IGA .
+ZCM ZCN - IGB .
+ZCO ZCP - IGC .
+
+ZCQ ZCR - IDA .
+ZCS ZCT - IDI .
+ZCU ZCV - ODA .
+ZCW ZCX - ODI .
+
+ZDA ZDB - OAB .
+ZDC ZDD - IEE .
+ZDE ZDF - IEF .
+ZDG ZDH - IEG .
+
+ZDI ZDJ - IAB .
+ZDK ZDL - IAJ .
+ZDM ZDN - OAJ .
+ZDO ZDP - *** .
+
+ZDQ ZDR - *** .
+ZDS ZDT - *** .
+ZDU ZDV - OBB .
+ZDW ZDX - OBJ .
+
+ZEA ZEB - IBB .
+ZEC ZED - IBJ .
+ZEE ZEF - OEB .
+ZEG ZEH - OEJ .
+
+ZEI ZEJ - OFB .
+ZEK ZEL - OFJ .
+ZEM ZEN - OGB .
+ZEO ZEP - OGJ .
+
+ZEQ ZER - OHB .
+ZES ZET - OHJ .
+ZEU ZEV - ICB .
+ZEW ZEX - ICJ .
+
+ZFA ZFB - OCB .
+ZFC ZFD - OCJ .
+ZFE ZFF - OKC .
+ZFG ZFH - *** .
+
+ZFI ZFJ - OKK .
+ZFK ZFL - OKL .
+ZFM ZFN - OKM .
+ZFO ZFP - OKN .
+
+ZFQ ZFR - IDB .
+ZFS ZFT - IDJ .
+ZFU ZFV - ODB .
+ZFW ZFX - ODJ .
+
+ZGA ZGB - OAC .
+ZGC ZGD - *** .
+ZGE ZGF - *** .
+ZGG ZGH - *** .
+
+ZGI ZGJ - IAC .
+ZGK ZGL - IAK .
+ZGM ZGN - OAK .
+ZGO ZGP - *** .
+
+ZGQ ZGR - *** .
+ZGS ZGT - *** .
+ZGU ZGV - OBC .
+ZGW ZGX - OBK .
+
+ZHA ZHB - IBC .
+ZHC ZHD - IBK .
+ZHE ZHF - OEC .
+ZHG ZHH - OEK .
+
+ZHI ZHJ - OFC .
+ZHK ZHL - OFK .
+ZHM ZHN - OGC .
+ZHO ZHP - OGK .
+
+ZHQ ZHR - OHC .
+ZHS ZHT - OHK .
+ZHU ZHV - ICC .
+ZHW ZHX - ICK .
+
+ZIA ZIB - OCC .
+ZIC ZID - OCK .
+ZIE ZIF - *** .
+ZIG ZIH - *** .
+
+ZII ZIJ - OJF .
+ZIK ZIL - OKO .
+ZIM ZIN - OKP .
+ZIO ZIP - OKQ .
+
+ZIQ ZIR - IDC .
+ZIS ZIT - IDK .
+ZIU ZIV - ODC .
+ZIW ZIX - ODK .
+
+ZJA ZJB - OAD .
+ZJC ZJD - *** .
+ZJE ZJF - *** .
+ZJG ZJH - *** .
+
+ZJI ZJJ - IAD .
+ZJK ZJL - IAL .
+ZJM ZJN - OAL .
+ZJO ZJP - *** .
+
+ZJQ ZJR - *** .
+ZJS ZJT - IZZ .
+ZJU ZJV - OBD .
+ZJW ZJX - OBL .
+
+ZKA ZKB - IBD .
+ZKC ZKD - IBL .
+ZKE ZKF - OED .
+ZKG ZKH - OEL .
+
+ZKI ZKJ - OFD .
+ZKK ZKL - OFL .
+ZKM ZKN - OGD .
+ZKO ZKP - OGL .
+
+ZKQ ZKR - OHD .
+ZKS ZKT - OHL .
+ZKU ZKV - ICD .
+ZKW ZKX - ICL .
+
+ZLA ZLB - OCD .
+ZLC ZLD - OCL .
+ZLE ZLF - *** .
+ZLG ZLH - *** .
+
+ZLI ZLJ - *** .
+ZLK ZLL - OKR .
+ZLM ZLN - OKS .
+ZLO ZLP - OKT .
+
+ZLQ ZLR - IDD .
+ZLS ZLT - IDL .
+ZLU ZLV - ODD .
+ZLW ZLX - ODL .
+
+ZMA ZMB - OAE .
+ZMC ZMD - *** .
+ZME ZMF - *** .
+ZMG ZMH - *** .
+
+ZMI ZMJ - IAE .
+ZMK ZML - IAM .
+ZMM ZMN - OAM .
+ZMO ZMP - *** .
+
+ZMQ ZMR - *** .
+ZMS ZMT - *** .
+ZMU ZMV - OBE .
+ZMW ZMX - OBM .
+
+ZNA ZNB - IBE .
+ZNC ZND - IBM .
+ZNE ZNF - OEE .
+ZNG ZNH - OEM .
+
+ZNI ZNJ - OFE .
+ZNK ZNL - OFM .
+ZNM ZNN - OGE .
+ZNO ZNP - OGM .
+
+ZNQ ZNR - OHE .
+ZNS ZNT - OHM .
+ZNU ZNV - ICE .
+ZNW ZNX - ICM .
+
+ZOA ZOB - OCE .
+ZOC ZOD - OCM .
+ZOE ZOF - *** .
+ZOG ZOH - IFA .
+
+ZOI ZOJ - IFB .
+ZOK ZOL - IFC .
+ZOM ZON - IFD .
+ZOO ZOP - *** .
+
+ZOQ ZOR - IDE .
+ZOS ZOT - IDM .
+ZOU ZOV - ODE .
+ZOW ZOX - ODM .
+
+ZPA ZPB - OAF .
+ZPC ZPD - *** .
+ZPE ZPF - IEJ .
+ZPG ZPH - IEI .
+
+ZPI ZPJ - IAF .
+ZPK ZPL - IAN .
+ZPM ZPN - OAN .
+ZPO ZPP - OKI .
+
+ZPQ ZPR - *** .
+ZPS ZPT - OKH .
+ZPU ZPV - OBF .
+ZPW ZPX - OBN .
+
+ZQA ZQB - IBF .
+ZQC ZQD - IBN .
+ZQE ZQF - OEF .
+ZQG ZQH - OEN .
+
+ZQI ZQJ - OFF .
+ZQK ZQL - OFN .
+ZQM ZQN - OGF .
+ZQO ZQP - OGN .
+
+ZQQ ZQR - OHF .
+ZQS ZQT - OHN .
+ZQU ZQV - ICF .
+ZQW ZQX - ICN .
+
+ZRA ZRB - OCF .
+ZRC ZRD - OCN .
+ZRE ZRF - IHB .
+ZRG ZRH - *** .
+
+ZRI ZRJ - IJD .
+ZRK ZRL - IJE .
+ZRM ZRN - OKA .
+ZRO ZRP - *** .
+
+ZRQ ZRR - IDF .
+ZRS ZRT - IDN .
+ZRU ZRV - ODF .
+ZRW ZRX - ODN .
+
+ZSA ZSB - OAG .
+ZSC ZSD - *** .
+ZSE ZSF - IJG .
+ZSG ZSH - IED .
+
+ZSI ZSJ - IAG .
+ZSK ZSL - IAO .
+ZSM ZSN - OAO .
+ZSO ZSP - *** .
+
+ZSQ ZSR - OKG .
+ZSS ZST - *** .
+ZSU ZSV - OBG .
+ZSW ZSX - OBO .
+
+ZTA ZTB - IBG .
+ZTC ZTD - IBO .
+ZTE ZTF - OEG .
+ZTG ZTH - OEO .
+
+ZTI ZTJ - OFG .
+ZTK ZTL - OFO .
+ZTM ZTN - OGG .
+ZTO ZTP - OGO .
+
+ZTQ ZTR - OHG .
+ZTS ZTT - OHO .
+ZTU ZTV - ICG .
+ZTW ZTX - ICO .
+
+ZUA ZUB - OCG .
+ZUC ZUD - OCO .
+ZUE ZUF - OJA .
+ZUG ZUH - IJB .
+
+ZUI ZUJ - IJF .
+ZUK ZUL - OJD .
+ZUM ZUN - *** .
+ZUO ZUP - OJB .
+
+ZUQ ZUR - IDG .
+ZUS ZUT - IDO .
+ZUU ZUV - ODG .
+ZUW ZUX - ODO .
+
+ZVA ZVB - OAH .
+ZVC ZVD - IEB .
+ZVE ZVF - IEA .
+ZVG ZVH - IEC .
+
+ZVI ZVJ - IAH .
+ZVK ZVL - IAP .
+ZVM ZVN - OAP .
+ZVO ZVP - OKU .
+
+ZVQ ZVR - OKV .
+ZVS ZVT - *** .
+ZVU ZVV - OBH .
+ZVW ZVX - OBP .
+
+ZWA ZWB - IBH .
+ZWC ZWD - IBP .
+ZWE ZWF - OEH .
+ZWG ZWH - OEP .
+
+ZWI ZWJ - OFH .
+ZWK ZWL - OFP .
+ZWM ZWN - OGH .
+ZWO ZWP - OGP .
+
+ZWQ ZWR - OHH .
+ZWS ZWT - OHP .
+ZWU ZWV - ICH .
+ZWW ZWX - ICP .
+
+ZXA ZXB - OCH .
+ZXC ZXD - OCP .
+ZXE ZXF - IJA .
+ZXG ZXH - IHA .
+
+ZXI ZXJ - *** .
+ZXK ZXL - *** .
+ZXM ZXN - OKW .
+ZXO ZXP - OKX .
+
+ZXQ ZXR - IDH .
+ZXS ZXT - IDP .
+ZXU ZXV - ODH .
+ZXW ZXX - ODP .

@@ -6,9 +6,14 @@ Resources permitting, a small IC run using MOSIS or CMP will be would be the str
 
 This project will be made of a number of phases:
 
-1) Conversion of module logic to working Verilog code 
+1) Conversion of module logic to working Verilog code
+
 2) Cleanup of Verilog code
-2) Interconnecting all the Verilog together into a functional machine 
-3) Software emulation of the Verilog code for verification 
-4) Recovery and/or creation of basic OS & C compiler for the system (c complier will likely be a translated version of TCC) 
-5) Testing on FPGAs
+
+3) Interconnecting all the Verilog together into a functional machine 
+
+4) Software emulation of the Verilog code for verification 
+
+5) Recovery and/or creation of basic OS & C compiler for the system (c complier will likely be a translated version of TCC) 
+
+6) Testing on FPGAs

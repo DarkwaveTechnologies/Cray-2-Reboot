@@ -24,8 +24,8 @@ IF		Instruction buffers
 JA 		Main issue module
 JB 		Main issue module (CPU issue logic that could not fit on JA)
 JC 		Main issue module - Each JC controls 4 VR modules 
-		 (Each VR is a 8 bits of the Vector registers, S registers and some of the vector and 
-		  Scalar logical operations. There are 2 JC modules.)
+		 (Each VR is a 8 bits of the vector registers, S registers and some of the vector and 
+		  scalar logical operations. There are 2 JC modules.)
 KA		Foreground CPU
 KB		Foreground CPU
 KC 	 	Foreground CPU

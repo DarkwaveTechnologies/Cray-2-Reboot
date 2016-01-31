@@ -1,8 +1,7 @@
 # Cray-2-Reboot
 Welcome to the Readme file for the Cray-2 Reboot project!
 
-The goal of this project is to make a gate equivalent recreation of a Cray-2 supercomputer that will run on an FPGA board.
-Resources permitting, a small IC run using MOSIS or CMP will be would be the stretch goal for the project.
+The goal of this project is to make a clock and gate equivalent recreation of a Cray Research Cray-2 supercomputer that will run on an FPGA board. Resources permitting, a small IC run using MOSIS or CMP will be the stretch goal for the project.
 
 This project will be made of a number of phases:
 

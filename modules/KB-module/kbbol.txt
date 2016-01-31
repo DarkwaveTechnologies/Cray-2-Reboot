@@ -1,0 +1,1266 @@
+*
+* Boolean Definitions
+* Module: KB
+* Description: Foreground CPU
+* Revision: 
+* Date: 
+*
+---  AAA = AAA taa + IEA TAA .          32 Data inputs from KC
+---  AAB = AAB taa + IEB TAA .
+---  AAC = AAC taa + IEC TAA .          This copy used in:
+---  AAD = AAD taa + IED TAA .
+---  AAE = AAE taa + IEE TAA .          Channel communication, computed 
+---  AAF = AAF taa + IEF TAA .          addr formation
+---  AAG = AAG taa + IEG TAA .
+---  AAH = AAH taa + IEH TAA .
+---  AAI = AAI tab + IEI TAB .
+---  AAJ = AAJ tab + IEJ TAB .
+---  AAK = AAK tab + IEK TAB .
+---  AAL = AAL tab + IEL TAB .
+---  AAM = AAM tab + IEM TAB .
+---  AAN = AAN tab + IEN TAB .
+---  AAO = AAO tab + IEO TAB .
+---  AAP = AAP tab + IEP TAB .
+
+---  ABA = ABA tac + IFA TAC .
+---  ABB = ABB tac + IFB TAC .
+---  ABC = ABC tac + IFC TAC .
+---  ABD = ABD tac + IFD TAC .
+---  ABE = ABE tac + IFE TAC .
+---  ABF = ABF tac + IFF TAC .
+---  ABG = ABG tac + IFG TAC .
+---  ABH = ABH tac + IFH TAC .
+---  ABI = ABI tad + IFI TAD .
+---  ABJ = ABJ tad + IFJ TAD .
+---  ABK = ABK tad + IFK TAD .
+---  ABL = ABL tad + IFL TAD .
+---  ABM = ABM tad + IFM TAD .
+---  ABN = ABN tad + IFN TAD .
+---  ABO = ABO tad + IFO TAD .
+---  ABP = ABP tad + IFP TAD .
+
+---  ACA = AAA taa + IEA TAA .    32 Data inputs from KC
+---  ACB = AAB taa + IEB TAA .
+---  ACC = AAC taa + IEC TAA .    This copy used as:
+---  ACD = AAD taa + IED TAA .
+---  ACE = AAE taa + IEE TAA .    Data path to memory
+---  ACF = AAF taa + IEF TAA .
+---  ACG = AAG taa + IEG TAA .
+---  ACH = AAH taa + IEH TAA .
+---  ACI = AAI tab + IEI TAB .
+---  ACJ = AAJ tab + IEJ TAB .
+---  ACK = AAK tab + IEK TAB .
+---  ACL = AAL tab + IEL TAB .
+---  ACM = AAM tab + IEM TAB .
+---  ACN = AAN tab + IEN TAB .
+---  ACO = AAO tab + IEO TAB .
+---  ACP = AAP tab + IEP TAB .
+
+---  ADA = ABA tac + IFA TAC .
+---  ADB = ABB tac + IFB TAC .
+---  ADC = ABC tac + IFC TAC .
+---  ADD = ABD tac + IFD TAC .
+---  ADE = ABE tac + IFE TAC .
+---  ADF = ABF tac + IFF TAC .
+---  ADG = ABG tac + IFG TAC .
+---  ADH = ABH tac + IFH TAC .
+---  ADI = ABI tad + IFI TAD .
+---  ADJ = ABJ tad + IFJ TAD .
+---  ADK = ABK tad + IFK TAD .
+---  ADL = ABL tad + IFL TAD .
+---  ADM = ABM tad + IFM TAD .
+---  ADN = ABN tad + IFN TAD .
+---  ADO = ABO tad + IFO TAD .
+---  ADP = ABP tad + IFP TAD .
+
+---  AEA = AAA taa + IEA TAA .   32 Inputs from KC 
+---  AEB = AAB taa + IEB TAA .   This copy used in: Parity generation
+---  AEC = AAC taa + IEC TAA .
+---  AED = AAD taa + IED TAA .
+---  AEE = AAE taa + IEE TAA .
+---  AEF = AAF taa + IEF TAA .
+---  AEG = AAG taa + IEG TAA .
+---  AEH = AAH taa + IEH TAA .
+---  AEI = AAI tab + IEI TAB .
+---  AEJ = AAJ tab + IEJ TAB .
+---  AEK = AAK tab + IEK TAB .
+---  AEL = AAL tab + IEL TAB .
+---  AEM = AAM tab + IEM TAB .
+---  AEN = AAN tab + IEN TAB .
+---  AEO = AAO tab + IEO TAB .
+---  AEP = AAP tab + IEP TAB .
+
+
+---  AFA = ABA tac + IFA TAC .
+---  AFB = ABB tac + IFB TAC .
+---  AFC = ABC tac + IFC TAC .
+---  AFD = ABD tac + IFD TAC .
+---  AFE = ABE tac + IFE TAC .
+---  AFF = ABF tac + IFF TAC .
+---  AFG = ABG tac + IFG TAC .
+---  AFH = ABH tac + IFH TAC .
+---  AFI = ABI tad + IFI TAD .
+---  AFJ = ABJ tad + IFJ TAD .
+---  AFK = ABK tad + IFK TAD .
+---  AFL = ABL tad + IFL TAD .
+---  AFM = ABM tad + IFM TAD .
+---  AFN = ABN tad + IFN TAD .
+---  AFO = ABO tad + IFO TAD .
+---  AFP = ABP tad + IFP TAD .
+
+
+?
+---  BAA = BAA tba + CAA TBA .     Channel 0 Response Reg
+---  BAB = BAB tba + CAB TBA .  
+---  BAC = BAC tba + CAC TBA .     Data from Ch 0 to KC
+---  BAD = BAD tba + CAD TBA .
+---  BAE = BAE tba + CAE TBA .
+---  BAF = BAF tba + CAF TBA .
+---  BAG = BAG tba + CAG TBA .
+---  BAH = BAH tba + CAH TBA .
+---  BAI = BAI tba + CAI TBA .
+---  BAJ = BAJ tba + CAJ TBA .
+---  BAK = BAK tba + CAK TBA .
+---  BAL = BAL tba + CAL TBA .
+---  BAM = BAM tba + CAM TBA .
+---  BAN = BAN tba + CAN TBA .
+---  BAO = BAO tba + CAO TBA .
+---  BAP = BAP tba + CAP TBA .
+   
+---  BBA = BBA tbb + CAA TBB . 
+---  BBB = BBB tbb + CAB TBB . 
+---  BBC = BBC tbb + CAC TBB .
+---  BBD = BBD tbb + CAD TBB .
+---  BBE = BBE tbb + CAE TBB .
+---  BBF = BBF tbb + CAF TBB .
+---  BBG = BBG tbb + CAG TBB .
+---  BBH = BBH tbb + CAH TBB .
+---  BBI = BBI tbb + CAI TBB .
+---  BBJ = BBJ tbb + CAJ TBB .
+---  BBK = BBK tbb + CAK TBB .
+---  BBL = BBL tbb + CAL TBB .
+---  BBM = BBM tbb + CAM TBB .
+---  BBN = BBN tbb + CAN TBB .
+---  BBO = BBO tbb + CAO TBB .
+---  BBP = BBP tbb + CAP TBB .
+  
+  
+---  BCA = BCA tbc + CBA TBC .   Channel 1 response reg
+---  BCB = BCB tbc + CBB TBC .
+---  BCC = BCC tbc + CBC TBC .   Data from Ch 1 to KC
+---  BCD = BCD tbc + CBD TBC .
+---  BCE = BCE tbc + CBE TBC .
+---  BCF = BCF tbc + CBF TBC .
+---  BCG = BCG tbc + CBG TBC .
+---  BCH = BCH tbc + CBH TBC .
+---  BCI = BCI tbc + CBI TBC .
+---  BCJ = BCJ tbc + CBJ TBC .
+---  BCK = BCK tbc + CBK TBC .
+---  BCL = BCL tbc + CBL TBC .
+---  BCM = BCM tbc + CBM TBC .
+---  BCN = BCN tbc + CBN TBC .
+---  BCO = BCO tbc + CBO TBC .
+---  BCP = BCP tbc + CBP TBC .
+
+
+?
+---  BDA = BDA tbd + CBA TBD .    
+---  BDB = BDB tbd + CBB TBD .  
+---  BDC = BDC tbd + CBC TBD .    
+---  BDD = BDD tbd + CBD TBD .
+---  BDE = BDE tbd + CBE TBD .
+---  BDF = BDF tbd + CBF TBD .
+---  BDG = BDG tbd + CBG TBD .
+---  BDH = BDH tbd + CBH TBD .
+---  BDI = BDI tbd + CBI TBD .
+---  BDJ = BDJ tbd + CBJ TBD .
+---  BDK = BDK tbd + CBK TBD .
+---  BDL = BDL tbd + CBL TBD .
+---  BDM = BDM tbd + CBM TBD .
+---  BDN = BDN tbd + CBN TBD .
+---  BDO = BDO tbd + CBO TBD .
+---  BDP = BDP tbd + CBP TBD .
+   
+---  BEA = BEA tbe + CCA TBE .    Channel 2 response reg
+---  BEB = BEB tbe + CCB TBE . 
+---  BEC = BEC tbe + CCC TBE .    Data from Ch 2 to KC
+---  BED = BED tbe + CCD TBE .
+---  BEE = BEE tbe + CCE TBE .
+---  BEF = BEF tbe + CCF TBE .
+---  BEG = BEG tbe + CCG TBE .
+---  BEH = BEH tbe + CCH TBE .
+---  BEI = BEI tbe + CCI TBE .
+---  BEJ = BEJ tbe + CCJ TBE .
+---  BEK = BEK tbe + CCK TBE .
+---  BEL = BEL tbe + CCL TBE .
+---  BEM = BEM tbe + CCM TBE .
+---  BEN = BEN tbe + CCN TBE .
+---  BEO = BEO tbe + CCO TBE .
+---  BEP = BEP tbe + CCP TBE .
+  
+  
+---  BFA = BFA tbf + CCA TBF .
+---  BFB = BFB tbf + CCB TBF .
+---  BFC = BFC tbf + CCC TBF .
+---  BFD = BFD tbf + CCD TBF .
+---  BFE = BFE tbf + CCE TBF .
+---  BFF = BFF tbf + CCF TBF .
+---  BFG = BFG tbf + CCG TBF .
+---  BFH = BFH tbf + CCH TBF .
+---  BFI = BFI tbf + CCI TBF .
+---  BFJ = BFJ tbf + CCJ TBF .
+---  BFK = BFK tbf + CCK TBF .
+---  BFL = BFL tbf + CCL TBF .
+---  BFM = BFM tbf + CCM TBF .
+---  BFN = BFN tbf + CCN TBF .
+---  BFO = BFO tbf + CCO TBF .
+---  BFP = BFP tbf + CCP TBF .
+
+
+?
+---  BGA = BGA tbg + CDA TBG .    Channel 3 response reg 
+---  BGB = BGB tbg + CDB TBG .  
+---  BGC = BGC tbg + CDC TBG .    Data from Ch 3 to KC
+---  BGD = BGD tbg + CDD TBG .
+---  BGE = BGE tbg + CDE TBG .
+---  BGF = BGF tbg + CDF TBG .
+---  BGG = BGG tbg + CDG TBG .
+---  BGH = BGH tbg + CDH TBG .
+---  BGI = BGI tbg + CDI TBG .
+---  BGJ = BGJ tbg + CDJ TBG .
+---  BGK = BGK tbg + CDK TBG .
+---  BGL = BGL tbg + CDL TBG .
+---  BGM = BGM tbg + CDM TBG .
+---  BGN = BGN tbg + CDN TBG .
+---  BGO = BGO tbg + CDO TBG .
+---  BGP = BGP tbg + CDP TBG .
+   
+---  BHA = BHA tbh + CDA TBH .    
+---  BHB = BHB tbh + CDB TBH . 
+---  BHC = BHC tbh + CDC TBH .    
+---  BHD = BHD tbh + CDD TBH .
+---  BHE = BHE tbh + CDE TBH .
+---  BHF = BHF tbh + CDF TBH .
+---  BHG = BHG tbh + CDG TBH .
+---  BHH = BHH tbh + CDH TBH .
+---  BHI = BHI tbh + CDI TBH .
+---  BHJ = BHJ tbh + CDJ TBH .
+---  BHK = BHK tbh + CDK TBH .
+---  BHL = BHL tbh + CDL TBH .
+---  BHM = BHM tbh + CDM TBH .
+---  BHN = BHN tbh + CDN TBH .
+---  BHO = BHO tbh + CDO TBH .
+---  BHP = BHP tbh + CDP TBH .
+  
+---  CAA = IAA TCA + ABA TCC + AAA TCE .   Channel 0 data relay
+---  CAB = IAB TCA + ABB TCC + AAB TCE .
+---  CAC = IAC TCA + ABC TCC + AAC TCE .   Used during Ch 0 calls + response
+---  CAD = IAD TCA + ABD TCC + AAD TCE .
+---  CAE = IAE TCA + ABE TCC + AAE TCE .
+---  CAF = IAF TCA + ABF TCC + AAF TCE .
+---  CAG = IAG TCA + ABG TCC + AAG TCE .
+---  CAH = IAH TCA + ABH TCC + AAH TCE .
+
+---  CAI = IAI TCB + ABI TCD + AAI TCF .
+---  CAJ = IAJ TCB + ABJ TCD + AAJ TCF .
+---  CAK = IAK TCB + ABK TCD + AAK TCF .
+---  CAL = IAL TCB + ABL TCD + AAL TCF .
+---  CAM = IAM TCB + ABM TCD + AAM TCF .
+---  CAN = IAN TCB + ABN TCD + AAN TCF .
+---  CAO = IAO TCB + ABO TCD + AAO TCF .
+---  CAP = IAP TCB + ABP TCD + AAP TCF .
+?
+  
+---  CBA = IBA TCG + ABA TCI + AAA TCK .   Channel 1 data relay
+---  CBB = IBB TCG + ABB TCI + AAB TCK .
+---  CBC = IBC TCG + ABC TCI + AAC TCK .   Used during Ch 1 calls + response
+---  CBD = IBD TCG + ABD TCI + AAD TCK .
+---  CBE = IBE TCG + ABE TCI + AAE TCK .
+---  CBF = IBF TCG + ABF TCI + AAF TCK .
+---  CBG = IBG TCG + ABG TCI + AAG TCK .
+---  CBH = IBH TCG + ABH TCI + AAH TCK .
+
+---  CBI = IBI TCH + ABI TCJ + AAI TCL .
+---  CBJ = IBJ TCH + ABJ TCJ + AAJ TCL .
+---  CBK = IBK TCH + ABK TCJ + AAK TCL .
+---  CBL = IBL TCH + ABL TCJ + AAL TCL .
+---  CBM = IBM TCH + ABM TCJ + AAM TCL .
+---  CBN = IBN TCH + ABN TCJ + AAN TCL .
+---  CBO = IBO TCH + ABO TCJ + AAO TCL .
+---  CBP = IBP TCH + ABP TCJ + AAP TCL .
+
+
+  
+---  CCA = ICA TCM + ABA TCO + AAA TCQ .   Channel 2 data relay
+---  CCB = ICB TCM + ABB TCO + AAB TCQ .
+---  CCC = ICC TCM + ABC TCO + AAC TCQ .   Used during Ch 2 calls + response
+---  CCD = ICD TCM + ABD TCO + AAD TCQ .
+---  CCE = ICE TCM + ABE TCO + AAE TCQ .
+---  CCF = ICF TCM + ABF TCO + AAF TCQ .
+---  CCG = ICG TCM + ABG TCO + AAG TCQ .
+---  CCH = ICH TCM + ABH TCO + AAH TCQ .
+
+---  CCI = ICI TCN + ABI TCP + AAI TCR .
+---  CCJ = ICJ TCN + ABJ TCP + AAJ TCR .
+---  CCK = ICK TCN + ABK TCP + AAK TCR .
+---  CCL = ICL TCN + ABL TCP + AAL TCR .
+---  CCM = ICM TCN + ABM TCP + AAM TCR .
+---  CCN = ICN TCN + ABN TCP + AAN TCR .
+---  CCO = ICO TCN + ABO TCP + AAO TCR .
+---  CCP = ICP TCN + ABP TCP + AAP TCR .
+
+  
+---  CDA = IDA TCS + ABA TCU + AAA TCW .   Channel 3 data relay
+---  CDB = IDB TCS + ABB TCU + AAB TCW .
+---  CDC = IDC TCS + ABC TCU + AAC TCW .   Used during Ch 3 calls + response
+---  CDD = IDD TCS + ABD TCU + AAD TCW .
+---  CDE = IDE TCS + ABE TCU + AAE TCW .
+---  CDF = IDF TCS + ABF TCU + AAF TCW .
+---  CDG = IDG TCS + ABG TCU + AAG TCW .
+---  CDH = IDH TCS + ABH TCU + AAH TCW .
+
+---  CDI = IDI TCT + ABI TCV + AAI TCX .
+---  CDJ = IDJ TCT + ABJ TCV + AAJ TCX .
+---  CDK = IDK TCT + ABK TCV + AAK TCX .
+---  CDL = IDL TCT + ABL TCV + AAL TCX .
+---  CDM = IDM TCT + ABM TCV + AAM TCX .
+---  CDN = IDN TCT + ABN TCV + AAN TCX .
+---  CDO = IDO TCT + ABO TCV + AAO TCX .
+---  CDP = IDP TCT + ABP TCV + AAP TCX .
+
+
+
+            CH0       CH1       CH2       CH3
+---  DAA = BAA QEA + BCA QFA + BEA QGA + BGA QHA .  Response readout merge
+---  DAB = BAB QEA + BCB QFA + BEB QGA + BGB QHA .
+---  DAC = BAC QEA + BCC QFA + BEC QGA + BGC QHA .
+---  DAD = BAD QEA + BCD QFA + BED QGA + BGD QHA .
+
+---  DAE = BAE QEB + BCE QFB + BEE QGB + BGE QHB .
+---  DAF = BAF QEB + BCF QFB + BEF QGB + BGF QHB .
+---  DAG = BAG QEB + BCG QFB + BEG QGB + BGG QHB .
+---  DAH = BAH QEB + BCH QFB + BEH QGB + BGH QHB .
+
+---  DAI = BAI QEC + BCI QFC + BEI QGC + BGI QHC .
+---  DAJ = BAJ QEC + BCJ QFC + BEJ QGC + BGJ QHC .
+---  DAK = BAK QEC + BCK QFC + BEK QGC + BGK QHC .
+---  DAL = BAL QEC + BCL QFC + BEL QGC + BGL QHC .
+
+---  DAM = BAM QED + BCM QFD + BEM QGD + BGM QHD .
+---  DAN = BAN QED + BCN QFD + BEN QGD + BGN QHD .
+---  DAO = BAO QED + BCO QFD + BEO QGD + BGO QHD .
+---  DAP = BAP QED + BCP QFD + BEP QGD + BGP QHD .
+
+
+
+---  DBA = BBA QEE + BDA QFE + BFA QGE + BHA QHE .
+---  DBB = BBB QEE + BDB QFE + BFB QGE + BHB QHE .
+---  DBC = BBC QEE + BDC QFE + BFC QGE + BHC QHE .
+---  DBD = BBD QEE + BDD QFE + BFD QGE + BHD QHE .
+
+---  DBE = BBE QEF + BDE QFF + BFE QGF + BHE QHF .
+---  DBF = BBF QEF + BDF QFF + BFF QGF + BHF QHF .
+---  DBG = BBG QEF + BDG QFF + BFG QGF + BHG QHF .
+---  DBH = BBH QEF + BDH QFF + BFH QGG + BHH QHF .
+
+---  DBI = BBI QEG + BDI QFG + BFI QGG + BHI QHG .
+---  DBJ = BBJ QEG + BDJ QFG + BFJ QGG + BHJ QHG .
+---  DBK = BBK QEG + BDK QFG + BFK QGG + BHK QHG .
+---  DBL = BBL QEG + BDL QFG + BFL QGG + BHL QHG .
+
+---  DBM = BBM QEH + BDM QFH + BFM QGH + BHM QHH .
+---  DBN = BBN QEH + BDN QFH + BFN QGH + BHN QHH .
+---  DBO = BBO QEH + BDO QFH + BFO QGH + BHO QHH .
+---  DBP = BBP QEH + BDP QFH + BFP QGH + BHP QHH .
+
+---  EAA = EBA TEA + IGA TEB + AAA TEC .   Memory address reg
+---  EAB = EBB TEA + IGB TEB + AAB TEC .   2(0) to 2(11)
+---  EAC = EBC TEA + IGC TEB + AAC TEC .
+---  EAD = EBD TEA + IGD TEB + AAD TEC .   TEA = Hold path
+---  EAE = EBE TEA + IGE TEB + AAE TEC .   TEB = Constant address
+---  EAF = EBF TEA + IGF TEB + AAF TEC .   TEC = Computed address
+---  EAG = EBG TEA + IGG TEB + AAG TEC .
+---  EAH = EBH TEA + IGH TEB + AAH TEC .
+---  EAI = EBI TEA + IGI TEB + AAI TEC .
+---  EAJ = EBJ TEA + IGJ TEB + AAJ TEC .
+---  EAK = EBK TEA + IGK TEB + AAK TEC .
+---  EAL = EBL TEA + IGL TEB + AAL TEC .
+
+---  eba = eaa .
+---  ebb = eab .
+---  ebc = eac .
+---  ebd = ead .
+---  ebe = eae .
+---  ebf = aea .
+---  ebg = eag .
+---  ebh = eah .
+---  ebi = eai .
+---  ebj = eaj .
+---  ebk = eak .
+---  ebl = eal .
+
+---  FAA = EAA .                     Memory addr fanout
+---  FAB = EAA .                     2(0)
+---  FAC = EAA .
+---  FAD = EAA .
+---  FAE = EAA .
+---  FAF = EAA .
+---  FAG = EAA .
+---  FAH = EAA .
+
+---  FBA = EAB .                    
+---  FBB = EAB .                     2(1)
+---  FBC = EAB .
+---  FBD = EAB .
+---  FBE = EAB .
+---  FBF = EAB .
+---  FBG = EAB .
+---  FBH = EAB .
+
+---  FCA = EAC .                    
+---  FCB = EAC .                     2(2)
+---  FCC = EAC .
+---  FCD = EAC .
+---  FCE = EAC .
+---  FCF = EAC .
+---  FCG = EAC .
+---  FCH = EAC .
+
+---  FDA = EAD .                    
+---  FDB = EAD .                     2(3)
+---  FDC = EAD .
+---  FDD = EAD .
+---  FDE = EAD .
+---  FDF = EAD .
+---  FDG = EAD .
+---  FDH = EAD .
+
+---  FEA = EAE .                    
+---  FEB = EAE .                     2(4)
+---  FEC = EAE .
+---  FED = EAE .
+---  FEE = EAE .
+---  FEF = EAE .
+---  FEG = EAE .
+---  FEH = EAE .
+
+---  FFA = EAF .                    
+---  FFB = EAF .                     2(5)
+---  FFC = EAF .
+---  FFD = EAF .
+---  FFE = EAF .
+---  FFF = EAF .
+---  FFG = EAF .
+---  FFH = EAF .
+
+
+---  FGA = EAG .                     Memory addr fanout
+---  FGB = EAG .                     2(6)
+---  FGC = EAG .
+---  FGD = EAG .
+---  FGE = EAG .
+---  FGF = EAG .
+---  FGG = EAG .
+---  FGH = EAG .
+
+---  FHA = EAH .                    
+---  FHB = EAH .                     2(7)
+---  FHC = EAH .
+---  FHD = EAH .
+---  FHE = EAH .
+---  FHF = EAH .
+---  FHG = EAH .
+---  FHH = EAH .
+
+---  FIA = EAI .                    
+---  FIB = EAI .                     2(8)
+---  FIC = EAI .
+---  FID = EAI .
+---  FIE = EAI .
+---  FIF = EAI .
+---  FIG = EAI .
+---  FIH = EAI .
+
+---  FJA = EAJ .                    
+---  FJB = EAJ .                     2(9)
+---  FJC = EAJ .
+---  FJD = EAJ .
+---  FJE = EAJ .
+---  FJF = EAJ .
+---  FJG = EAJ .
+---  FJH = EAJ .
+
+---  FKA = EAK .                    
+---  FKB = EAK .                     2(10)
+---  FKC = EAK .
+---  FKD = EAK .
+---  FKE = EAK .
+---  FKF = EAK .
+---  FKG = EAK .
+---  FKH = EAK .
+
+---  FLA = EAL .                    
+---  FLB = EAL .                     2(11)
+---  FLC = EAL .
+---  FLD = EAL .
+---  FLE = EAL .
+---  FLF = EAL .
+---  FLG = EAL .
+---  FLH = EAL .
+
+
+---  FMA = GBA .            Parity bit address
+---  FMB = GBB .
+---  FMC = GBC .
+---  FMD = GBD .
+---  FME = GBE .
+---  FMF = GBF .
+---  FMG = GBG .
+---  FMH = GBH .
+---  FMI = GBI .
+---  FMJ = GBJ .
+---  FMK = GBK .
+---  FML = GBL .
+
+  Address delay for parity bit generation
+
+                                                  1st delay
+---  gaa = eba .
+---  gab = ebb .
+---  gac = ebc .
+---  gad = ebd .
+---  gae = ebe .
+---  gaf = ebf .
+---  gag = ebg .
+---  gah = ebh .
+---  gai = ebi .
+---  gaj = ebj .
+---  gak = ebk .
+---  gal = ebl .
+
+                                                  2nd delay
+---  gba = gaa .
+---  gbb = gab .
+---  gbc = gac .
+---  gbd = gad .
+---  gbe = gae .
+---  gbf = gaf .
+---  gbg = gag .
+---  gbh = gah .
+---  gbi = gai .
+---  gbj = gaj .
+---  gbk = gak .
+---  gbl = gal .
+
+---  HAA = JAQ .                                RTC Carry Latches
+---  HAB = JAQ JAR .
+---  HAC = JAQ JAR JAS .
+---  had = jaq + jar + jas + jat .
+---  hae = jaq + jar + jas + jat .
+---  haf = jaq + jar + jas + jat .
+---  hag = jaq + jar + jas + jat .
+---  HBA = JBQ .
+---  HBB = JBQ JBR .
+---  HBC = JBQ JBR JBS .
+
+
+---  JAB = RCA .                     Real time clock toggle
+---  JAC = RCA RCB .
+---  JAD = RCA RCB RCC .
+---  JAE = HAA .
+---  JAF = HAA RCE .
+---  JAG = HAA RCE RCF .
+---  JAH = HAA RCE RCF RCG .
+---  JAI = HAB .
+---  JAJ = HAB RCI .
+---  JAK = HAB RCI RCJ .
+---  JAL = HAB RCI RCJ RCK .
+---  JAM = HAC .
+---  JAN = HAC RCM .
+---  JAO = HAC RCM RCN .
+---  JAP = HAC RCM RCN RCO .
+---  JAQ = rca RCB RCC RCD .
+---  JAR = RCE RCF RCG RCH .
+---  JAS = RCI RCJ RCK RCL .
+---  JAT = RCM RCN RCO RCP .
+
+---  JBA = HAD .
+---  JBB = HAD RDA .
+---  JBC = HAD RDA RDB .
+---  JBD = HAD RDA RDB RDC .
+---  JBE = HAE HBA .
+---  JBF = HAE HBA RDE .
+---  JBG = HAE HBA RDE RDF .
+---  JBH = HAE HBA RDE RDF RDG .
+---  JBI = HAF HBB .
+---  JBJ = HAF HBB RDI .
+---  JBK = HAF HBB RDI RDJ .
+---  JBL = HAF HBB RDI RDJ RDK .
+---  JBM = HAG HBC .
+---  JBN = HAG HBC RDM .
+---  JBO = HAG HBC RDM RDN .
+---  JBP = HAG HBC RDM RDN RDO .
+---  JBQ = RDA RDB RDC RDD .
+---  JBR = RDE RDF RDG RDH .
+---  JBS = RDI RDJ RDK RDL .
+
+---  JCA = QAE qab qaa .              Read channel 0 decode
+---  JCB = QAE qab QAA .              Read channel 1 decode
+---  JCC = QAE QAB qaa .              Read channel 2 decode
+---  JCD = QAE QAB QAA .              Read channel 3 decode
+---  JCE = QAE .                      Channel read enable
+
+
+
+ Write parity generation
+
+---  KAA = AEA aei + aea AEI .                         1st Rank
+---  KAB = AEB aej + aeb AEJ .
+---  KAC = AEC aek + aec AEK .
+---  KAD = AED ael + aed AEL .
+---  KAE = AEE aem + aee AEM .
+---  KAF = AEF aen + aef AEN .
+---  KAG = AEG aeo + aeg AEO .
+---  KAH = AEH aep + aeh AEP .
+---  KAI = AFA afi + afa AFI .
+---  KAJ = AFB afj + afb AFJ .
+---  KAK = AFC afk + afc AFK .
+---  KAL = AFD afl + afd AFL .
+---  KAM = AFE afm + afe AFM .
+---  KAN = AFF afn + aff AFN .
+---  KAO = AFG afo + afg AFO .
+---  KAP = AFH afp + afh AFP .
+
+---  KBA = KAA kai + kaa KAI .                       2nd Rank
+---  KBB = KAB kaj + kab KAJ .
+---  KBC = KAC kak + kac KAK .
+---  KBD = KAD kal + kad KAL .
+---  KBE = KAE kam + kae KAM .
+---  KBF = KAF kan + kaf KAN .
+---  KBG = KAG kao + kag KAO .
+---  KBH = KAH kap + kah KAP .
+
+---  KCA = KBA kbb kbc + kba KBB kbc + kba kbb KBC + KBA KBB KBC .  3rd Rank
+---  KCB = KBD kbe + kbd KBE .
+---  KCC = KBF kbg kbh + kbf KBG kbh + kbf kbg KBH + KBF KBG KBH .
+
+   Write Parity bit
+
+---  KDA = KCA kcb kcc + kca KCB kcc + kca kcb KCC + KCA KCB KCC .
+
+  Read Parity generation
+
+---  LAA = PAA pai + paa PAI .            1st Rank
+---  LAB = PAB paj + pab PAJ .
+---  LAC = PAC pak + pac PAK .
+---  LAD = PAD pal + pad PAL .
+---  LAE = PAE pam + pae PAM .
+---  LAF = PAF pan + paf PAN .
+---  LAG = PAG pao + pag PAO .
+---  LAH = PAH pap + pah PAP .
+
+---  LAI = PBA pbi + pba PBI .
+---  LAJ = PBB pbj + pbb PBJ .
+---  LAK = PBC pbk + pbc PBK .
+---  LAL = PBD pbl + pbd PBL .
+---  LAM = PBE pbm + pbe PBM .
+---  LAN = PBF pbn + pbf PBN .
+---  LAO = PBG pbo + pbg PBO .
+---  LAP = PBH pbp + pbn PBP .
+
+---  LBA = LAA lai + laa LAI .              2nd Rank
+---  LBB = LAB laj + lab LAJ .
+---  LBC = LAC lak + lac LAK .
+---  LBD = LAD lal + lad LAL .
+---  LBE = LAE lam + lae LAM .
+---  LBF = LAF lan + laf LAN .
+---  LBG = LAG lao + lag LAO .
+---  LBH = LAH lap + lah LAP .
+
+---  LCA = LBA lbb lbc + lba LBB lbc + lba lbb LBC + LBA LBB LBC .  3rd rank
+---  LCB = LBD lbe + lbd LBE .
+---  LCC = LBF lbg lbh + lbf LBG lbh + lbf lbg LBH + LBF LBG LBH .
+  
+  Read parity bit
+
+---  LDA = LCA lcb lcc + lca LCB lcc + lca lcb LCC + LCA LCB LCC .
+
+---  LEA = LDA pbq + lda PBQ .      Parity error
+
+  Local memory 4k x 32 bit
+
+---  MAA = ACA ; FAA FBA FCA FDA FEA FFA FGA FHA FIA FJA FKA FLA ;  *** WAA .
+---  MAB = ACB ; FAB FBB FCB FDB FEB FFB FGB FHB FIB FJB FKB FLB ;  *** WAB .
+---  MAC = ACC ; FAC FBC FCC FDC FEC FFC FGC FHC FIC FJC FKC FLC ;  *** WAC .
+---  MAD = ACD ; FAD FBD FCD FDD FED FFD FGD FHD FID FJD FKD FLD ;  *** WAD .
+---  MAE = ACE ; FAE FBE FCE FDE FEE FFE FGE FHE FIE FJE FKE FLE ;  *** WAE .
+---  MAF = ACF ; FAF FBF FCF FDF FEF FFF FGF FHF FIF FJF FKF FLF ;  *** WAF .
+---  MAG = ACG ; FAG FBG FCG FDG FEG FFG FGG FHG FIG FJG FKG FLG ;  *** WAG .
+---  MAH = ACH ; FAH FBH FCH FDH FEH FFH FGH FHH FIH FJH FKH FLH ;  *** WAH .
+
+---  MAI = ACI ; FAA FBA FCA FDA FEA FFA FGA FHA FIA FJA FKA FLA ;  *** WAA .
+---  MAJ = ACJ ; FAB FBB FCB FDB FEB FFB FGB FHB FIB FJB FKB FLB ;  *** WAB .
+---  MAK = ACK ; FAC FBC FCC FDC FEC FFC FGC FHC FIC FJC FKC FLC ;  *** WAC .
+---  MAL = ACL ; FAD FBD FCD FDD FED FFD FGD FHD FID FJD FKD FLD ;  *** WAD .
+---  MAM = ACM ; FAE FBE FCE FDE FEE FFE FGE FHE FIE FJE FKE FLE ;  *** WAE .
+---  MAN = ACN ; FAF FBF FCF FDF FEF FFF FGF FHF FIF FJF FKF FLF ;  *** WAF .
+---  MAO = ACO ; FAG FBG FCG FDG FEG FFG FGG FHG FIG FJG FKG FLG ;  *** WAG .
+---  MAP = ACP ; FAH FBH FCH FDH FEH FFH FGH FHH FIH FJH FKH FLH ;  *** WAH .
+
+---  MBA = ADA ; FAA FBA FCA FDA FEA FFA FGA FHA FIA FJA FKA FLA ;  *** WAA .
+---  MBB = ADB ; FAB FBB FCB FDB FEB FFB FGB FHB FIB FJB FKB FLB ;  *** WAB .
+---  MBC = ADC ; FAC FBC FCC FDC FEC FFC FGC FHC FIC FJC FKC FLC ;  *** WAC .
+---  MBD = ADD ; FAD FBD FCD FDD FED FFD FGD FHD FID FJD FKD FLD ;  *** WAD .
+---  MBE = ADE ; FAE FBE FCE FDE FEE FFE FGE FHE FIE FJE FKE FLE ;  *** WAE .
+---  MBF = ADF ; FAF FBF FCF FDF FEF FFF FGF FHF FIF FJF FKF FLF ;  *** WAF .
+---  MBG = ADG ; FAG FBG FCG FDG FEG FFG FGG FHG FIG FJG FKG FLG ;  *** WAG .
+---  MBH = ADH ; FAH FBH FCH FDH FEH FFH FGH FHH FIH FJH FKH FLH ;  *** WAH .
+
+---  MBI = ADI ; FAA FBA FCA FDA FEA FFA FGA FHA FIA FJA FKA FLA ;  *** WAA .
+---  MBJ = ADJ ; FAB FBB FCB FDB FEB FFB FGB FHB FIB FJB FKB FLB ;  *** WAB .
+---  MBK = ADK ; FAC FBC FCC FDC FEC FFC FGC FHC FIC FJC FKC FLC ;  *** WAC .
+---  MBL = ADL ; FAD FBD FCD FDD FED FFD FGD FHD FID FJD FKD FLD ;  *** WAD .
+---  MBM = ADM ; FAE FBE FCE FDE FEE FFE FGE FHE FIE FJE FKE FLE ;  *** WAE .
+---  MBN = ADN ; FAF FBF FCF FDF FEF FFF FGF FHF FIF FJF FKF FLF ;  *** WAF .
+---  MBO = ADO ; FAG FBG FCG FDG FEG FFG FGG FHG FIG FJG FKG FLG ;  *** WAG .
+---  MBP = ADP ; FAH FBH FCH FDH FEH FFH FGH FHH FIH FJH FKH FLH ;  *** WAH .
+
+
+  Parity bit
+
+---  MBQ = KDA ; FMA FMB FMC FMD FME FMF FMG FMH FMI FMJ FMK FML ; *** WBA .
+
+---  OAA = IAA TCA + ABA TCC + AAA TCE .   Channel 0 I/O Register
+---  OAB = IAB TCA + ABB TCC + AAB TCE .
+---  OAC = IAC TCA + ABC TCC + AAC TCE .
+---  OAD = IAD TCA + ABD TCC + AAD TCE .
+---  OAE = IAE TCA + ABE TCC + AAE TCE .
+---  OAF = IAF TCA + ABF TCC + AAF TCE .
+---  OAG = IAG TCA + ABG TCC + AAG TCE .
+---  OAH = IAH TCA + ABH TCC + AAH TCE .
+
+---  OAI = IAI TCB + ABI TCD + AAI TCF .
+---  OAJ = IAJ TCB + ABJ TCD + AAJ TCF .
+---  OAK = IAK TCB + ABK TCD + AAK TCF .
+---  OAL = IAL TCB + ABL TCD + AAL TCF .
+---  OAM = IAM TCB + ABM TCD + AAM TCF .
+---  OAN = IAN TCB + ABN TCD + AAN TCF .
+---  OAO = IAO TCB + ABO TCD + AAO TCF .
+---  OAP = IAP TCB + ABP TCD + AAP TCF .
+
+---  oaq = qba .                           Call Pulse to Ch 0
+---  oar = qbe .                           Function pulse to Ch 0
+---  oas = ias + QAK + QMA .               Data pulse from Ch 0
+---  oat = *** .                           Response pulse to Ch 0 
+
+---  OBA = IBA TCG + ABA TCI + AAA TCK .   Channel 1 I/O Register
+---  OBB = IBB TCG + ABB TCI + AAB TCK .
+---  OBC = IBC TCG + ABC TCI + AAC TCK .
+---  OBD = IBD TCG + ABD TCI + AAD TCK .
+---  OBE = IBE TCG + ABE TCI + AAE TCK .
+---  OBF = IBF TCG + ABF TCI + AAF TCK .
+---  OBG = IBG TCG + ABG TCI + AAG TCK .
+---  OBH = IBH TCG + ABH TCI + AAH TCK .
+
+---  OBI = IBI TCH + ABI TCJ + AAI TCL .
+---  OBJ = IBJ TCH + ABJ TCJ + AAJ TCL .
+---  OBK = IBK TCH + ABK TCJ + AAK TCL .
+---  OBL = IBL TCH + ABL TCJ + AAL TCL .
+---  OBM = IBM TCH + ABM TCJ + AAM TCL .
+---  OBN = IBN TCH + ABN TCJ + AAN TCL .
+---  OBO = IBO TCH + ABO TCJ + AAO TCL .
+---  OBP = IBP TCH + ABP TCJ + AAP TCL .
+
+---  obq = qbb .                             Call pulse to Ch 1
+---  obr = qbf .                             Function pulse to Ch 1
+---  obs = ibs + QAK + QMB .                 Data pulse
+---  obt = *** .                             Response pulse
+
+---  OCA = ICA TCM + ABA TCO + AAA TCQ .     Channel 2 I/O Register
+---  OCB = ICB TCM + ABB TCO + AAB TCQ .
+---  OCC = ICC TCM + ABC TCO + AAC TCQ .
+---  OCD = ICD TCM + ABD TCO + AAD TCQ .
+---  OCE = ICE TCM + ABE TCO + AAE TCQ .
+---  OCF = ICF TCM + ABF TCO + AAF TCQ .
+---  OCG = ICG TCM + ABG TCO + AAG TCQ .
+---  OCH = ICH TCM + ABH TCO + AAH TCQ .
+
+---  OCI = ICI TCN + ABI TCP + AAI TCR .
+---  OCJ = ICJ TCN + ABJ TCP + AAJ TCR .
+---  OCK = ICK TCN + ABK TCP + AAK TCR .
+---  OCL = ICL TCN + ABL TCP + AAL TCR .
+---  OCM = ICM TCN + ABM TCP + AAM TCR .
+---  OCN = ICN TCN + ABN TCP + AAN TCR .
+---  OCO = ICO TCN + ABO TCP + AAO TCR .
+---  OCP = ICP TCN + ABP TCP + AAP TCR .
+
+---  ocq = qbc .                           Call Pulse to Ch 2
+---  ocr = qbg .                           Function pulse to Ch 2
+---  ocs = ics + QAK + QMC .               Data pulse from Ch 2
+---  oct = *** .                           Response pulse to Ch 2 
+
+---  ODA = IDA TCS + ABA TCU + AAA TCW .   Channel 3 I/O Register
+---  ODB = IDB TCS + ABB TCU + AAB TCW .
+---  ODC = IDC TCS + ABC TCU + AAC TCW .
+---  ODD = IDD TCS + ABD TCU + AAD TCW .
+---  ODE = IDE TCS + ABE TCU + AAE TCW .
+---  ODF = IDF TCS + ABF TCU + AAF TCW .
+---  ODG = IDG TCS + ABG TCU + AAG TCW .
+---  ODH = IDH TCS + ABH TCU + AAH TCW .
+
+---  ODI = IDI TCT + ABI TCV + AAI TCX .
+---  ODJ = IDJ TCT + ABJ TCV + AAJ TCX .
+---  ODK = IDK TCT + ABK TCV + AAK TCX .
+---  ODL = IDL TCT + ABL TCV + AAL TCX .
+---  ODM = IDM TCT + ABM TCV + AAM TCX .
+---  ODN = IDN TCT + ABN TCV + AAN TCX .
+---  ODO = IDO TCT + ABO TCV + AAO TCX .
+---  ODP = IDP TCT + ABP TCV + AAP TCX .
+
+---  odq = qbd .                             Call pulse to Ch 3
+---  odr = qbh .                             Function pulse to Ch 3
+---  ods = ids + QAK + QMD .                 Data pulse from Ch 3
+---  odt = *** .                             Response pulse to Ch 3 
+
+            Channel   RTC       Loc Mem
+
+---  OEA = DAA TDA + RAA TDE + MAA TDI .    Output register to KC
+---  OEB = DAB TDA + RAB TDE + MAB TDI .
+---  OEC = DAC TDA + RAC TDE + MAC TDI .
+---  OED = DAD TDA + RAD TDE + MAD TDI .
+---  OEE = DAE TDA + RAE TDE + MAE TDI .
+---  OEF = DAF TDA + RAF TDE + MAF TDI .
+---  OEG = DAG TDA + RAG TDE + MAG TDI .
+---  OEH = DAH TDA + RAH TDE + MAH TDI .
+
+---  OEI = DAI TDB + RAI TDF + MAI TDJ .   
+---  OEJ = DAJ TDB + RAJ TDF + MAJ TDJ .
+---  OEK = DAK TDB + RAK TDF + MAK TDJ .
+---  OEL = DAL TDB + RAL TDF + MAL TDJ .
+---  OEM = DAM TDB + RAM TDF + MAM TDJ .
+---  OEN = DAN TDB + RAN TDF + MAN TDJ .
+---  OEO = DAO TDB + RAO TDF + MAO TDJ .
+---  OEP = DAP TDB + RAP TDF + MAP TDJ .
+
+
+
+---  OFA = DBA TDC + RBA TDG + MBA TDK .  Output register to KC
+---  OFB = DBB TDC + RBB TDG + MBB TDK .
+---  OFC = DBC TDC + RBC TDG + MBC TDK .
+---  OFD = DBD TDC + RBD TDG + MBD TDK .
+---  OFE = DBE TDC + RBE TDG + MBE TDK .
+---  OFF = DBF TDC + RBF TDG + MBF TDK .
+---  OFG = DBG TDC + RBG TDG + MBG TDK .
+---  OFH = DBH TDC + RBH TDG + MBH TDK .
+
+
+---  OFI = DBI TDD + RBI TDH + MBI TDL .
+---  OFJ = DBJ TDD + RBJ TDH + MBJ TDL .
+---  OFK = DBK TDD + RBK TDH + MBK TDL .
+---  OFL = DBL TDD + RBL TDH + MBL TDL .
+---  OFM = DBM TDD + RBM TDH + MBM TDL .
+---  OFN = DBN TDD + RBN TDH + MBN TDL .
+---  OFO = DBO TDD + RBO TDH + MBO TDL .
+---  OFP = DBP TDD + RBP TDH + MBP TDL .
+
+---  OGA = IAQ + IAT .        Ch 0 resume + response
+---  OGB = IBQ + IBT .        Ch 1 resume + response
+---  OGC = ICQ + ICT .        Ch 2 resume + response
+---  OGD = IDQ + IDT .        Ch 3 resume + response
+
+---  OHA = QCH .              Parity error to KA
+
+---  PAA = DAA TDA + RAA TDE + MAA TDI .  Data to KC ( copy ) used for parity
+---  PAB = DAB TDA + RAB TDE + MAB TDI .      generation
+---  PAC = DAC TDA + RAC TDE + MAC TDI . 
+---  PAD = DAD TDA + RAD TDE + MAD TDI .  
+---  PAE = DAE TDA + RAE TDE + MAE TDI . 
+---  PAF = DAF TDA + RAF TDE + MAF TDI . 
+---  PAG = DAG TDA + RAG TDE + MAG TDI . 
+---  PAH = DAH TDA + RAH TDE + MAH TDI . 
+
+---  PAI = DAI TDB + RAI TDF + MAI TDJ . 
+---  PAJ = DAJ TDB + RAJ TDF + MAJ TDJ . 
+---  PAK = DAK TDB + RAK TDF + MAK TDJ . 
+---  PAL = DAL TDB + RAL TDF + MAL TDJ .  
+---  PAM = DAM TDB + RAM TDF + MAM TDJ . 
+---  PAN = DAN TDB + RAN TDF + MAN TDJ . 
+---  PAO = DAO TDB + RAO TDF + MAO TDJ . 
+---  PAP = DAP TDB + RAP TDF + MAP TDJ . 
+
+---  PBA = DBA TDC + RBA TDG + MBA TDK .  Data to KC ( copy ) used for parity
+---  PBB = DBB TDC + RBB TDG + MBB TDK .      generation
+---  PBC = DBC TDC + RBC TDG + MBC TDK . 
+---  PBD = DBD TDC + RBD TDG + MBD TDK .  
+---  PBE = DBE TDC + RBE TDG + MBE TDK . 
+---  PBF = DBF TDC + RBF TDG + MBF TDK . 
+---  PBG = DBG TDC + RBG TDG + MBG TDK . 
+---  PBH = DBH TDC + RBH TDG + MBH TDK . 
+
+---  PBI = DBI TDD + RBI TDH + MBI TDL . 
+---  PBJ = DBJ TDD + RBJ TDH + MBJ TDL . 
+---  PBK = DBK TDD + RBK TDH + MBK TDL . 
+---  PBL = DBL TDD + RBL TDH + MBL TDL .  
+---  PBM = DBM TDD + RBM TDH + MBM TDL . 
+---  PBN = DBN TDD + RBN TDH + MBN TDL .
+---  PBO = DBO TDD + RBO TDH + MBO TDL . 
+---  PBP = DBP TDD + RBP TDH + MBP TDL . 
+
+---  PBQ = MBQ QCF .                 Parity bit from memory
+
+---  QAA = IHA .                     Bit 0 of chnl select
+---  QAB = IHB .                     Bit 1 of chnl select
+
+---  QAE = IHE .                     Read Channel
+---  QAF = IHF .                     Read clock
+
+---  QAG = IHG qcb .                 Read memory
+---  QAH = IHH qcb .                 Write memory
+
+---  QAI = IHI .                     Input constant address
+---  QAJ = IHJ .                     Input computed address
+
+---  QAK = IHK .                     Dead start
+
+---  QAL = IHL .                     Go KC data
+
+---  qba = ihc + IHB + IHA .         Call to Ch 0 
+---  qbb = ihc + IHB + iha .         Call to Ch 1
+---  qbc = ihc + ihb + IHA .         Call to Ch 2
+---  qbd = ihc + ihb + iha .         Call to Ch 3
+
+---  qbe = ihd + IHB + IHA .         Function pulse to Ch 0
+---  qbf = ihd + IHB + iha .         Function pulse to Ch 1
+---  qbg = ihd + ihb + IHA .         Function pulse to Ch 2
+---  qbh = ihd + ihb + iha .         Function pulse to Ch 3
+
+---  QCA = QAH .                     Timing chain mem write
+---  QCB = QAH + QCA .                     
+---  qcc = qcb .
+---  qcd = qcc .
+
+---  qce = tdi .                     Timing chain mem read
+---  qcf = qce .
+---  QCG = QCF .
+---  QCH = LEA QCG .
+
+---  qda = qak .                     Dead start fan-out
+---  qdb = qak .
+---  qdc = qak .
+---  qdd = qak .
+
+---  QEA = JCA .                     Gating term to read Ch 0
+---  QEB = JCA .
+---  QEC = JCA .
+---  QED = JCA .
+
+---  qee = jca .
+---  qef = jca .
+---  qeg = jca .
+---  qeh = jca .
+
+---  QFA = JCB .                     Gating term to read Ch 1
+---  QFB = JCB .
+---  QFC = JCB .
+---  QFD = JCB .
+
+---  qfe = jcb .
+---  qff = jcb .
+---  qfg = jcb .
+---  qfh = jcb .
+
+---  QGA = JCC .                     Gating term read Ch 2
+---  QGB = JCC .  
+---  QGC = JCC .
+---  QGD = JCC .
+---  qge = jcc .
+---  qgf = jcc .
+---  qgg = jcc .
+---  qgh = jcc .
+
+---  QHA = JCD .                     Gating term read Ch 3
+---  QHB = JCD .
+---  QHC = JCD .
+---  QHD = JCD .
+---  qhe = jcd .
+---  qhf = jcd .
+---  qhg = jcd .
+---  qhh = jcd .
+
+---  QIA = QBA + QBE + QIC + QID .  Channel 0 enables for call or function
+---  QIB = QBA + QBE + QIA .
+---  QIC = QBE .
+---  QID = QIC .
+---  QIE = QID .
+---  QIF = QIE .                   
+---  QIG = IAQ + IAT .              Call or resp from Channel 0 triggers
+---  QIH = QIG .                    resume to KA
+
+---  QJA = QBB + QBF + QJC + QJD .  Channel 1 enables for call or function
+---  QJB = QBB + QBF + QJA .
+---  QJC = QBF .
+---  QJD = QJC .
+---  QJE = QJD .
+---  QJF = QJE .                   
+---  QJG = IBQ + IBT .              Call or resp from Channel 1 trigger
+---  QJH = QJG .                    resume to KA
+
+---  QKA = QBC + QBG + QKC + QKD .  Channel 2 enables for call or function
+---  QKB = QBC + QBG + QKA .
+---  QKC = QBG .
+---  QKD = QKC .
+---  QKE = QKD .
+---  QKF = QKE .                   
+---  QKG = ICQ + ICT .              Call or resp from Channel 2 trigger
+---  QKH = QKG .                    resume to KA
+
+
+---  QLA = QBD + QBH + QLC + QLD .  Channel 3 enables for call or function
+---  QLB = QBD + QBH + QLA .
+---  QLC = QBH .
+---  QLD = QLC .
+---  QLE = QLD .
+---  QLF = QLE .                   
+---  QLG = IDQ + IDT .              Call or resp from Channel 2 trigger
+---  QLH = QLG .                    resume to KA
+
+---  qma = qma qba + QAK + QBE .    Block data pulse if call active
+---  qmb = qmb qbb + QAK + QBF .
+---  qmc = qmc qbc + QAK + QBG .
+---  qmd = qmd qbd + QAK + QBH .
+
+---  raa = RAA + QDA .                   32 bit real time clock       
+---  rab = rab jab + RAB JAB + QDA .
+---  rac = rac jac + RAC JAC + QDA .         QDA-D = dead start
+---  rad = rad jad + RAD JAD + QDA .
+---  rae = rae jae + RAE JAE + QDA .
+---  raf = raf jaf + RAF JAF + QDA .
+---  rag = rag jag + RAG JAG + QDA .
+---  rah = rah jah + RAH JAH + QDA .
+
+---  rai = rai jai + RAI JAI + QDB .
+---  raj = raj jaj + RAJ JAJ + QDB .
+---  rak = rak jak + RAK JAK + QDB .  
+---  ral = ral jal + RAL JAL + QDB .
+---  ram = ram jam + RAM JAM + QDB .
+---  ran = ran jan + RAN JAN + QDB .
+---  rao = rao jao + RAO JAO + QDB .
+---  rap = rap jap + RAP JAP + QDB .
+
+---  rba = rba jba + RBA JBA + QDC .
+---  rbb = rbb jbb + RBB JBB + QDC .
+---  rbc = rbc jbc + RBC JBC + QDC .  
+---  rbd = rbd jbd + RBD JBD + QDC .
+---  rbe = rbe jbe + RBE JBE + QDC .
+---  rbf = rbf jbf + RBF JBF + QDC .
+---  rbg = rbg jbg + RBG JBG + QDC .
+---  rbh = rbh jbh + RBH JBH + QDC .
+
+---  rbi = rbi jbi + RBI JBI + QDD .
+---  rbj = rbj jbj + RBJ JBJ + QDD .
+---  rbk = rbk jbk + RBK JBK + QDD .  
+---  rbl = rbl jbl + RBL JBL + QDD .
+---  rbm = rbm jbm + RBM JBM + QDD .
+---  rbn = rbn jbn + RBN JBN + QDD .
+---  rbo = rbo jbo + RBO JBO + QDD .
+---  rbp = rbp jbp + RBP JAP + QDD .
+
+---  rca = RAA + QDA .                   32 bit real time clock       
+---  rcb = rab jab + RAB JAB + QDA .        (copy)
+---  rcc = rac jac + RAC JAC + QDA .         QDA-D = dead start
+---  rcd = rad jad + RAD JAD + QDA .
+---  rce = rae jae + RAE JAE + QDA .
+---  rcf = raf jaf + RAF JAF + QDA .
+---  rcg = rag jag + RAG JAG + QDA .
+---  rch = rah jah + RAH JAH + QDA .
+
+---  rci = rai jai + RAI JAI + QDB .
+---  rcj = raj jaj + RAJ JAJ + QDB .
+---  rck = rak jak + RAK JAK + QDB .  
+---  rcl = ral jal + RAL JAL + QDB .
+---  rcm = ram jam + RAM JAM + QDB .
+---  rcn = ran jan + RAN JAN + QDB .
+---  rco = rao jao + RAO JAO + QDB .
+---  rcp = rap jap + RAP JAP + QDB .
+
+---  rda = rba jba + RBA JBA + QDC .
+---  rdb = rbb jbb + RBB JBB + QDC .
+---  rdc = rbc jbc + RBC JBC + QDC .
+---  rdd = rbd jbd + RBD JBD + QDC .
+---  rde = rbe jbe + RBE JBE + QDC .
+---  rdf = rbf jbf + RBF JBF + QDC .
+---  rdg = rbg jbg + RBG JBG + QDC .
+---  rdh = rbh jbh + RBH JBH + QDC .
+
+---  rdi = rbi jbi + RBI JBI + QDD .
+---  rdj = rbj jbj + RBJ JBJ + QDD .
+---  rdk = rbk jbk + RBK JBK + QDD .
+---  rdl = rbl jbl + RBL JBL + QDD .
+---  rdm = rbm jbm + RBM JBM + QDD .
+---  rdn = rbn jbn + RBN JBN + QDD .
+---  rdo = rbo jbo + RBO JBO + QDD .
+
+---  TAA = QAL .                Go KC data
+---  TAB = QAL .
+---  tac = qal .
+---  tad = qal .
+
+---  TBA = QIH .                Enable for response 
+---  TBB = QIG .                 or call from 0
+
+---  TBC = QJH .                Enable for response 
+---  TBD = QJG .                 or call from 1
+
+---  TBE = QKH .                Enable for response
+---  TBF = QKG .                  or call from 2
+
+---  TBG = QLH .                Enable for response
+---  TBH = QLG .                    or call from 3 
+
+---  tca = QIB .                Channel 0 bus
+---  tcb = QIB .                Enable func x-fer Ch 0
+---  tcc = qic qie .            parcel 3 and parcel 1
+---  tcd = qic qie .            parcel 3 and parcel 1
+---  tce = qid qif .            parcel 2 and parcel 0
+---  tcf = qid qif .            parcel 2 and parcel 0
+
+---  tcg = QJB .                Channel 1 bus
+---  tch = QJB .                Enable func x-fer Ch 1
+---  tci = qjc qje .            parcel 3 and parcel 1
+---  tcj = qjc qje .            parcel 3 and parcel 1
+---  tck = qjd qjf .            parcel 2 and parcel 0
+---  tcl = qjd qjf .            parcel 2 and parcel 0
+
+---  tcm = QKB .                Channel 2 bus
+---  tcn = QKB .                Enable func x-fer Ch 2
+---  tco = qkc qke .            parcel 3 and parcel 1
+---  tcp = qkc qke .            parcel 3 and parcel 1
+---  tcq = qkd qkf .            parcel 2 and parcel 0
+---  tcr = qkd qkf .            parcel 2 and parcel 0
+
+
+---  tcs = QLB .                  Channel 2 bus
+---  tct = QLB .                  Enable func x-fer Ch 3 
+---  tcu = qlc qle .              parcel 3 and parcel 1 
+---  tcv = qlc qle .              parcel 3 and parcel 1
+---  tcw = qld qlf .              parcel 2 and parcel 0
+---  tcx = qld qlf .              parcel 2 and parcel 0
+
+---  TDA = JCE .                  Read channel enable
+---  TDB = JCE .
+---  TDC = JCE .
+---  TDD = JCE .
+
+---  TDE = QAF .                  Read RTC enable
+---  TDF = QAF .
+---  tdg = qaf .
+---  tdh = qaf .
+
+---  TDI = QAG .                  Read memory enable
+---  TDJ = QAG .
+---  tdk = qag .
+---  tdl = qag .
+
+---  TEA = qaj qai .              Addr hold path enable
+---  teb = qai .                  Constant addr enable
+---  tec = qaj .                  Computed addr enable
+
+---  WAA = QCB .                 Write enable
+---  WAB = QCB .
+---  WAC = QCB .
+---  WAD = QCB .
+---  WAE = QCB .
+---  WAF = QCB .
+---  WAG = QCB .
+---  WAH = QCB .
+
+---  WBA = QCD .                  Wr enable for parity
+
+---  ZYA = IZZ / izz .
+---  ZYA = IZZ / izz .
+
+---  ZYB = IZZ / izz .
+---  ZYB = IZZ / izz .
+
+---  ZYC = IZZ / izz .
+---  ZYC = IZZ / izz .
+
+---  ZYD = IZZ / izz .
+---  ZYD = IZZ / izz .
+
+---  ZYE = IZZ / izz .
+---  ZYE = IZZ / izz .
+
+---  ZYF = IZZ / izz .
+---  ZYF = IZZ / izz .
+
+---  ZYG = IZZ / izz .
+---  ZYH = IZZ / izz .
+
+---  ZZA = ZYA / zya .
+---  ZZA = ZYA / zya .
+---  ZZA = ZYA / zya .
+---  ZZA = ZYA / zya .
+---  ZZA = ZYA / zya .
+---  ZZA = ZYA / zya .
+---  ZZA = ZYA / zya .
+---  ZZA = ZYA / zya .
+
+---  ZZB = ZYB / zyb .
+---  ZZB = ZYB / zyb .
+---  ZZB = ZYB / zyb .
+---  ZZB = ZYB / zyb .
+---  ZZB = ZYB / zyb .
+---  ZZB = ZYB / zyb .
+---  ZZB = ZYB / zyb .
+---  ZZB = ZYB / zyb .
+---  ZZB = ZYB / zyb .
+
+---  ZZC = ZYC / zyc .
+---  ZZC = ZYC / zyc .
+---  ZZC = ZYC / zyc .
+---  ZZC = ZYC / zyc .
+---  ZZC = ZYC / zyc .
+---  ZZC = ZYC / zyc .
+---  ZZC = ZYC / zyc .
+---  ZZC = ZYC / zyc .
+---  ZZC = ZYC / zyc .
+
+---  ZZD = ZYD / zyd .
+---  ZZD = ZYD / zyd .
+---  ZZD = ZYD / zyd .
+---  ZZD = ZYD / zyd .
+---  ZZD = ZYD / zyd .
+---  ZZD = ZYD / zyd .
+---  ZZD = ZYD / zyd .
+---  ZZD = ZYD / zyd .
+---  ZZD = ZYD / zyd .
+
+---  ZZE = ZYE / zye .
+---  ZZE = ZYE / zye .
+---  ZZE = ZYE / zye .
+---  ZZE = ZYE / zye .
+---  ZZE = ZYE / zye .
+---  ZZE = ZYE / zye .
+---  ZZE = ZYE / zye .
+---  ZZE = ZYE / zye .
+---  ZZE = ZYE / zye .
+
+---  ZZF = ZYF / zyf .
+---  ZZF = ZYF / zyf .
+---  ZZF = ZYF / zyf .
+---  ZZF = ZYF / zyf .
+---  ZZF = ZYF / zyf .
+---  ZZF = ZYF / zyf .
+---  ZZF = ZYF / zyf .
+---  ZZF = ZYF / zyf .
+---  ZZF = ZYF / zyf .
+
+---  zzo = *** .
+---  zzo = *** .
+---  zzo = *** .
+---  zzo = *** .
+---  zzo = *** .
+---  zzo = *** .
+---  zzo = *** .
+---  zzo = *** .

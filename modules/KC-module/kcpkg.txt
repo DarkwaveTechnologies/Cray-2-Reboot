@@ -1,0 +1,510 @@
+*
+* Package Definitions
+* Module: KC
+* Description: Foreground CPU
+* Revision: 
+* Date: 
+*
+A1H - JCA JCB .
+A2H - JCC JCD .
+A3H - JDA JDB .
+A4H - JDC JDD .
+A5X - AAA .
+A6X - AAI .
+A7X - ABA .
+A8X - ABI .
+AAX - BAA .
+ABX - BAI .
+ACX - BBA .
+ADX - BBI .
+AEL - BCA BCB BCC BCD .
+AFP - EAA .
+AGP - EAB .
+AHP - EAC .
+AIP - EAD .
+AJX - MAA .
+AKX - MAI .
+ALX - MBA .
+AMX - MBI .
+ANL - QAA QAB QAC QAD .
+AOL - QAE QAF QAG QAH .
+APL - QAI QAJ QAK QAL .
+AQP - QDA .
+ARP - QDB .
+ASP - QDC .
+ATI - NAA NAB NAC .
+AUI - NAD NAE NAF .
+AVI - NAG NAH NAI .
+AWI - NAJ NAK NAL .
+AXI - NAM NAN NAO .
+B1X - KAA .
+B2X - KAI .
+B3X - KBA .
+B4X - KBI .
+B5K - ACA .
+B6K - ACI .
+B7K - ADA .
+B8K - ADI .
+BAI - NBD NBE NBF .
+BBI - NBG NBH NBI .
+BCI - NBJ NBK NBL .
+BDI - NBM NBN NBO .
+BEI - NAP NBP .
+BFI - NBA NBB NBC .
+BGP - eia .
+BHP - eib .
+BIP - eic .
+BJP - eid .
+BKO - QEA .
+BLP - QEB .
+BMP - QEC .
+BNM - qdd .
+BOL - TBA TBB TCA TCB .
+BPL - QFA QFB QFC QFD .
+BQK - QFE .
+BRL - QBA QBB QBC QBD .
+BSL - QBH .
+BTL - TFA TFB TGA TGB .
+BUB - JAA .
+BVB - JAI .
+BWB - JBA .
+BXB - JBI .
+C1D - GAE .
+C2A - GAD .
+C3U - DAA DAI .
+C4U - DBA DBI .
+C5O - LAA LAB LAC .
+C6O - LBA LBB LBC .
+C7L - TPA TPB .
+C8L - TPC TPD .
+CBL - TPE TPF .
+CCL - TPG TPH .
+CDO - OAA OAI .
+CEL - OEC .
+CFX - QAP .
+CGL - QBI QBJ QBK QBL .
+CHO - OBA OBI .
+CIX - QAQ .
+CJX - oea .
+CKX - oeb .
+CLO - OCA OCI .
+CML - TIA TIB TJA TJB .
+CNP - TNA TNB .
+COL - TSA TSB TSC TSD .
+CPO - ODA ODI .
+CQX - taa .
+CRL - QGE .
+CSP - KKA .
+CTX - tab .
+CUL - TOA TOB .
+CVL - HAK .
+CWL - TLA TLB TLC .
+CXA - gah .
+D1X - AAB .
+D2X - AAJ .
+D3X - ABB .
+D4X - ABJ .
+D5X - BAB .
+D6X - BAJ .
+D7X - BBB .
+D8X - BBJ .
+DAP - EBA .
+DBP - EBB .
+DCP - EBC .
+DDL - TRA TRB .
+DEP - EBD .
+DFX - MAB .
+DGX - MAJ .
+DHX - MBB .
+DIX - MBJ .
+DJL - TDA TDB .
+DKA - gbh .
+DLA - gch .
+DMA - gdh .
+DNA - geh .
+DOA - gfh .
+DPA - ggh .
+DQA - ghh .
+DRN - HAC .
+DSN - HAD .
+DTL - TMA TMB TMC .
+DUK - gag .
+DVK - gcg .
+DWK - geg .
+DXK - ggg .
+E1X - KAB .
+E2X - KAJ .
+E3X - KBB .
+E4X - KBJ .
+E5K - ACB .
+E6K - ACJ .
+E7K - ADB .
+E8K - ADJ .
+EAP - eja .
+ECP - ejb .
+EDP - ejc .
+EGP - ejd .
+EHX - tea .
+EIX - teb .
+EKI - GAB GBB GCB .
+ELI - GDB GEB GFB .
+EMI - GHB GGB .
+ENI - gaf gbf gcf .
+EOI - gdf gef gff .
+EQI - ggf ghf .
+ERN - HAE .
+ESX - haf .
+EUB - JAB .
+EVB - JAJ .
+EWB - JBB .
+EXB - JBJ .
+F1D - GBE .
+F2A - GBD .
+F3U - DAB DAJ .
+F4U - DBB DBJ .
+F5O - LAE LAF .
+F6O - LBE LBF .
+F7K - LAD .
+F8L - TQA TQB .
+FAL - TQC TQD .
+FBL - TQE TQF .
+FCL - TQH TQG .
+FDO - OAB OAJ .
+FEO - LBD .
+FGL - HAA HBA HCA HDA .
+FHP - HAB .
+FIO - OBB OBJ .
+FJL - HEA HFA HGA HHA .
+FKO - HBB .
+FLO - HBC .
+FNO - OCB OCJ .
+FOO - HBD .
+FPO - HCB .
+FRO - HCC .
+FSO - ODB ODJ.
+FTO - HCD .
+FUO - HHB .
+FVO - HHC .
+FWO - HHD .
+FXN - HAG .
+G1X - AAC .
+G2X - AAK .
+G3X - ABC .
+G4X - ABK .
+G5X - BAC .
+G6H - GIA GJA .
+G7H - GKA GLA .
+G8X - BAK .
+GAX - BBC .
+GBX - BBK .
+GCP - ECA .
+GDL - BDA BDB BDC BDD .
+GEP - ECB .
+GIP - ECC .
+GLP - ECD .
+GMX - MAC .
+GPX - MAK .
+GQX - MBC .
+GTX - MBK .
+GUH - GMA GNA .
+GXH - GPA .
+H1X - KAC .
+H2X - KAK .
+H3X - KBC .
+H4X - KBK .
+H5K - ACC .
+H6K - ACK .
+H7K - ADC .
+H8K - ADK .
+HAP - eka .
+HBP - ekb .
+HCP - ekc .
+HDP - ekd .
+HGK - GAC .
+HHK - GCC .
+HIK - GEC .
+HKK - GGC .
+HLL - TTA TTB .
+HML - HIA HJA HKA HLA .
+HNL - HMA HNA HOA HPA .
+HOL - HQA .
+HQO - HQB .
+HRO - HQC .
+HSB - JAC .
+HTO - HQD .
+HVB - JAK .
+HWB - JBC .
+HXB - JBK .
+I1D - GCE .
+I3A - GCD .
+I4U - DAC DAK .
+I5U - DBC DBK .
+I6O - LAG LAH .
+I7O - LBG LBH .
+I8M - LBI .
+IAM - LBJ .
+IBO - LAJ LAK LAL .
+ICX - hah .
+IDO - OAC OAK .
+IEO - LAI .
+IFM - LBK .
+IGM - LBL .
+IHO - OBC OBK .
+IIO - HDB .
+IJO - HDC .
+IKO - HDD .
+ILO - OCC OCK .
+IMH - GQA .
+INX - hai .
+ION - HAJ .
+IPO - ODC ODK .
+IRK - GBC .
+ISK - GDC .
+ITK - GFC .
+IUK - GHC .
+IVK - gbg .
+IWK - gdg .
+IXK - gfg .
+J1X - AAD . 
+J2X - AAL .
+J3X - ABD .
+J4X - ABL .
+J5X - BAD .
+J6X - BAL .
+J7X - BBD .
+J8X - BBL .
+JAP - EDA .
+JBP - EDB .
+JCP - EDC .
+JDL - BDE BDF BDG BDH .
+JEP - EDD .
+JIX - MAD .
+JJX - MAL .
+JKX - MBD .
+JLX - MBL .
+JMK - ghg .
+K1X - KAD .
+K2X - KAL .
+K3X - KBD .
+K4X - KBL .
+K5K - ACD .
+K6K - ACL .
+K7K - ADD .
+K8K - ADL .
+KAP - ela .
+KCP - elb .
+KDP - elc .
+KGP - eld .
+KUB - JAD .
+KVB - JAL .
+KWB - JBD .
+KXB - JBL .
+L1D - GDE .
+L2A - GDD .
+L3U - DAD DAL .
+L4U - DBD DBL .
+L5O - HEB .
+L6O - HEC .
+L7O - HED .
+LDO - OAD OAL .
+LHO - OBD OBL .
+LLO - OCD OCL .
+LPO - ODD ODL .
+M1X - AAE .
+M2X - AAM .
+M3X - ABE .
+M4X - ABM .
+M5X - BAE .
+M6X - BAM .
+M7X - BBE .
+M8X - BBM .
+MAP - EEA .
+MBP - EEB .
+MCP - EEC .
+MDL - BCE BCF BCG BCH .
+MEP - EED .
+MFX - MAE . 
+MGX - MAM .
+MHX - MBE .
+MIX - MBM .
+N1X - KAE . 
+N2X - KAM .
+N3X - KBE .
+N4X - KBM .
+N5K - ACE .
+N6K - ACM .
+N7K - ADE .
+N8K - ADM .
+NAP - ema .
+NBP - emb .
+NCP - emc .
+NDP - emd .
+NGO - HFB .
+NHO - HFC .
+NIO - HFD .
+NUB - JAE .
+NVB - JAM .
+NWB - JBE .
+NXB - JBM .
+O1D - GEE .
+O2A - GED .
+O3U - DAE DAM .
+O4U - DBE DBM .
+O5O - LAM LAN LAO .
+O6O - LBM LBN LBO .
+O7O - LAP .
+O8O - LBP .
+ODO - OAE OAM .
+OHO - OBE OBM .
+OLO - OCE OCM .
+OPO - ODE ODM .
+P1X - AAF .
+P2X - AAN .
+P3X - ABF .
+P4X - ABN .
+P5X - BAF .
+P6X - BAN .
+P7X - BBF .
+P8X - BBN .
+PAP - EFA .
+PBP - EFB .
+PCP - EFC .
+PDL - BCI BCJ BCK BCL .
+PEP - EFD .
+PFX - MAF .
+PGX - MAN .
+PHX - MBF .
+PIX - MBN .
+Q1X - KAF .
+Q2X - KAN .
+Q3X - KBF .
+Q4X - KBN .
+Q5K - ACF .
+Q6K - ACN .
+Q7K - ADF .
+Q8K - ADN .
+QAP - ena .
+QCP - enb .
+QDP - enc .
+QEP - end .
+QGO - HIB .
+QHO - HIC .
+QIO - HID .
+QKO - HJB .
+QLO - HJC .
+QMO - HJD .
+QNO - HKB .
+QOO - HKC .
+QPO - HKD .
+QQO - HLB .
+QRO - HLC .
+QSO - HLD .
+QUB - JAF .
+QVB - JAN .
+QWB - JBF .
+QXB - JBN .
+R1D - GFE .
+R2A - GFD .
+R3U - DAF DAN .
+R4U - DBF DBN .
+R5O - HGB .
+R6O - HGC .
+R7O - HGD .
+RDO - OAF OAN .
+RHO - OBF OBN .
+RLO - OCF OCN .
+RPO - ODF ODN .
+S1X - AAG .
+S2X - AAO .
+S3X - ABG .
+S4X - ABO .
+S5X - BAG .
+S6X - BAO .
+S7X - BBG .
+S8X - BBO .
+SAP - EGA .
+SBP - EGB .
+SCP - EGC .
+SDL - BCM BCN BCO BCP .
+SEP - EGD .
+SFX - MAG .
+SGX - MAO .
+SHX - MBG .
+SIX - MBO .
+T1X - KAG .
+T2X - KAO .
+T3X - KBG .
+T4X - KBO .
+T5K - ACG .
+T6K - ACO .
+T7K - ADG .
+T8K - ADO .
+TAP - eoa .
+TBP - eob .
+TCP - eoc .
+TDP - eod .
+TUB - JAG .
+TVB - JAO .
+TWB - JBG .
+TXB - JBO .
+U1D - GGE .
+U2A - GGD .
+U3U - DAG DAO .
+U4U - DBG DBO .
+UDO - OAG OAO .
+UHO - OBG OBO .
+ULO - OCG OCO .
+UPO - ODG ODO .
+V1X - AAH .
+V2X - AAP .
+V3X - ABH .
+V4X - ABP .
+V5X - BAH .
+V6X - BAP .
+V7X - BBH .
+V8X - BBP .
+VAP - EHA .
+VBP - EHB .
+VCP - EHC .
+VDL - BDI BDJ BDK BDL .
+VEP - EHD .
+VFX - MAH .
+VGX - MAP .
+VHX - MBH .
+VIX - MBP .
+VLL - BDM BDN BDO BDP .
+W1X - KAH .
+W2X - KAP .
+W3X - KBH .
+W4X - KBP .
+W5K - ACH .
+W6K - ACP .
+W7K - ADH .
+W8K - ADP .
+WAP - epa .
+WBP - epb .
+WCP - epc .
+WDP - epd .
+WUB - JAH .
+WVB - JAP .
+WWB - JBH .
+WXB - JBP .
+X2A - GHD .
+X3U - DAH DAP .
+X4U - DBH DBP .
+X5O - HMB .
+X6O - HMC .
+X7O - HMD .
+X8O - HNB .
+XAO - HNC .
+XBO - HND .
+XCO - HOB .
+XDO - OAH OAP .
+XEO - HOC .
+XFO - HOD .
+XGO - HPB .
+XHO - OBH OBP .
+XIO - HPC .
+XJO - HPD .
+XLO - OCH OCP .
+XOO - ODH ODP .

@@ -1,0 +1,900 @@
+*
+* Boolean Definitions
+* Module: KC
+* Description: Foreground CPU
+* Revision: 
+* Date: 
+*
+           Hold      KA        KB        B
+                     Data      Data      Reg
+
+---  AAA = AAA TAA + IAA TBA + ICA TCA + BCA .    A Register   2(0)
+---  AAB = AAB TAA + IAB TBA + ICB TCA + BCB .
+---  AAC = AAC TAA + IAC TBA + ICC TCA + BCC .
+---  AAD = AAD TAA + IAD TBA + ICD TCA + BCD .
+---  AAE = AAE TAA + IAE TBA + ICE TCA + BCE .
+---  AAF = AAF TAA + IAF TBA + ICF TCA + BCF .
+---  AAG = AAG TAA + IAG TBA + ICG TCA + BCG .
+---  AAH = AAH TAA + IAH TBA + ICH TCA + BCH .
+
+---  AAI = AAI TAA + IAI TBA + ICI TCA + BCI .                 2(8)
+---  AAJ = AAJ TAA + IAJ TBA + ICJ TCA + BCJ .
+---  AAK = AAK TAA + IAK TBA + ICK TCA + BCK .
+---  AAL = AAL TAA + IAL TBA + ICL TCA + BCL .
+---  AAM = AAM TAA + IAM TBA + ICM TCA + BCM .
+---  AAN = AAN TAA + IAN TBA + ICN TCA + BCN .
+---  AAO = AAO TAA + IAO TBA + ICO TCA + BCO .
+---  AAP = AAP TAA + IAP TBA + ICP TCA + BCP .
+
+---  ABA = ABA TAB + IBA TBB + IDA TCB + BDA .    A Register   2(16)
+---  ABB = ABB TAB + IBB TBB + IDB TCB + BDB .
+---  ABC = ABC TAB + IBC TBB + IDC TCB + BDC .
+---  ABD = ABD TAB + IBD TBB + IDD TCB + BDD .
+---  ABE = ABE TAB + IBE TBB + IDE TCB + BDE .
+---  ABF = ABF TAB + IBF TBB + IDF TCB + BDF .
+---  ABG = ABG TAB + IBG TBB + IDG TCB + BDG .
+---  ABH = ABH TAB + IBH TBB + IDH TCB + BDH .
+
+---  ABI = ABI TAB + IBI TBB + IDI TCB + BDI .                 2(24)
+---  ABJ = ABJ TAB + IBJ TBB + IDJ TCB + BDJ .
+---  ABK = ABK TAB + IBK TBB + IDK TCB + BDK .
+---  ABL = ABL TAB + IBL TBB + IDL TCB + BDL .
+---  ABM = ABM TAB + IBM TBB + IDM TCB + BDM .
+---  ABN = ABN TAB + IBN TBB + IDN TCB + BDN .
+---  ABO = ABO TAB + IBO TBB + IDO TCB + BDO .
+---  ABP = ABP TAB + IBP TBB + IDP TCB + BDP .
+
+           B Register Mux
+           ALU       A Reg
+
+---  ACA = MAA TIA + AAA TJA .        Select Function Unit results or A reg
+---  ACB = MAB TIA + AAB TJA .
+---  ACC = MAC TIA + AAC TJA .
+---  ACD = MAD TIA + AAD TJA .
+---  ACE = MAE TIA + AAE TJA .
+---  ACF = MAF TIA + AAF TJA .
+---  ACG = MAG TIA + AAG TJA .
+---  ACH = MAH TIA + AAH TJA .
+
+---  ACI = MAI TIA + AAI TJA .        Select Function Unit results or A reg
+---  ACJ = MAJ TIA + AAJ TJA .
+---  ACK = MAK TIA + AAK TJA .
+---  ACL = MAL TIA + AAL TJA .
+---  ACM = MAM TIA + AAM TJA .
+---  ACN = MAN TIA + AAN TJA .
+---  ACO = MAO TIA + AAO TJA .
+---  ACP = MAP TIA + AAP TJA .
+
+---  ADA = MBA TIB + ABA TJB .        Select Function Unit results or A reg
+---  ADB = MBB TIB + ABB TJB .
+---  ADC = MBC TIB + ABC TJB .
+---  ADD = MBD TIB + ABD TJB .
+---  ADE = MBE TIB + ABE TJB .
+---  ADF = MBF TIB + ABF TJB .
+---  ADG = MBG TIB + ABG TJB .
+---  ADH = MBH TIB + ABH TJB .
+
+---  ADI = MBI TIB + ABI TJB .        Select Function Unit results or A reg
+---  ADJ = MBJ TIB + ABJ TJB .
+---  ADK = MBK TIB + ABK TJB .
+---  ADL = MBL TIB + ABL TJB .
+---  ADM = MBM TIB + ABM TJB .
+---  ADN = MBN TIB + ABN TJB .
+---  ADO = MBO TIB + ABO TJB .
+---  ADP = MBP TIB + ABP TJB .
+
+
+           Hold      KA        KB        A
+                     Data      Data      Reg
+
+---  BAA = BAA TEA + IAA TFA + ICA TGA + ACA .    B Register   2(0)
+---  BAB = BAB TEA + IAB TFA + ICB TGA + ACB .
+---  BAC = BAC TEA + IAC TFA + ICC TGA + ACC .
+---  BAD = BAD TEA + IAD TFA + ICD TGA + ACD .
+---  BAE = BAE TEA + IAE TFA + ICE TGA + ACE .
+---  BAF = BAF TEA + IAF TFA + ICF TGA + ACF .
+---  BAG = BAG TEA + IAH TFA + ICG TGA + ACG .
+---  BAH = BAH TEA + IAH TFA + ICH TGA + ACH .
+
+---  BAI = BAI TEA + IAI TFA + ICI TGA + ACI .                 2(8)
+---  BAJ = BAJ TEA + IAJ TFA + ICJ TGA + ACJ .
+---  BAK = BAK TEA + IAK TFA + ICK TGA + ACK .
+---  BAL = BAL TEA + IAL TFA + ICL TGA + ACL .
+---  BAM = BAM TEA + IAM TFA + ICM TGA + ACM .
+---  BAN = BAN TEA + IAN TFA + ICN TGA + ACN .
+---  BAO = BAO TEA + IAO TFA + ICO TGA + ACO .
+---  BAP = BAP TEA + IAP TFA + ICP TGA + ACP .
+
+---  BBA = BBA TEB + IBA TFB + IDA TGB + ADA .    B Register   2(16)
+---  BBB = BBB TEB + IBB TFB + IDB TGB + ADB .
+---  BBC = BBC TEB + IBC TFB + IDC TGB + ADC .
+---  BBD = BBD TEB + IBD TFB + IDD TGB + ADD .
+---  BBE = BBE TEB + IBE TFB + IDE TGB + ADE .
+---  BBF = BBF TEB + IBF TFB + IDF TGB + ADF .
+---  BBG = BBG TEB + IBH TFB + IDG TGB + ADG .
+---  BBH = BBH TEB + IBH TFB + IDH TGB + ADH .
+
+---  BBI = BBI TEB + IBI TFB + IDI TGB + ADI .                 2(24)
+---  BBJ = BBJ TEB + IBJ TFB + IDJ TGB + ADJ .
+---  BBK = BBK TEB + IBK TFB + IDK TGB + ADK .
+---  BBL = BBL TEB + IBL TFB + IDL TGB + ADL .
+---  BBM = BBM TEB + IBM TFB + IDM TGB + ADM .
+---  BBN = BBN TEB + IBN TFB + IDN TGB + ADN .
+---  BBO = BBO TEB + IBO TFB + IDO TGB + ADO .
+---  BBP = BBP TEB + IBP TFB + IDP TGB + ADP .
+
+      A Register Mux
+
+---  BCA = BAA TDA .
+---  BCB = BAB TDA .
+---  BCC = BAC TDA .
+---  BCD = BAD TDA .
+---  BCE = BAE TDA .
+---  BCF = BAF TDA .
+---  BCG = BAG TDA .
+---  BCH = BAH TDA .
+		   
+---  BCI = BAI TDA .
+---  BCJ = BAJ TDA .
+---  BCK = BAK TDA .
+---  BCL = BAL TDA .
+---  BCM = BAM TDA .
+---  BCN = BAN TDA .
+---  BCO = BAO TDA .
+---  BCP = BAP TDA .
+		   
+---  BDA = BBA TDB .
+---  BDB = BBB TDB .
+---  BDC = BBC TDB .
+---  BDD = BBD TDB .
+---  BDE = BBE TDB .
+---  BDF = BBF TDB .
+---  BDG = BBG TDB .
+---  BDH = BBH TDB .
+		   
+---  BDI = BBI TDB .
+---  BDJ = BBJ TDB .
+---  BDK = BBK TDB .
+---  BDL = BBL TDB .
+---  BDM = BBM TDB .
+---  BDN = BBN TDB .
+---  BDO = BBO TDB .
+---  BDP = BBP TDB .
+
+
+---  DAA = --- aaa baa + QDC aaa BAA + QDB AAA baa + QDA AAA BAA . Logic terms
+---  DAB = --- aab bab + QDC aab BAB + QDB AAB bab + QDA AAB BAB .
+---  DAC = --- aac bac + QDC aac BAC + QDB AAC bac + QDA AAC BAC .
+---  DAD = --- aad bad + QDC aad BAD + QDB AAD bad + QDA AAD BAD .	 
+---  DAE = --- aae bae + QDC aae BAE + QDB AAE bae + QDA AAE BAE .
+---  DAF = --- aaf baf + QDC aaf BAF + QDB AAF baf + QDA AAF BAF .
+---  DAG = --- aag bag + QDC aag BAG + QDB AAG bag + QDA AAG BAG .
+---  DAH = --- aah bah + QDC aah BAH + QDB AAH bah + QDA AAH BAH .
+									
+---  DAI = --- aai bai + QDC aai BAI + QDB AAI bai + QDA AAI BAI .  Logic terms
+---  DAJ = --- aaj baj + QDC aaj BAJ + QDB AAJ baj + QDA AAJ BAJ .
+---  DAK = --- aak bak + QDC aak BAK + QDB AAK bak + QDA AAK BAK .
+---  DAL = --- aal bal + QDC aal BAL + QDB AAL bal + QDA AAL BAL .	 
+---  DAM = --- aam bam + QDC aam BAM + QDB AAM bam + QDA AAM BAM .
+---  DAN = --- aan ban + QDC aan BAN + QDB AAN ban + QDA AAN BAN .
+---  DAO = --- aao bao + QDC aao BAO + QDB AAO bao + QDA AAO BAO .
+---  DAP = --- aap bap + QDC aap BAP + QDB AAP bap + QDA AAP BAP .
+									
+									
+---  DBA = --- aba bba + QEC aba BBA + QEB ABA bba + QEA ABA BBA .  Logic terms
+---  DBB = --- abb bbb + QEC abb BBB + QEB ABB bbb + QEA ABB BBB .
+---  DBC = --- abc bbc + QEC abc BBC + QEB ABC bbc + QEA ABC BBC .
+---  DBD = --- abd bbd + QEC abd BBD + QEB ABD bbd + QEA ABD BBD .	 
+---  DBE = --- abe bbe + QEC abe BBE + QEB ABE bbe + QEA ABE BBE .
+---  DBF = --- abf bbf + QEC abf BBF + QEB ABF bbf + QEA ABF BBF .
+---  DBG = --- abg bbg + QEC abg BBG + QEB ABG bbg + QEA ABG BBG .
+---  DBH = --- abh bbh + QEC abh BBH + QEB ABH bbh + QEA ABH BBH .
+									
+---  DBI = --- abi bbi + QEC abi BBI + QEB ABI bbi + QEA ABI BBI .  Logic terms
+---  DBJ = --- abj bbj + QEC abj BBJ + QEB ABJ bbj + QEA ABJ BBJ .
+---  DBK = --- abk bbk + QEC abk BBK + QEB ABK bbk + QEA ABK BBK .
+---  DBL = --- abl bbl + QEC abl BBL + QEB ABL bbl + QEA ABL BBL .	 
+---  DBM = --- abm bbm + QEC abm BBM + QEB ABM bbm + QEA ABM BBM .
+---  DBN = --- abn bbn + QEC abn BBN + QEB ABN bbn + QEA ABN BBN .
+---  DBO = --- abo bbo + QEC abo BBO + QEB ABO bbo + QEA ABO BBO .
+---  DBP = --- abp bbp + QEC abp BBP + QEB ABP bbp + QEA ABP BBP .
+
+       32 bit adder
+       Bit enables
+
+           Sub        Add      
+
+---  EAA = TSA baa + tsa BAA + AAA .                2^0  CP0
+---  EAB = TSA bab + tsa BAB + AAB .                
+---  EAC = TSA bac + tsa BAC + AAC .                
+---  EAD = TSA bad + tsa BAD + AAD .                
+
+---  EBA = TSA bae + tsa BAE + AAE .                2^4
+---  EBB = TSA baf + tsa BAF + AAF .                
+---  EBC = TSA bag + tsa BAG + AAG .                
+---  EBD = TSA bah + tsa BAH + AAH .                
+
+---  ECA = TSA bai + tsa BAI + AAI .                2^8
+---  ECB = TSA baj + tsa BAJ + AAJ .                
+---  ECC = TSA bak + tsa BAK + AAK .                
+---  ECD = TSA bal + tsa BAL + AAL .                
+
+---  EDA = TSA bam + tsa BAM + AAM .                2^12
+---  EDB = TSA ban + tsa BAN + AAN .                
+---  EDC = TSA bao + tsa BAO + AAO .                
+---  EDD = TSA bap + tsa BAP + AAP .                
+
+---  EEA = TSB bba + tsb BBA + ABA .                2^16
+---  EEB = TSB bbb + tsb BBB + ABB .                
+---  EEC = TSB bbc + tsb BBC + ABC .                
+---  EED = TSB bbd + tsb BBD + ABD .                
+
+---  EFA = TSB bbe + tsb BBE + ABE .                2^20
+---  EFB = TSB bbf + tsb BBF + ABF .                
+---  EFC = TSB bbg + tsb BBG + ABG .                
+---  EFD = TSB bbh + tsb BBH + ABH .                
+
+---  EGA = TSB bbi + tsb BBI + ABI .                2^24
+---  EGB = TSB bbj + tsb BBJ + ABJ .                
+---  EGC = TSB bbk + tsb BBK + ABK .                
+---  EGD = TSB bbl + tsb BBL + ABL .               
+ 
+---  EHA = TSB bbm + tsb BBM + ABM .                2^30
+---  EHB = TSB bbn + tsb BBN + ABN .                
+---  EHC = TSB bbo + tsb BBO + ABO .                
+---  EHD = TSB bbp + tsb BBP + ABP .                
+
+        Bit Carries
+
+           Sub        Add      
+
+---  eia = TSC baa + tsc BAA + aaa .                2^0  CP0
+---  eib = TSC bab + tsc BAB + aab .                
+---  eic = TSC bac + tsc BAC + aac .                
+---  eid = TSC bad + tsc BAD + aad .                
+
+---  eja = TSC bae + tsc BAE + aae .                2^4
+---  ejb = TSC baf + tsc BAF + aaf .                
+---  ejc = TSC bag + tsc BAG + aag .                
+---  ejd = TSC bah + tsc BAH + aah .                
+
+---  eka = TSC bai + tsc BAI + aai .                2^8
+---  ekb = TSC baj + tsc BAJ + aaj .                
+---  ekc = TSC bak + tsc BAK + aak .                
+---  ekd = TSC bal + tsc BAL + aal .                
+
+---  ela = TSC bam + tsc BAM + aam .                2^12
+---  elb = TSC ban + tsc BAN + aan .                
+---  elc = TSC bao + tsc BAO + aao .                
+---  eld = TSC bap + tsc BAP + aap .                
+
+---  ema = TSD bba + tsd BBA + aba .                2^16
+---  emb = TSD bbb + tsd BBB + abb .                
+---  emc = TSD bbc + tsd BBC + abc .                
+---  emd = TSD bbd + tsd BBD + abd .                
+
+---  ena = TSD bbe + tsd BBE + abe .                2^20
+---  enb = TSD bbf + tsd BBF + abf .                
+---  enc = TSD bbg + tsd BBG + abg .                
+---  end = TSD bbh + tsd BBH + abh .                
+
+---  eoa = TSD bbi + tsd BBI + abi .                2^24
+---  eob = TSD bbj + tsd BBJ + abj .                
+---  eoc = TSD bbk + tsd BBK + abk .                
+---  eod = TSD bbl + tsd BBL + abl .                
+
+---  epa = TSD bbm + tsd BBM + abm .               2^30
+---  epb = TSD bbn + tsd BBN + abn .                
+---  epc = TSD bbo + tsd BBO + abo .                
+---  epd = TSD bbp + tsd BBP + abp .                
+
+          Carries within groups
+
+             Group 0
+
+---  GAB = EIA .                                     No Carry
+---  GAC = EIA EAB + EAB .
+---  GAD = EIA EAB EAC + EIB EAC + EIC .
+---  GAE = EIA EAB EAC EAD + EIB EAC EAD + EIC EAD + EID .
+
+---  gaf = eia .                                     Carry
+---  gag = eia eab + eib .
+---  gah = eia eab eac + eib eac + eic .
+
+              Group 1
+
+---  GBB = EJA .
+---  GBC = EJA EBB + EJB .
+---  GBD = EJA EBB EBC + EJB EBC + EJC .
+---  GBE = EJA EBB EBC EBD + EJB EBC EBD + EJC EBD + EJD .
+
+---  gbf = eja .
+---  gbg = eja ebb + ejb .
+---  gbh = eja ebb ebc + ejb ebc + ejc .
+
+              Group 2
+
+---  GCB = EKA .
+---  GCC = EKA ECB + EKB .
+---  GCD = EKA ECB ECC + EKB ECC + EKC .
+---  GCE = EKA ECB ECC ECD + EKB ECC ECD + EKC ECD + EKD .
+
+---  gcf = eka .
+---  gcg = eka ecb + ekb .
+---  gch = eka ecb ecc + ekb ecc + ekc .
+
+             Group 3
+
+---  GDB = ELA .
+---  GDC = ELA EDB + ELB .
+---  GDD = ELA EDB EDC + ELB EDC + ELC .
+---  GDE = ELA EDB EDC EDD + ELB EDC EDD + ELC EDD + ELD .
+
+---  gdf = ela .
+---  gdg = ela edb + elb .
+---  gdh = ela edb edc + elb edc + elc .
+
+             Group 4
+
+---  GEB = EMA .
+---  GEC = EMA EEB + EMB .
+---  GED = EMA EEB EEC + EMB EEC + EMC .
+---  GEE = EMA EEB EEC EED + EMB EEC EED + EMC EED + EMD .
+
+---  gef = ema .
+---  geg = ema eeb + emb .
+---  geh = ema eeb eec + emb eec + emc .
+
+               Group 5
+
+---  GFB = ENA .
+---  GFC = ENA EFB + ENB .
+---  GFD = ENA EFB EFC + ENB EFC + ENC .
+---  GFE = ENA EFB EFC EFD + ENB EFC EFD + ENC EFD + END .
+
+---  gff = ena .
+---  gfg = ena efb + enb .
+---  gfh = ena efb efc + enb efc + enc .
+
+              Group 6
+
+---  GGB = EOA .
+---  GGC = EOA EGB + EOB .
+---  GGD = EOA EGB EGC + EOB EGC + EOC .
+---  GGE = EOA EGB EGC EGD + EOB EGC EGD + EOC EGD + EOD .
+
+---  ggf = eoa .
+---  ggg = eoa egb + eob .
+---  ggh = eoa egb egc + eob egc + eoc .
+
+               Group 7
+
+---  GHB = EPA .
+---  GHC = EPA EHB + EPB .
+---  GHD = EPA EHB EHC + EPB EHC + EPC .
+
+---  ghf = epa .
+---  ghg = epa ehb + epb .
+---  ghh = epa ehb ehc + epb ehc + epc .
+
+            Carry propagates
+
+---  GIA = EBA EBB EBC EBD .
+---  GJA = ECA ECB ECC ECD .
+---  GKA = EDA EDB EDC EDD .
+---  GLA = EEA EEB EEC EED .
+---  GMA = EFA EFB EFC EFD .
+---  GNA = EGA EGB EGC EGD .
+
+---  GPA = EDA EDB EDC EDD EEA EEB .
+---  GQA = EEC EED EFA EFB EFC EFD .
+
+---  HAA = GAE .                                           Select 1  CP 1
+---  HAB = GAE GIA + GBE .                                 Select 2
+---  HAC = GAE GIA GJA + GBE GJA + GCE .                   Select 3
+---  HAD = GAE GIA GJA GKA + GBE GJA GKA + GCE GKA + GDE . Select 4
+---  HAE = GAE GIA GJA GKA GLA + GBE GJA GKA GLA + GCE GKA GLA + *** GDE GLA + GEE .
+
+---  haf = gae + gia + gja + gpa + gqa .               HAF,HAG = Select 6
+---  HAG = GBE GJA GKA GLA GMA + GCE GKA GLA GMA + GDE GLA GMA + *** GEE GMA + GFE .
+---  hah = gae + gia + gja + gpa + gqa .
+---  hai = gbe + gja + gka + gla + gma .
+---  HAJ = GCE GKA GLA GMA GNA + GDE GLA GMA GNA + GEE GMA GNA + *** GFE GNA + GGE .
+---  HAK = GNA .
+
+---  KKA = HAH HAK + HAI HAK  + HAJ .
+
+          Sums with no carry
+
+---  HBA = EAA .                   Group 0    CP1
+---  HBB = EAB gab + eab GAB .
+---  HBC = EAC gac + eac GAC .
+---  HBD = EAD gad + ead GAD .
+
+---  HCA = EBA .                   Group 1
+---  HCB = EBB gbb + ebb GBB .
+---  HCC = EBC gbc + ebc GBC .
+---  HCD = EBD gbd + ebd GBD .
+
+---  HDA = ECA .                   Group 2
+---  HDB = ECB gcb + ecb GCB .
+---  HDC = ECC gcc + ecc GCC .
+---  HDD = ECD gcd + ecd GCD .
+
+---  HEA = EDA .                    Group 3
+---  HEB = EDB gdb + edb GDB .
+---  HEC = EDC gdc + edc GDC .
+---  HED = EDD gdd + edd GDD .
+
+---  HFA = EEA .                   Group 4
+---  HFB = EEB geb + eeb GEB .
+---  HFC = EEC gec + eec GEC .
+---  HFD = EED ged + eed GED .
+
+---  HGA = EFA .                   Group 5
+---  HGB = EFB gfb + efb GFB .
+---  HGC = EFC gfc + efc GFC .
+---  HGD = EFD gfd + efd GFD .
+
+---  HHA = EGA .                   Group 6
+---  HHB = EGB ggb + egb GGB .
+---  HHC = EGC ggc + egc GGC .
+---  HHD = EGD ggd + egd GGD .
+
+---  HIA = EHA .                    Group 7
+---  HIB = EHB ghb + ehb GHB .
+---  HIC = EHC ghc + ehc GHC .
+---  HID = EHD ghd + ehd GHD .
+
+          Sums with carry
+
+---  HJA = eaa .                   Group 0 (Needed for subtsact) CP 1
+---  HJB = EAB gaf + eab GAF .
+---  HJC = EAC gag + eac GAG .
+---  HJD = EAD gah + ead GAH .
+
+---  HKA = eba .                   Group 1
+---  HKB = EBB gbf + ebb GBF .
+---  HKC = EBC gbg + ebc GBG .
+---  HKD = EBD gbh + ebd GBH .
+
+---  HLA = eca .                   Group 2
+---  HLB = ECB gcf + ecb GCF .
+---  HLC = ECC gcg + ecc GCG .
+---  HLD = ECD gch + ecd GCH .
+
+---  HMA = eda .                    Group 3
+---  HMB = EDB gdf + edb GDF .
+---  HMC = EDC gdg + edc GDG .
+---  HMD = EDD gdh + edd GDH .
+
+---  HNA = eea .                   Group 4
+---  HNB = EEB gef + eeb GEF .
+---  HNC = EEC geg + eec GEG .
+---  HND = EED geh + eed GEH .
+
+---  HOA = efa .                   Group 5
+---  HOB = EFB gff + efb GFF .
+---  HOC = EFC gfg + efc GFG .
+---  HOD = EFD gfh + efd GFH .
+
+---  HPA = ega .                   Group 6
+---  HPB = EGB ggf + egb GGF .
+---  HPC = EGC ggg + egc GGG .
+---  HPD = EGD ggh + egd GGH .
+
+---  HQA = eha .                    Group 7
+---  HQB = EHB ghf + ehb GHF .
+---  HQC = EHC ghg + ehc GHG .
+---  HQD = EHD ghh + ehd GHH .
+
+      Shift 0,1,2,3
+
+---  JAA = AAA TPA + AAB TPB + AAC TPC + AAD TPD .
+---  JAB = AAB TPA + AAC TPB + AAD TPC + AAE TPD .
+---  JAC = AAC TPA + AAD TPB + AAE TPC + AAF TPD .
+---  JAD = AAD TPA + AAE TPB + AAF TPC + AAG TPD .
+---  JAE = AAE TPA + AAF TPB + AAG TPC + AAH TPD .
+---  JAF = AAF TPA + AAG TPB + AAH TPC + AAI TPD .
+---  JAG = AAG TPA + AAH TPB + AAI TPC + AAJ TPD .
+---  JAH = AAH TPA + AAI TPB + AAJ TPC + AAK TPD .
+
+---  JAI = AAI TPA + AAJ TPB + AAK TPC + AAL TPD .
+---  JAJ = AAJ TPA + AAK TPB + AAL TPC + AAM TPD .
+---  JAK = AAK TPA + AAL TPB + AAM TPC + AAN TPD .
+---  JAL = AAL TPA + AAM TPB + AAN TPC + AAO TPD .
+---  JAM = AAM TPA + AAN TPB + AAO TPC + AAP TPD .
+---  JAN = AAN TPA + AAO TPB + AAP TPC + ABA TPD .
+---  JAO = AAO TPA + AAP TPB + ABA TPC + ABB TPD .
+---  JAP = AAP TPA + ABA TPB + ABB TPC + ABC TPD .
+
+---  JBA = ABA TPE + ABB TPF + ABC TPG + ABD TPH .
+---  JBB = ABB TPE + ABC TPF + ABD TPG + ABE TPH .
+---  JBC = ABC TPE + ABD TPF + ABE TPG + ABF TPH .
+---  JBD = ABD TPE + ABE TPF + ABF TPG + ABG TPH .
+---  JBE = ABE TPE + ABF TPF + ABG TPG + ABH TPH .
+---  JBF = ABF TPE + ABG TPF + ABH TPG + ABI TPH .
+---  JBG = ABG TPE + ABH TPF + ABI TPG + ABJ TPH .
+---  JBH = ABH TPE + ABI TPF + ABJ TPG + ABK TPH .
+
+---  JBI = ABI TPE + ABJ TPF + ABK TPG + ABL TPH .
+---  JBJ = ABJ TPE + ABK TPF + ABL TPG + ABM TPH .
+---  JBK = ABK TPE + ABL TPF + ABM TPG + ABN TPH .
+---  JBL = ABL TPE + ABM TPF + ABN TPG + ABO TPH .
+---  JBM = ABM TPE + ABN TPF + ABO TPG + ABP TPH .
+---  JBN = ABN TPE + ABO TPF + ABP TPG .
+---  JBO = ABO TPE + ABP TPF .
+---  JBP = ABP TPE .
+
+---  JCA = BAA BAB BAC BAD .
+---  JCB = BAE BAF BAG BAH .
+---  JCC = BAI BAJ BAK BAL .
+---  JCD = BAM BAN BAO BAP .
+
+---  JDA = BBA BBB BBC BBD .
+---  JDB = BBE BBF BBG BBH .
+---  JDC = BBI BBJ BBK BBL .
+---  JDD = BBM BBN BBO BBP .
+
+      Shift 0,4,8,12
+
+---  KAA = JAA TQA + JAE TQB + JAI TQC + JAM TQD .
+---  KAB = JAB TQA + JAF TQB + JAJ TQC + JAN TQD .
+---  KAC = JAC TQA + JAG TQB + JAK TQC + JAO TQD .
+---  KAD = JAD TQA + JAH TQB + JAL TQC + JAP TQD .
+---  KAE = JAE TQA + JAI TQB + JAM TQC + JBA TQD .
+---  KAF = JAF TQA + JAJ TQB + JAN TQC + JBB TQD .
+---  KAG = JAG TQA + JAK TQB + JAO TQC + JBC TQD .
+---  KAH = JAH TQA + JAL TQB + JAP TQC + JBD TQD .
+						 
+      Shift 0,4,8,12
+						 
+---  KAI = JAI TQA + JAM TQB + JBA TQC + JBE TQD .
+---  KAJ = JAJ TQA + JAN TQB + JBB TQC + JBF TQD .
+---  KAK = JAK TQA + JAO TQB + JBC TQC + JBG TQD .
+---  KAL = JAL TQA + JAP TQB + JBD TQC + JBH TQD .
+---  KAM = JAM TQA + JBA TQB + JBE TQC + JBI TQD .
+---  KAN = JAN TQA + JBB TQB + JBF TQC + JBJ TQD .
+---  KAO = JAO TQA + JBC TQB + JBG TQC + JBK TQD .
+---  KAP = JAP TQA + JBD TQB + JBH TQC + JBL TQD .
+						 
+      Shift 0,4,8,12				 
+						 
+---  KBA = JBA TQE + JBE TQF + JBI TQG + JBM TQH .
+---  KBB = JBB TQE + JBF TQF + JBJ TQG + JBN TQH .
+---  KBC = JBC TQE + JBG TQF + JBK TQG + JBO TQH .
+---  KBD = JBD TQE + JBH TQF + JBL TQG + JBP TQH .
+---  KBE = JBE TQE + JBI TQF + JBM TQG .
+---  KBF = JBF TQE + JBJ TQF + JBN TQG .
+---  KBG = JBG TQE + JBK TQF + JBO TQG .
+---  KBH = JBH TQE + JBL TQF + JBP TQG .
+			     
+---  KBI = JBI TQE + JBM TQF .
+---  KBJ = JBJ TQE + JBN TQF .
+---  KBK = JBK TQE + JBO TQF .
+---  KBL = JBL TQE + JBP TQF .
+---  KBM = JBM TQE .
+---  KBN = JBN TQE .
+---  KBO = JBO TQE .
+---  KBP = JBP TQE .
+
+             Final Sum Select Add/Subtsact
+
+---  LAA = HBA qbb + HJA QBB .   Group 0  ( + one for subtsact mode)
+---  LAB = HBB qbb + HJB QBB .
+---  LAC = HBC qbb + HJC QBB .
+---  LAD = HBD qbb + HJD QBB .
+
+---  LAE = HCA haa + HKA HAA .   Group 1
+---  LAF = HCB haa + HKB HAA .
+---  LAG = HCC haa + HKC HAA .
+---  LAH = HCD haa + HKD HAA .
+
+---  LAI = HDA hab + HLA HAB .   Group 2
+---  LAJ = HDB hab + HLB HAB .
+---  LAK = HDC hab + HLC HAB .
+---  LAL = HDD hab + HLD HAB .
+
+---  LAM = HEA hac + HMA HAC .   Group 3
+---  LAN = HEB hac + HMB HAC .
+---  LAO = HEC hac + HMC HAC .
+---  LAP = HED hac + HMD HAC .
+
+---  LBA = HFA had + HNA HAD .   Group 4
+---  LBB = HFB had + HNB HAD .
+---  LBC = HFC had + HNC HAD .
+---  LBD = HFD had + HND HAD .
+
+---  LBE = HGA hae + HOA HAE .   Group 5
+---  LBF = HGB hae + HOB HAE .
+---  LBG = HGC hae + HOC HAE .
+---  LBH = HGD hae + HOD HAE .
+
+---  LBI = HHA haf hag + HPA HAF + HPA HAG .   Group 6
+---  LBJ = HHB haf hag + HPB HAF + HPB HAG .
+---  LBK = HHC haf hag + HPC HAF + HPC HAG .
+---  LBL = HHD haf hag + HPD HAF + HPD HAG .
+
+---  LBM = HIA kka + HQA KKA .   Group 7
+---  LBN = HIB kka + HQB KKA .
+---  LBO = HIC kka + HQC KKA .
+---  LBP = HID kka + HQD KKA .
+
+---  NAA = TOA DAA .
+---  NAB = TOA DAB .
+---  NAC = TOA DAC .
+---  NAD = TOA DAD .
+---  NAE = TOA DAE .
+---  NAF = TOA DAF .
+---  NAG = TOA DAG .
+---  NAH = TOA DAH .
+	  
+---  NAI = TOA DAI .
+---  NAJ = TOA DAJ .
+---  NAK = TOA DAK .
+---  NAL = TOA DAL .
+---  NAM = TOA DAM .
+---  NAN = TOA DAN .
+---  NAO = TOA DAO .
+---  NAP = TOA DAP .
+
+---  NBA = TOB DBA .
+---  NBB = TOB DBB .
+---  NBC = TOB DBC .
+---  NBD = TOB DBD .
+---  NBE = TOB DBE .
+---  NBF = TOB DBF .
+---  NBG = TOB DBG .
+---  NBH = TOB DBH .
+
+---  NBI = TOB DBI .
+---  NBJ = TOB DBJ .
+---  NBK = TOB DBK .
+---  NBL = TOB DBL .
+---  NBM = TOB DBM .
+---  NBN = TOB DBN .
+---  NBO = TOB DBO .
+---  NBP = TOB DBP .	
+
+
+	     Select result
+	  
+           Shift L   Shift R	Shift L	 Add/Sub   Logical
+	   0	     0		32	
+---  MAA = TLA KAA + TMA KBP + TLC KBA + TNA LAA + NAA .
+---  MAB = TLA KAB + TMA KBO + TLC KBB + TNA LAB + NAB .
+---  MAC = TLA KAC + TMA KBN + TLC KBC + TNA LAC + NAC .
+---  MAD = TLA KAD + TMA KBM + TLC KBD + TNA LAD + NAD .
+---  MAE = TLA KAE + TMA KBL + TLC KBE + TNA LAE + NAE .
+---  MAF = TLA KAF + TMA KBK + TLC KBF + TNA LAF + NAF .
+---  MAG = TLA KAG + TMA KBJ + TLC KBG + TNA LAG + NAG .
+---  MAH = TLA KAH + TMA KBI + TLC KBH + TNA LAH + NAH .
+						       
+---  MAI = TLA KAI + TMA KBH + TLC KBI + TNA LAI + NAI .
+---  MAJ = TLA KAJ + TMA KBG + TLC KBJ + TNA LAJ + NAJ .
+---  MAK = TLA KAK + TMA KBF + TLC KBK + TNA LAK + NAK .
+---  MAL = TLA KAL + TMA KBE + TLC KBL + TNA LAL + NAL .
+---  MAM = TLA KAM + TMA KBD + TLC KBM + TNA LAM + NAM .
+---  MAN = TLA KAN + TMA KBC + TLC KBN + TNA LAN + NAN .
+---  MAO = TLA KAO + TMA KBB + TLC KBO + TNA LAO + NAO .
+---  MAP = TLA KAP + TMA KBA + TLC KBP + TNA LAP + NAP .
+			       
+	   Shift L   Shift R	Shift R	 Add/Sub   Logical
+	   0	     0		32	
+---  MBA = TLB KBA + TMB KAP + TMC KBP + TNB LBA + NBA .
+---  MBB = TLB KBB + TMB KAO + TMC KBO + TNB LBB + NBB .
+---  MBC = TLB KBC + TMB KAN + TMC KBN + TNB LBC + NBC .
+---  MBD = TLB KBD + TMB KAM + TMC KBM + TNB LBD + NBD .
+---  MBE = TLB KBE + TMB KAL + TMC KBL + TNB LBE + NBE .
+---  MBF = TLB KBF + TMB KAK + TMC KBK + TNB LBF + NBF .
+---  MBG = TLB KBG + TMB KAJ + TMC KBJ + TNB LBG + NBG .
+---  MBH = TLB KBH + TMB KAI + TMC KBI + TNB LBH + NBH .
+
+---  MBI = TLB KBI + TMB KAH + TMC KBH + TNB LBI + NBI .
+---  MBJ = TLB KBJ + TMB KAG + TMC KBG + TNB LBJ + NBJ .
+---  MBK = TLB KBK + TMB KAF + TMC KBF + TNB LBK + NBK .
+---  MBL = TLB KBL + TMB KAE + TMC KBE + TNB LBL + NBL .
+---  MBM = TLB KBM + TMB KAD + TMC KBD + TNB LBM + NBM .
+---  MBN = TLB KBN + TMB KAC + TMC KBC + TNB LBN + NBN .
+---  MBO = TLB KBO + TMB KAB + TMC KBB + TNB LBO + NBO .
+---  MBP = TLB KBP + TMB KAA + TMC KBA + TNB LBP + NBP .
+						    
+
+
+---  OAA = AAA TRA + BAA tra .	    Data to KA
+---  OAB = AAB TRA + BAB tra .
+---  OAC = AAC TRA + BAC tra .
+---  OAD = AAD TRA + BAD tra .
+---  OAE = AAE TRA + BAE tra .
+---  OAF = AAF TRA + BAF tra .
+---  OAG = AAG TRA + BAG tra .
+---  OAH = AAH TRA + BAH tra .
+			 
+---  OAI = AAI TRA + BAI tra .	    
+---  OAJ = AAJ TRA + BAJ tra .
+---  OAK = AAK TRA + BAK tra .
+---  OAL = AAL TRA + BAL tra .
+---  OAM = AAM TRA + BAM tra .
+---  OAN = AAN TRA + BAN tra .
+---  OAO = AAO TRA + BAO tra .
+---  OAP = AAP TRA + BAP tra .
+			 
+---  OBA = ABA TRB + BBA trb .	    Data to KA
+---  OBB = ABB TRB + BBB trb .
+---  OBC = ABC TRB + BBC trb .
+---  OBD = ABD TRB + BBD trb .
+---  OBE = ABE TRB + BBE trb .
+---  OBF = ABF TRB + BBF trb .
+---  OBG = ABG TRB + BBG trb .
+---  OBH = ABH TRB + BBH trb .
+			 
+---  OBI = ABI TRB + BBI trb .	    
+---  OBJ = ABJ TRB + BBJ trb .
+---  OBK = ABK TRB + BBK trb .
+---  OBL = ABL TRB + BBL trb .
+---  OBM = ABM TRB + BBM trb .
+---  OBN = ABN TRB + BBN trb .
+---  OBO = ABO TRB + BBO trb .
+---  OBP = ABP TRB + BBP trb .
+			 
+			 
+---  OCA = AAA TTA + BAA tta .	    Data to KB
+---  OCB = AAB TTA + BAB tta .
+---  OCC = AAC TTA + BAC tta .
+---  OCD = AAD TTA + BAD tta .
+---  OCE = AAE TTA + BAE tta .
+---  OCF = AAF TTA + BAF tta .
+---  OCG = AAG TTA + BAG tta .
+---  OCH = AAH TTA + BAH tta .
+			 
+---  OCI = AAI TTA + BAI tta .	    
+---  OCJ = AAJ TTA + BAJ tta .
+---  OCK = AAK TTA + BAK tta .
+---  OCL = AAL TTA + BAL tta .
+---  OCM = AAM TTA + BAM tta .
+---  OCN = AAN TTA + BAN tta .
+---  OCO = AAO TTA + BAO tta .
+---  OCP = AAP TTA + BAP tta .
+			 
+---  ODA = ABA TTB + BBA ttb .	    Data to KB
+---  ODB = ABB TTB + BBB ttb .
+---  ODC = ABC TTB + BBC ttb .
+---  ODD = ABD TTB + BBD ttb .
+---  ODE = ABE TTB + BBE ttb .
+---  ODF = ABF TTB + BBF ttb .
+---  ODG = ABG TTB + BBG ttb .
+---  ODH = ABH TTB + BBH ttb .
+			 
+---  ODI = ABI TTB + BBI ttb .	    
+---  ODJ = ABJ TTB + BBJ ttb .
+---  ODK = ABK TTB + BBK ttb .
+---  ODL = ABL TTB + BBL ttb .
+---  ODM = ABM TTB + BBM ttb .
+---  ODN = ABN TTB + BBN ttb .
+---  ODO = ABO TTB + BBO ttb .
+---  ODP = ABP TTB + BBP ttb .
+
+---  oea = jca + jcb + jcc + jcd .             Lower 32 of B == 0
+---  oeb = jda + jdb + jdc + jdd .             Upper 32 of B == 0
+
+---  OEC = BBP .                               B reg sign bit
+
+---  QAA = IFA .                            Add
+---  QAB = IFB .                            Subtsact
+---  QAC = IFC .                            Shift right
+---  QAD = IFD .                            Shift left
+---  QAE = IFE .                            Logical product
+---  QAF = IFF .                            Logical difference
+---  QAG = IFG .                            Logical sum
+---  QAH = IFH .                            Swap
+
+---  QAI = IFI .                            Enter A from KA
+---  QAJ = IFJ .                            Enter B from KA
+---  QAK = IFK .                            Enter A from KB
+---  QAL = IFL .                            Enter B from KB
+
+---  QAP = IFA + IFB + IFC + IFD .         
+---  QAQ = IFE + IFF + IFG + IFH .
+
+---  QBA = QAA .                            Add
+---  QBB = QAB .                            Subtsact
+---  QBC = QAC .                            Shift right
+---  QBD = QAD .                            Shift left
+
+---  QBH = QAH .                            Swap
+
+---  QBI = QAI .                            Enter A from KA
+---  QBJ = QAJ .                            Enter B from KA
+---  QBK = QAK .                            Enter A from KB
+---  QBL = QAL .                            Enter B from KA
+
+---  QDA = QAE + QAG .                      Logical product + Logical sum
+---  QDB = QAF + QAG .                      Logical diff + Logical sum 
+---  QDC = QAF + QAG .                      Logical diff + Logical sum
+---  qdd = qae qaf qag .                    Any logical op
+
+---  QEA = QAE + QAG .                      Logical product + Logical sum
+---  QEB = QAF + QAG .                      Logical diff + Logical sum 
+---  QEC = QAF + QAG .                      Logical diff + Logical sum
+
+---  QFA = IAA .                            Shift Amount 2^0
+---  QFB = IAB .                            Shift Amount 2^1
+---  QFC = IAC .                            Shift Amount 2^2
+---  QFD = IAD .                            Shift Amount 2^3
+---  QFE = IAE .                            Shift Amount 2^4
+
+---  QGE = QFE .                            Shift 2^4
+
+---  taa = QAI + QAK + QAH .                   Not enter A or Swap
+---  tab = QAI + QAK + QAH .
+
+---  TBA = QAI .                           Enter A from KA
+---  TBB = QAI .
+
+---  TCA = QAK .                           Enter A from KB
+---  TCB = QAK .
+
+---  tea = QAJ + QAL + QAP + QAQ .               Not enter B or Any Op
+---  teb = QAJ + QAL + QAP + QAQ .
+
+---  TFA = QAJ .                           Enter B from KA
+---  TFB = QAJ .
+
+---  TGA = QAL .                           Enter B from KB
+---  TGB = QAL .
+
+---  TDA = QAH .                           Swap A and B
+---  TDB = QAH .
+
+---  TIA = QDD .                           Alu Select
+---  TIB = QDD .
+
+---  TJA = QAH .                           Swap A and B
+---  TJB = QAH .
+
+---  TLA = qfe QBC .                       Shift Left and not 32
+---  TLB = qfe QBC .
+---  TLC = QFE QBC .                       Shift L and 32
+
+---  TMA = qfe QBD .                       Shift Right and not 32
+---  TMB = qfe QBD .
+---  TMC = QFE QBD .                       Shift R and 32
+
+---  TNA = QAA + QAB .                     Add or sub
+---  TNB = QAA + QAB .
+
+---  TOA = QDD .                            Fanout for select any logical op
+---  TOB = QDD . 
+
+---  TPA = iaa iab .                        Shift 0
+---  TPB = IAA iab .                        Shift 1
+---  TPC = iaa IAB .                        Shift 2
+---  TPD = IAA IAB .                        Shift 3
+
+---  TPE = iaa iab .
+---  TPF = IAA iab .
+---  TPG = iaa IAB .
+---  TPH = IAA IAB .
+
+---  TQA = qfc qfd .                        Shift 0
+---  TQB = QFC qfd .                        Shift 4
+---  TQC = qfc QFD .                        Shift 8
+---  TQD = QFC QFD .                        Shift 12
+
+---  TQE = qfc qfd .
+---  TQF = QFC qfd .
+---  TQG = qfc QFD .
+---  TQH = QFC QFD .
+
+---  TRA = QAJ .                            Select for KA
+---  TRB = QAJ .
+
+---  TSA = QAA .                           Add selected
+---  TSB = QAA .
+---  TSC = QAA .
+---  TSD = QAA .
+
+---  TTA = QAI .                            Select for KB
+---  TTB = QAI .
+
+

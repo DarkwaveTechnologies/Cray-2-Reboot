@@ -1,0 +1,1215 @@
+*
+* Boolean Definitions
+* Module: KA
+* Description: Foreground CPU
+* Revision: 
+* Date: 
+*
+---   AAA = AAA TEA + EAA TEB + HAD TEC .   Lower memory address register
+---   AAB = AAB TEA + EAB TEB + HAE TEC .
+---   AAC = AAC TEA + EAC TEB + HAF TEC .   Hold + Advance + new
+---   AAD = AAD TEA + EAD TEB + HAG TEC .
+---   AAE = AAE TEA + EAE TEB + HAH TEC .
+---   AAF = AAF TEA + EAF TEB + HAI TEC .
+---   AAG = AAG TEA + EAG TEB + HAJ TEC .
+---   AAH = AAH TEA + EAH TEB + HAK TEC .
+---   AAI = AAI TEA + EAI TEB + HAH TEC .
+---   AAJ = AAJ TEA + EAJ TEB + HAI TEC .
+---   AAK = AAK TEA + EAK TEB + HAJ TEC .
+---   AAL = AAL TEA + EAL TEB + HAK TEC .
+
+
+---   ABA = ABA TED + AAA TEE + HAD TEF .   Upper memory address register
+---   ABB = ABB TED + AAB TEE + HAE TEF .
+---   ABC = ABC TED + AAC TEE + HAF TEF .   Hold + Advance + new
+---   ABD = ABD TED + AAD TEE + HAG TEF .
+---   ABE = ABE TED + AAE TEE + HAH TEF .
+---   ABF = ABF TED + AAF TEE + HAI TEF .
+---   ABG = ABG TED + AAG TEE + HAJ TEF .
+---   ABH = ABH TED + AAH TEE + HAK TEF .
+---   ABI = ABI TED + AAI TEE + HAL TEF .
+---   ABJ = ABJ TED + AAJ TEE + HAM TEF .
+---   ABK = ABK TED + AAK TEE + HAN TEF .
+---   ABL = ABL TED + AAL TEE + HAO TEF .
+
+---   ACA = AAA .                   Lower memory address slaves
+---   ACB = AAB .
+---   ACC = AAC .
+---   ACD = AAD .
+---   ACE = AAE .
+---   ACF = AAF .
+---   ACG = AAG .
+---   ACH = AAH .
+---   ACI = AAI .
+---   ACJ = AAJ .
+---   ACK = AAK .
+---   ACL = AAL .
+
+---   bab = jha .                     Address carry latches
+---   bac = jhb .
+---   bad = jhc .
+---   bae = jhd .
+---   baf = jhd + jhe .
+---   bag = jhd + jhf .
+---   bah = jhd + jhg .
+---   bai = jhd + jhh .
+---   baj = jhd + jhh + jhi .
+---   bak = jhd + jhh + jhj .
+---   bal = jhd + jhh + jhk .
+
+---   CAA = CAA tfa tfb + DCA TFA + EBA TFB .   Console byte register
+---   CAB = CAB tfa tfb + DCB TFA + EBB TFB .   Hold + from console + to console
+---   CAC = CAC tfa tfb + DCC TFA + EBC TFB .
+---   CAD = CAD tfa tfb + DCD TFA + EBD TFB .
+---   CAE = CAE tfa tfb + DCE TFA + EBE TFB .   
+---   CAF = CAF tfa tfb + DCF TFA + EBF TFB .
+---   CAG = CAG tfa tfb + DCG TFA + EBG TFB .
+---   CAH = CAH tfa tfb + DCH TFA + EBH TFB .
+
+---   CBA = CAA tfa tfb + DCA TFA + EBA TFB .   
+---   CBB = CAB tfa tfb + DCB TFA + EBB TFB .
+---   CBC = CAC tfa tfb + DCC TFA + EBC TFB .
+---   CBD = CAD tfa tfb + DCD TFA + EBD TFB .
+---   CBE = CAE tfa tfb + DCE TFA + EBE TFB .   
+---   CBF = CAF tfa tfb + DCF TFA + EBF TFB .
+---   CBG = CAG tfa tfb + DCG TFA + EBG TFB .
+---   CBH = CAH tfa tfb + DCH TFA + EBH TFB .
+
+---   DAA = IFA / ifa .                     Console data inputs
+---   DAB = IFB / ifb .
+---   DAC = IFC / ifc .
+---   DAD = IFD / ifd .
+---   DAE = IFE / ife .
+---   DAF = IFF / iff .
+---   DAG = IFG / ifg .
+---   DAH = IFH / ifh .
+
+---   DAI = IFI / ifi .                      Data Ready
+---   DAJ = IFJ / ifj .                      Data Resume
+---   DAK = IFK / ifk .                      Dead start
+---   DAL = IFL / ifl .                      Mode Select
+
+---   DBA = DBA qrq + DAA QRQ .              First console resync
+---   DBB = DBB qrq + DAB QRQ .              
+---   DBC = DBC qrq + DAC QRQ .              
+---   DBD = DBD qrq + DAD QRQ .              
+---   DBE = DBE qrq + DAE QRQ .              
+---   DBF = DBF qrq + DAF QRQ .              
+---   DBG = DBG qrq + DAG QRQ .              
+---   DBH = DBH qrq + DAH QRQ .              
+
+---   DCA = DCA qrq + DBA QRQ .              Second console resync
+---   DCB = DCB qrq + DBB QRQ .              
+---   DCC = DCC qrq + DBC QRQ .                
+---   DCD = DCD qrq + DBD QRQ .              
+---   DCE = DCE qrq + DBE QRQ .              
+---   DCF = DCF qrq + DBF QRQ .              
+---   DCG = DCG qrq + DBG QRQ .              
+---   DCH = DCH qrq + DBH QRQ .              
+
+
+---   EAA = aca .                     Lower Mem addr toggle
+---   EAB = ACB bab + acb BAB .
+---   EAC = ACC bac + acc BAC .
+---   EAD = ACD bad + acd BAD .
+---   EAE = ACE bae + ace BAE .
+---   EAF = ACF baf + acf BAF .
+---   EAG = ACG bag + acg BAG .
+---   EAH = ACH bah + ach BAH .
+---   EAI = ACI bai + aci BAI .
+---   EAJ = ACJ baj + acj BAJ .
+---   EAK = ACK bak + ack BAK .
+---   EAL = ACL bal + acl BAL .
+
+---   EBA = KBI PFA + KBA PFB + KAI PFC + KAA PFD .   Console data merge
+---   EBB = KBJ PFA + KBB PFB + KAJ PFC + KAB PFD .
+---   EBC = KBK PFA + KBC PFB + KAK PFC + KAC PFD .
+---   EBD = KBL PFA + KBD PFB + KAL PFC + KAD PFD .
+---   EBE = KBM PFA + KBE PFB + KAM PFC + KAE PFD .
+---   EBF = KBN PFA + KBF PFB + KAN PFC + KAF PFD .
+---   EBG = KBO PFA + KBG PFB + KAO PFC + KAG PFD .
+---   EBH = KBP PFA + KBH PFB + KAP PFC + KAH PFD .
+
+---   faa = aaa .             Memory Address Fanout Octant 0
+---   fab = aab .
+---   fac = aac .
+---   fad = aad .
+---   fae = aae .
+---   faf = aaf .
+---   fag = aag .
+---   fah = aah .
+---   fai = aai .
+---   faj = aaj .
+---   fak = aak .
+---   fal = aal .
+
+
+---   fba = aaa .             Memory Address Fanout Octant 1
+---   fbb = aab .
+---   fbc = aac .
+---   fbd = aad .
+---   fbe = aae .
+---   fbf = aaf .
+---   fbg = aag .
+---   fbh = aah .
+---   fbi = aai .
+---   fbj = aaj .
+---   fbk = aak .
+---   fbl = aal .
+
+
+---   fca = aaa .             Memory Address Fanout Octant 2
+---   fcb = aab .
+---   fcc = aac .
+---   fcd = aad .
+---   fce = aae .
+---   fcf = aaf .
+---   fcg = aag .
+---   fch = aah .
+---   fci = aai .
+---   fcj = aaj .
+---   fck = aak .
+---   fcl = aal .
+
+---   fda = aaa .             Memory Address fanout Octant 3
+---   fdb = aab .
+---   fdc = aac .
+---   fdd = aad .
+---   fde = aae .
+---   fdf = aaf .
+---   fdg = aag .
+---   fdh = aah .
+---   fdi = aai .
+---   fdj = aaj .
+---   fdk = aak .
+---   fdl = aal .
+
+
+---   fea = aba .             Memory Address Fanout Octant 4
+---   feb = abb .
+---   fec = abc .
+---   fed = abd .
+---   fee = abe .
+---   fef = abf .
+---   feg = abg .
+---   feh = abh .
+---   fei = abi .
+---   fej = abj .
+---   fek = abk .
+---   fel = abl .
+
+
+---   ffa = aba .             Memory Address Fanout Octant 5
+---   ffb = abb .
+---   ffc = abc .
+---   ffd = abd .
+---   ffe = abe .
+---   fff = abf .
+---   ffg = abg .
+---   ffh = abh .
+---   ffi = abi .
+---   ffj = abj .
+---   ffk = abk .
+---   ffl = abl .
+
+---   fga = aba .             Memory Address Fanout Octant 6
+---   fgb = abb .
+---   fgc = abc .
+---   fgd = abd .
+---   fge = abe .
+---   fgf = abf .
+---   fgg = abg .
+---   fgh = abh .
+---   fgi = abi .
+---   fgj = abj .
+---   fgk = abk .
+---   fgl = abl .
+
+---   fha = aba .             Memory Address fanout Octant 7
+---   fhb = abb .
+---   fhc = abc .
+---   fhd = abd .
+---   fhe = abe .
+---   fhf = abf .
+---   fhg = abg .
+---   fhh = abh .
+---   fhi = abi .
+---   fhj = abj .
+---   fhk = abk .
+---   fhl = abl .
+
+---   gaa = raa .             Instruction byte delay register
+---   gab = rab .          
+---   gac = rac .          
+---   gad = rad .          
+---   gae = rae .          
+---   gaf = raf .          
+---   gag = rag .          
+---   gah = rah .          
+---   gai = raq .
+
+---   gba = GAB + GAA .         Instruction byte translation
+---   gbb = GAB + gaa .
+---   gbc = gab + GAA .
+---   gbd = gab + gaa .
+---   gbe = GAD + GAC .
+---   gbf = GAD + gac .
+---   gbg = gad + GAC .
+---   gbh = gad + gac .
+
+---   gcf = raf .               Instruction byte delay reg
+---   gcg = rag .
+---   gci = gbb + gbe .
+---   gcj = gbb .
+
+---   HAA = RAA TGA + IAA TGB .          Branch data register destination addr
+---   HAB = RAB TGA + IAB TGB .
+---   HAC = RAC TGA + IAC TGB .
+---   HAD = RAD TGA + IAD TGB .
+---   HAE = RAE TGA + IAE TGB .
+---   HAF = RAF TGA + IAF TGB .
+---   HAG = RAG TGA + IAG TGB .
+---   HAH = RAH TGA + IAH TGB .
+---   HAI = RAI TGA + IAI TGB .
+---   HAJ = RAJ TGA + IAJ TGB .
+---   HAK = RAK TGA + IAK TGB .
+---   HAL = RAL TGA + IAL TGB .
+---   HAM = RAM TGA + IAM TGB .
+---   HAN = RAN TGA + IAN TGB .
+---   HAO = RAO TGA + IAO TGB .
+
+
+   Instruction translations
+
+---   JAA = QAB rap rao .                                000-077
+---   JAB = QAB rap RAO .                                100-177
+---   JAC = QAB RAP .                                    200-377
+---   JAK = RAK .                                        XX4-XX7
+---   JBA = ran ram .                                    X0X-X1X
+---   JBB = ran RAM .                                    X2X-X3X
+---   JBC = RAN ram ral .                                X4X
+---   JBD = RAN ram RAL .                                X5X
+---   JBE = RAN RAM rak .                                X60-X63,X70-X73
+---   JBF = RAN RAM RAK .                                X64-X67,X74-X77
+---   JBG = QBG ran ram .                                Branch crit not stable
+
+---   JCA JCB JCC JCD JCE JCF JCG JCH *** = HAC HAB HAA .  Octant pointer decode
+
+---   jda = qbj qnb .                                      Console ready enable
+
+---   JEA = GBA + GBB + GBC QDE + GBD qde .              Branch inst 0-3
+---   JEB = GBA QDF + GBB qdf + GBC QDG + GBD qdg .      4-7
+---   JEC = GBA QDI + GBB QDJ + GBC QDK + GBD QDL .      10-13
+---   JED = GBA qdi + GBB qdj + GBC qdk + GBD qdl .      14-17
+
+---   jfa = qac qad qcd qcj qha qhi .                    Hold advance enable
+---   jfb = qea qja qji qka qmi qbe .                   
+
+---   jfc = qac qad qkd .                              Valid instruction
+---   jfd = qcg qea qfd qjf qmd qnl .                  
+
+---   jfe = qja qjb qjc qjd qje .                      64-67/74-77
+
+---   jff = qra qrb qrc qrd .                          5 clock loop enable
+---   jfg = qre qrf qrg qrh qri .                      6 clock loop enable
+---   jfh = qrj qrk qrl qrm qrn qro .                  7 clock loop enable
+
+---   jfi = qnd qni qnj .                              Dead start end
+
+---   jfj = qkb qlb .                                  200-237/300-327
+
+---   JGH JGG JGF JGE JGD JGC JGB JGA JGI = rbk rbj rbi ; QEA rbg . 40-47
+
+---   JGJ = QEA GCG gcf .                              100-137
+---   JGK = QEA GCG GCF .                              140-177
+
+---   JHA = AAA .                                      Address increment
+---   JHB = AAA AAB .
+---   JHC = AAA AAB AAC .
+---   JHD = AAA AAB AAC AAD .
+---   JHE = AAE .
+---   JHF = AAE AAF .
+---   JHG = AAE AAF AAG .
+---   JHH = AAE AAF AAG AAH .
+---   JHI = AAI .
+---   JHJ = AAI AAJ .
+---   JHK = AAI AAJ AAK .
+
+
+
+---   jia = qfc qia qka qla .              Merge busy signals for
+---   jib = qeb qga qjg qme .              branch criterion check
+
+---   jma = caa .                          Write data to memory
+---   jmb = cab . 
+---   jmc = cac .
+---   jmd = cad .
+---   jme = cae .
+---   jmf = caf .
+---   jmg = cag .
+---   jmh = cah .
+
+---   JMI = QUA qub quc + qua QUB quc + qua qub QUC + QUA QUB QUC . Write parity
+
+---   jna = caa .                          Write data parity generation
+---   jnb = cab .
+---   jnc = cac .
+---   jnd = cad .
+---   jne = cae .
+---   jnf = caf .
+---   jng = cag .
+---   jnh = cah .
+
+---   JNI = QVA qvb qvc + qva QVB qvc + qva qvb QVC + QVA QVB QVC .  Read parity
+
+---   JQC = QSQ QSC .                       Dead start enable
+
+---   KAA = KAA tka tja + CBA TKA + NAA TJA .    Console assembly register
+---   KAB = KAB tka tja + CBB TKA + NAB TJA .
+---   KAC = KAC tka tja + CBC TKA + NAC TJA .    Hold + data from console +
+---   KAD = KAD tka tja + CBD TKA + NAD TJA .      data from KC
+---   KAE = KAE tka tja + CBE TKA + NAE TJA .
+---   KAF = KAF tka tja + CBF TKA + NAF TJA .
+---   KAG = KAG tka tja + CBG TKA + NAG TJA .
+---   KAH = KAH tka tja + CBH TKA + NAH TJA .
+
+---   KAI = KAI tkb tjb + CBA TKB + NAI TJB .    
+---   KAJ = KAJ tkb tjb + CBB TKB + NAJ TJB .
+---   KAK = KAK tkb tjb + CBC TKB + NAK TJB .    
+---   KAL = KAL tkb tjb + CBD TKB + NAL TJB .    
+---   KAM = KAM tkb tjb + CBE TKB + NAM TJB .
+---   KAN = KAN tkb tjb + CBF TKB + NAN TJB .
+---   KAO = KAO tkb tjb + CBG TKB + NAO TJB .
+---   KAP = KAP tkb tjb + CBH TKB + NAP TJB .
+
+---   KBA = KBA tkc tjc + CBA TKC + NBA TJC .    
+---   KBB = KBB tkc tjc + CBB TKC + NBB TJC .
+---   KBC = KBC tkc tjc + CBC TKC + NBC TJC .    
+---   KBD = KBD tkc tjc + CBD TKC + NBD TJC .    
+---   KBE = KBE tkc tjc + CBE TKC + NBE TJC .
+---   KBF = KBF tkc tjc + CBF TKC + NBF TJC .
+---   KBG = KBG tkc tjc + CBG TKC + NBG TJC .
+---   KBH = KBH tkc tjc + CBH TKC + NBH TJC .
+
+---   KBI = KBI tkd tjd + CBA TKD + NBI TJD .    Console assembly register
+---   KBJ = KBJ tkd tjd + CBB TKD + NBJ TJD .
+---   KBK = KBK tkd tjd + CBC TKD + NBK TJD .    
+---   KBL = KBL tkd tjd + CBD TKD + NBL TJD .    
+---   KBM = KBM tkd tjf + CBE TKD + NBM TJF .
+---   KBN = KBN tkd tjf + CBF TKD + NBN TJF .
+---   KBO = KBO tkd tjf + CBG TKD + NBO TJF .
+---   KBP = KBP tkd tjf + CBH TKD + NBP TJF .
+
+---   laa = qaa + raa .                   Inst register circulation
+---   lab = qaa + rab .
+---   lac = qaa + rac .
+---   lad = qaa + rad .
+---   lae = qaa + rae .
+---   laf = qaa + raf .
+---   lag = qaa + rag .
+---   lah = qaa + rah .
+---   LAQ = QAE RAQ .
+
+       Memory Chips - 8 banks, each bank = 4k x 8 bit words
+
+---   MAA = JMA ; faa fab fac fad fae faf fag fah fai faj fak fal ; UAA VAA .
+---   MAA = JMA ; fea feb fec fed fee fef feg feh fei fej fek fel ; UAE VAE .
+---   MAB = JMB ; faa fab fac fad fae faf fag fah fai faj fak fal ; UAA VAA .
+---   MAB = JMB ; fea feb fec fed fee fef feg feh fei fej fek fel ; UAE VAE .
+---   MAC = JMC ; faa fab fac fad fae faf fag fah fai faj fak fal ; UAA VAA .
+---   MAC = JMC ; fea feb fec fed fee fef feg feh fei fej fek fel ; UAE VAE .
+---   MAD = JMD ; faa fab fac fad fae faf fag fah fai faj fak fal ; UAA VAA .
+---   MAD = JMD ; fea feb fec fed fee fef feg feh fei fej fek fel ; UAE VAE .
+
+
+
+---   MAE = JME ; FAA FAB FAC FAD FAE FAF FAG FAG FAI FAJ FAK FAL ; UAA VBA .
+---   MAE = JME ; FEA FEB FEC FED FEE FEF FEG FEG FEI FEJ FEK FEL ; UAE VBE .
+---   MAF = JMF ; FAA FAB FAC FAD FAE FAF FAG FAG FAI FAJ FAK FAL ; UAA VBA .
+---   MAF = JMF ; FEA FEB FEC FED FEE FEF FEG FEG FEI FEJ FEK FEL ; UAE VBE .
+---   MAG = JMG ; FAA FAB FAC FAD FAE FAF FAG FAG FAI FAJ FAK FAL ; UAA VBA .
+---   MAG = JMG ; FEA FEB FEC FED FEE FEF FEG FEG FEI FEJ FEK FEL ; UAE VBE .
+---   MAH = JMH ; FAA FAB FAC FAD FAE FAF FAG FAG FAI FAJ FAK FAL ; UAA VBA .
+---   MAH = JMH ; FEA FEB FEC FED FEE FEF FEG FEG FEI FEJ FEK FEL ; UAE VBE .
+---   MAI = JMI ; FAA FAB FAC FAD FAE FAF FAG FAG FAI FAJ FAK FAL ; UAA VBA .
+---   MAI = JMI ; FEA FEB FEC FED FEE FEF FEG FEG FEI FEJ FEK FEL ; UAE VBE .
+
+
+---   MBA = JMA ; fba fbb fbc fbd fbe fbf fbg fbh fbi fbj fbk fbl ; UAA VAA .
+---   MBA = JMA ; ffa ffb ffc ffd ffe fff ffg ffh ffi ffj ffk ffl ; UAE VAE .
+---   MBB = JMB ; fba fbb fbc fbd fbe fbf fbg fbh fbi fbj fbk fbl ; UAA VAA .
+---   MBB = JMB ; ffa ffb ffc ffd ffe fff ffg ffh ffi ffj ffk ffl ; UAE VAE .
+---   MBC = JMC ; fba fbb fbc fbd fbe fbf fbg fbh fbi fbj fbk fbl ; UAA VAA .
+---   MBC = JMC ; ffa ffb ffc ffd ffe fff ffg ffh ffi ffj ffk ffl ; UAE VAE .
+---   MBD = JMD ; fba fbb fbc fbd fbe fbf fbg fbh fbi fbj fbk fbl ; UAA VAA .
+---   MBD = JMD ; ffa ffb ffc ffd ffe fff ffg ffh ffi ffj ffk ffl ; UAE VAE .
+
+
+
+---   MBE = JME ; FBA FBB FBC FBD FBE FBF FBG FBG FBI FBJ FBK FBL ; UAA VBA .
+---   MBE = JME ; FFA FFB FFC FFD FFE FFF FFG FFG FFI FFJ FFK FFL ; UAE VBE .
+---   MBF = JMF ; FBA FBB FBC FBD FBE FBF FBG FBG FBI FBJ FBK FBL ; UAA VBA .
+---   MBF = JMF ; FFA FFB FFC FFD FFE FFF FFG FFG FFI FFJ FFK FFL ; UAE VBE .
+---   MBG = JMG ; FBA FBB FBC FBD FBE FBF FBG FBG FBI FBJ FBK FBL ; UAA VBA .
+---   MBG = JMG ; FFA FFB FFC FFD FFE FFF FFG FFG FFI FFJ FFK FFL ; UAE VBE .
+---   MBH = JMH ; FBA FBB FBC FBD FBE FBF FBG FBG FBI FBJ FBK FBL ; UAA VBA .
+---   MBH = JMH ; FFA FFB FFC FFD FFE FFF FFG FFG FFI FFJ FFK FFL ; UAE VBE .
+---   MBI = JMI ; FBA FBB FBC FBD FBE FBF FBG FBG FBI FBJ FBK FBL ; UAA VBA .
+---   MBI = JMI ; FFA FFB FFC FFD FFE FFF FFG FFG FFI FFJ FFK FFL ; UAE VBE .
+
+
+
+
+
+       Memory Chips - 8 banks, each bank = 4k x 8 bit words
+
+---   MCA = JMA ; fca fcb fcc fcd fce fcf fcg fch fci fcj fck fcl ; UAC VAC .
+---   MCA = JMA ; fga fgb fgc fgd fge fgf fgg fgh fgi fgj fgk fgl ; UAG VAG .
+---   MCB = JMB ; fca fcb fcc fcd fce fcf fcg fch fci fcj fck fcl ; UAC VAC .
+---   MCB = JMB ; fga fgb fgc fgd fge fgf fgg fgh fgi fgj fgk fgl ; UAG VAG .
+---   MCC = JMC ; fca fcb fcc fcd fce fcf fcg fch fci fcj fck fcl ; UAC VAC .
+---   MCC = JMC ; fga fgb fgc fgd fge fgf fgg fgh fgi fgj fgk fgl ; UAG VAG .
+---   MCD = JMD ; fca fcb fcc fcd fce fcf fcg fch fci fcj fck fcl ; UAC VAC .
+---   MCD = JMD ; fga fgb fgc fgd fge fgf fgg fgh fgi fgj fgk fgl ; UAG VAG .
+
+
+
+---   MCE = JME ; FCA FCB FCC FCD FCE FCF FCG FCG FCI FCJ FCK FCL ; UAC VBC .
+---   MCE = JME ; FGA FGB FGC FGD FGE FGF FGG FGG FGI FGJ FGK FGL ; UAG VBG .
+---   MCF = JMF ; FCA FCB FCC FCD FCE FCF FCG FCG FCI FCJ FCK FCL ; UAC VBC .
+---   MCF = JMF ; FGA FGB FGC FGD FGE FGF FGG FGG FGI FGJ FGK FGL ; UAG VBG .
+---   MCG = JMG ; FCA FCB FCC FCD FCE FCF FCG FCG FCI FCJ FCK FCL ; UAC VBC .
+---   MCG = JMG ; FGA FGB FGC FGD FGE FGF FGG FGG FGI FGJ FGK FGL ; UAG VBG .
+---   MCH = JMH ; FCA FCB FCC FCD FCE FCF FCG FCG FCI FCJ FCK FCL ; UAC VBC .
+---   MCH = JMH ; FGA FGB FGC FGD FGE FGF FGG FGG FGI FGJ FGK FGL ; UAG VBG .
+---   MCI = JMI ; FCA FCB FCC FCD FCE FCF FCG FCG FCI FCJ FCK FCL ; UAC VBC .
+---   MCI = JMI ; FGA FGB FGC FGD FGE FGF FGG FGG FGI FGJ FGK FGL ; UAG VBG .
+
+
+
+---   MDA = JMA ; fda fdb fdc fdd fde fdf fdg fdh fdi fdj fdk fdl ; UAD VAD .
+---   MDA = JMA ; fha fhb fhc fhd fhe fhf fhg fhh fhi fhj fhk fhl ; UAH VAH .
+---   MDB = JMB ; fda fdb fdc fdd fde fdf fdg fdh fdi fdj fdk fdl ; UAD VAD .
+---   MDB = JMB ; fha fhb fhc fhd fhe fhf fhg fhh fhi fhj fhk fhl ; UAH VAH .
+---   MDC = JMC ; fda fdb fdc fdd fde fdf fdg fdh fdi fdj fdk fdl ; UAD VAD .
+---   MDC = JMC ; fha fhb fhc fhd fhe fhf fhg fhh fhi fhj fhk fhl ; UAH VAH .
+---   MDD = JMD ; fda fdb fdc fdd fde fdf fdg fdh fdi fdj fdk fdl ; UAD VAD .
+---   MDD = JMD ; fha fhb fhc fhd fhe fhf fhg fhh fhi fhj fhk fhl ; UAH VAH .
+
+
+---   MDE = JME ; FDA FDB FDC FDD FDE FDF FDG FDG FDI FDJ FDK FDL ; UAD VBD .
+---   MDE = JME ; FHA FHB FHC FHD FHE FHF FHG FHG FHI FHJ FHK FHL ; UAH VBH .
+---   MDF = JMF ; FDA FDB FDC FDD FDE FDF FDG FDG FDI FDJ FDK FDL ; UAD VBD .
+---   MDF = JMF ; FHA FHB FHC FHD FHE FHF FHG FHG FHI FHJ FHK FHL ; UAH VBH .
+---   MDG = JMG ; FDA FDB FDC FDD FDE FDF FDG FDG FDI FDJ FDK FDL ; UAD VBD .
+---   MDG = JMG ; FHA FHB FHC FHD FHE FHF FHG FHG FHI FHJ FHK FHL ; UAH VBH .
+---   MDH = JMH ; FDA FDB FDC FDD FDE FDF FDG FDG FDI FDJ FDK FDL ; UAD VBD .
+---   MDH = JMH ; FHA FHB FHC FHD FHE FHF FHG FHG FHI FHJ FHK FHL ; UAH VBH .
+---   MDI = JMI ; FDA FDB FDC FDD FDE FDF FDG FDG FDI FDJ FDK FDL ; UAD VBD .
+---   MDI = JMI ; FHA FHB FHC FHD FHE FHF FHG FHG FHI FHJ FHK FHL ; UAH VBH .
+
+---   NAA = IAA .                Input data from KB's A/B register
+---   NAB = IAB .
+---   NAC = IAC .
+---   NAD = IAD .
+---   NAE = IAE .
+---   NAF = IAF .
+---   NAG = IAG .
+---   NAH = IAH .
+
+---   NAI = IAI .                
+---   NAJ = IAJ .
+---   NAK = IAK .
+---   NAL = IAL .
+---   NAM = IAM .
+---   NAN = IAN .
+---   NAO = IAO .
+---   NAP = IAP .
+
+
+---   NBA = IBA .                Input data from KB's A/B register
+---   NBB = IBB .
+---   NBC = IBC .
+---   NBD = IBD .
+---   NBE = IBE .
+---   NBF = IBF .
+---   NBG = IBG .
+---   NBH = IBH .
+ 
+---   NBI = IBI .                
+---   NBJ = IBJ .
+---   NBK = IBK .
+---   NBL = IBL .
+---   NBM = IBM .
+---   NBN = IBN .
+---   NBO = IBO .
+---   NBP = IBP .
+
+
+                      Data to KC
+
+---   OAA = RAA TBA + KAA TCA + RCA TDA .
+---   OAB = RAB TBA + KAB TCA + RCB TDA .
+---   OAC = RAC TBA + KAC TCA + RCC TDA .
+---   OAD = RAD TBA + KAD TCA + RCD TDA .
+
+---   OAE = RAE TBA + KAE TCA .
+---   OAF = RAF TBA + KAF TCA .
+---   OAG = RAG TBA + KAG TCA .
+---   OAH = RAH TBA + KAH TCA .
+
+---   OAI = RBA TBB + KAI TCB + RBA TDB .
+---   OAJ = RBB TBB + KAJ TCB + RBB TDB .
+---   OAK = RBC TBB + KAK TCB + RBC TDB .
+---   OAL = RBD TBB + KAL TCB + RBD TDB .
+
+---   OAM = RBE TBB + KAM TCB .
+---   OAN = RBF TBB + KAN TCB .
+---   OAO = RBG TBB + KAO TCB . 
+---   OAP = RBH TBB + KAP TCB .
+
+
+---   OBA = RCA TBC + KBA TCC + RAA TDC .
+---   OBB = RCB TBC + KBB TCC + RAB TDC .
+---   OBC = RCC TBC + KBC TCC + RAC TDC .
+---   OBD = RCD TBC + KBD TCC + RAD TDC .
+
+---   OBE = RCE TBC + KBE TCC + RAE TDC .
+---   OBF = RCF TBC + KBF TCC + RAF TDC .
+---   OBG = RCG TBC + KBG TCC + RAG TDC .
+---   OBH = RCH TBC + KBH TCC + RAH TDC .
+
+---   OBI = RDA TBD + KBI TCD + RBA TDD .
+---   OBJ = RDB TBD + KBJ TCD + RBB TDD .
+---   OBK = RDC TBD + KBK TCD + RBC TDD .
+---   OBL = RDD TBD + KBL TCD + RBD TDD .
+
+---   OBM = RDE TBD + KBM TCD + RBE TDD .
+---   OBN = RDF TBD + KBN TCD + RBF TDD .
+---   OBO = RDG TBD + KBO TCD + RBG TDD .
+---   OBP = RDH TBD + KBP TCD + RBH TDD .
+
+
+---   OCA = RBA .                  Address to KB
+---   OCB = RBB . 
+---   OCC = RBC . 
+---   OCD = RBD . 
+---   OCE = RBE . 
+---   OCF = RBF . 
+---   OCG = RBG . 
+---   OCH = RBH . 
+---   OCI = RCA . 
+---   OCJ = RCB . 
+---   OCK = RCC . 
+---   OCL = RCD . 
+
+   Control to KB Module
+
+---   ODA = RBI QGA + RDA QHC .              Channel selection
+---   ODB = RBJ QGA + RDB QHC .              Channel selection
+---   ODC = RDC QHC .                        Channel Call
+---   ODD = rdc QHC .                        Channel function
+---   ODE = QGA .                            Read channel
+---   ODF = QIA .                            Read real time clock
+---   ODG = QJH + QMF .                      Read memory
+---   ODH = QJL + QMC RDE .                  Write memory
+---   ODI = QMB .                            Constant address
+---   ODJ = QJD .                            Computed address
+---   ODK = QBD .                            Dead start
+---   ODL = QHJ + QHL + QJC + QJE + QMC .    Gate KC data
+
+  Control to KC Module
+
+---   OEA = JGA .                            Add
+---   OEB = JGB .                            Subtract
+---   OEC = JGJ .                            Shift right
+---   OED = JGK .                            Shift left
+---   OEE = QEI .                            Logical product
+---   OEF = QEJ .                            Logical difference
+---   OEG = QEK .                            Logical sum
+---   OEH = QEL .                            Swap
+---   OEI = QFI rcd + QFD red + QII rca + JFJ rcg .  Enter A from KA
+---   OEJ = QFI RCD + QFD RED + QIJ rca + JFJ RCG .  Enter B from KA
+---   OEK = QGC rcd + QJJ + QMJ + QIK rca .          Enter A from KB
+---   OEL = QGC RCD + QJK + QMK + QIL rca .          Enter B from KA
+
+---   oem = QIB rcd + QJB rcb + QJD red + QMB rcg + QMI .   Read B data
+
+---   OFA = CAA .                               Data to console
+---   OFB = CAB .
+---   OFC = CAC .
+---   OFD = CAD .
+---   OFE = CAE .
+---   OFF = CAF .
+---   OFG = CAG .
+---   OFH = CAH .
+
+---   OFI = QBH qsj qso + QIG + QNH .          Data ready to console
+---   OFJ = QSI .                              Data resume to console
+---   OFK = QDB qnp qsl + JNI QQF .            Instruction memory error
+---   OFL = QDC qnp qsl + ICE .                Local memory error
+
+---   OGA = QSK .                       Dead start to EA
+---   OGB = QSK . 
+---   OGC = QSK .
+---   OGD = QSK .
+
+---   OGE = QBL .                       Dead start to EB
+
+---   OHA = CAA .                       Data to RA
+---   OHB = CAB .
+---   OHC = CAC .
+---   OHD = CAD .
+---   OHE = CAE .
+---   OHF = CAF .
+---   OHG = CAG .
+---   OHH = CAH .
+
+---   ohi = qna + qsk + qsl .           Control to RA
+
+  Indicator lights
+
+---   OJA = PAJ + PAL + PAN + PAP .     Memory Octant Pointer
+---   OJB = PAK + PAL + PAO + PAP .
+---   OJC = PAM + PAN + PAO + PAP .
+
+---   OJD = ABA .                       Upper memory address
+---   OJE = ABB .
+---   OJF = ABC .
+---   OJG = ABD .
+---   OJH = ABE .
+---   OJI = ABF .
+---   OJJ = ABG .
+---   OJK = ABH .
+---   OJL = ABI .
+---   OJM = ABJ .
+---   OJN = ABK .
+---   OJO = ABL .
+
+  Memory octant pointer
+
+---   PAA = PAA taj teg + PAH TAJ + JCA TEG .    Mem chip selection
+---   PAB = PAB taj teg + PAA TAJ + JCB TEG .
+---   PAC = PAC taj teg + PAB TAJ + JCC TEG .
+---   PAD = PAD taj teg + PAC TAJ + JCD TEG .
+---   PAE = PAE taj teg + PAD TAJ + JCE TEG .
+---   PAF = PAF taj teg + PAE TAJ + JCF TEG .
+---   PAG = PAG taj teg + PAF TAJ + JCG TEG .
+---   PAH = PAH taj teg + PAG TAJ + JCH TEG .
+
+---   PAJ = PAB taj teg + PAA TAJ + JCB TEG .     To indicator lights
+---   PAK = PAC taj teg + PAB TAJ + JCC TEG .
+---   PAL = PAD taj teg + PAC TAJ + JCD TEG .
+---   PAM = PAE taj teg + PAD TAJ + JCE TEG .
+---   PAN = PAF taj teg + PAE TAJ + JCF TEG .
+---   PAO = PAG taj teg + PAF TAJ + JCG TEG .
+---   PAP = PAH taj teg + PAG TAJ + JCH TEG .
+
+  Memory octant pointer
+
+---   PBA = PAA taj teg + PAH TAJ + JCA TEG .    Mem write strobe
+---   PBB = PAB taj teg + PAA TAJ + JCB TEG .
+---   PBC = PAC taj teg + PAB TAJ + JCC TEG .
+---   PBD = PAD taj teg + PAC TAJ + JCD TEG .
+---   PBE = PAE taj teg + PAD TAJ + JCE TEG .
+---   PBF = PAF taj teg + PAE TAJ + JCF TEG .
+---   PBG = PAG taj teg + PAF TAJ + JCG TEG .
+---   PBH = PAH taj teg + PAG TAJ + JCH TEG .
+
+---   PCA = PDA tkf + PDD TKF + TKE .     Console assembly byte pointer
+---   PCB = PDB tkf tke + PDA TKF .
+---   PCC = PDC tkf tke + PDB TKF .
+---   PCD = PDD tkf tke + PDC TKF .
+
+---   PDA = PDA tkf + PDD TKF + TKE .     
+---   PDB = PDB tkf tke + PDA TKF .
+---   PDC = PDC tkf tke + PDB TKF .
+---   PDD = PDD tkf tke + PDC TKF .
+
+---   PEA = PEA tlf + PED TLF + TLE .     Console disassembly byte pointer
+---   PEB = PEB tlf tle + PEA TLF .
+---   PEC = PEC tlf tle + PEB TLF .
+---   PED = PED tlf tle + PEC TLF .
+
+---   PFA = PEA tlf + PED TLF + TLE .     
+---   PFB = PEB tlf tle + PEA TLF .
+---   PFC = PEC tlf tle + PEB TLF .
+---   PFD = PED tlf tle + PEC TLF .
+
+---   QAA = JAA JBG + JAC JBB + JFA + JFB + QKD .  Hold advance
+---   QAB = JAA JBG + QCC qda + JFC qsc .          Valid instruction
+
+---   QAC = JAA JBB JAK + QHC + JAA JBE .          24-7/34-7 + 50-7 + 60-3/70-3
+---   QAD = QFB rcb + QLB + JFD .         20-1/30-1 + 220-37/320-37 + Valid inst
+
+---   QAE = JAA JBG + JAC JBB + JFA + JBB + QKD .   Hold advance
+
+---   QBA = QCC QDA + QBF + QND .                   Enter new memory address
+---   QBB = PAD TAI + QCE uad .                     Advance lower address
+---   QBC = PAH TAI .                               Advance upper address
+
+---   QBD = QSO .                                 Console dead start
+---   QBE = QSO qnf + JFI .                       Hold advance during dead start
+---   QBF = QNR .                                 Begin dead start
+
+---   QBG = JIB + JIA + QTA .                     Branch criterion not stable
+
+---   QBH = QBH qsj qso + QIG + QNH .             Ready to console
+
+---   qbi = qib + RBJ + rba .                     61,71,Instruction control
+---   qbj = qib + RBJ + RBI .                     60,70
+
+---   qbk = pcd + qnq .                           Last byte
+
+---   QBL = QBD .                                 Dead start for KB
+
+---   qca = jaa + jba + QBG .             Begin branch sequence
+---   QCB = QCA .
+---   QCC = QCB .
+---   qcd = qcc + qda .                   Branch taken
+---   QCE = QCD .
+---   QCF = QCE .
+---   QCG = QCF .
+---   QCI = QCB .
+---   QCJ = QCB + QCD + QCE .
+
+---   QDA = JEA GBE + JEB GBF + JEC GBG + JED GBH .     Branch 000-003 Inst
+
+---   QDB = QDB qnp qsl + JNI QQF .                     Instr mem error from KC
+
+---   QDC = QDC qnp qsl + ICE .                         LM Error from KC
+
+---   QDE = QDE jda qnj + QBI + QBK .                   Console ready flag
+
+---   qdf = IDA + IDB .                                 B is zero
+---   qdg = IDC .                                       B is positive
+
+---   qdi = qdi qoa + ICA + QSP .                       Channel 0 busy
+---   qdj = qdj qob + ICB + QSP .                       Channel 1 busy
+---   qdk = qdk qoc + ICC + QSP .                       Channel 2 busy
+---   qdl = qdl qod + ICD + QSP .                       Channel 3 busy
+
+---   qea = jab jaa + jbc jab .                         40-47,100-177
+---   QEB = QEA .                                       Merge busy
+---   QEI = JGE .                                       44 Logical product
+---   QEJ = JGF .                                       45 Logical difference
+---   QEK = JGG .                                       46 Logical sum
+---   QEL = JGH .                                       47 Swap
+
+---   qfa = jaa + jbb + JAK .                           20-23,30-33
+---   QFB = QFA .
+---   QFC = QFB .
+
+---   qfd = qfc + rdb .                                 22,23,32,33
+---   QFI = QFA rbb .                                   20,21,30,31
+
+---   qga = jaa + jbb + jak .                           24-27,34-37
+---   QGB = QGA .
+---   QGC = QGB .
+
+---   qha = jaa + jbd .                                 50-57
+---   QHB = QHA .
+---   QHC = QHB .
+---   QHD = QHC . 
+
+---   QHI = QHA + QHB .
+---   qhj = qhi .
+---   QHK = QHC + QHD .
+---   qhl = qhk .
+
+
+
+---   qia = jaa + jbe .                      60-63,70-73
+---   QIB = QIA .
+---   QIC = QIB .
+---   QID = QIC QCJ .                        61,71
+---   QIE = QID .
+---   QIF = QIE .
+---   QIG = QIF .
+
+---   qii = qia + RBL + RBM .                60,61
+---   qij = qia + rbl + RBM .                70,71
+---   qik = qia + RBL + rbj .                62,63
+---   qil = qia + rbl + rbj .                72,73
+
+---   qja = jaa + jbf .                      64-67,74-77
+---   QJB = QJA .
+---   QJC = QJB .
+---   QJD = QJC .
+---   QJE = QJD .
+---   QJF = QJE .
+---   QJG = QJF .
+---   QJH = QJG .
+---   QJI = JFE .                            64-67,74-77
+
+---   qjj = qjh + RID + RIA .                64,66
+---   qjk = qjh + rid + RIA .                74,76
+---   qjl = qjd + rea .                      65,67,75,77
+
+---   qka = jac + jba .                      200-217,300-317
+---   QKB = QKA .
+---   QKC = QKB .
+---   qkd = qka .
+
+---   qla = jac + jbb .                      220-237,320-337
+---   QLB = QLA .
+---   QLC = QLB .
+
+---   qma = jac + raf .                      240-277,340-377
+---   QMB = QMA .
+---   QMC = QMB .
+---   QMD = QMC .
+---   QME = QMD .
+---   QMF = QME .
+---   QMI = QMA + QMB + QMC .
+
+---   qmj = qmf + RGE + RGG .               240-257
+---   qmk = qmf + RGE + rgg .               340-357
+
+---   qna = QSM + qsi .                     Data Ready
+
+---   qnb = qsn + QSJ + pea .               End resume and last byte
+
+---   qnc = QSO + qsk .                     Begin dead start
+---   qnd = qso + QSK .                     End dead start
+
+---   qne = qna + qsk + QSL .               Data ready
+---   QNF = QNE .                           Go Write
+---   QNG = QNE + QNF .                     Write strobe
+
+---   qnh = qsn + QSJ + PEA .               End resume and not first byte
+
+
+---   QNI = QND .                    End Dead Start delay chain
+---   QNJ = QNI .
+---   QNK = QNJ .
+---   QNL = QNK .
+---   QNM = QNL .
+---   QNN = QNM .
+---   QNO = QNN .
+---   QNP = QNO .
+
+---   qnq = qna + QSK .             Data ready and no Dead Start
+
+---   QNR = QNC .                   Begin dead start
+
+---   qoa = qhb + gba .             Channel 0 busy
+---   qob = qhb + gbb .             Channel 1 busy
+---   qoc = qhb + gbc .             Channel 2 busy
+---   qod = qhb + gbd .             Channel 3 busy
+
+---   QQA = QFI RCA + QFD + JAB .     21,31 + 22-23 + 32-33 + 100-177
+---   QQB = QFD .                     22,23,32,33
+---   QQC = QFI rca .                 20,30
+
+---   qqd = tai .                   Advance pointer
+---   qqe = qqd .
+---   qqf = qqe .     
+
+  Console data synchronization
+
+---   QRA = jff .                  5 Clock timing chain
+---   QRB = QRA .
+---   QRC = QRB .
+---   QRD = QRC .
+
+---   QRE = jfg .                  6 Clock timing chain
+---   QRF = QRE .
+---   QRG = QRF .
+---   QRH = QRG .
+---   QRI = QRH .
+
+---   QRJ = jfh .                 7 Clock timing chain
+---   QRK = QRJ .
+---   QRL = QRK .
+---   QRM = QRL .
+---   QRN = QRM .
+---   QRO = QRN .
+
+---   QRP = QRA QRE QRJ + QRR .          Sync pulse
+---   QRQ = QRA QRE QRJ + QRR .
+
+---   qrr = iga .                        External resynch
+
+---   QSA = QSA qrp + DAI QRP .          Console Ready
+---   QSB = QSB qrp + DAJ QRP .          Console Resume
+---   QSC = QSC qrp + DAK QRP .          Console dead start
+---   QSD = QSD qrp + DAL QRP .          Dead start mode
+
+
+---   QSI = QSI qrp + QSA QRP .              Console ready
+---   QSJ = QSJ qrp + QSB QRP .              Console resume
+---   QSK = QSK qrp + JQC QRP .              Console dead start
+---   QSL = QSL qrp + QSD QRP .              Dead start mode
+
+---   QSM = QSI .                            Console ready
+---   QSN = QSJ .                            Console resume
+---   QSO = QSK .                            Console dead start
+---   QSP = QSO .                            Dead start end
+
+---   QSQ = IGB .                            Enable dead start
+
+---   QTA = JIB + JIA + QTB .                Branch criterion test
+---   QTB = JIB + JIA + QTC .
+---   QTC = JIB .
+
+  Write parity generation
+
+---   QUA = JNA jnb jnc + jna JNB jnc + jna jnb JNC + JNA JNB JNC .
+---   QUB = JND jne + jnd JNE .
+---   QUC = JNF jng jnh + jnf JNG jnh + jnf jng JNH + JNF JNG JNH .
+
+  Read Parity generation
+
+---   QVA = GAA gab gac + gaa GAB gac + gaa gab GAC + GAA GAB GAC .
+---   QVB = GAD gae gaf + gad GAE gaf + gad gae GAF + GAD GAE GAF .
+---   QVC = GAG gah gai + gag GAH gai + gag gah GAI + GAG GAH GAI .
+
+ Instruction readout register
+
+---   RAA = MAA TAA + MBA TAB + MCA TAC + MDA TAD + LAA .  Issue byte
+---   RAB = MAB TAA + MBB TAB + MCB TAC + MDB TAD + LAB .  
+---   RAC = MAC TAA + MBC TAB + MCC TAC + MDC TAD + LAC .  
+---   RAD = MAD TAA + MBD TAB + MCD TAC + MDD TAD + LAD .  
+---   RAE = MAE TAA + MBE TAB + MCE TAC + MDE TAD + LAE .  
+---   RAF = MAF TAA + MBF TAB + MCF TAC + MDF TAD + LAF .  
+---   RAG = MAG TAA + MBG TAB + MCG TAC + MDG TAD + LAG .  
+---   RAH = MAH TAA + MBH TAB + MCH TAC + MDH TAD + LAH .  
+
+---   RAI = MAA TAA + MBA TAB + MCA TAC + MDA TAD + LAA .  Issue byte
+---   RAJ = MAB TAA + MBB TAB + MCB TAC + MDB TAD + LAB .  (Copy)
+---   RAK = MAC TAA + MBC TAB + MCC TAC + MDC TAD + LAC .  
+---   RAL = MAD TAA + MBD TAB + MCD TAC + MDD TAD + LAD .  
+---   RAM = MAE TAA + MBE TAB + MCE TAC + MDE TAD + LAE .  
+---   RAN = MAF TAA + MBF TAB + MCF TAC + MDF TAD + LAF .  
+---   RAO = MAG TAA + MBG TAB + MCG TAC + MDG TAD + LAG .  
+---   RAP = MAH TAA + MBH TAB + MCH TAC + MDH TAD + LAH .  
+
+---   RAQ = MAI TAE + MBI TAF + MCI TAG + MDI TAH + LAQ .  Parity
+
+
+---   RBA = RAA .                  First Delay Reg
+---   RBB = RAB .
+---   RBC = RAC .
+---   RBD = RAD .
+---   RBE = RAE .
+---   RBF = RAF .
+---   RBG = RAG .
+---   RBH = RAH .
+---   rbi = raa .
+---   rbj = rab .
+---   rbk = rac .
+---   rbl = rad .
+---   rbm = rab .
+
+---   RCA = RBA .                   Second delay reg
+---   RCB = RBB .
+---   RCC = RBC .
+---   RCD = RBD .
+---   RCE = RBE .
+---   RCF = RBF .
+---   RCG = RBG .
+---   RCH = RBH .
+
+---   RDA = RCA .
+---   RDB = RCB .
+---   RDC = RCC .
+
+---   RDD = RCD .                   Third delay register
+---   RDE = RCE .
+---   RDF = RCF .
+---   RDG = RCG .
+---   RDH = RCH .
+
+---   REA = RDA .                   Fourth delay register
+---   RED = RDD .
+---   REE = RDE .
+---   REG = RDG .
+
+---   RFA = REA .                   Fifth delay register
+---   RFD = RED .
+---   RFE = REE .
+---   RFG = REG .
+
+---   RGA = RFA .                   Sixth delay register
+---   RGD = RFD .
+---   RGE = RFE .
+---   RGG = RFG .
+
+---   RHA = RGA .                   Seventh delay register
+---   RHD = RGD .
+
+---   RIA = RHA .                   Eighth delay register
+---   RID = RHD .
+
+---   taa = QAA + pba pbe .                Gate instruction readout reg
+---   tab = QAA + pbb pbf .                
+---   tac = QAA + pbc pbg .                
+---   tad = QAA + pbd pbh .                
+---   tae = QAA + pba pbe .                
+---   taf = QAA + pbb pbf .                
+---   tag = QAA + pbc pbg .                
+---   tah = QAA + pbc pbh .                
+
+---   tai = QAE .                          Advance pointer
+---   TAJ = qae .
+
+   Gate data to KC Module
+
+---   tba = qqa qlc .                      Inst 220-237,320-337
+---   tbb = qqa .                          21-23,31-33,100-177
+---   tbc = qqb . 
+---   tbd = qqb .                          22,23,32,33
+
+---   tca = qic .                          60-63,70-73
+---   tcb = qic .
+---   tcc = qic .
+---   tcd = qic .
+
+---   tda = qkc .                          200-217,300-317
+---   tdb = qlc .                          220-237,320-337
+---   tdc = qqc .
+---   tdd = qqc .                          20,30
+
+  Memory Address Control
+
+---   TEA = qbb qba .                      Hold Lower memory address
+---   TEB = QBB qba .                      Advance lower address
+---   tec = qba .                          Enter new memory address
+---   TED = qbc qba .                      Hold upper memory address
+---   TEE = QBC qba .                      Advance upper address
+---   tef = qba .                          Enter new memory address
+---   TEG = QBA .                          Enter new memory address
+
+  Console Byte register control
+
+---   TFA = QNA .                          Gate data from console
+---   tfb = qig qnh .                      Gate data to console
+
+---   TGA = gci QCI .                      Even branch instr
+---   TGB = GCI QCI .                      Odd branch instr
+
+---   TJA = QIF .                          Gate data to console assembly reg
+---   TJB = QIF .                          from KC
+---   TJC = QIF .
+---   TJD = QIF .
+---   TJE = QIF .
+---   TJF = QIF .
+
+---   TKA = PCD QNQ .                     Gate data to console assembly register
+---   TKB = PCC QNQ .                     from console byte register
+---   TKC = PCB QNQ .
+---   TKD = PCA QNQ .
+
+---   tke = qnk .                   Console assembly byte
+---   tkf = qnq .                   pointer control
+
+---   tle = qnk .                   Console disassembly byte pointer control
+---   tlf = qig qnh .
+
+
+---   uaa = paf pag pah paa .       Memory chip selection
+---   uab = pag pah paa pab .
+---   uac = pag paa pab pac .
+---   uad = paa pab pac pad .
+---   uae = pab pac pad pae .
+---   uaf = pac pad pae paf .
+---   uag = pad pae paf pag .
+---   uah = pae paf pag pah .
+
+---   VAA = QNG PBA .               Memory write strobe
+---   VAB = QNG PBB .
+---   VAC = QNG PBC .
+---   VAD = QNG PBD .
+---   VAE = QNG PBE .
+---   VAF = QNG PBF .
+---   VAG = QNG PBG .
+---   VAH = QNG PBH .
+---   VBA = QNG PBA .
+---   VBB = QNG PBB .
+---   VBC = QNG PBC .
+---   VBD = QNG PBD .
+---   VBE = QNG PBE .
+---   VBF = QNG PBF .
+---   VBG = QNG PBG .
+---   VBH = QNG PBH .
+
+---   ZYA = IZZ / izz .
+---   ZYA = IZZ / izz .
+---   ZYB = IZZ / izz .
+---   ZYB = IZZ / izz .
+---   ZYC = IZZ / izz .
+---   ZYC = IZZ / izz .
+---   ZYD = IZZ / izz .
+---   ZYD = IZZ / izz .
+---   ZYE = IZZ / izz .
+---   ZYE = IZZ / izz .
+---   ZYF = IZZ / izz .
+---   ZYF = IZZ / izz .
+
+---   ZZA = ZYA / zya .
+---   ZZA = ZYA / zya .
+---   ZZA = ZYA / zya .
+---   ZZA = ZYA / zya .
+---   ZZA = ZYA / zya .
+---   ZZA = ZYA / zya .
+---   ZZA = ZYA / zya .
+---   ZZA = ZYA / zya .
+---   ZZB = ZYB / zyb .
+---   ZZB = ZYB / zyb .
+---   ZZB = ZYB / zyb .
+---   ZZB = ZYB / zyb .
+---   ZZB = ZYB / zyb .
+---   ZZB = ZYB / zyb .
+---   ZZB = ZYB / zyb .
+---   ZZB = ZYB / zyb .
+
+
+---   ZZC = ZYC / zyc .
+---   ZZC = ZYC / zyc .
+---   ZZC = ZYC / zyc .
+---   ZZC = ZYC / zyc .
+---   ZZC = ZYC / zyc .
+---   ZZC = ZYC / zyc .
+---   ZZC = ZYC / zyc .
+---   ZZC = ZYC / zyc .
+
+
+---   ZZD = ZYD / zyd .
+---   ZZD = ZYD / zyd .
+---   ZZD = ZYD / zyd .
+---   ZZD = ZYD / zyd .
+---   ZZD = ZYD / zyd .
+---   ZZD = ZYD / zyd .
+---   ZZD = ZYD / zyd .
+---   ZZD = ZYD / zyd .
+
+
+---   ZZE = ZYE / zye .
+---   ZZE = ZYE / zye .
+---   ZZE = ZYE / zye .
+---   ZZE = ZYE / zye .
+---   ZZE = ZYE / zye .
+---   ZZE = ZYE / zye .
+---   ZZE = ZYE / zye .
+---   ZZE = ZYE / zye .
+
+
+---   ZZF = ZYF / zyf .
+---   ZZF = ZYF / zyf .
+---   ZZF = ZYF / zyf .
+---   ZZF = ZYF / zyf .
+---   ZZF = ZYF / zyf .
+---   ZZF = ZYF / zyf .
+---   ZZF = ZYF / zyf .
+---   ZZF = ZYF / zyf .
+
+---   zzo = *** .
+---   zzo = *** .
+---   zzo = *** .
+---   zzo = *** .
+---   zzo = *** .
+---   zzo = *** .
+---   zzo = *** .
+---   zzo = *** .
+

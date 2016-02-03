@@ -1,0 +1,1237 @@
+*
+* Boolean Definitions
+* Module: WA
+* Description: Local Memory
+* Revision:
+* Date: 
+*
+                                             Bank 0 Address Register
+
+---  AAA = GAA TMA + IEC TNA + KAC TOA .    IEA-H from AR register
+---  AAB = GAB TMA + IED TNA + KAD TOA .
+---  AAC = GAC TMA + IEE TNA + KAE TOA .
+---  AAD = GAD TMA + IEF TNA + KAF TOA .
+---  AAE = GAE TMA + IEG TNA + KAG TOA .
+---  AAF = GAF TMA + IEH TNA + KAH TOA .
+---  AAG = GAG TMA + IEI TNA + KAI TOA .
+---  AAH = GAH TMA + IEJ TNA + KAJ TOA .
+
+---  AAI = GAI TMB + IEK TNB + KAK TOB .
+---  AAJ = GAJ TMB + IEL TNB + KAL TOB .
+---  AAK = GAK TMB + IEM TNB + KAM TOB .
+---  AAL = GAL TMB + IEN TNB + KAN TOB .
+
+                                            
+---  ABA = AEA TMC + IEC TNC + KAC TOC .       Bank 1 Address register
+---  ABB = AEB TMC + IED TNC + KAD TOC .
+---  ABC = AEC TMC + IEE TNC + KAE TOC .
+---  ABD = AED TMC + IEF TNC + KAF TOC .
+---  ABE = AEE TMC + IEG TNC + KAG TOC .
+---  ABF = AEF TMC + IEH TNC + KAH TOC .
+---  ABG = AEG TMC + IEI TNC + KAI TOC .
+---  ABH = AEH TMC + IEJ TNC + KAJ TOC .
+
+---  ABI = AEI TMD + IEK TND + KAK TOD .
+---  ABJ = AEJ TMD + IEL TND + KAL TOD .
+---  ABK = AEK TMD + IEM TND + KAM TOD .
+---  ABL = AEL TMD + IEN TND + KAN TOD .
+                               
+---  ACA = AFA TME + IEC TNE + KAC TOE .       Bank 2 Address register
+---  ACB = AFB TME + IED TNE + KAD TOE .
+---  ACC = AFC TME + IEE TNE + KAE TOE .
+---  ACD = AFD TME + IEF TNE + KAF TOE .
+---  ACE = AFE TME + IEG TNE + KAG TOE .
+---  ACF = AFF TME + IEH TNE + KAH TOE .
+---  ACG = AFG TME + IEI TNE + KAI TOE .
+---  ACH = AFH TME + IEJ TNE + KAJ TOE .
+
+---  ACI = AFI TMF + IEK TNF + KAK TOF .
+---  ACJ = AFJ TMF + IEL TNF + KAL TOF .
+---  ACK = AFK TMF + IEM TNF + KAM TOF .
+---  ACL = AFL TMF + IEN TNF + KAN TOF .
+                               
+---  ADA = AGA TMG + IEC TNG + KAC TOG .    Bank 3  Address Register
+---  ADB = AGB TMG + IED TNG + KAD TOG .
+---  ADC = AGC TMG + IEE TNG + KAE TOG .
+---  ADD = AGD TMG + IEF TNG + KAF TOG .
+---  ADE = AGE TMG + IEG TNG + KAG TOG .
+---  ADF = AGF TMG + IEH TNG + KAH TOG .
+---  ADG = AGG TMG + IEI TNG + KAI TOG .
+---  ADH = AGH TMG + IEJ TNG + KAJ TOG .
+
+---  ADI = AGI TMH + IEK TNH + KAK TOH .
+---  ADJ = AGJ TMH + IEL TNH + KAL TOH .
+---  ADK = AGK TMH + IEM TNH + KAM TOH .
+---  ADL = AGL TMH + IEN TNH + KAN TOH .
+
+                                             Bank 0 Register
+
+                     enter AR   Enter Const
+                     addr       Addr
+                     IJA        QAA
+
+---  AEA = GAA TMA + IEC TNA + KAC TOA .    IEA-H from AR register
+---  AEB = GAB TMA + IED TNA + KAD TOA .
+---  AEC = GAC TMA + IEE TNA + KAE TOA .
+---  AED = GAD TMA + IEF TNA + KAF TOA .
+---  AEE = GAE TMA + IEG TNA + KAG TOA .
+---  AEF = GAF TMA + IEH TNA + KAH TOA .
+---  AEG = GAG TMA + IEI TNA + KAI TOA .
+---  AEH = GAH TMA + IEJ TNA + KAJ TOA .
+
+---  AEI = GAI TMB + IEK TNB + KAK TOB .
+---  AEJ = GAJ TMB + IEL TNB + KAL TOB .
+---  AEK = GAK TMB + IEM TNB + KAM TOB .
+---  AEL = GAL TMB + IEN TNB + KAN TOB .
+
+                                            
+---  AFA = AEA TMC + IEC TNC + KAC TOC .       Bank 1 address register
+---  AFB = AEB TMC + IED TNC + KAD TOC .
+---  AFC = AEC TMC + IEE TNC + KAE TOC .
+---  AFD = AED TMC + IEF TNC + KAF TOC .
+---  AFE = AEE TMC + IEG TNC + KAG TOC .
+---  AFF = AEF TMC + IEH TNC + KAH TOC .
+---  AFG = AEG TMC + IEI TNC + KAI TOC .
+---  AFH = AEH TMC + IEJ TNC + KAJ TOC .
+
+---  AFI = AEI TMD + IEK TND + KAK TOD .
+---  AFJ = AEJ TMD + IEL TND + KAL TOD .
+---  AFK = AEK TMD + IEM TND + KAM TOD .
+---  AFL = AEL TMD + IEN TND + KAN TOD .
+                               
+---  AGA = AFA TME + IEC TNE + KAC TOE .       Bank 2 address register
+---  AGB = AFB TME + IED TNE + KAD TOE .
+---  AGC = AFC TME + IEE TNE + KAE TOE .
+---  AGD = AFD TME + IEF TNE + KAF TOE .
+---  AGE = AFE TME + IEG TNE + KAG TOE .
+---  AGF = AFF TME + IEH TNE + KAH TOE .
+---  AGG = AFG TME + IEI TNE + KAI TOE .
+---  AGH = AFH TME + IEJ TNE + KAJ TOE .
+
+---  AGI = AFI TMF + IEK TNF + KAK TOF .
+---  AGJ = AFJ TMF + IEL TNF + KAL TOF .
+---  AGK = AFK TMF + IEM TNF + KAM TOF .
+---  AGL = AFL TMF + IEN TNF + KAN TOF .
+
+                               
+---  AHA = AGA TMG + IEC TNG + KAC TOG .       Bank 3 address register
+---  AHB = AGB TMG + IED TNG + KAD TOG .
+---  AHC = AGC TMG + IEE TNG + KAE TOG .
+---  AHD = AGD TMG + IEF TNG + KAF TOG .
+---  AHE = AGE TMG + IEG TNG + KAG TOG .
+---  AHF = AGF TMG + IEH TNG + KAH TOG .
+---  AHG = AGG TMG + IEI TNG + KAI TOG .
+---  AHH = AGH TMG + IEJ TNG + KAJ TOG .
+
+---  AHI = AGI TMH + IEK TNH + KAK TOH .
+---  AHJ = AGJ TMH + IEL TNH + KAL TOH .
+---  AHK = AGK TMH + IEM TNH + KAM TOH .
+---  AHL = AGL TMH + IEN TNH + KAN TOH .
+
+
+---  BAA = BAA taa tba + NAA TAA + IAA TBA .    Even Bank Write Data 0
+---  BAB = BAB taa tba + NAB TAA + IAB TBA .
+---  BAC = BAC taa tba + NAC TAA + IAC TBA .
+---  BAD = BAD taa tba + NAD TAA + IAD TBA .
+---  BAE = BAE taa tba + NAE TAA + IAE TBA .
+---  BAF = BAF taa tba + NAF TAA + IAF TBA .
+---  BAG = BAG taa tba + NAG TAA + IAG TBA .
+---  BAH = BAH taa tba + NAH TAA + IAH TBA .
+
+---  BAI = BAI tab tbb + NAI TAB + IAI TBB .
+---  BAJ = BAJ tab tbb + NAJ TAB + IAJ TBB .
+---  BAK = BAK tab tbb + NAK TAB + IAK TBB .
+---  BAL = BAL tab tbb + NAL TAB + IAL TBB .
+---  BAM = BAM tab tbb + NAM TAB + IAM TBB .
+---  BAN = BAN tab tbb + NAN TAB + IAN TBB .
+---  BAO = BAO tab tbb + NAO TAB + IAO TBB .
+---  BAP = BAP tab tbb + NAP TAB + IAP TBB .                       15
+
+---  BBA = BBA taa tba + NBA TAA + IBA TBA .                       16
+---  BBB = BBB taa tba + NBB TAA + IBB TBA .
+---  BBC = BBC taa tba + NBC TAA + IBC TBA .
+---  BBD = BBD taa tba + NBD TAA + IBD TBA .
+---  BBE = BBE taa tba + NBE TAA + IBE TBA .
+---  BBF = BBF taa tba + NBF TAA + IBF TBA .
+---  BBG = BBG taa tba + NBG TAA + IBG TBA .
+---  BBH = BBH taa tba + NBH TAA + IBH TBA .
+
+---  BBI = BBI tab tbb + NBI TAB + IBI TBB .
+---  BBJ = BBJ tab tbb + NBJ TAB + IBJ TBB .
+---  BBK = BBK tab tbb + NBK TAB + IBK TBB .
+---  BBL = BBL tab tbb + NBL TAB + IBL TBB .
+---  BBM = BBM tab tbb + NBM TAB + IBM TBB .
+---  BBN = BBN tab tbb + NBN TAB + IBN TBB .
+---  BBO = BBO tab tbb + NBO TAB + IBO TBB .
+---  BBP = BBP tab tbb + NBP TAB + IBP TBB .                       31
+
+---  BCA = BCA tac tbc + NCC TAC + ICC TBC .                       32
+---  BCB = BCB tac tbc + NCB TAC + ICB TBC .
+---  BCC = BCC tac tbc + NCC TAC + ICC TBC .
+---  BCD = BCD tac tbc + NCD TAC + ICD TBC .
+---  BCE = BCE tac tbc + NCE TAC + ICE TBC .
+---  BCF = BCF tac tbc + NCF TAC + ICF TBC .
+---  BCG = BCG tac tbc + NCG TAC + ICG TBC .
+---  BCH = BCH tac tbc + NCH TAC + ICH TBC .
+
+---  BCI = BCI tad tbd + NCI TAD + ICI TBD .
+---  BCJ = BCJ tad tbd + NCJ TAD + ICJ TBD .
+---  BCK = BCK tad tbd + NCK TAD + ICK TBD .
+---  BCL = BCL tad tbd + NCL TAD + ICL TBD .
+---  BCM = BCM tad tbd + NCM TAD + ICM TBD .
+---  BCN = BCN tad tbd + NCN TAD + ICN TBD .
+---  BCO = BCO tad tbd + NCO TAD + ICO TBD .
+---  BCP = BCP tad tbd + NCP TAD + ICP TBD .                       47
+
+---  BDA = BDA tac tbc + NDC TAC + IDC TBC .                       48
+---  BDB = BDB tac tbc + NDB TAC + IDB TBC .
+---  BDC = BDC tac tbc + NDC TAC + IDC TBC .
+---  BDD = BDD tac tbc + NDD TAC + IDD TBC .
+---  BDE = BDE tac tbc + NDE TAC + IDE TBC .
+---  BDF = BDF tac tbc + NDF TAC + IDF TBC .
+---  BDG = BDG tac tbc + NDG TAC + IDG TBC .
+---  BDH = BDH tac tbc + NDH TAC + IDH TBC .
+
+---  BDI = BDI tad tbd + NDI TAD + IDI TBD .
+---  BDJ = BDJ tad tbd + NDJ TAD + IDJ TBD .
+---  BDK = BDK tad tbd + NDK TAD + IDK TBD .
+---  BDL = BDL tad tbd + NDL TAD + IDL TBD .
+---  BDM = BDM tad tbd + NDM TAD + IDM TBD .
+---  BDN = BDN tad tbd + NDN TAD + IDN TBD .
+---  BDO = BDO tad tbd + NDO TAD + IDO TBD .
+---  BDP = BDP tad tbd + NDP TAD + IDP TBD .                       63
+
+---  BEA = BEA tca tda + NAA TCA + IAA TDA .      Odd Bank Write Data 0
+---  BEB = BEB tca tda + NAB TCA + IAB TDA .
+---  BEC = BEC tca tda + NAC TCA + IAC TDA .
+---  BED = BED tca tda + NAD TCA + IAD TDA .
+---  BEE = BEE tca tda + NAE TCA + IAE TDA .
+---  BEF = BEF tca tda + NAF TCA + IAF TDA .
+---  BEG = BEG tca tda + NAG TCA + IAG TDA .
+---  BEH = BEH tca tda + NAH TCA + IAH TDA .
+
+---  BEI = BEI tcb tdb + NAI TCB + IAI TDB .
+---  BEJ = BEJ tcb tdb + NAJ TCB + IAJ TDB .
+---  BEK = BEK tcb tdb + NAK TCB + IAK TDB .
+---  BEL = BEL tcb tdb + NAL TCB + IAL TDB .
+---  BEM = BEM tcb tdb + NAM TCB + IAM TDB .
+---  BEN = BEN tcb tdb + NAN TCB + IAN TDB .
+---  BEO = BEO tcb tdb + NAO TCB + IAO TDB .
+---  BEP = BEP tcb tdb + NAP TCB + IAP TDB .                       15
+
+---  BFA = BFA tca tda + NBA TCA + IBA TDA .                       16
+---  BFB = BFB tca tda + NBB TCA + IBB TDA .
+---  BFC = BFC tca tda + NBC TCA + IBC TDA .
+---  BFD = BFD tca tda + NBD TCA + IBD TDA .
+---  BFE = BFE tca tda + NBE TCA + IBE TDA .
+---  BFF = BFF tca tda + NBF TCA + IBF TDA .
+---  BFG = BFG tca tda + NBG TCA + IBG TDA .
+---  BFH = BFH tca tda + NBH TCA + IBH TDA .
+
+---  BFI = BFI tcb tdb + NBI TCB + IBI TDB .
+---  BFJ = BFJ tcb tdb + NBJ TCB + IBJ TDB .
+---  BFK = BFK tcb tdb + NBK TCB + IBK TDB .
+---  BFL = BFL tcb tdb + NBL TCB + IBL TDB .
+---  BFM = BFM tcb tdb + NBM TCB + IBM TDB .
+---  BFN = BFN tcb tdb + NBN TCB + IBN TDB .
+---  BFO = BFO tcb tdb + NBO TCB + IBO TDB .
+---  BFP = BFP tcb tdb + NBP TCB + IBP TDB .                       31
+
+---  BGA = BGA tcc tdc + NCC TCC + ICC TDC .                       32
+---  BGB = BGB tcc tdc + NCB TCC + ICB TDC .
+---  BGC = BGC tcc tdc + NCC TCC + ICC TDC .
+---  BGD = BGD tcc tdc + NCD TCC + ICD TDC .
+---  BGE = BGE tcc tdc + NCE TCC + ICE TDC .
+---  BGF = BGF tcc tdc + NCF TCC + ICF TDC .
+---  BGG = BGG tcc tdc + NCG TCC + ICG TDC .
+---  BGH = BGH tcc tdc + NCH TCC + ICH TDC .
+
+---  BGI = BGI tcd tdd + NCI TCD + ICI TDD .
+---  BGJ = BGJ tcd tdd + NCJ TCD + ICJ TDD .
+---  BGK = BGK tcd tdd + NCK TCD + ICK TDD .
+---  BGL = BGL tcd tdd + NCL TCD + ICL TDD .
+---  BGM = BGM tcd tdd + NCM TCD + ICM TDD .
+---  BGN = BGN tcd tdd + NCN TCD + ICN TDD .
+---  BGO = BGO tcd tdd + NCO TCD + ICO TDD .
+---  BGP = BGP tcd tdd + NCP TCD + ICP TDD .                        47
+
+---  BHA = BHA tcc tdc + NDC TCC + IDC TDC .                       48
+---  BHB = BHB tcc tdc + NDB TCC + IDB TDC .
+---  BHC = BHC tcc tdc + NDC TCC + IDC TDC .
+---  BHD = BHD tcc tdc + NDD TCC + IDD TDC .
+---  BHE = BHE tcc tdc + NDE TCC + IDE TDC .
+---  BHF = BHF tcc tdc + NDF TCC + IDF TDC .
+---  BHG = BHG tcc tdc + NDG TCC + IDG TDC .
+---  BHH = BHH tcc tdc + NDH TCC + IDH TDC .
+
+---  BHI = BHI tcd tdd + NDI TCD + IDI TDD .
+---  BHJ = BHJ tcd tdd + NDJ TCD + IDJ TDD .
+---  BHK = BHK tcd tdd + NDK TCD + IDK TDD .
+---  BHL = BHL tcd tdd + NDL TCD + IDL TDD .
+---  BHM = BHM tcd tdd + NDM TCD + IDM TDD .
+---  BHN = BHN tcd tdd + NDN TCD + IDN TDD .
+---  BHO = BHO tcd tdd + NDO TCD + IDO TDD .
+---  BHP = BHP tcd tdd + NDP TCD + IDP TDD .                       63
+
+---  FAA = ABA .
+---  FAB = ABB .
+---  FAC = ABC .
+---  FAD = ABD .
+
+---  FAE = ABE .
+---  FAF = ABF .
+---  FAG = ABG .
+---  FAH = ABH .
+
+---  FAI = ABI .
+---  FAJ = ABJ .
+---  FAK = ABK .
+---  FAL = ABL .
+
+---  FAO = ABA ABB ABC .
+---  FAP = ABE ABF ABG .
+---  FAQ = ABI ABJ ABK .
+
+---  FBA = aba .
+---  FBB = aba ABB + ABA abb .
+---  FBC = ABA ABB abc + ABC aba + ABC abb .
+---  FBD = FAO abd + ABD aba + ABD abb + ABD abc .
+
+---  FBE = abe .
+---  FBF = abe ABF + ABE abf .
+---  FBG = ABE ABF abg + ABG abe + ABG abf .
+---  FBH = FAP abh + ABH abe + ABH abf + ABH abg .
+
+---  FBI = abi .
+---  FBJ = abi ABJ + ABI abj .
+---  FBK = ABI ABJ abk + ABK abi + ABK abj .
+---  FBL = FAQ abl + ABL abi + ABL abj + ABL abk .
+
+---  FBO = ABA ABB ABC ABD .         Group carries
+---  FBP = ABE ABF ABG ABH .
+
+---  GAA = FBA .                     0   Incremented Address
+---  GAB = FBB .
+---  GAC = FBC .
+---  GAD = FBD .
+
+---  GAE = FAE fbo + FBE FBO .
+---  GAF = FAF fbo + FBF FBO .
+---  GAG = FAG fbo + FBG FBO .
+---  GAH = FAH fbo + FBH FBO .
+
+---  GAI = FAI fbp + FBI FBP .
+---  GAJ = FAJ fbp + FBJ FBP .
+---  GAK = FAK fbp + FBK FBP .
+---  GAL = FAL fbp + FBL FBP .        11
+
+
+---  JCA = QFA iea ieb .              IEA,IEB = Address Register low order bits
+---  JCB = QFA IEA ieb .            Bank Address from AR Register 
+---  JCC = QFA iea IEB .              Need enter AR addr from JB
+---  JCD = QFA IEA IEB .
+
+---  JDA = QAA kaa kab .             Bank Address from Instruction Parcel 2
+---  JDB = QAA KAA kab .             Constant read instruction
+---  JDC = QAA kaa KAB .
+---  JDD = QAA KAA KAB .
+
+---  JEA = PAA qdc + PAD QDC .    Advance to next bank
+---  JEB = PAB qdc + PAA QDC .
+---  JEC = PAC qdc + PAB QDC .
+---  JED = PAD qdc + PAC QDC .
+
+---  KAA = IGA tla + KAA TLA .   IGA = Bit 0 Instruction Const Local Mem address
+---  KAB = IGB tla + KAB TLA .
+
+---  KAC = IGC .                 Instructio Parcel 2 data from JA
+---  KAD = IGD .
+---  KAE = IGE .
+---  KAF = IGF .
+---  KAG = IGG .
+---  KAH = IGH .
+
+---  KAI = IGI .                  Instruction Parcel from JA
+---  KAJ = IGJ .
+---  KAK = IGK .
+---  KAL = IGL .
+---  KAM = IGM .
+---  KAN = IGN .
+---  KAO = IGO .
+---  KAP = IGP .
+
+---  NAA = IEA .                  AR data holding reg
+---  NAB = IEB .
+---  NAC = IEC .
+---  NAD = IED .
+---  NAE = IEE .
+---  NAF = IEF .
+---  NAG = IEG .
+---  NAH = IEH .
+
+---  NAI = IEI .
+---  NAJ = IEJ .
+---  NAK = IEK .
+---  NAL = IEL .
+---  NAM = IEM .
+---  NAN = IEN .
+---  NAO = IEO .
+---  NAP = IEP .
+
+---  NBA = IFA .                  AR data holding reg
+---  NBB = IFB .
+---  NBC = IFC .
+---  NBD = IFD .
+---  NBE = IFE .
+---  NBF = IFF .
+---  NBG = IFG .
+---  NBH = IFH .
+
+---  NBI = IFI .
+---  NBJ = IFJ .
+---  NBK = IFK .
+---  NBL = IFL .
+---  NBM = IFM .
+---  NBN = IFN .
+---  NBO = IFO .
+---  NBP = IFP .
+
+---  NCA = IFP .                  Sign extension
+---  NCB = IFP .
+---  NCC = IFP .
+---  NCD = IFP .
+---  NCE = IFP .
+---  NCF = IFP .
+---  NCG = IFP .
+---  NCH = IFP .
+
+---  nci = ifp .
+---  ncj = ifp .
+---  nck = ifp .
+---  ncl = ifp .
+---  ncm = ifp .
+---  ncn = ifp .
+---  nco = ifp .
+---  ncp = ifp .
+
+---  NDA = IFP .                  Sign extension
+---  NDB = IFP .
+---  NDC = IFP .
+---  NDD = IFP .
+---  NDE = IFP .
+---  NDF = IFP .
+---  NDG = IFP .
+---  NDH = IFP .
+
+---  ndi = ifp .
+---  ndj = ifp .
+---  ndk = ifp .
+---  ndl = ifp .
+---  ndm = ifp .
+---  ndn = ifp .
+---  ndo = ifp .
+---  ndp = ifp .
+
+
+---  OAA = SAA TEA + SEA TFA + SIA TGA + SMA THA .   Local Memory  0
+---  OAB = SAB TEB + SEB TFB + SIB TGB + SMB THB .   merge 64 bits
+---  OAC = SAC TEA + SEC TFA + SIC TGA + SMC THA .   to VRs
+---  OAD = SAD TEB + SED TFB + SID TGB + SMD THB .
+---  OAE = SAE TEC + SEE TFC + SIE TGC + SME THC .
+---  OAF = SAF TED + SEF TFD + SIF TGD + SMF THD .
+---  OAG = SAG TEC + SEG TFC + SIG TGC + SMG THC .
+---  OAH = SAH TED + SEH TFD + SIH TGD + SMH THD .
+
+---  OAI = SAI TEE + SEI TFE + SII TGE + SMI THE .
+---  OAJ = SAJ TEF + SEJ TFF + SIJ TGF + SMJ THF .
+---  OAK = SAK TEE + SEK TFE + SIK TGE + SMK THE .
+---  OAL = SAL TEF + SEL TFF + SIL TGF + SML THF .
+---  OAM = SAM TEG + SEM TFG + SIM TGG + SMM THG .
+---  OAN = SAN TEH + SEN TFH + SIN TGH + SMN THH .
+---  OAO = SAO TEG + SEO TFG + SIO TGG + SMO THG .
+---  OAP = SAP TEH + SEP TFH + SIP TGH + SMP THH .                  15
+
+---  OBA = SBA TEK + SFA TFK + SJA TGK + SNA THK .                  16
+---  OBB = SBB TEL + SFB TFL + SJB TGL + SNB THL .
+---  OBC = SBC TEK + SFC TFK + SJC TGK + SNC THK .
+---  OBD = SBD TEL + SFD TFL + SJD TGL + SND THL .
+---  OBE = SBE TEM + SFE TFM + SJE TGM+ SNE THM .
+---  OBF = SBF TEN + SFF TFN + SJF TGN + SNF THM .
+---  OBG = SBG TEM + SFG TFM + SJG TGM + SNG THM .
+---  OBH = SBH TEN + SFH TFN + SJH TGN + SNH THN .
+
+---  OBI = SBI TEO + SFI TFO + SJI TGO + SNI THO .
+---  OBJ = SBJ TEP + SFJ TFP + SJJ TGP + SNJ THP .
+---  OBK = SBK TEO + SFK TFO + SJK TGO + SNK THO .
+---  OBL = SBL TEP + SFL TFP + SJL TGP + SNL THP .
+---  OBM = SBM TEQ + SFM TFQ + SJM TGQ + SNM THQ .
+---  OBN = SBN TER + SFN TFR + SJN TGR + SNN THR .
+---  OBO = SBO TEQ + SFO TFQ + SJO TGQ + SNO THQ .
+---  OBP = SBP TER + SFP TFR + SJP TGR + SNP THR .                   31
+
+---  OCA = SCA TEA + SGA TFA + SKA TGA + SOA THA .                   32
+---  OCB = SCB TEB + SGB TFB + SKB TGB + SOB THB .   
+---  OCC = SCC TEA + SGC TFA + SKC TGA + SOC THA .
+---  OCD = SCD TEB + SGD TFB + SKD TGB + SOD THB .
+---  OCE = SCE TEC + SGE TFC + SKE TGC + SOE THC .
+---  OCF = SCF TED + SGF TFD + SKF TGD + SOF THD .
+---  OCG = SCG TEC + SGG TFC + SKG TGC + SOG THC .
+---  OCH = SCH TED + SGH TFD + SKH TGD + SOH THD .
+
+---  OCI = SCI TEE + SGI TFE + SKI TGE + SOI THE .
+---  OCJ = SCJ TEF + SGJ TFF + SKJ TGF + SOJ THF .
+---  OCK = SCK TEE + SGK TFE + SKK TGE + SOK THE .
+---  OCL = SCL TEF + SGL TFF + SKL TGF + SOL THF .
+---  OCM = SCM TEG + SGM TFG + SKM TGG + SOM THG .
+---  OCN = SCN TEH + SGN TFH + SKN TGH + SON THH .
+---  OCO = SCO TEG + SGO TFG + SKO TGG + SOO THG .
+---  OCP = SCP TEH + SGP TFH + SKP TGH + SOP THH .                  47
+ 
+---  ODA = SDA TEK + SHA TFK + SLA TGK + SPA THK .                  48
+---  ODB = SDB TEL + SHB TFL + SLB TGL + SPB THL .
+---  ODC = SDC TEK + SHC TFK + SLC TGK + SPC THK .
+---  ODD = SDD TEL + SHD TFL + SLD TGL + SPD THL .
+---  ODE = SDE TEM + SHE TFM + SLE TGM + SPE THM .
+---  ODF = SDF TEN + SHF TFN + SLF TGN + SPF THM .
+---  ODG = SDG TEM + SHG TFM + SLG TGM + SPG THM .
+---  ODH = SDH TEN + SHH TFN + SLH TGN + SPH THN .
+
+---  ODI = SDI TEO + SHI TFO + SLI TGO + SPI THO .
+---  ODJ = SDJ TEP + SHJ TFP + SLJ TGP + SPJ THP .
+---  ODK = SDK TEO + SHK TFO + SLK TGO + SPK THO .
+---  ODL = SDL TEP + SHL TFP + SLL TGP + SPL THP .
+---  ODM = SDM TEQ + SHM TFQ + SLM TGQ + SPM THQ .
+---  ODN = SDN TER + SHN TFR + SLN TGR + SPN THR .
+---  ODO = SDO TEQ + SHO TFQ + SLO TGQ + SPO THQ .
+---  ODP = SDP TER + SHP TFR + SLP TGR + SPP THR .                   63
+
+---  OEA = SCA TUA + SGA TVA + SKA TWA + SOA TXA .       Local Memory to ar  32
+---  OEB = SCB TUB + SGB TVB + SKB TWB + SOB TXB .   
+---  OEC = SCC TUA + SGC TVA + SKC TWA + SOC TXA .
+---  OED = SCD TUB + SGD TVB + SKD TWB + SOD TXB .
+---  OEE = SCE TUC + SGE TVC + SKE TWC + SOE TXC .
+---  OEF = SCF TUD + SGF TVD + SKF TWD + SOF TXD .
+---  OEG = SCG TUC + SGG TVC + SKG TWC + SOG TXC .
+---  OEH = SCH TUD + SGH TVD + SKH TWD + SOH TXD .
+
+---  OEI = SCI TUE + SGI TVE + SKI TWE + SOI TXE .
+---  OEJ = SCJ TUF + SGJ TVF + SKJ TWF + SOJ TXF .
+---  OEK = SCK TUE + SGK TVE + SKK TWE + SOK TXE .
+---  OEL = SCL TUF + SGL TVF + SKL TWF + SOL TXF .
+---  OEM = SCM TUG + SGM TVG + SKM TWG + SOM TXG .
+---  OEN = SCN TUH + SGN TVH + SKN TWH + SON TXH .
+---  OEO = SCO TUG + SGO TVG + SKO TWG + SOO TXG .
+---  OEP = SCP TUH + SGP TVH + SKP TWH + SOP TXH .                  47
+
+---  OFA = SDA TUK + SHA TVK + SLA TWK + SPA TXK .                  48
+---  OFB = SDB TUL + SHB TVL + SLB TWL + SPB TXL .
+---  OFC = SDC TUK + SHC TVK + SLC TWK + SPC TXK .
+---  OFD = SDD TUL + SHD TVL + SLD TWL + SPD TXL .
+---  OFE = SDE TUM + SHE TVM + SLE TWM + SPE TXM .
+---  OFF = SDF TUN + SHF TVN + SLF TWN + SPF TXM .
+---  OFG = SDG TUM + SHG TVM + SLG TWM + SPG TXM .
+---  OFH = SDH TUN + SHH TVN + SLH TWN + SPH TXN .
+
+---  OFI = SDI TUO + SHI TVO + SLI TWO + SPI TXO .
+---  OFJ = SDJ TUP + SHJ TVP + SLJ TWP + SPJ TXP .
+---  OFK = SDK TUO + SHK TVO + SLK TWO + SPK TXO .
+---  OFL = SDL TUP + SHL TVP + SLL TWP + SPL TXP .
+---  OFM = SDM TUQ + SHM TVQ + SLM TWQ + SPM TXQ .
+---  OFN = SDN TUR + SHN TVR + SLN TWR + SPN TXR .
+---  OFO = SDO TUQ + SHO TVQ + SLO TWQ + SPO TXQ .
+---  OFP = SDP TUR + SHP TVR + SLP TWR + SPP TXR .                   63
+
+                               Select bank
+
+---  PAA = JCA + JDA + JEA .    Bank 0 Read/Write Control
+---  PAB = JCB + JDB + JEB .    Bank 1 Read/Write Control
+---  PAC = JCC + JDC + JEC .    Bank 2    "
+---  PAD = JCD + JDD + JED .    Bank 3    "
+
+---  PBA = PAA .               Bank select + 1 cp
+---  PBB = PAB .
+---  PBC = PAC .
+---  PBD = PAD .
+
+---  PCA = PBA .               Bank select + 2 cp
+---  PCB = PBB .
+---  PCC = PBC .
+---  PCD = PBD .
+
+---  PCE = PBA .               Bank select + 2 cp  copy 2
+---  PCF = PBB .
+---  PCG = PBC .
+---  PCH = PBD .
+
+---  PDA = PAA QBD .      
+---  PDB = PAB QBD .
+---  PDC = PAC QBD .
+---  PDD = PAD QBD .
+
+---  PEA = PDA + PAA QBD .     2 cp of bank select for write enable
+---  PEB = PDB + PAB QBD .
+---  PEC = PDC + PAC QBD .
+---  PED = PDD + PAD QBD .
+
+---  QAA = IIA IHA IHB + QAC .    IIA = Enable Const Read QAA=Go Read
+---  QAB = IIB IHA IHB .     IIB=ENABLE Const Write,IHA,IHB=Go issue,QAB=GoWrite
+---  QAC = QAB .
+
+---  QBB = IJB .               Enter vr write data (CP 3 for Const, CP 4 for A)
+---  QBC = IJC .               Enter ar write data (CP 3 for Const, CP 4 for A)
+
+---  QBD = IJB + IJC .          Enter vr write data or enter ar write data (JB)
+
+---  QDA = IJD .                Advance address vector length control from JB
+---  QDB = IJD .
+---  QDC = QDB .                Adv address vector length + 1
+
+---  QFA = IJA .                Enter AR Address from JB, CP 4
+
+    Bank 0- Byte 0
+
+---  SAA = BAA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAA .
+---  SAB = BAB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAB .
+---  SAC = BAC ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAC .
+---  SAD = BAD ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAD .
+---  SAE = BAE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAE .
+---  SAF = BAF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAF .
+---  SAG = BAG ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAG .
+---  SAH = BAH ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAH .
+
+    Byte 1
+
+---  SAI = BAI ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAI .
+---  SAJ = BAJ ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAJ .
+---  SAK = BAK ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAK .
+---  SAL = BAL ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAL .
+---  SAM = BAM ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAM .
+---  SAN = BAN ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAN .
+---  SAO = BAO ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAO .
+---  SAP = BAP ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAP .
+
+     Byte 2
+
+---  SBA = BBA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAA .
+---  SBB = BBB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAB .
+---  SBC = BBC ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAC .
+---  SBD = BBD ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAD .
+---  SBE = BBE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAE .
+---  SBF = BBF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAF .
+---  SBG = BBG ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAG .
+---  SBH = BBH ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAH .
+
+       Byte 3
+
+---  SBI = BBI ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAI .
+---  SBJ = BBJ ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAJ .
+---  SBK = BBK ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAK .
+---  SBL = BBL ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAL .
+---  SBM = BBM ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAM .
+---  SBN = BBN ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAN .
+---  SBO = BBO ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAO .
+---  SBP = BBP ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAP .
+
+        Byte 4
+
+---  SCA = BCA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAA .
+---  SCB = BCB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAB .
+---  SCC = BCC ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAC .
+---  SCD = BCD ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAD .
+---  SCE = BCE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAE .
+---  SCF = BCF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAF .
+---  SCG = BCG ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAG .
+---  SCH = BCH ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAH .
+
+        Byte 5
+
+---  SCI = BCI ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAI .
+---  SCJ = BCJ ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAJ .
+---  SCK = BCK ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAK .
+---  SCL = BCL ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAL .
+---  SCM = BCM ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAM .
+---  SCN = BCN ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAN .
+---  SCO = BCO ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAO .
+---  SCP = BCP ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAP .
+
+        Byte 6
+
+---  SDA = BDA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAA .
+---  SDB = BDB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAB .
+---  SDC = BDC ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAC .
+---  SDD = BDD ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAD .
+---  SDE = BDE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAE .
+---  SDF = BDF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAF .
+---  SDG = BDG ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAG .
+---  SDH = BDH ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAH .
+
+        Byte 7
+
+---  SDI = BDI ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAI .
+---  SDJ = BDJ ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAJ .
+---  SDK = BDK ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAK .
+---  SDL = BDL ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAL .
+---  SDM = BDM ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAM .
+---  SDN = BDN ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAN .
+---  SDO = BDO ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAO .
+---  SDP = BDP ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAP .
+
+
+        Bank 1- Byte 0
+
+---  SEA = BEA ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBA .
+---  SEB = BEB ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBB .
+---  SEC = BEC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBC .
+---  SED = BED ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBD .
+---  SEE = BEE ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBE .
+---  SEF = BEF ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBF .
+---  SEG = BEG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBG .
+---  SEH = BEH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBH .
+
+         Byte 1
+
+---  SEI = BEI ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBI .
+---  SEJ = BEJ ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBJ .
+---  SEK = BEK ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBK .
+---  SEL = BEL ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBL .
+---  SEM = BEM ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBM .
+---  SEN = BEN ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBN .
+---  SEO = BEO ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBO .
+---  SEP = BEP ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBP .
+
+         Byte 2
+
+---  SFA = BFA ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBA .
+---  SFB = BFB ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBB .
+---  SFC = BFC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBC .
+---  SFD = BFD ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBD .
+---  SFE = BFE ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBE .
+---  SFF = BFF ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBF .
+---  SFG = BFG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBG .
+---  SFH = BFH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBH .
+
+          Byte 3
+
+---  SFI = BFI ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBI .
+---  SFJ = BFJ ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBJ .
+---  SFK = BFK ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBK .
+---  SFL = BFL ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBL .
+---  SFM = BFM ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBM .
+---  SFN = BFN ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBN .
+---  SFO = BFO ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBO .
+---  SFP = BFP ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBP .
+
+    Byte 4
+
+---  SGA = BGA ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBA .
+---  SGB = BGB ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBB .
+---  SGC = BGC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBC .
+---  SGD = BGD ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBD .
+---  SGE = BGE ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBE .
+---  SGF = BGF ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBF .
+---  SGG = BGG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBG .
+---  SGH = BGH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBH .
+
+    Byte 5
+
+---  SGI = BGI ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBI .
+---  SGJ = BGJ ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBJ .
+---  SGK = BGK ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBK .
+---  SGL = BGL ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBL .
+---  SGM = BGM ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBM .
+---  SGN = BGN ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBN .
+---  SGO = BGO ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBO .
+---  SGP = BGP ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBP .
+
+    Byte 6
+
+---  SHA = BHA ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBA .
+---  SHB = BHB ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBB .
+---  SHC = BHC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBC .
+---  SHD = BHD ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBD .
+---  SHE = BHE ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBE .
+---  SHF = BHF ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBF .
+---  SHG = BHG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBG .
+---  SHH = BHH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBH .
+
+    Byte 7
+
+---  SHI = BHI ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBI .
+---  SHJ = BHJ ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBJ .
+---  SHK = BHK ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBK .
+---  SHL = BHL ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBL .
+---  SHM = BHM ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBM .
+---  SHN = BHN ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBN .
+---  SHO = BHO ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBO .
+---  SHP = BHP ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBP .
+
+         Bank 2 - Byte 0
+
+---  SIA = BAA ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCA .
+---  SIB = BAB ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCB .
+---  SIC = BAC ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCC .
+---  SID = BAD ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCD .
+---  SIE = BAE ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCE .
+---  SIF = BAF ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCF .
+---  SIG = BAG ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCG .
+---  SIH = BAH ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCH .
+
+           Byte 1
+
+---  SII = BAI ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCI .
+---  SIJ = BAJ ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCJ .
+---  SIK = BAK ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCK .
+---  SIL = BAL ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCL .
+---  SIM = BAM ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCM .
+---  SIN = BAN ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCN .
+---  SIO = BAO ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCO .
+---  SIP = BAP ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCP .
+
+           Byte 2
+
+---  SJA = BBA ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCA .
+---  SJB = BBB ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCB .
+---  SJC = BBC ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCC .
+---  SJD = BBD ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCD .
+---  SJE = BBE ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCE .
+---  SJF = BBF ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCF .
+---  SJG = BBG ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCG .
+---  SJH = BBH ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCH .
+
+          Byte 3
+
+---  SJI = BBI ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCI .
+---  SJJ = BBJ ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCJ .
+---  SJK = BBK ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCK .
+---  SJL = BBL ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCL .
+---  SJM = BBM ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCM .
+---  SJN = BBN ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCN .
+---  SJO = BBO ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCO .
+---  SJP = BBP ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCP .
+
+      Byte 4
+
+---  SKA = BCA ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCA .
+---  SKB = BCB ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCB .
+---  SKC = BCC ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCC .
+---  SKD = BCD ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCD .
+---  SKE = BCE ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCE .
+---  SKF = BCF ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCF .
+---  SKG = BCG ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCG .
+---  SKH = BCH ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCH .
+
+      Byte 5
+
+---  SKI = BCI ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCI .
+---  SKJ = BCJ ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCJ .
+---  SKK = BCK ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCK .
+---  SKL = BCL ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCL .
+---  SKM = BCM ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCM .
+---  SKN = BCN ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCN .
+---  SKO = BCO ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCO .
+---  SKP = BCP ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCP .
+
+      Byte 6
+
+---  SLA = BDA ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCA .
+---  SLB = BDB ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCB .
+---  SLC = BDC ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCC .
+---  SLD = BDD ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCD .
+---  SLE = BDE ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCE .
+---  SLF = BDF ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCF .
+---  SLG = BDG ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCG .
+---  SLH = BDH ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCH .
+
+      Byte 7
+
+---  SLI = BDI ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCI .
+---  SLJ = BDJ ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCJ .
+---  SLK = BDK ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCK .
+---  SLL = BDL ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCL .
+---  SLM = BDM ; ACA ACB ACC ACD ACE ACF ACG ACH ACI ACJ ACK ACL ; *** WCM .
+---  SLN = BDN ; aca acb acc acd ace acf acg ach aci acj ack acl ; *** WCN .
+---  SLO = BDO ; AGA AGB AGC AGD AGE AGF AGG AGH AGI AGJ AGK AGL ; *** WCO .
+---  SLP = BDP ; aga agb agc agd age agf agg agh agi agj agk agl ; *** WCP .
+
+   Bank 3- Byte 0
+
+---  SMA = BEA ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDA .
+---  SMB = BEB ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDB .
+---  SMC = BEC ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDC .
+---  SMD = BED ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDD .
+---  SME = BEE ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDE .
+---  SMF = BEF ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDF .
+---  SMG = BEG ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDG .
+---  SMH = BEH ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDH .
+
+       Byte 1
+
+---  SMI = BEI ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDI .
+---  SMJ = BEJ ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDJ .
+---  SMK = BEK ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDK .
+---  SML = BEL ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDL .
+---  SMM = BEM ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDM .
+---  SMN = BEN ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDN .
+---  SMO = BEO ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDO .
+---  SMP = BEP ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDP .
+
+      Byte 2
+
+---  SNA = BFA ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDA .
+---  SNB = BFB ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDB .
+---  SNC = BFC ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDC .
+---  SND = BFD ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDD .
+---  SNE = BFE ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDE .
+---  SNF = BFF ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDF .
+---  SNG = BFG ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDG .
+---  SNH = BFH ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDH .
+
+          Byte 3
+
+---  SNI = BFI ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDI .
+---  SNJ = BFJ ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDJ .
+---  SNK = BFK ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDK .
+---  SNL = BFL ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDL .
+---  SNM = BFM ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDM .
+---  SNN = BFN ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDN .
+---  SNO = BFO ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDO .
+---  SNP = BFP ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDP .
+
+          Byte 4
+
+---  SOA = BGA ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDA .
+---  SOB = BGB ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDB .
+---  SOC = BGC ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDC .
+---  SOD = BGD ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDD .
+---  SOE = BGE ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDE .
+---  SOF = BGF ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDF .
+---  SOG = BGG ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDG .
+---  SOH = BGH ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDH .
+
+          Byte 5
+
+---  SOI = BGI ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDI .
+---  SOJ = BGJ ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDJ .
+---  SOK = BGK ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDK .
+---  SOL = BGL ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDL .
+---  SOM = BGM ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDM .
+---  SON = BGN ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDN .
+---  SOO = BGO ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDO .
+---  SOP = BGP ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDP .
+
+          Byte 6
+
+---  SPA = BHA ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDA .
+---  SPB = BHB ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDB .
+---  SPC = BHC ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDC .
+---  SPD = BHD ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDD .
+---  SPE = BHE ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDE .
+---  SPF = BHF ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDF .
+---  SPG = BHG ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDG .
+---  SPH = BHH ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDH .
+
+          Byte 7
+
+---  SPI = BHI ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDI .
+---  SPJ = BHJ ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDJ .
+---  SPK = BHK ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDK .
+---  SPL = BHL ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDL .
+---  SPM = BHM ; ADA ADB ADC ADD ADE ADF ADG ADH ADI ADJ ADK ADL ; *** WDM .
+---  SPN = BHN ; ada adb adc add ade adf adg adh adi adj adk adl ; *** WDN .
+---  SPO = BHO ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDO .
+---  SPP = BHP ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDP .
+
+
+---  taa = pba pbc + qbc .             Even Data Reg enable for AR data
+---  tab = pba pbc + qbc .
+---  tac = pba pbc + qbc .
+---  tad = pba pbc + qbc .
+
+---  tba = pba pbc + qbb .             Even Data Reg Enable for VR Data
+---  tbb = pba pbc + qbb .
+---  tbc = pba pbc + qbb .
+---  tbd = pba pbc + qbb .
+
+---  tca = pbb pbd + qbc .             Odd Data Reg Enablefor AR data
+---  tcb = pbb pbd + qbc .
+---  tcc = pbb pbd + qbc .
+---  tcd = pbb pbd + qbc .
+
+---  tda = pbb pbd + qbb .              Odd Data Reg  Enable  for VR Data
+---  tdb = pbb pbd + qbb .
+---  tdc = pbb pbd + qbb .
+---  tdd = pbb pbd + qbb .
+
+---  TEA = PCA .        Select Bank 0 Readout  Latched
+---  TEB = PCA .            CP 5  Read Constant LM
+---  TEC = PCA .            CP 8  S or A data Read Ak Adr LM
+---  TED = PCA .            CP 8,9 Vector
+
+---  TEE = PCA .
+---  TEF = PCA .
+---  TEG = PCA .
+---  TEH = PCA .
+---  TEI = PCA .
+---  TEJ = PCA .
+
+---  tek = pca .
+---  tel = pca .
+---  tem = pca .
+---  ten = pca .
+---  teo = pca .
+---  tep = pca .
+---  teq = pca .
+---  ter = pca .
+
+---  TFA = PCB .
+---  TFB = PCB .
+---  TFC = PCB .
+---  TFD = PCB .
+---  TFE = PCB .
+---  TFF = PCB .
+---  TFG = PCB .
+---  TFH = PCB .
+---  TFI = PCB .
+---  TFJ = PCB .
+
+---  tfk = pcb .
+---  tfl = pcb .
+---  tfm = pcb .
+---  tfn = pcb .
+---  tfo = pcb .
+---  tfp = pcb .
+---  tfq = pcb .
+---  tfr = pcb .
+
+---  TGA = PCC .
+---  TGB = PCC .
+---  TGC = PCC .
+---  TGD = PCC .
+---  TGE = PCC .
+---  TGF = PCC .
+---  TGG = PCC .
+---  TGH = PCC .
+---  TGI = PCC .
+---  TGJ = PCC .
+
+---  tgk = pcc .
+---  tgl = pcc .
+---  tgm = pcc .
+---  tgn = pcc .
+---  tgo = pcc .
+---  tgp = pcc .
+---  tgq = pcc .
+---  tgr = pcc .
+
+---  THA = PCD .
+---  THB = PCD .
+---  THC = PCD .
+---  THD = PCD .
+---  THE = PCD .
+---  THF = PCD .
+---  THG = PCD .
+---  THH = PCD .
+---  THI = PCD .
+---  THJ = PCD .
+
+---  thk = pcd .
+---  thl = pcd .
+---  thm = pcd .
+---  thn = pcd .
+---  tho = pcd .
+---  thp = pcd .
+---  thq = pcd .
+---  thr = pcd .
+
+---  tla = qab qac .
+
+---  TMA = PCE .
+---  TMB = PCE .
+
+---  TMC = qfa qaa .
+---  TMD = qfa qaa .
+
+---  TME = qfa qaa .
+---  TMF = qfa qaa .
+
+---  TMG = qfa qaa .
+---  TMH = qfa qaa .
+
+---  tna = qfa .
+---  tnb = qfa .
+
+---  tnc = qfa .
+---  tnd = qfa .
+
+---  tne = qfa .
+---  tnf = qfa .
+
+---  tng = qfa .
+---  tnh = qfa .
+
+---  toa = qaa .
+---  tob = qaa .
+
+---  toc = qaa .
+---  tod = qaa .
+
+---  toe = qaa .
+---  tof = qaa .
+
+---  tog = qaa .
+---  toh = qaa .
+
+---  TUA = PCA .
+---  TUB = PCA .
+---  TUC = PCA .
+---  TUD = PCA .
+
+---  TUE = PCA .
+---  TUF = PCA .
+---  TUG = PCA .
+---  TUH = PCA .
+
+---  TUI = PCA .
+---  TUJ = PCA .
+
+---  tuk = pca .
+---  tul = pca .
+---  tum = pca .
+---  tun = pca .
+
+---  tuo = pca .
+---  tup = pca .
+---  tuq = pca .
+---  tur = pca .
+
+---  TVA = PCB .
+---  TVB = PCB .
+---  TVC = PCB .
+---  TVD = PCB .
+---  TVE = PCB .
+---  TVF = PCB .
+---  TVG = PCB .
+---  TVH = PCB .
+---  TVI = PCB .
+---  TVJ = PCB .
+
+---  tvk = pcb .
+---  tvl = pcb .
+---  tvm = pcb .
+---  tvn = pcb .
+---  tvo = pcb .
+---  tvp = pcb .
+---  tvq = pcb .
+---  tvr = pcb .
+
+---  TWA = PCC .
+---  TWB = PCC .
+---  TWC = PCC .
+---  TWD = PCC .
+---  TWE = PCC .
+---  TWF = PCC .
+---  TWG = PCC .
+---  TWH = PCC .
+---  TWI = PCC .
+---  TWJ = PCC .
+
+---  twk = pcc .
+---  twl = pcc .
+---  twm = pcc .
+---  twn = pcc .
+---  two = pcc .
+---  twp = pcc .
+---  twq = pcc .
+---  twr = pcc .
+
+---  TXA = PCD .
+---  TXB = PCD .
+---  TXC = PCD .
+---  TXD = PCD .
+---  TXE = PCD .
+---  TXF = PCD .
+---  TXG = PCD .
+---  TXH = PCD .
+---  TXI = PCD .
+---  TXJ = PCD .
+
+---  txk = pcd .
+---  txl = pcd .
+---  txm = pcd .
+---  txn = pcd .
+---  txo = pcd .
+---  txp = pcd .
+---  txq = pcd .
+---  txr = pcd .
+
+---  WAA = PEA .
+---  WAB = PEA .
+---  WAC = PEA .
+---  WAD = PEA .
+---  WAE = PEA .
+---  WAF = PEA .
+---  WAG = PEA .
+---  WAH = PEA .
+
+---  wai = pea .
+---  waj = pea .
+---  wak = pea .
+---  wal = pea .
+---  wam = pea .
+---  wan = pea .
+---  wao = pea .
+---  wap = pea .
+
+---  WBA = PEB .
+---  WBB = PEB .
+---  WBC = PEB .
+---  WBD = PEB .
+---  WBE = PEB .
+---  WBF = PEB .
+---  WBG = PEB .
+---  WBH = PEB .
+
+---  wbi = peb .
+---  wbj = peb .
+---  wbk = peb .
+---  wbl = peb .
+---  wbm = peb .
+---  wbn = peb .
+---  wbo = peb .
+---  wbp = peb .
+
+---  WCA = PEC .
+---  WCB = PEC .
+---  WCC = PEC .
+---  WCD = PEC .
+---  WCE = PEC .
+---  WCF = PEC .
+---  WCG = PEC .
+---  WCH = PEC .
+
+---  wci = pec .
+---  wcj = pec .
+---  wck = pec .
+---  wcl = pec .
+---  wcm = pec .
+---  wcn = pec .
+---  wco = pec .
+---  wcp = pec .
+
+---  WDA = PED .
+---  WDB = PED .
+---  WDC = PED .
+---  WDD = PED .
+---  WDE = PED .
+---  WDF = PED .
+---  WDG = PED .
+---  WDH = PED .
+
+---  wdi = ped .
+---  wdj = ped .
+---  wdk = ped .
+---  wdl = ped .
+---  wdm = ped .
+---  wdn = ped .
+---  wdo = ped .
+---  wdp = ped .

@@ -1,0 +1,5147 @@
+This file shows the mapping between IO on each module, it is the wiring of the major buses.
+This represents the physical wires that existed in the orignal machine that interconnected modules.
+There could be timing issues, though in simulation none have been found to date.
+
+
+      vr data to tb
+
+vr.0 ONA tb.1 IAA vrdatatb[0]
+vr.0 ONB tb.1 IAB vrdatatb[1]
+vr.0 ONC tb.1 IAC vrdatatb[2]
+vr.0 OND tb.1 IAD vrdatatb[3]
+vr.0 ONE tb.1 IAE vrdatatb[4]
+vr.0 ONF tb.1 IAF vrdatatb[5]
+vr.0 ONG tb.1 IAG vrdatatb[6]
+vr.0 ONH tb.1 IAH vrdatatb[7]
+
+vr.1 ONA tb.1 IAI vrdatatb[8]
+vr.1 ONB tb.1 IAJ vrdatatb[9]
+vr.1 ONC tb.1 IAK vrdatatb[10]
+vr.1 OND tb.1 IAL vrdatatb[11]
+vr.1 ONE tb.1 IAM vrdatatb[12]
+vr.1 ONF tb.1 IAN vrdatatb[13]
+vr.1 ONG tb.1 IAO vrdatatb[14]
+vr.1 ONH tb.1 IAP vrdatatb[15]
+
+vr.2 ONA tb.1 IBA vrdatatb[16]
+vr.2 ONB tb.1 IBB vrdatatb[17]
+vr.2 ONC tb.1 IBC vrdatatb[18]
+vr.2 OND tb.1 IBD vrdatatb[19]
+vr.2 ONE tb.1 IBE vrdatatb[20]
+vr.2 ONF tb.1 IBF vrdatatb[21]
+vr.2 ONG tb.1 IBG vrdatatb[22]
+vr.2 ONH tb.1 IBH vrdatatb[23]
+
+vr.3 ONA tb.1 IBI vrdatatb[24]
+vr.3 ONB tb.1 IBJ vrdatatb[25]
+vr.3 ONC tb.1 IBK vrdatatb[26]
+vr.3 OND tb.1 IBL vrdatatb[27]
+vr.3 ONE tb.1 IBM vrdatatb[28]
+vr.3 ONF tb.1 IBN vrdatatb[29]
+vr.3 ONG tb.1 IBO vrdatatb[30]
+vr.3 ONH tb.1 IBP vrdatatb[31]
+
+vr.4 ONA tb.1 ICA vrdatatb[32]
+vr.4 ONB tb.1 ICB vrdatatb[33]
+vr.4 ONC tb.1 ICC vrdatatb[34]
+vr.4 OND tb.1 ICD vrdatatb[35]
+vr.4 ONE tb.1 ICE vrdatatb[36]
+vr.4 ONF tb.1 ICF vrdatatb[37]
+vr.4 ONG tb.1 ICG vrdatatb[38]
+vr.4 ONH tb.1 ICH vrdatatb[39]
+
+vr.5 ONA tb.1 ICI vrdatatb[40]
+vr.5 ONB tb.1 ICJ vrdatatb[41]
+vr.5 ONC tb.1 ICK vrdatatb[42]
+vr.5 OND tb.1 ICL vrdatatb[43]
+vr.5 ONE tb.1 ICM vrdatatb[44]
+vr.5 ONF tb.1 ICN vrdatatb[45]
+vr.5 ONG tb.1 ICO vrdatatb[46]
+vr.5 ONH tb.1 ICP vrdatatb[47]
+
+vr.6 ONA tb.1 IDA vrdatatb[48]
+vr.6 ONB tb.1 IDB vrdatatb[49]
+vr.6 ONC tb.1 IDC vrdatatb[50]
+vr.6 OND tb.1 IDD vrdatatb[51]
+vr.6 ONE tb.1 IDE vrdatatb[52]
+vr.6 ONF tb.1 IDF vrdatatb[53]
+vr.6 ONG tb.1 IDG vrdatatb[54]
+vr.6 ONH tb.1 IDH vrdatatb[55]
+
+vr.7 ONA tb.1 IDI vrdatatb[56]
+vr.7 ONB tb.1 IDJ vrdatatb[57]
+vr.7 ONC tb.1 IDK vrdatatb[58]
+vr.7 OND tb.1 IDL vrdatatb[59]
+vr.7 ONE tb.1 IDM vrdatatb[60]
+vr.7 ONF tb.1 IDN vrdatatb[61]
+vr.7 ONG tb.1 IDO vrdatatb[62]
+vr.7 ONH tb.1 IDP vrdatatb[63]
+
+      eb data to tb
+
+eb.1 OAA tb.1 IEA ebdatatb[0]
+eb.1 OAB tb.1 IEB ebdatatb[1]
+eb.1 OAC tb.1 IEC ebdatatb[2]
+eb.1 OAD tb.1 IED ebdatatb[3]
+eb.1 OAE tb.1 IEE ebdatatb[4]
+eb.1 OAF tb.1 IEF ebdatatb[5]
+eb.1 OAG tb.1 IEG ebdatatb[6]
+eb.1 OAH tb.1 IEH ebdatatb[7]
+
+eb.1 OAI tb.1 IEI ebdatatb[8]
+eb.1 OAJ tb.1 IEJ ebdatatb[9]
+eb.1 OAK tb.1 IEK ebdatatb[10]
+eb.1 OAL tb.1 IEL ebdatatb[11]
+eb.1 OAM tb.1 IEM ebdatatb[12]
+eb.1 OAN tb.1 IEN ebdatatb[13]
+eb.1 OAO tb.1 IEO ebdatatb[14]
+eb.1 OAP tb.1 IEP ebdatatb[15]
+
+eb.1 OBA tb.1 IFA ebdatatb[16]
+eb.1 OBB tb.1 IFB ebdatatb[17]
+eb.1 OBC tb.1 IFC ebdatatb[18]
+eb.1 OBD tb.1 IFD ebdatatb[19]
+eb.1 OBE tb.1 IFE ebdatatb[20]
+eb.1 OBF tb.1 IFF ebdatatb[21]
+eb.1 OBG tb.1 IFG ebdatatb[22]
+eb.1 OBH tb.1 IFH ebdatatb[23]
+
+eb.1 OBI tb.1 IFI ebdatatb[24]
+eb.1 OBJ tb.1 IFJ ebdatatb[25]
+eb.1 OBK tb.1 IFK ebdatatb[26]
+eb.1 OBL tb.1 IFL ebdatatb[27]
+eb.1 OBM tb.1 IFM ebdatatb[28]
+eb.1 OBN tb.1 IFN ebdatatb[29]
+eb.1 OBO tb.1 IFO ebdatatb[30]
+eb.1 OBP tb.1 IFP ebdatatb[31]
+
+eb.1 OCA tb.1 IGA ebdatatb[32]
+eb.1 OCB tb.1 IGB ebdatatb[33]
+eb.1 OCC tb.1 IGC ebdatatb[34]
+eb.1 OCD tb.1 IGD ebdatatb[35]
+eb.1 OCE tb.1 IGE ebdatatb[36]
+eb.1 OCF tb.1 IGF ebdatatb[37]
+eb.1 OCG tb.1 IGG ebdatatb[38]
+eb.1 OCH tb.1 IGH ebdatatb[39]
+
+eb.1 OCI tb.1 IGI ebdatatb[40]
+eb.1 OCJ tb.1 IGJ ebdatatb[41]
+eb.1 OCK tb.1 IGK ebdatatb[42]
+eb.1 OCL tb.1 IGL ebdatatb[43]
+eb.1 OCM tb.1 IGM ebdatatb[44]
+eb.1 OCN tb.1 IGN ebdatatb[45]
+eb.1 OCO tb.1 IGO ebdatatb[46]
+eb.1 OCP tb.1 IGP ebdatatb[47]
+
+eb.1 ODA tb.1 IHA ebdatatb[48]
+eb.1 ODB tb.1 IHB ebdatatb[49]
+eb.1 ODC tb.1 IHC ebdatatb[50]
+eb.1 ODD tb.1 IHD ebdatatb[51]
+eb.1 ODE tb.1 IHE ebdatatb[52]
+eb.1 ODF tb.1 IHF ebdatatb[53]
+eb.1 ODG tb.1 IHG ebdatatb[54]
+eb.1 ODH tb.1 IHH ebdatatb[55]
+
+eb.1 ODI tb.1 IHI ebdatatb[56]
+eb.1 ODJ tb.1 IHJ ebdatatb[57]
+eb.1 ODK tb.1 IHK ebdatatb[58]
+eb.1 ODL tb.1 IHL ebdatatb[59]
+eb.1 ODM tb.1 IHM ebdatatb[60]
+eb.1 ODN tb.1 IHN ebdatatb[61]
+eb.1 ODO tb.1 IHO ebdatatb[62]
+eb.1 ODP tb.1 IHP ebdatatb[63]
+
+      Controls from ib (if) to tb
+
+if.1 OFA tb.1 IKA selsidata[0]
+if.1 OFB tb.1 IKB selextdata[0]
+if.1 OFC tb.1 IKC recyclebd[0]
+
+      Packet phase from jb to tb
+
+jb.1 O?? tb.1 IKD pkgphasetb[0]
+
+      Phase 0 data from TB to TC
+
+tb.1 OAA tc.1 IAA  p0pktdata[0]
+tb.1 OAB tc.1 IAB  p0pktdata[1]
+tb.1 OAC tc.1 IAC  p0pktdata[2]
+tb.1 OAD tc.1 IAD  p0pktdata[3]
+tb.1 OAE tc.1 IAE  p0pktdata[4]
+tb.1 OAF tc.1 IAF  p0pktdata[5]
+tb.1 OAG tc.1 IAG  p0pktdata[6]
+tb.1 OAH tc.1 IAH  p0pktdata[7]
+tb.1 OAI tc.1 IAI  p0pktdata[8]
+tb.1 OAJ tc.1 IAJ  p0pktdata[9]
+tb.1 OAK tc.1 IAK  p0pktdata[10]
+tb.1 OAL tc.1 IAL  p0pktdata[11]
+tb.1 OAM tc.1 IAM  p0pktdata[12]
+tb.1 OAN tc.1 IAN  p0pktdata[13]
+tb.1 OAO tc.1 IAO  p0pktdata[14]
+tb.1 OAP tc.1 IAP  p0pktdata[15]
+tb.1 OAQ tc.1 IAQ  p0pktdata[16]
+tb.1 OAR tc.1 IAR  p0pktdata[17]
+tb.1 OAS tc.1 IAS  p0pktdata[18]
+tb.1 OAT tc.1 IAT  p0pktdata[19]
+tb.1 OAU tc.1 IAU  p0pktdata[20]
+tb.1 OAV tc.1 IAV  p0pktdata[21]
+tb.1 OAW tc.1 IAW  p0pktdata[22]
+tb.1 OAX tc.1 IAX  p0pktdata[23]
+
+      Phase 1 data from TB to TC
+
+tb.1 OBA tc.1 IBA  p1pktdata[0]
+tb.1 OBB tc.1 IBB  p1pktdata[1]
+tb.1 OBC tc.1 IBC  p1pktdata[2]
+tb.1 OBD tc.1 IBD  p1pktdata[3]
+tb.1 OBE tc.1 IBE  p1pktdata[4]
+tb.1 OBF tc.1 IBF  p1pktdata[5]
+tb.1 OBG tc.1 IBG  p1pktdata[6]
+tb.1 OBH tc.1 IBH  p1pktdata[7]
+tb.1 OBI tc.1 IBI  p1pktdata[8]
+tb.1 OBJ tc.1 IBJ  p1pktdata[9]
+tb.1 OBK tc.1 IBK  p1pktdata[10]
+tb.1 OBL tc.1 IBL  p1pktdata[11]
+tb.1 OBM tc.1 IBM  p1pktdata[12]
+tb.1 OBN tc.1 IBN  p1pktdata[13]
+tb.1 OBO tc.1 IBO  p1pktdata[14]
+tb.1 OBP tc.1 IBP  p1pktdata[15]
+tb.1 OBQ tc.1 IBQ  p1pktdata[16]
+tb.1 OBR tc.1 IBR  p1pktdata[17]
+tb.1 OBS tc.1 IBS  p1pktdata[18]
+tb.1 OBT tc.1 IBT  p1pktdata[19]
+tb.1 OBU tc.1 IBU  p1pktdata[20]
+tb.1 OBV tc.1 IBV  p1pktdata[21]
+tb.1 OBW tc.1 IBW  p1pktdata[22]
+tb.1 OBX tc.1 IBX  p1pktdata[23]
+
+      Phase 2 data from TB to TC
+
+tb.1 OCA tc.1 ICA  p2pktdata[0]
+tb.1 OCB tc.1 ICB  p2pktdata[1]
+tb.1 OCC tc.1 ICC  p2pktdata[2]
+tb.1 OCD tc.1 ICD  p2pktdata[3]
+tb.1 OCE tc.1 ICE  p2pktdata[4]
+tb.1 OCF tc.1 ICF  p2pktdata[5]
+tb.1 OCG tc.1 ICG  p2pktdata[6]
+tb.1 OCH tc.1 ICH  p2pktdata[7]
+tb.1 OCI tc.1 ICI  p2pktdata[8]
+tb.1 OCJ tc.1 ICJ  p2pktdata[9]
+tb.1 OCK tc.1 ICK  p2pktdata[10]
+tb.1 OCL tc.1 ICL  p2pktdata[11]
+tb.1 OCM tc.1 ICM  p2pktdata[12]
+tb.1 OCN tc.1 ICN  p2pktdata[13]
+tb.1 OCO tc.1 ICO  p2pktdata[14]
+tb.1 OCP tc.1 ICP  p2pktdata[15]
+tb.1 OCQ tc.1 ICQ  p2pktdata[16]
+tb.1 OCR tc.1 ICR  p2pktdata[17]
+tb.1 OCS tc.1 ICS  p2pktdata[18]
+tb.1 OCT tc.1 ICT  p2pktdata[19]
+tb.1 OCU tc.1 ICU  p2pktdata[20]
+tb.1 OCV tc.1 ICV  p2pktdata[21]
+tb.1 OCW tc.1 ICW  p2pktdata[22]
+tb.1 OCX tc.1 ICX  p2pktdata[23]
+
+      Phase 3 data from TB to TC
+
+tb.1 ODA tc.1 IDA  p3pktdata[0]
+tb.1 ODB tc.1 IDB  p3pktdata[1]
+tb.1 ODC tc.1 IDC  p3pktdata[2]
+tb.1 ODD tc.1 IDD  p3pktdata[3]
+tb.1 ODE tc.1 IDE  p3pktdata[4]
+tb.1 ODF tc.1 IDF  p3pktdata[5]
+tb.1 ODG tc.1 IDG  p3pktdata[6]
+tb.1 ODH tc.1 IDH  p3pktdata[7]
+tb.1 ODI tc.1 IDI  p3pktdata[8]
+tb.1 ODJ tc.1 IDJ  p3pktdata[9]
+tb.1 ODK tc.1 IDK  p3pktdata[10]
+tb.1 ODL tc.1 IDL  p3pktdata[11]
+tb.1 ODM tc.1 IDM  p3pktdata[12]
+tb.1 ODN tc.1 IDN  p3pktdata[13]
+tb.1 ODO tc.1 IDO  p3pktdata[14]
+tb.1 ODP tc.1 IDP  p3pktdata[15]
+tb.1 ODQ tc.1 IDQ  p3pktdata[16]
+tb.1 ODR tc.1 IDR  p3pktdata[17]
+tb.1 ODS tc.1 IDS  p3pktdata[18]
+tb.1 ODT tc.1 IDT  p3pktdata[19]
+tb.1 ODU tc.1 IDU  p3pktdata[20]
+tb.1 ODV tc.1 IDV  p3pktdata[21]
+tb.1 ODW tc.1 IDW  p3pktdata[22]
+tb.1 ODX tc.1 IDX  p3pktdata[23]
+
+     bank point from tb to qb
+
+tb.1 OFA qb.1 IFA  bankptrtoqb[0]
+tb.1 OFB qb.1 IFB  bankptrtoqb[1]
+tb.1 OFC qb.1 IFC  bankptrtoqb[2]
+tb.1 OFD qb.1 IFD  bankptrtoqb[3]
+tb.1 OFE qb.1 IFE  bankptrtoqb[4]
+
+     bank pointer merge from qb.1 (cpu 1) to tb.1
+
+qb.1 OFA tb.1 IIA  bp1mergetb1[0]
+qb.1 OFB tb.1 IIE  bp1mergetb1[1]
+qb.1 OFC tb.1 III  bp1mergetb1[2]
+qb.1 OFD tb.1 IIM  bp1mergetb1[3]
+qb.1 OFE tb.1 IIQ  bp1mergetb1[4]
+
+     bank pointer merge from qb.2 (cpu 2) to tb.1
+
+qb.2 OFA tb.1 IIB  bp2mergetb1[0]
+qb.2 OFB tb.1 IIF  bp2mergetb1[1]
+qb.2 OFC tb.1 IIJ  bp2mergetb1[2]
+qb.2 OFD tb.1 IIN  bp2mergetb1[3]
+qb.2 OFE tb.1 IIR  bp2mergetb1[4]
+
+     bank pointer merge from qb.3 (cpu 3) to tb.1
+
+qb.3 OFA tb.1 IIC  bp2mergetb1[0]
+qb.3 OFB tb.1 IIG  bp2mergetb1[1]
+qb.3 OFC tb.1 IIK  bp2mergetb1[2]
+qb.3 OFD tb.1 IIO  bp2mergetb1[3]
+qb.3 OFE tb.1 IIS  bp2mergetb1[4]
+
+     bank pointer merge from qb.4 (cpu 4) to tb.1
+
+qb.4 OFA tb.1 IID  bp3mergetb1[0]
+qb.4 OFB tb.1 IIH  bp3mergetb1[1]
+qb.4 OFC tb.1 IIL  bp3mergetb1[2]
+qb.4 OFD tb.1 IIP  bp3mergetb1[3]
+qb.4 OFE tb.1 IIT  bp3mergetb1[4]
+
+     ma to mb floating carry
+
+ma.1 OGA mb.1 ILA  mambflcar[0]
+ma.1 OGB mb.1 ILB  mambflcar[1]
+ma.1 OGC mb.1 ILC  mambflcar[2]
+ma.1 OGD mb.1 ILD  mambflcar[3]
+ma.1 OGE mb.1 ILE  mambflcar[4]
+ma.1 OGF mb.1 ILF  mambflcar[5]
+ma.1 OGG mb.1 ILG  mambflcar[6]
+ma.1 OGH mb.1 ILH  mambflcar[7]
+
+ma.1 OGI mb.1 ILI  mambflcar[8]
+ma.1 OGJ mb.1 ILJ  mambflcar[9]
+ma.1 OGK mb.1 ILK  mambflcar[10]
+ma.1 OGL mb.1 ILL  mambflcar[11]
+ma.1 OGM mb.1 ILM  mambflcar[12]
+ma.1 OGN mb.1 ILN  mambflcar[13]
+ma.1 OGO mb.1 ILO  mambflcar[14]
+ma.1 OGP mb.1 ILP  mambflcar[15]
+
+ma.1 OIH mb.1 IML  mambslcar[11]
+ma.1 OII mb.1 IMM  mambslcar[12]
+ma.1 OIJ mb.1 IMN  mambslcar[13]
+
+ma.1 OKA mb.1 INA  mambtlcar[0]
+ma.1 OKB mb.1 INB  mambtlcar[1]
+ma.1 OKC mb.1 INC  mambtlcar[2]
+ma.1 OKD mb.1 IND  mambtlcar[3]
+ma.1 OKE mb.1 INE  mambtlcar[4]
+ma.1 OKF mb.1 INF  mambtlcar[5]
+ma.1 OLD mb.1 ING  mambtlcar[6]
+
+ma.1 OMA mb.1 IOA  mambftlcar[0]
+ma.1 OMB mb.1 IOB  mambftlcar[1]
+ma.1 ONB mb.1 IOC  mambftlcar[2]
+
+ma.1 OHA mb.1 IMA  mambslcar[0]
+ma.1 OHB mb.1 IMB  mambslcar[1]
+ma.1 OHC mb.1 IMC  mambslcar[2]
+ma.1 OHD mb.1 IMD  mambslcar[3]
+ma.1 OHE mb.1 IME  mambslcar[4]
+ma.1 OHF mb.1 IMF  mambslcar[5]
+ma.1 OHG mb.1 IMG  mambslcar[6]
+ma.1 OHH mb.1 IMH  mambslcar[7]
+ma.1 OHI mb.1 IMI  mambslcar[8]
+ma.1 OHJ mb.1 IMJ  mambslcar[9]
+ma.1 OHK mb.1 IMK  mambslcar[10]
+
+       -- Scalar integer addto GA
+
+vr.0 OAA ga.1 IAA scdatatoga[0]
+vr.0 OAB ga.1 IAB scdatatoga[1]
+vr.0 OAC ga.1 IAC scdatatoga[2]
+vr.0 OAD ga.1 IAD scdatatoga[3]
+vr.0 OAE ga.1 IAE scdatatoga[4]
+vr.0 OAF ga.1 IAF scdatatoga[5]
+vr.0 OAG ga.1 IAG scdatatoga[6]
+vr.0 OAH ga.1 IAH scdatatoga[7]
+
+vr.1 OAA ga.1 IAI scdatatoga[8]
+vr.1 OAB ga.1 IAJ scdatatoga[9]
+vr.1 OAC ga.1 IAK scdatatoga[10]
+vr.1 OAD ga.1 IAL scdatatoga[11]
+vr.1 OAE ga.1 IAM scdatatoga[12]
+vr.1 OAF ga.1 IAN scdatatoga[13]
+vr.1 OAG ga.1 IAO scdatatoga[14]
+vr.1 OAH ga.1 IAP scdatatoga[15]
+
+vr.2 OAA ga.1 IBA scdatatoga[16]
+vr.2 OAB ga.1 IBB scdatatoga[17]
+vr.2 OAC ga.1 IBC scdatatoga[18]
+vr.2 OAD ga.1 IBD scdatatoga[19]
+vr.2 OAE ga.1 IBE scdatatoga[20]
+vr.2 OAF ga.1 IBF scdatatoga[21]
+vr.2 OAG ga.1 IBG scdatatoga[22]
+vr.2 OAH ga.1 IBH scdatatoga[23]
+
+vr.3 OAA ga.1 IBI scdatatoga[24]
+vr.3 OAB ga.1 IBJ scdatatoga[25]
+vr.3 OAC ga.1 IBK scdatatoga[26]
+vr.3 OAD ga.1 IBL scdatatoga[27]
+vr.3 OAE ga.1 IBM scdatatoga[28]
+vr.3 OAF ga.1 IBN scdatatoga[29]
+vr.3 OAG ga.1 IBO scdatatoga[30]
+vr.3 OAH ga.1 IBP scdatatoga[31]
+
+vr.4 OAA ga.1 ICA scdatatoga[32]
+vr.4 OAB ga.1 ICB scdatatoga[33]
+vr.4 OAC ga.1 ICC scdatatoga[34]
+vr.4 OAD ga.1 ICD scdatatoga[35]
+vr.4 OAE ga.1 ICE scdatatoga[36]
+vr.4 OAF ga.1 ICF scdatatoga[37]
+vr.4 OAG ga.1 ICG scdatatoga[38]
+vr.4 OAH ga.1 ICH scdatatoga[39]
+
+vr.5 OAA ga.1 ICI scdatatoga[40]
+vr.5 OAB ga.1 ICJ scdatatoga[41]
+vr.5 OAC ga.1 ICK scdatatoga[42]
+vr.5 OAD ga.1 ICL scdatatoga[43]
+vr.5 OAE ga.1 ICM scdatatoga[44]
+vr.5 OAF ga.1 ICN scdatatoga[45]
+vr.5 OAG ga.1 ICO scdatatoga[46]
+vr.5 OAH ga.1 ICP scdatatoga[47]
+
+vr.6 OAA ga.1 IDA scdatatoga[48]
+vr.6 OAB ga.1 IDB scdatatoga[49]
+vr.6 OAC ga.1 IDC scdatatoga[50]
+vr.6 OAD ga.1 IDD scdatatoga[51]
+vr.6 OAE ga.1 IDE scdatatoga[52]
+vr.6 OAF ga.1 IDF scdatatoga[53]
+vr.6 OAG ga.1 IDG scdatatoga[54]
+vr.6 OAH ga.1 IDH scdatatoga[55]
+
+vr.7 OAA ga.1 IDI scdatatoga[56]
+vr.7 OAB ga.1 IDJ scdatatoga[57]
+vr.7 OAC ga.1 IDK scdatatoga[58]
+vr.7 OAD ga.1 IDL scdatatoga[59]
+vr.7 OAE ga.1 IDM scdatatoga[60]
+vr.7 OAF ga.1 IDN scdatatoga[61]
+vr.7 OAG ga.1 IDO scdatatoga[62]
+vr.7 OAH ga.1 IDP scdatatoga[63]
+
+       -- Scalar integer shift to GB
+
+vr.0 OBA gb.1 IIA shdatatogb[0]
+vr.0 OBB gb.1 IIB shdatatogb[1]
+vr.0 OBC gb.1 IIC shdatatogb[2]
+vr.0 OBD gb.1 IID shdatatogb[3]
+vr.0 OBE gb.1 IIE shdatatogb[4]
+vr.0 OBF gb.1 IIF shdatatogb[5]
+vr.0 OBG gb.1 IIG shdatatogb[6]
+vr.0 OBH gb.1 IIH shdatatogb[7]
+
+vr.1 OBA gb.1 III shdatatogb[8]
+vr.1 OBB gb.1 IIJ shdatatogb[9]
+vr.1 OBC gb.1 IIK shdatatogb[10]
+vr.1 OBD gb.1 IIL shdatatogb[11]
+vr.1 OBE gb.1 IIM shdatatogb[12]
+vr.1 OBF gb.1 IIN shdatatogb[13]
+vr.1 OBG gb.1 IIO shdatatogb[14]
+vr.1 OBH gb.1 IIP shdatatogb[15]
+
+vr.2 OBA gb.1 IJA shdatatogb[16]
+vr.2 OBB gb.1 IJB shdatatogb[17]
+vr.2 OBC gb.1 IJC shdatatogb[18]
+vr.2 OBD gb.1 IJD shdatatogb[19]
+vr.2 OBE gb.1 IJE shdatatogb[20]
+vr.2 OBF gb.1 IJF shdatatogb[21]
+vr.2 OBG gb.1 IJG shdatatogb[22]
+vr.2 OBH gb.1 IJH shdatatogb[23]
+
+vr.3 OBA gb.1 IJI shdatatogb[24]
+vr.3 OBB gb.1 IJJ shdatatogb[25]
+vr.3 OBC gb.1 IJK shdatatogb[26]
+vr.3 OBD gb.1 IJL shdatatogb[27]
+vr.3 OBE gb.1 IJM shdatatogb[28]
+vr.3 OBF gb.1 IJN shdatatogb[29]
+vr.3 OBG gb.1 IJO shdatatogb[30]
+vr.3 OBH gb.1 IJP shdatatogb[31]
+
+vr.4 OBA gb.1 IKA shdatatogb[32]
+vr.4 OBB gb.1 IKB shdatatogb[33]
+vr.4 OBC gb.1 IKC shdatatogb[34]
+vr.4 OBD gb.1 IKD shdatatogb[35]
+vr.4 OBE gb.1 IKE shdatatogb[36]
+vr.4 OBF gb.1 IKF shdatatogb[37]
+vr.4 OBG gb.1 IKG shdatatogb[38]
+vr.4 OBH gb.1 IKH shdatatogb[39]
+
+vr.5 OBA gb.1 IKI shdatatogb[40]
+vr.5 OBB gb.1 IKJ shdatatogb[41]
+vr.5 OBC gb.1 IKK shdatatogb[42]
+vr.5 OBD gb.1 IKL shdatatogb[43]
+vr.5 OBE gb.1 IKM shdatatogb[44]
+vr.5 OBF gb.1 IKN shdatatogb[45]
+vr.5 OBG gb.1 IKO shdatatogb[46]
+vr.5 OBH gb.1 IKP shdatatogb[47]
+
+vr.6 OBA gb.1 ILA shdatatogb[48]
+vr.6 OBB gb.1 ILB shdatatogb[49]
+vr.6 OBC gb.1 ILC shdatatogb[50]
+vr.6 OBD gb.1 ILD shdatatogb[51]
+vr.6 OBE gb.1 ILE shdatatogb[52]
+vr.6 OBF gb.1 ILF shdatatogb[53]
+vr.6 OBG gb.1 ILG shdatatogb[54]
+vr.6 OBH gb.1 ILH shdatatogb[55]
+
+vr.7 OBA gb.1 ILI shdatatogb[56]
+vr.7 OBB gb.1 ILJ shdatatogb[57]
+vr.7 OBC gb.1 ILK shdatatogb[58]
+vr.7 OBD gb.1 ILL shdatatogb[59]
+vr.7 OBE gb.1 ILM shdatatogb[60]
+vr.7 OBF gb.1 ILN shdatatogb[61]
+vr.7 OBG gb.1 ILO shdatatogb[62]
+vr.7 OBH gb.1 ILP shdatatogb[63]
+
+ -- A Register data to AR
+
+vr.4 OCA ar.1 ICA vrtoar[0]
+vr.4 OCB ar.1 ICB vrtoar[1]
+vr.4 OCC ar.1 ICC vrtoar[2]
+vr.4 OCD ar.1 ICD vrtoar[3]
+vr.4 OCE ar.1 ICE vrtoar[4]
+vr.4 OCF ar.1 ICF vrtoar[5]
+vr.4 OCG ar.1 ICG vrtoar[6]
+vr.4 OCH ar.1 ICH vrtoar[7]
+
+vr.5 OCA ar.1 ICI vrtoar[8]
+vr.5 OCB ar.1 ICJ vrtoar[9]
+vr.5 OCC ar.1 ICK vrtoar[10]
+vr.5 OCD ar.1 ICL vrtoar[11]
+vr.5 OCE ar.1 ICM vrtoar[12]
+vr.5 OCF ar.1 ICN vrtoar[13]
+vr.5 OCG ar.1 ICO vrtoar[14]
+vr.5 OCH ar.1 ICP vrtoar[15]
+
+vr.6 OCA ar.1 IDA vrtoar[16]
+vr.6 OCB ar.1 IDB vrtoar[17]
+vr.6 OCC ar.1 IDC vrtoar[18]
+vr.6 OCD ar.1 IDD vrtoar[19]
+vr.6 OCE ar.1 IDE vrtoar[20]
+vr.6 OCF ar.1 IDF vrtoar[21]
+vr.6 OCG ar.1 IDG vrtoar[22]
+vr.6 OCH ar.1 IDH vrtoar[23]
+
+vr.7 OCA ar.1 IDI vrtoar[24]
+vr.7 OCB ar.1 IDJ vrtoar[25]
+vr.7 OCC ar.1 IDK vrtoar[26]
+vr.7 OCD ar.1 IDL vrtoar[27]
+vr.7 OCE ar.1 IDM vrtoar[28]
+vr.7 OCF ar.1 IDN vrtoar[29]
+vr.7 OCG ar.1 IDO vrtoar[30]
+vr.7 OCH ar.1 IDP vrtoar[31]
+
+       -- Vector Integer Add J to VA
+
+vr.0 ODA va.1 IAA vrtovaj[0]
+vr.0 ODB va.1 IAB vrtovaj[1]
+vr.0 ODC va.1 IAC vrtovaj[2]
+vr.0 ODD va.1 IAD vrtovaj[3]
+vr.0 ODE va.1 IAE vrtovaj[4]
+vr.0 ODF va.1 IAF vrtovaj[5]
+vr.0 ODG va.1 IAG vrtovaj[6]
+vr.0 ODH va.1 IAH vrtovaj[7]
+
+vr.1 ODA va.1 IAI vrtovaj[8]
+vr.1 ODB va.1 IAJ vrtovaj[9]
+vr.1 ODC va.1 IAK vrtovaj[10]
+vr.1 ODD va.1 IAL vrtovaj[11]
+vr.1 ODE va.1 IAM vrtovaj[12]
+vr.1 ODF va.1 IAN vrtovaj[13]
+vr.1 ODG va.1 IAO vrtovaj[14]
+vr.1 ODH va.1 IAP vrtovaj[15]
+
+vr.2 ODA va.1 IBA vrtovaj[16]
+vr.2 ODB va.1 IBB vrtovaj[17]
+vr.2 ODC va.1 IBC vrtovaj[18]
+vr.2 ODD va.1 IBD vrtovaj[19]
+vr.2 ODE va.1 IBE vrtovaj[20]
+vr.2 ODF va.1 IBF vrtovaj[21]
+vr.2 ODG va.1 IBG vrtovaj[22]
+vr.2 ODH va.1 IBH vrtovaj[23]
+
+vr.3 ODA va.1 IBI vrtovaj[24]
+vr.3 ODB va.1 IBJ vrtovaj[25]
+vr.3 ODC va.1 IBK vrtovaj[26]
+vr.3 ODD va.1 IBL vrtovaj[27]
+vr.3 ODE va.1 IBM vrtovaj[28]
+vr.3 ODF va.1 IBN vrtovaj[29]
+vr.3 ODG va.1 IBO vrtovaj[30]
+vr.3 ODH va.1 IBP vrtovaj[31]
+
+vr.4 ODA va.1 ICA vrtovaj[32]
+vr.4 ODB va.1 ICB vrtovaj[33]
+vr.4 ODC va.1 ICC vrtovaj[34]
+vr.4 ODD va.1 ICD vrtovaj[35]
+vr.4 ODE va.1 ICE vrtovaj[36]
+vr.4 ODF va.1 ICF vrtovaj[37]
+vr.4 ODG va.1 ICG vrtovaj[38]
+vr.4 ODH va.1 ICH vrtovaj[39]
+
+vr.5 ODA va.1 ICI vrtovaj[40]
+vr.5 ODB va.1 ICJ vrtovaj[41]
+vr.5 ODC va.1 ICK vrtovaj[42]
+vr.5 ODD va.1 ICL vrtovaj[43]
+vr.5 ODE va.1 ICM vrtovaj[44]
+vr.5 ODF va.1 ICN vrtovaj[45]
+vr.5 ODG va.1 ICO vrtovaj[46]
+vr.5 ODH va.1 ICP vrtovaj[47]
+
+vr.6 ODA va.1 IDA vrtovaj[48]
+vr.6 ODB va.1 IDB vrtovaj[49]
+vr.6 ODC va.1 IDC vrtovaj[50]
+vr.6 ODD va.1 IDD vrtovaj[51]
+vr.6 ODE va.1 IDE vrtovaj[52]
+vr.6 ODF va.1 IDF vrtovaj[53]
+vr.6 ODG va.1 IDG vrtovaj[54]
+vr.6 ODH va.1 IDH vrtovaj[55]
+
+vr.7 ODA va.1 IDI vrtovaj[56]
+vr.7 ODB va.1 IDJ vrtovaj[57]
+vr.7 ODC va.1 IDK vrtovaj[58]
+vr.7 ODD va.1 IDL vrtovaj[59]
+vr.7 ODE va.1 IDM vrtovaj[60]
+vr.7 ODF va.1 IDN vrtovaj[61]
+vr.7 ODG va.1 IDO vrtovaj[62]
+vr.7 ODH va.1 IDP vrtovaj[63]
+
+       -- Vector Integer Add K to VA
+
+vr.0 OEA va.1 IEA vrtovak[0]
+vr.0 OEB va.1 IEB vrtovak[1]
+vr.0 OEC va.1 IEC vrtovak[2]
+vr.0 OED va.1 IED vrtovak[3]
+vr.0 OEE va.1 IEE vrtovak[4]
+vr.0 OEF va.1 IEF vrtovak[5]
+vr.0 OEG va.1 IEG vrtovak[6]
+vr.0 OEH va.1 IEH vrtovak[7]
+
+vr.1 OEA va.1 IEI vrtovak[8]
+vr.1 OEB va.1 IEJ vrtovak[9]
+vr.1 OEC va.1 IEK vrtovak[10]
+vr.1 OED va.1 IEL vrtovak[11]
+vr.1 OEE va.1 IEM vrtovak[12]
+vr.1 OEF va.1 IEN vrtovak[13]
+vr.1 OEG va.1 IEO vrtovak[14]
+vr.1 OEH va.1 IEP vrtovak[15]
+
+vr.2 OEA va.1 IFA vrtovak[16]
+vr.2 OEB va.1 IFB vrtovak[17]
+vr.2 OEC va.1 IFC vrtovak[18]
+vr.2 OED va.1 IFD vrtovak[19]
+vr.2 OEE va.1 IFE vrtovak[20]
+vr.2 OEF va.1 IFF vrtovak[21]
+vr.2 OEG va.1 IFG vrtovak[22]
+vr.2 OEH va.1 IFH vrtovak[23]
+
+vr.3 OEA va.1 IFI vrtovak[24]
+vr.3 OEB va.1 IFJ vrtovak[25]
+vr.3 OEC va.1 IFK vrtovak[26]
+vr.3 OED va.1 IFL vrtovak[27]
+vr.3 OEE va.1 IFM vrtovak[28]
+vr.3 OEF va.1 IFN vrtovak[29]
+vr.3 OEG va.1 IFO vrtovak[30]
+vr.3 OEH va.1 IFP vrtovak[31]
+
+vr.4 OEA va.1 IGA vrtovak[32]
+vr.4 OEB va.1 IGB vrtovak[33]
+vr.4 OEC va.1 IGC vrtovak[34]
+vr.4 OED va.1 IGD vrtovak[35]
+vr.4 OEE va.1 IGE vrtovak[36]
+vr.4 OEF va.1 IGF vrtovak[37]
+vr.4 OEG va.1 IGG vrtovak[38]
+vr.4 OEH va.1 IGH vrtovak[39]
+
+vr.5 OEA va.1 IGI vrtovak[40]
+vr.5 OEB va.1 IGJ vrtovak[41]
+vr.5 OEC va.1 IGK vrtovak[42]
+vr.5 OED va.1 IGL vrtovak[43]
+vr.5 OEE va.1 IGM vrtovak[44]
+vr.5 OEF va.1 IGN vrtovak[45]
+vr.5 OEG va.1 IGO vrtovak[46]
+vr.5 OEH va.1 IGP vrtovak[47]
+
+vr.6 OEA va.1 IHA vrtovak[48]
+vr.6 OEB va.1 IHB vrtovak[49]
+vr.6 OEC va.1 IHC vrtovak[50]
+vr.6 OED va.1 IHD vrtovak[51]
+vr.6 OEE va.1 IHE vrtovak[52]
+vr.6 OEF va.1 IHF vrtovak[53]
+vr.6 OEG va.1 IHG vrtovak[54]
+vr.6 OEH va.1 IHH vrtovak[55]
+
+vr.7 OEA va.1 IHI vrtovak[56]
+vr.7 OEB va.1 IHJ vrtovak[57]
+vr.7 OEC va.1 IHK vrtovak[58]
+vr.7 OED va.1 IHL vrtovak[59]
+vr.7 OEE va.1 IHM vrtovak[60]
+vr.7 OEF va.1 IHN vrtovak[61]
+vr.7 OEG va.1 IHO vrtovak[62]
+vr.7 OEH va.1 IHP vrtovak[63]
+
+       -- va result data to vb
+
+va.1 OAA vb.1 IEA vatovb[0]
+va.1 OAB vb.1 IEB vatovb[1]
+va.1 OAC vb.1 IEC vatovb[2]
+va.1 OAD vb.1 IED vatovb[3]
+va.1 OAE vb.1 IEE vatovb[4]
+va.1 OAF vb.1 IEF vatovb[5]
+va.1 OAG vb.1 IEG vatovb[6]
+va.1 OAH vb.1 IEH vatovb[7]
+
+va.1 OAI vb.1 IEI vatovb[8]
+va.1 OAJ vb.1 IEJ vatovb[9]
+va.1 OAK vb.1 IEK vatovb[10]
+va.1 OAL vb.1 IEL vatovb[11]
+va.1 OAM vb.1 IEM vatovb[12]
+va.1 OAN vb.1 IEN vatovb[13]
+va.1 OAO vb.1 IEO vatovb[14]
+va.1 OAP vb.1 IEP vatovb[15]
+
+va.1 OBA vb.1 IFA vatovb[16]
+va.1 OBB vb.1 IFB vatovb[17]
+va.1 OBC vb.1 IFC vatovb[18]
+va.1 OBD vb.1 IFD vatovb[19]
+va.1 OBE vb.1 IFE vatovb[20]
+va.1 OBF vb.1 IFF vatovb[21]
+va.1 OBG vb.1 IFG vatovb[22]
+va.1 OBH vb.1 IFH vatovb[23]
+
+va.1 OBI vb.1 IFI vatovb[24]
+va.1 OBJ vb.1 IFJ vatovb[25]
+va.1 OBK vb.1 IFK vatovb[26]
+va.1 OBL vb.1 IFL vatovb[27]
+va.1 OBM vb.1 IFM vatovb[28]
+va.1 OBN vb.1 IFN vatovb[29]
+va.1 OBO vb.1 IFO vatovb[30]
+va.1 OBP vb.1 IFP vatovb[31]
+
+va.1 OCA vb.1 IGA vatovb[32]
+va.1 OCB vb.1 IGB vatovb[33]
+va.1 OCC vb.1 IGC vatovb[34]
+va.1 OCD vb.1 IGD vatovb[35]
+va.1 OCE vb.1 IGE vatovb[36]
+va.1 OCF vb.1 IGF vatovb[37]
+va.1 OCG vb.1 IGG vatovb[38]
+va.1 OCH vb.1 IGH vatovb[39]
+
+va.1 OCI vb.1 IGI vatovb[40]
+va.1 OCJ vb.1 IGJ vatovb[41]
+va.1 OCK vb.1 IGK vatovb[42]
+va.1 OCL vb.1 IGL vatovb[43]
+va.1 OCM vb.1 IGM vatovb[44]
+va.1 OCN vb.1 IGN vatovb[45]
+va.1 OCO vb.1 IGO vatovb[46]
+va.1 OCP vb.1 IGP vatovb[47]
+
+va.1 ODA vb.1 IHA vatovb[48]
+va.1 ODB vb.1 IHB vatovb[49]
+va.1 ODC vb.1 IHC vatovb[50]
+va.1 ODD vb.1 IHD vatovb[51]
+va.1 ODE vb.1 IHE vatovb[52]
+va.1 ODF vb.1 IHF vatovb[53]
+va.1 ODG vb.1 IHG vatovb[54]
+va.1 ODH vb.1 IHH vatovb[55]
+
+va.1 ODI vb.1 IHI vatovb[56]
+va.1 ODJ vb.1 IHJ vatovb[57]
+va.1 ODK vb.1 IHK vatovb[58]
+va.1 ODL vb.1 IHL vatovb[59]
+va.1 ODM vb.1 IHM vatovb[60]
+va.1 ODN vb.1 IHN vatovb[61]
+va.1 ODO vb.1 IHO vatovb[62]
+va.1 ODP vb.1 IHP vatovb[63]
+
+       -- Vector Shift Data to VB
+
+vr.0 OFA vb.1 IAA vrtovb[0]
+vr.0 OFB vb.1 IAB vrtovb[1]
+vr.0 OFC vb.1 IAC vrtovb[2]
+vr.0 OFD vb.1 IAD vrtovb[3]
+vr.0 OFE vb.1 IAE vrtovb[4]
+vr.0 OFF vb.1 IAF vrtovb[5]
+vr.0 OFG vb.1 IAG vrtovb[6] 
+vr.0 OFH vb.1 IAH vrtovb[7]
+
+vr.1 OFA vb.1 IAI vrtovb[8]
+vr.1 OFB vb.1 IAJ vrtovb[9]
+vr.1 OFC vb.1 IAK vrtovb[10]
+vr.1 OFD vb.1 IAL vrtovb[11]
+vr.1 OFE vb.1 IAM vrtovb[12]
+vr.1 OFF vb.1 IAN vrtovb[13]
+vr.1 OFG vb.1 IAO vrtovb[14]
+vr.1 OFH vb.1 IAP vrtovb[15]
+
+vr.2 OFA vb.1 IBA vrtovb[16]
+vr.2 OFB vb.1 IBB vrtovb[17]
+vr.2 OFC vb.1 IBC vrtovb[18]
+vr.2 OFD vb.1 IBD vrtovb[19]
+vr.2 OFE vb.1 IBE vrtovb[20]
+vr.2 OFF vb.1 IBF vrtovb[21]
+vr.2 OFG vb.1 IBG vrtovb[22] 
+vr.2 OFH vb.1 IBH vrtovb[23]
+
+vr.3 OFA vb.1 IBI vrtovb[24]
+vr.3 OFB vb.1 IBJ vrtovb[25]
+vr.3 OFC vb.1 IBK vrtovb[26]
+vr.3 OFD vb.1 IBL vrtovb[27]
+vr.3 OFE vb.1 IBM vrtovb[28]
+vr.3 OFF vb.1 IBN vrtovb[29]
+vr.3 OFG vb.1 IBO vrtovb[30]
+vr.3 OFH vb.1 IBP vrtovb[31]
+
+vr.4 OFA vb.1 ICA vrtovb[32]
+vr.4 OFB vb.1 ICB vrtovb[33]
+vr.4 OFC vb.1 ICC vrtovb[34]
+vr.4 OFD vb.1 ICD vrtovb[35]
+vr.4 OFE vb.1 ICE vrtovb[36]
+vr.4 OFF vb.1 ICF vrtovb[37]
+vr.4 OFG vb.1 ICG vrtovb[38] 
+vr.4 OFH vb.1 ICH vrtovb[39]
+
+vr.5 OFA vb.1 ICI vrtovb[40]
+vr.5 OFB vb.1 ICJ vrtovb[41]
+vr.5 OFC vb.1 ICK vrtovb[42]
+vr.5 OFD vb.1 ICL vrtovb[43]
+vr.5 OFE vb.1 ICM vrtovb[44]
+vr.5 OFF vb.1 ICN vrtovb[45]
+vr.5 OFG vb.1 ICO vrtovb[46]
+vr.5 OFH vb.1 ICP vrtovb[47]
+
+vr.6 OFA vb.1 IDA vrtovb[48]
+vr.6 OFB vb.1 IDB vrtovb[49]
+vr.6 OFC vb.1 IDC vrtovb[50]
+vr.6 OFD vb.1 IDD vrtovb[51]
+vr.6 OFE vb.1 IDE vrtovb[52]
+vr.6 OFF vb.1 IDF vrtovb[53]
+vr.6 OFG vb.1 IDG vrtovb[54] 
+vr.6 OFH vb.1 IDH vrtovb[55]
+
+vr.7 OFA vb.1 IDI vrtovb[56]
+vr.7 OFB vb.1 IDJ vrtovb[57]
+vr.7 OFC vb.1 IDK vrtovb[58]
+vr.7 OFD vb.1 IDL vrtovb[59]
+vr.7 OFE vb.1 IDM vrtovb[60]
+vr.7 OFF vb.1 IDN vrtovb[61]
+vr.7 OFG vb.1 IDO vrtovb[62]
+vr.7 OFH vb.1 IDP vrtovb[63]
+
+      -- Vector Logical K operand + scalar data to VL
+
+vr.0 OHA vl.1 IEA vrtovlk[0]
+vr.0 OHB vl.1 IEB vrtovlk[1]
+vr.0 OHC vl.1 IEC vrtovlk[2]
+vr.0 OHD vl.1 IED vrtovlk[3]
+vr.0 OHE vl.1 IEE vrtovlk[4]
+vr.0 OHF vl.1 IEF vrtovlk[5]
+vr.0 OHG vl.1 IEG vrtovlk[6]
+vr.0 OHH vl.1 IEH vrtovlk[7]
+
+vr.1 OHA vl.1 IEI vrtovlk[8]
+vr.1 OHB vl.1 IEJ vrtovlk[9]
+vr.1 OHC vl.1 IEK vrtovlk[10]
+vr.1 OHD vl.1 IEL vrtovlk[11]
+vr.1 OHE vl.1 IEM vrtovlk[12]
+vr.1 OHF vl.1 IEN vrtovlk[13]
+vr.1 OHG vl.1 IEO vrtovlk[14]
+vr.1 OHH vl.1 IEP vrtovlk[15]
+
+vr.2 OHA vl.1 IFA vrtovlk[16]
+vr.2 OHB vl.1 IFB vrtovlk[17]
+vr.2 OHC vl.1 IFC vrtovlk[18]
+vr.2 OHD vl.1 IFD vrtovlk[19]
+vr.2 OHE vl.1 IFE vrtovlk[20]
+vr.2 OHF vl.1 IFF vrtovlk[21]
+vr.2 OHG vl.1 IFG vrtovlk[22]
+vr.2 OHH vl.1 IFH vrtovlk[23]
+ 
+vr.3 OHA vl.1 IFI vrtovlk[24]
+vr.3 OHB vl.1 IFJ vrtovlk[25]
+vr.3 OHC vl.1 IFK vrtovlk[26]
+vr.3 OHD vl.1 IFL vrtovlk[27]
+vr.3 OHE vl.1 IFM vrtovlk[28]
+vr.3 OHF vl.1 IFN vrtovlk[29]
+vr.3 OHG vl.1 IFO vrtovlk[30]
+vr.3 OHH vl.1 IFP vrtovlk[31]
+
+vr.4 OHA vl.1 IGA vrtovlk[32]
+vr.4 OHB vl.1 IGB vrtovlk[33]
+vr.4 OHC vl.1 IGC vrtovlk[34]
+vr.4 OHD vl.1 IGD vrtovlk[35]
+vr.4 OHE vl.1 IGE vrtovlk[36]
+vr.4 OHF vl.1 IGF vrtovlk[37]
+vr.4 OHG vl.1 IGG vrtovlk[38]
+vr.4 OHH vl.1 IGH vrtovlk[39]
+
+vr.5 OHA vl.1 IGI vrtovlk[40]
+vr.5 OHB vl.1 IGJ vrtovlk[41]
+vr.5 OHC vl.1 IGK vrtovlk[42]
+vr.5 OHD vl.1 IGL vrtovlk[43]
+vr.5 OHE vl.1 IGM vrtovlk[44]
+vr.5 OHF vl.1 IGN vrtovlk[45]
+vr.5 OHG vl.1 IGO vrtovlk[46]
+vr.5 OHH vl.1 IGP vrtovlk[47]
+
+vr.6 OHA vl.1 IHA vrtovlk[48]
+vr.6 OHB vl.1 IHB vrtovlk[49]
+vr.6 OHC vl.1 IHC vrtovlk[50]
+vr.6 OHD vl.1 IHD vrtovlk[51]
+vr.6 OHE vl.1 IHE vrtovlk[52]
+vr.6 OHF vl.1 IHF vrtovlk[53]
+vr.6 OHG vl.1 IHG vrtovlk[54]
+vr.6 OHH vl.1 IHH vrtovlk[55]
+
+vr.7 OHA vl.1 IHI vrtovlk[56]
+vr.7 OHB vl.1 IHJ vrtovlk[57]
+vr.7 OHC vl.1 IHK vrtovlk[58]
+vr.7 OHD vl.1 IHL vrtovlk[59]
+vr.7 OHE vl.1 IHM vrtovlk[60]
+vr.7 OHF vl.1 IHN vrtovlk[61]
+vr.7 OHG vl.1 IHO vrtovlk[62]
+vr.7 OGH vl.1 IHP vrtovlk[63]
+
+
+      -- Vector Floating Add J Operand
+
+vr.0 OIA fa.1 IAA vrtofaj[0]
+vr.0 OIB fa.1 IAB vrtofaj[1]
+vr.0 OIC fa.1 IAC vrtofaj[2]
+vr.0 OID fa.1 IAD vrtofaj[3]
+vr.0 OIE fa.1 IAE vrtofaj[4]
+vr.0 OIF fa.1 IAF vrtofaj[5]
+vr.0 OIG fa.1 IAG vrtofaj[6]
+vr.0 OIH fa.1 IAH vrtofaj[7]
+
+vr.1 OIA fa.1 IAI vrtofaj[8]
+vr.1 OIB fa.1 IAJ vrtofaj[9]
+vr.1 OIC fa.1 IAK vrtofaj[10]
+vr.1 OID fa.1 IAL vrtofaj[11]
+vr.1 OIE fa.1 IAM vrtofaj[12]
+vr.1 OIF fa.1 IAN vrtofaj[13]
+vr.1 OIG fa.1 IAO vrtofaj[14]
+vr.1 OIH fa.1 IAP vrtofaj[15]
+
+vr.2 OIA fa.1 IBA vrtofaj[16]
+vr.2 OIB fa.1 IBB vrtofaj[17]
+vr.2 OIC fa.1 IBC vrtofaj[18]
+vr.2 OID fa.1 IBD vrtofaj[19]
+vr.2 OIE fa.1 IBE vrtofaj[20]
+vr.2 OIF fa.1 IBF vrtofaj[21]
+vr.2 OIG fa.1 IBG vrtofaj[22]
+vr.2 OIH fa.1 IBH vrtofaj[23]
+
+vr.3 OIA fa.1 IBI vrtofaj[24]
+vr.3 OIB fa.1 IBJ vrtofaj[25]
+vr.3 OIC fa.1 IBK vrtofaj[26]
+vr.3 OID fa.1 IBL vrtofaj[27]
+vr.3 OIE fa.1 IBM vrtofaj[28]
+vr.3 OIF fa.1 IBN vrtofaj[29]
+vr.3 OIG fa.1 IBO vrtofaj[30]
+vr.3 OIH fa.1 IBP vrtofaj[31]
+
+vr.4 OIA fa.1 ICA vrtofaj[32]
+vr.4 OIB fa.1 ICB vrtofaj[33]
+vr.4 OIC fa.1 ICC vrtofaj[34]
+vr.4 OID fa.1 ICD vrtofaj[35]
+vr.4 OIE fa.1 ICE vrtofaj[36]
+vr.4 OIF fa.1 ICF vrtofaj[37]
+vr.4 OIG fa.1 ICG vrtofaj[38]
+vr.4 OIH fa.1 ICH vrtofaj[39]
+
+vr.5 OIA fa.1 ICI vrtofaj[40]
+vr.5 OIB fa.1 ICJ vrtofaj[41]
+vr.5 OIC fa.1 ICK vrtofaj[42]
+vr.5 OID fa.1 ICL vrtofaj[43]
+vr.5 OIE fa.1 ICM vrtofaj[44]
+vr.5 OIF fa.1 ICN vrtofaj[45]
+vr.5 OIG fa.1 ICO vrtofaj[46]
+vr.5 OIH fa.1 ICP vrtofaj[47]
+
+vr.6 OIA fa.1 IDA vrtofaj[48]
+vr.6 OIB fa.1 IDB vrtofaj[49]
+vr.6 OIC fa.1 IDC vrtofaj[50]
+vr.6 OID fa.1 IDD vrtofaj[51]
+vr.6 OIE fa.1 IDE vrtofaj[52]
+vr.6 OIF fa.1 IDF vrtofaj[53]
+vr.6 OIG fa.1 IDG vrtofaj[54]
+vr.6 OIH fa.1 IDH vrtofaj[55]
+
+vr.7 OIA fa.1 IDI vrtofaj[56]
+vr.7 OIB fa.1 IDJ vrtofaj[57]
+vr.7 OIC fa.1 IDK vrtofaj[58]
+vr.7 OID fa.1 IDL vrtofaj[59]
+vr.7 OIE fa.1 IDM vrtofaj[50]
+vr.7 OIF fa.1 IDN vrtofaj[61]
+vr.7 OIG fa.1 IDO vrtofaj[62]
+vr.7 OIH fa.1 IDP vrtofaj[63]
+
+      -- Vector Floating Add K Operand
+
+vr.0 OJA fa.1 IEA vrtofak[0]
+vr.0 OJB fa.1 IEB vrtofak[1]
+vr.0 OJC fa.1 IEC vrtofak[2]
+vr.0 OJD fa.1 IED vrtofak[3]
+vr.0 OJE fa.1 IEE vrtofak[4]
+vr.0 OJF fa.1 IEF vrtofak[5]
+vr.0 OJG fa.1 IEG vrtofak[6]
+vr.0 OJH fa.1 IEH vrtofak[7]
+
+vr.1 OJA fa.1 IEI vrtofak[8]
+vr.1 OJB fa.1 IEJ vrtofak[9]
+vr.1 OJC fa.1 IEK vrtofak[10]
+vr.1 OJD fa.1 IEL vrtofak[11]
+vr.1 OJE fa.1 IEM vrtofak[12]
+vr.1 OJF fa.1 IEN vrtofak[13]
+vr.1 OJG fa.1 IEO vrtofak[14]
+vr.1 OJH fa.1 IEP vrtofak[15]
+
+vr.2 OJA fa.1 IFA vrtofak[16]
+vr.2 OJB fa.1 IFB vrtofak[17]
+vr.2 OJC fa.1 IFC vrtofak[18]
+vr.2 OJD fa.1 IFD vrtofak[19]
+vr.2 OJE fa.1 IFE vrtofak[20]
+vr.2 OJF fa.1 IFF vrtofak[21]
+vr.2 OJG fa.1 IFG vrtofak[22]
+vr.2 OJH fa.1 IFH vrtofak[23]
+
+vr.3 OJA fa.1 IFI vrtofak[24]
+vr.3 OJB fa.1 IFJ vrtofak[25]
+vr.3 OJC fa.1 IFK vrtofak[26]
+vr.3 OJD fa.1 IFL vrtofak[27]
+vr.3 OJE fa.1 IFM vrtofak[28]
+vr.3 OJF fa.1 IFN vrtofak[29]
+vr.3 OJG fa.1 IFO vrtofak[30]
+vr.3 OJH fa.1 IFP vrtofak[31]
+
+vr.4 OJA fa.1 IGA vrtofak[32]
+vr.4 OJB fa.1 IGB vrtofak[33]
+vr.4 OJC fa.1 IGC vrtofak[34]
+vr.4 OJD fa.1 IGD vrtofak[35]
+vr.4 OJE fa.1 IGE vrtofak[36]
+vr.4 OJF fa.1 IGF vrtofak[37]
+vr.4 OJG fa.1 IGG vrtofak[38]
+vr.4 OJH fa.1 IGH vrtofak[39]
+
+vr.5 OJA fa.1 IGI vrtofak[40]
+vr.5 OJB fa.1 IGJ vrtofak[41]
+vr.5 OJC fa.1 IGK vrtofak[42]
+vr.5 OJD fa.1 IGL vrtofak[43]
+vr.5 OJE fa.1 IGM vrtofak[44]
+vr.5 OJF fa.1 IGN vrtofak[45]
+vr.5 OJG fa.1 IGO vrtofak[46]
+vr.5 OJH fa.1 IGP vrtofak[47]
+
+vr.6 OJA fa.1 IHA vrtofak[48]
+vr.6 OJB fa.1 IHB vrtofak[49]
+vr.6 OJC fa.1 IHC vrtofak[50]
+vr.6 OJD fa.1 IHD vrtofak[51]
+vr.6 OJE fa.1 IHE vrtofak[52]
+vr.6 OJF fa.1 IHF vrtofak[53]
+vr.6 OJG fa.1 IHG vrtofak[54]
+vr.6 OJH fa.1 IHH vrtofak[55]
+
+vr.7 OJA fa.1 IHI vrtofak[56]
+vr.7 OJB fa.1 IHJ vrtofak[57]
+vr.7 OJC fa.1 IHK vrtofak[58]
+vr.7 OJD fa.1 IHL vrtofak[59]
+vr.7 OJE fa.1 IHM vrtofak[60]
+vr.7 OJF fa.1 IHN vrtofak[61]
+vr.7 OJG fa.1 IHO vrtofak[62]
+vr.7 OJH fa.1 IHP vrtofak[63]
+
+      -- Vector Floating Mul J Operand
+
+vr.0 OKA mb.1 ICA  vrtomulj[0]
+vr.0 OKB mb.1 ICB  vrtomulj[1]
+vr.0 OKC mb.1 ICC  vrtomulj[2]
+vr.0 OKD mb.1 ICD  vrtomulj[3]
+vr.0 OKE mb.1 ICE  vrtomulj[4]
+vr.0 OKF mb.1 ICF  vrtomulj[5]
+vr.0 OKG mb.1 ICG  vrtomulj[6]
+vr.0 OKH mb.1 ICH  vrtomulj[7]
+
+vr.1 OKA mb.1 ICI  vrtomulj[8]
+vr.1 OKB mb.1 ICJ  vrtomulj[9]
+vr.1 OKC mb.1 ICK  vrtomulj[10]
+vr.1 OKD mb.1 ICL  vrtomulj[11]
+vr.1 OKE mb.1 ICM  vrtomulj[12]
+vr.1 OKF mb.1 ICN  vrtomulj[13]
+vr.1 OKG mb.1 ICO  vrtomulj[14]
+vr.1 OKH mb.1 ICP  vrtomulj[15]
+
+vr.2 OKA ma.1 ICA vrtomulj[16]
+vr.2 OKB ma.1 ICB vrtomulj[17]
+vr.2 OKC ma.1 ICC vrtomulj[18]
+vr.2 OKD ma.1 ICD vrtomulj[19]
+vr.2 OKE ma.1 ICE vrtomulj[20]
+vr.2 OKF ma.1 ICF vrtomulj[21]
+vr.2 OKG ma.1 ICG vrtomulj[22]
+vr.2 OKH ma.1 ICH vrtomulj[23]
+
+vr.3 OKA ma.1 ICI vrtomulj[24]
+vr.3 OKB ma.1 ICJ vrtomulj[25]
+vr.3 OKC ma.1 ICK vrtomulj[26]
+vr.3 OKD ma.1 ICL vrtomulj[27]
+vr.3 OKE ma.1 ICM vrtomulj[28]
+vr.3 OKF ma.1 ICN vrtomulj[29]
+vr.3 OKG ma.1 ICO vrtomulj[30]
+vr.3 OKH ma.1 ICP vrtomulj[31]
+
+vr.4 OKA ra.1 IAA vrtomulj[32]
+vr.4 OKB ra.1 IAB vrtomulj[33]
+vr.4 OKC ra.1 IAC vrtomulj[34]
+vr.4 OKD ra.1 IAD vrtomulj[35]
+vr.4 OKE ra.1 IAE vrtomulj[36]
+vr.4 OKF ra.1 IAF vrtomulj[37]
+vr.4 OKG ra.1 IAG vrtomulj[38]
+vr.4 OKH ra.1 IAH vrtomulj[39]
+
+vr.5 OKA ra.1 IAI vrtomulj[40]
+vr.5 OKB ra.1 IAJ vrtomulj[41]
+vr.5 OKC ra.1 IAK vrtomulj[42]
+vr.5 OKD ra.1 IAL vrtomulj[43]
+vr.5 OKE ra.1 IAM vrtomulj[44]
+vr.5 OKF ra.1 IAN vrtomulj[45]
+vr.5 OKG ra.1 IAO vrtomulj[46]
+vr.5 OKH ra.1 IAP vrtomulj[47]
+
+vr.6 OKA me.1 IGA vrtomulj[48]
+vr.6 OKB me.1 IGB vrtomulj[49]
+vr.6 OKC me.1 IGC vrtomulj[50]
+vr.6 OKD me.1 IGD vrtomulj[51]
+vr.6 OKE me.1 IGE vrtomulj[52]
+vr.6 OKF me.1 IGF vrtomulj[53]
+vr.6 OKG me.1 IGG vrtomulj[54]
+vr.6 OKH me.1 IGH vrtomulj[55]
+
+vr.7 OKA me.1 IGI vrtomulj[56]
+vr.7 OKB me.1 IGJ vrtomulj[57]
+vr.7 OKC me.1 IGK vrtomulj[58]
+vr.7 OKD me.1 IGL vrtomulj[59]
+vr.7 OKE me.1 IGM vrtomulj[60]
+vr.7 OKF me.1 IGN vrtomulj[61]
+vr.7 OKG me.1 IGO vrtomulj[62]
+vr.7 OKH me.1 IGP vrtomulj[63]
+
+      -- Vector Floating Mul K Operand
+
+vr.0 OLA mb.1 IDA  vrtomulk[0]
+vr.0 OLB mb.1 IDB  vrtomulk[1]
+vr.0 OLC mb.1 IDC  vrtomulk[2]
+vr.0 OLD mb.1 IDD  vrtomulk[3]
+vr.0 OLE mb.1 IDE  vrtomulk[4]
+vr.0 OLF mb.1 IDF  vrtomulk[5]
+vr.0 OLG mb.1 IDG  vrtomulk[6]
+vr.0 OLH mb.1 IDH  vrtomulk[7]
+
+vr.1 OLA mb.1 IDI  vrtomulk[8]
+vr.1 OLB mb.1 IDJ  vrtomulk[9]
+vr.1 OLC mb.1 IDK  vrtomulk[10]
+vr.1 OLD mb.1 IDL  vrtomulk[11]
+vr.1 OLE mb.1 IDM  vrtomulk[12]
+vr.1 OLF mb.1 IDN  vrtomulk[13]
+vr.1 OLG mb.1 IDO  vrtomulk[14]
+vr.1 OLH mb.1 IDP  vrtomulk[15]
+
+vr.2 OLA ma.1 IDA  vrtomulk[16]
+vr.2 OLB ma.1 IDB  vrtomulk[17]
+vr.2 OLC ma.1 IDC  vrtomulk[18]
+vr.2 OLD ma.1 IDD  vrtomulk[19]
+vr.2 OLE ma.1 IDE  vrtomulk[20]
+vr.2 OLF ma.1 IDF  vrtomulk[21]
+vr.2 OLG ma.1 IDG  vrtomulk[22]
+vr.2 OLH ma.1 IDH  vrtomulk[23]
+
+vr.3 OLA ma.1 IDI  vrtomulk[24]
+vr.3 OLB ma.1 IDJ  vrtomulk[25]
+vr.3 OLC ma.1 IDK  vrtomulk[26]
+vr.3 OLD ma.1 IDL  vrtomulk[27]
+vr.3 OLE ma.1 IDM  vrtomulk[28]
+vr.3 OLF ma.1 IDN  vrtomulk[29]
+vr.3 OLG ma.1 IDO  vrtomulk[30]
+vr.3 OLH ma.1 IDP  vrtomulk[31]
+
+vr.4 OLA ra.1 ICA  vrtomulk[32] 
+vr.4 OLB ra.1 ICB  vrtomulk[33] 
+vr.4 OLC ra.1 ICC  vrtomulk[34] 
+vr.4 OLD ra.1 ICD  vrtomulk[35] 
+vr.4 OLE ra.1 ICE  vrtomulk[36] 
+vr.4 OLF ra.1 ICF  vrtomulk[37] 
+vr.4 OLG ra.1 ICG  vrtomulk[38] 
+vr.4 OLH ra.1 ICH  vrtomulk[39] 
+	                       
+vr.5 OLA ra.1 ICI  vrtomulk[40]
+vr.5 OLB ra.1 ICJ  vrtomulk[41]
+vr.5 OLC ra.1 ICK  vrtomulk[42]
+vr.5 OLD ra.1 ICL  vrtomulk[43]
+vr.5 OLE ra.1 ICM  vrtomulk[44]
+vr.5 OLF ra.1 ICN  vrtomulk[45]
+vr.5 OLG ra.1 ICO  vrtomulk[46]
+vr.5 OLH ra.1 ICP  vrtomulk[47]
+
+vr.6 OLA me.1 IHA  vrtomulk[48]
+vr.6 OLB me.1 IHB  vrtomulk[49]
+vr.6 OLC me.1 IHC  vrtomulk[50]
+vr.6 OLD me.1 IHD  vrtomulk[51]
+vr.6 OLE me.1 IHE  vrtomulk[52]
+vr.6 OLF me.1 IHF  vrtomulk[53]
+vr.6 OLG me.1 IHG  vrtomulk[54]
+vr.6 OLH me.1 IHH  vrtomulk[55]
+			       
+vr.7 OLA me.1 IHI  vrtomulk[56]
+vr.7 OLB me.1 IHJ  vrtomulk[57]
+vr.7 OLC me.1 IHK  vrtomulk[58]
+vr.7 OLD me.1 IHL  vrtomulk[59]
+vr.7 OLE me.1 IHM  vrtomulk[60]
+vr.7 OLF me.1 IHN  vrtomulk[61]
+vr.7 OLG me.1 IHO  vrtomulk[62]
+vr.7 OLH me.1 IHP  vrtomulk[63]
+
+      --vr to  Local Memory to WA
+
+vr.0 OMA wa.1 IAA vrtolm[0]
+vr.0 OMB wa.1 IAB vrtolm[1]
+vr.0 OMC wa.1 IAC vrtolm[2]
+vr.0 OMD wa.1 IAD vrtolm[3]
+vr.0 OME wa.1 IAE vrtolm[4]
+vr.0 OMF wa.1 IAF vrtolm[5]
+vr.0 OMG wa.1 IAG vrtolm[6]
+vr.0 OMH wa.1 IAH vrtolm[7]
+
+vr.1 OMA wa.1 IAI vrtolm[8]
+vr.1 OMB wa.1 IAJ vrtolm[9]
+vr.1 OMC wa.1 IAK vrtolm[10]
+vr.1 OMD wa.1 IAL vrtolm[11]
+vr.1 OME wa.1 IAM vrtolm[12]
+vr.1 OMF wa.1 IAN vrtolm[13]
+vr.1 OMG wa.1 IAO vrtolm[14]
+vr.1 OMH wa.1 IAP vrtolm[15]
+
+vr.2 OMA wa.1 IBA vrtolm[16]
+vr.2 OMB wa.1 IBB vrtolm[17]
+vr.2 OMC wa.1 IBC vrtolm[18]
+vr.2 OMD wa.1 IBD vrtolm[19]
+vr.2 OME wa.1 IBE vrtolm[20]
+vr.2 OMF wa.1 IBF vrtolm[21]
+vr.2 OMG wa.1 IBG vrtolm[22]
+vr.2 OMH wa.1 IBH vrtolm[23]
+
+vr.3 OMA wa.1 IBI vrtolm[24]
+vr.3 OMB wa.1 IBJ vrtolm[25]
+vr.3 OMC wa.1 IBK vrtolm[26]
+vr.3 OMD wa.1 IBL vrtolm[27]
+vr.3 OME wa.1 IBM vrtolm[28]
+vr.3 OMF wa.1 IBN vrtolm[29]
+vr.3 OMG wa.1 IBO vrtolm[30]
+vr.3 OMH wa.1 IBP vrtolm[31]
+
+vr.4 OMA wa.1 ICA vrtolm[32]
+vr.4 OMB wa.1 ICB vrtolm[33]
+vr.4 OMC wa.1 ICC vrtolm[34]
+vr.4 OMD wa.1 ICD vrtolm[35]
+vr.4 OME wa.1 ICE vrtolm[36]
+vr.4 OMF wa.1 ICF vrtolm[37]
+vr.4 OMG wa.1 ICG vrtolm[38]
+vr.4 OMH wa.1 ICH vrtolm[39]
+
+vr.5 OMA wa.1 ICI vrtolm[40]
+vr.5 OMB wa.1 ICJ vrtolm[41]
+vr.5 OMC wa.1 ICK vrtolm[42]
+vr.5 OMD wa.1 ICL vrtolm[43]
+vr.5 OME wa.1 ICM vrtolm[44]
+vr.5 OMF wa.1 ICN vrtolm[45]
+vr.5 OMG wa.1 ICO vrtolm[46]
+vr.5 OMH wa.1 ICP vrtolm[47]
+
+vr.6 OMA wa.1 IDA vrtolm[48]
+vr.6 OMB wa.1 IDB vrtolm[49]
+vr.6 OMC wa.1 IDC vrtolm[50]
+vr.6 OMD wa.1 IDD vrtolm[51]
+vr.6 OME wa.1 IDE vrtolm[52]
+vr.6 OMF wa.1 IDF vrtolm[53]
+vr.6 OMG wa.1 IDG vrtolm[54]
+vr.6 OMH wa.1 IDH vrtolm[55]
+
+vr.7 OMA wa.1 IDI vrtolm[56]
+vr.7 OMB wa.1 IDJ vrtolm[57]
+vr.7 OMC wa.1 IDK vrtolm[58]
+vr.7 OMD wa.1 IDL vrtolm[59]
+vr.7 OME wa.1 IDM vrtolm[60]
+vr.7 OMF wa.1 IDN vrtolm[61]
+vr.7 OMG wa.1 IDO vrtolm[62]
+vr.7 OMH wa.1 IDP vrtolm[63]
+
+      --Local Memory WA to VR
+
+wa.1 OAA vr.0 IPA watovr[0]
+wa.1 OAB vr.0 IPB watovr[1]
+wa.1 OAC vr.0 IPC watovr[2]
+wa.1 OAD vr.0 IPD watovr[3]
+wa.1 OAE vr.0 IPE watovr[4]
+wa.1 OAF vr.0 IPF watovr[5]
+wa.1 OAG vr.0 IPG watovr[6]
+wa.1 OAH vr.0 IPH watovr[7]
+
+wa.1 OAI vr.1 IPA watovr[8]
+wa.1 OAJ vr.1 IPB watovr[9]
+wa.1 OAK vr.1 IPC watovr[10]
+wa.1 OAL vr.1 IPD watovr[11]
+wa.1 OAM vr.1 IPE watovr[12]
+wa.1 OAN vr.1 IPF watovr[13]
+wa.1 OAO vr.1 IPG watovr[14]
+wa.1 OAP vr.1 IPH watovr[15]
+
+wa.1 OBA vr.2 IPA watovr[16]
+wa.1 OBB vr.2 IPB watovr[17]
+wa.1 OBC vr.2 IPC watovr[18]
+wa.1 OBD vr.2 IPD watovr[19]
+wa.1 OBE vr.2 IPE watovr[20]
+wa.1 OBF vr.2 IPF watovr[21]
+wa.1 OBG vr.2 IPG watovr[22]
+wa.1 OBH vr.2 IPH watovr[23]
+
+wa.1 OBI vr.3 IPA watovr[24]
+wa.1 OBJ vr.3 IPB watovr[25]
+wa.1 OBK vr.3 IPC watovr[26]
+wa.1 OBL vr.3 IPD watovr[27]
+wa.1 OBM vr.3 IPE watovr[28]
+wa.1 OBN vr.3 IPF watovr[29]
+wa.1 OBO vr.3 IPG watovr[30]
+wa.1 OBP vr.3 IPH watovr[31]
+
+wa.1 OCA vr.4 IPA watovr[32]
+wa.1 OCB vr.4 IPB watovr[33]
+wa.1 OCC vr.4 IPC watovr[34]
+wa.1 OCD vr.4 IPD watovr[35]
+wa.1 OCE vr.4 IPE watovr[36]
+wa.1 OCF vr.4 IPF watovr[37]
+wa.1 OCG vr.4 IPG watovr[38]
+wa.1 OCH vr.4 IPH watovr[39]
+
+wa.1 OCI vr.5 IPA watovr[40]
+wa.1 OCJ vr.5 IPB watovr[41]
+wa.1 OCK vr.5 IPC watovr[42]
+wa.1 OCL vr.5 IPD watovr[43]
+wa.1 OCM vr.5 IPE watovr[44]
+wa.1 OCN vr.5 IPF watovr[45]
+wa.1 OCO vr.5 IPG watovr[46]
+wa.1 OCP vr.5 IPH watovr[47]
+
+wa.1 ODA vr.6 IPA watovr[48]
+wa.1 ODB vr.6 IPB watovr[49]
+wa.1 ODC vr.6 IPC watovr[50]
+wa.1 ODD vr.6 IPD watovr[51]
+wa.1 ODE vr.6 IPE watovr[52]
+wa.1 ODF vr.6 IPF watovr[53]
+wa.1 ODG vr.6 IPG watovr[54]
+wa.1 ODH vr.6 IPH watovr[55]
+
+wa.1 ODI vr.7 IPA watovr[56]
+wa.1 ODJ vr.7 IPB watovr[57]
+wa.1 ODK vr.7 IPC watovr[58]
+wa.1 ODL vr.7 IPD watovr[59]
+wa.1 ODM vr.7 IPE watovr[60]
+wa.1 ODN vr.7 IPF watovr[61]
+wa.1 ODO vr.7 IPG watovr[62]
+wa.1 ODP vr.7 IPH watovr[63]
+
+      --Local Memory to WA to AR
+
+wa.1 OEA ar.1 IAA watoar[0]
+wa.1 OEB ar.1 IAB watoar[1]
+wa.1 OEC ar.1 IAC watoar[2]
+wa.1 OED ar.1 IAD watoar[3]
+wa.1 OEE ar.1 IAE watoar[4]
+wa.1 OEF ar.1 IAF watoar[5]
+wa.1 OEG ar.1 IAG watoar[6]
+wa.1 OEH ar.1 IAH watoar[7]
+
+wa.1 OEI ar.1 IAI watoar[8]
+wa.1 OEJ ar.1 IAJ watoar[9]
+wa.1 OEK ar.1 IAK watoar[10]
+wa.1 OEL ar.1 IAL watoar[11]
+wa.1 OEM ar.1 IAM watoar[12]
+wa.1 OEN ar.1 IAN watoar[13]
+wa.1 OEO ar.1 IAO watoar[14]
+wa.1 OEP ar.1 IAP watoar[15]
+
+wa.1 OFA ar.1 IBA watoar[16]
+wa.1 OFB ar.1 IBB watoar[17]
+wa.1 OFC ar.1 IBC watoar[18]
+wa.1 OFD ar.1 IBD watoar[19]
+wa.1 OFE ar.1 IBE watoar[20]
+wa.1 OFF ar.1 IBF watoar[21]
+wa.1 OFG ar.1 IBG watoar[22]
+wa.1 OFH ar.1 IBH watoar[23]
+
+wa.1 OFI ar.1 IBI watoar[24]
+wa.1 OFJ ar.1 IBJ watoar[25]
+wa.1 OFK ar.1 IBK watoar[26]
+wa.1 OFL ar.1 IBL watoar[27]
+wa.1 OFM ar.1 IBM watoar[28]
+wa.1 OFN ar.1 IBN watoar[29]
+wa.1 OFO ar.1 IBO watoar[30]
+wa.1 OFP ar.1 IBP watoar[31]
+
+      -- Common Memory to JB Instruction Buffer
+
+vr.0 OOA 
+vr.0 OOB
+vr.0 OOC
+vr.0 OOD
+vr.0 OOE
+vr.0 OOF
+vr.0 OOG
+vr.0 OOH
+
+vr.1 OOA 
+vr.1 OOB
+vr.1 OOC
+vr.1 OOD
+vr.1 OOE
+vr.1 OOF
+vr.1 OOG
+vr.1 OOH
+
+vr.2 OOA 
+vr.2 OOB
+vr.2 OOC
+vr.2 OOD
+vr.2 OOE
+vr.2 OOF
+vr.2 OOG
+vr.2 OOH
+
+vr.3 OOA 
+vr.3 OOB
+vr.3 OOC
+vr.3 OOD
+vr.3 OOE
+vr.3 OOF
+vr.3 OOG
+vr.3 OOH
+
+vr.4 OOA 
+vr.4 OOB
+vr.4 OOC
+vr.4 OOD
+vr.4 OOE
+vr.4 OOF
+vr.4 OOG
+vr.4 OOH
+
+vr.5 OOA 
+vr.5 OOB
+vr.5 OOC
+vr.5 OOD
+vr.5 OOE
+vr.5 OOF
+vr.5 OOG
+vr.5 OOH
+
+vr.6 OOA 
+vr.6 OOB
+vr.6 OOC
+vr.6 OOD
+vr.6 OOE
+vr.6 OOF
+vr.6 OOG
+vr.6 OOH
+
+vr.7 OOA 
+vr.7 OOB
+vr.7 OOC
+vr.7 OOD
+vr.7 OOE
+vr.7 OOF
+vr.7 OOG
+vr.7 OOH
+
+      -- VB vector logical to vr ik
+
+vb.1 OAA vr.0 IKA vbtovr[0]
+vb.1 OAB vr.0 IKB vbtovr[1]
+vb.1 OAC vr.0 IKC vbtovr[2]
+vb.1 OAD vr.0 IKD vbtovr[3]
+vb.1 OAE vr.0 IKE vbtovr[4]
+vb.1 OAF vr.0 IKF vbtovr[5]
+vb.1 OAG vr.0 IKG vbtovr[6]
+vb.1 OAH vr.0 IKH vbtovr[7]
+
+vb.1 OAI vr.1 IKA vbtovr[8]
+vb.1 OAJ vr.1 IKB vbtovr[9]
+vb.1 OAK vr.1 IKC vbtovr[10]
+vb.1 OAL vr.1 IKD vbtovr[11]
+vb.1 OAM vr.1 IKE vbtovr[12]
+vb.1 OAN vr.1 IKF vbtovr[13]
+vb.1 OAO vr.1 IKG vbtovr[14]
+vb.1 OAP vr.1 IKH vbtovr[15]
+
+vb.1 OBA vr.2 IKA vbtovr[16]
+vb.1 OBB vr.2 IKB vbtovr[17]
+vb.1 OBC vr.2 IKC vbtovr[18]
+vb.1 OBD vr.2 IKD vbtovr[19]
+vb.1 OBE vr.2 IKE vbtovr[20]
+vb.1 OBF vr.2 IKF vbtovr[21]
+vb.1 OBG vr.2 IKG vbtovr[22]
+vb.1 OBH vr.2 IKH vbtovr[23]
+
+vb.1 OBI vr.3 IKA vbtovr[24]
+vb.1 OBJ vr.3 IKB vbtovr[25]
+vb.1 OBK vr.3 IKC vbtovr[26]
+vb.1 OBL vr.3 IKD vbtovr[27]
+vb.1 OBM vr.3 IKE vbtovr[28]
+vb.1 OBN vr.3 IKF vbtovr[29]
+vb.1 OBO vr.3 IKG vbtovr[30]
+vb.1 OBP vr.3 IKH vbtovr[31]
+
+vb.1 OCA vr.4 IKA vbtovr[32]
+vb.1 OCB vr.4 IKB vbtovr[33]
+vb.1 OCC vr.4 IKC vbtovr[34]
+vb.1 OCD vr.4 IKD vbtovr[35]
+vb.1 OCE vr.4 IKE vbtovr[36]
+vb.1 OCF vr.4 IKF vbtovr[37]
+vb.1 OCG vr.4 IKG vbtovr[38]
+vb.1 OCH vr.4 IKH vbtovr[39]
+
+vb.1 OCI vr.5 IKA vbtovr[40]
+vb.1 OCJ vr.5 IKB vbtovr[41]
+vb.1 OCK vr.5 IKC vbtovr[42]
+vb.1 OCL vr.5 IKD vbtovr[43]
+vb.1 OCM vr.5 IKE vbtovr[44]
+vb.1 OCN vr.5 IKF vbtovr[45]
+vb.1 OCO vr.5 IKG vbtovr[46]
+vb.1 OCP vr.5 IKH vbtovr[47]
+
+vb.1 ODA vr.6 IKA vbtovr[48]
+vb.1 ODB vr.6 IKB vbtovr[49]
+vb.1 ODC vr.6 IKC vbtovr[50]
+vb.1 ODD vr.6 IKD vbtovr[51]
+vb.1 ODE vr.6 IKE vbtovr[52]
+vb.1 ODF vr.6 IKF vbtovr[53]
+vb.1 ODG vr.6 IKG vbtovr[54]
+vb.1 ODH vr.6 IKH vbtovr[55]
+
+vb.1 ODI vr.7 IKA vbtovr[56]
+vb.1 ODJ vr.7 IKB vbtovr[57]
+vb.1 ODK vr.7 IKC vbtovr[58]
+vb.1 ODL vr.7 IKD vbtovr[59]
+vb.1 ODM vr.7 IKE vbtovr[60]
+vb.1 ODN vr.7 IKF vbtovr[61]
+vb.1 ODO vr.7 IKG vbtovr[62]
+vb.1 ODP vr.7 IKH vbtovr[63]
+
+      -- FC vector floating add tovr
+
+fc.1 OAA vr.0 INA fctovr[0]
+fc.1 OAB vr.0 INB fctovr[1]
+fc.1 OAC vr.0 INC fctovr[2]
+fc.1 OAD vr.0 IND fctovr[3]
+fc.1 OAE vr.0 INE fctovr[4]
+fc.1 OAF vr.0 INF fctovr[5]
+fc.1 OAG vr.0 ING fctovr[6]
+fc.1 OAH vr.0 INH fctovr[7]
+
+fc.1 OAI vr.1 INA fctovr[8]
+fc.1 OAJ vr.1 INB fctovr[9]
+fc.1 OAK vr.1 INC fctovr[10]
+fc.1 OAL vr.1 IND fctovr[11]
+fc.1 OAM vr.1 INE fctovr[12]
+fc.1 OAN vr.1 INF fctovr[13]
+fc.1 OAO vr.1 ING fctovr[14]
+fc.1 OAP vr.1 INH fctovr[15]
+
+fc.1 OBA vr.2 INA fctovr[16]
+fc.1 OBB vr.2 INB fctovr[17]
+fc.1 OBC vr.2 INC fctovr[18]
+fc.1 OBD vr.2 IND fctovr[19]
+fc.1 OBE vr.2 INE fctovr[20]
+fc.1 OBF vr.2 INF fctovr[21]
+fc.1 OBG vr.2 ING fctovr[22]
+fc.1 OBH vr.2 INH fctovr[23]
+
+fc.1 OBI vr.3 INA fctovr[24]
+fc.1 OBJ vr.3 INB fctovr[25]
+fc.1 OBK vr.3 INC fctovr[26]
+fc.1 OBL vr.3 IND fctovr[27]
+fc.1 OBM vr.3 INE fctovr[28]
+fc.1 OBN vr.3 INF fctovr[29]
+fc.1 OBO vr.3 ING fctovr[30]
+fc.1 OBP vr.3 INH fctovr[31]
+
+fc.1 OCA vr.4 INA fctovr[32]
+fc.1 OCB vr.4 INB fctovr[33]
+fc.1 OCC vr.4 INC fctovr[34]
+fc.1 OCD vr.4 IND fctovr[35]
+fc.1 OCE vr.4 INE fctovr[36]
+fc.1 OCF vr.4 INF fctovr[37]
+fc.1 OCG vr.4 ING fctovr[38]
+fc.1 OCH vr.4 INH fctovr[39]
+
+fc.1 OCI vr.5 INA fctovr[40]
+fc.1 OCJ vr.5 INB fctovr[41]
+fc.1 OCK vr.5 INC fctovr[42]
+fc.1 OCL vr.5 IND fctovr[43]
+fc.1 OCM vr.5 INE fctovr[44]
+fc.1 OCN vr.5 INF fctovr[45]
+fc.1 OCO vr.5 ING fctovr[46]
+fc.1 OCP vr.5 INH fctovr[47]
+
+fc.1 ODA vr.6 INA fctovr[48]
+fc.1 ODB vr.6 INB fctovr[49]
+fc.1 ODC vr.6 INC fctovr[50]
+fc.1 ODD vr.6 IND fctovr[51]
+fc.1 ODE vr.6 INE fctovr[52]
+fc.1 ODF vr.6 INF fctovr[53]
+fc.1 ODG vr.6 ING fctovr[54]
+fc.1 ODH vr.6 INH fctovr[55]
+
+fc.1 ODI vr.7 INA fctovr[56]
+fc.1 ODJ vr.7 INB fctovr[57]
+fc.1 ODK vr.7 INC fctovr[58]
+fc.1 ODL vr.7 IND fctovr[59]
+fc.1 ODM vr.7 INE fctovr[60]
+fc.1 ODN vr.7 INF fctovr[61]
+fc.1 ODO vr.7 ING fctovr[62]
+fc.1 ODP vr.7 INH fctovr[63]
+
+      -- ME vector floating mul to vr
+
+me.1 OAA vr.0 IOA metovr[0]
+me.1 OAB vr.0 IOB metovr[1]
+me.1 OAC vr.0 IOC metovr[2]
+me.1 OAD vr.0 IOD metovr[3]
+me.1 OAE vr.0 IOE metovr[4]
+me.1 OAF vr.0 IOF metovr[5]
+me.1 OAG vr.0 IOG metovr[6]
+me.1 OAH vr.0 IOH metovr[7]
+
+me.1 OAI vr.1 IOA metovr[8]
+me.1 OAJ vr.1 IOB metovr[9]
+me.1 OAK vr.1 IOC metovr[10]
+me.1 OAL vr.1 IOD metovr[11]
+me.1 OAM vr.1 IOE metovr[12]
+me.1 OAN vr.1 IOF metovr[13]
+me.1 OAO vr.1 IOG metovr[14]
+me.1 OAP vr.1 IOH metovr[15]
+
+me.1 OAQ vr.2 IOA metovr[16]
+me.1 OAR vr.2 IOB metovr[17]
+me.1 OAS vr.2 IOC metovr[18]
+me.1 OAT vr.2 IOD metovr[19]
+me.1 OAU vr.2 IOE metovr[20]
+me.1 OAV vr.2 IOF metovr[21]
+me.1 OAW vr.2 IOG metovr[22]
+me.1 OAX vr.2 IOH metovr[23]
+
+me.1 OBA vr.3 IOA metovr[24]
+me.1 OBB vr.3 IOB metovr[25]
+me.1 OBC vr.3 IOC metovr[26]
+me.1 OBD vr.3 IOD metovr[27]
+me.1 OBE vr.3 IOE metovr[28]
+me.1 OBF vr.3 IOF metovr[29]
+me.1 OBG vr.3 IOG metovr[30]
+me.1 OBH vr.3 IOH metovr[31]
+
+me.1 OBI vr.4 IOA metovr[32]
+me.1 OBJ vr.4 IOB metovr[33]
+me.1 OBK vr.4 IOC metovr[34]
+me.1 OBL vr.4 IOD metovr[35]
+me.1 OBM vr.4 IOE metovr[36]
+me.1 OBN vr.4 IOF metovr[37]
+me.1 OBO vr.4 IOG metovr[38]
+me.1 OBP vr.4 IOH metovr[39]
+
+me.1 OBQ vr.5 IOA metovr[40]
+me.1 OBR vr.5 IOB metovr[41]
+me.1 OBS vr.5 IOC metovr[42]
+me.1 OBT vr.5 IOD metovr[43]
+me.1 OBU vr.5 IOE metovr[44]
+me.1 OBV vr.5 IOF metovr[45]
+me.1 OBW vr.5 IOG metovr[46]
+me.1 OBX vr.5 IOH metovr[47]
+
+me.1 OCA vr.6 IOA metovr[48]
+me.1 OCB vr.6 IOB metovr[49]
+me.1 OCC vr.6 IOC metovr[50]
+me.1 OCD vr.6 IOD metovr[51]
+me.1 OCE vr.6 IOE metovr[52]
+me.1 OCF vr.6 IOF metovr[53]
+me.1 OCG vr.6 IOG metovr[54]
+me.1 OCH vr.6 IOH metovr[55]
+
+me.1 OCI vr.7 IOA metovr[56]
+me.1 OCJ vr.7 IOB metovr[57]
+me.1 OCK vr.7 IOC metovr[58]
+me.1 OCL vr.7 IOD metovr[59]
+me.1 OCM vr.7 IOE metovr[60]
+me.1 OCN vr.7 IOF metovr[61]
+me.1 OCO vr.7 IOG metovr[62]
+me.1 OCP vr.7 IOH metovr[63]
+
+      -- VL vector tovr
+
+vl.1 OAA vr.0 IMA vltovr[0]
+vl.1 OAB vr.0 IMB vltovr[1]
+vl.1 OAC vr.0 IMC vltovr[2]
+vl.1 OAD vr.0 IMD vltovr[3]
+vl.1 OAE vr.0 IME vltovr[4]
+vl.1 OAF vr.0 IMF vltovr[5]
+vl.1 OAG vr.0 IMG vltovr[6]
+vl.1 OAH vr.0 IMH vltovr[7]
+
+vl.1 OAI vr.1 IMA vltovr[8]
+vl.1 OAJ vr.1 IMB vltovr[9]
+vl.1 OAK vr.1 IMC vltovr[10]
+vl.1 OAL vr.1 IMD vltovr[11]
+vl.1 OAM vr.1 IME vltovr[12]
+vl.1 OAN vr.1 IMF vltovr[13]
+vl.1 OAO vr.1 IMG vltovr[14]
+vl.1 OAP vr.1 IMH vltovr[15]
+
+vl.1 OBA vr.2 IMA vltovr[16]
+vl.1 OBB vr.2 IMB vltovr[17]
+vl.1 OBC vr.2 IMC vltovr[18]
+vl.1 OBD vr.2 IMD vltovr[19]
+vl.1 OBE vr.2 IME vltovr[20]
+vl.1 OBF vr.2 IMF vltovr[21]
+vl.1 OBG vr.2 IMG vltovr[22]
+vl.1 OBH vr.2 IMH vltovr[23]
+
+vl.1 OBI vr.3 IMA vltovr[24]
+vl.1 OBJ vr.3 IMB vltovr[25]
+vl.1 OBK vr.3 IMC vltovr[26]
+vl.1 OBL vr.3 IMD vltovr[27]
+vl.1 OBM vr.3 IME vltovr[28]
+vl.1 OBN vr.3 IMF vltovr[29]
+vl.1 OBO vr.3 IMG vltovr[30]
+vl.1 OBP vr.3 IMH vltovr[31]
+
+vl.1 OCA vr.4 IMA vltovr[32]
+vl.1 OCB vr.4 IMB vltovr[33]
+vl.1 OCC vr.4 IMC vltovr[34]
+vl.1 OCD vr.4 IMD vltovr[35]
+vl.1 OCE vr.4 IME vltovr[36]
+vl.1 OCF vr.4 IMF vltovr[37]
+vl.1 OCG vr.4 IMG vltovr[38]
+vl.1 OCH vr.4 IMH vltovr[39]
+
+vl.1 OCI vr.5 IMA vltovr[40]
+vl.1 OCJ vr.5 IMB vltovr[41]
+vl.1 OCK vr.5 IMC vltovr[42]
+vl.1 OCL vr.5 IMD vltovr[43]
+vl.1 OCM vr.5 IME vltovr[44]
+vl.1 OCN vr.5 IMF vltovr[45]
+vl.1 OCO vr.5 IMG vltovr[46]
+vl.1 OCP vr.5 IMH vltovr[47]
+
+vl.1 ODA vr.6 IMA vltovr[48]
+vl.1 ODB vr.6 IMB vltovr[49]
+vl.1 ODC vr.6 IMC vltovr[50]
+vl.1 ODD vr.6 IMD vltovr[51]
+vl.1 ODE vr.6 IME vltovr[52]
+vl.1 ODF vr.6 IMF vltovr[53]
+vl.1 ODG vr.6 IMG vltovr[54]
+vl.1 ODH vr.6 IMH vltovr[55]
+
+vl.1 ODI vr.7 IMA vltovr[56]
+vl.1 ODJ vr.7 IMB vltovr[57]
+vl.1 ODK vr.7 IMC vltovr[58]
+vl.1 ODL vr.7 IMD vltovr[59]
+vl.1 ODM vr.7 IME vltovr[60]
+vl.1 ODN vr.7 IMF vltovr[61]
+vl.1 ODO vr.7 IMG vltovr[62]
+vl.1 ODP vr.7 IMH vltovr[63]
+
+   -- Vector 0 Address JC1 to VR.0
+
+jc.1 OAA vr.0 IAA v0addr1[0]
+jc.1 OAI vr.0 IAB v0addr1[1]
+jc.1 OBA vr.0 IAC v0addr1[2]
+jc.1 OBI vr.0 IAD v0addr1[3]
+jc.1 OCA vr.0 IAE v0addr1[4]
+jc.1 OCI vr.0 IAF v0addr1[5]
+
+   -- Vector 1 Address JC1 to VR.0
+
+jc.1 OEA vr.0 IBA v1addr1[0]
+jc.1 OEI vr.0 IBB v1addr1[1]
+jc.1 OFA vr.0 IBC v1addr1[2]
+jc.1 OFI vr.0 IBD v1addr1[3]
+jc.1 OGA vr.0 IBE v1addr1[4]
+jc.1 OGI vr.0 IBF v1addr1[5]
+
+   -- Vector 2 Address JC1 to VR.0
+
+jc.1 OIA vr.0 ICA v2addr1[0]
+jc.1 OII vr.0 ICB v2addr1[1]
+jc.1 OJA vr.0 ICC v2addr1[2]
+jc.1 OJI vr.0 ICD v2addr1[3]
+jc.1 OKA vr.0 ICE v2addr1[4]
+jc.1 OKI vr.0 ICF v2addr1[5]
+
+   -- Vector 3 Address JC1 to VR.0
+
+jc.1 OMA vr.0 IDA v3addr1[0]
+jc.1 OMI vr.0 IDB v3addr1[1]
+jc.1 ONA vr.0 IDC v3addr1[2]
+jc.1 ONI vr.0 IDD v3addr1[3]
+jc.1 OOA vr.0 IDE v3addr1[4]
+jc.1 OOI vr.0 IDF v3addr1[5]
+
+   -- Vector 4 Address JC2 to VR.0
+
+jc.2 OAA vr.0 IEA v4addr1[0]
+jc.2 OAI vr.0 IEB v4addr1[1]
+jc.2 OBA vr.0 IEC v4addr1[2]
+jc.2 OBI vr.0 IED v4addr1[3]
+jc.2 OCA vr.0 IEE v4addr1[4]
+jc.2 OCI vr.0 IEF v4addr1[5]
+
+   -- Vector 5 Address JC2 to VR.0
+
+jc.2 OEA vr.0 IFA v5addr1[0]
+jc.2 OEI vr.0 IFB v5addr1[1]
+jc.2 OFA vr.0 IFC v5addr1[2]
+jc.2 OFI vr.0 IFD v5addr1[3]
+jc.2 OGA vr.0 IFE v5addr1[4]
+jc.2 OGI vr.0 IFF v5addr1[5]
+
+   -- Vector 6 Address JC2 to VR.0
+
+jc.2 OIA vr.0 IGA v6addr1[0]
+jc.2 OII vr.0 IGB v6addr1[1]
+jc.2 OJA vr.0 IGC v6addr1[2]
+jc.2 OJI vr.0 IGD v6addr1[3]
+jc.2 OKA vr.0 IGE v6addr1[4]
+jc.2 OKI vr.0 IGF v6addr1[5]
+
+   -- Vector 7 Address JC2 to VR.0
+
+jc.2 OMA vr.0 IHA v7addr1[0]
+jc.2 OMI vr.0 IHB v7addr1[1]
+jc.2 ONA vr.0 IHC v7addr1[2]
+jc.2 ONI vr.0 IHD v7addr1[3]
+jc.2 OOA vr.0 IHE v7addr1[4]
+jc.2 OOI vr.0 IHF v7addr1[5]
+
+   -- Vector 0 Address JC1 to VR.1
+
+jc.1 OAB vr.1 IAA v0addr2[0]
+jc.1 OAJ vr.1 IAB v0addr2[1]
+jc.1 OBB vr.1 IAC v0addr2[2]
+jc.1 OBJ vr.1 IAD v0addr2[3]
+jc.1 OCB vr.1 IAE v0addr2[4]
+jc.1 OCJ vr.1 IAF v0addr2[5]
+
+   -- Vector 1 Address JC1 to VR.1
+
+jc.1 OEB vr.1 IBA v1addr2[0]
+jc.1 OEJ vr.1 IBB v1addr2[1]
+jc.1 OFB vr.1 IBC v1addr2[2]
+jc.1 OFJ vr.1 IBD v1addr2[3]
+jc.1 OGB vr.1 IBE v1addr2[4]
+jc.1 OGJ vr.1 IBF v1addr2[5]
+
+   -- Vector 2 Address JC1 to VR.1
+
+jc.1 OIB vr.1 ICA v2addr2[0]
+jc.1 OIJ vr.1 ICB v2addr2[1]
+jc.1 OJB vr.1 ICC v2addr2[2]
+jc.1 OJJ vr.1 ICD v2addr2[3]
+jc.1 OKB vr.1 ICE v2addr2[4]
+jc.1 OKJ vr.1 ICF v2addr2[5]
+
+   -- Vector 3 Address JC1 to VR.1
+
+jc.1 OMB vr.1 IDA v3addr2[0]
+jc.1 OMJ vr.1 IDB v3addr2[1]
+jc.1 ONB vr.1 IDC v3addr2[2]
+jc.1 ONJ vr.1 IDD v3addr2[3]
+jc.1 OOB vr.1 IDE v3addr2[4]
+jc.1 OOJ vr.1 IDF v3addr2[5]
+
+   -- Vector 4 Address JC2 to VR.1
+
+jc.2 OAB vr.1 IEA v4addr2[0]
+jc.2 OAJ vr.1 IEB v4addr2[1]
+jc.2 OBB vr.1 IEC v4addr2[2]
+jc.2 OBJ vr.1 IED v4addr2[3]
+jc.2 OCB vr.1 IEF v4addr2[4]
+jc.2 OCJ vr.1 IEG v4addr2[5]
+
+   -- Vector 5 Address JC2 to VR.1
+
+jc.2 OEB vr.1 IFA v5addr2[0]
+jc.2 OEJ vr.1 IFB v5addr2[1]
+jc.2 OFB vr.1 IFC v5addr2[2]
+jc.2 OFJ vr.1 IFD v5addr2[3]
+jc.2 OGB vr.1 IFE v5addr2[4]
+jc.2 OGJ vr.1 IFF v5addr2[5]
+
+   -- Vector 6 Address JC2 to VR.1
+
+jc.2 OIB vr.1 IGA v6addr2[0]
+jc.2 OIJ vr.1 IGB v6addr2[1]
+jc.2 OJB vr.1 IGC v6addr2[2]
+jc.2 OJJ vr.1 IGD v6addr2[3]
+jc.2 OKB vr.1 IGE v6addr2[4]
+jc.2 OKJ vr.1 IGF v6addr2[5]
+
+   -- Vector 7 Address JC2 to VR.1
+
+jc.2 OMB vr.1 IHA v7addr2[0]
+jc.2 OMJ vr.1 IHB v7addr2[1]
+jc.2 ONB vr.1 IHC v7addr2[2]
+jc.2 ONJ vr.1 IHD v7addr2[3]
+jc.2 OOB vr.1 IHE v7addr2[4]
+jc.2 OOJ vr.1 IHF v7addr2[5]
+
+   -- Vector 0 Address JC1 to VR.2
+
+jc.1 OAC vr.2 IAA v0addr3[0]
+jc.1 OAK vr.2 IAB v0addr3[1]
+jc.1 OBC vr.2 IAC v0addr3[2]
+jc.1 OBK vr.2 IAD v0addr3[3]
+jc.1 OCC vr.2 IAE v0addr3[4]
+jc.1 OCK vr.2 IAF v0addr3[5]
+
+   -- Vector 1 Address JC1 to VR.2
+
+jc.1 OEC vr.2 IBA v1addr3[0]
+jc.1 OEK vr.2 IBB v1addr3[1]
+jc.1 OFC vr.2 IBC v1addr3[2]
+jc.1 OFK vr.2 IBD v1addr3[3]
+jc.1 OGC vr.2 IBE v1addr3[4]
+jc.1 OGK vr.2 IBF v1addr3[5]
+
+   -- Vector 2 Address JC1 to VR.2
+
+jc.1 OIC vr.2 ICA v2addr3[0]
+jc.1 OIK vr.2 ICB v2addr3[1]
+jc.1 OJC vr.2 ICC v2addr3[2]
+jc.1 OJK vr.2 ICD v2addr3[3]
+jc.1 OKC vr.2 ICE v2addr3[4]
+jc.1 OKK vr.2 ICF v2addr3[5]
+
+   -- Vector 3 Address JC1 to VR.2
+
+jc.1 OMC vr.2 IDA v3addr3[0]
+jc.1 OMK vr.2 IDB v3addr3[1]
+jc.1 ONC vr.2 IDC v3addr3[2]
+jc.1 ONK vr.2 IDD v3addr3[3]
+jc.1 OOC vr.2 IDE v3addr3[4]
+jc.1 OOK vr.2 IDF v3addr3[5]
+
+   -- Vector 4 Address JC2 to VR.2
+
+jc.2 OAC vr.2 IEA v4addr3[0]
+jc.2 OAK vr.2 IEB v4addr3[1]
+jc.2 OBC vr.2 IEC v4addr3[2]
+jc.2 OBK vr.2 IED v4addr3[3]
+jc.2 OCC vr.2 IEE v4addr3[4]
+jc.2 OCK vr.2 IEF v4addr3[5]
+
+   -- Vector 5 Address JC2 to VR.2
+
+jc.2 OEC vr.2 IFA v5addr3[0]
+jc.2 OEK vr.2 IFB v5addr3[1]
+jc.2 OFC vr.2 IFC v5addr3[2]
+jc.2 OFK vr.2 IFD v5addr3[3]
+jc.2 OGC vr.2 IFE v5addr3[4]
+jc.2 OGK vr.2 IFF v5addr3[5]
+
+   -- Vector 6 Address JC2 to VR.2
+
+jc.2 OIC vr.2 IGA v6addr3[0]
+jc.2 OIK vr.2 IGB v6addr3[1]
+jc.2 OJC vr.2 IGC v6addr3[2]
+jc.2 OJK vr.2 IGD v6addr3[3]
+jc.2 OKC vr.2 IGE v6addr3[4]
+jc.2 OKK vr.2 IGF v6addr3[5]
+
+   -- Vector 7 Address JC2 to VR.2
+
+jc.2 OMC vr.2 IHA v7addr3[0]
+jc.2 OMK vr.2 IHB v7addr3[1]
+jc.2 ONC vr.2 IHC v7addr3[2]
+jc.2 ONK vr.2 IHD v7addr3[3]
+jc.2 OOC vr.2 IHE v7addr3[4]
+jc.2 OOK vr.2 IHF v7addr3[5]
+
+   -- Vector 0 Address JC1 to VR.3
+
+jc.1 OAD vr.3 IAA v0addr4[0]
+jc.1 OAL vr.3 IAB v0addr4[1]
+jc.1 OBD vr.3 IAC v0addr4[2]
+jc.1 OBL vr.3 IAD v0addr4[3]
+jc.1 OCD vr.3 IAE v0addr4[4]
+jc.1 OCL vr.3 IAF v0addr4[5]
+
+   -- Vector 1 Address JC1 to VR.3
+
+jc.1 OED vr.3 IBA v1addr4[0]
+jc.1 OEL vr.3 IBB v1addr4[1]
+jc.1 OFD vr.3 IBC v1addr4[2]
+jc.1 OFL vr.3 IBD v1addr4[3]
+jc.1 OGD vr.3 IBE v1addr4[4]
+jc.1 OGL vr.3 IBF v1addr4[5]
+
+   -- Vector 2 Address JC1 to VR.3
+
+jc.1 OID vr.3 ICA v2addr4[0]
+jc.1 OIL vr.3 ICB v2addr4[1]
+jc.1 OJD vr.3 ICC v2addr4[2]
+jc.1 OJL vr.3 ICD v2addr4[3]
+jc.1 OKD vr.3 ICE v2addr4[4]
+jc.1 OKL vr.3 ICF v2addr4[5]
+
+   -- Vector 3 Address JC1 to VR.3
+
+jc.1 OMD vr.3 IDA v3addr4[0]
+jc.1 OML vr.3 IDB v3addr4[1]
+jc.1 OND vr.3 IDC v3addr4[2]
+jc.1 ONL vr.3 IDD v3addr4[3]
+jc.1 OOD vr.3 IDE v3addr4[4]
+jc.1 OOL vr.3 IDF v3addr4[5]
+
+   -- Vector 4 Address JC2 to VR.3
+
+jc.2 OAD vr.3 IEA v4addr4[0]
+jc.2 OAL vr.3 IEB v4addr4[1]
+jc.2 OBD vr.3 IEC v4addr4[2]
+jc.2 OBL vr.3 IED v4addr4[3]
+jc.2 OCD vr.3 IEE v4addr4[4]
+jc.2 OCL vr.3 IEF v4addr4[5]
+
+   -- Vector 5 Address JC2 to VR.3
+
+jc.2 OED vr.3 IFA v5addr4[0]
+jc.2 OEL vr.3 IFB v5addr4[1]
+jc.2 OFD vr.3 IFC v5addr4[2]
+jc.2 OFL vr.3 IFD v5addr4[3]
+jc.2 OGD vr.3 IFE v5addr4[4]
+jc.2 OGL vr.3 IFF v5addr4[5]
+
+   -- Vector 6 Address JC2 to VR.3
+
+jc.2 OID vr.3 IGA v6addr4[0]
+jc.2 OIL vr.3 IGB v6addr4[1]
+jc.2 OJD vr.3 IGC v6addr4[2]
+jc.2 OJL vr.3 IGD v6addr4[3]
+jc.2 OKD vr.3 IGE v6addr4[4]
+jc.2 OKL vr.3 IGF v6addr4[5]
+
+   -- Vector 7 Address JC2 to VR.3
+
+jc.2 OMD vr.3 IHA v7addr4[0]
+jc.2 OML vr.3 IHB v7addr4[1]
+jc.2 OND vr.3 IHC v7addr4[2]
+jc.2 ONL vr.3 IHD v7addr4[3]
+jc.2 OOD vr.3 IHE v7addr4[4]
+jc.2 OOL vr.3 IHF v7addr4[5]
+
+   -- Vector 0 Address JC1 to VR.4
+
+jc.1 OAE vr.4 IAA v0addr5[0]
+jc.1 OAM vr.4 IAB v0addr5[1]
+jc.1 OBE vr.4 IAC v0addr5[2]
+jc.1 OBM vr.4 IAD v0addr5[3]
+jc.1 OCE vr.4 IAE v0addr5[4]
+jc.1 OCM vr.4 IAF v0addr5[5]
+
+   -- Vector 1 Address JC1 to VR.4
+
+jc.1 OEE vr.4 IBA v1addr5[0]
+jc.1 OEM vr.4 IBB v1addr5[1]
+jc.1 OFE vr.4 IBC v1addr5[2]
+jc.1 OFM vr.4 IBD v1addr5[3]
+jc.1 OGE vr.4 IBE v1addr5[4]
+jc.1 OGM vr.4 IBF v1addr5[5]
+
+   -- Vector 2 Address JC1 to VR.4
+
+jc.1 OIE vr.4 ICA v2addr5[0]
+jc.1 OIM vr.4 ICB v2addr5[1]
+jc.1 OJE vr.4 ICC v2addr5[2]
+jc.1 OJM vr.4 ICD v2addr5[3]
+jc.1 OKE vr.4 ICE v2addr5[4]
+jc.1 OKM vr.4 ICF v2addr5[5]
+
+   -- Vector 3 Address JC1 to VR.4
+
+jc.1 OME vr.4 IDA v3addr5[0]
+jc.1 OMM vr.4 IDB v3addr5[1]
+jc.1 ONE vr.4 IDC v3addr5[2]
+jc.1 ONM vr.4 IDD v3addr5[3]
+jc.1 OOE vr.4 IDE v3addr5[4]
+jc.1 OOM vr.4 IDF v3addr5[5]
+
+   -- Vector 4 Address JC2 to VR.4
+
+jc.2 OAE vr.4 IEA v4addr5[0]
+jc.2 OAM vr.4 IEB v4addr5[1]
+jc.2 OBE vr.4 IEC v4addr5[2]
+jc.2 OBM vr.4 IED v4addr5[3]
+jc.2 OCE vr.4 IEE v4addr5[4]
+jc.2 OCM vr.4 IEF v4addr5[5]
+
+   -- Vector 5 Address JC2 to VR.4
+
+jc.2 OEE vr.4 IFA v5addr5[0]
+jc.2 OEM vr.4 IFB v5addr5[1]
+jc.2 OFE vr.4 IFC v5addr5[2]
+jc.2 OFM vr.4 IFD v5addr5[3]
+jc.2 OGE vr.4 IFE v5addr5[4]
+jc.2 OGM vr.4 IFF v5addr5[5]
+
+   -- Vector 6 Address JC2 to VR.4
+
+jc.2 OIE vr.4 IGA v6addr5[0]
+jc.2 OIM vr.4 IGB v6addr5[1]
+jc.2 OJE vr.4 IGC v6addr5[2]
+jc.2 OJM vr.4 IGD v6addr5[3]
+jc.2 OKE vr.4 IGE v6addr5[4]
+jc.2 OKM vr.4 IGF v6addr5[5]
+
+   -- Vector 7 Address JC2 to VR.4
+
+jc.2 OME vr.4 IHA v7addr5[0]
+jc.2 OMM vr.4 IHB v7addr5[1]
+jc.2 ONE vr.4 IHC v7addr5[2]
+jc.2 ONM vr.4 IHD v7addr5[3]
+jc.2 OOE vr.4 IHE v7addr5[4]
+jc.2 OOM vr.4 IHF v7addr5[5]
+
+   -- Vector 0 Address JC1 to VR.5
+
+jc.1 OAF vr.5 IAA v0addr6[0]
+jc.1 OAN vr.5 IAB v0addr6[1]
+jc.1 OBF vr.5 IAC v0addr6[2]
+jc.1 OBN vr.5 IAD v0addr6[3]
+jc.1 OCF vr.5 IAE v0addr6[4]
+jc.1 OCN vr.5 IAF v0addr6[5]
+
+   -- Vector 1 Address JC1 to VR.5
+
+jc.1 OEF vr.5 IBA v1addr6[0]
+jc.1 OEN vr.5 IBB v1addr6[1]
+jc.1 OFF vr.5 IBC v1addr6[2]
+jc.1 OFN vr.5 IBD v1addr6[3]
+jc.1 OGF vr.5 IBE v1addr6[4]
+jc.1 OGN vr.5 IBF v1addr6[5]
+
+   -- Vector 2 Address JC1 to VR.5
+
+jc.1 OIF vr.5 ICA v2addr6[0]
+jc.1 OIN vr.5 ICB v2addr6[1]
+jc.1 OJF vr.5 ICC v2addr6[2]
+jc.1 OJN vr.5 ICD v2addr6[3]
+jc.1 OKF vr.5 ICE v2addr6[4]
+jc.1 OKN vr.5 ICF v2addr6[5]
+
+   -- Vector 3 Address JC1 to VR.5
+
+jc.1 OMF vr.5 IDA v3addr6[0]
+jc.1 OMN vr.5 IDB v3addr6[1]
+jc.1 ONF vr.5 IDC v3addr6[2]
+jc.1 ONN vr.5 IDD v3addr6[3]
+jc.1 OOF vr.5 IDE v3addr6[4]
+jc.1 OON vr.5 IDF v3addr6[5]
+
+   -- Vector 4 Address JC2 to VR.5
+
+jc.2 OAF vr.5 IEA v4addr6[0]
+jc.2 OAN vr.5 IEB v4addr6[1]
+jc.2 OBF vr.5 IEC v4addr6[2]
+jc.2 OBN vr.5 IED v4addr6[3]
+jc.2 OCF vr.5 IEE v4addr6[4]
+jc.2 OCN vr.5 IEF v4addr6[5]
+
+   -- Vector 5 Address JC2 to VR.5
+
+jc.2 OEF vr.5 IFA v5addr6[0]
+jc.2 OEN vr.5 IFB v5addr6[1]
+jc.2 OFF vr.5 IFC v5addr6[2]
+jc.2 OFN vr.5 IFD v5addr6[3]
+jc.2 OGF vr.5 IFE v5addr6[4]
+jc.2 OGN vr.5 IFF v5addr6[5]
+
+   -- Vector 6 Address JC2 to VR.5
+
+jc.2 OIF vr.5 IGA v6addr6[0]
+jc.2 OIN vr.5 IGB v6addr6[1]
+jc.2 OJF vr.5 IGC v6addr6[2]
+jc.2 OJN vr.5 IGD v6addr6[3]
+jc.2 OKF vr.5 IGE v6addr6[4]
+jc.2 OKN vr.5 IGF v6addr6[5]
+
+   -- Vector 7 Address JC2 to VR.5
+
+jc.2 OMF vr.5 IHA v7addr6[0]
+jc.2 OMN vr.5 IHB v7addr6[1]
+jc.2 ONF vr.5 IHC v7addr6[2]
+jc.2 ONN vr.5 IHD v7addr6[3]
+jc.2 OOF vr.5 IHE v7addr6[4]
+jc.2 OON vr.5 IHF v7addr6[5]
+
+   -- Vector 0 Address JC1 to VR.6
+
+jc.1 OAG vr.6 IAA v0addr7[0]
+jc.1 OAO vr.6 IAB v0addr7[1]
+jc.1 OBG vr.6 IAC v0addr7[2]
+jc.1 OBO vr.6 IAD v0addr7[3]
+jc.1 OCG vr.6 IAE v0addr7[4]
+jc.1 OCO vr.6 IAF v0addr7[5]
+
+   -- Vector 1 Address JC1 to VR.6
+
+jc.1 OEG vr.6 IBA v1addr7[0]
+jc.1 OEO vr.6 IBB v1addr7[1]
+jc.1 OFG vr.6 IBC v1addr7[2]
+jc.1 OFO vr.6 IBD v1addr7[3]
+jc.1 OGG vr.6 IBE v1addr7[4]
+jc.1 OGO vr.6 IBF v1addr7[5]
+
+   -- Vector 2 Address JC1 to VR.6
+
+jc.1 OIG vr.6 ICA v2addr7[0]
+jc.1 OIO vr.6 ICB v2addr7[1]
+jc.1 OJG vr.6 ICC v2addr7[2]
+jc.1 OJO vr.6 ICD v2addr7[3]
+jc.1 OKG vr.6 ICE v2addr7[4]
+jc.1 OKO vr.6 ICF v2addr7[5]
+
+   -- Vector 3 Address JC1 to VR.6
+
+jc.1 OMG vr.6 IDA v3addr7[0]
+jc.1 OMO vr.6 IDB v3addr7[1]
+jc.1 ONG vr.6 IDC v3addr7[2]
+jc.1 ONO vr.6 IDD v3addr7[3]
+jc.1 OOG vr.6 IDE v3addr7[4]
+jc.1 OOO vr.6 IDF v3addr7[5]
+
+   -- Vector 4 Address JC2 to VR.6
+
+jc.2 OAG vr.6 IEA v4addr7[0]
+jc.2 OAO vr.6 IEB v4addr7[1]
+jc.2 OBG vr.6 IEC v4addr7[2]
+jc.2 OBO vr.6 IED v4addr7[3]
+jc.2 OCG vr.6 IEE v4addr7[4]
+jc.2 OCO vr.6 IEF v4addr7[5]
+
+   -- Vector 5 Address JC2 to VR.6
+
+jc.2 OEG vr.6 IFA v5addr7[0]
+jc.2 OEO vr.6 IFB v5addr7[1]
+jc.2 OFG vr.6 IFC v5addr7[2]
+jc.2 OFO vr.6 IFD v5addr7[3]
+jc.2 OGG vr.6 IFE v5addr7[4]
+jc.2 OGO vr.6 IFF v5addr7[5]
+
+   -- Vector 6 Address JC2 to VR.6
+
+jc.2 OIG vr.6 IGA v6addr7[0]
+jc.2 OIO vr.6 IGB v6addr7[1]
+jc.2 OJG vr.6 IGC v6addr7[2]
+jc.2 OJO vr.6 IGD v6addr7[3]
+jc.2 OKG vr.6 IGE v6addr7[4]
+jc.2 OKO vr.6 IGF v6addr7[5]
+
+   -- Vector 7 Address JC2 to VR.6
+
+jc.2 OMG vr.6 IHA v7addr7[0]
+jc.2 OMO vr.6 IHB v7addr7[1]
+jc.2 ONG vr.6 IHC v7addr7[2]
+jc.2 ONO vr.6 IHD v7addr7[3]
+jc.2 OOG vr.6 IHE v7addr7[4]
+jc.2 OOO vr.6 IHF v7addr7[5]
+
+   -- Vector 0 Address JC1 to VR.7
+
+jc.1 OAH vr.7 IAA v0addr8[0]
+jc.1 OAP vr.7 IAB v0addr8[1]
+jc.1 OBH vr.7 IAC v0addr8[2]
+jc.1 OBP vr.7 IAD v0addr8[3]
+jc.1 OCH vr.7 IAE v0addr8[4]
+jc.1 OCP vr.7 IAF v0addr8[5]
+
+   -- Vector 1 Address JC1 to VR.7
+
+jc.1 OEH vr.7 IBA v1addr8[0]
+jc.1 OEP vr.7 IBB v1addr8[1]
+jc.1 OFH vr.7 IBC v1addr8[2]
+jc.1 OFP vr.7 IBD v1addr8[3]
+jc.1 OGH vr.7 IBE v1addr8[4]
+jc.1 OGP vr.7 IBF v1addr8[5]
+
+   -- Vector 2 Address JC1 to VR.7
+
+jc.1 OIH vr.7 ICA v2addr8[0]
+jc.1 OIP vr.7 ICB v2addr8[1]
+jc.1 OJH vr.7 ICC v2addr8[2]
+jc.1 OJP vr.7 ICD v2addr8[3]
+jc.1 OKH vr.7 ICE v2addr8[4]
+jc.1 OKP vr.7 ICF v2addr8[5]
+
+   -- Vector 3 Address JC1 to VR.7
+
+jc.1 OMH vr.7 IDA v3addr8[0]
+jc.1 OMP vr.7 IDB v3addr8[1]
+jc.1 ONH vr.7 IDC v3addr8[2]
+jc.1 ONP vr.7 IDD v3addr8[3]
+jc.1 OOH vr.7 IDE v3addr8[4]
+jc.1 OOP vr.7 IDF v3addr8[5]
+
+   -- Vector 4 Address JC2 to VR.7
+
+jc.2 OAH vr.7 IEA v4addr8[0]
+jc.2 OAP vr.7 IEB v4addr8[1]
+jc.2 OBH vr.7 IEC v4addr8[2]
+jc.2 OBP vr.7 IED v4addr8[3]
+jc.2 OCH vr.7 IEE v4addr8[4]
+jc.2 OCP vr.7 IEF v4addr8[5]
+
+   -- Vector 5 Address JC2 to VR.7
+
+jc.2 OEH vr.7 IFA v5addr8[0]
+jc.2 OEP vr.7 IFB v5addr8[1]
+jc.2 OFH vr.7 IFC v5addr8[2]
+jc.2 OFP vr.7 IFD v5addr8[3]
+jc.2 OGH vr.7 IFE v5addr8[4]
+jc.2 OGP vr.7 IFF v5addr8[5]
+
+   -- Vector 6 Address JC2 to VR.7
+
+jc.2 OIH vr.7 IGA v6addr8[0]
+jc.2 OIP vr.7 IGB v6addr8[1]
+jc.2 OJH vr.7 IGC v6addr8[2]
+jc.2 OJP vr.7 IGD v6addr8[3]
+jc.2 OKH vr.7 IGE v6addr8[4]
+jc.2 OKP vr.7 IGF v6addr8[5]
+
+   -- Vector 7 Address JC2 to VR.7
+
+jc.2 OMH vr.7 IHA v7addr8[0]
+jc.2 OMP vr.7 IHB v7addr8[1]
+jc.2 ONH vr.7 IHC v7addr8[2]
+jc.2 ONP vr.7 IHD v7addr8[3]
+jc.2 OOH vr.7 IHE v7addr8[4]
+jc.2 OOP vr.7 IHF v7addr8[5]
+
+     -- Vector 0 Write Mode from JC1 to VR
+
+jc.1 ODA vr.0 IAG v0vectmode[0]
+jc.1 ODB vr.1 IAG v0vectmode[1]
+jc.1 ODC vr.2 IAG v0vectmode[2]
+jc.1 ODD vr.3 IAG v0vectmode[3]
+jc.1 ODE vr.4 IAG v0vectmode[4]
+jc.1 ODF vr.5 IAG v0vectmode[5]
+jc.1 ODG vr.6 IAG v0vectmode[6]
+jc.1 ODH vr.7 IAG v0vectmode[7]
+
+     -- Vector 1 Write Mode from JC1 to VR
+
+jc.1 OHA vr.0 IBG v1vectmode[0]
+jc.1 OHB vr.1 IBG v1vectmode[1]
+jc.1 OHC vr.2 IBG v1vectmode[2]
+jc.1 OHD vr.3 IBG v1vectmode[3]
+jc.1 OHE vr.4 IBG v1vectmode[4]
+jc.1 OHF vr.5 IBG v1vectmode[5]
+jc.1 OHG vr.6 IBG v1vectmode[6]
+jc.1 OHH vr.7 IBG v1vectmode[7]
+
+     -- Vector 2 Write Mode from JC1 to VR
+
+jc.1 OLA vr.0 ICG v2vectmode[0]
+jc.1 OLB vr.1 ICG v2vectmode[1]
+jc.1 OLC vr.2 ICG v2vectmode[2]
+jc.1 OLD vr.3 ICG v2vectmode[3]
+jc.1 OLE vr.4 ICG v2vectmode[4]
+jc.1 OLF vr.5 ICG v2vectmode[5]
+jc.1 OLG vr.6 ICG v2vectmode[6]
+jc.1 OLH vr.7 ICG v2vectmode[7]
+
+     -- Vector 3 Write Mode from JC1 to VR
+
+jc.1 OPA vr.0 IDG v3vectmode[0]
+jc.1 OPB vr.1 IDG v3vectmode[1]
+jc.1 OPC vr.2 IDG v3vectmode[2]
+jc.1 OPD vr.3 IDG v3vectmode[3]
+jc.1 OPE vr.4 IDG v3vectmode[4]
+jc.1 OPF vr.5 IDG v3vectmode[5]
+jc.1 OPG vr.6 IDG v3vectmode[6]
+jc.1 OPH vr.7 IDG v3vectmode[7]
+
+     -- Vector 4 Write Mode from JC2 to VR
+
+jc.2 ODA vr.0 IEG v4vectmode[0]
+jc.2 ODB vr.1 IEG v4vectmode[1]
+jc.2 ODC vr.2 IEG v4vectmode[2]
+jc.2 ODD vr.3 IEG v4vectmode[3]
+jc.2 ODE vr.4 IEG v4vectmode[4]
+jc.2 ODF vr.5 IEG v4vectmode[5]
+jc.2 ODG vr.6 IEG v4vectmode[6]
+jc.2 ODH vr.7 IEG v4vectmode[7]
+
+     -- Vector 5 Write Mode from JC2 to VR
+
+jc.2 OHA vr.0 IFG v5vectmode[0]
+jc.2 OHB vr.1 IFG v5vectmode[1]
+jc.2 OHC vr.2 IFG v5vectmode[2]
+jc.2 OHD vr.3 IFG v5vectmode[3]
+jc.2 OHE vr.4 IFG v5vectmode[4]
+jc.2 OHF vr.5 IFG v5vectmode[5]
+jc.2 OHG vr.6 IFG v5vectmode[6]
+jc.2 OHH vr.7 IFG v5vectmode[7]
+
+     -- Vector 6 Write Mode from JC2 to VR
+
+jc.2 OLA vr.0 IGG v6vectmode[0]
+jc.2 OLB vr.1 IGG v6vectmode[1]
+jc.2 OLC vr.2 IGG v6vectmode[2]
+jc.2 OLD vr.3 IGG v6vectmode[3]
+jc.2 OLE vr.4 IGG v6vectmode[4]
+jc.2 OLF vr.5 IGG v6vectmode[5]
+jc.2 OLG vr.6 IGG v6vectmode[6]
+jc.2 OLH vr.7 IGG v6vectmode[7]
+
+     -- Vector 7 Write Mode from JC2 to VR
+
+jc.2 OPA vr.0 IHG v7vectmode[0]
+jc.2 OPB vr.1 IHG v7vectmode[1]
+jc.2 OPC vr.2 IHG v7vectmode[2]
+jc.2 OPD vr.3 IHG v7vectmode[3]
+jc.2 OPE vr.4 IHG v7vectmode[4]
+jc.2 OPF vr.5 IHG v7vectmode[5]
+jc.2 OPG vr.6 IHG v7vectmode[6]
+jc.2 OPH vr.7 IHG v7vectmode[7]
+
+     -- Vector 0 Step from JC1 to VR
+
+jc.1 ODI vr.0 IAH v0vectstep[0]
+jc.1 ODJ vr.1 IAH v0vectstep[1]
+jc.1 ODK vr.2 IAH v0vectstep[2]
+jc.1 ODL vr.3 IAH v0vectstep[3]
+jc.1 ODM vr.4 IAH v0vectstep[4]
+jc.1 ODN vr.5 IAH v0vectstep[5]
+jc.1 ODO vr.6 IAH v0vectstep[6]
+jc.1 ODP vr.7 IAH v0vectstep[7]
+
+     -- Vector 1 Step from JC1 to VR
+
+jc.1 OHI vr.0 IBH v1vectstep[0]
+jc.1 OHJ vr.1 IBH v1vectstep[1]
+jc.1 OHK vr.2 IBH v1vectstep[2]
+jc.1 OHL vr.3 IBH v1vectstep[3]
+jc.1 OHM vr.4 IBH v1vectstep[4]
+jc.1 OHN vr.5 IBH v1vectstep[5]
+jc.1 OHO vr.6 IBH v1vectstep[6]
+jc.1 OHP vr.7 IBH v1vectstep[7]
+
+     -- Vector 2 Step from JC1 to VR
+
+jc.1 OLI vr.0 ICH v2vectstep[0]
+jc.1 OLJ vr.1 ICH v2vectstep[1]
+jc.1 OLK vr.2 ICH v2vectstep[2]
+jc.1 OLL vr.3 ICH v2vectstep[3]
+jc.1 OLM vr.4 ICH v2vectstep[4]
+jc.1 OLN vr.5 ICH v2vectstep[5]
+jc.1 OLO vr.6 ICH v2vectstep[6]
+jc.1 OLP vr.7 ICH v2vectstep[7]
+
+     -- Vector 3 Step from JC1 to VR
+
+jc.1 OPI vr.0 IDH v3vectstep[0]
+jc.1 OPJ vr.1 IDH v3vectstep[1]
+jc.1 OPK vr.2 IDH v3vectstep[2]
+jc.1 OPL vr.3 IDH v3vectstep[3]
+jc.1 OPM vr.4 IDH v3vectstep[4]
+jc.1 OPN vr.5 IDH v3vectstep[5]
+jc.1 OPO vr.6 IDH v3vectstep[6]
+jc.1 OPP vr.7 IDH v3vectstep[7]
+
+     -- Vector 4 Step from JC2 to VR
+
+jc.2 ODI vr.0 IEH v4vectstep[0]
+jc.2 ODJ vr.1 IEH v4vectstep[1]
+jc.2 ODK vr.2 IEH v4vectstep[2]
+jc.2 ODL vr.3 IEH v4vectstep[3]
+jc.2 ODM vr.4 IEH v4vectstep[4]
+jc.2 ODN vr.5 IEH v4vectstep[5]
+jc.2 ODO vr.6 IEH v4vectstep[6]
+jc.2 ODP vr.7 IEH v4vectstep[7]
+
+     -- Vector 5 Step from JC2 to VR
+
+jc.2 OHI vr.0 IFH v5vectstep[0]
+jc.2 OHJ vr.1 IFH v5vectstep[1]
+jc.2 OHK vr.2 IFH v5vectstep[2]
+jc.2 OHL vr.3 IFH v5vectstep[3]
+jc.2 OHM vr.4 IFH v5vectstep[4]
+jc.2 OHN vr.5 IFH v5vectstep[5]
+jc.2 OHO vr.6 IFH v5vectstep[6]
+jc.2 OHP vr.7 IFH v5vectstep[7]
+
+     -- Vector 6 Step from JC2 to VR
+
+jc.2 OLI vr.0 IGH v6vectstep[0]
+jc.2 OLJ vr.1 IGH v6vectstep[1]
+jc.2 OLK vr.2 IGH v6vectstep[2]
+jc.2 OLL vr.3 IGH v6vectstep[3]
+jc.2 OLM vr.4 IGH v6vectstep[4]
+jc.2 OLN vr.5 IGH v6vectstep[5]
+jc.2 OLO vr.6 IGH v6vectstep[6]
+jc.2 OLP vr.7 IGH v6vectstep[7]
+
+     -- Vector 7 Step from JC2 to VR
+
+jc.2 OPI vr.0 IHH v7vectstep[0]
+jc.2 OPJ vr.1 IHH v7vectstep[1]
+jc.2 OPK vr.2 IHH v7vectstep[2]
+jc.2 OPL vr.3 IHH v7vectstep[3]
+jc.2 OPM vr.4 IHH v7vectstep[4]
+jc.2 OPN vr.5 IHH v7vectstep[5]
+jc.2 OPO vr.6 IHH v7vectstep[6]
+jc.2 OPP vr.7 IHH v7vectstep[7]
+
+
+     -- Constant Data from JB to VR
+
+jb.1 OAA vr.0 IRA jbtovr[0]
+jb.1 OAB vr.0 IRB jbtovr[1]
+jb.1 OAC vr.0 IRC jbtovr[2]
+jb.1 OAD vr.0 IRD jbtovr[3]
+jb.1 OAE vr.0 IRE jbtovr[4]
+jb.1 OAF vr.0 IRF jbtovr[5]
+jb.1 OAG vr.0 IRG jbtovr[6]
+jb.1 OAH vr.0 IRH jbtovr[7]
+
+jb.1 OAI vr.1 IRA jbtovr[8]
+jb.1 OAJ vr.1 IRB jbtovr[9]
+jb.1 OAK vr.1 IRC jbtovr[10]
+jb.1 OAL vr.1 IRD jbtovr[11]
+jb.1 OAM vr.1 IRE jbtovr[12]
+jb.1 OAN vr.1 IRF jbtovr[13]
+jb.1 OAO vr.1 IRG jbtovr[14]
+jb.1 OAP vr.1 IRH jbtovr[15]
+
+jb.1 OBA vr.2 IRA jbtovr[16]
+jb.1 OBB vr.2 IRB jbtovr[17]
+jb.1 OBC vr.2 IRC jbtovr[18]
+jb.1 OBD vr.2 IRD jbtovr[19]
+jb.1 OBE vr.2 IRE jbtovr[20]
+jb.1 OBF vr.2 IRF jbtovr[21]
+jb.1 OBG vr.2 IRG jbtovr[22]
+jb.1 OBH vr.2 IRH jbtovr[23]
+
+jb.1 OBI vr.3 IRA jbtovr[24]
+jb.1 OBJ vr.3 IRB jbtovr[25]
+jb.1 OBK vr.3 IRC jbtovr[26]
+jb.1 OBL vr.3 IRD jbtovr[27]
+jb.1 OBM vr.3 IRE jbtovr[28]
+jb.1 OBN vr.3 IRF jbtovr[29]
+jb.1 OBO vr.3 IRG jbtovr[30]
+jb.1 OBP vr.3 IRH jbtovr[31]
+
+jb.1 OCA vr.4 IRA jbtovr[32]
+jb.1 OCB vr.4 IRB jbtovr[33]
+jb.1 OCC vr.4 IRC jbtovr[34]
+jb.1 OCD vr.4 IRD jbtovr[35]
+jb.1 OCE vr.4 IRE jbtovr[36]
+jb.1 OCF vr.4 IRF jbtovr[37]
+jb.1 OCG vr.4 IRG jbtovr[38]
+jb.1 OCH vr.4 IRH jbtovr[39]
+
+jb.1 OCI vr.5 IRA jbtovr[40]
+jb.1 OCJ vr.5 IRB jbtovr[41]
+jb.1 OCK vr.5 IRC jbtovr[42]
+jb.1 OCL vr.5 IRD jbtovr[43]
+jb.1 OCM vr.5 IRE jbtovr[44]
+jb.1 OCN vr.5 IRF jbtovr[45]
+jb.1 OCO vr.5 IRG jbtovr[46]
+jb.1 OCP vr.5 IRH jbtovr[47]
+
+jb.1 ODA vr.6 IRA jbtovr[48]
+jb.1 ODB vr.6 IRB jbtovr[49]
+jb.1 ODC vr.6 IRC jbtovr[50]
+jb.1 ODD vr.6 IRD jbtovr[51]
+jb.1 ODE vr.6 IRE jbtovr[52]
+jb.1 ODF vr.6 IRF jbtovr[53]
+jb.1 ODG vr.6 IRG jbtovr[54]
+jb.1 ODH vr.6 IRH jbtovr[55]
+
+jb.1 ODI vr.7 IRA jbtovr[56]
+jb.1 ODJ vr.7 IRB jbtovr[57]
+jb.1 ODK vr.7 IRC jbtovr[58]
+jb.1 ODL vr.7 IRD jbtovr[59]
+jb.1 ODM vr.7 IRE jbtovr[60]
+jb.1 ODN vr.7 IRF jbtovr[61]
+jb.1 ODO vr.7 IRG jbtovr[62]
+jb.1 ODP vr.7 IRH jbtovr[63]
+
+    -- jb data to ar
+
+jb.1 OEA ar.1 IEA jbatoar[0]
+jb.1 OEB ar.1 IEB jbatoar[1]
+jb.1 OEC ar.1 IEC jbatoar[2]
+jb.1 OED ar.1 IED jbatoar[3]
+jb.1 OEE ar.1 IEE jbatoar[4]
+jb.1 OEF ar.1 IEF jbatoar[5]
+jb.1 OEG ar.1 IEG jbatoar[6]
+jb.1 OEH ar.1 IEH jbatoar[7]
+
+jb.1 OEI ar.1 IEI jbatoar[8]
+jb.1 OEJ ar.1 IEJ jbatoar[9]
+jb.1 OEK ar.1 IEK jbatoar[10]
+jb.1 OEL ar.1 IEL jbatoar[11]
+jb.1 OEM ar.1 IEM jbatoar[12]
+jb.1 OEN ar.1 IEN jbatoar[13]
+jb.1 OEO ar.1 IEO jbatoar[14]
+jb.1 OEP ar.1 IEP jbatoar[15]
+
+jb.1 OFA ar.1 IFA jbatoar[16]
+jb.1 OFB ar.1 IFB jbatoar[17]
+jb.1 OFC ar.1 IFC jbatoar[18]
+jb.1 OFD ar.1 IFD jbatoar[19]
+jb.1 OFE ar.1 IFE jbatoar[20]
+jb.1 OFF ar.1 IFF jbatoar[21]
+jb.1 OFG ar.1 IFG jbatoar[22]
+jb.1 OFH ar.1 IFH jbatoar[23]
+
+jb.1 OFI ar.1 IFI jbatoar[24]
+jb.1 OFJ ar.1 IFJ jbatoar[25]
+jb.1 OFK ar.1 IFK jbatoar[26]
+jb.1 OFL ar.1 IFL jbatoar[27]
+jb.1 OFM ar.1 IFM jbatoar[28]
+jb.1 OFN ar.1 IFN jbatoar[29]
+jb.1 OFO ar.1 IFO jbatoar[30]
+jb.1 OFP ar.1 IFP jbatoar[31]
+
+ --jb begin writes to jc1
+
+jb.1 OIA jc.1 IDA bwritetojc1[0]
+jb.1 OIB jc.1 IDB bwritetojc1[1]
+jb.1 OIC jc.1 IDC bwritetojc1[2]
+jb.1 OID jc.1 IDD bwritetojc1[3]
+
+ --jb begin writes to jc2
+
+jb.1 OIE jc.2 IDA bcritetojc2[0]
+jb.1 OIF jc.2 IDB bcritetojc2[1]
+jb.1 OIG jc.2 IDC bcritetojc2[2]
+jb.1 OIH jc.2 IDD bcritetojc2[3]
+
+ --jb clears to ja
+
+jb.1 OKA ja.1 IJA clrtoja[0]
+jb.1 OKB ja.1 IJB clrtoja[1]
+jb.1 OKC ja.1 IJC clrtoja[2]
+jb.1 OKD ja.1 IJD clrtoja[3]
+jb.1 OKE ja.1 IJE clrtoja[4]
+
+ -- from    to JA
+
+jb.1     ja.1 IKB 
+jb.1     ja.1 IKC 
+
+  -- parity from ?
+
+ea.1 OKA ja.1 ILA parity
+ 
+  -- deadstart to ja
+
+ea.1 OJA ja.1 IKQ deadstrtja[0]
+
+  -- memory busy to ja
+
+jb.1 OKF ja.1 IJJ membsyja[0]
+jb.1 OKG ja.1 IJK membsyja[1]
+
+  -- Memory Dest Code to JA
+
+td.1 OMA ja.1 IFA memdestja[0]
+td.1 OMB ja.1 IFB memdestja[1]
+td.1 OMC ja.1 IFC memdestja[2]
+td.1 OMD ja.1 IFD memdestja[3]
+
+     ja parcel pointer 
+
+if.1 OKA ja.1 IGA japarcel[0]
+if.1 OKB ja.1 IGB japarcel[1]
+
+ --jb controls to as (cpu 1)
+
+jb.1 OTA as.1 IUA gosharedreg[0]
+jb.1 OUA as.1 IUD shregoddeven[0]
+jb.1 OUB as.1 IUB shregtype1[0]
+jb.1 OUC as.1 IUC shregtype2[0]
+
+ --jb vector enables 
+
+jb.1 OLA vl.1 INA clearvectorlenvl
+jb.1 OLB va.1 *** UNUSED
+jb.1 OLC fa.1 IKA vectorlencntl
+jb.1 OLD me.1 IUA mefuenable
+jb.1 OLE vb.1 *** UNUSED
+jb.1 OLF ga.1 *** UNUSED
+
+
+ --jb ar data to as 
+
+jb.1 OSA as.1 IAA artoas[0]
+jb.1 OSB as.1 IAB artoas[1]
+jb.1 OSC as.1 IAC artoas[2]
+jb.1 OSD as.1 IAD artoas[3]
+jb.1 OSE as.1 IAE artoas[4]
+jb.1 OSF as.1 IAF artoas[5]
+jb.1 OSG as.1 IAG artoas[6]
+jb.1 OSH as.1 IAH artoas[7]
+
+    -- Address Multiply to AR
+
+am.1 OAA ar.1 IGA amtoar[0]
+am.1 OAB ar.1 IGB amtoar[1]
+am.1 OAC ar.1 IGC amtoar[2]
+am.1 OAD ar.1 IGD amtoar[3]
+am.1 OAE ar.1 IGE amtoar[4]
+am.1 OAF ar.1 IGF amtoar[5]
+am.1 OAG ar.1 IGG amtoar[6]
+am.1 OAH ar.1 IGH amtoar[7]
+
+am.1 OAI ar.1 IGI amtoar[8]
+am.1 OAJ ar.1 IGJ amtoar[9]
+am.1 OAK ar.1 IGK amtoar[10]
+am.1 OAL ar.1 IGL amtoar[11]
+am.1 OAM ar.1 IGM amtoar[12]
+am.1 OAN ar.1 IGN amtoar[13]
+am.1 OAO ar.1 IGO amtoar[14]
+am.1 OAP ar.1 IGP amtoar[15]
+
+am.1 OBA ar.1 IHA amtoar[16]
+am.1 OBB ar.1 IHB amtoar[17]
+am.1 OBC ar.1 IHC amtoar[18]
+am.1 OBD ar.1 IHD amtoar[19]
+am.1 OBE ar.1 IHE amtoar[20]
+am.1 OBF ar.1 IHF amtoar[21]
+am.1 OBG ar.1 IHG amtoar[22]
+am.1 OBH ar.1 IHH amtoar[23]
+
+am.1 OBI ar.1 IHI amtoar[24]
+am.1 OBJ ar.1 IHJ amtoar[25]
+am.1 OBK ar.1 IHK amtoar[26]
+am.1 OBL ar.1 IHL amtoar[27]
+am.1 OBM ar.1 IHM amtoar[28]
+am.1 OBN ar.1 IHN amtoar[29]
+am.1 OBO ar.1 IHO amtoar[30]
+am.1 OBP ar.1 IHP amtoar[31]
+
+   -- Shift Count from AR to GB
+
+ar.1 OIA gb.1 IAA shftcnt[0]
+ar.1 OIB gb.1 IAB shftcnt[1]
+ar.1 OIC gb.1 IAC shftcnt[2]
+ar.1 OID gb.1 IAD shftcnt[3]
+ar.1 OIE gb.1 IAE shftcnt[4]
+ar.1 OIF gb.1 IAF shftcnt[5]
+ar.1 OIG gb.1 IAG shftcnt[6]
+
+ -- shift overflow from ar to gb
+
+ar.1 OIH gb.1 IAH shftovfl[0]
+ar.1 OII gb.1 IAI shftovfl[1]
+ar.1 OIJ gb.1 IAJ shftovfl[2]
+
+    -- AR to Address Multiply
+
+ar.1 OGA am.1 IAA artoam[0]
+ar.1 OGB am.1 IAB artoam[1]
+ar.1 OGC am.1 IAC artoam[2]
+ar.1 OGD am.1 IAD artoam[3]
+ar.1 OGE am.1 IAE artoam[4]
+ar.1 OGF am.1 IAF artoam[5]
+ar.1 OGG am.1 IAG artoam[6]
+ar.1 OGH am.1 IAH artoam[7]
+
+ar.1 OGI am.1 IAI artoam[8]
+ar.1 OGJ am.1 IAJ artoam[9]
+ar.1 OGK am.1 IAK artoam[10]
+ar.1 OGL am.1 IAL artoam[11]
+ar.1 OGM am.1 IAM artoam[12]
+ar.1 OGN am.1 IAN artoam[13]
+ar.1 OGO am.1 IAO artoam[14]
+ar.1 OGP am.1 IAP artoam[15]
+
+ar.1 OHA am.1 IBA artoam[16]
+ar.1 OHB am.1 IBB artoam[17]
+ar.1 OHC am.1 IBC artoam[18]
+ar.1 OHD am.1 IBD artoam[19]
+ar.1 OHE am.1 IBE artoam[20]
+ar.1 OHF am.1 IBF artoam[21]
+ar.1 OHG am.1 IBG artoam[22]
+ar.1 OHH am.1 IBH artoam[23]
+
+ar.1 OHI am.1 IBI artoam[24]
+ar.1 OHJ am.1 IBJ artoam[25]
+ar.1 OHK am.1 IBK artoam[26]
+ar.1 OHL am.1 IBL artoam[27]
+ar.1 OHM am.1 IBM artoam[28]
+ar.1 OHN am.1 IBN artoam[29]
+ar.1 OHO am.1 IBO artoam[30]
+ar.1 OHP am.1 IBP artoam[31]
+
+ -- IF P Reg to AM
+
+if.1 OCA am.1 ICA pregtoam[0]
+if.1 OCB am.1 ICB pregtoam[1]
+if.1 OCC am.1 ICC pregtoam[2]
+if.1 OCD am.1 ICD pregtoam[3]
+if.1 OCE am.1 ICE pregtoam[4]
+if.1 OCF am.1 ICF pregtoam[5]
+if.1 OCG am.1 ICG pregtoam[6]
+if.1 OCH am.1 ICH pregtoam[7]
+
+if.1 OCI am.1 ICI pregtoam[8]
+if.1 OCJ am.1 ICJ pregtoam[9]
+if.1 OCK am.1 ICK pregtoam[10]
+if.1 OCL am.1 ICL pregtoam[11]
+if.1 OCM am.1 ICM pregtoam[12]
+if.1 OCN am.1 ICN pregtoam[13]
+if.1 OCO am.1 ICO pregtoam[14]
+if.1 OCP am.1 ICP pregtoam[15]
+
+if.1 ODA am.1 IDA pregtoam[16]
+if.1 ODB am.1 IDB pregtoam[17]
+if.1 ODC am.1 IDC pregtoam[18]
+if.1 ODD am.1 IDD pregtoam[19]
+if.1 ODE am.1 IDE pregtoam[20]
+if.1 ODF am.1 IDF pregtoam[21]
+if.1 ODG am.1 IDG pregtoam[22]
+if.1 ODH am.1 IDH pregtoam[23]
+
+if.1 ODI am.1 IDI pregtoam[24]
+if.1 ODJ am.1 IDJ pregtoam[25]
+if.1 ODK am.1 IDK pregtoam[26]
+if.1 ODL am.1 IDL pregtoam[27]
+if.1 ODM am.1 IDM pregtoam[28]
+if.1 ODN am.1 IDN pregtoam[29]
+if.1 ODO am.1 IDO pregtoam[30]
+if.1 ODP am.1 IDP pregtoam[31]
+
+ -- AR Data to JB for fanout to IB
+
+ar.1 OEA jb.1 IAA arfanouttojb[0]
+ar.1 OEB jb.1 IAB arfanouttojb[1]
+ar.1 OEC jb.1 IAC arfanouttojb[2]
+ar.1 OED jb.1 IAD arfanouttojb[3]
+ar.1 OEE jb.1 IAE arfanouttojb[4]
+ar.1 OEF jb.1 IAF arfanouttojb[5]
+ar.1 OEG jb.1 IAG arfanouttojb[6]
+ar.1 OEH jb.1 IAH arfanouttojb[7]
+
+ar.1 OEI jb.1 IAI arfanouttojb[8]
+ar.1 OEJ jb.1 IAJ arfanouttojb[9]
+ar.1 OEK jb.1 IAK arfanouttojb[10]
+ar.1 OEL jb.1 IAL arfanouttojb[11]
+ar.1 OEM jb.1 IAM arfanouttojb[12]
+ar.1 OEN jb.1 IAN arfanouttojb[13]
+ar.1 OEO jb.1 IAO arfanouttojb[14]
+ar.1 OEP jb.1 IAP arfanouttojb[15]
+
+ar.1 OFA jb.1 IBA arfanouttojb[16]
+ar.1 OFB jb.1 IBB arfanouttojb[17]
+ar.1 OFC jb.1 IBC arfanouttojb[18]
+ar.1 OFD jb.1 IBD arfanouttojb[19]
+ar.1 OFE jb.1 IBE arfanouttojb[20]
+ar.1 OFF jb.1 IBF arfanouttojb[21]
+ar.1 OFG jb.1 IBG arfanouttojb[22]
+ar.1 OFH jb.1 IBH arfanouttojb[23]
+
+ar.1 OFI jb.1 IBI arfanouttojb[24]
+ar.1 OFJ jb.1 IBJ arfanouttojb[25]
+ar.1 OFK jb.1 IBK arfanouttojb[26]
+ar.1 OFL jb.1 IBL arfanouttojb[27]
+ar.1 OFM jb.1 IBM arfanouttojb[28]
+ar.1 OFN jb.1 IBN arfanouttojb[29]
+ar.1 OFO jb.1 IBO arfanouttojb[30]
+ar.1 OFP jb.1 IBP arfanouttojb[31]
+
+  -- JB relayed AR data to IF
+
+jb.1 OGA if.1 IAA artoifviajb[0]
+jb.1 OGB if.1 IAB artoifviajb[1]
+jb.1 OGC if.1 IAC artoifviajb[2]
+jb.1 OGD if.1 IAD artoifviajb[3]
+jb.1 OGE if.1 IAE artoifviajb[4]
+jb.1 OGF if.1 IAF artoifviajb[5]
+jb.1 OGG if.1 IAG artoifviajb[6]
+jb.1 OGH if.1 IAH artoifviajb[7]
+
+jb.1 OGI if.1 IAI artoifviajb[8]
+jb.1 OGJ if.1 IAJ artoifviajb[9]
+jb.1 OGK if.1 IAK artoifviajb[10]
+jb.1 OGL if.1 IAL artoifviajb[11]
+jb.1 OGM if.1 IAM artoifviajb[12]
+jb.1 OGN if.1 IAN artoifviajb[13]
+jb.1 OGO if.1 IAO artoifviajb[14]
+jb.1 OGP if.1 IAP artoifviajb[15]
+
+jb.1 OHA if.1 IBA artoifviajb[16]
+jb.1 OHB if.1 IBB artoifviajb[17]
+jb.1 OHC if.1 IBC artoifviajb[18]
+jb.1 OHD if.1 IBD artoifviajb[19]
+jb.1 OHE if.1 IBE artoifviajb[20]
+jb.1 OHF if.1 IBF artoifviajb[21]
+jb.1 OHG if.1 IBG artoifviajb[22]
+jb.1 OHH if.1 IBH artoifviajb[23]
+
+jb.1 OHI if.1 IBI artoifviajb[24]
+jb.1 OHJ if.1 IBJ artoifviajb[25]
+jb.1 OHK if.1 IBK artoifviajb[26]
+jb.1 OHL if.1 IBL artoifviajb[27]
+jb.1 OHM if.1 IBM artoifviajb[28]
+jb.1 OHN if.1 IBN artoifviajb[29]
+jb.1 OHO if.1 IBO artoifviajb[30]
+jb.1 OHP if.1 IBP artoifviajb[31]
+
+ -- IE Instruction Buffer to JA
+
+ie.1 OAA ja.1 IAA ibufftoja[0]
+ie.1 OAB ja.1 IAB ibufftoja[1]
+ie.1 OAC ja.1 IAC ibufftoja[2]
+ie.1 OAD ja.1 IAD ibufftoja[3]
+ie.1 OAE ja.1 IAE ibufftoja[4]
+ie.1 OAF ja.1 IAF ibufftoja[5]
+ie.1 OAG ja.1 IAG ibufftoja[6]
+ie.1 OAH ja.1 IAH ibufftoja[7]
+
+ie.1 OAI ja.1 IAI ibufftoja[8]
+ie.1 OAJ ja.1 IAJ ibufftoja[9]
+ie.1 OAK ja.1 IAK ibufftoja[10]
+ie.1 OAL ja.1 IAL ibufftoja[11]
+ie.1 OAM ja.1 IAM ibufftoja[12]
+ie.1 OAN ja.1 IAN ibufftoja[13]
+ie.1 OAO ja.1 IAO ibufftoja[14]
+ie.1 OAP ja.1 IAP ibufftoja[15]
+
+ie.1 OBA ja.1 IBA ibufftoja[16]
+ie.1 OBB ja.1 IBB ibufftoja[17]
+ie.1 OBC ja.1 IBC ibufftoja[18]
+ie.1 OBD ja.1 IBD ibufftoja[19]
+ie.1 OBE ja.1 IBE ibufftoja[20]
+ie.1 OBF ja.1 IBF ibufftoja[21]
+ie.1 OBG ja.1 IBG ibufftoja[22]
+ie.1 OBH ja.1 IBH ibufftoja[23]
+
+ie.1 OBI ja.1 IBI ibufftoja[24]
+ie.1 OBJ ja.1 IBJ ibufftoja[25]
+ie.1 OBK ja.1 IBK ibufftoja[26]
+ie.1 OBL ja.1 IBL ibufftoja[27]
+ie.1 OBM ja.1 IBM ibufftoja[28]
+ie.1 OBN ja.1 IBN ibufftoja[29]
+ie.1 OBO ja.1 IBO ibufftoja[30]
+ie.1 OBP ja.1 IBP ibufftoja[31]
+
+ie.1 OCA ja.1 ICA ibufftoja[32]
+ie.1 OCB ja.1 ICB ibufftoja[33]
+ie.1 OCC ja.1 ICC ibufftoja[34]
+ie.1 OCD ja.1 ICD ibufftoja[35]
+ie.1 OCE ja.1 ICE ibufftoja[36]
+ie.1 OCF ja.1 ICF ibufftoja[37]
+ie.1 OCG ja.1 ICG ibufftoja[38]
+ie.1 OCH ja.1 ICH ibufftoja[39]
+
+ie.1 OCI ja.1 ICI ibufftoja[40]
+ie.1 OCJ ja.1 ICJ ibufftoja[41]
+ie.1 OCK ja.1 ICK ibufftoja[42]
+ie.1 OCL ja.1 ICL ibufftoja[43]
+ie.1 OCM ja.1 ICM ibufftoja[44]
+ie.1 OCN ja.1 ICN ibufftoja[45]
+ie.1 OCO ja.1 ICO ibufftoja[46]
+ie.1 OCP ja.1 ICP ibufftoja[479
+
+ie.1 ODA ja.1 IDA ibufftoja[48]
+ie.1 ODB ja.1 IDB ibufftoja[49]
+ie.1 ODC ja.1 IDC ibufftoja[50]
+ie.1 ODD ja.1 IDD ibufftoja[51]
+ie.1 ODE ja.1 IDE ibufftoja[52]
+ie.1 ODF ja.1 IDF ibufftoja[53]
+ie.1 ODG ja.1 IDG ibufftoja[54]
+ie.1 ODH ja.1 IDH ibufftoja[55]
+
+ie.1 ODI ja.1 IDI ibufftoja[56]
+ie.1 ODJ ja.1 IDJ ibufftoja[57]
+ie.1 ODK ja.1 IDK ibufftoja[58]
+ie.1 ODL ja.1 IDL ibufftoja[59]
+ie.1 ODM ja.1 IDM ibufftoja[60]
+ie.1 ODN ja.1 IDN ibufftoja[61]
+ie.1 ODO ja.1 IDO ibufftoja[62]
+ie.1 ODP ja.1 IDP ibufftoja[63]
+
+ -- Ja Inst Parcel to IE
+
+ja.1 OAA ie.1 IEF instpartoie[0]
+ja.1 OAB ie.1 IFA instpartoie[1]
+ja.1 OAC ie.1 IFB instpartoie[2]
+ja.1 OAD ie.1 IFC instpartoie[3]
+ja.1 OAE ie.1 IFD instpartoie[4]
+ja.1 OAF ie.1 IFE instpartoie[5]
+ja.1 OAG ie.1 IEA instpartoie[6]
+ja.1 OAH ie.1 IEB instpartoie[70
+ja.1 OAI ie.1 IEC instpartoie[8]
+ja.1 OAJ ie.1 IED instpartoie[9]
+ja.1 OAK ie.1 IEE instpartoie[10]
+ja.1 OAL ie.1 IEF instpartoie[11]
+ja.1 OAM ie.1 IEG instpartoie[12]
+ja.1 OAN ie.1 IEH instpartoie[13]
+ja.1 OAO ie.1 IEI instpartoie[14]
+ja.1 OAP ie.1 IEJ instpartoie[15]
+
+
+ -- Ja Inst Parcel to jb
+
+ja.1 OBA jb.1 ICA instpartojb[0]
+ja.1 OBB jb.1 ICB instpartojb[1]
+ja.1 OBC jb.1 ICC instpartojb[2]
+ja.1 OBD jb.1 ICD instpartojb[3]
+ja.1 OBE jb.1 ICE instpartojb[4]
+ja.1 OBF jb.1 ICF instpartojb[5]
+ja.1 OBG jb.1 ICG instpartojb[6]
+ja.1 OBH jb.1 ICH instpartojb[7]
+
+ja.1 OBI jb.1 ICI instpartojb[8]
+ja.1 OBJ jb.1 ICJ instpartojb[9]
+ja.1 OBK jb.1 ICK instpartojb[10]
+ja.1 OBL jb.1 ICL instpartojb[11]
+ja.1 OBM jb.1 ICM instpartojb[12]
+ja.1 OBN jb.1 ICN instpartojb[13]
+ja.1 OBO jb.1 ICO instpartojb[14]
+ja.1 OBP jb.1 ICP instpartojb[15]
+
+  -- Go Issue Pair To IB
+
+ja.1 ODA if.1 IJA goissuetoib[0]
+ja.1 ODF if.1 IJB goissuetoib[1]
+
+  -- Go Issue Pair To JB
+
+ja.1 ODB jb.1 IEA goissuetojb[0]
+ja.1 ODG jb.1 IEB goissuetojb[1]
+
+  -- Go Issue Pair To JC1
+
+ja.1 ODC jc.1 IAA goissuetojc1[0]
+ja.1 ODH jc.1 IAB goissuetojc1[1]
+
+  -- Go Issue Pair To JC2
+
+ja.1 ODD jc.2 IAA goissuetojc2[0]
+ja.1 ODI jc.2 IAB goissuetojc2[1]
+
+  -- Go Issue Pair To WA
+
+ja.1 ODE wa.1 IHA goissuetowa[0]
+ja.1 ODJ wa.1 IHB goissuetowa[1]
+
+  -- Controls of EA for mode change (35 foreground instr)
+  --  K 2^0, K 2^1, Enable Error Mode Change
+
+ja.1 OXA ea.1 IHA modechcnt[0]
+ja.1 OXB ea.1 IHB modechcnt[1]
+ja.1 OXC ea.1 IHC modechcnt[2]
+
+  -- Enter AR Adress from JB to WA
+
+jb.1 ORA wa.1 IJA enteradtowa[0]
+jb.1 ORB wa.1 IJB entervrtowa[0]
+jb.1 ORC wa.1 IJC enterardtowa[0]
+jb.1 ORD wa.1 IJD advlmadrtowa[0]
+
+  -- Parcel from JA to WA
+
+ja.1 OCA wa.1 IGA parceltowa[0]
+ja.1 OCB wa.1 IGB parceltowa[1]
+ja.1 OCC wa.1 IGC parceltowa[2]
+ja.1 OCD wa.1 IGD parceltowa[3]
+ja.1 OCE wa.1 IGE parceltowa[4]
+ja.1 OCF wa.1 IGF parceltowa[5]
+ja.1 OCG wa.1 IGG parceltowa[6]
+ja.1 OCH wa.1 IGH parceltowa[7]
+
+ja.1 OCI wa.1 IGI parceltowa[8]
+ja.1 OCJ wa.1 IGJ parceltowa[9]
+ja.1 OCK wa.1 IGK parceltowa[10]
+ja.1 OCL wa.1 IGL parceltowa[11]
+ja.1 OCM wa.1 IGM parceltowa[12]
+ja.1 OCN wa.1 IGN parceltowa[13]
+ja.1 OCO wa.1 IGO parceltowa[14]
+ja.1 OCP wa.1 IGP parceltowa[15]
+
+
+  -- Ja A Reg Entry Code to AR
+  -- OEA-OEC = A Register
+  -- OED-OEF = 0 - No Sel, 1 - L data 2-LM 3- S Reg 4 - Constant
+  -- 5 - AM data 6- Adder Data 7 Not Used
+
+ja.1 OEA ar.1 IJA aregsrctoar[0]
+ja.1 OEB ar.1 IJB aregsrctoar[1]
+ja.1 OEC ar.1 IJC aregsrctoar[2]
+ja.1 OED ar.1 IJD aregsrctoar[3]
+ja.1 OEE ar.1 IJE aregsrctoar[4]
+ja.1 OEF ar.1 IJF aregsrctoar[5]
+
+  -- JA S Reg Entry Code to VR's fanout on AM
+  -- OFA-C = S Regiser
+  -- OFD-F = 0 - None  1- Constant 2-LM  3- CM  4-Floating Add, 
+  -- 5 - Floating Mul 6 - Vector Logical  7 - Scalar Integer or Logical
+
+
+ja.1 OFA am.1 IGA sregsrctoam[0]
+ja.1 OFB am.1 IGB sregsrctoam[1]
+ja.1 OFC am.1 IGC sregsrctoam[2]
+ja.1 OFD am.1 IGD sregsrctoam[3]
+ja.1 OFE am.1 IGE sregsrctoam[4]
+ja.1 OFF am.1 IGF sregsrctoam[5]
+
+      -- ja instruction parcel (to lights)
+
+ja.1 OWA ip.1 IAA indlightip[0]
+ja.1 OWB ip.1 IAB indlightip[1]
+ja.1 OWC ip.1 IAC indlightip[2]
+ja.1 OWD ip.1 IAD indlightip[3]
+ja.1 OWE ip.1 IAE indlightip[4]
+ja.1 OWF ip.1 IAF indlightip[5]
+ja.1 OWG ip.1 IAG indlightip[6]
+ja.1 OWH ip.1 IAH indlightip[7]
+
+ja.1 OWI ip.1 IAI indlightip[8]
+ja.1 OWJ ip.1 IAJ indlightip[9]
+ja.1 OWK ip.1 IAK indlightip[10]
+ja.1 OWL ip.1 IAL indlightip[11]
+ja.1 OWM ip.1 IAM indlightip[12]
+ja.1 OWN ip.1 IAN indlightip[13]
+ja.1 OWO ip.1 IAO indlightip[14]
+ja.1 OWP ip.1 IAP indlightip[15]
+
+      -- ja controls to indicator lights
+
+ja.1 OWQ ip.1 IBA  iladvanceque[0]
+ja.1 OWR ip.1 IBB  ilgoissue[0]
+ja.1 OWS ip.1 IBC  ilrankcfull[0]
+ja.1 OWT ip.1 IBD  ilrankefull[0]
+ja.1 OWU ip.1 IBE  ilgateparcel[0]
+ja.1 OWV ip.1 IBF  ilgateparcel[1]
+ja.1 OWW ip.1 IBG  ilgateparcel[2]
+ja.1 OWX ip.1 IBH  ilgateparcel[3]
+
+       - Scalar destcode from am tovrs
+
+am.1 OIH vr.0 ITA scaldesttovr1[0]
+am.1 OII vr.0 ITB scaldesttovr1[1]
+am.1 OIJ vr.0 ITC scaldesttovr1[2]
+am.1 OIK vr.0 ITD scaldesttovr1[3]
+am.1 OIL vr.0 ITE scaldesttovr1[4]
+am.1 OIM vr.0 ITF scaldesttovr1[5]
+
+am.1 OJH vr.1 ITA scaldesttovr2[0]
+am.1 OJI vr.1 ITB scaldesttovr2[1]
+am.1 OJJ vr.1 ITC scaldesttovr2[2]
+am.1 OJK vr.1 ITD scaldesttovr2[3]
+am.1 OJL vr.1 ITE scaldesttovr2[4]
+am.1 OJM vr.1 ITF scaldesttovr2[5]
+
+am.1 OKH vr.2 ITA scaldesttovr3[0]
+am.1 OKI vr.2 ITB scaldesttovr3[1]
+am.1 OKJ vr.2 ITC scaldesttovr3[2]
+am.1 OKK vr.2 ITD scaldesttovr3[3]
+am.1 OKL vr.2 ITE scaldesttovr3[4]
+am.1 OKM vr.2 ITF scaldesttovr3[5]
+
+am.1 OLH vr.3 ITA scaldesttovr4[0]
+am.1 OLI vr.3 ITB scaldesttovr4[1]
+am.1 OLJ vr.3 ITC scaldesttovr4[2]
+am.1 OLK vr.3 ITD scaldesttovr4[3]
+am.1 OLL vr.3 ITE scaldesttovr4[4]
+am.1 OLM vr.3 ITF scaldesttovr4[5]
+
+am.1 OMH vr.4 ITA scaldesttovr5[0]
+am.1 OMI vr.4 ITB scaldesttovr5[1]
+am.1 OMJ vr.4 ITC scaldesttovr5[2]
+am.1 OMK vr.4 ITD scaldesttovr5[3]
+am.1 OML vr.4 ITE scaldesttovr5[4]
+am.1 OMM vr.4 ITF scaldesttovr5[5]
+
+am.1 ONH vr.5 ITA scaldesttovr6[0]
+am.1 ONI vr.5 ITB scaldesttovr6[1]
+am.1 ONJ vr.5 ITC scaldesttovr6[2]
+am.1 ONK vr.5 ITD scaldesttovr6[3]
+am.1 ONL vr.5 ITE scaldesttovr6[4]
+am.1 ONM vr.5 ITF scaldesttovr6[5]
+
+am.1 OOH vr.6 ITA scaldesttovr7[0]
+am.1 OOI vr.6 ITB scaldesttovr7[1]
+am.1 OOJ vr.6 ITC scaldesttovr7[2]
+am.1 OOK vr.6 ITD scaldesttovr7[3]
+am.1 OOL vr.6 ITE scaldesttovr7[4]
+am.1 OOM vr.6 ITF scaldesttovr7[5]
+
+am.1 OPH vr.7 ITA scaldesttovr8[0]
+am.1 OPI vr.7 ITB scaldesttovr8[1]
+am.1 OPJ vr.7 ITC scaldesttovr8[2]
+am.1 OPK vr.7 ITD scaldesttovr8[3]
+am.1 OPL vr.7 ITE scaldesttovr8[4]
+am.1 OPM vr.7 ITF scaldesttovr8[5]
+
+--- Ja AR readout to AR
+
+ja.1 OGA ar.1 IIA arreadout[0]
+ja.1 OGB ar.1 IIB arreadout[1]
+ja.1 OGC ar.1 IIC arreadout[2]
+
+-- Ja VR src code to VR via AM
+
+ja.1 OHA am.1 IFA vectorcodeam[0]
+ja.1 OHB am.1 IFB vectorcodeam[1]
+ja.1 OHC am.1 IFC vectorcodeam[2]
+ja.1 OHD am.1 IFD vectorcodeam[3]
+ja.1 OHE am.1 IFE vectorcodeam[4]
+ja.1 OHF am.1 IFF vectorcodeam[5]
+ja.1 OHG am.1 IFG vectorcodeam[6]
+
+  VR src code fanout from AM to VR's
+
+am.1 OIA vr.0 ISA vector1srccode[0]
+am.1 OIB vr.0 ISB vector1srccode[1]
+am.1 OIC vr.0 ISC vector1srccode[2]
+am.1 OID vr.0 ISD vector1srccode[3]
+am.1 OIE vr.0 ISE vector1srccode[4]
+am.1 OIF vr.0 ISF vector1srccode[5]
+am.1 OIG vr.0 ISG vector1srccode[6]
+
+am.1 OJA vr.1 ISA vector2srccode[0]
+am.1 OJB vr.1 ISB vector2srccode[1]
+am.1 OJC vr.1 ISC vector2srccode[2]
+am.1 OJD vr.1 ISD vector2srccode[3]
+am.1 OJE vr.1 ISE vector2srccode[4]
+am.1 OJF vr.1 ISF vector2srccode[5]
+am.1 OJG vr.1 ISG vector2srccode[6]
+
+am.1 OKA vr.2 ISA vector3srccode[0]
+am.1 OKB vr.2 ISB vector3srccode[1]
+am.1 OKC vr.2 ISC vector3srccode[2]
+am.1 OKD vr.2 ISD vector3srccode[3]
+am.1 OKE vr.2 ISE vector3srccode[4]
+am.1 OKF vr.2 ISF vector3srccode[5]
+am.1 OKG vr.2 ISG vector3srccode[6]
+
+am.1 OLA vr.3 ISA vector4srccode[0]
+am.1 OLB vr.3 ISB vector4srccode[1]
+am.1 OLC vr.3 ISC vector4srccode[2]
+am.1 OLD vr.3 ISD vector4srccode[3]
+am.1 OLE vr.3 ISE vector4srccode[4]
+am.1 OLF vr.3 ISF vector4srccode[5]
+am.1 OLG vr.3 ISG vector4srccode[6]
+
+am.1 OMA vr.4 ISA vector5srccode[0]
+am.1 OMB vr.4 ISB vector5srccode[1]
+am.1 OMC vr.4 ISC vector5srccode[2]
+am.1 OMD vr.4 ISD vector5srccode[3]
+am.1 OME vr.4 ISE vector5srccode[4]
+am.1 OMF vr.4 ISF vector5srccode[5]
+am.1 OMG vr.4 ISG vector5srccode[6]
+
+am.1 ONA vr.5 ISA vector6srccode[0]
+am.1 ONB vr.5 ISB vector6srccode[1]
+am.1 ONC vr.5 ISC vector6srccode[2]
+am.1 OND vr.5 ISD vector6srccode[3]
+am.1 ONE vr.5 ISE vector6srccode[4]
+am.1 ONF vr.5 ISF vector6srccode[5]
+am.1 ONG vr.5 ISG vector6srccode[6]
+
+am.1 OOA vr.6 ISA vector7srccode[0]
+am.1 OOB vr.6 ISB vector7srccode[1]
+am.1 OOC vr.6 ISC vector7srccode[2]
+am.1 OOD vr.6 ISD vector7srccode[3]
+am.1 OOE vr.6 ISE vector7srccode[4]
+am.1 OOF vr.6 ISF vector7srccode[5]
+am.1 OOG vr.6 ISG vector7srccode[6]
+
+am.1 OPA vr.7 ISA vector8srccode[0]
+am.1 OPB vr.7 ISB vector8srccode[1]
+am.1 OPC vr.7 ISC vector8srccode[2]
+am.1 OPD vr.7 ISD vector8srccode[3]
+am.1 OPE vr.7 ISE vector8srccode[4]
+am.1 OPF vr.7 ISF vector8srccode[5]
+am.1 OPG vr.7 ISG vector8srccode[6]
+
+
+ -- Ja Advance Queue to JB and IF
+
+ja.1 OIA jb.1 IFA advanceqjb[0]
+ja.1 OIB if.1 IJC advanceqif[0]
+
+ -- Ja Subtract, Select Adder to GA?
+
+ja.1 OJA ga.1 IQA  subtractga[0]
+ja.1 OJB ga.1 IPB  adderselga[0]   
+ja.1 OJC ar.1 ILA  emterltoar[0]     -- enter l
+ja.1 OJD am.1 IHA  goaddrmul[0]       -- go address mul
+
+ -- ja resume to IE
+
+ja.1 OKA ie.1 IAA resumetoie[0]
+
+-- Begin Vector to JC's
+
+ja.1 OLA jc.1 IBA begvecttojc1[0]
+ja.1 OLB jc.1 IBB begvecttojc1[1]
+ja.1 OLC jc.1 IBC begvecttojc1[2]
+ja.1 OLD jc.1 IBD begvecttojc1[3]
+ja.1 OLE jc.2 IBA begvecttojc1[4]
+ja.1 OLF jc.2 IBB begvecttojc1[5]
+ja.1 OLG jc.2 IBC begvecttojc1[6]
+ja.1 OLH jc.2 IBD begvecttojc1[7]
+
+ja.1 OZA jc.1 IBE jclocal[0]
+ja.1 OZB jc.2 IBE jclocal[1]
+
+ -- ja local memory controls
+
+ja.1 ONA wa.1 IIA constreadwa[0]
+ja.1 ONB wa.1 IIB constwritewa[0]
+ 
+  -- ja vector mode to JC1 and JC2 (compress iota enable?)
+
+ja.1 OMA jc.1 ??? vectormode[0]
+ja.1 OMB jc.2 ??? vectormode[1]
+
+  -- ja jk data to gb (shift count)
+
+ja.1 OOA gb.1 INA jagbcnt[0]
+ja.1 OOB gb.1 INB jagbcnt[1]
+ja.1 OOC gb.1 INC jagbcnt[2]
+ja.1 OOD gb.1 IND jagbcnt[3]
+ja.1 OOE gb.1 INE jagbcnt[4]
+ja.1 OOF gb.1 INF jagbcnt[5]
+
+ --  ja Scalar Integer Control to GA (Gobit, F 2^0, F 2^1, K 2^0)
+
+ja.1 OPA ga.1 IPA jagacnt[0]
+ja.1 OPB ga.1 IPB jagacnt[1]
+ja.1 OPC ga.1 IPC jagacnt[2]
+ja.1 OPD ga.1 IPD jagacnt[3]
+
+  -- ja Scalar shift control to GB (Go Shift, Right Shift, Ak shift)
+
+ja.1 OQA gb.1 IOA shftcontogb[0]
+ja.1 OQB gb.1 IOB shftcontogb[1]
+ja.1 OQC gb.1 IOC shftcontogb[2]
+
+  -- ja vector add control to VA (Go Vector Add, F 2^0, F 2^1, Go Compress iota)
+
+ja.1 ORA va.1 IRA javacntr[0]
+ja.1 ORB va.1 IRB javacntr[1]
+ja.1 ORC va.1 IRC javacntr[2]
+ja.1 ORD va.1 IRD javacntr[3]
+
+  -- ja vector shift, pop count, lz control to VB ( Go Shift, F 2^0, F 2^1, Go Pop Cnt-LZ, K 2^0 
+
+ja.1 OSA vb.1 ISA javbcntr[0]
+ja.1 OSB vb.1 ISB javbcntr[1]
+ja.1 OSC vb.1 ISC javbcntr[2]
+ja.1 OSD vb.1 ISD javbcntr[3]
+ja.1 OSE vb.1 ISE javbcntr[4]
+
+  -- ja vector mask, rtc, and vector logical control to VL 
+  --   Go Mask, Enter M from Sj, M or RTC to SI, Go Vector, F 2^0, F 2^1, F 2^2
+
+ja.1 OTA vl.1 IIA javlcnt[0]
+ja.1 OTB vl.1 IIB javlcnt[1]
+ja.1 OTC vl.1 IIC javlcnt[2]
+ja.1 OTD vl.1 IID javlcnt[3]
+ja.1 OTE vl.1 IIE javlcnt[4]
+ja.1 OTF vl.1 IIF javlcnt[5]
+ja.1 OTG vl.1 IIG javlcnt[6]
+
+  -- ja floating add control to FA
+  -- Enable Vector Add, Enable Scalar Add, F 2^0, F 2^1, F 2^2
+
+ja.1 OUA fa.1 IJA jafacnt[0]
+ja.1 OUB fa.1 IJB jafacnt[1]
+ja.1 OUC fa.1 IJC jafacnt[2]
+ja.1 OUD fa.1 IJD jafacnt[3]
+ja.1 OUE fa.1 IJE jafacnt[4]
+
+  -- ja floating multiply control to ME
+  -- Go Scalar Multiply, Go Scalar Recip Sq Rt, Go Vector Mult, Go Vector Recip
+  --  F 2^0, F 2^1
+
+ja.1 OVA me.1 IVA jamecnt[0]
+ja.1 OVB me.1 IVB jamecnt[1]
+ja.1 OVC me.1 IVC jamecnt[2]
+ja.1 OVD me.1 IVD jamecnt[3]
+ja.1 OVE me.1 IVE jamecnt[4]
+ja.1 OVF me.1 IVF jamecnt[5]
+
+ -- jc1 vector releases to ja
+
+jc.1 OQA ja.1 IEA vec0rel[0]
+jc.1 OQB ja.1 IEB vec1rel[0]
+jc.1 OQC ja.1 IEC vec2rel[0]
+jc.1 OQD ja.1 IED vec3rel[0]
+
+ -- jc2 vector releases to ja
+
+jc.2 OQA ja.1 IEE vec4rel[0]
+jc.2 OQB ja.1 IEF vec5rel[0]
+jc.2 OQC ja.1 IEG vec6rel[0]
+jc.2 OQD ja.1 IEH vec7rel[0]
+
+  -- Dead Starts from EA
+
+ra.1 OJA me.1 I?? rafourtyeight
+ra.1 ONA ea.1 IBA raparityerror
+fc.1 OEA ea.1 IBB fladdrangeerr
+ea.1 OJA jc.1 IGA deadstartjc1
+ea.1 OJB jc.2 IGA deadstartjc2
+ea.1 OJC jb.1 IHA deadstartjb
+ea.1 OJG ra.1 IJA deadstartra
+ea.1 OLA me.1 IUB enablefmrangeerr
+ea.1 OLB fa.1 ILA enablefarangeerr
+me.1 OLA ea.1 IIA merangeerror
+         ra.1 IJA validsqrt
+ea.1 OPA ra.1 ILA ludatain[0]
+ea.1 OPB ra.1 ILB ludatain[1]
+ea.1 OPC ra.1 ILC ludatain[2]
+ea.1 OPD ra.1 ILD ludatain[3]
+ea.1 OPE ra.1 ILE ludatain[4]
+ea.1 OPF ra.1 ILF ludatain[5]
+ea.1 OPG ra.1 ILG ludatain[6]
+ea.1 OPH ra.1 ILH ludatain[7]
+ea.1 OQA ra.1 IGA luoddevenadd
+
+  -- memory arival code from TD to JC1
+
+td.1 OKA jc.1 IEA memarivtojc1[0]
+td.1 OKB jc.1 IEB memarivtojc1[1]
+td.1 OKC jc.1 IEC memarivtojc1[2]
+td.1 OKD jc.1 IED memarivtojc1[3]
+td.1 OKE jc.1 IEE memarivtojc1[4]
+
+  -- memory arival code from TD to JC2
+
+td.1 OLA jc.2 IEA memarivtojc2[0]
+td.1 OLB jc.2 IEB memarivtojc2[1]
+td.1 OLC jc.2 IEC memarivtojc2[2]
+td.1 OLD jc.2 IED memarivtojc2[3]
+td.1 OLD jc.2 IEE memarivtojc2[4]
+
+  -- enable iota advance from GA to JC
+
+va.1 OFA jc.1 IHA enableiota[0]
+va.1 OFB jc.2 IHA enableiota[1]
+
+  -- release VI to jb 
+
+va.1 OEA jb.1 IJA relvitojb[0]
+
+  -- release iota from GA to JC
+
+va.1 OEB jc.1 IHB reliota[0]
+va.1 OEC jc.2 IHB reliota[1]
+
+  -- vector length from AR to AM
+
+ar.1 OJA am.1 IEA vectlentoam[0]
+ar.1 OJB am.1 IEB vectlentoam[1]
+ar.1 OJC am.1 IEC vectlentoam[2]
+ar.1 OJD am.1 IED vectlentoam[3]
+ar.1 OJE am.1 IEE vectlentoam[4]
+ar.1 OJF am.1 IEF vectlentoam[5]
+
+  -- vector length from AM to ib
+
+am.1 OEA ib.1 IFA vectlentoib[0]
+am.1 OEB ib.1 IFB vectlentoib[1]
+am.1 OEC ib.1 IFC vectlentoib[2]
+am.1 OED ib.1 IFD vectlentoib[3]
+am.1 OEE ib.1 IFE vectlentoib[4]
+am.1 OEF ib.1 IFF vectlentoib[5]
+
+  -- vector length from AM to jb
+
+am.1 OFA jb.1 IDA vectlentojb[0]
+am.1 OFB jb.1 IDB vectlentojb[1]
+am.1 OFC jb.1 IDC vectlentojb[2]
+am.1 OFD jb.1 IDD vectlentojb[3]
+am.1 OFE jb.1 IDE vectlentojb[4]
+am.1 OFF jb.1 IDF vectlentojb[5]
+
+
+
+  -- vector length from AM to jc1
+
+am.1 OGA jc.1 IFA vectlentojc1[0]
+am.1 OGB jc.1 IFB vectlentojc1[1]
+am.1 OGC jc.1 IFC vectlentojc1[2]
+am.1 OGD jc.1 IFD vectlentojc1[3]
+am.1 OGE jc.1 IFE vectlentojc1[4]
+am.1 OGF jc.1 IFF vectlentojc1[5]
+
+  -- vector length from AM to jc2
+
+am.1 OHA jc.2 IFA vectlentojc2[0]
+am.1 OHB jc.2 IFB vectlentojc2[1]
+am.1 OHC jc.2 IFC vectlentojc2[2]
+am.1 OHD jc.2 IFD vectlentojc2[3]
+am.1 OHE jc.2 IFE vectlentojc2[4]
+am.1 OHF jc.2 IFF vectlentojc2[5]
+
+ -- hold advance from IF to jc
+
+if.1 OMA jc.1 ICB holdadvjc[0]
+if.1 OMB jc.2 ICB holdadvjc[1]
+
+ -- memory backup from tf to ib,ja,jc1jc2
+
+tf.1 OHA ib.1     membackup0[0]
+tf.1 OHB ja.1     membackup1[0]
+tf.1 OHC jc.1 ICA membackup2[0]
+tf.1 OHD jc.2 ICA membackup3[0]
+
+ -- enable reference from ja to jc1
+
+
+ -- phase signals from jb to common memory
+
+jb.1 OJA td.1 qb.1 phasejbtocm[0]
+jb.1 OJB td.1 qb.2 phasejbtocm[1]
+jb.1 OJC td.1 qb.3 phasejbtocm[2]
+jb.1 OJD td.1 qb.4 phasejbtocm[3]
+jb.1 OJE jb.2         UNUSED -- to next jb 
+
+ -- phase signals from jb to t_ modules
+
+jb.1 OJF ta.1      phasejbtotm[0]
+jb.1 OJG tb.1 IKD  phasejbtotm[1]
+jb.1 OJH tc.1      phasejbtotm[2]
+jb.1 OJI tf.1 IKE  phasejbtotm[3]
+jb.1 OJJ qa.1 IGB  phasejbtotm[4]
+jb.1 OJK if.1      phasejbtotm[5]
+jb.1 OJL as.1 IPA  phasejbtoas[0]
+
+  -- IE data ready to JA
+
+ie.1 OJA ja.1 IKA datareadyja[0]
+
+  -- IE controls to  IF
+
+ie.1 OJB if.1 IHA  
+ie.1 OJC if.1 IHB
+ie.1 OJD if.1 IHC
+
+ -- EA module external data to IF
+
+ea.1 OHA if.1 ICA eadatatoif[0]
+ea.1 OHB if.1 ICB eadatatoif[1]
+ea.1 OHC if.1 ICC eadatatoif[2]
+ea.1 OHD if.1 ICD eadatatoif[3]
+ea.1 OHE if.1 ICE eadatatoif[4]
+ea.1 OHF if.1 ICF eadatatoif[5]
+ea.1 OHG if.1 ICG eadatatoif[6]
+ea.1 OHH if.1 ICH eadatatoif[7]
+
+ea.1 OHI if.1 ICI eadatatoif[8]
+ea.1 OHJ if.1 ICJ eadatatoif[9]
+ea.1 OHK if.1 ICK eadatatoif[10]
+ea.1 OHL if.1 ICL eadatatoif[11]
+ea.1 OHM if.1 ICM eadatatoif[12]
+ea.1 OHN if.1 ICN eadatatoif[13]
+ea.1 OHO if.1 ICO eadatatoif[14]
+ea.1 OHP if.1 ICP eadatatoif[15]
+
+ea.1 OIA if.1 IDA eadatatoif[16]
+ea.1 OIB if.1 IDB eadatatoif[17]
+ea.1 OIC if.1 IDC eadatatoif[18]
+ea.1 OID if.1 IDD eadatatoif[19]
+ea.1 OIE if.1 IDE eadatatoif[20]
+ea.1 OIF if.1 IDF eadatatoif[21]
+ea.1 OIG if.1 IDG eadatatoif[22]
+ea.1 OIH if.1 IDH eadatatoif[23]
+
+ea.1 OII if.1 IDI eadatatoif[24]
+ea.1 OIJ if.1 IDJ eadatatoif[25]
+ea.1 OIK if.1 IDK eadatatoif[26]
+ea.1 OIL if.1 IDL eadatatoif[27]
+ea.1 OIM if.1 IDM eadatatoif[28]
+ea.1 OIN if.1 IDN eadatatoif[29]
+ea.1 OIO if.1 IDO eadatatoif[30]
+ea.1 OIP if.1 IDP eadatatoif[31]
+
+  -- ga results to vr
+
+ga.1 OAA vr.0 IIA gatovr[0] 
+ga.1 OAB vr.0 IIB gatovr[1] 
+ga.1 OAC vr.0 IIC gatovr[2] 
+ga.1 OAD vr.0 IID gatovr[3] 
+ga.1 OAE vr.0 IIE gatovr[4] 
+ga.1 OAF vr.0 IIF gatovr[5] 
+ga.1 OAG vr.0 IIG gatovr[6] 
+ga.1 OAH vr.0 IIH gatovr[7] 
+			    
+ga.1 OAI vr.1 IIA gatovr[8] 
+ga.1 OAJ vr.1 IIB gatovr[9] 
+ga.1 OAK vr.1 IIC gatovr[10]
+ga.1 OAL vr.1 IID gatovr[11]
+ga.1 OAM vr.1 IIE gatovr[12]
+ga.1 OAN vr.1 IIF gatovr[13]
+ga.1 OAO vr.1 IIG gatovr[14]
+ga.1 OAP vr.1 IIH gatovr[15]
+				
+ga.1 OBA vr.2 IIA gatovr[16]
+ga.1 OBB vr.2 IIB gatovr[17]
+ga.1 OBC vr.2 IIC gatovr[18]
+ga.1 OBD vr.2 IID gatovr[19]
+ga.1 OBE vr.2 IIE gatovr[20]
+ga.1 OBF vr.2 IIF gatovr[21]
+ga.1 OBG vr.2 IIG gatovr[22]
+ga.1 OBH vr.2 IIH gatovr[23]
+			    
+ga.1 OBI vr.3 IIA gatovr[24]
+ga.1 OBJ vr.3 IIB gatovr[25]
+ga.1 OBK vr.3 IIC gatovr[26]
+ga.1 OBL vr.3 IID gatovr[27]
+ga.1 OBM vr.3 IIE gatovr[28]
+ga.1 OBN vr.3 IIF gatovr[29]
+ga.1 OBO vr.3 IIG gatovr[30]
+ga.1 OBP vr.3 IIH gatovr[31]
+			    
+ga.1 OCA vr.4 IIA gatovr[32]
+ga.1 OCB vr.4 IIB gatovr[33]
+ga.1 OCC vr.4 IIC gatovr[34]
+ga.1 OCD vr.4 IID gatovr[35]
+ga.1 OCE vr.4 IIE gatovr[36]
+ga.1 OCF vr.4 IIF gatovr[37]
+ga.1 OCG vr.4 IIG gatovr[38]
+ga.1 OCH vr.4 IIH gatovr[39]
+			    
+ga.1 OCI vr.5 IIA gatovr[40]
+ga.1 OCJ vr.5 IIB gatovr[41]
+ga.1 OCK vr.5 IIC gatovr[42]
+ga.1 OCL vr.5 IID gatovr[43]
+ga.1 OCM vr.5 IIE gatovr[44]
+ga.1 OCN vr.5 IIF gatovr[45]
+ga.1 OCO vr.5 IIG gatovr[46]
+ga.1 OCP vr.5 IIH gatovr[47]
+			    
+ga.1 ODA vr.6 IIA gatovr[48]
+ga.1 ODB vr.6 IIB gatovr[49]
+ga.1 ODC vr.6 IIC gatovr[50]
+ga.1 ODD vr.6 IID gatovr[51]
+ga.1 ODE vr.6 IIE gatovr[52]
+ga.1 ODF vr.6 IIF gatovr[53]
+ga.1 ODG vr.6 IIG gatovr[54]
+ga.1 ODH vr.6 IIH gatovr[55]
+			    
+ga.1 ODI vr.7 IIA gatovr[56]
+ga.1 ODJ vr.7 IIB gatovr[57]
+ga.1 ODK vr.7 IIC gatovr[58]
+ga.1 ODL vr.7 IID gatovr[59]
+ga.1 ODM vr.7 IIE gatovr[60]
+ga.1 ODN vr.7 IIF gatovr[61]
+ga.1 ODO vr.7 IIG gatovr[62]
+ga.1 ODP vr.7 IIH gatovr[63]
+
+  -- gb results to vr
+
+gb.1 OAA vr.0 IJA gbtovr[0] 
+gb.1 OAB vr.0 IJB gbtovr[1] 
+gb.1 OAC vr.0 IJC gbtovr[2] 
+gb.1 OAD vr.0 IJD gbtovr[3] 
+gb.1 OAE vr.0 IJE gbtovr[4] 
+gb.1 OAF vr.0 IJF gbtovr[5] 
+gb.1 OAG vr.0 IJG gbtovr[6] 
+gb.1 OAH vr.0 IJH gbtovr[7] 
+			    
+gb.1 OBA vr.1 IJA gbtovr[8] 
+gb.1 OBB vr.1 IJB gbtovr[9] 
+gb.1 OBC vr.1 IJC gbtovr[10]
+gb.1 OBD vr.1 IJD gbtovr[11]
+gb.1 OBE vr.1 IJE gbtovr[12]
+gb.1 OBF vr.1 IJF gbtovr[13]
+gb.1 OBG vr.1 IJG gbtovr[14]
+gb.1 OBH vr.1 IJH gbtovr[15]
+			    
+gb.1 OCA vr.2 IJA gbtovr[16]
+gb.1 OCB vr.2 IJB gbtovr[17]
+gb.1 OCC vr.2 IJC gbtovr[18]
+gb.1 OCD vr.2 IJD gbtovr[19]
+gb.1 OCE vr.2 IJE gbtovr[20]
+gb.1 OCF vr.2 IJF gbtovr[21]
+gb.1 OCG vr.2 IJG gbtovr[22]
+gb.1 OCH vr.2 IJH gbtovr[23]
+			    
+gb.1 ODA vr.3 IJA gbtovr[24]
+gb.1 ODB vr.3 IJB gbtovr[25]
+gb.1 ODC vr.3 IJC gbtovr[26]
+gb.1 ODD vr.3 IJD gbtovr[27]
+gb.1 ODE vr.3 IJE gbtovr[28]
+gb.1 ODF vr.3 IJF gbtovr[29]
+gb.1 ODG vr.3 IJG gbtovr[30]
+gb.1 ODH vr.3 IJH gbtovr[31]
+			    
+gb.1 OEA vr.4 IJA gbtovr[32]
+gb.1 OEB vr.4 IJB gbtovr[33]
+gb.1 OEC vr.4 IJC gbtovr[34]
+gb.1 OED vr.4 IJD gbtovr[35]
+gb.1 OEE vr.4 IJE gbtovr[36]
+gb.1 OEF vr.4 IJF gbtovr[37]
+gb.1 OEG vr.4 IJG gbtovr[38]
+gb.1 OEH vr.4 IJH gbtovr[39]
+			    
+gb.1 OFA vr.5 IJA gbtovr[40]
+gb.1 OFB vr.5 IJB gbtovr[41]
+gb.1 OFC vr.5 IJC gbtovr[42]
+gb.1 OFD vr.5 IJD gbtovr[43]
+gb.1 OFE vr.5 IJE gbtovr[44]
+gb.1 OFF vr.5 IJF gbtovr[45]
+gb.1 OFG vr.5 IJG gbtovr[46]
+gb.1 OFH vr.5 IJH gbtovr[47]
+			    
+gb.1 OGA vr.6 IJA gbtovr[48]
+gb.1 OGB vr.6 IJB gbtovr[49]
+gb.1 OGC vr.6 IJC gbtovr[50]
+gb.1 OGD vr.6 IJD gbtovr[51]
+gb.1 OGE vr.6 IJE gbtovr[52]
+gb.1 OGF vr.6 IJF gbtovr[53]
+gb.1 OGG vr.6 IJG gbtovr[54]
+gb.1 OGH vr.6 IJH gbtovr[55]
+			    
+gb.1 OHA vr.7 IJA gbtovr[56]
+gb.1 OHB vr.7 IJB gbtovr[57]
+gb.1 OHC vr.7 IJC gbtovr[58]
+gb.1 OHD vr.7 IJD gbtovr[59]
+gb.1 OHE vr.7 IJE gbtovr[60]
+gb.1 OHF vr.7 IJF gbtovr[61]
+gb.1 OHG vr.7 IJG gbtovr[62]
+gb.1 OHH vr.7 IJH gbtovr[63]
+
+ -- TD common memory to VR
+
+td.1 OEA vr.0 IQA commemtovr[0]
+td.1 OEB vr.0 IQB commemtovr[1]
+td.1 OEC vr.0 IQC commemtovr[2]
+td.1 OED vr.0 IQD commemtovr[3]
+td.1 OEE vr.0 IQE commemtovr[4]
+td.1 OEF vr.0 IQF commemtovr[5]
+td.1 OEG vr.0 IQG commemtovr[6]
+td.1 OEH vr.0 IQH commemtovr[7]
+
+td.1 OEI vr.1 IQA commemtovr[8]
+td.1 OEJ vr.1 IQB commemtovr[9]
+td.1 OEK vr.1 IQC commemtovr[10]
+td.1 OEL vr.1 IQD commemtovr[11]
+td.1 OEM vr.1 IQE commemtovr[12]
+td.1 OEN vr.1 IQF commemtovr[13]
+td.1 OEO vr.1 IQG commemtovr[14]
+td.1 OEP vr.1 IQH commemtovr[15]
+
+td.1 OFA vr.2 IQA commemtovr[16]
+td.1 OFB vr.2 IQB commemtovr[17]
+td.1 OFC vr.2 IQC commemtovr[18]
+td.1 OFD vr.2 IQD commemtovr[19]
+td.1 OFE vr.2 IQE commemtovr[20]
+td.1 OFF vr.2 IQF commemtovr[21]
+td.1 OFG vr.2 IQG commemtovr[22]
+td.1 OFH vr.2 IQH commemtovr[23]
+
+td.1 OFI vr.3 IQA commemtovr[24]
+td.1 OFJ vr.3 IQB commemtovr[25]
+td.1 OFK vr.3 IQC commemtovr[26]
+td.1 OFL vr.3 IQD commemtovr[27]
+td.1 OFM vr.3 IQE commemtovr[28]
+td.1 OFN vr.3 IQF commemtovr[29]
+td.1 OFO vr.3 IQG commemtovr[30]
+td.1 OFP vr.3 IQH commemtovr[31]
+
+td.1 OGA vr.4 IQA commemtovr[32]
+td.1 OGB vr.4 IQB commemtovr[33]
+td.1 OGC vr.4 IQC commemtovr[34]
+td.1 OGD vr.4 IQD commemtovr[35]
+td.1 OGE vr.4 IQE commemtovr[36]
+td.1 OGF vr.4 IQF commemtovr[37]
+td.1 OGG vr.4 IQG commemtovr[38]
+td.1 OGH vr.4 IQH commemtovr[39]
+
+td.1 OGI vr.5 IQA commemtovr[40]
+td.1 OGJ vr.5 IQB commemtovr[41]
+td.1 OGK vr.5 IQC commemtovr[42]
+td.1 OGL vr.5 IQD commemtovr[43]
+td.1 OGM vr.5 IQE commemtovr[44]
+td.1 OGN vr.5 IQF commemtovr[45]
+td.1 OGO vr.5 IQG commemtovr[46]
+td.1 OGP vr.5 IQH commemtovr[47]
+
+td.1 OHA vr.6 IQA commemtovr[48]
+td.1 OHB vr.6 IQB commemtovr[49]
+td.1 OHC vr.6 IQC commemtovr[50]
+td.1 OHD vr.6 IQD commemtovr[51]
+td.1 OHE vr.6 IQE commemtovr[52]
+td.1 OHF vr.6 IQF commemtovr[53]
+td.1 OHG vr.6 IQG commemtovr[54]
+td.1 OHH vr.6 IQH commemtovr[55]
+
+td.1 OHI vr.7 IQA commemtovr[56]
+td.1 OHJ vr.7 IQB commemtovr[57]
+td.1 OHK vr.7 IQC commemtovr[58]
+td.1 OHL vr.7 IQD commemtovr[59]
+td.1 OHM vr.7 IQE commemtovr[60]
+td.1 OHN vr.7 IQF commemtovr[61]
+td.1 OHO vr.7 IQG commemtovr[62]
+td.1 OHP vr.7 IQH commemtovr[63]
+
+   P Register from IM to EA
+
+im.1 OCA ea.1 IBA
+im.1 OCB ea.1 IBB
+im.1 OCC ea.1 IBC
+im.1 OCD ea.1 IBD
+im.1 OCE ea.1 IBE
+im.1 OCF ea.1 IBF
+im.1 OCG ea.1 IBG
+im.1 OCH ea.1 IBH
+
+im.1 OCI ea.1 IBI
+im.1 OCJ ea.1 IBJ
+im.1 OCK ea.1 IBK
+im.1 OCL ea.1 IBL
+im.1 OCM ea.1 IBM
+im.1 OCN ea.1 IBN
+im.1 OCO ea.1 IBO
+im.1 OCP ea.1 IBP
+
+im.1 ODA ea.1 ICA
+im.1 ODB ea.1 ICB
+im.1 ODC ea.1 ICC
+im.1 ODD ea.1 ICD
+im.1 ODE ea.1 ICE
+im.1 ODF ea.1 ICF
+im.1 ODG ea.1 ICG
+im.1 ODH ea.1 ICH
+
+im.1 ODI ea.1 ICI
+im.1 ODJ ea.1 ICJ
+im.1 ODK ea.1 ICK
+im.1 ODL ea.1 ICL
+im.1 ODM ea.1 ICM
+im.1 ODN ea.1 ICN
+im.1 ODO ea.1 ICO
+im.1 ODP ea.1 ICP
+
+   P Register from IF to AM (to get to AR)
+
+if.1 OBA im.1 ICA pregtoam[0]
+if.1 OBB im.1 ICB pregtoam[1]
+if.1 OBC im.1 ICC pregtoam[2]
+if.1 OBD im.1 ICD pregtoam[3]
+if.1 OBE im.1 ICE pregtoam[4]
+if.1 OBF im.1 ICF pregtoam[5]
+if.1 OBG im.1 ICG pregtoam[6]
+if.1 OBH im.1 ICH pregtoam[7]
+
+if.1 OBI im.1 ICI pregtoam[8]
+if.1 OBJ im.1 ICJ pregtoam[9]
+if.1 OBK im.1 ICK pregtoam[10]
+if.1 OBL im.1 ICL pregtoam[11]
+if.1 OBM im.1 ICM pregtoam[12]
+if.1 OBN im.1 ICN pregtoam[13]
+if.1 OBO im.1 ICO pregtoam[14]
+if.1 OBP im.1 ICP pregtoam[15]
+
+if.1 OCA im.1 IDA pregtoam[16]
+if.1 OCB im.1 IDB pregtoam[17]
+if.1 OCC im.1 IDC pregtoam[18]
+if.1 OCD im.1 IDD pregtoam[19]
+if.1 OCE im.1 IDE pregtoam[20]
+if.1 OCF im.1 IDF pregtoam[21]
+if.1 OCG im.1 IDG pregtoam[22]
+if.1 OCH im.1 IDH pregtoam[23]
+
+if.1 OCI im.1 IDI pregtoam[24]
+if.1 OCJ im.1 IDJ pregtoam[25]
+if.1 OCK im.1 IDK pregtoam[26]
+if.1 OCL im.1 IDL pregtoam[27]
+if.1 OCM im.1 IDM pregtoam[28]
+if.1 OCN im.1 IDN pregtoam[29]
+if.1 OCO im.1 IDO pregtoam[30]
+if.1 OCP im.1 IDP pregtoam[31]
+
+  -- ar data to wa (local memory)
+
+ar.1 OAA wa.1 IEA wadatalm[0] 
+ar.1 OAB wa.1 IEB wadatalm[1] 
+ar.1 OAC wa.1 IEC wadatalm[2] 
+ar.1 OAD wa.1 IED wadatalm[3] 
+ar.1 OAE wa.1 IEE wadatalm[4] 
+ar.1 OAF wa.1 IEF wadatalm[5] 
+ar.1 OAG wa.1 IEG wadatalm[6] 
+ar.1 OAH wa.1 IEH wadatalm[7] 
+	                      
+ar.1 OAI wa.1 IEI wadatalm[8] 
+ar.1 OAJ wa.1 IEJ wadatalm[9] 
+ar.1 OAK wa.1 IEK wadatalm[10]
+ar.1 OAL wa.1 IEL wadatalm[11]
+ar.1 OAM wa.1 IEM wadatalm[12]
+ar.1 OAN wa.1 IEN wadatalm[13]
+ar.1 OAO wa.1 IEO wadatalm[14]
+ar.1 OAP wa.1 IEP wadatalm[15]
+
+ar.1 OBA wa.1 IFA wadatalm[16] 
+ar.1 OBB wa.1 IFB wadatalm[17] 
+ar.1 OBC wa.1 IFC wadatalm[18] 
+ar.1 OBD wa.1 IFD wadatalm[19] 
+ar.1 OBE wa.1 IFE wadatalm[20] 
+ar.1 OBF wa.1 IFF wadatalm[21] 
+ar.1 OBG wa.1 IFG wadatalm[22] 
+ar.1 OBH wa.1 IFH wadatalm[23] 
+			       
+ar.1 OBI wa.1 IFI wadatalm[24] 
+ar.1 OBJ wa.1 IFJ wadatalm[25] 
+ar.1 OBK wa.1 IFK wadatalm[26]
+ar.1 OBL wa.1 IFL wadatalm[27]
+ar.1 OBM wa.1 IFM wadatalm[28]
+ar.1 OBN wa.1 IFN wadatalm[29]
+ar.1 OBO wa.1 IFO wadatalm[30]
+ar.1 OBP wa.1 IFP wadatalm[31]
+
+  -- ar computed address to tf (common memory)
+
+ar.1 OCA tf.1 IAA araddrtotf[0]
+ar.1 OCB tf.1 IAB araddrtotf[1]
+ar.1 OCC tf.1 IAC araddrtotf[2]
+ar.1 OCD tf.1 IAD araddrtotf[3]
+ar.1 OCE tf.1 IAE araddrtotf[4]
+ar.1 OCF tf.1 IAF araddrtotf[5]
+ar.1 OCG tf.1 IAG araddrtotf[6]
+ar.1 OCH tf.1 IAH araddrtotf[7]
+
+ar.1 OCI tf.1 IAI araddrtotf[8]
+ar.1 OCJ tf.1 IAJ araddrtotf[9]
+ar.1 OCK tf.1 IAK araddrtotf[10]
+ar.1 OCL tf.1 IAL araddrtotf[11]
+ar.1 OCM tf.1 IAM araddrtotf[12]
+ar.1 OCN tf.1 IAN araddrtotf[13]
+ar.1 OCO tf.1 IAO araddrtotf[14]
+ar.1 OCP tf.1 IAP araddrtotf[15]
+
+ar.1 ODA tf.1 IBA araddrtotf[16]
+ar.1 ODB tf.1 IBB araddrtotf[17]
+ar.1 ODC tf.1 IBC araddrtotf[18]
+ar.1 ODD tf.1 IBD araddrtotf[19]
+ar.1 ODE tf.1 IBE araddrtotf[20]
+ar.1 ODF tf.1 IBF araddrtotf[21]
+ar.1 ODG tf.1 IBG araddrtotf[22]
+ar.1 ODH tf.1 IBH araddrtotf[23]
+
+ar.1 ODI tf.1 IBI araddrtotf[24]
+ar.1 ODJ tf.1 IBJ araddrtotf[25]
+ar.1 ODK tf.1 IBK araddrtotf[26]
+ar.1 ODL tf.1 IBL araddrtotf[27]
+ar.1 ODM tf.1 IBM araddrtotf[28]
+ar.1 ODN tf.1 IBN araddrtotf[29]
+ar.1 ODO tf.1 IBO araddrtotf[30]
+ar.1 ODP tf.1 IBP araddrtotf[31]
+
+  -- ie  address to tf (common memory) for instr buffer
+
+ie.1 OEA tf.1 ICA ieaddrtotf[0]
+ie.1 OEB tf.1 ICB ieaddrtotf[1]
+ie.1 OEC tf.1 ICC ieaddrtotf[2]
+ie.1 OED tf.1 ICD ieaddrtotf[3]
+ie.1 OEE tf.1 ICE ieaddrtotf[4]
+ie.1 OEF tf.1 ICF ieaddrtotf[5]
+ie.1 OEG tf.1 ICG ieaddrtotf[6]
+ie.1 OEH tf.1 ICH ieaddrtotf[7]
+
+ie.1 OEI tf.1 ICI ieaddrtotf[8]
+ie.1 OEJ tf.1 ICJ ieaddrtotf[9]
+ie.1 OEK tf.1 ICK ieaddrtotf[10]
+ie.1 OEL tf.1 ICL ieaddrtotf[11]
+ie.1 OEM tf.1 ICM ieaddrtotf[12]
+ie.1 OEN tf.1 ICN ieaddrtotf[13]
+ie.1 OEO tf.1 ICO ieaddrtotf[14]
+ie.1 OEP tf.1 ICP ieaddrtotf[15]
+
+ie.1 OKI tf.1 IDA ieaddrtotf[16]
+ie.1 OKJ tf.1 IDB ieaddrtotf[17]
+ie.1 OKK tf.1 IDC ieaddrtotf[18]
+ie.1 OKL tf.1 IDD ieaddrtotf[19]
+ie.1 OKM tf.1 IDE ieaddrtotf[20]
+ie.1 OKN tf.1 IDF ieaddrtotf[21]
+ie.1 OKO tf.1 IDG ieaddrtotf[22]
+ie.1 OKP tf.1 IDH ieaddrtotf[23]
+
+ie.1 OKQ tf.1 IDI ieaddrtotf[24]
+ie.1 OKR tf.1 IDJ ieaddrtotf[25]
+ie.1 OKS tf.1 IDK ieaddrtotf[26]
+ie.1 OKT tf.1 IDL ieaddrtotf[27]
+ie.1 OKU tf.1 IDM ieaddrtotf[28]
+ie.1 OKV tf.1 IDN ieaddrtotf[29]
+ie.1 OKW tf.1 IDO ieaddrtotf[30]
+ie.1 OKX tf.1 IDP ieaddrtotf[31]
+
+  -- eb  address to tf (common memory)
+
+eb.1 OEA tf.1 IEA ebaddrtotf[0]
+eb.1 OEB tf.1 IEB ebaddrtotf[1]
+eb.1 OEC tf.1 IEC ebaddrtotf[2]
+eb.1 OED tf.1 IED ebaddrtotf[3]
+eb.1 OEE tf.1 IEE ebaddrtotf[4]
+eb.1 OEF tf.1 IEF ebaddrtotf[5]
+eb.1 OEG tf.1 IEG ebaddrtotf[6]
+eb.1 OEH tf.1 IEH ebaddrtotf[7]
+
+eb.1 OEI tf.1 IEI ebaddrtotf[8]
+eb.1 OEJ tf.1 IEJ ebaddrtotf[9]
+eb.1 OEK tf.1 IEK ebaddrtotf[10]
+eb.1 OEL tf.1 IEL ebaddrtotf[11]
+eb.1 OEM tf.1 IEM ebaddrtotf[12]
+eb.1 OEN tf.1 IEN ebaddrtotf[13]
+eb.1 OEO tf.1 IEO ebaddrtotf[14]
+eb.1 OEP tf.1 IEP ebaddrtotf[15]
+
+eb.1 OFA tf.1 IFA ebaddrtotf[16]
+eb.1 OFB tf.1 IFB ebaddrtotf[17]
+eb.1 OFC tf.1 IFC ebaddrtotf[18]
+eb.1 OFD tf.1 IFD ebaddrtotf[19]
+eb.1 OFE tf.1 IFE ebaddrtotf[20]
+eb.1 OFF tf.1 IFF ebaddrtotf[21]
+eb.1 OFG tf.1 IFG ebaddrtotf[22]
+eb.1 OFH tf.1 IFH ebaddrtotf[23]
+
+eb.1 OFI tf.1 IFI ebaddrtotf[24]
+eb.1 OFJ tf.1 IFJ ebaddrtotf[25]
+eb.1 OFK tf.1 IFK ebaddrtotf[26]
+eb.1 OFL tf.1 IFL ebaddrtotf[27]
+eb.1 OFM tf.1 IFM ebaddrtotf[28]
+eb.1 OFN tf.1 IFN ebaddrtotf[29]
+eb.1 OFO tf.1 IFO ebaddrtotf[30]
+eb.1 OFP tf.1 IFP ebaddrtotf[31]
+
+ -- tf (ta) address to tc
+
+tf.1 OEA tc.1 IEA addrtotc[0]
+tf.1 OEB tc.1 IEB addrtotc[1]
+tf.1 OEC tc.1 IEC addrtotc[2]
+tf.1 OED tc.1 IED addrtotc[3]
+tf.1 OEE tc.1 IEE addrtotc[4]
+tf.1 OEF tc.1 IEF addrtotc[5]
+tf.1 OEG tc.1 IEG addrtotc[6]
+tf.1 OEH tc.1 IEH addrtotc[7]
+
+tf.1 OEI tc.1 IEI addrtotc[8]
+tf.1 OEJ tc.1 IEJ addrtotc[9]
+tf.1 OEK tc.1 IEK addrtotc[10]
+tf.1 OEL tc.1 IEL addrtotc[11]
+tf.1 OEM tc.1 IEM addrtotc[12]
+tf.1 OEN tc.1 IEN addrtotc[13]
+tf.1 OEO tc.1 IEO addrtotc[14]
+tf.1 OEP tc.1 IEP addrtotc[15]
+
+tf.1 OEQ tc.1 IEQ addrtotc[16]
+tf.1 OER tc.1 IER addrtotc[17]
+tf.1 OES tc.1 IES addrtotc[18]
+tf.1 OET tc.1 IET addrtotc[19]
+tf.1 OEU tc.1 IEU addrtotc[20]
+tf.1 OEV tc.1 IEV addrtotc[21]
+tf.1 OEW tc.1 IEW addrtotc[22]
+tf.1 OEX tc.1 IEX addrtotc[23]
+
+   -- tc packet to quad 0
+
+tc.1 OAA ??.1 ??? quad0packet[0]
+tc.1 OAB ??.1 ??? quad0packet[1]
+tc.1 OAC ??.1 ??? quad0packet[2]
+tc.1 OAD ??.1 ??? quad0packet[3]
+tc.1 OAE ??.1 ??? quad0packet[4]
+tc.1 OAF ??.1 ??? quad0packet[5]
+tc.1 OAG ??.1 ??? quad0packet[6]
+tc.1 OAH ??.1 ??? quad0packet[7]
+
+tc.1 OAI ??.1 ??? quad0packet[8]
+tc.1 OAJ ??.1 ??? quad0packet[9]
+tc.1 OAK ??.1 ??? quad0packet[10]
+tc.1 OAL ??.1 ??? quad0packet[11]
+tc.1 OAM ??.1 ??? quad0packet[12]
+tc.1 OAN ??.1 ??? quad0packet[13]
+tc.1 OAO ??.1 ??? quad0packet[14]
+tc.1 OAP ??.1 ??? quad0packet[15]
+
+tc.1 OAQ ??.1 ??? quad0packet[16]
+tc.1 OAR ??.1 ??? quad0packet[17]
+tc.1 OAS ??.1 ??? quad0packet[18]
+tc.1 OAT ??.1 ??? quad0packet[19]
+tc.1 OAU ??.1 ??? quad0packet[20]
+tc.1 OAV ??.1 ??? quad0packet[21]
+tc.1 OAW ??.1 ??? quad0packet[22]
+tc.1 OAX ??.1 ??? quad0packet[23]
+
+   -- tc packet to quad 1
+
+tc.1 OBA ??.1 ??? quad1packet[0]
+tc.1 OBB ??.1 ??? quad1packet[1]
+tc.1 OBC ??.1 ??? quad1packet[2]
+tc.1 OBD ??.1 ??? quad1packet[3]
+tc.1 OBE ??.1 ??? quad1packet[4]
+tc.1 OBF ??.1 ??? quad1packet[5]
+tc.1 OBG ??.1 ??? quad1packet[6]
+tc.1 OBH ??.1 ??? quad1packet[7]
+
+tc.1 OBI ??.1 ??? quad1packet[8]
+tc.1 OBJ ??.1 ??? quad1packet[9]
+tc.1 OBK ??.1 ??? quad1packet[10]
+tc.1 OBL ??.1 ??? quad1packet[11]
+tc.1 OBM ??.1 ??? quad1packet[12]
+tc.1 OBN ??.1 ??? quad1packet[13]
+tc.1 OBO ??.1 ??? quad1packet[14]
+tc.1 OBP ??.1 ??? quad1packet[15]
+
+tc.1 OBQ ??.1 ??? quad1packet[16]
+tc.1 OBR ??.1 ??? quad1packet[17]
+tc.1 OBS ??.1 ??? quad1packet[18]
+tc.1 OBT ??.1 ??? quad1packet[19]
+tc.1 OBU ??.1 ??? quad1packet[20]
+tc.1 OBV ??.1 ??? quad1packet[21]
+tc.1 OBW ??.1 ??? quad1packet[22]
+tc.1 OBX ??.1 ??? quad1packet[23]
+
+   -- tc packet to quad 2
+
+tc.1 OCA ??.1 ??? quad2packet[0]
+tc.1 OCB ??.1 ??? quad2packet[1]
+tc.1 OCC ??.1 ??? quad2packet[2]
+tc.1 OCD ??.1 ??? quad2packet[3]
+tc.1 OCE ??.1 ??? quad2packet[4]
+tc.1 OCF ??.1 ??? quad2packet[5]
+tc.1 OCG ??.1 ??? quad2packet[6]
+tc.1 OCH ??.1 ??? quad2packet[7]
+
+tc.1 OCI ??.1 ??? quad2packet[8]
+tc.1 OCJ ??.1 ??? quad2packet[9]
+tc.1 OCK ??.1 ??? quad2packet[10]
+tc.1 OCL ??.1 ??? quad2packet[11]
+tc.1 OCM ??.1 ??? quad2packet[12]
+tc.1 OCN ??.1 ??? quad2packet[13]
+tc.1 OCO ??.1 ??? quad2packet[14]
+tc.1 OCP ??.1 ??? quad2packet[15]
+
+tc.1 OCQ ??.1 ??? quad2packet[16]
+tc.1 OCR ??.1 ??? quad2packet[17]
+tc.1 OCS ??.1 ??? quad2packet[18]
+tc.1 OCT ??.1 ??? quad2packet[19]
+tc.1 OCU ??.1 ??? quad2packet[20]
+tc.1 OCV ??.1 ??? quad2packet[21]
+tc.1 OCW ??.1 ??? quad2packet[22]
+tc.1 OCX ??.1 ??? quad2packet[23]
+
+   -- tc packet to quad 3
+
+tc.1 ODA ??.1 ??? quad3packet[0]
+tc.1 ODB ??.1 ??? quad3packet[1]
+tc.1 ODC ??.1 ??? quad3packet[2]
+tc.1 ODD ??.1 ??? quad3packet[3]
+tc.1 ODE ??.1 ??? quad3packet[4]
+tc.1 ODF ??.1 ??? quad3packet[5]
+tc.1 ODG ??.1 ??? quad3packet[6]
+tc.1 ODH ??.1 ??? quad3packet[7]
+
+tc.1 ODI ??.1 ??? quad3packet[8]
+tc.1 ODJ ??.1 ??? quad3packet[9]
+tc.1 ODK ??.1 ??? quad3packet[10]
+tc.1 ODL ??.1 ??? quad3packet[11]
+tc.1 ODM ??.1 ??? quad3packet[12]
+tc.1 ODN ??.1 ??? quad3packet[13]
+tc.1 ODO ??.1 ??? quad3packet[14]
+tc.1 ODP ??.1 ??? quad3packet[15]
+
+tc.1 ODQ ??.1 ??? quad3packet[16]
+tc.1 ODR ??.1 ??? quad3packet[17]
+tc.1 ODS ??.1 ??? quad3packet[18]
+tc.1 ODT ??.1 ??? quad3packet[19]
+tc.1 ODU ??.1 ??? quad3packet[20]
+tc.1 ODV ??.1 ??? quad3packet[21]
+tc.1 ODW ??.1 ??? quad3packet[22]
+tc.1 ODX ??.1 ??? quad3packet[23]
+
+   -- gb shift amount to vb ( data from ar to gb to vb)
+
+gb.1 OKA vb.1 IIA shtambtovb[0]
+gb.1 OKB vb.1 IIB shtambtovb[1]
+gb.1 OKC vb.1 IIC shtambtovb[2]
+gb.1 OKD vb.1 IID shtambtovb[3]
+gb.1 OKE vb.1 IIE shtambtovb[4]
+gb.1 OKF vb.1 IIF shtambtovb[5]
+gb.1 OKG vb.1 IIG shtambtovb[6]
+
+  == shift overflow to vb
+
+gb.1 OKH vb.1 ??? shtovflvb[0]
+
+   -- ra fanout k operand to ma
+
+ra.1 OEA ma.1 IFA kopfotoma[32]
+ra.1 OEB ma.1 IFB kopfotoma[33]
+ra.1 OEC ma.1 IFC kopfotoma[34]
+ra.1 OED ma.1 IFD kopfotoma[35]
+ra.1 OEE ma.1 IFE kopfotoma[36]
+ra.1 OEF ma.1 IFF kopfotoma[37]
+ra.1 OEG ma.1 IFG kopfotoma[38]
+ra.1 OEH ma.1 IFH kopfotoma[39]
+
+ra.1 OEI ma.1 IFI kopfotoma[40]
+ra.1 OEJ ma.1 IFJ kopfotoma[41]
+ra.1 OEK ma.1 IFK kopfotoma[42]
+ra.1 OEL ma.1 IFL kopfotoma[43]
+ra.1 OEM ma.1 IFM kopfotoma[44]
+ra.1 OEN ma.1 IFN kopfotoma[45]
+ra.1 OEO ma.1 IFO kopfotoma[46]
+ra.1 OEP ma.1 IFP kopfotoma[47]
+
+  -- ra fanout k operand to mb
+
+ra.1 OFA mb.1 IGA kopfotomb[32]  
+ra.1 OFB mb.1 IGB kopfotomb[33]  
+ra.1 OFC mb.1 IGC kopfotomb[34]
+ra.1 OFD mb.1 IGD kopfotomb[35]
+ra.1 OFE mb.1 IGE kopfotomb[36]
+ra.1 OFF mb.1 IGF kopfotomb[37]
+ra.1 OFG mb.1 IGG kopfotomb[38]
+ra.1 OFH mb.1 IGH kopfotomb[39]
+
+ra.1 OFI mb.1 IGI kopfotomb[40]
+ra.1 OFJ mb.1 IGJ kopfotomb[41]
+ra.1 OFK mb.1 IGK kopfotomb[42]
+ra.1 OFL mb.1 IGL kopfotomb[43]
+ra.1 OFM mb.1 IGM kopfotomb[44]
+ra.1 OFN mb.1 IGN kopfotomb[45]
+ra.1 OFO mb.1 IGO kopfotomb[46]
+ra.1 OFP mb.1 IGP kopfotomb[47]
+
+      -- ra lookup data to mc
+      
+ra.1 OCA mc.1 IGA lufotomc[22]
+ra.1 OCB mc.1 IGB lufotomc[23]
+ra.1 OCC mc.1 IGC lufotomc[24]
+ra.1 OCD mc.1 IGD lufotomc[25]
+ra.1 OCE mc.1 IGE lufotomc[26]
+ra.1 OCF mc.1 IGF lufotomc[27]
+ra.1 OCG mc.1 IGG jopfotomc[28]
+ra.1 OCH mc.1 IGH jopfotomc[29]
+ra.1 OCI mc.1 IGI jopfotomc[30]
+ra.1 OCJ mc.1 IGJ jopfotomc[31]
+
+  -- ra fanout k operand to mc
+
+ra.1 OGA mc.1 IFA kopfotomc[32]  
+ra.1 OGB mc.1 IFB kopfotomc[33]  
+ra.1 OGC mc.1 IFC kopfotomc[34]  
+ra.1 OGD mc.1 IFD kopfotomc[35]  
+ra.1 OGE mc.1 IFE kopfotomc[36]  
+ra.1 OGF mc.1 IFF kopfotomc[37]  
+ra.1 OGG mc.1 IFG kopfotomc[38]  
+ra.1 OGH mc.1 IFH kopfotomc[39]  
+
+ra.1 OGI mc.1 IFI kopfotomc[40]  
+ra.1 OGJ mc.1 IFJ kopfotomc[41]  
+ra.1 OGK mc.1 IFK kopfotomc[42] 
+ra.1 OGL mc.1 IFL kopfotomc[43]
+ra.1 OGM mc.1 IFM kopfotomc[44]
+ra.1 OGN mc.1 IFN kopfotomc[45]
+ra.1 OGO mc.1 IFO kopfotomc[46]
+ra.1 OGP mc.1 IFP kopfotomc[47]
+
+  -- ra fanout k operand to md
+
+ra.1 OHA md.1 IBK kopfotomd[32]
+ra.1 OHB md.1 IBL kopfotomd[33]
+ra.1 OHC md.1 IBM kopfotomd[34]
+ra.1 OHD md.1 IBN kopfotomd[35]
+ra.1 OHE md.1 IBO kopfotomd[36]
+ra.1 OHF md.1 IBP kopfotomd[37]
+ra.1 OHG md.1 IBQ kopfotomd[38]
+ra.1 OHH md.1 IBR kopfotomd[39]
+
+ra.1 OHI md.1 IBS kopfotomd[40]
+ra.1 OHJ md.1 IBT kopfotomd[41]
+ra.1 OHK md.1 IBU kopfotomd[42]
+ra.1 OHL md.1 IBV kopfotomd[43]
+ra.1 OHM md.1 IBW kopfotomd[44]
+ra.1 OHN md.1 IBX kopfotomd[45]
+ra.1 OHO md.1 IBY kopfotomd[46]
+ra.1 OHP md.1 IBZ kopfotomd[47]
+
+  -- ra fanout j operand to ma
+
+ra.1 OAA ma.1 IEA lufotoma[0]
+ra.1 OAB ma.1 IEB lufotoma[1]
+ra.1 OAC ma.1 IEC lufotoma[2]
+ra.1 OAD ma.1 IED lufotoma[3]
+ra.1 OAE ma.1 IEE lufotoma[4]
+ra.1 OAF ma.1 IEF lufotoma[5] 
+ra.1 OAG ma.1 IEG lufotoma[6]
+ra.1 OAH ma.1 IEH lufotoma[7]
+ra.1 OAI ma.1 IEI lufotoma[8]
+ra.1 OAJ ma.1 IEJ lufotoma[9]
+
+ra.1 OAK ma.1 IEK jopfotoma[32]
+ra.1 OAL ma.1 IEL jopfotoma[33]
+ra.1 OAM ma.1 IEM jopfotoma[34]
+ra.1 OAN ma.1 IEN jopfotoma[35]
+ra.1 OAO ma.1 IEO jopfotoma[36]
+ra.1 OAP ma.1 IEP jopfotoma[37]
+ra.1 OAQ ma.1 IEQ jopfotoma[38]
+ra.1 OAR ma.1 IER jopfotoma[39]
+			       
+ra.1 OAS ma.1 IES jopfotoma[40]
+ra.1 OAT ma.1 IET jopfotoma[41]
+ra.1 OAU ma.1 IEU jopfotoma[42]
+ra.1 OAV ma.1 IEV jopfotoma[43]
+ra.1 OAW ma.1 IEW jopfotoma[44]
+ra.1 OAX ma.1 IEX jopfotoma[45]
+ra.1 OAY ma.1 IEY jopfotoma[46]
+ra.1 OAZ ma.1 IEZ jopfotoma[47]
+
+  -- ra fanout j operand to mb
+
+ra.1 OBA mb.1 IEA lufotomb[0] 
+ra.1 OBB mb.1 IEB lufotomb[1] 
+ra.1 OBC mb.1 IEC lufotomb[2] 
+ra.1 OBD mb.1 IED lufotomb[3] 
+ra.1 OBE mb.1 IEE lufotomb[4] 
+ra.1 OBF mb.1 IEF lufotomb[5] 
+ra.1 OBG mb.1 IEG lufotomb[6] 
+ra.1 OBH mb.1 IEH lufotomb[7] 
+ra.1 OBI mb.1 IEI lufotomb[8] 
+ra.1 OBJ mb.1 IEJ lufotomb[9] 
+
+ra.1 OBK mb.1 IEK jopfotomb[32]
+ra.1 OBL mb.1 IEL jopfotomb[33]
+ra.1 OBM mb.1 IEM jopfotomb[34]
+ra.1 OBN mb.1 IEN jopfotomb[35]
+ra.1 OBO mb.1 IEO jopfotomb[36]
+ra.1 OBP mb.1 IEP jopfotomb[37]
+ra.1 OBQ mb.1 IEQ jopfotomb[38]
+ra.1 OBR mb.1 IER jopfotomb[39]
+			       
+ra.1 OBS mb.1 IES jopfotomb[40]
+ra.1 OBT mb.1 IET jopfotomb[41]	   
+ra.1 OBU mb.1 IEU jopfotomb[42]
+ra.1 OBV mb.1 IEV jopfotomb[43]
+ra.1 OBW mb.1 IEW jopfotomb[44]
+ra.1 OBX mb.1 IEX jopfotomb[45]
+ra.1 OBY mb.1 IEY jopfotomb[46]
+ra.1 OBZ mb.1 IEZ jopfotomb[47]
+		
+ 
+ra.1 OCK mc.1 ICA jopfotomc[32]
+ra.1 OCL mc.1 ICB jopfotomc[33]
+ra.1 OCM mc.1 ICC jopfotomc[34]
+ra.1 OCN mc.1 ICD jopfotomc[35]
+ra.1 OCO mc.1 ICE jopfotomc[36]
+ra.1 OCP mc.1 ICF jopfotomc[37]
+ra.1 OCQ mc.1 ICG jopfotomc[38]
+ra.1 OCR mc.1 ICH jopfotomc[39]
+			       
+ra.1 OCS mc.1 ICI jopfotomc[40]
+ra.1 OCT mc.1 ICJ jopfotomc[41]
+ra.1 OCU mc.1 ICK jopfotomc[42]
+ra.1 OCV mc.1 ICL jopfotomc[43]
+ra.1 OCW mc.1 ICM jopfotomc[44]
+ra.1 OCX mc.1 ICN jopfotomc[45]
+ra.1 OCY mc.1 ICO jopfotomc[46]
+ra.1 OCZ mc.1 ICP jopfotomc[47]
+
+  -- ra fanout j operand to md
+
+ra.1 ODA md.1 ICA lufotomd[0]
+ra.1 ODB md.1 ICB lufotomd[1]
+ra.1 ODC md.1 ICC lufotomd[2]
+ra.1 ODD md.1 ICD lufotomd[3]
+ra.1 ODE md.1 ICE lufotomd[4]
+ra.1 ODF md.1 ICF lufotomd[5]
+ra.1 ODG md.1 ICG lufotomd[6]
+ra.1 ODH md.1 ICH lufotomd[7]
+ra.1 ODI md.1 ICI lufotomd[8]
+ra.1 ODJ md.1 ICJ lufotomd[9]
+
+ra.1 ODK md.1 IAK jopfotomd[32]
+ra.1 ODL md.1 IAL jopfotomd[33]
+ra.1 ODM md.1 IAM jopfotomd[34]
+ra.1 ODN md.1 IAN jopfotomd[35]
+ra.1 ODO md.1 IAO jopfotomd[36]
+ra.1 ODP md.1 IAP jopfotomd[37]
+ra.1 ODQ md.1 IAQ jopfotomd[38]
+ra.1 ODR md.1 IAR jopfotomd[39]
+
+ra.1 ODS md.1 IAS jopfotomd[40]
+ra.1 ODT md.1 IAT jopfotomd[41]
+ra.1 ODU md.1 IAU jopfotomd[42]
+ra.1 ODV md.1 IAV jopfotomd[43]
+ra.1 ODW md.1 IAW jopfotomd[44]
+ra.1 ODX md.1 IAX jopfotomd[45]
+ra.1 ODY md.1 IAY jopfotomd[46]
+ra.1 ODZ md.1 IAZ jopfotomd[47]
+		
+  -- Round bits from ra to mc
+
+ra.1 OKC mc.1 IQC mchardrnd[0]
+ra.1 OKD mc.1 IQD mchardrnd[1]
+ra.1 OKE mc.1 IQE mchardrnd[2]
+ra.1 OKF mc.1 IQF mchardrnd[3] 
+ra.1 OKG mc.1 IQG mchardrnd[4]
+		
+  -- fanout k operand from mb to ma
+		  
+mb.1 OCA ma.1 IBA kopfotoma[0]
+mb.1 OCB ma.1 IBB kopfotoma[1]
+mb.1 OCC ma.1 IBC kopfotoma[2]
+mb.1 OCD ma.1 IBD kopfotoma[3]
+mb.1 OCE ma.1 IBE kopfotoma[4]
+mb.1 OCF ma.1 IBF kopfotoma[5]
+mb.1 OCG ma.1 IBG kopfotoma[6]
+mb.1 OCH ma.1 IBH kopfotoma[7]
+
+mb.1 OCI ma.1 IBI kopfotoma[8]
+mb.1 OCJ ma.1 IBJ kopfotoma[9]
+mb.1 OCK ma.1 IBK kopfotoma[10]
+mb.1 OCL ma.1 IBL kopfotoma[11]
+mb.1 OCM ma.1 IBM kopfotoma[12]
+mb.1 OCN ma.1 IBN kopfotoma[13]
+mb.1 OCO ma.1 IBO kopfotoma[14]
+mb.1 OCP ma.1 IBP kopfotoma[15]
+
+		
+  -- fanout k operand from mb to mc
+		  
+mb.1 ODL mc.1 IDL kopfotomc[11]
+mb.1 ODM mc.1 IDM kopfotomc[12]
+mb.1 ODN mc.1 IDN kopfotomc[13]
+mb.1 ODO mc.1 IDO kopfotomc[14]
+mb.1 ODP mc.1 IDP kopfotomc[15]
+		
+  -- fanout j operand from mb to mc
+
+mb.1 OBL mc.1 IAL jopfotomc[11]
+mb.1 OBM mc.1 IAM jopfotomc[12]
+mb.1 OBN mc.1 IAN jopfotomc[13]
+mb.1 OBO mc.1 IAO jopfotomc[14]
+mb.1 OBP mc.1 IAP jopfotomc[15]
+
+		
+  -- fanout j operand from mb to ma
+
+mb.1 OAA ma.1 IAA jopfotoma[0]		  
+mb.1 OAB ma.1 IAB jopfotoma[1]
+mb.1 OAC ma.1 IAC jopfotoma[2]
+mb.1 OAD ma.1 IAD jopfotoma[3]
+mb.1 OAE ma.1 IAE jopfotoma[4]
+mb.1 OAF ma.1 IAF jopfotoma[5]
+mb.1 OAG ma.1 IAG jopfotoma[6]
+mb.1 OAH ma.1 IAH jopfotoma[7]
+
+mb.1 OAI ma.1 IAI jopfotoma[8]
+mb.1 OAJ ma.1 IAJ jopfotoma[9]
+mb.1 OAK ma.1 IAK jopfotoma[10]
+mb.1 OAL ma.1 IAL jopfotoma[11]
+mb.1 OAM ma.1 IAM jopfotoma[12]
+mb.1 OAN ma.1 IAN jopfotoma[13]
+mb.1 OAO ma.1 IAO jopfotoma[14]
+mb.1 OAP ma.1 IAP jopfotoma[15]
+
+  -- fanout j operand from ma to mb
+
+ma.1 OAA mb.1 IBA jopfotoma[16]
+ma.1 OAB mb.1 IBB jopfotoma[17]
+ma.1 OAC mb.1 IBC jopfotoma[18]
+ma.1 OAD mb.1 IBD jopfotoma[19]
+ma.1 OAE mb.1 IBE jopfotoma[20]
+ma.1 OAF mb.1 IBF jopfotoma[21]
+ma.1 OAG mb.1 IBG jopfotoma[22]
+ma.1 OAH mb.1 IBH jopfotoma[23]
+
+ma.1 OAI mb.1 IBI jopfotoma[24]
+ma.1 OAJ mb.1 IBJ jopfotoma[25]
+ma.1 OAK mb.1 IBK jopfotoma[26]
+ma.1 OAL mb.1 IBL jopfotoma[27]
+ma.1 OAM mb.1 IBM jopfotoma[28]
+ma.1 OAN mb.1 IBN jopfotoma[29]
+ma.1 OAO mb.1 IBO jopfotoma[30]
+ma.1 OAP mb.1 IBP jopfotoma[31]
+
+  -- fanout j operand from ma to mc
+
+ma.1 OBA mc.1 IBA jopfotomc[16]
+ma.1 OBB mc.1 IBB jopfotomc[17]
+ma.1 OBC mc.1 IBC jopfotomc[18]
+ma.1 OBD mc.1 IBD jopfotomc[19]
+ma.1 OBE mc.1 IBE jopfotomc[20]
+ma.1 OBF mc.1 IBF jopfotomc[21]
+ma.1 OBG mc.1 IBG jopfotomc[22]
+ma.1 OBH mc.1 IBH jopfotomc[23]
+
+ma.1 OBI mc.1 IBI jopfotomc[24]
+ma.1 OBJ mc.1 IBJ jopfotomc[25]
+ma.1 OBK mc.1 IBK jopfotomc[26]
+ma.1 OBL mc.1 IBL jopfotomc[27]
+ma.1 OBM mc.1 IBM jopfotomc[28]
+ma.1 OBN mc.1 IBN jopfotomc[29]
+ma.1 OBO mc.1 IBO jopfotomc[30]
+ma.1 OBP mc.1 IBP jopfotomc[31]
+
+  -- fanout j operand from ma to md
+
+ma.1 OCG md.1 IAA jopfotomd[22]
+ma.1 OCH md.1 IAB jopfotomd[23]
+ma.1 OCI md.1 IAC jopfotomd[24]
+ma.1 OCJ md.1 IAD jopfotomd[25]
+ma.1 OCK md.1 IAE jopfotomd[26]
+ma.1 OCL md.1 IAF jopfotomd[27]
+ma.1 OCM md.1 IAG jopfotomd[28]
+ma.1 OCN md.1 IAH jopfotomd[29]
+
+ma.1 OCO md.1 IAI jopfotomd[30]
+ma.1 OCP md.1 IAJ jopfotomd[31]
+
+  -- fanout k operand from ma to mb
+
+ma.1 ODA mb.1 IFA kopfotoma[16]
+ma.1 ODB mb.1 IFB kopfotoma[17]
+ma.1 ODC mb.1 IFC kopfotoma[18]
+ma.1 ODD mb.1 IFD kopfotoma[19]
+ma.1 ODE mb.1 IFE kopfotoma[20]
+ma.1 ODF mb.1 IFF kopfotoma[21]
+ma.1 ODG mb.1 IFG kopfotoma[22]
+ma.1 ODH mb.1 IFH kopfotoma[23]
+
+ma.1 ODI mb.1 IFI kopfotoma[24]
+ma.1 ODJ mb.1 IFJ kopfotoma[25]
+ma.1 ODK mb.1 IFK kopfotoma[26]
+ma.1 ODL mb.1 IFL kopfotoma[27]
+ma.1 ODM mb.1 IFM kopfotoma[28]
+ma.1 ODN mb.1 IFN kopfotoma[29]
+ma.1 ODO mb.1 IFO kopfotoma[30]
+ma.1 ODP mb.1 IFP kopfotoma[31]
+
+  -- fanout k operand from ma to mc
+
+ma.1 OEA mc.1 IEA kopfotomc[16]
+ma.1 OEB mc.1 IEB kopfotomc[17]
+ma.1 OEC mc.1 IEC kopfotomc[18]
+ma.1 OED mc.1 IED kopfotomc[19]
+ma.1 OEE mc.1 IEE kopfotomc[20]
+ma.1 OEF mc.1 IEF kopfotomc[21]
+ma.1 OEG mc.1 IEG kopfotomc[22]
+ma.1 OEH mc.1 IEH kopfotomc[23]
+
+ma.1 OEI mc.1 IEI kopfotomc[24]
+ma.1 OEJ mc.1 IEJ kopfotomc[25]
+ma.1 OEK mc.1 IEK kopfotomc[26]
+ma.1 OEL mc.1 IEL kopfotomc[27]
+ma.1 OEM mc.1 IEM kopfotomc[28]
+ma.1 OEN mc.1 IEN kopfotomc[29]
+ma.1 OEO mc.1 IEO kopfotomc[30]
+ma.1 OEP mc.1 IEP kopfotomc[31]
+
+  -- fanout k operand from ma to md
+
+ma.1 OFG md.1 IBA kopfotomd[22]
+ma.1 OFH md.1 IBB kopfotomd[23]
+ma.1 OFI md.1 IBC kopfotomd[24]
+ma.1 OFJ md.1 IBD kopfotomd[25]
+ma.1 OFK md.1 IBE kopfotomd[26]
+ma.1 OFL md.1 IBF kopfotomd[27]
+ma.1 OFM md.1 IBG kopfotomd[28]
+ma.1 OFN md.1 IBH kopfotomd[29]
+
+ma.1 OFO md.1 IBI kopfotomd[30]
+ma.1 OFP md.1 IBJ kopfotomd[31]
+
+  -- vr scalar j data to vl
+
+vr.0 OGA vl.1 IAA scaljtovl[0]
+vr.0 OGB vl.1 IAB scaljtovl[1]
+vr.0 OGC vl.1 IAC scaljtovl[2]
+vr.0 OGD vl.1 IAD scaljtovl[3]
+vr.0 OGE vl.1 IAE scaljtovl[4]
+vr.0 OGF vl.1 IAF scaljtovl[5]
+vr.0 OGG vl.1 IAG scaljtovl[6]
+vr.0 OGH vl.1 IAH scaljtovl[7]
+
+vr.1 OGA vl.1 IAI scaljtovl[8]
+vr.1 OGB vl.1 IAJ scaljtovl[9]
+vr.1 OGC vl.1 IAK scaljtovl[10]
+vr.1 OGD vl.1 IAL scaljtovl[11]
+vr.1 OGE vl.1 IAM scaljtovl[12]
+vr.1 OGF vl.1 IAN scaljtovl[13]
+vr.1 OGG vl.1 IAO scaljtovl[14]
+vr.1 OGH vl.1 IAP scaljtovl[15]
+
+vr.2 OGA vl.1 IBA scaljtovl[16]
+vr.2 OGB vl.1 IBB scaljtovl[17]
+vr.2 OGC vl.1 IBC scaljtovl[18]
+vr.2 OGD vl.1 IBD scaljtovl[19]
+vr.2 OGE vl.1 IBE scaljtovl[20]
+vr.2 OGF vl.1 IBF scaljtovl[21]
+vr.2 OGG vl.1 IBG scaljtovl[22]
+vr.2 OGH vl.1 IBH scaljtovl[23]
+
+vr.3 OGA vl.1 IBI scaljtovl[24]
+vr.3 OGB vl.1 IBJ scaljtovl[25]
+vr.3 OGC vl.1 IBK scaljtovl[26]
+vr.3 OGD vl.1 IBL scaljtovl[27]
+vr.3 OGE vl.1 IBM scaljtovl[28]
+vr.3 OGF vl.1 IBN scaljtovl[29]
+vr.3 OGG vl.1 IBO scaljtovl[30]
+vr.3 OGH vl.1 IBP scaljtovl[31]
+
+
+vr.4 OGA vl.1 ICA scaljtovl[32]
+vr.4 OGB vl.1 ICB scaljtovl[33]
+vr.4 OGC vl.1 ICC scaljtovl[34]
+vr.4 OGD vl.1 ICD scaljtovl[35]
+vr.4 OGE vl.1 ICE scaljtovl[36]
+vr.4 OGF vl.1 ICF scaljtovl[37]
+vr.4 OGG vl.1 ICG scaljtovl[38]
+vr.4 OGH vl.1 ICH scaljtovl[39]
+
+vr.5 OGA vl.1 ICI scaljtovl[40]
+vr.5 OGB vl.1 ICJ scaljtovl[41]
+vr.5 OGC vl.1 ICK scaljtovl[42]
+vr.5 OGD vl.1 ICL scaljtovl[43]
+vr.5 OGE vl.1 ICM scaljtovl[44]
+vr.5 OGF vl.1 ICN scaljtovl[45]
+vr.5 OGG vl.1 ICO scaljtovl[46]
+vr.5 OGH vl.1 ICP scaljtovl[47]
+
+vr.6 OGA vl.1 IDA scaljtovl[48]
+vr.6 OGB vl.1 IDB scaljtovl[49]
+vr.6 OGC vl.1 IDC scaljtovl[50]
+vr.6 OGD vl.1 IDD scaljtovl[51]
+vr.6 OGE vl.1 IDE scaljtovl[52]
+vr.6 OGF vl.1 IDF scaljtovl[53]
+vr.6 OGG vl.1 IDG scaljtovl[54]
+vr.6 OGH vl.1 IDH scaljtovl[55]
+
+vr.7 OGA vl.1 IDI scaljtovl[56]
+vr.7 OGB vl.1 IDJ scaljtovl[57]
+vr.7 OGC vl.1 IDK scaljtovl[58]
+vr.7 OGD vl.1 IDL scaljtovl[59]
+vr.7 OGE vl.1 IDM scaljtovl[60]
+vr.7 OGF vl.1 IDN scaljtovl[61]
+vr.7 OGG vl.1 IDO scaljtovl[62]
+vr.7 OGH vl.1 IDP scaljtovl[63]
+
+
+  -- significand from fb to fc
+
+fb.1 OAA fc.1 IAA signtofc[0]
+fb.1 OAB fc.1 IAB signtofc[1]
+fb.1 OAC fc.1 IAC signtofc[2]
+fb.1 OAD fc.1 IAD signtofc[3]
+fb.1 OAE fc.1 IAE signtofc[4]
+fb.1 OAF fc.1 IAF signtofc[5]
+fb.1 OAG fc.1 IAG signtofc[6]
+fb.1 OAH fc.1 IAH signtofc[7]
+
+fb.1 OAI fc.1 IAI signtofc[8]
+fb.1 OAJ fc.1 IAJ signtofc[9]
+fb.1 OAK fc.1 IAK signtofc[10]
+fb.1 OAL fc.1 IAL signtofc[11]
+fb.1 OAM fc.1 IAM signtofc[12]
+fb.1 OAN fc.1 IAN signtofc[13]
+fb.1 OAO fc.1 IAO signtofc[14]
+fb.1 OAP fc.1 IAP signtofc[15]
+
+fb.1 OBA fc.1 IBA signtofc[16]
+fb.1 OBB fc.1 IBB signtofc[17]
+fb.1 OBC fc.1 IBC signtofc[18]
+fb.1 OBD fc.1 IBD signtofc[19]
+fb.1 OBE fc.1 IBE signtofc[20]
+fb.1 OBF fc.1 IBF signtofc[21]
+fb.1 OBG fc.1 IBG signtofc[22]
+fb.1 OBH fc.1 IBH signtofc[23]
+
+fb.1 OBI fc.1 IBI signtofc[24]
+fb.1 OBJ fc.1 IBJ signtofc[25]
+fb.1 OBK fc.1 IBK signtofc[26]
+fb.1 OBL fc.1 IBL signtofc[27]
+fb.1 OBM fc.1 IBM signtofc[28]
+fb.1 OBN fc.1 IBN signtofc[29]
+fb.1 OBO fc.1 IBO signtofc[30]
+fb.1 OBP fc.1 IBP signtofc[31]
+
+fb.1 OCA fc.1 ICA signtofc[32]
+fb.1 OCB fc.1 ICB signtofc[33]
+fb.1 OCC fc.1 ICC signtofc[34]
+fb.1 OCD fc.1 ICD signtofc[35]
+fb.1 OCE fc.1 ICE signtofc[36]
+fb.1 OCF fc.1 ICF signtofc[37]
+fb.1 OCG fc.1 ICG signtofc[38]
+fb.1 OCH fc.1 ICH signtofc[39]
+
+fb.1 OCI fc.1 ICI signtofc[40]
+fb.1 OCJ fc.1 ICJ signtofc[41]
+fb.1 OCK fc.1 ICK signtofc[42]
+fb.1 OCL fc.1 ICL signtofc[43]
+fb.1 OCM fc.1 ICM signtofc[44]
+fb.1 OCN fc.1 ICN signtofc[45]
+fb.1 OCO fc.1 ICO signtofc[46]
+fb.1 OCP fc.1 ICP signtofc[47]
+
+  -- FA shifted coef to FB
+
+fa.1 OAA fb.1 IAA shftcoef[0]
+fa.1 OAB fb.1 IAB shftcoef[1]
+fa.1 OAC fb.1 IAC shftcoef[2]
+fa.1 OAD fb.1 IAD shftcoef[3]
+fa.1 OAE fb.1 IAE shftcoef[4]
+fa.1 OAF fb.1 IAF shftcoef[5]
+fa.1 OAG fb.1 IAG shftcoef[6]
+fa.1 OAH fb.1 IAH shftcoef[7]
+
+fa.1 OAI fb.1 IAI shftcoef[8]
+fa.1 OAJ fb.1 IAJ shftcoef[9]
+fa.1 OAK fb.1 IAK shftcoef[10]
+fa.1 OAL fb.1 IAL shftcoef[11]
+fa.1 OAM fb.1 IAM shftcoef[12]
+fa.1 OAN fb.1 IAN shftcoef[13]
+fa.1 OAO fb.1 IAO shftcoef[14]
+fa.1 OAP fb.1 IAP shftcoef[15]
+
+fa.1 OAR fb.1 IAR shftcoeflo
+
+fa.1 OBA fb.1 IBA shftcoef[16]
+fa.1 OBB fb.1 IBB shftcoef[17]
+fa.1 OBC fb.1 IBC shftcoef[18]
+fa.1 OBD fb.1 IBD shftcoef[19]
+fa.1 OBE fb.1 IBE shftcoef[20]
+fa.1 OBF fb.1 IBF shftcoef[21]
+fa.1 OBG fb.1 IBG shftcoef[22]
+fa.1 OBH fb.1 IBH shftcoef[23]
+
+fa.1 OBI fb.1 IBI shftcoef[24]
+fa.1 OBJ fb.1 IBJ shftcoef[25]
+fa.1 OBK fb.1 IBK shftcoef[26]
+fa.1 OBL fb.1 IBL shftcoef[27]
+fa.1 OBM fb.1 IBM shftcoef[28]
+fa.1 OBN fb.1 IBN shftcoef[29]
+fa.1 OBO fb.1 IBO shftcoef[30]
+fa.1 OBP fb.1 IBP shftcoef[31]
+
+fa.1 OCA fb.1 ICA shftcoef[32]
+fa.1 OCB fb.1 ICB shftcoef[33]
+fa.1 OCC fb.1 ICC shftcoef[34]
+fa.1 OCD fb.1 ICD shftcoef[35]
+fa.1 OCE fb.1 ICE shftcoef[36]
+fa.1 OCF fb.1 ICF shftcoef[37]
+fa.1 OCG fb.1 ICG shftcoef[38]
+fa.1 OCH fb.1 ICH shftcoef[39]
+
+fa.1 OCI fb.1 ICI shftcoef[40]
+fa.1 OCJ fb.1 ICJ shftcoef[41]
+fa.1 OCK fb.1 ICK shftcoef[42]
+fa.1 OCL fb.1 ICL shftcoef[43]
+fa.1 OCM fb.1 ICM shftcoef[44]
+fa.1 OCN fb.1 ICN shftcoef[45]
+fa.1 OCO fb.1 ICO shftcoef[46]
+fa.1 OCP fb.1 ICP shftcoef[47]
+
+  -- FA unshifted coef to FB
+
+fa.1 ODA fb.1 IDA coeftofb[0]
+fa.1 ODB fb.1 IDB coeftofb[1]
+fa.1 ODC fb.1 IDC coeftofb[2]
+fa.1 ODD fb.1 IDD coeftofb[3]
+fa.1 ODE fb.1 IDE coeftofb[4]
+fa.1 ODF fb.1 IDF coeftofb[5]
+fa.1 ODG fb.1 IDG coeftofb[6]
+fa.1 ODH fb.1 IDH coeftofb[7]
+
+fa.1 ODI fb.1 IDI coeftofb[8]
+fa.1 ODJ fb.1 IDJ coeftofb[9]
+fa.1 ODK fb.1 IDK coeftofb[10]
+fa.1 ODL fb.1 IDL coeftofb[11]
+fa.1 ODM fb.1 IDM coeftofb[12]
+fa.1 ODN fb.1 IDN coeftofb[13]
+fa.1 ODO fb.1 IDO coeftofb[14]
+fa.1 ODP fb.1 IDP coeftofb[15]
+
+fa.1 OEA fb.1 IEA coeftofb[16]
+fa.1 OEB fb.1 IEB coeftofb[17]
+fa.1 OEC fb.1 IEC coeftofb[18]
+fa.1 OED fb.1 IED coeftofb[19]
+fa.1 OEE fb.1 IEE coeftofb[20]
+fa.1 OEF fb.1 IEF coeftofb[21]
+fa.1 OEG fb.1 IEG coeftofb[22]
+fa.1 OEH fb.1 IEH coeftofb[23]
+
+fa.1 OEI fb.1 IEI coeftofb[24]
+fa.1 OEJ fb.1 IEJ coeftofb[25]
+fa.1 OEK fb.1 IEK coeftofb[26]
+fa.1 OEL fb.1 IEL coeftofb[27]
+fa.1 OEM fb.1 IEM coeftofb[28]
+fa.1 OEN fb.1 IEN coeftofb[29]
+fa.1 OEO fb.1 IEO coeftofb[30]
+fa.1 OEP fb.1 IEP coeftofb[31]
+
+fa.1 OFA fb.1 IFA coeftofb[32]
+fa.1 OFB fb.1 IFB coeftofb[33]
+fa.1 OFC fb.1 IFC coeftofb[34]
+fa.1 OFD fb.1 IFD coeftofb[35]
+fa.1 OFE fb.1 IFE coeftofb[36]
+fa.1 OFF fb.1 IFF coeftofb[37]
+fa.1 OFG fb.1 IFG coeftofb[38]
+fa.1 OFH fb.1 IFH coeftofb[39]
+
+fa.1 OFI fb.1 IFI coeftofb[40]
+fa.1 OFJ fb.1 IFJ coeftofb[41]
+fa.1 OFK fb.1 IFK coeftofb[42]
+fa.1 OFL fb.1 IFL coeftofb[43]
+fa.1 OFM fb.1 IFM coeftofb[44]
+fa.1 OFN fb.1 IFN coeftofb[45]
+fa.1 OFO fb.1 IFO coeftofb[46]
+fa.1 OFP fb.1 IFP coeftofb[47]
+
+  -- fa controls to fc
+
+fa.1 OKA fc.1 IKA enablerangerrfc[0]
+fa.1 OJB fc.1 IJB gocons122174
+fa.1 OJC fc.1 IJC gocons123175
+fa.1 OIA fc.1 IIB constoverflfc
+
+ -- Add exponent from fa to fc
+
+fa.1 OGA fc.1 IDA exptofc[0]
+fa.1 OGB fc.1 IDB exptofc[1]
+fa.1 OGC fc.1 IDC exptofc[2]
+fa.1 OGD fc.1 IDD exptofc[3]
+fa.1 OGE fc.1 IDE exptofc[4]
+fa.1 OGF fc.1 IDF exptofc[5]
+fa.1 OGG fc.1 IDG exptofc[6]
+fa.1 OGH fc.1 IDH exptofc[7]
+
+fa.1 OGI fc.1 IDI exptofc[8]
+fa.1 OGJ fc.1 IDJ exptofc[9]
+fa.1 OGK fc.1 IDK exptofc[10]
+fa.1 OGL fc.1 IDL exptofc[11]
+fa.1 OGM fc.1 IDM exptofc[12]
+fa.1 OGN fc.1 IDN exptofc[13]
+fa.1 OGO fc.1 IDO exptofc[14]
+fa.1 OGP fc.1 IDP exptofc[15]
+
+   -- fa controls to fb
+
+fa.1 OHA fb.1 IJA fbsubtractmode
+fa.1 OJA fb.1 IJB fbgoadd
+
+   -- fb controls to fc
+e
+fb.1 ODA fc.1 IEJ  normalizecnt[5]
+fb.1 ODB fc.1 IEI  normalizecnt[4]
+fb.1 ODC fc.1 IEH  normalizecnt[3]
+fb.1 ODD fc.1 IEG  normalizecnt[2]
+fb.1 ODE fc.1 IEK  normalizecnt12
+
+fb.1 OEA fc.1 IEE sect0tofc[0]
+fb.1 OEB fc.1 IEF sect0tofc[1]
+fb.1 OFA fc.1 IEC sect1tofc[0]
+fb.1 OFB fc.1 IED sect1tofc[1]
+fb.1 OGA fc.1 IEA sect2tofc[0]
+fb.1 OGB fc.1 IEB sect2tofc[1]
+
+fb.1 OHA fc.1 IHA togglesign[0]
+fb.1 OHB fc.1 IHB shifteqminus1[0]
+fb.1 OIA fc.1 IIA cunderflowtofc[0]
+fb.1 OJA fc.1 IJA goaddtofc[0]
+fb.1 OJB fc.1 IJD unlikesigns[0]
+
+
+ -- carries from mb to mc
+
+mb.1 OGA mc.1 ILA  mbmcflcar[0] 
+mb.1 OGB mc.1 ILB  mbmcflcar[1] 
+mb.1 OGC mc.1 ILC  mbmcflcar[2] 
+mb.1 OGD mc.1 ILD  mbmcflcar[3] 
+mb.1 OGE mc.1 ILE  mbmcflcar[4] 
+mb.1 OGF mc.1 ILF  mbmcflcar[5] 
+mb.1 OGG mc.1 ILG  mbmcflcar[6] 
+mb.1 OGH mc.1 ILH  mbmcflcar[7] 
+mb.1 OGI mc.1 ILI  mbmcflcar[8] 
+mb.1 OGJ mc.1 ILJ  mbmcflcar[9] 
+mb.1 OGK mc.1 ILK  mbmcflcar[10]
+mb.1 OGL mc.1 ILL  mbmcflcar[11]
+mb.1 OGM mc.1 ILM  mbmcflcar[12]
+
+mb.1 OHA mc.1 IMA  mbmcslcar[0] 
+mb.1 OHB mc.1 IMB  mbmcslcar[1] 
+mb.1 OHC mc.1 IMC  mbmcslcar[2] 
+mb.1 OHD mc.1 IMD  mbmcslcar[3] 
+mb.1 OHE mc.1 IME  mbmcslcar[4] 
+mb.1 OHF mc.1 IMF  mbmcslcar[5] 
+mb.1 OHG mc.1 IMG  mbmcslcar[6] 
+mb.1 OHH mc.1 IMH  mbmcslcar[7] 
+mb.1 OHI mc.1 IMI  mbmcslcar[8] 
+mb.1 OHJ mc.1 IMJ  mbmcslcar[9] 
+		  
+mb.1 OIG mc.1 IMK  mbmcftlcar[0]
+mb.1 OIH mc.1 IML  mbmcftlcar[1]
+
+mb.1 OKA mc.1 INA  mbmctlcar[0] 
+mb.1 OKB mc.1 INB  mbmctlcar[1] 
+mb.1 OKC mc.1 INC  mbmctlcar[2] 
+mb.1 OKD mc.1 IND  mbmctlcar[3] 
+mb.1 OKE mc.1 INE  mbmctlcar[4] 
+mb.1 OLD mc.1 INF  mbmctlcar[5]
+
+mb.1 OMA mc.1 IOA  mbmcfitlcar[0]
+mb.1 OMB mc.1 IOB  mbmcfitlcar[1]
+
+  -- Carries from mc to md
+
+mc.1 OGA md.1 ILA  mcmdflcar[0]
+mc.1 OGB md.1 ILB  mcmdflcar[1]
+mc.1 OGC md.1 ILC  mcmdflcar[2]
+mc.1 OGD md.1 ILD  mcmdflcar[3]
+mc.1 OGE md.1 ILE  mcmdflcar[4]
+mc.1 OGF md.1 ILF  mcmdflcar[5]
+mc.1 OGG md.1 ILG  mcmdflcar[6]
+mc.1 OGH md.1 ILH  mcmdflcar[7]
+mc.1 OGI md.1 ILI  mcmdflcar[8]
+
+mc.1 OHA md.1 IMA  mcmdslcar[0]
+mc.1 OHB md.1 IMB  mcmdslcar[1]
+mc.1 OHC md.1 IMC  mcmdslcar[2]
+mc.1 OHD md.1 IMD  mcmdslcar[3]
+mc.1 OHE md.1 IME  mcmdslcar[4]
+mc.1 OHF md.1 IMF  mcmdslcar[5]
+mc.1 OIE md.1 IMG  mcmdslcar[6]
+mc.1 OIF md.1 IMH  mcmdslcar[7]
+
+mc.1 OKA md.1 INA  mcmdtlcar[0]
+mc.1 OKB md.1 INB  mcmdtlcar[1]
+mc.1 OKC md.1 INC  mcmdtlcar[2]
+mc.1 OLC md.1 IND  mcmdtlcar[3]
+
+mc.1 OMA md.1 IOA  mcmdftlcar[0]
+mc.1 OMB md.1 IOB  mcmdftlcar[1]
+
+
+   From MA
+
+ma.1 OPK me.1 IAB marestomea[0]
+ma.1 OQJ me.1 ICB marestomeb[0]
+ma.1 OPM me.1 IAC marestomea[1]
+ma.1 OQK me.1 ICC marestomeb[1]
+ma.1 OPO me.1 IAD marestomea[2]
+ma.1 OQM me.1 ICD marestomeb[2]
+ma.1 OPQ me.1 IAE marestomea[3]
+ma.1 OQO me.1 ICE marestomeb[3]
+ma.1 OPR me.1 IAF marestomea[4]
+ma.1 OQQ me.1 ICF marestomeb[4]
+
+    mb results to me
+
+mb.1 OPA me.1 IEF mbrestomea[0]
+mb.1 OPB me.1 IFF mbrestomeb[0]
+mb.1 OPC me.1 IAG mbrestomea[1]
+mb.1 OPD me.1 ICG mbrestomeb[1]
+mb.1 OQA me.1 IEG mbrestomec[1]
+mb.1 OPE me.1 IAH mbrestomea[2]
+mb.1 OPF me.1 ICH mbrestomeb[2]
+mb.1 OQC me.1 IEH mbrestomec[2]
+mb.1 OPG me.1 IAI mbrestomea[3]
+mb.1 OPH me.1 IEI mbrestomeb[3]
+mb.1 OQE me.1 ICI mbrestomec[3]
+mb.1 OPI me.1 IAJ mbrestomea[4]
+mb.1 OPK me.1 IAK mbrestomea[5]
+mb.1 OQI me.1 ICK mbrestomeb[5]
+mb.1 OPM me.1 IAL mbrestomea[6]
+mb.1 OQK me.1 ICL mbrestomeb[6]
+mb.1 OPO me.1 IAM mbrestomea[7]
+mb.1 OQM me.1 ICM mbrestomeb[7]
+mb.1 OPQ me.1 IAN mbrestomea[8]
+mb.1 OQO me.1 ICN mbrestomeb[8]
+mb.1 OPR me.1 IAO mbrestomea[9]
+mb.1 OQQ me.1 ICO mbrestomeb[9]
+
+   mc result to me
+
+mc.1 OPU me.1 IAY mcrestomea[0]
+mc.1 OQS me.1 ICY mcrestomeb[0]
+mc.1 OPS me.1 IAX mcrestomea[1]
+mc.1 OQQ me.1 ICX mcrestomeb[1]
+mc.1 OPQ me.1 IAW mcrestomea[2]
+mc.1 OQO me.1 ICW mcrestomeb[2]
+mc.1 OPO me.1 IAV mcrestomea[3]
+mc.1 OQM me.1 ICV mcrestomeb[3]
+mc.1 OPM me.1 IAU mcrestomea[4]
+mc.1 OQK me.1 ICU mcrestomeb[4]
+mc.1 OPK me.1 IAT mcrestomea[5]
+mc.1 OQI me.1 ICT mcrestomeb[5]
+mc.1 OPI me.1 IAS mcrestomea[6]
+mc.1 OQG me.1 ICS mcrestomeb[6]
+mc.1 OPG me.1 IAR mcrestomea[7]
+mc.1 OPE me.1 IAQ mcrestomea[8]
+mc.1 OPF me.1 ICQ mcrestomeb[8]
+mc.1 OQC me.1 IEQ mcrestomec[8]
+mc.1 OPC me.1 IAP mcrestomea[9]
+mc.1 OPD me.1 ICP mcrestomeb[9]
+mc.1 OQA me.1 IEP mcrestomec[9]
+mc.1 OPA me.1 IEO mcrestomea[10]
+mc.1 OPB me.1 IFO mcrestomeb[10]
+
+     md res to me
+
+md.1 OZM me.1 IBZ mdrestomea[0]  
+md.1 OZN me.1 IDZ mdrestomeb[0]
+md.1 OZA me.1 IBY mdrestomea[1]
+md.1 OZB me.1 IDY mdrestomeb[1]
+md.1 OYA me.1 IBX mdrestomea[2]
+md.1 OYB me.1 IDX mdrestomeb[2]
+md.1 OXA me.1 IBW mdrestomea[3]
+md.1 OXB me.1 IDW mdrestomeb[3]
+
+md.1 OWA me.1 IBV mdrestomea[4]
+md.1 OWB me.1 IDV mdrestomeb[4]
+md.1 OVA me.1 IBU mdrestomea[5]
+md.1 OVB me.1 IDU mdrestomeb[5]
+md.1 OUA me.1 IBT mdrestomea[6]
+md.1 OUB me.1 IDT mdrestomeb[6]
+
+md.1 OTA me.1 IBS mdrestomea[7]
+md.1 OTB me.1 IDS mdrestomeb[7]
+md.1 OSA me.1 IBR mdrestomea[8]
+md.1 OSB me.1 IDR mdrestomeb[8]
+md.1 ORA me.1 IBQ mdrestomea[9]
+md.1 ORB me.1 IDQ mdrestomeb[9]
+
+md.1 OQA me.1 IBP mdrestomea[10]
+md.1 OQB me.1 IDP mdrestomeb[10]
+md.1 OPA me.1 IBO mdrestomea[11]
+md.1 OPB me.1 IDO mdrestomeb[11]
+md.1 OOA me.1 IBN mdrestomea[12]
+md.1 OOB me.1 IDN mdrestomeb[12]
+
+md.1 ONA me.1 IBM mdrestomea[13]
+md.1 ONB me.1 IDM mdrestomeb[13]
+md.1 OMA me.1 IBL mdrestomea[14]
+md.1 OMB me.1 IDL mdrestomeb[14]
+md.1 OLA me.1 IBK mdrestomea[15]
+md.1 OLB me.1 IDK mdrestomeb[15]
+
+md.1 OKA me.1 IBJ mdrestomea[16]
+md.1 OKB me.1 IDJ mdrestomeb[16]
+md.1 OJA me.1 IBI mdrestomea[17]
+md.1 OJB me.1 IDI mdrestomeb[17]
+md.1 OIA me.1 IBH mdrestomea[18]
+md.1 OIB me.1 IDH mdrestomeb[18]
+
+md.1 OHA me.1 IBG mdrestomea[19]
+md.1 OHB me.1 IDG mdrestomeb[19]
+md.1 OGA me.1 IBF mdrestomea[20]
+md.1 OGB me.1 IDF mdrestomeb[20]
+md.1 OFA me.1 IBE mdrestomea[21]
+md.1 OFB me.1 IDE mdrestomeb[21]
+
+md.1 OEA me.1 IBD mdrestomea[22]
+md.1 OEB me.1 IDD mdrestomeb[22]
+md.1 ODA me.1 IBC mdrestomea[23]
+md.1 OCA me.1 IBB mdrestomea[24]
+md.1 OCM me.1 IDB mdrestomeb[24]
+
+md.1 OBA me.1 IBA mdrestomea[25]
+md.1 OBM me.1 IDA mdrestomeb[25]
+md.1 OAA me.1 IAZ mdrestomea[26]
+md.1 OAM me.1 ICZ mdrestomeb[26]
+
+   me control to ma
+
+me.1 ODA ma.1 ITA  magatekdata
+me.1 OEA ma.1 IKA  magatekdatatoj
+me.1 OFA ma.1 IHA  maholdjdata
+me.1 OGA ma.1 ISA  magatejdata
+me.1 OHA ma.1 IGA  magatekdatadel
+me.1 OIB ma.1 IRA  masellookup
+
+   me control to mb
+
+me.1 ODB mb.1 ITA  mbgatekdata
+me.1 OEB mb.1 IKA  mbgatekdatatoj
+me.1 OFB mb.1 IHA  mbholdjdata
+me.1 OGB mb.1 ISA  mbgatejdata
+me.1 OHB mb.1 IIA  mbgatekdatadel
+me.1 OIA mb.1 IRA  mbsellookup
+me.1 OJD mb.1 ITB  mbitercntl
+            
+   me control to ra
+
+me.1 ODC ra.1 IPA  ragatekdata
+me.1 OEC ra.1 IQC  ragatekdatatoj
+me.1 OFC ra.1 IQB  raholdjdata
+me.1 OGC ra.1 IQA  ragatejdata
+me.1 OHC ra.1 IPB  ragatekdatadel
+me.1 OMA ra.1 IJA  raenablefu
+me.1 OMB ra.1 IRB  ragaterecip
+me.1 OMC ra.1 IRA  raselrecip
+me.1 OMD ra.1 ISA  ragatesqrt
+
+  me control to mc
+
+me.1 OIC mc.1 IRA  mcsellookup
+me.1 OJE mc.1 IRB  mcitercntl
+
+
+  me control to md
+
+me.1 OKA md.1 ITA  mdselsqrtsh
+me.1 OID md.1 IRA  mdsellookup
+me.1 OJF md.1 IIA  mditercntl
+
+ra.1 OKA md.1 ISA  mdrndbit[0]
+ra.1 OKB md.1 ISB  mdrndbit[1]
+ra.1 OKC md.1 ISC  mdrndbit[2]
+
+  me round to ma
+
+me.1 OJA ma.1 IMM  mefloatrnd
+me.1 OJB ma.1 IMR  mereciprnd
+me.1 OJC ma.1 IMS  mesqrtrnd
+
+  lookup data to md
+
+ra.1 OIA md.1 IKA  mdludata[0]
+ra.1 OIB md.1 IKB  mdludata[1]
+ra.1 OIC md.1 IKC  mdludata[2]
+ra.1 OID md.1 IKD  mdludata[3]
+ra.1 OIE md.1 IKE  mdludata[4]
+ra.1 OIF md.1 IKF  mdludata[5]
+ra.1 OIG md.1 IKG  mdludata[6]
+ra.1 OIH md.1 IKH  mdludata[7]
+ra.1 OII md.1 IKI  mdludata[8]
+ra.1 OIJ md.1 IKJ  mdludata[9]
+ra.1 OIK md.1 IKK  mdludata[10]
+ra.1 OIL md.1 IKL  mdludata[11]
+ra.1 OIM md.1 IKM  mdludata[12]

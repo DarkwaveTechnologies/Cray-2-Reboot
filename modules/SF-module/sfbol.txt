@@ -1,0 +1,937 @@
+*
+* Boolean Definitions
+* Module: SF
+* Description: Memory Module
+* Revision: 0
+* Date: 
+* 
+---   BAA = IPA TBC + BCA tbc .  0          Chip Address
+---   BAB = IPB TBC + BCB tbc .  1
+---   BAC = IPC TBC + BCC tbc .  2
+---   BAD = IPD TCC + BCD tcc .  3
+---   BAE = IPE TCC + BCE tcc .  4
+---   BAF = IPF TCC + BCF tcc .  5
+---   BAG = IPG TDC + BCG tdc .  6
+---   BAH = IPH TDC + BCH tdc .  7
+---   BAI = IPI TDC + BCI tdc .  8
+---   BAJ = IPJ TEC + BCJ tec .  9
+---   BAK = IPK TEC + BCK tec . 10
+---   BAL = IPL TEC + BCL tec . 11
+---   BAM = IPM TFC + BCM tfc . 12
+---   BAN = IPN TFC + BCN tfc . 13
+---   BAO = IPO TFC + BCO tfc . 14
+---   BAP = IPP TGC + BCP tgc . 15
+---   BAQ = IPQ TGC + BCQ tgc . 16
+---   BAR = IPR TGC + BCR tgc . 17
+
+---   BAS = ipt ips THC + BBS thc .  0      Chip Select
+---   BAT = ipt IPS THC + BBT thc .  1
+---   BAU = IPT ips THC + BBU thc .  2
+---   BAV = IPT IPS THC + BBV thc .  3
+
+---   BAW = IPW TIC + BAW tic .             Read
+---   BAX = IPX TIC + BAX tic .             Write
+
+---   BBA = IPA TBC + BCA tbc .  0          Chip Address
+---   BBB = IPB TBC + BCB tbc .  1
+---   BBC = IPC TBC + BCC tbc .  2
+---   BBD = IPD TCC + BCD tcc .  3
+---   BBE = IPE TCC + BCE tcc .  4
+---   BBF = IPF TCC + BCF tcc .  5
+---   BBG = IPG TDC + BCG tdc .  6
+---   BBH = IPH TDC + BCH tdc .  7
+---   BBI = IPI TDC + BCI tdc .  8
+---   BBJ = IPJ TEC + BCJ tec .  9
+---   BBK = IPK TEC + BCK tec . 10
+---   BBL = IPL TEC + BCL tec . 11
+---   BBM = IPM TFC + BCM tfc . 12
+---   BBN = IPN TFC + BCN tfc . 13
+---   BBO = IPO TFC + BCO tfc . 14
+---   BBP = IPP TGC + BCP tgc . 15
+---   BBQ = IPQ TGC + BCQ tgc . 16
+---   BBR = IPR TGC + BCR tgc . 17
+
+---   BBS = ipt ips THC + BBS thc .  0      Chip Select
+---   BBT = ipt IPS THC + BBT thc .  1
+---   BBU = IPT ips THC + BBU thc .  2
+---   BBV = IPT IPS THC + BBV thc .  3
+
+---   BCA = IPA TBC + BCA tbc .  0          Chip Address
+---   BCB = IPB TBC + BCB tbc .  1
+---   BCC = IPC TBC + BCC tbc .  2
+---   BCD = IPD TCC + BCD tcc .  3
+---   BCE = IPE TCC + BCE tcc .  4
+---   BCF = IPF TCC + BCF tcc .  5
+---   BCG = IPG TDC + BCG tdc .  6
+---   BCH = IPH TDC + BCH tdc .  7
+---   BCI = IPI TDC + BCI tdc .  8
+---   BCJ = IPJ TEC + BCJ tec .  9
+---   BCK = IPK TEC + BCK tec . 10
+---   BCL = IPL TEC + BCL tec . 11
+---   BCM = IPM TFC + BCM tfc . 12
+---   BCN = IPN TFC + BCN tfc . 13
+---   BCO = IPO TFC + BCO tfc . 14
+---   BCP = IPP TGC + BCP tgc . 15
+---   BCQ = IPQ TGC + BCQ tgc . 16
+---   BCR = IPR TGC + BCR tgc . 17
+
+---   DAA = TAH BAX + taq DAE .  0      Write Enable
+---   DAB = TAH BAX + taq DAE .  1
+---   DAC = TAH BAX + taq DAE .  2
+---   DAD = TAH BAX + taq DAE .  3
+
+---   DAE = TAH BAX + taq DAE .         Hold
+
+
+---   EAA = BAA .  0         Chip Address Driver  ABC Board
+---   EAB = BAB .  1
+---   EAC = BAC .  2
+---   EAD = BAD .  3
+---   EAE = BAE .  4
+---   EAF = BAF .  5
+---   EAG = BAG .  6
+---   EAH = BAH .  7
+---   EAI = BAI .  8
+---   EAJ = BAJ .  9
+---   EAK = BAK . 10
+---   EAL = BAL . 11
+---   EAM = BAM . 12
+---   EAN = BAN . 13
+---   EAO = BAO . 14
+---   EAP = BAP . 15
+---   EAQ = BAQ . 16
+---   EAR = BAR . 17
+
+---   eaa = baa .  0
+---   eab = bab .  1
+---   eac = bac .  2
+---   ead = bad .  3
+---   eae = bae .  4
+---   eaf = baf .  5
+---   eag = bag .  6
+---   eah = bah .  7
+---   eai = bai .  8
+---   eaj = baj .  9
+---   eak = bak . 10
+---   eal = bal . 11
+---   eam = bam . 12
+---   ean = ban . 13
+---   eao = bao . 14
+---   eap = bap . 15
+---   eaq = baq . 16
+---   ear = bar . 17
+
+
+---   EBA = BAA .  0         Chip Address Driver  DEF Board
+---   EBB = BAB .  1
+---   EBC = BAC .  2
+---   EBD = BAD .  3
+---   EBE = BAE .  4
+---   EBF = BAF .  5
+---   EBG = BAG .  6
+---   EBH = BAH .  7
+---   EBI = BAI .  8
+---   EBJ = BAJ .  9
+---   EBK = BAK . 10
+---   EBL = BAL . 11
+---   EBM = BAM . 12
+---   EBN = BAN . 13
+---   EBO = BAO . 14
+---   EBP = BAP . 15
+---   EBQ = BAQ . 16
+---   EBR = BAR . 17
+
+---   eba = baa .  0
+---   ebb = bab .  1
+---   ebc = bac .  2
+---   ebd = bad .  3
+---   ebe = bae .  4
+---   ebf = baf .  5
+---   ebg = bag .  6
+---   ebh = bah .  7
+---   ebi = bai .  8
+---   ebj = baj .  9
+---   ebk = bak . 10
+---   ebl = bal . 11
+---   ebm = bam . 12
+---   ebn = ban . 13
+---   ebo = bao . 14
+---   ebp = bap . 15
+---   ebq = baq . 16
+---   ebr = bar . 17
+
+---   ECA = BAA .  0         Chip Address Driver  GHI Board
+---   ECB = BAB .  1
+---   ECC = BAC .  2
+---   ECD = BAD .  3
+---   ECE = BAE .  4
+---   ECF = BAF .  5
+---   ECG = BAG .  6
+---   ECH = BAH .  7
+---   ECI = BAI .  8
+---   ECJ = BAJ .  9
+---   ECK = BAK . 10
+---   ECL = BAL . 11
+---   ECM = BAM . 12
+---   ECN = BAN . 13
+---   ECO = BAO . 14
+---   ECP = BAP . 15
+---   ECQ = BAQ . 16
+---   ECR = BAR . 17
+
+---   eca = baa .  0
+---   ecb = bab .  1
+---   ecc = bac .  2
+---   ecd = bad .  3
+---   ece = bae .  4
+---   ecf = baf .  5
+---   ecg = bag .  6
+---   ech = bah .  7
+---   eci = bai .  8
+---   ecj = baj .  9
+---   eck = bak . 10
+---   ecl = bal . 11
+---   ecm = bam . 12
+---   ecn = ban . 13
+---   eco = bao . 14
+---   ecp = bap . 15
+---   ecq = baq . 16
+---   ecr = bar . 17
+
+---   EDA = BAA .  0         Chip Address Driver  JKL Board
+---   EDB = BAB .  1
+---   EDC = BAC .  2
+---   EDD = BAD .  3
+---   EDE = BAE .  4
+---   EDF = BAF .  5
+---   EDG = BAG .  6
+---   EDH = BAH .  7
+---   EDI = BAI .  8
+---   EDJ = BAJ .  9
+---   EDK = BAK . 10
+---   EDL = BAL . 11
+---   EDM = BAM . 12
+---   EDN = BAN . 13
+---   EDO = BAO . 14
+---   EDP = BAP . 15
+---   EDQ = BAQ . 16
+---   EDR = BAR . 17
+
+---   eda = baa .  0
+---   edb = bab .  1
+---   edc = bac .  2
+---   edd = bad .  3
+---   ede = bae .  4
+---   edf = baf .  5
+---   edg = bag .  6
+---   edh = bah .  7
+---   edi = bai .  8
+---   edj = baj .  9
+---   edk = bak . 10
+---   edl = bal . 11
+---   edm = bam . 12
+---   edn = ban . 13
+---   edo = bao . 14
+---   edp = bap . 15
+---   edq = baq . 16
+---   edr = bar . 17
+
+---   EEA = BBA .  0         Chip Address Driver  MNO Board
+---   EEB = BBB .  1
+---   EEC = BBC .  2
+---   EED = BBD .  3
+---   EEE = BBE .  4
+---   EEF = BBF .  5
+---   EEG = BBG .  6
+---   EEH = BBH .  7
+---   EEI = BBI .  8
+---   EEJ = BBJ .  9
+---   EEK = BBK . 10
+---   EEL = BBL . 11
+---   EEM = BBM . 12
+---   EEN = BBN . 13
+---   EEO = BBO . 14
+---   EEP = BBP . 15
+---   EEQ = BBQ . 16
+---   EER = BBR . 17
+
+---   eea = bba .  0
+---   eeb = bbb .  1
+---   eec = bbc .  2
+---   eed = bbd .  3
+---   eee = bbe .  4
+---   eef = bbf .  5
+---   eeg = bbg .  6
+---   eeh = bbh .  7
+---   eei = bbi .  8
+---   eej = bbj .  9
+---   eek = bbk . 10
+---   eel = bbl . 11
+---   eem = bbm . 12
+---   een = bbn . 13
+---   eeo = bbo . 14
+---   eep = bbp . 15
+---   eeq = bbq . 16
+---   eer = bbr . 17
+
+
+---   EFA = BBA .  0         Chip Address Driver  PQR Board
+---   EFB = BBB .  1
+---   EFC = BBC .  2
+---   EFD = BBD .  3
+---   EFE = BBE .  4
+---   EFF = BBF .  5
+---   EFG = BBG .  6
+---   EFH = BBH .  7
+---   EFI = BBI .  8
+---   EFJ = BBJ .  9
+---   EFK = BBK . 10
+---   EFL = BBL . 11
+---   EFM = BBM . 12
+---   EFN = BBN . 13
+---   EFO = BBO . 14
+---   EFP = BBP . 15
+---   EFQ = BBQ . 16
+---   EFR = BBR . 17
+
+---   efa = bba .  0
+---   efb = bbb .  1
+---   efc = bbc .  2
+---   efd = bbd .  3
+---   efe = bbe .  4
+---   eff = bbf .  5
+---   efg = bbg .  6
+---   efh = bbh .  7
+---   efi = bbi .  8
+---   efj = bbj .  9
+---   efk = bbk . 10
+---   efl = bbl . 11
+---   efm = bbm . 12
+---   efn = bbn . 13
+---   efo = bbo . 14
+---   efp = bbp . 15
+---   efq = bbq . 16
+---   efr = bbr . 17
+
+
+---   EGA = BBA .  0         Chip Address Driver  STU Board
+---   EGB = BBB .  1
+---   EGC = BBC .  2
+---   EGD = BBD .  3
+---   EGE = BBE .  4
+---   EGF = BBF .  5
+---   EGG = BBG .  6
+---   EGH = BBH .  7
+---   EGI = BBI .  8
+---   EGJ = BBJ .  9
+---   EGK = BBK . 10
+---   EGL = BBL . 11
+---   EGM = BBM . 12
+---   EGN = BBN . 13
+---   EGO = BBO . 14
+---   EGP = BBP . 15
+---   EGQ = BBQ . 16
+---   EGR = BBR . 17
+
+---   ega = bba .  0
+---   egb = bbb .  1
+---   egc = bbc .  2
+---   egd = bbd .  3
+---   ege = bbe .  4
+---   egf = bbf .  5
+---   egg = bbg .  6
+---   egh = bbh .  7
+---   egi = bbi .  8
+---   egj = bbj .  9
+---   egk = bbk . 10
+---   egl = bbl . 11
+---   egm = bbm . 12
+---   egn = bbn . 13
+---   ego = bbo . 14
+---   egp = bbp . 15
+---   egq = bbq . 16
+---   egr = bbr . 17
+
+
+---   EHA = BBA .  0         Chip Address Driver  VWX Board
+---   EHB = BBB .  1
+---   EHC = BBC .  2
+---   EHD = BBD .  3
+---   EHE = BBE .  4
+---   EHF = BBF .  5
+---   EHG = BBG .  6
+---   EHH = BBH .  7
+---   EHI = BBI .  8
+---   EHJ = BBJ .  9
+---   EHK = BBK . 10
+---   EHL = BBL . 11
+---   EHM = BBM . 12
+---   EHN = BBN . 13
+---   EHO = BBO . 14
+---   EHP = BBP . 15
+---   EHQ = BBQ . 16
+---   EHR = BBR . 17
+
+---   eha = bba .  0
+---   ehb = bbb .  1
+---   ehc = bbc .  2
+---   ehd = bbd .  3
+---   ehe = bbe .  4
+---   ehf = bbf .  5
+---   ehg = bbg .  6
+---   ehh = bbh .  7
+---   ehi = bbi .  8
+---   ehj = bbj .  9
+---   ehk = bbk . 10
+---   ehl = bbl . 11
+---   ehm = bbm . 12
+---   ehn = bbn . 13
+---   eho = bbo . 14
+---   ehp = bbp . 15
+---   ehq = bbq . 16
+---   ehr = bbr . 17
+
+
+---   FAA = BAS .  0         Chip Select Driver  ABC Board
+---   FAB = BAT .  1
+---   FAC = BAU .  2
+---   FAD = BAV .  3
+
+---   FBA = BAS .  0         Chip Select Driver  DEF Board
+---   FBB = BAT .  1
+---   FBC = BAU .  2
+---   FBD = BAV .  3
+
+---   FCA = BAS .  0         Chip Select Driver  GHI Board
+---   FCB = BAT .  1
+---   FCC = BAU .  2
+---   FCD = BAV .  3
+
+---   FDA = BAS .  0         Chip Select Driver  JKL Board
+---   FDB = BAT .  1
+---   FDC = BAU .  2
+---   FDD = BAV .  3
+
+---   FEA = bas .  0         Chip Select Driver  MNO Board
+---   FEB = bat .  1
+---   FEC = bau .  2
+---   FED = bav .  3
+
+---   FFA = bas .  0         Chip Select Driver  PQR Board
+---   FFB = bat .  1
+---   FFC = bau .  2
+---   FFD = bav .  3
+
+---   FGA = bas .  0         Chip Select Driver  STU Board
+---   FGB = bat .  1
+---   FGC = bau .  2
+---   FGD = bav .  3
+
+---   FHA = bas .  0         Chip Select Driver  VWX Board
+---   FHB = bat .  1
+---   FHC = bau .  2
+---   FHD = bav .  3
+
+
+---   GAA = DAA .  0         Write Enable Driver  ABC Board
+---   GAB = DAB .  1
+---   GAC = DAC .  2
+---   GAD = DAD .  3
+
+---   GBA = DAA .  0         Write Enable Driver  DEF Board
+---   GBB = DAB .  1
+---   GBC = DAC .  2
+---   GBD = DAD .  3
+
+---   GCA = DAA .  0         Write Enable Driver  GHI Board
+---   GCB = DAB .  1
+---   GCC = DAC .  2
+---   GCD = DAD .  3
+
+---   GDA = DAA .  0         Write Enable Driver  JKL Board
+---   GDB = DAB .  1
+---   GDC = DAC .  2
+---   GDD = DAD .  3
+
+---   GEA = daa .  0         Write Enable Driver  MNO Board
+---   GEB = dab .  1
+---   GEC = dac .  2
+---   GED = dad .  3
+
+---   GFA = daa .  0         Write Enable Driver  PQR Board
+---   GFB = dab .  1
+---   GFC = dac .  2
+---   GFD = dad .  3
+
+---   GGA = daa .  0         Write Enable Driver  STU Board
+---   GGB = dab .  1
+---   GGC = dac .  2
+---   GGD = dad .  3
+
+---   GHA = daa .  0         Write Enable Driver  VWX Board
+---   GHB = dab .  1
+---   GHC = dac .  2
+---   GHD = dad .  3
+
+
+---   jaa = iie KAC + jaa kac .         Read CPU B Bank N + 00
+---   jab = iif KAC + jab kac .                             10
+---   jac = iig KAC + jac kac .                             20
+---   jad = iih KAC + jad kac .                             30
+
+---   jba = iie KAD + jba kad .         Read CPU C Bank N + 00
+---   jbb = iif KAD + jbb kad .                             10
+---   jbc = iig KAD + jbc kad .                             20
+---   jbd = iih KAD + jbd kad .                             30
+
+---   jca = iie KAA + jca kaa .         Read CPU D Bank N + 00
+---   jcb = iif KAA + jcb kaa .                             10
+---   jcc = iig KAA + jcc kaa .                             20
+---   jcd = iih KAA + jcd kaa .                             30
+
+---   jda = iie KAB + jda kab .         Read CPU A Bank N + 00
+---   jdb = iif KAB + jdb kab .                             10
+---   jdc = iig KAB + jdc kab .                             20
+---   jdd = iih KAB + jdd kab .                             30
+
+---   kaa = iii .                       Packet phase 0
+---   kab = kaa .                                    1
+---   kac = kab .                                    2
+---   kad = kac .                                    3
+
+---   laa = iia KAA + laa kaa .         Write CPU A Bank N + 00
+---   lab = iib KAA + lab kaa .                              10
+---   lac = iic KAA + lac kaa .                              20
+---   lad = iid KAA + lad kaa .                              30
+
+---   lba = iia KAB + lba kab .         Write CPU B Bank N + 00
+---   lbb = iib KAB + lbb kab .                              10
+---   lbc = iic KAB + lbc kab .                              20
+---   lbd = iid KAB + lbd kab .                              30
+
+---   lca = iia KAC + lca kac .         Write CPU C Bank N + 00
+---   lcb = iib KAC + lcb kac .                              10
+---   lcc = iic KAC + lcc kac .                              20
+---   lcd = iid KAC + lcd kac .                              30
+
+---   lda = iia KAD + lda kad .         Write CPU D Bank N + 00
+---   ldb = iib KAD + ldb kad .                              10
+---   ldc = iic KAD + ldc kad .                              20
+---   ldd = iid KAD + ldd kad .                              30
+
+---   NAA = MAA .  0    Read data
+---   NAB = MAB .  1
+---   NAC = MAC .  2
+---   NAD = MAD .  3
+---   NAE = MAE .  4
+---   NAF = MAF .  5
+---   NAG = MAG .  6
+---   NAH = MAH .  7
+---   NAI = MAI .  8
+---   NAJ = MAJ .  9
+---   NAK = MAK . 10
+---   NAL = MAL . 11
+---   NAM = MAM . 12
+---   NAN = MAN . 13
+---   NAO = MAO . 14
+---   NAP = MAP . 15
+---   NAQ = MAQ . 16
+---   NAR = MAR . 17
+---   NAS = MAS . 18
+---   NAT = MAT . 19
+---   NAU = MAU . 20
+---   NAV = MAV . 21
+---   NAW = MAW . 22
+---   NAX = MAX . 23
+
+---   NBA = MBA . 24
+---   NBB = MBB . 25
+---   NBC = MBC . 26
+---   NBD = MBD . 27
+---   NBE = MBE . 28
+---   NBF = MBF . 29
+---   NBG = MBG . 30
+---   NBH = MBH . 31
+---   NBI = MBI . 32
+---   NBJ = MBJ . 33
+---   NBK = MBK . 34
+---   NBL = MBL . 35
+---   NBM = MBM . 36
+---   NBN = MBN . 37
+---   NBO = MBO . 38
+---   NBP = MBP . 39
+---   NBQ = MBQ . 40
+---   NBR = MBR . 41
+---   NBS = MBS . 42
+---   NBT = MBT . 43
+---   NBU = MBU . 44
+---   NBV = MBV . 45
+---   NBW = MBW . 46
+---   NBX = MBX . 47
+
+---   NCA = MCA . 48    Read data
+---   NCB = MCB . 49
+---   NCC = MCC . 50
+---   NCD = MCD . 51
+---   NCE = MCE . 52
+---   NCF = MCF . 53
+---   NCG = MCG . 54
+---   NCH = MCH . 55
+---   NCI = MCI . 56
+---   NCJ = MCJ . 57
+---   NCK = MCK . 58
+---   NCL = MCL . 59
+---   NCM = MCM . 60
+---   NCN = MCN . 61
+---   NCO = MCO . 62
+---   NCP = MCP . 63
+---   NCQ = MCQ . 64
+---   NCR = MCR . 65
+---   NCS = MCS . 66
+---   NCT = MCT . 67
+---   NCU = MCU . 68
+---   NCV = MCV . 69
+---   NCW = MCW . 70
+---   NCX = MCX . 71
+---   OAA = IAA JAA + IBA JAB + ICA JAC + IDA JAD .     Read nodes
+---   OAB = IAB JAA + IBB JAB + ICB JAC + IDB JAD .
+---   OAC = IAC JAA + IBC JAB + ICC JAC + IDC JAD .
+---   OAD = IAD JAA + IBD JAB + ICD JAC + IDD JAD .
+---   OAE = IAE JAA + IBE JAB + ICE JAC + IDE JAD .
+---   OAF = IAF JAA + IBF JAB + ICF JAC + IDF JAD .
+
+---   OBA = IAA JBA + IBA JBB + ICA JBC + IDA JBD .
+---   OBB = IAB JBA + IBB JBB + ICB JBC + IDB JBD .
+---   OBC = IAC JBA + IBC JBB + ICC JBC + IDC JBD .
+---   OBD = IAD JBA + IBD JBB + ICD JBC + IDD JBD .
+---   OBE = IAE JBA + IBE JBB + ICE JBC + IDE JBD .
+---   OBF = IAF JBA + IBF JBB + ICF JBC + IDF JBD .
+
+---   OCA = IAA JCA + IBA JCB + ICA JCC + IDA JCD .
+---   OCB = IAB JCA + IBB JCB + ICB JCC + IDB JCD .
+---   OCC = IAC JCA + IBC JCB + ICC JCC + IDC JCD .
+---   OCD = IAD JCA + IBD JCB + ICD JCC + IDD JCD .
+---   OCE = IAE JCA + IBE JCB + ICE JCC + IDE JCD .
+---   OCF = IAF JCA + IBF JCB + ICF JCC + IDF JCD .
+
+---   ODA = IAA JDA + IBA JDB + ICA JDC + IDA JDD .
+---   ODB = IAB JDA + IBB JDB + ICB JDC + IDB JDD .
+---   ODC = IAC JDA + IBC JDB + ICC JDC + IDC JDD .
+---   ODD = IAD JDA + IBD JDB + ICD JDC + IDD JDD .
+---   ODE = IAE JDA + IBE JDB + ICE JDC + IDE JDD .
+---   ODF = IAF JDA + IBF JDB + ICF JDC + IDF JDD .
+
+---   OEA = IEA LAA + IFA LBA + IGA LCA + IHA LDA .     Write nodes
+---   OEB = IEB LAA + IFB LBA + IGB LCA + IHB LDA .
+---   OEC = IEC LAA + IFC LBA + IGC LCA + IHC LDA .
+---   OED = IED LAA + IFD LBA + IGD LCA + IHD LDA .
+---   OEE = IEE LAA + IFE LBA + IGE LCA + IHE LDA .
+---   OEF = IEF LAA + IFF LBA + IGF LCA + IHF LDA .
+
+---   OFA = IEA LAB + IFA LBB + IGA LCB + IHA LDB .
+---   OFB = IEB LAB + IFB LBB + IGB LCB + IHB LDB .
+---   OFC = IEC LAB + IFC LBB + IGC LCB + IHC LDB .
+---   OFD = IED LAB + IFD LBB + IGD LCB + IHD LDB .
+---   OFE = IEE LAB + IFE LBB + IGE LCB + IHE LDB .
+---   OFF = IEF LAB + IFF LBB + IGF LCB + IHF LDB .
+
+---   OGA = IEA LAC + IFA LBC + IGA LCC + IHA LDC .
+---   OGB = IEB LAC + IFB LBC + IGB LCC + IHB LDC .
+---   OGC = IEC LAC + IFC LBC + IGC LCC + IHC LDC .
+---   OGD = IED LAC + IFD LBC + IGD LCC + IHD LDC .
+---   OGE = IEE LAC + IFE LBC + IGE LCC + IHE LDC .
+---   OGF = IEF LAC + IFF LBC + IGF LCC + IHF LDC .
+
+---   OHA = IEA LAD + IFA LBD + IGA LCD + IHA LDD .
+---   OHB = IEB LAD + IFB LBD + IGB LCD + IHB LDD .
+---   OHC = IEC LAD + IFC LBD + IGC LCD + IHC LDD .
+---   OHD = IED LAD + IFD LBD + IGD LCD + IHD LDD .
+---   OHE = IEE LAD + IFE LBD + IGE LCD + IHE LDD .
+---   OHF = IEF LAD + IFF LBD + IGF LCD + IHF LDD .
+
+---   OIA = BAW TAQ .                   Go packet to read node
+---   OIB = BAW TAQ .
+---   OIC = BAW TAQ .
+---   OID = BAW TAQ .
+
+---   OKA = IKA + ILA + IMA + INA .     First read way station
+---   OKB = IKB + ILB + IMB + INB .
+---   OKC = IKC + ILC + IMC + INC .
+---   OKD = IKD + ILD + IMD + IND .
+---   OKE = IKE + ILE + IME + INE .
+---   OKF = IKF + ILF + IMF + INF .
+
+---   OLA = IJA .                       Second write way station
+---   OLB = IJB .
+---   OLC = IJC .
+---   OLD = IJD .
+---   OLE = IJE .
+---   OLF = IJF .
+---   OLG = IJG .
+
+---   OMA = IJA .
+---   OMB = IJB .
+---   OMC = IJC .
+---   OMD = IJD .
+---   OME = IJE .
+---   OMF = IJF .
+---   OMG = IJG .
+
+---   ONA = IJA .
+---   ONB = IJB .
+---   ONC = IJC .
+---   OND = IJD .
+---   ONE = IJE .
+---   ONF = IJF .
+---   ONG = IJG .
+
+---   OOA = IJA .
+---   OOB = IJB .
+---   OOC = IJC .
+---   OOD = IJD .
+---   OOE = IJE .
+---   OOF = IJF .
+---   OOG = IJG .
+
+---   OPA = NAA TAR + NBA TAS + NCA TAT .       Read data from bank
+---   OPB = NAB TAR + NBB TAS + NCB TAT .
+---   OPC = NAC TAR + NBC TAS + NCC TAT .
+---   OPD = NAD TAR + NBD TAS + NCD TAT .
+---   OPE = NAE TAR + NBE TAS + NCE TAT .
+---   OPF = NAF TAR + NBF TAS + NCF TAT .
+---   OPG = NAG TAR + NBG TAS + NCG TAT .
+---   OPH = NAH TAR + NBH TAS + NCH TAT .
+
+---   OPI = NAI TBR + NBI TBS + NCI TBT .
+---   OPJ = NAJ TBR + NBJ TBS + NCJ TBT .
+---   OPK = NAK TBR + NBK TBS + NCK TBT .
+---   OPL = NAL TBR + NBL TBS + NCL TBT .
+---   OPM = NAM TBR + NBM TBS + NCM TBT .
+---   OPN = NAN TBR + NBN TBS + NCN TBT .
+---   OPO = NAO TBR + NBO TBS + NCO TBT .
+---   OPP = NAP TBR + NBP TBS + NCP TBT .
+
+---   OPQ = NAQ TCR + NBQ TCS + NCQ TCT .
+---   OPR = NAR TCR + NBR TCS + NCR TCT .
+---   OPS = NAS TCR + NBS TCS + NCS TCT .
+---   OPT = NAT TCR + NBT TCS + NCT TCT .
+---   OPU = NAU TCR + NBU TCS + NCU TCT .
+---   OPV = NAV TCR + NBV TCS + NCV TCT .
+---   OPW = NAW TCR + NBW TCS + NCW TCT .
+---   OPX = NAX TCR + NBX TCS + NCX TCT .
+
+---   OQA = IQA .               First write way station
+---   OQB = IQB .
+---   OQC = IQC .
+---   OQD = IQD .
+
+---   ORA = IQA .
+---   ORB = IQB .
+---   ORC = IQC .
+---   ORD = IQD .
+
+---   osa = ira isa .           Second read way station
+---   osb = irb isb .
+---   osc = irc isc .
+---   osd = ird isd .
+
+---   OTA = ITA .               Go packet fanout
+---   OTB = ITA .
+---   OTC = ITA .
+---   OTD = ITA .
+
+---   oua = kac .               Packet phase relay
+
+
+---   TAB = IIA KAA + IIA kaa .  Go Read/Write cycle
+---   TAC = TAB .               Enter Chip Address/Select
+---   TAD = TAC .               Enter Write data (upper)
+---   TAE = TAD .                                (middle)
+---   TAF = TAE .                                (lower)
+---   TAG = TAF .
+---   TAH = TAG .               Set Write Enable
+---   TAI = TAH .
+---   TAJ = TAI .
+---   TAK = TAJ .
+---   TAL = TAK .
+---   TAM = TAL .
+---   TAN = TAM .
+---   TAO = TAN .
+---   TAP = TAO .               Clear Write Enable
+---   TAQ = TAP .               Go Read
+---   tar = taq .               Enter Read data (upper)
+---   tas = tar .                               (middle)
+---   tat = tas .                               (lower)
+
+
+---   tbc = tab .
+---   tbd = tac .
+---   tbe = tad .
+---   tbf = tae .
+---   tbr = taq .
+---   tbs = tar .
+---   tbt = tas .
+
+---   tcc = tab .
+---   tcr = taq .
+---   tcs = tar .
+---   tct = tas .
+
+---   tdc = tab .
+---   tec = tab .
+---   tfc = tab .
+---   tgc = tab .
+---   thc = tab .
+---   tic = tab .
+
+
+---   waa = waa tbd + ipa TBD .         Write register (upper)
+---   wab = wab tbd + ipb TBD .
+---   wac = wac tbd + ipc TBD .
+---   wad = wad tbd + ipd TBD .
+---   wae = wae tbd + ipe TBD .
+---   waf = waf tbd + ipf TBD .
+---   wag = wag tbd + ipg TBD .
+---   wah = wah tbd + iph TBD .
+---   wai = wai tbd + ipi TBD .
+---   waj = waj tbd + ipj TBD .
+---   wak = wak tbd + ipk TBD .
+---   wal = wal tbd + ipl TBD .
+---   wam = ipm TBD + wam tbd .
+---   wan = ipn TBD + wan tbd .
+---   wao = ipo TBD + wao tbd .
+---   wap = ipp TBD + wap tbd .
+---   waq = ipq TBD + waq tbd .
+---   war = ipr TBD + war tbd .
+---   was = ips TBD + was tbd .
+---   wat = ipt TBD + wat tbd .
+---   wau = ipu TBD + wau tbd .
+---   wav = ipv TBD + wav tbd .
+---   waw = ipw TBD + waw tbd .
+---   wax = ipx TBD + wax tbd .
+
+---   wba = wba tbe + ipa TBE .         Write register (middle)
+---   wbb = wbb tbe + ipb TBE .
+---   wbc = wbc tbe + ipc TBE .
+---   wbd = wbd tbe + ipd TBE .
+---   wbe = wbe tbe + ipe TBE .
+---   wbf = wbf tbe + ipf TBE .
+---   wbg = wbg tbe + ipg TBE .
+---   wbh = wbh tbe + iph TBE .
+---   wbi = wbi tbe + ipi TBE .
+---   wbj = wbj tbe + ipj TBE .
+---   wbk = wbk tbe + ipk TBE .
+---   wbl = wbl tbe + ipl TBE .
+---   wbm = ipm TBE + wbm tbe .
+---   wbn = ipn TBE + wbn tbe .
+---   wbo = ipo TBE + wbo tbe .
+---   wbp = ipp TBE + wbp tbe .
+---   wbq = ipq TBE + wbq tbe .
+---   wbr = ipr TBE + wbr tbe .
+---   wbs = ips TBE + wbs tbe .
+---   wbt = ipt TBE + wbt tbe .
+---   wbu = ipu TBE + wbu tbe .
+---   wbv = ipv TBE + wbv tbe .
+---   wbw = ipw TBE + wbw tbe .
+---   wbx = ipx TBE + wbx tbe .
+---   wca = wca tbf + ipa TBF .
+---   wcb = wcb tbf + ipb TBF .
+---   wcc = wcc tbf + ipc TBF .
+---   wcd = wcd tbf + ipd TBF .
+---   wce = wce tbf + ipe TBF .
+---   wcf = wcf tbf + ipf TBF .
+---   wcg = wcg tbf + ipg TBF .
+---   wch = wch tbf + iph TBF .
+---   wci = wci tbf + ipi TBF .
+---   wcj = wcj tbf + ipj TBF .
+---   wck = wck tbf + ipk TBF .
+---   wcl = wcl tbf + ipl TBF .
+---   wcm = ipm TBF + wcm tbf .
+---   wcn = ipn TBF + wcn tbf .
+---   wco = ipo TBF + wco tbf .
+---   wcp = ipp TBF + wcp tbf .
+---   wcq = ipq TBF + wcq tbf .
+---   wcr = ipr TBF + wcr tbf .
+---   WCS = IPS TBF + WCS tbf .
+---   WCT = IPT TBF + WCT tbf .
+---   wcu = ipu TBF + wcu tbf .
+---   wcv = ipv TBF + wcv tbf .
+---   wcw = ipw TBF + wcw tbf .
+---   wcx = ipx TBF + wcx tbf .
+
+---   XAA = WAA .  0    Write data driver
+---   XAB = WAB .  1
+---   XAC = WAC .  2
+---   XAD = WAD .  3
+---   XAE = WAE .  4
+---   XAF = WAF .  5
+---   XAG = WAG .  6
+---   XAH = WAH .  7
+---   XAI = WAI .  8
+---   XAJ = WAJ .  9
+---   XAK = WAK . 10
+---   XAL = WAL . 11
+---   XAM = WAM . 12
+---   XAN = WAN . 13
+---   XAO = WAO . 14
+---   XAP = WAP . 15
+---   XAQ = WAQ . 16
+---   XAR = WAR . 17
+---   XAS = WAS . 18
+---   XAT = WAT . 19
+---   XAU = WAU . 20
+---   XAV = WAV . 21
+---   XAW = WAW . 22
+---   XAX = WAX . 23
+
+---   XBA = WBA . 24
+---   XBB = WBB . 25
+---   XBC = WBC . 26
+---   XBD = WBD . 27
+---   XBE = WBE . 28
+---   XBF = WBF . 29
+---   XBG = WBG . 30
+---   XBH = WBH . 31
+---   XBI = WBI . 32
+---   XBJ = WBJ . 33
+---   XBK = WBK . 34
+---   XBL = WBL . 35
+---   XBM = WBM . 36
+---   XBN = WBN . 37
+---   XBO = WBO . 38
+---   XBP = WBP . 39
+---   XBQ = WBQ . 40
+---   XBR = WBR . 41
+---   XBS = WBS . 42
+---   XBT = WBT . 43
+---   XBU = WBU . 44
+---   XBV = WBV . 45
+---   XBW = WBW . 46
+---   XBX = WBX . 47
+
+---   XCA = WCA . 48    Write data driver
+---   XCB = WCB . 49
+---   XCC = WCC . 50
+---   XCD = WCD . 51
+---   XCE = WCE . 52
+---   XCF = WCF . 53
+---   XCG = WCG . 54
+---   XCH = WCH . 55
+---   XCI = WCI . 56
+---   XCJ = WCJ . 57
+---   XCK = WCK . 58
+---   XCL = WCL . 59
+---   XCM = WCM . 60
+---   XCN = WCN . 61
+---   XCO = WCO . 62
+---   XCP = WCP . 63
+---   XCQ = WCQ . 64
+---   XCR = WCR . 65
+---   xcs = wcs . 66
+---   xct = wct . 67
+---   XCU = WCU . 68
+---   XCV = WCV . 69
+---   XCW = WCW . 70
+---   XCX = WCX . 71
+
+

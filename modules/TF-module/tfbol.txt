@@ -1,0 +1,1547 @@
+*
+* Boolean Definitions
+* Module: TA/TF
+* Description: Memory interface modules, packetize address and data, SECDED
+* Revision:
+* Date: 
+*
+           AR Data   Carries     Hold
+
+---  AAA = IAA TAA + QAC TAC + AAA TAE .         1st Adder
+---  AAB = IAB TAA + BCB TAC + AAB TAE .
+---  AAC = IAC TAB + BCC TAD + AAC TAF .         QAC eq +l
+---  AAD = IAD TAB + BCD TAD + AAD TAF .         BC-BD terms eq
+---  AAE = IAE TAA + BCE TAC + AAE TAE .         lst Adder carries
+---  AAF = IAF TAA + BCF TAC + AAF TAE .
+---  AAG = IAG TAB + BCG TAD + AAG TAF .
+---  AAH = IAH TAB + BCH TAD + AAH TAF .
+---  AAI = IAI TAA + BCI TAC + AAI TAE .
+---  AAJ = IAJ TAA + BCJ TAC + AAJ TAE .
+---  AAK = IAK TAB + BCK TAD + AAK TAF .
+---  AAL = IAL TAB + BCL TAD + AAL TAF .
+---  AAM = IAM TAA + BCM TAC + AAM TAE .
+---  AAN = IAN TAA + BCN TAC + AAN TAE .
+---  AAO = IAO TAB + BCO TAD + AAO TAF .
+---  AAP = IAP TAB + BCP TAD + AAP TAF .
+
+---  ABA = IBA TAA + BDA TAC + ABA TAE .
+---  ABB = IBB TAA + BDB TAC + ABB TAE .
+---  ABC = IBC TAB + BDC TAD + ABC TAF .
+---  ABD = IBD TAB + BDD TAD + ABD TAF .
+---  ABE = IBE TAA + BDE TAC + ABE TAE .
+---  ABF = IBF TAA + BDF TAC + ABF TAE .
+---  ABG = IBG TAB + BDG TAD + ABG TAF .
+---  ABH = IBH TAB + BDH TAD + ABH TAF .
+---  ABI = IBI TAA + BDI TAC + ABI TAE .
+---  ABJ = IBJ TAA + BDJ TAC + ABJ TAE .
+---  ABK = IBK TAB + BDK TAD + ABK TAF .
+---  ABL = IBL TAB + BDL TAD + ABL TAF .
+---  ABM = IBM TAA + BDM TAC + ABM TAE .
+---  ABN = IBN TAA + BDN TAC + ABN TAE .
+---  ABO = IBO TAB + BDO TAD + ABO TAF .
+---  ABP = IBP TAB + BDP TAD + ABP TAF .
+
+           VR Data   Enables   Hold
+---  ACA = IGA TBA + BAA TBC + ACA TBE .         2nd Adder
+---  ACB = IGB TBA + BAB TBC + ACB TBE .
+---  ACC = IGC TBB + BAC TBD + ACC TBF .           BA-BB terms
+---  ACD = IGD TBB + BAD TBD + ACD TBF .         sum translatations
+---  ACE = IGE TBA + BAE TBC + ACE TBE .
+---  ACF = IGF TBA + BAF TBC + ACF TBE .
+---  ACG = IGG TBB + BAG TBD + ACG TBF .
+---  ACH = IGH TBB + BAH TBD + ACH TBF .
+---  ACI = IGI TBA + BAI TBC + ACI TBE .
+---  ACJ = IGJ TBA + BAJ TBC + ACJ TBE .
+---  ACK = IGK TBB + BAK TBD + ACK TBF .
+---  ACL = IGL TBB + BAL TBD + ACL TBF .
+---  ACM = IGM TBA + BAM TBC + ACM TBE .
+---  ACN = IGN TBA + BAN TBC + ACN TBE .
+---  ACO = IGO TBB + BAO TBD + ACO TBF .
+---  ACP = IGP TBB + BAP TBD + ACP TBF .
+
+---  ADA = IHA TBA + BBA TBC + ADA TBE .         2nd Adder
+---  ADB = IHB TBA + BBB TBC + ADB TBE .
+---  ADC = IHC TBB + BBC TBD + ADC TBF .
+---  ADD = IHD TBB + BBD TBD + ADD TBF .
+---  ADE = IHE TBA + BBE TBC + ADE TBE .
+---  ADF = IHF TBA + BBF TBC + ADF TBE .
+---  ADG = IHG TBB + BBG TBD + ADG TBF .
+---  ADH = IHH TBB + BBH TBD + ADH TBF .
+---  ADI = IHI TBA + BBI TBC + ADI TBE .
+---  ADJ = IHJ TBA + BBJ TBC + ADJ TBE .
+---  ADK = IHK TBB + BBK TBD + ADK TBF .
+---  ADL = IHL TBB + BBL TBD + ADL TBF .
+---  ADM = IHM TBA + BBM TBC + ADM TBE .
+---  ADN = IHN TBA + BBN TBC + ADN TBE .
+---  ADO = IHO TBB + BBO TBD + ADO TBF .
+---  ADP = IHP TBB + BBP TBD + ADP TBF .
+
+           EB Data   Inc Reg   Base Reg
+
+---  AEA = ICA TCA + AGA TCC + AIA TCE .         3rd Adder
+---  AEB = ICB TCA + AGB TCC + AIB TCE .
+---  AEC = ICC TCB + AGC TCD + AIC TCF .
+---  AED = ICD TCB + AGD TCD + AID TCF .
+---  AEE = ICE TCA + AGE TCC + AIE TCE .
+---  AEF = ICF TCA + AGF TCC + AIF TCE .
+---  AEG = ICG TCB + AGG TCD + AIG TCF .
+---  AEH = ICH TCB + AGH TCD + AIH TCF .
+---  AEI = ICI TCA + AGI TCC + AII TCE .
+---  AEJ = ICJ TCA + AGJ TCC + AIJ TCE .
+---  AEK = ICK TCB + AGK TCD + AIK TCF .
+---  AEL = ICL TCB + AGL TCD + AIL TCF .      
+---  AEM = ICM TCA + AGM TCC + AIM TCE .
+---  AEN = ICN TCA + AGN TCC + AIN TCE .
+---  AEO = ICO TCB + AGO TCD + AIO TCF .
+---  AEP = ICP TCB + AGP TCD + AIP TCF .
+
+---  AFA = IDA TCA + AHA TCC + AJA TCE .
+---  AFB = IDB TCA + AHB TCC + AJB TCE .
+---  AFC = IDC TCB + AHC TCD + AJC TCF .
+---  AFD = IDD TCB + AHD TCD + AJD TCF .
+---  AFE = IDE TCA + AHE TCC + AJE TCE .
+---  AFF = IDF TCA + AHF TCC + AJF TCE .
+---  AFG = IDG TCB + AHG TCD + AJG TCF .
+---  AFH = IDH TCB + AHH TCD + AJH TCF .
+---  AFI = IDI TCA + AHI TCC + AJI TCE .
+---  AFJ = IDJ TCA + AHJ TCC + AJJ TCE .
+---  AFK = IDK TCB + AHK TCD + AJK TCF .
+---  AFL = IDL TCB + AHL TCD + AJL TCF .
+---  AFM = IDM TCA + AHM TCC + AJM TCE .
+---  AFN = IDN TCA + AHN TCC + AJN TCE .
+---  AFO = IDO TCB + AHO TCD + AJO TCF .
+---  AFP = IDP TCB + AHP TCD + AJP TCF .       
+
+           AR Data   IB Data   Hold        
+---  AGA = IAA TDA + IEA TDC + AGA TDE .          Increment re
+---  AGB = IAB TDA + IEB TDC + AGB TDE .
+---  AGC = IAC TDB + IEC TDD + AGC TDF .
+---  AGD = IAD TDB + IED TDD + AGD TDF .
+---  AGE = IAE TDA + IEE TDC + AGE TDE .
+---  AGF = IAF TDA + IEF TDC + AGF TDE .
+---  AGG = IAG TDB + IEG TDD + AGG TDF .
+---  AGH = IAH TDB + IEH TDD + AGH TDF .
+---  AGI = IAI TDA + IEI TDC + AGI TDE .         
+---  AGJ = IAJ TDA + IEJ TDC + AGJ TDE .
+---  AGK = IAK TDB + IEK TDD + AGK TDF .
+---  AGL = IAL TDB + IEL TDD + AGL TDF .
+---  AGM = IAM TDA + IEM TDC + AGM TDE .
+---  AGN = IAN TDA + IEN TDC + AGN TDE .
+---  AGO = IAO TDB + IEO TDD + AGO TDF .
+---  AGP = IAP TDB + IEP TDD + AGP TDF .
+
+---  AHA = IBA TDA + IFA TDC + AHA TDE .
+---  AHB = IBB TDA + IFB TDC + AHB TDE .
+---  AHC = IBC TDB + IFC TDD + AHC TDF .
+---  AHD = IBD TDB + IFD TDD + AHD TDF .
+---  AHE = IBE TDA + IFE TDC + AHE TDE .
+---  AHF = IBF TDA + IFF TDC + AHF TDE .
+---  AHG = IBG TDB + IFG TDD + AHG TDF .
+---  AHH = IBH TDB + IFH TDD + AHH TDF .
+---  AHI = IBI TDA + IFI TDC + AHI TDE .
+---  AHJ = IBJ TDA + IFJ TDC + AHJ TDE .
+---  AHK = IBK TDB + IFK TDD + AHK TDF .
+---  AHL = IBL TDB + IFL TDD + AHL TDF .              
+---  AHM = IBM TDA + IFM TDC + AHM TDE .
+---  AHN = IBN TDA + IFN TDC + AHN TDE .
+---  AHO = IBO TDB + IFO TDD + AHO TDF .
+---  AHP = IBP TDB + IFP TDD + AHP TDF .
+
+           IB Data   Hold
+---  aia = iea TEA + aia tea .                Base address register
+---  aib = ieb TEA + aib tea .
+---  aic = iec TEB + aic teb .                Base will hold data
+---  aid = ied TEB + aid teb .                until TEA is set -to
+---  aie = iee TEA + aie tea .                enter a new base addr
+---  aif = ief TEA + aif tea .
+---  aig = ieg TEB + aig teb .
+---  aih = ieh TEB + aih teb .
+---  aii = iei TEA + aii tea .
+---  aij = iej TEA + aij tea .
+---  aik = iek TEB + aik teb .
+---  ail = iel TEB + ail teb .
+---  aim = iem TEA + aim tea .
+---  ain = ien TEA + ain tea .
+---  aio = ieo TEB + aio teb .
+---  aip = iep TEB + aip teb .
+
+---  aja = ifa TEA + aja tea .                 Base address
+---  ajb = ifb TEA + ajb tea .
+---  ajc = ifc TEB + ajc teb .
+---  ajd = ifd TEB + ajd teb .
+---  aje = ife TEA + aje tea .
+---  ajf = iff TEA + aif tea .
+---  ajg = ifg TEB + ajg teb .
+---  ajh = ifh TEB + ajj teb .
+---  aji = ifi TEA + aji tea .
+---  ajj = ifj TEA + ajj tea .
+---  ajk = ifk TEB + ajk teb .
+---  ajl = ifl TEB + ajl teb .
+---  ajm = ifm TEA + ajm tea .
+---  ajn = ifn TEA + ajn tea .
+---  ajo = ifo TEB + ajo teb .
+---  ajp = ifp TEB + ajp teb .
+
+           IB Data   Hold
+---  aka = iea TFA + aka tfa .                 Limit address
+---  akb = ieb TFA + akb tfa .
+---  akc = iec TFB + akc tfb .                 Limit will hold data
+---  akd = ied TFB + akd tfb .                 until TFA is made &
+---  ake = iee TFA + ake tfa .                 enters new limit addr
+---  akf = ief TFA + akf tfa .
+---  akg = ieg TFB + akg tfb .
+---  akh = ieh TFB + akh tfb .
+---  aki = iei TFA + aki tfa .
+---  akj = iej TFA + akj tfa .
+---  akk = iek TFB + akk tfb .
+---  akl = iel TFB + akl tfb .
+---  akm = iem TFA + akm tfa .
+---  akn = ien TFA + akn tfa .
+---  ako = ieo TFB + ako tfb .
+---  akp = iep TFB + akp tfb .
+
+---  ala = ifa TFA + ala tfa .
+---  alb = ifb TFA + alb tfa .
+---  alc = ifc TFB + alc tfb .           
+---  ald = ifd TFB + ald tfb .
+---  ale = ife TFA + ale tfa .
+---  alf = iff TFA + alf tfa .
+---  alg = ifg TFB + alg tfb .
+---  alh = ifh TFB + alh tfb .
+---  ali = ifi TFA + ali tfa .
+---  alj = ifj TFA + alj tfa .
+---  alk = ifk TFB + alk tfb .
+---  all = ifl TFB + all tfb .
+---  alm = ifm TFA + alm tfa .
+---  aln = ifn TFA + aln tfa .
+---  alo = ifo TFB + alo tfb .
+---  alp = ifp TFB + alp tfb .
+
+        Address Adder Enable Translations
+
+---  BAA = AAA aca aea + aaa ACA aea + aaa aca AEA + AAA ACA AEA .
+---  BAB = AAB acb aeb + aab ACB aeb + aab acb AEB + AAB ACB AEB .
+---  BAC = AAC acc aec + aac ACC aec + aac acc AEC + AAC ACC AEC .
+---  BAD = AAD acd aed + aad ACD aed + aad acd AED + AAD ACD AED .
+---  BAE = AAE ace aee + aae ACE aee + aae ace AEE + AAE ACE AEE .
+---  BAF = AAF acf aef + aaf ACF aef + aaf acf AEF + AAF ACF AEF .
+---  BAG = AAG acg aeg + aag ACG aeg + aag acg AEG + AAG ACG AEG .
+---  BAH = AAH ach aeh + aah ACH aeh + aah ach AEH + AAH ACH AEH .
+---  BAI = AAI aci aei + aai ACI aei + aai aci AEI + AAI ACI AEI .
+---  BAJ = AAJ acj aej + aaj ACJ aej + aaj acj AEJ + AAJ ACJ AEJ .
+---  BAK = AAK ack aek + aak ACK aek + aak ack AEK + AAK ACK AEK .
+---  BAL = AAL acl ael + aal ACL ael + aal acl AEL + AAL ACL AEL .
+---  BAM = AAM acm aem + aam ACM aem + aam acm AEM + AAM ACM AEM .
+---  BAN = AAN acn aen + aan ACN aen + aan acn AEN + AAN ACN AEN .
+---  BAO = AAO aco aeo + aao ACO aeo + aao aco AEO + AAO ACO AEO .
+---  BAP = AAP acp aep + aap ACP aep + aap acp AEP + AAP ACP AEP .
+
+---  BBA = ABA ada afa + aba ADA afa + aba ada AFA + ABA ADA AFA .
+---  BBB = ABB adb afb + abb ADB afb + abb adb AFB + ABB ADB AFB .
+---  BBC = ABC adc afc + abc ADC afc + abc adc AFC + ABC ADC AFC .
+---  BBD = ABD add afd + abd ADD afd + abd add AFD + ABD ADD AFD .
+---  BBE = ABE ade afe + abe ADE afe + abe ade AFE + ABE ADE AFE .
+---  BBF = ABF adf aff + abf ADF aff + abf adf AFF + ABF ADF AFF .
+---  BBG = ABG adg afg + abg ADG afg + abg adg AFG + ABG ADG AFG .
+---  BBH = ABH adh afh + abh ADH afh + abh adh AFH + ABH ADH AFH .
+---  BBI = ABI adi afi + abi ADI afi + abi adi AFI + ABI ADI AFI .
+---  BBJ = ABJ adj afj + abj ADJ afj + abj adj AFJ + ABJ ADJ AFJ .
+---  BBK = ABK adk afk + abk ADK afk + abk adk AFK + ABK ADK AFK .
+---  BBL = ABL adl afl + abl ADL afl + abl adl AFL + ABL ADL AFL .
+---  BBM = ABM adm afm + abm ADM afm + abm adm AFM + ABM ADM AFM .
+---  BBN = ABN adn afn + abn ADN afn + abn adn AFN + ABN ADN AFN .
+---  BBO = ABO ado afo + abo ADO afo + abo ado AFO + ABO ADO AFO .
+---  BBP = ABP adp afp + abp ADP afp + abp adp AFP + ABP ADP AFP .
+
+           Address Adder Carry Translations
+
+---  bcb = AAA aca aea + aaa ACA aea + aaa aca AEA + aaa aca aea .
+---  bcc = AAB acb aeb + aab ACB aeb + aab acb AEB + aab acb aeb .
+---  bcd = AAC acc aec + aac ACC aec + aac acc AEC + aac acc aec .
+---  bce = AAD acd aed + aad ACD aed + aad acd AED + aad acd aed .
+---  bcf = AAE ace aee + aae ACE aee + aae ace AEE + aae ace aee .
+---  bcg = AAF acf aef + aaf ACF aef + aaf acf AEF + aaf acf aef .
+---  bch = AAG acg aeg + aag ACG aeg + aag acg AEG + aag acg aeg .
+---  bci = AAH ach aeh + aah ACH aeh + aah ach AEH + aah ach aeh .
+---  bcj = AAI aci aei + aai ACI aei + aai aci AEI + aai aci aei .
+---  bck = AAJ acj aej + aaj ACJ aej + aaj acj AEJ + aaj acj aej .
+---  bcl = AAK ack aek + aak ACK aek + aak ack AEK + aak ack aek .
+---  bcm = AAL acl ael + aal ACL ael + aal acl AEL + aal acl ael .
+---  bcn = AAM acm aem + aam ACM aem + aam acm AEM + aam acm aem .
+---  bco = AAN acn aen + aan ACN aen + aan acn AEN + aan acn aen .
+---  bcp = AAO aco aeo + aao ACO aeo + aao aco AEO + aao aco aeo .
+
+---  bda = AAP acp aep + aap ACP aep + aap acp AEP + aap acp aep .
+---  bdb = ABA ada afa + aba ADA afa + aba ada AFA + aba ada afa .
+---  bdc = ABB adb afb + abb ADB afb + abb adb AFB + abb adb afb .
+---  bdd = ABC adc afc + abc ADC afc + abc adc AFC + abc adc afc .
+---  bde = ABD add afd + abd ADD afd + abd add AFD + abd add afd .
+---  bdf = ABE ade afe + abe ADE afe + abe ade AFE + abe ade afe .
+---  bdg = ABF adf aff + abf ADF aff + abf adf AFF + abf adf aff .
+---  bdh = ABG adg afg + abg ADG afg + abg adg AFG + abg adg afg .
+---  bdi = ABH adh afh + abh ADH afh + abh adh AFH + abh adh afh .
+---  bdj = ABI adi afi + abi ADI afi + abi adi AFI + abi adi afi .
+---  bdk = ABJ adj afj + abj ADJ afj + abj adj AFJ + abj adj afj .
+---  bdl = ABK adk afk + abk ADK afk + abk adk AFK + abk adk afk .
+---  bdm = ABL adl afl + abl ADL afl + abl adl AFL + abl adl afl .
+---  bdn = ABM adm afm + abm ADM afm + abm adm AFM + abm adm afm .
+---  bdo = ABN adn afn + abn ADN afn + abn adn AFN + abn adn afn .
+---  bdp = ABO ado afo + abo ADO afo + abo ado AFO + abo ado afo .
+
+---  bee = AAD acd aed + aad ACD aed + aad acd AED + aad acd aed .
+---  bei = AAH ach aeh + aah ACH aeh + aah ach AEH + aah ach aeh .
+---  bem = AAL acl ael + aal ACL ael + aal acl AEL + aal acl ael .
+---  bfa = AAP acp aep + aap ACP aep + aap acp AEP + aap acp aep .
+---  bfe = ABD add afd + abd ADD afd + abd add AFD + abd add afd .
+---  bfi = ABH adh afh + abh ADH afh + abh adh AFH + abh adh afh .
+---  bfm = ABL adl afl + abl ADL afl + abl adl AFL + abl adl afl .
+
+            Limit Test Enable Register
+
+---  CAA = BAA AKA + baa aka .
+---  CAB = BAB bcb AKB + bab BCB AKB + bab bcb akb + BAB BCB akb .
+---  CAC = BAC bcc AKC + bac BCC AKC + bac bcc akc + BAC BCC akc .
+---  CAD = BAD bcd AKD + bad BCD AKD + bad bcd akd + BAD BCD akd .
+---  CAE = BAE bce AKE + bae BCE AKE + bae bce ake + BAE BCE ake .
+---  CAF = BAF bcf AKF + baf BCF AKF + baf bcf akf + BAF BCF akf .
+---  CAG = BAG bcg AKG + bag BCG AKG + bag bcg akg + BAG BCG akg .
+---  CAH = BAH bch AKH + bah BCH AKH + bah bch akh + BAH BCH akh .
+---  CAI = BAI bci AKI + bai BCI AKI + bai bci aki + BAI BCI aki .
+---  CAJ = BAJ bcj AKJ + baj BCJ AKJ + baj bcj akj + BAJ BCJ akj .
+---  CAK = BAK bck AKK + bak BCK AKK + bak bck akk + BAK BCK akk .
+---  CAL = BAL bcl AKL + bal BCL AKL + bal bcl akl + BAL BCL akl .
+---  CAM = BAM bcm AKM + bam BCM AKM + bam bcm akm + BAM BCM akm .
+---  CAN = BAN bcn AKN + ban BCN AKN + ban bcn akn + BAN BCN akn .
+---  CAO = BAO bco AKO + bao BCO AKO + bao bco ako + BAO BCO ako .
+---  CAP = BAP bcp AKP + bap BCP AKP + bap bcp akp + BAP BCP akp .
+
+---  CBA = BBA bda ALA + bba BDA ALA + bba bda ala + BBA BDA ala .
+---  CBB = BBB bdb ALB + bbb BDB ALB + bbb bdb alb + BBB BDB alb .
+---  CBC = BBC bdc ALC + bbc BDC ALC + bbc bdc alc + BBC BDC alc .
+---  CBD = BBD bdd ALD + bbd BDD ALD + bbd bdd ald + BBD BDD ald .
+---  CBE = BBE bde ALE + bbe BDE ALE + bbe bde ale + BBE BDE ale .
+---  CBF = BBF bdf ALF + bbf BDF ALF + bbf bdf alf + BBF BDF alf .
+---  CBG = BBG bdg ALG + bbg BDG ALG + bbg bdg alg + BBG BDG alg .
+---  CBH = BBH bdh ALH + bbh BDH ALH + bbh bdh alh + BBH BDH alh .
+---  CBI = BBI bdi ALI + bbi BDI ALI + bbi bdi ali + BBI BDI ali .
+---  CBJ = BBJ bdj ALJ + bbj BDJ ALJ + bbj bdj alj + BBJ BDJ alj .
+---  CBK = BBK bdk ALK + bbk BDK ALK + bbk bdk alk + BBK BDK alk .
+---  CBL = BBL bdl ALL + bbl BDL ALL + bbl bdl all + BBL BDL all .
+---  CBM = BBM bdm ALM + bbm BDM ALM + bbm bdm alm + BBM BDM alm .
+---  CBN = BBN bdn ALN + bbn BDN ALN + bbn bdn aln + BBN BDN aln .
+---  CBO = BBO bdo ALO + bbo BDO ALO + bbo bdo alo + BBO BDO alo .
+---  CBP = BBP bdp ALP + bbp BDP ALP + bbp bdp alp + BBP BDP alp .
+
+      Limit Test Carry Register
+
+---  ccb = BAA AKA + baa aka + baa AKA .
+---  ccc = BAB bcb AKB + bab BCB AKB + bab bcb akb + bab bcb AKB .
+---  ccd = BAC bcc AKC + bac BCC AKC + bac bcc akc + bac bcc AKC .
+---  cce = BAD bcd AKD + bad BCD AKD + bad bcd akd + bad bcd AKD .
+---  ccf = BAE bce AKE + bae BCE AKE + bae bce ake + bae bce AKE .
+---  ccg = BAF bcf AKF + baf BCF AKF + baf bcf akf + baf bcf AKF .
+---  cch = BAG bcg AKG + bag BCG AKG + bag bcg akg + bag bcg AKG .
+---  cci = BAH bch AKH + bah BCH AKH + bah bch akh + bah bch AKH .
+---  ccj = BAI bci AKI + bai BCI AKI + bai bci aki + bai bci AKI .
+---  cck = BAJ bcj AKJ + baj BCJ AKJ + baj bcj akj + baj bcj AKJ .
+---  ccl = BAK bck AKK + bak BCK AKK + bak bck akk + bak bck AKK .
+---  ccm = BAL bcl AKL + bal BCL AKL + bal bcl akl + bal bcl AKL .
+---  ccn = BAM bcm AKM + bam BCM AKM + bam bcm akm + bam bcm AKM .
+---  cco = BAN bcn AKN + ban BCN AKN + ban bcn akn + ban bcn AKN .
+---  ccp = BAO bco AKO + bao BCO AKO + bao bco ako + bao bco AKO .
+
+---  cda = BAP bcp AKP + bap BCP AKP + bap bcp akp + bap bcp AKP .
+---  cdb = BBA bda ALA + bba BDA ALA + bba bda ala + bba bda ALA .
+---  cdc = BBB bdb ALB + bbb BDB ALB + bbb bdb alb + bbb bdb ALB .
+---  cdd = BBC bdc ALC + bbc BDC ALC + bbc bdc alc + bbc bdc ALC .
+---  cde = BBD bdd ALD + bbd BDD ALD + bbd bdd ald + bbd bdd ALD .
+---  cdf = BBE bde ALE + bbe BDE ALE + bbe bde ale + bbe bde ALE .
+---  cdg = BBF bdf ALF + bbf BDF ALF + bbf bdf alf + bbf bdf ALF .
+---  cdh = BBG bdg ALG + bbg BDG ALG + bbg bdg alg + bbg bdg ALG .
+---  cdi = BBH bdh ALH + bbh BDH ALH + bbh bdh alh + bbh bdh ALH .
+---  cdj = BBI bdi ALI + bbi BDI ALI + bbi bdi ali + bbi bdi ALI .
+---  cdk = BBJ bdj ALJ + bbj BDJ ALJ + bbj bdj alj + bbj bdj ALJ .
+---  cdl = BBK bdk ALK + bbk BDK ALK + bbk bdk alk + bbk bdk ALK .
+---  cdm = BBL bdl ALL + bbl BDL ALL + bbl bdl all + bbl bdl ALL .
+---  cdn = BBM bdm ALM + bbm BDM ALM + bbm bdm alm + bbm bdm ALM .
+---  cdo = BBN bdn ALN + bbn BDN ALN + bbn bdn aln + bbn bdn ALN .
+---  cdp = BBO bdo ALO + bbo BDO ALO + bbo bdo alo + bbo bdo ALO .
+
+          Base Test Enable Register
+
+---  CEA = BAA AIA + baa aia .
+---  CEB = BAB bcb AIB + bab BCB AIB + bab bcb aib + BAB BCB aib .
+---  CEC = BAC bcc AIC + bac BCC AIC + bac bcc aic + BAC BCC aic .
+---  CED = BAD bcd AID + bad BCD AID + bad bcd aid + BAD BCD aid .
+---  CEE = BAE bce AIE + bae BCE AIE + bae bce aie + BAE BCE aie .
+---  CEF = BAF bcf AIF + baf BCF AIF + baf bcf aif + BAF BCF aif .
+---  CEG = BAG bcg AIG + bag BCG AIG + bag bcg aig + BAG BCG aig .
+---  CEH = BAH bch AIH + bah BCH AIH + bah bch aih + BAH BCH aih .
+---  CEI = BAI bci AII + bai BCI AII + bai bci aii + BAI BCI aii .
+---  CEJ = BAJ bcj AIJ + baj BCJ AIJ + baj bcj aij + BAJ BCJ aij .
+---  CEK = BAK bck AIK + bak BCK AIK + bak bck aik + BAK BCK aik .
+---  CEL = BAL bcl AIL + bal BCL AIL + bal bcl ail + BAL BCL ail .
+---  CEM = BAM bcm AIM + bam BCM AIM + bam bcm aim + BAM BCM aim .
+---  CEN = BAN bcn AIN + ban BCN AIN + ban bcn ain + BAN BCN ain .
+---  CEO = BAO bco AIO + bao BCO AIO + bao bco aio + BAO BCO aio .
+---  CEP = BAP bcp AIP + bap BCP AIP + bap bcp aip + BAP BCP aip .
+
+---  CFA = BBA bda AJA + bba BDA AJA + bba bda aja + BBA BDA aja .
+---  CFB = BBB bdb AJB + bbb BDB AJB + bbb bdb ajb + BBB BDB ajb .
+---  CFC = BBC bdc AJC + bbc BDC AJC + bbc bdc ajc + BBC BDC ajc .
+---  CFD = BBD bdd AJD + bbd BDD AJD + bbd bdd ajd + BBD BDD ajd .
+---  CFE = BBE bde AJE + bbe BDE AJE + bbe bde aje + BBE BDE aje .
+---  CFF = BBF bdf AJF + bbf BDF AJF + bbf bdf ajf + BBF BDF ajf .
+---  CFG = BBG bdg AJG + bbg BDG AJG + bbg bdg ajg + BBG BDG ajg .
+---  CFH = BBH bdh AJH + bbh BDH AJH + bbh bdh ajh + BBH BDH ajh .
+---  CFI = BBI bdi AJI + bbi BDI AJI + bbi bdi aji + BBI BDI aji .
+---  CFJ = BBJ bdj AJJ + bbj BDJ AJJ + bbj bdj ajj + BBJ BDJ ajj .
+---  CFK = BBK bdk AJK + bbk BDK AJK + bbk bdk ajk + BBK BDK ajk .
+---  CFL = BBL bdl AJL + bbl BDL AJL + bbl bdl ajl + BBL BDL ajl .
+---  CFM = BBM bdm AJM + bbm BDM AJM + bbm bdm ajm + BBM BDM ajm .
+---  CFN = BBN bdn AJN + bbn BDN AJN + bbn bdn ajn + BBN BDN ajn .
+---  CFO = BBO bdo AJO + bbo BDO AJO + bbo bdo ajo + BBO BDO ajo .
+---  CFP = BBP bdp AJP + bbp BDP AJP + bbp bdp ajp + BBP BDP ajp .
+
+            Base Test Carry Register
+
+---  cgb = BAA AIA + baa aia + baa AIA .
+---  cgc = BAB bcb AIB + bab BCB AIB + bab bcb aib + bab bcb AIB .
+---  cgd = BAC bcc AIC + bac BCC AIC + bac bcc aic + bac bcc AIC .
+---  cge = BAD bcd AID + bad BCD AID + bad bcd aid + bad bcd AID .
+---  cgf = BAE bce AIE + bae BCE AIE + bae bce aie + bae bce AIE .
+---  cgg = BAF bcf AIF + baf BCF AIF + baf bcf aif + baf bcf AIF .
+---  cgh = BAG bcg AIG + bag BCG AIG + bag bcg aig + bag bcg AIG .
+---  cgi = BAH bch AIH + bah BCH AIH + bah bch aih + bah bch AIH .
+---  cgj = BAI bci AII + bai BCI AII + bai bci aii + bai bci AII .
+---  cgk = BAJ bcj AIJ + baj BCJ AIJ + baj bcj aij + baj bcj AIJ .
+---  cgl = BAK bck AIK + bak BCK AIK + bak bck aik + bak bck AIK .
+---  cgm = BAL bcl AIL + bal BCL AIL + bal bcl ail + bal bcl AIL .
+---  cgn = BAM bcm AIM + bam BCM AIM + bam bcm aim + bam bcm AIM .
+---  cgo = BAN bcn AIN + ban BCN AIN + ban bcn ain + ban bcn AIN .
+---  cgp = BAO bco AIO + bao BCO AIO + bao bco aio + bao bco AIO .
+
+---  cha = BAP bcp AIP + bap BCP AIP + bap bcp aip + bap bcp AIP .
+---  chb = BBA bda AJA + bba BDA AJA + bba bda aja + bba bda AJA .
+---  chc = BBB bdb AJB + bbb BDB AJB + bbb bdb ajb + bbb bdb AJB .
+---  chd = BBC bdc AJC + bbc BDC AJC + bbc bdc ajc + bbc bdc AJC .
+---  che = BBD bdd AJD + bbd BDD AJD + bbd bdd ajd + bbd bdd AJD .
+---  chf = BBE bde AJE + bbe BDE AJE + bbe bde aje + bbe bde AJE .
+---  chg = BBF bdf AJF + bbf BDF AJF + bbf bdf ajf + bbf bdf AJF .
+---  chh = BBG bdg AJG + bbg BDG AJG + bbg bdg ajg + bbg bdg AJG .
+---  chi = BBH bdh AJH + bbh BDH AJH + bbh bdh ajh + bbh bdh AJH .
+---  chj = BBI bdi AJI + bbi BDI AJI + bbi bdi aji + bbi bdi AJI .
+---  chk = BBJ bdj AJJ + bbj BDJ AJJ + bbj bdj ajj + bbj bdj AJJ .
+---  chl = BBK bdk AJK + bbk BDK AJK + bbk bdk ajk + bbk bdk AJK .
+---  chm = BBL bdl AJL + bbl BDL AJL + bbl bdl ajl + bbl bdl AJL .
+---  chn = BBM bdm AJM + bbm BDM AJM + bbm bdm ajm + bbm bdm AJM .
+---  cho = BBN bdn AJN + bbn BDN AJN + bbn bdn ajn + bbn bdn AJN .
+---  chp = BBO bdo AJO + bbo BDO AJO + bbo bdo ajo + bbo bdo AJO .
+
+---  dab = bab + bcb + TGA .      Address adder Bit carry
+---  dac = bac + bcc + TGB .      TG eq retry backup data
+---  dad = bad + bcd + TGB .        Clear D-- terms
+---  dae = bae + bce + TGA .
+---  daf = baf + bcf + TGA .
+---  dag = bag + bcg + TGB .
+---  dah = bah + bch + TGB .
+---  dai = bai + bci + TGA .
+---  daj = baj + bcj + TGA .
+---  dak = bak + bck + TGB .
+---  dal = bal + bcl + TGB .
+---  dam = bam + bfm + TGA .
+---  dan = ban + bcn + TGA .
+---  dao = bao + bco + TGB .
+---  dap = bap + bcp + TGB .
+
+---  dba = bba + bda + TGA .                 Bit carry latches
+---  dbb = bbb + bdb + TGA .
+---  dbc = bbc + bdc + TGB .  
+---  dbd = bbd + bdd + TGB .
+---  dbe = bbe + bde + TGA .
+---  dbf = bbf + bdf + TGA .
+---  dbg = bbg + bdg + TGB .
+---  dbh = bbh + bdh + TGB .
+---  dbi = bbi + bdi + TGA .
+---  dbj = bbj + bdj + TGA .
+---  dbk = bbk + bdk + TGB .
+---  dbl = bbl + bdl + TGB .
+---  dbm = bbm + bfm + TGA .   ( unused )
+---  dbn = bbn + bdn + TGA .   ( unused )
+---  dbo = bbo + bdo + TGB .   ( unused )
+---  dbp = bbp + bdp + TGB .   ( unused )
+
+---  EAB = BAB bcb + bab BCB .               Bit enables
+---  EAC = BAC bcc + bac BCC .               latches for Address Adder
+---  EAD = BAD bcd + bad BCD .
+---  EAE = BAE bee + bae BEE .
+---  EAF = BAF bcf + baf BCF .
+---  EAG = BAG bcg + bag BCG .
+---  EAH = BAH bch + bah BCH .
+---  EAI = BAI bei + bai BEI .
+---  EAJ = BAJ bcj + baj BCJ .
+---  EAK = BAK bck + bak BCK .
+---  EAL = BAL bcl + bal BCL .
+---  EAM = BAM bem + bam BEM .
+---  EAN = BAM bcn + ban BCN .
+---  EAO = BAO bco + bao BCO .
+---  EAP = BAP bcp + bap BCP .
+
+---  EBB = BAB bcb + bab BCB .  ( unused )
+---  EBC = BAC bcc + bac BCC .
+---  EBD = BAD bcd + bad BCD .
+---  EBE = BAE bee + bae BEE .
+---  EBF = BAF bcf + baf BCF .
+---  EBG = BAG bcg + bag BCG .
+---  EBH = BAH bch + bah BCH .               ( unused)
+
+---  EDA = BBA bfa + bba BFA .               Bit enables
+---  EDB = BBB bdb + bbb BDB .               latches
+---  EDC = BBC bdc + bbc BDC .
+---  EDD = BBD bdd + bbd BDD .
+---  EDE = BBE bfe + bbe BFE .
+---  EDF = BBF bdf + bbf BDF .
+---  EDG = BBG bdg + bbg BDG .
+---  EDH = BBH bdh + bbh BDH .
+---  EDI = BBI bfi + bbi BFI .
+---  EDJ = BBJ bdj + bbj BDJ .
+---  EDK = BBK bdk + bbk BDK .
+---  EDL = BBL bdl + bbl BDL .
+---  EDM = BBM bfm + bbm BFM .
+---  EDN = BBN bdn + bbn BDN . ( unused )
+---  EDO = BBO bdo + bbo BDO . ( unused )
+---  EDP = BBP bdp + bbp BDP . ( unused )
+
+---  FAA = IIA tha + PJA THA .                Memory Destination code
+---  FAB = IIB tha + PJB THA .
+---  FAC = IIC tha + PJC THA .                FAC-F = Read
+---  FAD = IID tha + PJD THA .
+---  FAE = IIE tha + PJE THA .
+---  FAF = IIF tha + PJF THA .
+
+---  FAG = EBC jac thb + PJG THB + ebc JAC . Memory dest code    2^2
+---  FAH = EBD jad thb + PJH THB + ebd JAD .                     2^3
+---  FAI = EBE jae thb + PJI THB + ebe JAE . Bank Select Bits    2^4
+---  FAJ = EBF jaf thb + PJJ THB + ebf JAF .                     2^5
+---  FAK = EBG jag thb + PJK THB + ebg JAG .                     2^6
+---  FAL = EBG jag thb + PJK THB + ebg JAG .                     2^6
+---  FAM = PJQ THD .                  Pseudo Bank 0 Select
+---  FAN = PJR THD .                  Pseudo Bank 1 Select
+
+---  FCA = EAH .                        Enable latches for memory address
+---  FCB = JDB eai + jdb EAI .                no carry
+---  FCC = JDC eaj + jdc EAJ .
+---  FCD = JDD eak + jdd EAK .
+---  FCE = EAL .
+---  FCF = JDF eam + jdf EAM .
+---  FCG = JDG ean + jdg EAN .
+---  FCH = JDH eao + jdh EAO .
+---  FCI = EAP .
+---  FCJ = JDJ eda + jdj EDA .
+---  FCK = JDK edb + jdk EDB .
+---  FCL = JDL edc + jdl EDC .
+---  FCM = EDD .
+---  FCN = JDN ede + jdn EDE .
+---  FCO = JDO edf + jdo EDF .
+---  FCP = JDP edg + jdp EDG .
+---  FCQ = EDH .
+---  FCR = JDR edi + jdr EDI .
+---  FCS = JDS edj + jds EDJ .
+---  FCT = JDT edk + jdt EDK .
+---  FCU = EDL .
+---  FCV = JDV edm + jdv EDM .  ( unused )
+
+---  FDA = eah .                        Memory address group carry
+---  FDB = JEB eai + jeb EAI .                
+---  FDC = JEC eaj + jec EAJ .
+---  FDD = JED eak + jed EAK .
+---  FDE = eal  .
+---  FDF = JEF eam + jef EAM .
+---  FDG = JEG ean + jeg EAN .
+---  FDH = JEH eao + jeh EAO .
+---  FDI = eae .
+---  FDJ = JEJ eda + jej EDA .
+---  FDK = JEK edb + jek EDB .
+---  FDL = JEL edc + jel EDC .
+---  FDM = edd .
+---  FDN = JEN ede + jen EDE .
+---  FDO = JEO edf + jeo EDF .
+---  FDP = JEP edg + jep EDG .
+
+---  FDQ = edh .
+---  FDR = JER edi + jer EDI .
+---  FDS = JES edj + jes EDJ .
+---  FDT = JET edk + jet EDK .
+---  FDU = edl  .
+---  FDV = JEV edm + jev EDM . ( unused )
+
+---  FEA = JAG EAG + DAG .                 Group carry
+---  FEB = JDD EAK + DAK .
+---  FEC = JDH EAO + DAO .
+---  FED = JDL EDC + DBC .
+---  FEE = JDP EDG + DBG .
+---  FEF = JDT EDK + DBK .
+---  FEI = JAG EAG + DAG .
+---  FEJ = JDD EAK + DAK .
+---  FEK = JDH EAO + DAO .
+---  FEL = JDL EDC + DBC .
+---  FEM = JAG EAG + DAG .
+---  FEN = JAG EAG + DAG .
+
+---  ffb = eah + eai + eaj + eak .             Group enable
+---  ffc = eal + eam + ean + eao .
+---  ffd = eap + eda + edb + edc .
+---  ffe = edd + ede + edf + edg .          
+---  fff = edh + edi + edj + edk .
+---  ffj = eah + eai + eaj + eak .
+---  ffk = eal + eam + ean + eao .
+---  ffl = eap + eda + edb + edc .                
+---  ffm = edd + ede + edf + edg .
+
+---  gaa = fea .                       Propogate group carry
+---  gab = feb fea + feb ffb .
+---  GAC = FEA FFB FFC + FEB FFC + FEC .
+---  GAD = FEA FFB FFC FFD + FEB FFC FFD + FEC FFD + FED .
+---  GAE = FEI FFJ FFK FFL FFM + FEJ FFK FFL FFM + FEK FFL FFM + FEL FFM + FEE .
+---  GAF = FEI FFJ FFK FFL FFM FFF + FEJ FFK FFL FFM FFF + FEK FFL FFM FFF + FEL FFM FFF + FFE FFF + FEF .
+
+---  HAA = FCA gaa tma + SJA TMA + FDA GAA .   0    Absolute Common 
+---  HAB = FCB gaa tmb + SJB TMB + FDB GAA .        Memory Address
+---  HAC = FCC gaa tmc + SJC TMC + FDC GAA .
+---  HAD = FCD gaa tmd + SJD TMD + FDD GAA .
+---  HAE = FCE gab tma + SJE TMA + FDE GAB .
+---  HAF = FCF gab tmb + SJF TMB + FDF GAB .
+---  HAG = FCG gab tmc + SJG TMC + FDG GAB .
+---  HAH = FCH gab tmd + SJH TMD + FDH GAB .
+---  HAI = FCI gac tma + SJI TMA + FDI GAC .
+---  HAJ = FCJ gac tmb + SJJ TMB + FDJ GAC .
+---  HAK = FCK gac tmc + SJK TMC + FDK GAC .
+---  HAL = FCL gac tmd + SJL TMD + FDL GAC .
+---  HAM = FCM gad tma + SJM TMA + FDM GAD .
+---  HAN = FCN gad tmb + SJN TMB + FDN GAD .
+---  HAO = FCO gad tmc + SJO TMC + FDO GAD .
+---  HAP = FCP gad tmd + SJP TMD + FDP GAD .
+---  HAQ = FCQ gae tma + SJQ TMA + FDQ GAE .
+---  HAR = FCR gae tmb + SJR TMB + FDR GAE .
+---  HAS = FCS gae tmc + SJS TMC + FDS GAE .
+---  HAT = FCT gae tmd + SJT TMD + FDT GAE .
+---  HAU = FCU gaf tma + SJU TMA + FDU GAF . 20
+---  HAV = QRB tmb + SJV TMB .                     Refresh
+---  HAW = XAA tmc + xab tmc + KAB tmc + sjw TMC .  Read 
+---  HAX = KAB xaa tmd + SJX TMD .                   Write
+
+---  jac = dab .                           Propagated Bit Carry
+---  jad = dac dab + dac eac .                   without group carry
+---  jae = dab dac dad + eac dac dad + ead dad .
+---  JAF = DAB EAC EAD EAE + DAC EAD EAE + DAD EAE + DAE .
+---  JAG = DAB EAC EAD EAE EAF + DAC EAD EAE EAF + DAD EAE EAF + DAE EAF + DAF .
+---  JDB = DAH .                            Tranlations of 
+---  JDC = EAI DAH + DAI .                      rank D no carry
+---  JDD = DAH EAI EAJ + DAI EAJ + DAJ .
+---  JDF = DAL .
+---  JDG = EAM DAL + DAM .
+---  JDH = DAL EAM EAN + DAM EAN + DAN .
+---  JDJ = DAP .
+---  JDK = EDA DAP + DBA .
+---  JDL = DAP EDA EDB + DBA EDB + DBB .
+---  JDN = DBD .
+---  JDO = EDE DBD + DBE .
+---  JDP = DBD EDE EDF + DBE EDF + DBF .
+---  JDR = DBH .
+---  JDS = EDI DBH + DBI .
+---  JDT = DBH EDI EDJ + DBI EDJ + DBJ .
+---  JDV = DBL .
+
+---  jeb = dah eah .                          Tranlations of 
+---  jec = dai dah eah + dai eai  .                 rank D carry
+---  jed = eah dah dai daj + eai dai daj + eaj daj .
+---  jef = dal eal  .
+---  jeg = dam dal eal + dam eam .           
+---  jeh = eal dal dam dan + eam dam dan + ean dan .
+---  jej = dap eap .
+---  jek = dba dap eap + dba eda .
+---  jel = eap dap dba dbb + eda dba dbb + edb dbb .
+---  jen = dbd edd .
+---  jeo = dbe dbd edd + dbe ede .    
+---  jep = edd dbd dbe dbf + ede dbe dbf + edf dbf .
+---  jer = dbh edh .                   
+---  jes = dbi dbh edh + dbi edi .
+---  jet = edh dbh dbi dbj + edi dbi dbj + edj dbj .
+---  jev = dbl edl .
+
+---  JFA = FAM + fca fen TNA + fda FEN TNB .  Pseudo Bank 0
+---  JFB = FAN + FCA fem TNC + FDA FEM TND .  Pseudo Bank 1
+
+---  KAA = QNA QMA + QNJ QMA + QEB .          Backup condition
+---  KAB = fac fad fae faf .                  Write Operation
+
+---  KBA = QBA qma QDA .         Qd O         QB = Valid request
+---  KBB = QBB qmb QDB .           1          qm- = no backup
+---  KBC = QBC qmc QDC .           2          QD = 2 Rank full
+---  KBD = QBD qmd QDD .           3
+
+---  KBE = QBE qme .                          Go quad 0
+---  KBF = QBF qmf .                                  1
+---  KBG = QBG qmg .                                  2
+---  KBH = QBH qmh .                                  3
+
+---  KCA = QBE qme qda .          Qd O     QB eq valid data
+---  KCB = QBF qmf qdb .            1      qm eq no backup
+---  KCC = QBG qmg qdc .            2      QD eq 2nd reg pack
+---  KCD = QBH qmh qdd .            3           to buffer
+
+          Limit Test Carry
+---  LAA = CAA CAB + CAA CCB + CAB CCB .               Limit carry
+---  LAB = CAC CCC CAD + CAC CCC CCD + CAD CCD .          translation
+---  LAC = CAE CCE CAF + CAE CCE CCF + CAF CCF .
+---  LAD = CAG CCG CAH + CAG CCG CCH + CAH CCH .
+---  LAE = CAI CCI CAJ + CAI CCI CCJ + CAJ CCJ .
+---  LAF = CAK CCK CAL + CAK CCK CCL + CAL CCL .
+---  LAG = CAM CCM CAN + CAM CCM CCN + CAN CCN .
+---  LAH = CAO CCO CAP + CAO CCO CCP + CAP CCP .
+---  LAI = CBA CDA CBB + CBA CDA CDB + CBB CDB .
+---  LAJ = CBC CDC CBD + CBC CDC CDD + CBD CDD .
+---  LAK = CBE CDE CBF + CBE CDE CDF + CBF CDF .
+---  LAL = CBG CDG CBH + CBG CDG CDH + CBH CDH .
+---  LAM = CBI CDI CBJ + CBI CDI CDJ + CBJ CDJ .
+---  LAN = CBK CDK CBL + CBK CDK CDL + CBL CDL .
+---  LAO = CBM CDM CBN + CBM CDM CDN + CBN CDN .
+---  LAP = CBO CDO CBP + CBO CDO CDP + CBP CDP .
+
+          Limit Test Enable
+---  lbb = cac ccc + cad ccd .                     Limit enable
+---  lbc = cae cce + caf ccf .                     translation
+---  lbd = cag ccg + cah cch .
+---  lbe = cai cci + caj ccj .
+---  lbf = cak cck + cal ccl .
+---  lbg = cam ccm + can ccn .
+---  lbh = cao cco + cap ccp .
+---  lbi = cba cda + cbb cdb .
+---  lbj = cbc cdc + cbd cdd .
+---  lbk = cbe cde + cbf cdf .
+---  lbl = cbg cdg + cbh cdh .             
+---  lbm = cbi cdi + cbj cdj .
+---  lbn = cbk cdk + cbl cdl .
+---  lbo = cbm cdm + cbn cdn .
+---  lbp = cbo cdo + cbp cdp .
+
+       Base Test Carry
+
+---  LCA = CEA CEB + CEA CGB + CEB CGB .               Base test carry
+---  LCB = CEC CGC CED + CEC CGC CGD + CED CGD .          translation
+---  LCC = CEE CGE CEF + CEE CGE CGF + CEF CGF .
+---  LCD = CEG CGG CEH + CEG CGG CGH + CEH CGH .
+---  LCE = CEI CGI CEJ + CEI CGI CGJ + CEJ CGJ .
+---  LCF = CEK CGK CEL + CEK CGK CGL + CEL CGL .
+---  LCG = CEM CGM CEN + CEM CGM CGN + CEN CGN .
+---  LCH = CEO CGO CEP + CEO CGO CGP + CEP CGP .
+---  LCI = CFA CHA CFB + CFA CHA CHB + CFB CHB .
+---  LCJ = CFC CHC CFD + CFC CHC CHD + CFD CHD .
+---  LCK = CFE CHE CFF + CFE CHE CHF + CFF CHF .
+---  LCL = CFG CHG CFH + CFG CHG CHH + CFH CHH .
+---  LCM = CFI CHI CFJ + CFI CHI CHJ + CFJ CHJ .
+---  LCN = CFK CHK CFL + CFK CHK CHL + CFL CHL .
+---  LCO = CFM CHM CFN + CFM CHM CHN + CFN CHN .
+---  LCP = CFO CHO CFP + CFO CHO CHP + CFP CHP .
+
+---  ldb = cec cgc + ced cgd .                     Base test enable
+---  ldc = cee cge + cef cgf .                     translation
+---  ldd = ceg cgg + ceh cgh .
+---  lde = cei cgi + cej cgj .
+---  ldf = cek cgk + cel cgl .
+---  ldg = cem cgm + cen cgn .
+---  ldh = ceo cgo + cep cgp .
+---  ldi = cfa cha + cfb chb .
+---  ldj = cfc chc + cfd chd .
+---  ldk = cfe che + cff chf .
+---  ldl = cfg chg + cfh chh .
+---  ldm = cfi chi + cfj chj .
+---  ldn = cfk chk + cfl chl .
+---  ldo = cfm chm + cfn chn .
+---  ldp = cfo cho + cfp chp .
+
+---  MAA = LAA LBB LBC LBD + LAB LBC LBD + LAC LBD + LAD . Limit selections
+---  MAB = LAE LBF LBG LBH + LAF LBG LBH + LAG LBH + LAH .  carry latches
+---  MAC = LAI LBJ LBK LBL + LAJ LBK LBL + LAK LBL + LAL .
+---  MAD = LAM LBN LBO LBP + LAN LBO LBP + LAO LBP + LAP .
+---  MBA = LCA LDB LDC LDD + LCB LDC LDD + LCC LDD + LCD . Base Test 
+---  MBB = LCE LDF LDG LDH + LCF LDG LDH + LCG LDH + LCH .  Carry latches
+---  MBC = LCI LDJ LDK LDL + LCJ LDK LDL + LCK LDL + LCL .
+---  MBD = LCM LDN LDO LDP + LCN LDO LDP + LCO LDP + LCP .
+
+---  nab = lbe + lbf + lbg + lbh .                  Limit selections
+---  nac = lbi + lbj + lbk + lbl .                  Enable laches
+---  nad = lbm + lbn + lbo + lbp .
+
+---  nbb = lde + ldf + ldg + ldh .                  Limit selections
+---  nbc = ldi + ldj + ldk + ldl .                  Enable laches
+---  nbd = ldm + ldn + ldo + ldp .
+
+             Hold        Delayed   Entry
+                         Entry
+---  OAA = WAA tic tie + PCA TIC + FAA TIA .       Request package to
+---  OAB = WAB tic tie + PCB TIC + FAB TIA .       Quad O
+---  OAC = WAC tic tie + PCC TIC + FAC TIA .
+---  OAD = WAD tic tie + PCD TIC + FAD TIA .       OAA-F eq dest flag
+---  OAE = WAE tic tie + PCE TIC + FAE TIA .
+---  OAF = WAF tic tie + PCF TIC + FAF TIA .
+---  OAG = WAG tid tif + PCG TID + FAG TIB .       OAG-L eq bank pointer
+---  OAH = WAH tid tif + PCH TID + FAH TIB .
+---  OAI = WAI tid tif + PCI TID + FAI TIB .
+---  OAJ = WAJ tid tif + PCJ TID + FAJ TIB .
+---  OAK = WAK tid tif + pck TID + fal TIB .
+---  OAL = WAL tid tif + PCK TID + FAL TIB .
+---  OAM = WAM tid tif + PCQ TIC + JFA TIA .       Pseudo Bank 0
+---  OAN = WAN tid tif + PCR TID + JFB TIB .       Pseudo Bank 1
+
+---  OBA = WBA tjc tje + PCA TJC + FAA TJA .       Request package to QF
+---  OBB = WBB tjc tje + PCB TJC + FAB TJA .       quad l
+---  OBC = WBC tjc tje + PCC TJC + FAC TJA .
+---  OBD = WBD tjc tje + PCD TJC + FAD TJA .
+---  OBE = WBE tjc tje + PCE TJC + FAE TJA .
+---  OBF = WBF tjc tje + PCF TJC + FAF TJA .
+---  OBG = WBG tjd tjf + PCG TJD + FAG TJB .
+---  OBH = WBH tjd tjf + PCH TJD + FAH TJB .
+---  OBI = WBI tjd tjf + PCI TJD + FAI TJB .
+---  OBJ = WBJ tjd tjf + PCJ TJD + FAJ TJB .
+---  OBK = WBK tjd tjf + pck TJD + fal TJB .
+---  OBL = WBL tjd tjf + PCK TJD + FAL TJB .
+---  OBM = WBM tjc tje + PCQ TJC + JFA TJA .
+---  OBN = WBN tjd tjf + PCR TJD + JFB TJB .
+
+---  OCA = WCA tkc tke + PCA TKC + FAA TKA .       Request package to QF
+---  OCB = WCB tkc tke + PCB TKC + FAB TKA .       quad 3
+---  OCC = WCC tkc tke + PCC TKC + FAC TKA .
+---  OCD = WCD tkc tke + PCD TKC + FAD TKA .
+---  OCE = WCE tkc tke + PCE TKC + FAE TKA .
+---  OCF = WCF tkc tke + PCF TKC + FAF TKA .
+---  OCG = WCG tkd tkf + PCG TKD + FAG TKB .
+---  OCH = WCH tkd tkf + PCH TKD + FAH TKB .
+---  OCI = WCI tkd tkf + PCI TKD + FAI TKB .
+---  OCJ = WCJ tkd tkf + PCJ TKD + FAJ TKB .
+---  OCK = WCK tkd tkf + pck TKD + fal TKB .
+---  OCL = WCL tkd tkf + PCK TKD + FAL TKB .
+---  OCM = WCM tkc tke + PCQ TKC + JFA TKA .
+---  OCN = WCN tkd tkf + PCR TKD + JFB TKB .
+
+---  ODA = WDA tlc tle + PCA TLC + FAA TLA .       Request package to QF
+---  ODB = WDB tlc tle + PCB TLC + FAB TLA .       quad 3
+---  ODC = WDC tlc tle + PCC TLC + FAC TLA .
+---  ODD = WDD tlc tle + PCD TLC + FAD TLA .
+---  ODE = WDE tlc tle + PCE TLC + FAE TLA .
+---  ODF = WDF tlc tle + PCF TLC + FAF TLA .
+---  ODG = WDG tld tlf + PCG TLD + FAG TLB .
+---  ODH = WDH tld tlf + PCH TLD + FAH TLB .
+---  ODI = WDI tld tlf + PCI TLD + FAI TLB .
+---  ODJ = WDJ tld tlf + PCJ TLD + FAJ TLB .
+---  ODK = WDK tld tlf + pck TLD + fal TLB .
+---  ODL = WDL tld tlf + PCK TLD + FAL TLB .
+---  ODM = WDM tlc tle + PCQ TLC + JFA TLA .
+---  ODN = WDN tld tlf + PCR TLD + JFB TLB .
+
+---  OEA = FCA gaa tma + SJA TMA + FDA GAA .       Address data to TC      2^0
+---  OEB = FCB gaa tmb + SJB TMB + FDB GAA .
+---  OEC = FCC gaa tmc + SJC TMC + FDC GAA .       1st gate eq enable
+---  OED = FCD gaa tmd + SJD TMD + FDD GAA .       latches for no carry
+---  OEE = FCE gab tma + SJE TMA + FDE GAB .
+---  OEF = FCF gab tmb + SJF TMB + FDF GAB .       2nd gate eq recycle
+---  OEG = FCG gab tmc + SJG TMC + FDG GAB .
+---  OEH = FCH gab tmd + SJH TMD + FDH GAB .       3rd gate eq enable
+---  OEI = FCI gac tma + SJI TMA + FDI GAC .       latches for carry
+---  OEJ = FCJ gac tmb + SJJ TMB + FDJ GAC .
+---  OEK = FCK gac tmc + SJK TMC + FDK GAC .
+---  OEL = FCL gac tmd + SJL TMD + FDL GAC .
+---  OEM = FCM gad tma + SJM TMA + FDM GAD .
+---  OEN = FCN gad tmb + SJN TMB + FDN GAD .
+---  OEO = FCO gad tmc + SJO TMC + FDO GAD .
+---  OEP = FCP gad tmd + SJP TMD + FDP GAD .
+---  OEQ = FCQ gae tma + SJQ TMA + FDQ GAE .
+---  OER = FCR gae tmb + SJR TMB + FDR GAE .
+---  OES = FCS gae tmc + SJS TMC + FDS GAE .
+---  OET = FCT gae tmd + SJT TMD + FDT GAE .       
+---  OEU = FCU gaf tma + SJU TMA + FDU GAF .                            2^20
+
+---  OEV = QRB tmb + SJV TMB .                     Refresh
+---  oew = XAA tmd + xab tmd + kab tmd + sjx TMD . Write bit
+---  oex = XAA tmc + xab tmc + KAB tmc + sjw TMC . Read 
+
+
+---  ofa = kbe .                        Go quadrant 0 to TC
+---  ofb = kbf .                                    1 to TC
+---  ofc = kbg .                                    2 to TC
+---  ofd = kbh .                                    3 to TC
+
+---  oha = kbd kba kbb kbc .                 Backup condition
+---  ohb = kbd kba kbb kbc .                 IB, JC, JC, JA
+---  ohc = kbd kba kbb kbc .
+---  ohd = kbd kba kbb kbc .
+
+---  OHE = QME .                        Backup condition to TC
+
+---  OIA = QDE .                        Secondary flag to lights
+---  OIB = QDF .
+---  OIC = QDG .
+---  OID = QDH .
+
+---  OIE = QCA ija ijb + QDA + KBE . Quad O       Primary flag to lights
+---  OIF = QCB ijc ijd + QDB + KBF .    1
+---  OIG = QCC ije ijf + QDC + KBG .    2
+---  OIH = QCD ijg ijh + QDD + KBH .    3
+
+---  OKA = XAA + xab QEC .                        Range error to EA
+
+---  OLA = QCA ija ijb + QDA + KBE . Quad O       Buffer data to IB
+---  OLB = QCB ijc ijd + QDB + KBF .    1         to IB
+---  OLC = QCC ije ijf + QDC + KBG .    2
+---  OLD = QCD ijg ijh + QDD + KBH .    3
+
+      Request Packet Recycle - Rank 1
+
+---  paa = faa .                         Delay chain for 
+---  pab = fab .                         request packets
+---  pac = fac .                         Rank 1
+---  pad = fad .
+---  pae = fae .
+---  paf = faf .
+---  pag = fag .                         Bank Select
+---  pah = fah .     
+---  pai = fai .
+---  paj = faj .
+---  pak = fak .
+---  pam = qba .                         Quad Select
+---  pan = qbb .
+---  pao = qbc .
+---  pap = qbd .
+---  paq = jfa .                         Pseudo Bank 0
+---  par = jfb .                         Pseudo Bank 1
+
+---  pba = paa .                         Rank 2
+---  pbb = pab .
+---  pbc = pac .
+---  pbd = pad .
+---  pbe = pae .
+---  pbf = paf .
+---  pbg = pag .
+---  pbh = pah .
+---  pbi = pai .
+---  pbj = paj .
+---  pbk = pak .
+---  pbm = pam .
+---  pbn = pan .
+---  pbo = pao .                   
+---  pbp = pap .
+---  pbq = paq .
+---  pbr = par .
+
+---  pca = pba .                         Rank 3
+---  pcb = pbb .
+---  pcc = pbc .
+---  pcd = pbd .
+---  pce = pbe .
+---  pcf = pbf .
+---  pcg = pbg .
+---  pch = pbh .
+---  pci = pbi .
+---  pcj = pbj .
+---  pck = pbk .
+---  pcm = pbm .
+---  pcn = pbn .
+---  pco = pbo .
+---  pcp = pbp .
+---  pcq = pbq .
+---  pcr = pbr .
+
+---  pda = pca .                         Delay chain for
+---  pdb = pcb .                         request packet
+---  pdc = pcc .                         Rank 4
+---  pdd = pcd .
+---  pde = pce .
+---  pdf = pcf .
+---  pdg = pcg .
+---  pdh = pch .
+---  pdi = pci .
+---  pdj = pcj .
+---  pdk = pck .
+---  pdm = pcm .
+---  pdn = pcn .
+---  pdo = pco .
+---  pdp = pcp .
+---  pdq = pcq .
+---  pdr = pcr .
+
+---  pea = pda .                         Rank 5
+---  peb = pdb .
+---  pec = pdc .
+---  ped = pdd .
+---  pee = pde .
+---  pef = pdf .
+---  peg = pdg .
+---  peh = pdh .
+---  pei = pdi .
+---  pej = pdj .
+---  pek = pdk .
+---  pem = pdm .
+---  pen = pdn .  
+---  peo = pdo .
+---  pep = pdp .
+---  peq = pdq .
+---  per = pdr .
+
+---  pfa = pea .                         Rank 6
+---  pfb = peb .
+---  pfc = pec .
+---  pfd = ped .
+---  pfe = pee .
+---  pff = pef .
+---  pfg = peg .
+---  pfh = peh .
+---  pfi = pei  .
+---  pfj = pej .
+---  pfk = pek .
+---  pfm = pem .
+---  pfn = pen .
+---  pfo = peo .
+---  pfp = pep .
+---  pfq = peq .
+---  pfr = per .
+
+---  pga = pfa .                          Delay chain
+---  pgb = pfb .                          request packet
+
+---  pgc = pfc .                          Rank 7
+---  pgd = pfd .
+---  pge = pfe .
+---  pgf = pff .
+---  pgg = pfg .
+---  pgh = pfh .
+---  pgi = pfi .
+---  pgj = pfj .
+---  pgk = pfk .
+---  pgm = pfm .
+---  pgn = pfn .
+---  pgo = pfo .
+---  pgp = pfp .                            
+---  pgq = pfq .
+---  pgr = pfr .
+
+---  pha = pga .                          Rank 8
+---  phb = pgb .
+---  phc = pgc .
+---  phd = pgd .
+---  phe = pge .                
+---  phf = pgf .
+---  phg = pgg .
+---  phh = pgh .
+---  phi = pgi .
+---  phj = pgj .
+---  phk = pgk .
+---  phm = pgm .
+---  phn = pgn .
+---  pho = pgo .
+---  php = pgp .
+---  phq = pgq .
+---  phr = pgr .
+
+---  pia = pha .                          Rank 9
+---  pib = phb .
+---  pic = phc .
+---  pid = phd .
+---  pie = phe .
+---  pif = phf .
+---  pig = phg .
+---  pih = phh .
+---  pii = phi .
+---  pij = phj .
+---  pik = phk .
+---  pim = phm .
+---  pin = phn .
+---  pio = pho .
+---  pip = php .
+---  piq = phq .
+---  pir = phr .
+
+---  pja = pia .                          Delay chain for
+---  pjb = pib .                          request package
+---  pjc = pic .                          Rank 10
+---  pjd = pid .
+---  pje = pie .
+---  pjf = pif .
+---  pjg = pig .
+---  pjh = pih .
+---  pji = pii  .
+---  pjj = pij .
+---  pjk = pik .
+---  pjm = pim .
+---  pjn = pin .
+---  pjo = pio .
+---  pjp = pip .
+---  pjq = piq .
+---  pjr = pir .
+
+---  qaa = BAA + ika .                      Valid address qd 0,2
+---  qab = baa + ika .                      Valid address qd 1,3
+---  QAC = IKF .                          +l to lst adder
+
+---  QBA = QAA eab thc + PJM THC .  Quad O        Valid data
+---  QBB = QAB eab thc + PJN THC .     l
+---  QBC = QAA EAB thc + PJO THC .     2
+---  QBD = QAB EAB thc + PJP THC .     3
+
+            
+---  QBE = QAA eab thc + PJM THC .  Quad O
+---  QBF = QAB eab thc + PJN THC .     1
+---  QBG = QAA EAB thc + PJO THC .     2
+---  QBH = QAB EAB thc + PJP THC .     3
+
+           Hold until    2nd  1st
+           Released      Req  Req
+---  QCA = QCA ija ijb + QDA + KBE .             Set eq req package
+---  QCB = QCB ijc ijd + QDB + KBF .             entered in buffer &
+---  QCC = QCC ije ijf + QDC + KBG .             not yet released by QB
+---  QCD = QCD ijg ijh + QDD + KBH .
+
+---  qda = qda kbe + qda qca + IJA + IJB .        When set eq 2nd request
+---  qdb = qdb kbf + qdb qcb + IJC + IJD .        package to buffer
+---  qdc = qdc kbg + qdc qcc + IJE + IJF .
+---  qdd = qdd kbh + qdd qcd + IJG + IJH .         IJ terms eq Quad
+---  qde = qda kbe + qda qca + IJA + IJB .         release from QB
+---  qdf = qdb kbf + qdb qcb + IJC + IJD .
+---  qdg = qdc kbg + qdc qcc + IJE + IJF .
+---  qdh = qdd kbh + qdd qcd + IJG + IJH .
+
+---  QEA = IKC .                          Enable range test (IB)
+---  QEB = IKD .                          Gather conflict (IB)
+---  QEC = IKC .                          Enable Range Test (IB)
+
+---  QFA = KCA WAK + KCA WAL .                3 clock delay if
+---  QFB = KCB WBK + KCB WBL .                package buffer is full
+---  QFC = KCC WCK + KCC WCL .
+---  QFD = KCD WDK + KCD WDL .
+
+---  QGA = QFA .                              Delay
+---  QGB = QFB .
+---  QGC = QFC .
+---  QGD = QFD .
+
+---  QMA = KBA + KBB + KBC + KBD + KAA .         Gather and
+---  QMB = KBA + KBB + KBC + KBD + KAA .         backup condition flags
+---  QMC = KBA + KBB + KBC + KBD + KAA .
+---  QMD = KBA + KBB + KBC + KBD + KAA .
+---  QME = KBA + KBB + KBC + KBD + KAA .
+---  QMF = KBA + KBB + KBC + KBD + KAA .
+---  QMG = KBA + KBB + KBC + KBD + KAA .
+---  QMH = KBA + KBB + KBC + KBD + KAA .
+
+---  QNA = qma + qnb + qnc + qnd + qne .         lO clock delay or req
+---  QNB = QMA .                        packet after trying 
+---  QNC = QNB .                        to enter a full buffer
+---  QND = QNC .
+---  QNE = QND .
+---  QNF = QNE .
+---  QNG = QNF .
+---  QNH = QNG .
+---  QNI = QNH .
+---  QNJ = qnf + qng + qnh + qni .
+
+---  QRA = ILA TCG + QRA TAG .        Refresh reference
+---  QRB = QRA .
+
+---  qta = ike .   Phase O            Packet phase
+---  qtb = qta .      1
+---  qtc = qtb .      2
+---  qtd = qtc .      3
+
+---  saa = haa .     16                   Delay chain for
+---  sab = hab .     01                 bank address
+---  sac = hac .     02                 Rank 1
+---  sad = had .     03
+---  sae = hae .     04
+---  saf = haf .     05
+---  sag = hag .     06
+---  sah = hah .     07
+---  sai = hai .     08
+---  saj = haj .     09
+---  sak = hak .     10
+---  sal = hal .     11 
+---  sam = ham .     12
+---  san = han .     13
+---  sao = hao .     14
+---  sap = hap .     15
+---  saq = haq .     00
+---  sar = har .     17
+---  sas = has .     18
+---  sat = hat .     19
+---  sau = hau .     20
+---  sav = hav .     Refresh
+---  saw = haw .     Read
+---  sax = hax .     Write
+
+---  sba = saa .                          Delay chain for 
+---  sbb = sab .                          bank address
+---  sbc = sac .                          Rank 2
+---  sbd = sad .
+---  sbe = sae .
+---  sbf = saf .
+---  sbg = sag .
+---  sbh = sah .
+---  sbi = sai .
+---  sbj = saj .
+---  sbk = sak .
+---  sbl = sal .
+---  sbm = sam .
+---  sbn = san .
+---  sbo = sao .
+---  sbp = sap .
+---  sbq = saq .
+---  sbr = sar .
+---  sbs = sas .
+---  sbt = sat .
+---  sbu = sau .
+---  sbv = sav .
+---  sbw = saw .
+---  sbx = sax .
+
+---  sca = sba .                          Rank 3
+---  scb = sbb .
+---  scc = sbc .
+---  scd = sbd .
+---  sce = sbe .
+---  scf = sbf .
+---  scg = sbg .
+---  sch = sbh .
+---  sci = sbi .
+---  scj = sbj .
+---  sck = sbk .
+---  scl = sbl .
+---  scm = sbm .
+---  scn = sbn .
+---  sco = sbo .
+---  scp = sbp .
+---  scq = sbq .
+---  scr = sbr .
+---  scs = sbs .
+---  sct = sbt .
+---  scu = sbu .
+---  scv = sbv .
+---  scw = sbw .
+---  scx = sbx .
+
+---  sda = sca .                          Delay chain for
+---  sdb = scb .                          bank address
+---  sdc = scc .                          Rank 4
+---  sdd = scd .
+---  sde = sce .
+---  sdf = scf .
+---  sdg = scg .
+---  sdh = sch .
+---  sdi = sci .
+---  sdj = scj .
+---  sdk = sck .           
+---  sdl = scl .
+---  sdm = scm .
+---  sdn = scn .
+---  sdo = sco .
+---  sdp = scp .
+---  sdq = scq .
+---  sdr = scr .
+---  sds = scs .
+---  sdt = sct .
+---  sdu = scu .
+---  sdv = scv .
+---  sdw = scw .
+---  sdx = scx .
+
+---  sea = sda .                          Rank 5
+---  seb = sdb .
+---  sec = sdc .
+---  sed = sdd .
+---  see = sde .
+---  sef = sdf .
+---  seg = sdg .
+---  seh = sdh .
+---  sei = sdi .
+---  sej = sdj .
+---  sek = sdk .
+---  sel = sdl .
+---  sem = sdm .
+---  sen = sdn .
+---  seo = sdo .
+---  sep = sdp .
+---  seq = sdq .
+---  ser = sdr .
+---  ses = sds .
+---  set = sdt .
+---  seu = sdu .
+---  sev = sdv .
+---  sew = sdw .
+---  sex = sdx .     
+
+---  sfa = sea .                          Delay chain for
+---  sfb = seb .                          bank address
+---  sfc = sec .                          Rank 6
+---  sfd = sed .
+---  sfe = see .
+---  sff = sef .
+---  sfg = seg .
+---  sfh = seh .
+---  sfi = sei .
+---  sfj = sej .
+---  sfk = sek .           
+---  sfl = sel .
+---  sfm = sem .
+---  sfn = sen .           
+---  sfo = seo .
+---  sfp = sep .
+---  sfq = seq .
+---  sfr = ser .
+---  sfs = ses .
+---  sft = set .
+---  sfu = seu .
+---  sfv = sev .
+---  sfw = sew .
+---  sfx = sex .
+
+---  sga = sfa .                          Rank 7
+---  sgb = sfb .
+---  sgc = sfc .
+---  sgd = sfd .
+---  sge = sfe .
+---  sgf = sff .
+---  sgg = sfg .
+---  sgh = sfh .
+---  sgi = sfi .
+---  sgj = sfj .
+---  sgk = sfk .
+---  sgl = sfl .   
+---  sgm = sfm .
+---  sgn = sfn .
+---  sgo = sfo .
+---  sgp = sfp .
+---  sgq = sfq .
+---  sgr = sfr .
+---  sgs = sfs .
+---  sgt = sft .
+---  sgu = sfu .
+---  sgv = sfv .
+---  sgw = sfw .
+---  sgx = sfx .
+
+---  sha = sga .                           Delay chain for
+---  shb = sgb .                           bank address
+---  shc = sgc .                           Rank 8
+---  shd = sgd .                     
+---  she = sge .
+---  shf = sgf .
+---  shg = sgg .
+---  shh = sgh .
+---  shi = sgi .
+---  shj = sgj .
+---  shk = sgk .
+---  shl = sgl .
+---  shm = sgm .
+---  shn = sgn .
+---  sho = sgo .
+---  shp = sgp .
+---  shq = sgq .
+---  shr = sgr .
+---  shs = sgs .
+---  sht = sgt .
+---  shu = sgu .
+---  shv = sgv .
+---  shw = sgw .
+---  shx = sgx .
+
+---  sia = sha .                           Rank 9
+---  sib = shb .
+---  sic = shc .
+---  sid = shd .
+---  sie = she .
+---  sif = shf .
+---  sig = shg .
+---  sih = shh .
+---  sii = shi .
+---  sij = shj .
+---  sik = shk .
+---  sil = shl .   
+---  sim = shm .
+---  sin = shn .
+---  sio = sho .
+---  sip = shp .
+---  siq = shq .
+---  sir = shr .
+---  sis = shs .
+---  sit = sht .
+---  siu = shu .
+---  siv = shv .
+---  siw = shw .
+---  six = shx .
+
+---  sja = sia .                           Delay chain for
+---  sjb = sib .                           bank address
+---  sjc = sic .                           Rank 10
+---  sjd = sid .
+---  sje = sie .
+---  sjf = sif .
+---  sjg = sig .
+---  sjh = sih .
+---  sji = sii .
+---  sjj = sij .
+---  sjk = sik .
+---  sjl = sil .   
+---  sjm = sim .
+---  sjn = sin .
+---  sjo = sio .
+---  sjp = sip .
+---  sjq = siq .
+---  sjr = sir .
+---  sjs = sis .
+---  sjt = sit .
+---  sju = siu .
+---  sjv = siv .
+---  sjw = siw .
+---  sjx = six .
+
+---  TAA = IKG .                           AR data to 1st addr
+---  TAB = IKG .
+---  TAC = IKH .                           Loop data to 1st addr
+---  TAD = IKH .
+---  TAE = IKI .                           Hold data in 1st addr
+---  TAF = IKI .
+---  TAG = IKH .                           Carries to 1st addr
+---  TBA = IKJ .                           VR data to 2nd addr
+---  TBB = IKJ .
+---  TBC = IKK .                           Loop to 2nd 
+---  TBD = IKK .
+---  TBE = IKM .                           Hold in 2nd
+---  TBF = IKM .
+---  TCA = IKN .                           EB data to 3rd
+---  TCB = IKN .
+---  TCC = IKO .                           Increment to 3rd
+---  TCD = IKO .
+---  TCE = IKP .                           Base to 3rd
+---  TCF = IKP .
+---  TCG = IKN .                           I/O Addr to 3rd Adder
+---  TDA = IKQ .                        AR data to increment reg
+---  TDB = IKQ .
+---  TDC = IKR .                        IB data to increment reg
+---  TDD = IKR .
+---  TDE = IKS .                        Hold data in increment reg
+---  TDF = IKS .
+---  TEA = IKT .                        Enter base address
+---  TEB = IKT .     
+---  TFA = IKU .                        Enter limit address
+---  TFB = IKU .
+---  TGA = IKB .                        Reprocess shift data
+---  TGB = IKB .
+---  tha = tga .                        Reprocess shift data delayed
+---  thb = tga .                        
+---  thc = tga .                
+---  thd = tga .
+
+           Buffer Entry Control
+
+---  TIA = QBA qma qde wak wal  .              Enter buffer if empty
+---  TIB = QBE qme qda wak wal .
+---  TIC = QGA .                        3 clock delay if buffer is full
+---  TID = QGA .                      
+---  TIE = QTA qde .                      Set eq in phase and less than
+---  TIF = QTA qda .                      than 2 active requests
+
+---  TJA = QBB qmb qdf wbk wbl .              Quad 1
+---  TJB = QBF qmf qdb wbk wbl .
+---  TJC = QGB .
+---  TJD = QGB .
+---  TJE = QTB qdf .
+---  TJF = QTB qdb .
+
+---  TKA = QBC qmc qdg wck wcl .              Quad 2
+---  TKB = QBG qmg qdc wck wcl .
+---  TKC = QGC .
+---  TKD = QGC .
+---  TKE = QTC qdg .
+---  TKF = QTC qdc .
+
+---  TLA = QBD qmd qdh wdk wdl  .              Quad 3
+---  TLB = QBH qmh qdd wdk wdl  .
+---  TLC = QGD .
+---  TLD = QGD .
+---  TLE = QTD qdh .
+---  TLF = QTD qdd .
+
+---  TMA = THA .                        Reprocess shift data
+---  TMB = THA .                        delayed
+---  TMC = THA .
+---  TMD = THA .
+
+---  TNA = thd qra .                   No retry and no refresh
+---  TNB = thd qra .
+---  TNC = thd qra .
+---  TND = thd qra .
+
+---  WAA = WAA tic tie + PCA TIC + FAA TIA .       Quad O
+---  WAB = WAB tic tie + PCB TIC + FAB TIA .
+---  WAC = WAC tic tie + PCC TIC + FAC TIA .       Request register
+---  WAD = WAD tic tie + PCD TIC + FAD TIA .
+---  WAE = WAE tic tie + PCE TIC + FAE TIA .
+---  WAF = WAF tic tie + PCF TIC + FAF TIA .
+---  WAG = WAG tid tif + PCG TID + FAG TIB .
+---  WAH = WAH tid tif + PCH TID + FAH TIB .
+---  WAI = WAI tid tif + PCI TID + FAI TIB .
+---  WAJ = WAJ tid tif + PCJ TID + FAJ TIB .
+---  WAK = WAK tid tif + pck TID + fal TIB .  
+---  WAL = WAL tid tif + PCK TID + FAL TIB .
+---  WAM = WAM tid tif + PCQ TIC + JFA TIA .
+---  WAN = WAN tid tif + PCR TID + JFB TIB .
+
+---  WBA = WBA tjc tje + PCA TJC + FAA TJA .       Quad 1
+---  WBB = WBB tjc tje + PCB TJC + FAB TJA .
+---  WBC = WBC tjc tje + PCC TJC + FAC TJA .       Request register
+---  WBD = WBD tjc tje + PCD TJC + FAD TJA .
+---  WBE = WBE tjc tje + PCE TJC + FAE TJA .
+---  WBF = WBF tjc tje + PCF TJC + FAF TJA .
+---  WBG = WBG tjd tjf + PCG TJD + FAG TJB .
+---  WBH = WBH tjd tjf + PCH TJD + FAH TJB .
+---  WBI = WBI tjd tjf + PCI TJD + FAI TJB .
+---  WBJ = WBJ tjd tjf + PCJ TJD + FAJ TJB .
+---  WBK = WBK tjd tjf + pck TJD + fal TJB .
+---  WBL = WBL tjd tjf + PCK TJD + FAL TJB .
+---  WBM = WBM tjc tje + PCQ TJC + JFA TJA .
+---  WBN = WBN tjd tjf + PCR TJD + JFB TJB .
+
+---  WCA = WCA tkc tke + PCA TKC + FAA TKA .       Quad 2
+---  WCB = WCB tkc tke + PCB TKC + FAB TKA .
+---  WCC = WCC tkc tke + PCC TKC + FAC TKA .       Request register
+---  WCD = WCD tkc tke + PCD TKC + FAD TKA .
+---  WCE = WCE tkc tke + PCE TKC + FAE TKA .
+---  WCF = WCF tkc tke + PCF TKC + FAF TKA .
+---  WCG = WCG tkd tkf + PCG TKD + FAG TKB .
+---  WCH = WCH tkd tkf + PCH TKD + FAH TKB .
+---  WCI = WCI tkd tkf + PCI TKD + FAI TKB .
+---  WCJ = WCJ tkd tkf + PCJ TKD + FAJ TKB .
+---  WCK = WCK tkd tkf + pck TKD + fal TKB .
+---  WCL = WCL tkd tkf + PCK TKD + FAL TKB .
+---  WCM = WCM tkc tke + PCQ TKC + JFA TKA .
+---  WCN = WCN tkd tkf + PCR TKD + JFB TKB .
+
+---  WDA = WDA tlc tle + PCA TLC + FAA TLA .       Quad 3
+---  WDB = WDB tlc tle + PCB TLC + FAB TLA .
+---  WDC = WDC tlc tle + PCC TLC + FAC TLA .       Request register
+---  WDD = WDD tlc tle + PCD TLC + FAD TLA .
+---  WDE = WDE tlc tle + PCE TLC + FAE TLA .
+---  WDF = WDF tlc tle + PCF TLC + FAF TLA .
+---  WDG = WDG tld tlf + PCG TLD + FAG TLB .
+---  WDH = WDH tld tlf + PCH TLD + FAH TLB .
+---  WDI = WDI tld tlf + PCI TLD + FAI TLB .
+---  WDJ = WDJ tld tlf + PCJ TLD + FAJ TLB .
+---  WDK = WDK tld tlf + pck TLD + fal TLB .
+---  WDL = WDL tld tlf + PCK TLD + FAL TLB .
+---  WDM = WDM tlc tle + PCQ TLC + JFA TLA .
+---  WDN = WDN tld tlf + PCR TLD + JFB TLB .
+
+     Limit Test Error
+
+---  XAA = MAA NAB NAC NAD QEA + MAB NAC NAD QEA + MAC NAD QEA + MAD QEA .
+
+     No Base Test Error
+
+---  XAB = MBA NBB NBC NBD QEA + MBB NBC NBD QEA + MBC NBD QEA + MBD QEA .

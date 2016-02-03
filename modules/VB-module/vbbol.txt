@@ -1,0 +1,1250 @@
+*
+* Boolean Definitions
+* Module: VB
+* Description: Vector Shift
+* Revision:
+* Date: 
+*
+---   AAA = CAA TAA + IDP TBA + BAA TCA .   CP 9  enter data, data reversed
+---   AAB = CAB TAA + IDO TBA + BAB TCA .            or next element
+---   AAC = CAC TAA + IDN TBA + BAC TCA . 
+---   AAD = CAD TAA + IDM TBA + BAD TCA . 
+---   AAE = CAE TAA + IDL TBA + BAE TCA . 
+---   AAF = CAF TAA + IDK TBA + BAF TCA . 
+---   AAG = CAG TAA + IDJ TBA + BAG TCA . 
+---   AAH = CAH TAA + IDI TBA + BAH TCA . 
+    
+---   AAI = CAI TAB + IDH TBB + BAI TCB . 
+---   AAJ = CAJ TAB + IDG TBB + BAJ TCB . 
+---   AAK = CAK TAB + IDF TBB + BAK TCB . 
+---   AAL = CAL TAB + IDE TBB + BAL TCB . 
+---   AAM = CAM TAB + IDD TBB + BAM TCB . 
+---   AAN = CAN TAB + IDC TBB + BAN TCB . 
+---   AAO = CAO TAB + IDB TBB + BAO TCB . 
+---   AAP = CAP TAB + IDA TBB + BAP TCB . 
+    
+---   ABA = CBA TAC + ICP TBC + BBA TCC .  
+---   ABB = CBB TAC + ICO TBC + BBB TCC .   
+---   ABC = CBC TAC + ICN TBC + BBC TCC . 
+---   ABD = CBD TAC + ICM TBC + BBD TCC . 
+---   ABE = CBE TAC + ICL TBC + BBE TCC . 
+---   ABF = CBF TAC + ICK TBC + BBF TCC . 
+---   ABG = CBG TAC + ICJ TBC + BBG TCC . 
+---   ABH = CBH TAC + ICI TBC + BBH TCC . 
+    
+---   ABI = CBI TAD + ICH TBD + BBI TCD . 
+---   ABJ = CBJ TAD + ICG TBD + BBJ TCD . 
+---   ABK = CBK TAD + ICF TBD + BBK TCD . 
+---   ABL = CBL TAD + ICE TBD + BBL TCD . 
+---   ABM = CBM TAD + ICD TBD + BBM TCD . 
+---   ABN = CBN TAD + ICC TBD + BBN TCD . 
+---   ABO = CBO TAD + ICB TBD + BBO TCD . 
+---   ABP = CBP TAD + ICA TBD + BBP TCD . 
+
+---   ACA = CCA TAA + IBP TBA + BCA TCA .  
+---   ACB = CCB TAA + IBO TBA + BCB TCA .  
+---   ACC = CCC TAA + IBN TBA + BCC TCA . 
+---   ACD = CCD TAA + IBM TBA + BCD TCA . 
+---   ACE = CCE TAA + IBL TBA + BCE TCA . 
+---   ACF = CCF TAA + IBK TBA + BCF TCA . 
+---   ACG = CCG TAA + IBJ TBA + BCG TCA . 
+---   ACH = CCH TAA + IBI TBA + BCH TCA . 
+    
+---   ACI = CCI TAB + IBH TBB + BCI TCB . 
+---   ACJ = CCJ TAB + IBG TBB + BCJ TCB . 
+---   ACK = CCK TAB + IBF TBB + BCK TCB . 
+---   ACL = CCL TAB + IBE TBB + BCL TCB . 
+---   ACM = CCM TAB + IBD TBB + BCM TCB . 
+---   ACN = CCN TAB + IBC TBB + BCN TCB . 
+---   ACO = CCO TAB + IBB TBB + BCO TCB . 
+---   ACP = CCP TAB + IBA TBB + BCP TCB . 
+    
+---   ADA = CDA TAC + IAP TBC + BDA TCC .   
+---   ADB = CDB TAC + IAO TBC + BDB TCC .   
+---   ADC = CDC TAC + IAN TBC + BDC TCC . 
+---   ADD = CDD TAC + IAM TBC + BDD TCC . 
+---   ADE = CDE TAC + IAL TBC + BDE TCC . 
+---   ADF = CDF TAC + IAK TBC + BDF TCC . 
+---   ADG = CDG TAC + IAJ TBC + BDG TCC . 
+---   ADH = CDH TAC + IAI TBC + BDH TCC . 
+    
+---   ADI = CDI TAD + IAH TBD + BDI TCD . 
+---   ADJ = CDJ TAD + IAG TBD + BDJ TCD . 
+---   ADK = CDK TAD + IAF TBD + BDK TCD . 
+---   ADL = CDL TAD + IAE TBD + BDL TCD . 
+---   ADM = CDM TAD + IAD TBD + BDM TCD . 
+---   ADN = CDN TAD + IAC TBD + BDN TCD . 
+---   ADO = CDO TAD + IAB TBD + BDO TCD . 
+---   ADP = CDP TAD + IAA TBD + BDP TCD . 
+
+---   BAA = CAA TCE + IDP TEA + AAA TFA .   CP 9  enter data, data reversed
+---   BAB = CAB TCE + IDO TEA + AAB TFA .            or next element
+---   BAC = CAC TCE + IDN TEA + AAC TFA . 
+---   BAD = CAD TCE + IDM TEA + AAD TFA . 
+---   BAE = CAE TCE + IDL TEA + AAE TFA . 
+---   BAF = CAF TCE + IDK TEA + AAF TFA . 
+---   BAG = CAG TCE + IDJ TEA + AAG TFA . 
+---   BAH = CAH TCE + IDI TEA + AAH TFA . 
+    
+---   BAI = CAI TCF + IDH TEB + AAI TFB . 
+---   BAJ = CAJ TCF + IDG TEB + AAJ TFB . 
+---   BAK = CAK TCF + IDF TEB + AAK TFB . 
+---   BAL = CAL TCF + IDE TEB + AAL TFB . 
+---   BAM = CAM TCF + IDD TEB + AAM TFB . 
+---   BAN = CAN TCF + IDC TEB + AAN TFB . 
+---   BAO = CAO TCF + IDB TEB + AAO TFB . 
+---   BAP = CAP TCF + IDA TEB + AAP TFB . 
+    
+---   BBA = CBA TCG + ICP TEC + ABA TFC .   
+---   BBB = CBB TCG + ICO TEC + ABB TFC .   
+---   BBC = CBC TCG + ICN TEC + ABC TFC . 
+---   BBD = CBD TCG + ICM TEC + ABD TFC . 
+---   BBE = CBE TCG + ICL TEC + ABE TFC . 
+---   BBF = CBF TCG + ICK TEC + ABF TFC . 
+---   BBG = CBG TCG + ICJ TEC + ABG TFC . 
+---   BBH = CBH TCG + ICI TEC + ABH TFC . 
+    
+---   BBI = CBI TCH + ICH TED + ABI TFD . 
+---   BBJ = CBJ TCH + ICG TED + ABJ TFD . 
+---   BBK = CBK TCH + ICF TED + ABK TFD . 
+---   BBL = CBL TCH + ICE TED + ABL TFD . 
+---   BBM = CBM TCH + ICD TED + ABM TFD . 
+---   BBN = CBN TCH + ICC TED + ABN TFD . 
+---   BBO = CBO TCH + ICB TED + ABO TFD . 
+---   BBP = CBP TCH + ICA TED + ABP TFD . 
+
+---   BCA = CCA TCE + IBP TEA + ACA TFA .  
+---   BCB = CCB TCE + IBO TEA + ACB TFA .  
+---   BCC = CCC TCE + IBN TEA + ACC TFA . 
+---   BCD = CCD TCE + IBM TEA + ACD TFA . 
+---   BCE = CCE TCE + IBL TEA + ACE TFA . 
+---   BCF = CCF TCE + IBK TEA + ACF TFA . 
+---   BCG = CCG TCE + IBJ TEA + ACG TFA . 
+---   BCH = CCH TCE + IBI TEA + ACH TFA . 
+    
+---   BCI = CCI TCF + IBH TEB + ACI TFB . 
+---   BCJ = CCJ TCF + IBG TEB + ACJ TFB . 
+---   BCK = CCK TCF + IBF TEB + ACK TFB . 
+---   BCL = CCL TCF + IBE TEB + ACL TFB . 
+---   BCM = CCM TCF + IBD TEB + ACM TFB . 
+---   BCN = CCN TCF + IBC TEB + ACN TFB . 
+---   BCO = CCO TCF + IBB TEB + ACO TFB . 
+---   BCP = CCP TCF + IBA TEB + ACP TFB . 
+    
+---   BDA = CDA TCG + IAP TEC + ADA TFC .   
+---   BDB = CDB TCG + IAO TEC + ADB TFC .   
+---   BDC = CDC TCG + IAN TEC + ADC TFC . 
+---   BDD = CDD TCG + IAM TEC + ADD TFC . 
+---   BDE = CDE TCG + IAL TEC + ADE TFC . 
+---   BDF = CDF TCG + IAK TEC + ADF TFC . 
+---   BDG = CDG TCG + IAJ TEC + ADG TFC . 
+---   BDH = CDH TCG + IAI TEC + ADH TFC . 
+    
+---   BDI = CDI TCH + IAH TED + ADI TFD . 
+---   BDJ = CDJ TCH + IAG TED + ADJ TFD . 
+---   BDK = CDK TCH + IAF TED + ADK TFD . 
+---   BDL = CDL TCH + IAE TED + ADL TFD . 
+---   BDM = CDM TCH + IAD TED + ADM TFD . 
+---   BDN = CDN TCH + IAC TED + ADN TFD . 
+---   BDO = CDO TCH + IAB TED + ADO TFD . 
+---   BDP = CDP TCH + IAA TED + ADP TFD . 
+
+---   CAA = IAA .
+---   CAB = IAB .
+---   CAC = IAC .
+---   CAD = IAD .
+---   CAE = IAE .
+---   CAF = IAF .
+---   CAG = IAG .
+---   CAH = IAH .
+
+---   CAI = IAI .
+---   CAJ = IAJ .
+---   CAK = IAK .
+---   CAL = IAL .
+---   CAM = IAM .
+---   CAN = IAN .
+---   CAO = IAO .
+---   CAP = IAP .
+
+---   CBA = IBA .
+---   CBB = IBB .
+---   CBC = IBC .
+---   CBD = IBD .
+---   CBE = IBE .
+---   CBF = IBF .
+---   CBG = IBG .
+---   CBH = IBH .
+
+---   CBI = IBI .
+---   CBJ = IBJ .
+---   CBK = IBK .
+---   CBL = IBL .
+---   CBM = IBM .
+---   CBN = IBN .
+---   CBO = IBO .
+---   CBP = IBP .
+
+---   CCA = ICA .
+---   CCB = ICB .
+---   CCC = ICC .
+---   CCD = ICD .
+---   CCE = ICE .
+---   CCF = ICF .
+---   CCG = ICG .
+---   CCH = ICH .
+
+---   CCI = ICI .
+---   CCJ = ICJ .
+---   CCK = ICK .
+---   CCL = ICL .
+---   CCM = ICM .
+---   CCN = ICN .
+---   CCO = ICO .
+---   CCP = ICP .
+
+---   CDA = IDA .
+---   CDB = IDB .
+---   CDC = IDC .
+---   CDD = IDD .
+---   CDE = IDE .
+---   CDF = IDF .
+---   CDG = IDG .
+---   CDH = IDH .
+
+---   CDI = IDI .
+---   CDJ = IDJ .
+---   CDK = IDK .
+---   CDL = IDL .
+---   CDM = IDM .
+---   CDN = IDN .
+---   CDO = IDO .
+---   CDP = IDP .
+
+---   DAA = AAA TGA + ACA tga .       0 or 32 bit shift
+---   DAB = AAB TGA + ACB tga .
+---   DAC = AAC TGA + ACC tga .
+---   DAD = AAD TGA + ACD tga .
+---   DAE = AAE TGA + ACE tga .      
+---   DAF = AAF TGA + ACF tga .
+---   DAG = AAG TGA + ACG tga .
+---   DAH = AAH TGA + ACH tga .
+
+---   DAI = AAI TGB + ACI tgb .      
+---   DAJ = AAJ TGB + ACJ tgb .
+---   DAK = AAK TGB + ACK tgb .
+---   DAL = AAL TGB + ACL tgb .
+---   DAM = AAM TGB + ACM tgb .      
+---   DAN = AAN TGB + ACN tgb .
+---   DAO = AAO TGB + ACO tgb .
+---   DAP = AAP TGB + ACP tgb .
+
+---   DBA = ABA TGC + ADA tgc .      
+---   DBB = ABB TGC + ADB tgc .
+---   DBC = ABC TGC + ADC tgc .
+---   DBD = ABD TGC + ADD tgc .
+---   DBE = ABE TGC + ADE tgc .      
+---   DBF = ABF TGC + ADF tgc .
+---   DBG = ABG TGC + ADG tgc .
+---   DBH = ABH TGC + ADH tgc .
+
+---   DBI = ABI TGD + ADI tgd .      
+---   DBJ = ABJ TGD + ADJ tgd .
+---   DBK = ABK TGD + ADK tgd .
+---   DBL = ABL TGD + ADL tgd .
+---   DBM = ABM TGD + ADM tgd .      
+---   DBN = ABN TGD + ADN tgd .
+---   DBO = ABO TGD + ADO tgd .
+---   DBP = ABP TGD + ADP tgd .
+
+---   DCA = ACA TGA + BAA tga .      
+---   DCB = ACB TGA + BAB tga .
+---   DCC = ACC TGA + BAC tga .
+---   DCD = ACD TGA + BAD tga .
+---   DCE = ACE TGA + BAE tga .      
+---   DCF = ACF TGA + BAF tga .
+---   DCG = ACG TGA + BAG tga .
+---   DCH = ACH TGA + BAH tga .
+
+---   DCI = ACI TGB + BAI tgb .      
+---   DCJ = ACJ TGB + BAJ tgb .
+---   DCK = ACK TGB + BAK tgb .
+---   DCL = ACL TGB + BAL tgb .
+---   DCM = ACM TGB + BAM tgb .      
+---   DCN = ACN TGB + BAN tgb .
+---   DCO = ACO TGB + BAO tgb .
+---   DCP = ACP TGB + BAP tgb .
+
+---   DDA = ADA TGC + BBA tgc .      
+---   DDB = ADB TGC + BBB tgc .
+---   DDC = ADC TGC + BBC tgc .
+---   DDD = ADD TGC + BBD tgc .
+---   DDE = ADE TGC + BBE tgc .      
+---   DDF = ADF TGC + BBF tgc .
+---   DDG = ADG TGC + BBG tgc .
+---   DDH = ADH TGC + BBH tgc .
+
+---   DDI = ADI TGD + BBI tgd .      
+---   DDJ = ADJ TGD + BBJ tgd .
+---   DDK = ADK TGD + BBK tgd .
+---   DDL = ADL TGD + BBL tgd .
+---   DDM = ADM TGD + BBM tgd .      
+---   DDN = ADN TGD + BBN tgd .
+---   DDO = ADO TGD + BBO tgd .
+---   DDP = ADP TGD + BBP tgd .
+
+---   DEA = BAA TGI + BCA tgi .      0 or 32
+---   DEB = BAB TGI + BCB tgi .
+---   DEC = BAC TGI + BCC tgi .
+---   DED = BAD TGI + BCD tgi .
+---   DEE = BAE TGI + BCE tgi .      
+---   DEF = BAF TGI + BCF tgi .
+---   DEG = BAG TGI + BCG tgi .
+---   DEH = BAH TGI + BCH tgi .
+
+---   DEI = BAI TGJ + BCI tgj .      
+---   DEJ = BAJ TGJ + BCJ tgj .
+---   DEK = BAK TGJ + BCK tgj .
+---   DEL = BAL TGJ + BCL tgj .
+---   DEM = BAM TGJ + BCM tgj .      
+---   DEN = BAN TGJ + BCN tgj .
+---   DEO = BAO TGJ + BCO tgj .
+---   DEP = BAP TGJ + BCP tgj .
+
+---   DFA = BBA TGK + BDA tgk .      
+---   DFB = BBB TGK + BDB tgk .
+---   DFC = BBC TGK + BDC tgk .
+---   DFD = BBD TGK + BDD tgk .
+---   DFE = BBE TGK + BDE tgk .      
+---   DFF = BBF TGK + BDF tgk .
+---   DFG = BBG TGK + BDG tgk .
+---   DFH = BBH TGK + BDH tgk .
+
+---   DFI = BBI TGL + BDI tgl .      
+---   DFJ = BBJ TGL + BDJ tgl .
+---   DFK = BBK TGL + BDK tgl .
+---   DFL = BBL TGL + BDL tgl .
+---   DFM = BBM TGL + BDM tgl .      
+---   DFN = BBN TGL + BDN tgl .
+---   DFO = BBO TGL + BDO tgl .
+     
+
+---   EAA = DAA THA + DAI TIA + DBA TJA + DBI TKA .  0,8,16,24
+---   EAB = DAB THA + DAJ TIA + DBB TJA + DBJ TKA . 
+---   EAC = DAC THA + DAK TIA + DBC TJA + DBK TKA . 
+---   EAD = DAD THA + DAL TIA + DBD TJA + DBL TKA . 
+---   EAE = DAE THA + DAM TIA + DBE TJA + DBM TKA . 
+---   EAF = DAF THA + DAN TIA + DBF TJA + DBN TKA . 
+---   EAG = DAG THA + DAO TIA + DBG TJA + DBO TKA . 
+---   EAH = DAH THA + DAP TIA + DBH TJA + DBP TKA . 
+
+---   EAI = DAI THB + DBA TIB + DBI TJB + DCA TKB . 
+---   EAJ = DAJ THB + DBB TIB + DBJ TJB + DCB TKB . 
+---   EAK = DAK THB + DBC TIB + DBK TJB + DCC TKB . 
+---   EAL = DAL THB + DBD TIB + DBL TJB + DCD TKB . 
+---   EAM = DAM THB + DBE TIB + DBM TJB + DCE TKB . 
+---   EAN = DAN THB + DBF TIB + DBN TJB + DCF TKB . 
+---   EAO = DAO THB + DBG TIB + DBO TJB + DCG TKB . 
+---   EAP = DAP THB + DBH TIB + DBP TJB + DCH TKB . 
+
+---   EBA = DBA THE + DBI TIE + DCA TJE + DCI TKE .  0,8,16,24
+---   EBB = DBB THE + DBJ TIE + DCB TJE + DCJ TKE . 
+---   EBC = DBC THE + DBK TIE + DCC TJE + DCK TKE . 
+---   EBD = DBD THE + DBL TIE + DCD TJE + DCL TKE . 
+---   EBE = DBE THE + DBM TIE + DCE TJE + DCM TKE . 
+---   EBF = DBF THE + DBN TIE + DCF TJE + DCN TKE . 
+---   EBG = DBG THE + DBO TIE + DCG TJE + DCO TKE . 
+---   EBH = DBH THE + DBP TIE + DCH TJE + DCP TKE . 
+
+---   EBI = DBI THF + DCA TIF + DCI TJF + DDA TKF . 
+---   EBJ = DBJ THF + DCF TIF + DCJ TJF + DDF TKF . 
+---   EBK = DBK THF + DCC TIF + DCK TJF + DDC TKF . 
+---   EBL = DBL THF + DCD TIF + DCL TJF + DDD TKF . 
+---   EBM = DBM THF + DCE TIF + DCM TJF + DDE TKF . 
+---   EBN = DBN THF + DCF TIF + DCN TJF + DDF TKF . 
+---   EBO = DBO THF + DCG TIF + DCO TJF + DDG TKF . 
+---   EBP = DBP THF + DCH TIF + DCP TJF + DDH TKF . 
+
+---   ECA = DCA THG + DCI TIG + DDA TJG + DDI TKG .  0,8,16,24
+---   ECB = DCB THG + DCJ TIG + DDB TJG + DDJ TKG . 
+---   ECC = DCC THG + DCK TIG + DDC TJG + DDK TKG . 
+---   ECD = DCD THG + DCL TIG + DDD TJG + DDL TKG . 
+---   ECE = DCE THG + DCM TIG + DDE TJG + DDM TKG . 
+---   ECF = DCF THG + DCN TIG + DDF TJG + DDN TKG . 
+---   ECG = DCG THG + DCO TIG + DDG TJG + DDO TKG . 
+---   ECH = DCH THG + DCP TIG + DDH TJG + DDP TKG . 
+
+---   ECI = DCI THH + DDA TIH + DDI TJH + DEA TKH . 
+---   ECJ = DCJ THH + DDB TIH + DDJ TJH + DEB TKH . 
+---   ECK = DCK THH + DDC TIH + DDK TJH + DEC TKH . 
+---   ECL = DCL THH + DDD TIH + DDL TJH + DED TKH . 
+---   ECM = DCM THH + DDE TIH + DDM TJH + DEE TKH . 
+---   ECN = DCN THH + DDF TIH + DDN TJH + DEF TKH . 
+---   ECO = DCO THH + DDG TIH + DDO TJH + DEG TKH . 
+---   ECP = DCP THH + DDH TIH + DDP TJH + DEH TKH . 
+
+---   EDA = DDA THC + DDI TIC + DEA TJC + DEI TKC .  0,8,16,24
+---   EDB = DDB THC + DDJ TIC + DEB TJC + DEJ TKC . 
+---   EDC = DDC THC + DDK TIC + DEC TJC + DEK TKC . 
+---   EDD = DDD THC + DDL TIC + DED TJC + DEL TKC . 
+---   EDE = DDE THC + DDM TIC + DEE TJC + DEM TKC . 
+---   EDF = DDF THC + DDN TIC + DEF TJC + DEN TKC . 
+---   EDG = DDG THC + DDO TIC + DEG TJC + DEO TKC . 
+---   EDH = DDH THC + DDP TIC + DEH TJC + DEP TKC . 
+
+---   EDI = DDI THD + DEA TID + DEI TJD + DFA TKD . 
+---   EDJ = DDJ THD + DEB TID + DEJ TJD + DFB TKD . 
+---   EDK = DDK THD + DEC TID + DEK TJD + DFC TKD . 
+---   EDL = DDL THD + DED TID + DEL TJD + DFD TKD . 
+---   EDM = DDM THD + DEE TID + DEM TJD + DFE TKD . 
+---   EDN = DDN THD + DEF TID + DEN TJD + DFF TKD . 
+---   EDO = DDO THD + DEG TID + DEO TJD + DFG TKD . 
+---   EDP = DDP THD + DEH TID + DEP TJD + DFH TKD . 
+
+---   FAA = DEA THB + DEI TIB + DFA TJB + DFI TKB . 
+---   FAB = DEB THB + DEJ TIB + DFB TJB + DFJ TKB . 
+---   FAC = DEC THB + DEK TIB + DFC TJB + DFK TKB . 
+---   FAD = DED THB + DEL TIB + DFD TJB + DFL TKB . 
+---   FAE = DEE THB + DEM TIB + DFE TJB + DFM TKB . 
+---   FAF = DEF THB + DEN TIB + DFF TJB + DFN TKB . 
+---   FAG = DEG THB + DEO TIB + DFG TJB + DFO TKB .
+
+---   GAA = EAA TLA + EAC TMA .          0,2
+---   GAB = EAB TLA + EAD TMA .          
+---   GAC = EAC TLA + EAE TMA .          
+---   GAD = EAD TLA + EAF TMA .          
+---   GAE = EAE TLA + EAG TMA .   
+---   GAF = EAF TLA + EAH TMA .          
+---   GAG = EAG TLA + EAI TMA .          
+---   GAH = EAH TLA + EAJ TMA .          
+    
+---   GAI = EAI TLA + EAK TMA .          
+---   GAJ = EAJ TLA + EAL TMA .          
+---   GAK = EAK TLA + EAM TMA .          
+---   GAL = EAL TLA + EAN TMA .          
+---   GAM = EAM TLA + EAO TMA .   
+---   GAN = EAN TLA + EAP TMA .          
+---   GAO = EAO TLA + EBA TMA .          
+---   GAP = EAP TLA + EBB TMA .          
+   
+---   GBA = EBA TLB + EBC TMB .          0,2
+---   GBB = EBB TLB + EBD TMB .          
+---   GBC = EBC TLB + EBE TMB .          
+---   GBD = EBD TLB + EBF TMB .          
+---   GBE = EBE TLB + EBG TMB .   
+---   GBF = EBF TLB + EBH TMB .          
+---   GBG = EBG TLB + EBI TMB .          
+---   GBH = EBH TLB + EBJ TMB .          
+    
+---   GBI = EBI TLB + EBK TMB .          
+---   GBJ = EBJ TLB + EBL TMB .          
+---   GBK = EBK TLB + EBM TMB .          
+---   GBL = EBL TLB + EBN TMB .          
+---   GBM = EBM TLB + EBO TMB .   
+---   GBN = EBN TLB + EBP TMB .          
+---   GBO = EBO TLB + ECA TMB .          
+---   GBP = EBP TLB + ECB TMB .          
+   
+---   GCA = ECA TLC + ECC TMC .          0,2
+---   GCB = ECB TLC + ECD TMC .          
+---   GCC = ECC TLC + ECE TMC .          
+---   GCD = ECD TLC + ECF TMC .          
+---   GCE = ECE TLC + ECG TMC .   
+---   GCF = ECF TLC + ECH TMC .          
+---   GCG = ECG TLC + ECI TMC .          
+---   GCH = ECH TLC + ECJ TMC .          
+    
+---   GCI = ECI TLC + ECK TMC .          
+---   GCJ = ECJ TLC + ECL TMC .          
+---   GCK = ECK TLC + ECM TMC .          
+---   GCL = ECL TLC + ECN TMC .          
+---   GCM = ECM TLC + ECO TMC .   
+---   GCN = ECN TLC + ECP TMC .          
+---   GCO = ECO TLC + EDA TMC .          
+---   GCP = ECP TLC + EDB TMC .          
+   
+---   GDA = EDA TLD + EDC TMD .          0,2
+---   GDB = EDB TLD + EDD TMD .          
+---   GDC = EDC TLD + EDE TMD .          
+---   GDD = EDD TLD + EDF TMD .          
+---   GDE = EDE TLD + EDG TMD .   
+---   GDF = EDF TLD + EDH TMD .          
+---   GDG = EDG TLD + EDI TMD .          
+---   GDH = EDH TLD + EDJ TMD .          
+    
+---   GDI = EDI TLD + EDK TMD .          
+---   GDJ = EDJ TLD + EDL TMD .          
+---   GDK = EDK TLD + EDM TMD .          
+---   GDL = EDL TLD + EDN TMD .          
+---   GDM = EDM TLD + EDO TMD .   
+---   GDN = EDN TLD + EDP TMD .          
+---   GDO = EDO TLD + FAA TMD .          
+---   GDP = EDP TLD + FAB TMD .          
+
+---   GEA = FAA TLE + FAC TME .
+
+---   HAA = EAE TNA + EAG TOA .          4,6
+---   HAB = EAF TNA + EAH TOA .
+---   HAC = EAG TNA + EAI TOA .          
+---   HAD = EAH TNA + EAJ TOA .
+---   HAE = EAI TNA + EAK TOA .         
+---   HAF = EAJ TNA + EAL TOA .
+---   HAG = EAK TNA + EAM TOA .          
+---   HAH = EAL TNA + EAN TOA .
+   
+---   HAI = EAM TNA + EAO TOE .     
+---   HAJ = EAN TNA + EAP TOE .
+---   HAK = EAO TNA + EBA TOE .          
+---   HAL = EAP TNA + EBB TOE .
+---   HAM = EBA TNA + EBC TOE .         
+---   HAN = EBB TNA + EBD TOE .
+---   HAO = EBC TNA + EBE TOE .          
+---   HAP = EBD TNA + EBF TOE .
+   
+---   HBA = EBE TNB + EBG TOB .          4,6
+---   HBB = EBF TNB + EBH TOB .
+---   HBC = EBG TNB + EBI TOB .          
+---   HBD = EBH TNB + EBJ TOB .
+---   HBE = EBI TNB + EBK TOB .         
+---   HBF = EBJ TNB + EBL TOB .
+---   HBG = EBK TNB + EBM TOB .          
+---   HBH = EBL TNB + EBN TOB .
+   
+---   HBI = EBM TNB + EBO TOF .     
+---   HBJ = EBN TNB + EBP TOF .
+---   HBK = EBO TNB + ECA TOF .          
+---   HBL = EBP TNB + ECB TOF .
+---   HBM = ECA TNB + ECC TOF .         
+---   HBN = ECB TNB + ECD TOF .
+---   HBO = ECC TNB + ECE TOF .          
+---   HBP = ECD TNB + ECF TOF .
+   
+---   HCA = ECE TNC + ECG TOC .          4,6
+---   HCB = ECF TNC + ECH TOC .
+---   HCC = ECG TNC + ECI TOC .          
+---   HCD = ECH TNC + ECJ TOC .
+---   HCE = ECI TNC + ECK TOC .         
+---   HCF = ECJ TNC + ECL TOC .
+---   HCG = ECK TNC + ECM TOC .          
+---   HCH = ECL TNC + ECN TOC .
+   
+---   HCI = ECM TNC + ECO TOG .     
+---   HCJ = ECN TNC + ECP TOG .
+---   HCK = ECO TNC + EDA TOG .          
+---   HCL = ECP TNC + EDB TOG .
+---   HCM = EDA TNC + EDC TOG .         
+---   HCN = EDB TNC + EDD TOG .
+---   HCO = EDC TNC + EDE TOG .          
+---   HCP = EDD TNC + EDF TOG .
+   
+---   HDA = EDE TND + EDG TOD .          4,6
+---   HDB = EDF TND + EDH TOD .
+---   HDC = EDG TND + EDI TOD .          
+---   HDD = EDH TND + EDJ TOD .
+---   HDE = EDI TND + EDK TOD .         
+---   HDF = EDJ TND + EDL TOD .
+---   HDG = EDK TND + EDM TOD .          
+---   HDH = EDL TND + EDN TOD .
+   
+---   HDI = EDM TND + EDO TOH .     
+---   HDJ = EDN TND + EDP TOH .
+---   HDK = EDO TND + FAA TOH .          
+---   HDL = EDP TND + FAB TOH .
+---   HDM = FAA TND + FAC TOH .         
+---   HDN = FAB TND + FAD TOH .
+---   HDO = FAC TND + FAE TOH .          
+---   HDP = FAD TND + FAF TOH .
+
+---   HEA = FAE TNE + FAG TOD .
+
+---   JAA = RAA rab rae + raa RAB rae + raa rab RAE + RAA RAB RAE .
+---   JAB = RAC rad raf + rac RAD raf + rac rad RAF + RAC RAD RAF .
+---   JAC = RBA rbb rbe + rba RBB rbe + rba rbb RBE + RBA RBB RBE .
+---   JAD = RBC rbd rbf + rbc RBD rbf + rbc rbd RBF + RBC RBD RBF .
+---   JAE = RCA rcb rce + rca RCB rce + rca rcb RCE + RCA RCB RCE .
+---   JAF = RCC rcd rcf + rcc RCD rcf + rcc rcd RCF + RCC RCD RCF .
+---   JAG = RDA rdb rde + rda RDB rde + rda rdb RDE + RDA RDB RDE .
+---   JAH = RDC rdd rdf + rdc RDD rdf + rdc rdd RDF + RDC RDD RDF .
+
+---   jba = RAA rab rae + raa RAB rae + raa rab RAE + raa rab rae .
+---   jbb = RAC rad raf + rac RAD raf + rac rad RAF + rac rad raf .
+---   jbc = RBA rbb rbe + rba RBB rbe + rba rbb RBE + rba rbb rbe .
+---   jbd = RBC rbd rbf + rbc RBD rbf + rbc rbd RBF + rbc rbd rbf .
+---   jbe = RCA rcb rce + rca RCB rce + rca rcb RCE + rca rcb rce .
+---   jbf = RCC rcd rcf + rcc RCD rcf + rcc rcd RCF + rcc rcd rcf .
+---   jbg = RDA rdb rde + rda RDB rde + rda rdb RDE + rda rdb rde .
+---   jbh = RDC rdd rdf + rdc RDD rdf + rdc rdd RDF + rdc rdd rdf .
+
+---   JBI = REB rec red + reb REC red + reb rec RED + REB REC RED .
+---   JBJ = RFB rfc rfd + rfb RFC rfd + rfb rfc RFD + RFB RFC RFD .
+---   JBK = RGB rgc rgd + rgb RGC rgd + rgb rgc RGD + RGB RGC RGD .
+---   JBL = RHB rhc rhd + rhb RHC rhd + rhb rhc RHD + RHB RHC RHD .
+
+---   jca = REB rec red + reb REC red + reb rec RED + reb rec red .
+---   jcb = RFB rfc rfd + rfb RFC rfd + rfb rfc RFD + rfb rfc rfd .
+---   jcc = RGB rgc rgd + rgb RGC rgd + rgb rgc RGD + rgb rgc rgd .
+---   jcd = RHB rhc rhd + rhb RHC rhd + rhb rhc RHD + rhb rhc rhd .
+     
+---   MAA = GAA TPA + GAB TQA + HAA TRA + HAB TSA .   Final shift merge
+---   MAB = GAB TPA + GAC TQA + HAB TRA + HAC TSA .   
+---   MAC = GAC TPA + GAD TQA + HAC TRA + HAD TSA .   
+---   MAD = GAD TPA + GAE TQA + HAD TRA + HAE TSA .   
+---   MAE = GAE TPA + GAF TQA + HAE TRA + HAF TSA . 
+---   MAF = GAF TPA + GAG TQA + HAF TRA + HAG TSA .   
+---   MAG = GAG TPA + GAH TQA + HAG TRA + HAH TSA .   
+---   MAH = GAH TPA + GAI TQA + HAH TRA + HAI TSA .   
+
+---   MAI = GAI TPA + GAJ TQA + HAI TRA + HAJ TSA . 
+---   MAJ = GAJ TPA + GAK TQA + HAJ TRA + HAK TSA .   
+---   MAK = GAK TPA + GAL TQA + HAK TRA + HAL TSA .   
+---   MAL = GAL TPA + GAM TQA + HAL TRA + HAM TSA .   
+---   MAM = GAM TPA + GAN TQA + HAM TRA + HAN TSA . 
+---   MAN = GAN TPA + GAO TQA + HAN TRA + HAO TSA .   
+---   MAO = GAO TPA + GAP TQA + HAO TRA + HAP TSA .   
+---   MAP = GAP TPA + GBA TQA + HAP TRA + HBA TSA .   
+
+---   MBA = GBA TPB + GBB TQB + HBA TRB + HBB TSB .   Final shift merge
+---   MBB = GBB TPB + GBC TQB + HBB TRB + HBC TSB .   
+---   MBC = GBC TPB + GBD TQB + HBC TRB + HBD TSB .   
+---   MBD = GBD TPB + GBE TQB + HBD TRB + HBE TSB .   
+---   MBE = GBE TPB + GBF TQB + HBE TRB + HBF TSB . 
+---   MBF = GBF TPB + GBG TQB + HBF TRB + HBG TSB .   
+---   MBG = GBG TPB + GBH TQB + HBG TRB + HBH TSB .   
+---   MBH = GBH TPB + GBI TQB + HBH TRB + HBI TSB .   
+
+---   MBI = GBI TPB + GBJ TQB + HBI TRB + HBJ TSB . 
+---   MBJ = GBJ TPB + GBK TQB + HBJ TRB + HBK TSB .   
+---   MBK = GBK TPB + GBL TQB + HBK TRB + HBL TSB .   
+---   MBL = GBL TPB + GBM TQB + HBL TRB + HBM TSB .   
+---   MBM = GBM TPB + GBN TQB + HBM TRB + HBN TSB . 
+---   MBN = GBN TPB + GBO TQB + HBN TRB + HBO TSB .   
+---   MBO = GBO TPB + GBP TQB + HBO TRB + HBP TSB .   
+---   MBP = GBP TPB + GCA TQB + HBP TRB + HCA TSB .   
+
+---   MCA = GCA TPC + GCB TQC + HCA TRC + HCB TSC .   Final shift merge
+---   MCB = GCB TPC + GCC TQC + HCB TRC + HCC TSC .   
+---   MCC = GCC TPC + GCD TQC + HCC TRC + HCD TSC .   
+---   MCD = GCD TPC + GCE TQC + HCD TRC + HCE TSC .   
+---   MCE = GCE TPC + GCF TQC + HCE TRC + HCF TSC . 
+---   MCF = GCF TPC + GCG TQC + HCF TRC + HCG TSC .   
+---   MCG = GCG TPC + GCH TQC + HCG TRC + HCH TSC .   
+---   MCH = GCH TPC + GCI TQC + HCH TRC + HCI TSC .   
+
+---   MCI = GCI TPC + GCJ TQC + HCI TRC + HCJ TSC . 
+---   MCJ = GCJ TPC + GCK TQC + HCJ TRC + HCK TSC .   
+---   MCK = GCK TPC + GCL TQC + HCK TRC + HCL TSC .   
+---   MCL = GCL TPC + GCM TQC + HCL TRC + HCM TSC .   
+---   MCM = GCM TPC + GCN TQC + HCM TRC + HCN TSC . 
+---   MCN = GCN TPC + GCO TQC + HCN TRC + HCO TSC .   
+---   MCO = GCO TPC + GCP TQC + HCO TRC + HCP TSC .   
+---   MCP = GCP TPC + GDA TQC + HCP TRC + HDA TSC .   
+
+---   MDA = GDA TPD + GDB TQD + HDA TRD + HDB TSD .   Final shift merge
+---   MDB = GDB TPD + GDC TQD + HDB TRD + HDC TSD .   
+---   MDC = GDC TPD + GDD TQD + HDC TRD + HDD TSD .   
+---   MDD = GDD TPD + GDE TQD + HDD TRD + HDE TSD .   
+---   MDE = GDE TPD + GDF TQD + HDE TRD + HDF TSD . 
+---   MDF = GDF TPD + GDG TQD + HDF TRD + HDG TSD .   
+---   MDG = GDG TPD + GDH TQD + HDG TRD + HDH TSD .   
+---   MDH = GDH TPD + GDI TQD + HDH TRD + HDI TSD .   
+
+---   MDI = GDI TPD + GDJ TQD + HDI TRD + HDJ TSD . 
+---   MDJ = GDJ TPD + GDK TQD + HDJ TRD + HDK TSD .   
+---   MDK = GDK TPD + GDL TQD + HDK TRD + HDL TSD .   
+---   MDL = GDL TPD + GDM TQD + HDL TRD + HDM TSD .   
+---   MDM = GDM TPD + GDN TQD + HDM TRD + HDN TSD . 
+---   MDN = GDN TPD + GDO TQD + HDN TRD + HDO TSD .   
+---   MDO = GDO TPD + GDP TQD + HDO TRD + HDP TSD .   
+---   MDP = GDP TPD + GEA TQD + HDP TRD + HEA TSD .   
+
+            L.Z.       Pop Count
+
+---   NAA = XBA + RMA .
+---   NAB = XBB + RMB .
+---   NAC = XBC yac + xbc YAC  + RMC .
+---   NAD = XBD yad + xbd YAD  + RMD .
+---   NAE = XBE yae + xbe YAE  + RME .
+---   NAF = XBF yaf + xbf YAF  + RMF .
+---   NAG = XBF yaf + RMG  .
+
+---   NBA = QDA QDB QMD .
+---   NBB = QMD qda .
+---   NBC = QMD QDA .
+---   NBE = QMD qda QDB .
+
+---   LAA = LAA qmd + IIG NBA .
+---   LAB = LAB qmd + iig NBB .
+---   LAC = LAC qmd + iig NBC .
+---   LAE = LAE qmd + IIG NBE .
+
+---   LHA = iig IIF JAE + iig IIF JAA .
+---   LIA = iig iif JAE + iig iif JAA .
+      
+                    Output To VR
+
+             normal    reversed  va data
+                                                   Merged data to VR
+---   OAA = MAA TUA + MDP TVA + IEA TWA + NAA .
+---   OAB = MAB TUA + MDO TVA + IEB TWA + NAB .
+---   OAC = MAC TUA + MDN TVA + IEC TWA + NAC .
+---   OAD = MAD TUA + MDM TVA + IED TWA + NAD .
+---   OAE = MAE TUA + MDL TVA + IEE TWA + NAE .
+---   OAF = MAF TUA + MDK TVA + IEF TWA + NAF .
+---   OAG = MAG TUA + MDJ TVA + IEG TWA + NAG .
+---   OAH = MAH TUA + MDI TVA + IEH TWA .
+      
+---   OAI = MAI TUA + MDH TVA + IEI TWA .   ie,if,ig,ih 64 bits from VA
+---   OAJ = MAJ TUA + MDG TVA + IEJ TWA .
+---   OAK = MAK TUA + MDF TVA + IEK TWA .
+---   OAL = MAL TUA + MDE TVA + IEL TWA .
+---   OAM = MAM TUA + MDD TVA + IEM TWA .
+---   OAN = MAN TUA + MDC TVA + IEN TWA .
+---   OAO = MAO TUA + MDB TVA + IEO TWA .
+---   OAP = MAP TUA + MDA TVA + IEP TWA .
+
+---   OBA = MBA TUB + MCP TVB + IFA TWB .
+---   OBB = MBB TUB + MCO TVB + IFB TWB .
+---   OBC = MBC TUB + MCN TVB + IFC TWB .
+---   OBD = MBD TUB + MCM TVB + IFD TWB .
+---   OBE = MBE TUB + MCL TVB + IFE TWB .
+---   OBF = MBF TUB + MCK TVB + IFF TWB .
+---   OBG = MBG TUB + MCJ TVB + IFG TWB .
+---   OBH = MBH TUB + MCI TVB + IFH TWB .
+      
+---   OBI = MBI TUB + MCH TVB + IFI TWB .
+---   OBJ = MBJ TUB + MCG TVB + IFJ TWB .
+---   OBK = MBK TUB + MCF TVB + IFK TWB .
+---   OBL = MBL TUB + MCE TVB + IFL TWB .
+---   OBM = MBM TUB + MCD TVB + IFM TWB .
+---   OBN = MBN TUB + MCC TVB + IFN TWB .
+---   OBO = MBO TUB + MCB TVB + IFO TWB .
+---   OBP = MBP TUB + MCA TVB + IFP TWB .
+
+---   OCA = MCA TUC + MBP TVC + IGA TWC .
+---   OCB = MCB TUC + MBO TVC + IGB TWC .
+---   OCC = MCC TUC + MBN TVC + IGC TWC .
+---   OCD = MCD TUC + MBM TVC + IGD TWC .
+---   OCE = MCE TUC + MBL TVC + IGE TWC .
+---   OCF = MCF TUC + MBK TVC + IGF TWC .
+---   OCG = MCG TUC + MBJ TVC + IGG TWC .
+---   OCH = MCH TUC + MBI TVC + IGH TWC .
+      
+---   OCI = MCI TUC + MBH TVC + IGI TWC .
+---   OCJ = MCJ TUC + MBG TVC + IGJ TWC .
+---   OCK = MCK TUC + MBF TVC + IGK TWC .
+---   OCL = MCL TUC + MBE TVC + IGL TWC .
+---   OCM = MCM TUC + MBD TVC + IGM TWC .
+---   OCN = MCN TUC + MBC TVC + IGN TWC .
+---   OCO = MCO TUC + MBB TVC + IGO TWC .
+---   OCP = MCP TUC + MBA TVC + IGP TWC .
+ 
+---   ODA = MDA TUD + MAP TVD + IHA TWD .
+---   ODB = MDB TUD + MAO TVD + IHB TWD .
+---   ODC = MDC TUD + MAN TVD + IHC TWD .
+---   ODD = MDD TUD + MAM TVD + IHD TWD .
+---   ODE = MDE TUD + MAL TVD + IHE TWD .
+---   ODF = MDF TUD + MAK TVD + IHF TWD .
+---   ODG = MDG TUD + MAJ TVD + IHG TWD .
+---   ODH = MDH TUD + MAI TVD + IHH TWD .
+      
+---   ODI = MDI TUD + MAH TVD + IHI TWD .
+---   ODJ = MDJ TUD + MAG TVD + IHJ TWD .
+---   ODK = MDK TUD + MAF TVD + IHK TWD .
+---   ODL = MDL TUD + MAE TVD + IHL TWD .
+---   ODM = MDM TUD + MAD TVD + IHM TWD .
+---   ODN = MDN TUD + MAC TVD + IHN TWD .
+---   ODO = MDO TUD + MAB TVD + IHO TWD .
+---   ODP = MDP TUD + MAA TVD + IHP TWD .
+
+---   QAA = ISB .                  F Field bit 0
+---   QAB = ISC .                  F Field bit 1
+
+---   QBA = QAA .
+---   QBB = QAB .
+---   QCA = QBA .
+---   QCB = QBB .
+---   QDA = QCA .
+---   QDB = QCB .
+
+---   QMA = ISA.                    Go Shift 150-153
+---   QMB = QMA .
+---   QMC = QMB .
+---   QMD = QMC .
+
+---   QNA = IIA .                    2^0 shift count
+---   QNB = IIB .
+---   QNC = IIC .
+---   QND = IID .
+---   QNE = IIE .
+---   QNF = IIF .
+---   QNG = IIG .
+
+---   RAA = IAD iab iac + iad IAB iac + iad iab IAC + IAD IAB IAC .
+---   RAB = IAH iaf iag + iah IAF iag + iah iaf IAG + IAH IAF IAG .
+---   RAC = IAL iaj iak + ial IAJ iak + ial iaj IAK + IAL IAJ IAK .
+---   RAD = IAP ian iao + iap IAN iao + iap ian IAO + IAP IAN IAO .
+---   RAE = IAA iae iai + iaa IAE iai + iaa iae IAI + IAA IAE IAI .
+---   raf = iam .
+---   RBA = IBD ibb ibc + ibd IBB ibc + ibd ibb IBC + IBD IBB IBC .
+---   RBB = IBH ibf ibg + ibh IBF ibg + ibh ibf IBG + IBH IBF IBG .
+---   RBC = IBL ibj ibk + ibl IBJ ibk + ibl ibj IBK + IBL IBJ IBK .
+---   RBD = IBP ibn ibo + ibp IBN ibo + ibp ibn IBO + IBP IBN IBO .
+---   RBE = IBA ibe ibi + iba IBE ibi + iba ibe IBI + IBA IBE IBI .
+---   rbf = ibm .                
+---   RCA = ICD icb icc + icd ICB icc + icd icb ICC + ICD ICB ICC .
+---   RCB = ICH icf icg + ich ICF icg + ich icf ICG + ICH ICF ICG .
+---   RCC = ICL icj ick + icl ICJ ick + icl icj ICK + ICL ICJ ICK .
+---   RCD = ICP icn ico + icp ICN ico + icp icn ICO + ICP ICN ICO .
+---   RCE = ICA ice ici + ica ICE ici + ica ice ICI + ICA ICE ICI .
+---   rcf = icm .
+---   RDA = IDD idb idc + idd IDB idc + idd idb IDC + IDD IDB IDC .
+---   RDB = IDH idf idg + idh IDF idg + idh idf IDG + IDH IDF IDG .
+---   RDC = IDL idj idk + idl IDJ idk + idl idj IDK + IDL IDJ IDK .
+---   RDD = IDP idn ido + idp IDN ido + idp idn IDO + IDP IDN IDO .
+---   RDE = IDA ide idi + ida IDE idi + ida ide IDI + IDA IDE IDI .
+---   rdf = idm .
+---   rea = IAD iab iac + iad IAB iac + iad iab IAC + iad iab iac .
+---   reb = IAH iaf iag + iah IAF iag + iah iaf IAG + iah iaf iag .
+---   rec = IAL iaj iak + ial IAJ iak + ial iaj IAK + ial iaj iak .
+---   red = IAP ian iao + iap IAN iao + iap ian IAO + iap ian iao .
+---   ree = IAA iae iai + iaa IAE iai + iaa iae IAI + iaa iae iai  .
+---   rfa = IBD ibb ibc + ibd IBB ibc + ibd ibb IBC + ibd ibb ibc .
+---   rfb = IBH ibf ibg + ibh IBF ibg + ibh ibf IBG + ibh ibf ibg .
+---   rfc = IBL ibj ibk + ibl IBJ ibk + ibl ibj IBK + ibl ibj ibk .
+---   rfd = IBP ibn ibo + ibp IBN ibo + ibp ibn IBO + ibp ibn ibo .
+---   rfe = IBA ibe ibi + iba IBE ibi + iba ibe IBI + iba ibe ibi .
+---   rga = ICD icb icc + icd ICB icc + icd icb ICC + icd icb icc .
+---   rgb = ICH icf icg + ich ICF icg + ich icf ICG + ich icf icg .
+---   rgc = ICL icj ick + icl ICJ ick + icl icj ICK + icl icj ick .
+---   rgd = ICP icn ico + icp ICN ico + icp icn ICO + icp icn ico .
+---   rge = ICA ice ici + ica ICE ici + ica ice ICI + ica ice ici .
+---   rha = IDD idb idc + idd IDB idc + idd idb IDC + idd idb idc .
+---   rhb = IDH idf idg + idh IDF idg + idh idf IDG + idh idf idg .
+---   rhc = IDL idj idk + idl IDJ idk + idl idj IDK + idl idj idk .
+---   rhd = IDP idn ido + idp IDN ido + idp idn IDO + idp idn ido .
+---   rhe = IDA ide idi + ida IDE idi + ida ide IDI + ida ide idi .
+
+                  Pop Count
+
+---   RMA = XMA YMA + XPA YMB + XSA YMC + XVA YMD .   Bit   O
+---   RMB = XMB YMA + XPB YMB + XSB YMC + XVB YMD .    ''   1
+---   RMC = XMC YMA + XPC YMB + XSC YMC + XVC YMD .    ''   2
+---   RMD = XMD YMA + XPD YMB + XSD YMC + XVD YMD .    ''   3
+---   rme = ymc yma .                                  ''   4
+---   rmf = ymb yma .                                  ''   5
+---   RMG = YME .                                      ''   6
+
+---   SAA = JAA jab jae + jaa JAB jae + jaa jab JAE + JAA JAB JAE .
+---   SAB = JAC jaf jag + jac JAF jag + jac jaf JAG + JAC JAF JAG .
+---   SAC = JAD jah + JAH jad .
+---   sba = JAA jab jae + jaa JAB jae + jaa jab JAE + jaa jab jae .
+---   sbb = JAC jaf jag + jac JAF jag + jac jaf JAG + jac jaf jag .
+---   sbc = jah + jad .
+---   SBD = JBA rea ree + jba REA ree + jba rea REE + JBA REA REE .
+---   SBE = JBC jbi rfa + jbc JBI rfa + jbc jbi RFA + JBC JBI RFA .
+---   SBF = JBD jbj rfe + jbd JBJ rfe + jbd jbj RFE + JBD JBJ RFE .
+---   SBG = JBE rga rge + jbe RGA rge + jbe rga RGE + JBE RGA RGE .
+---   SBH = JBG jbk rha + jbg JBK rha + jbg jbk RHA + JBG JBK RHA . 
+---   SBI = JBH jbl rhe + jbh JBL rhe + jbh jbl RHE + JBH JBL RHE .
+---   SBJ = JBB .
+---   SBK = JBF .
+---   sca = JBA rea ree + jba REA ree + jba rea REE + jba rea ree . Bit 1
+---   scb = JBC jbi rfa + jbc JBI rfa + jbc jbi RFA + jbc jbi rfa .  carry
+---   scc = JBD jbj rfe + jbd JBJ rfe + jbd jbj RFE + jbd jbj rfe .
+---   scd = JBE rga rge + jbe RGA rge + jbe rga RGE + jbe rga rge .
+---   sce = JBG jbk rha + jbg JBK rha + jbg jbk RHA + jbg jbk rha .
+---   scf = JBH jbl rhe + jbh JBL rhe + jbh jbl RHE + jbh jbl rhe .
+---   SCG = JCA jcc jcd + jca JCC jcd + jca jcc JCD + JCA JCC JCD . Bit 2
+---   SCH = JCB .                                                    carry
+---   sda = JCA jcc jcd + jca JCC jcd + jca jcc JCD + jca jcc jcd .
+
+
+---   swa = iaa . O
+---   swb = iab .
+---   swc = iac .
+---   swd = iad .
+---   swe = iae .
+---   swf = iaf .
+---   swg = iag .
+---   swh = iah . 7
+
+---   swi = iai . 8
+---   swj = iaj .
+---   swk = iak .
+---   swl = ial .
+---   swm = iam .
+---   swn = ian .
+---   swo = iao .
+---   swp = iap .  15
+
+---   sxa = iba .  16
+---   sxb = ibb .
+---   sxc = ibc .
+---   sxd = ibd .
+---   sxe = ibe .
+---   sxf = ibf .
+---   sxg = ibg .
+---   sxh = ibh .  23
+
+---   sxi = ibi .  24
+---   sxj = ibj .
+---   sxk = ibk .
+---   sxl = ibl .
+---   sxm = ibm .
+---   sxn = ibn .
+---   sxo = ibo .
+---   sxp = ibp . 31
+
+---   sya = ica . 32
+---   syb = icb .
+---   syc = icc .
+---   syd = icd .
+---   sye = ice .
+---   syf = icf .
+---   syg = icg .
+---   syh = ich . 39
+
+---   syi = ici . 4O                          VR scalar input
+---   syj = icj .
+---   syk = ick .
+---   syl = icl  .
+---   sym = icm .
+---   syn = icn .
+---   syo = ico .
+---   syp = icp . 47
+
+---   sza = ida . 48
+---   szb = idb .
+---   szc = idc .
+---   szd = idd .
+---   sze = ide .
+---   szf = idf .
+---   szg = idg .
+---   szh = idh . 55
+
+---   szi = idi . 56
+---   szj = idj .
+---   szk = idk .
+---   szl = idl .
+---   szm = idm .
+---   szn = idn .
+---   szo = ido .
+---   szp = idp . 63
+
+ 
+---   TAA = LAA .
+---   TAB = LAA .
+---   TAC = LAA .
+---   TAD = LAA .
+     
+---   TBA = LAB.
+---   TBB = LAB .
+---   TBC = LAB .
+---   TBD = LAB .
+     
+---   TCA = LAC .
+---   TCB = LAC .
+---   TCC = LAC .
+---   TCD = LAC .
+     
+---   tce = lac .
+---   tcf = lac .
+---   tcg = lac .
+---   tch = lac .
+     
+---   TEA = LAE .
+---   TEB = LAE .
+---   TEC = LAE .
+---   TED = LAE .
+
+---   TFA = LAA + LAB .
+---   TFB = LAA + LAB .
+---   TFC = LAA + LAB .
+---   TFD = LAA + LAB .
+
+---   TFE = LAA + LAB .
+---   TFF = LAA + LAB .
+---   TFG = LAA + LAB .
+---   TFH = LAA + LAB .
+
+---   TGA = QNF .   2^5  = 32
+---   TGB = QNF .
+---   TGC = QNF .
+---   TGD = QNF .
+---   tgi = qnf .  
+---   tgj = qnf .
+---   tgk = qnf .
+---   tgl = qnf . 
+
+---   THA = qnd qne .           =0
+---   THB = qnd qne .
+---   THC = qnd qne .
+---   THD = qnd qne .
+
+---   THE = qnd qne .           =0
+---   THF = qnd qne .
+---   THG = qnd qne .
+---   THH = qnd qne .
+
+---   TIA = QND qne .           =8
+---   TIB = QND qne .
+---   TIC = QND qne .
+---   TID = QND qne .
+
+---   TIE = QND qne .           =8
+---   TIF = QND qne .
+---   TIG = QND qne .
+---   TIH = QND qne .
+
+---   TJA = qnd QNE .           =16
+---   TJB = qnd QNE .
+---   TJC = qnd QNE .
+---   TJD = qnd QNE .
+
+---   TJE = qnd QNE .           =16
+---   TJF = qnd QNE .
+---   TJG = qnd QNE .
+---   TJH = qnd QNE .
+
+---   TKA = QND QNE .            =24
+---   TKB = QND QNE .
+---   TKC = QND QNE .
+---   TKD = QND QNE .
+
+---   TKE = QND QNE .            =24
+---   TKF = QND QNE .
+---   TKG = QND QNE .
+---   TKH = QND QNE .
+
+---   TLA = qnb qnc .            = 0
+---   TLB = qnb qnc .
+---   TLC = qnb qnc .
+---   TLD = qnb qnc .
+---   TLE = qnb qnc .
+
+---   TMA = QNB qnc .            = 2
+---   TMB = QNB qnc .
+---   TMC = QNB qnc .
+---   TMD = QNB qnc .
+---   TME = QNB qnc .
+
+---   TNA = qnb QNC .            = 4
+---   TNB = qnb QNC .
+---   TNC = qnb QNC .
+---   TND = qnb QNC .
+---   TNE = qnb QNC .
+
+---   TOA = QNB QNC .            = 6
+---   TOB = QNB QNC .
+---   TOC = QNB QNC .
+---   TOD = QNB QNC .
+
+---   TOE = QNB QNC .            = 6
+---   TOF = QNB QNC .
+---   TOG = QNB QNC .
+---   TOH = QNB QNC .
+
+---   TPA = qna .            =0
+---   TPB = qna .
+---   TPC = qna .
+---   TPD = qna .
+
+---   TQA = QNA .            =1
+---   TQB = QNA .
+---   TQC = QNA .
+---   TQD = QNA .
+
+---   TRA = qna .            =0
+---   TRB = qna .
+---   TRC = qna .
+---   TRD = qna .
+
+---   TSA = QNA .           =1
+---   TSB = QNA .
+---   TSC = QNA .
+---   TSD = QNA .
+
+---   TUA = lae .          normal
+---   TUB = lae .
+---   TUC = lae .
+---   TUD = lae .
+
+---   TVA = LAE .          shift left
+---   TVB = LAE .
+---   TVC = LAE .
+---   TVD = LAE .
+
+---   TWA = qmd .               when no shift, gate va data
+---   TWB = qmd .
+---   TWC = qmd .
+---   TWD = qmd .
+
+
+---   TYA = QDB .               Enable pop count
+---   TYB = TYA .
+
+---   TYD = qdb .               Enable leading zero
+---   TYE = TYD .       
+
+
+            -- Pop count 3 bit adds
+
+---   UAA = SAA sab sac + saa SAB sac + saa sab SAC + SAA SAB SAC .
+---   uba = SAA sab sac + saa SAB sac + saa sab SAC + saa sab sac .
+---   UBB = SBA sbd sbg + sba SBD sbg + sba sbd SBG + SBA SBD SBG .
+---   UBC = SBB sbe sbh + sbb SBE sbh + sbb sbe SBH + SBB SBE SBH .
+---   UBD = SBC sbf sbi + sbc SBF sbi + sbc sbf SBI + SBC SBF SBI .
+---   uca = SBA sbd sbg + sba SBD sbg + sba sbd SBG + sba sbd sbg .
+---   ucb = SBB sbe sbh + sbb SBE sbh + sbb sbe SBH + sbb sbe sbh .
+---   ucc = SBC sbf sbi + sbc SBF sbi + sbc sbf SBI + sbc sbf sbi .
+---   UCD = SCB sce scg + scb SCE scg + scb sce SCG + SCB SCE SCG .
+---   UCE = SCC scf sch + scc SCF sch + scc scf SCH + SCC SCF SCH .
+---   UCF = sca SCD + SCA scd .
+---   uda = SCB sce scg + scb SCE scg + scb sce SCG + scb sce scg .
+---   udb = SCC scf sch + scc SCF sch + scc scf SCH + scc scf sch .
+---   UDC = SCA SCD sda + sca SDA + scd SDA .
+---   UEA = SCA SDA SCD .
+---   VAA = UAA .
+---   VBA = UBB sbj sbk + ubb SBJ sbk + ubb sbj SBK + UBB SBJ SBK .
+---   VBB = UBA ubc ubd + uba UBC ubd + uba ubc UBD + UBA UBC UBD .
+---   vca = UBB sbj sbk + ubb SBJ sbk + ubb sbj SBK + ubb sbj sbk .
+---   vcb = UBA ubc ubd + uba UBC ubd + uba ubc UBD + uba ubc ubd .
+---   VCC = UCA ucd ucf + uca UCD ucf + uca ucd UCF + UCA UCD UCF .
+---   VCD = UCB ucc uce + ucb UCC uce + ucb ucc UCE + UCB UCC UCE .
+---   vda = UCA ucd ucf + uca UCD ucf + uca ucd UCF + uca ucd ucf .
+---   vdb = UCB ucc uce + ucb UCC uce + ucb ucc UCE + ucb ucc uce .
+---   VDC = UDA udb udc + uda UDB udc + uda udb UDC + UDA UDB UDC .
+---   vea = UDA udb udc + uda UDB udc + uda udb UDC + uda udb udc .
+---   VEB = UEA .
+
+
+---   vma = SWA + SWB + SWC + SWD .             All zero 0-15
+---   vmb = SWE + SWF + SWG + SWH .
+---   vmc = SWI + SWJ + SWK + SWL .
+---   vmd = SWM + SWN + SWO + SWP .
+
+---   vna = SWB swc + SWD .                   Odd zeros
+---   vnb = SWF swg + SWH .
+---   vnc = SWJ swk + SWL .
+---   vnd = SWN swo + SWP .
+
+---   voa = SWD + SWC .                      Even zeros
+---   vob = SWH + SWG .
+---   voc = SWL + SWK .
+---   vod = SWP + SWO .
+
+---   vpa = SXA + SXB + SXC + SXD .              l6-31
+---   vpb = SXE + SXF + SXG + SXH .
+---   vpc = SXI + SXJ + SXK + SXL .
+---   vpd = SXM + SXN + SXO + SXP .
+
+---   vqa = SXB sxc + SXD .                    Odd zeros
+---   vqb = SXF sxg + SXH .
+---   vqc = SXJ sxk + SXL .
+---   vqd = SXN sxo + SXP .
+
+---   vra = SXD + SXC .                       Even zeros
+---   vrb = SXH + SXG .
+---   vrc = SXL + SXK .
+---   vrd = SXP + SXO .
+
+---   vsa = SYA + SYB + SYC + SYD .              32-47
+---   vsb = SYE + SYF + SYG + SYH .
+---   vsc = SYI + SYJ + SYK + SYL .
+---   vsd = SYM + SYN + SYO + SYP .
+
+---   vta = SYB syc + SYD .                    Odd zeros
+---   vtb = SYF syg + SYH .
+---   vtc = SYJ syk + SYL .
+---   vtd = SYN syo + SYP .
+
+---   vua = SYD + SYC .                          Even zeros
+---   vub = SYH + SYG .
+---   vuc = SYL + SYK .
+---   vud = SYP + SYO .
+
+---   vva = SZA + SZB + SZC + SZD .               48-63
+---   vvb = SZE + SZF + SZG + SZH .
+---   vvc = SZI + SZJ + SZK + SZL .
+---   vvd = SZM + SZN + SZO + SZP .
+
+---   vwa = SZB szc + SZD .                    Odd number of zeros in
+---   vwb = SZF szg + SZH .                    group
+---   vwc = SZJ szk + SZL .
+---   vwd = SZN szo + SZP .            
+
+---   vxa = SZD + SZC .                      Even number of 
+---   vxb = SZH + SZG .                      zeros in group
+---   vxc = SZL + SZK .
+---   vxd = SZP + SZO .
+
+---   WCA = VCA vcb vcc + vca VCB vcc + vca vcb VCC + VCA VCB VCC .
+---   wda = VCA vcb vcc + vca VCB vcc + vca vcb VCC + vca vcb vcc .
+---   WDB = VDA vdb vdc + vda VDB vdc + vda vdb VDC + VDA VDB VDC .
+---   wea = VDA vdb vdc + vda VDB vdc + vda vdb VDC + vda vdb vdc .
+---   WEB = VEA veb + VEB vea .
+
+---   wfa = veb + vea .
+---   WMA = VMB VMC VMD .                     Leading zeros
+---   WMB = vmb VMC VMD .                     Bits 4-63
+---   WMC = vmc VMD .
+---   WPA = VPB VPC VPD .
+---   WPB = vpb VPC VPD .
+---   WPC = vpc VPD .
+---   WSA = VSB VSC VSD .
+---   WSB = vsb VSC VSD .
+---   WSC = vsc VSD .
+---   WVA = VVB VVC VVD .
+---   WVB = vvb VVC VVD .
+---   WVC = vvc VVD .
+
+---   XAB = tya + VBB VBA .                   Bits 1-4 Pop Count
+---   XAC = tya + WCA VCD .
+---   XAD = tya + WDB WDA .
+---   XAE = tya + WEB WEA .
+
+---   xba = vaa + tyb .                      Bits 1-4 Pop Count
+---   xbb = tya + VBB VBA + vba vbb .
+---   xbc = tya + WCA VCD + vcd wca .                 
+---   xbd = tya + WDB WDA + wda wdb .
+---   xbe = tya + WEB WEA + wea web .
+---   xbf = wfa + tya .
+
+---   XMA = WMA VNA + WMB VNB + WMC VNC + vmd VND .     O-15
+---   XMB = WMA VOA + WMB VOB + WMC VOC + vmd VOD .
+---   xmc = wmc vmb + wmc vmd .
+---   xmd = vmd + vmc .
+---   xme = wma + vma .
+
+---   XPA = WPA VQA + WPB VQB + WPC VQC + vpd VQD .     l6-31
+---   XPB = WPA VRA + WPB VRB + WPC VRC + vpd VRD .
+---   xpc = wpc vpb + wpc vpd .
+---   xpd = vpd + vpc .
+---   xpe = wpa + vpa .
+
+---   XSA = WSA VTA + WSB VTB + WSC VTC + vsd VTD .     32-47
+---   XSB = WSA VUA + WSB VUB + WSC VUC + vsd VUD .
+---   xsc = wsc vsb + wsc vsd .
+---   xsd = vsd + vsc .
+---   xse = wsa + vsa .
+---   xsf = wsa + vsa .
+
+---   XVA = WVA VWA + WVB VWB + WVC VWC + vvd VWD .     48-63
+---   XVB = WVA VXA + WVB VXB + WVC VXC + vvd VXD .
+---   xvc = wvc vvb + wvc vvd .
+---   xvd = vvd + vvc .
+---   xve = wva + vva + tyd .
+---   xvf = wva + vva + tyd .
+
+---   YAC = TYB XAB .                        Final carry pop count
+---   YAD = XBC TYB XAB + TYB XAC .
+---   YAE = XAB XBC XBD TYB + XAC XBD TYB + XAD TYB .
+---   YAF = XAB XBC XBD XBE TYB + XAC XBD XBE TYB + XAD XBE TYB + XAE TYB .
+
+---   YMA = XVF XSF XPE xme .                Bits 16-63 zero
+---   YMB = XVE XSE xpe .                    Bits 32-63 zero
+---   YMC = XVE xse .                        Bits 48-68 zero
+---   YMD = xve TYB .                        No group l6 bits zero
+---   YME = XVF XSF XPE XME .                All zeros
+
+

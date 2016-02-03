@@ -1,0 +1,487 @@
+*
+* Boolean Definitions
+* Module: TD
+* Description: Memory interface modules, packetize address and data, SECDED
+* Revision:
+* Date: 
+*
+A3L - DEA DFA EEA EFA .
+A7L - DGA DHA EHA .
+ADL - BAA BBA BCA BDA .
+AHL - BAI BBI BCI BDI .
+AJL - EGA .
+ALL - BAQ BBQ BCQ BDQ .
+AML - NBA NCA NEA NDA .
+ANL - NFA NGA NHA NIA .
+AOL - NJA NKA NLA NMA .
+APL - NNA NOA NPA NQA .
+ASL - DAA DBA EAA EBA .
+AWL - DCA DDA ECA EDA .
+B1X - CBA CBI .
+B3Q - JBA .
+B4T - DKA .
+B5X - CCA CCI .
+B7Q - JCA .
+B8T - DLA .
+BAX - CDA CDI .
+BCQ - JDA .
+BDT - DMA .
+BEX - CEA CEI .
+BGQ - JEA .
+BHT - DNA .
+BIX - CFA CFI .
+BKQ - JFA .
+BLT - DOA .
+BML - NRA NSA .
+BTQ - KAA .
+BUX - CAA CAI .
+BWQ - JAA .
+BXT - DJA .
+C1T - EJA *** DIA .
+C2H - FBH .
+C3M - OBA OFA .
+C4M - ODA OHA .
+C5T - EKA .
+C6H - GAA GBA .
+C7M - OBI OFI .
+C8M - ODI OHI .
+CAM - OAI .
+CBQ - JGA .
+CCX - CGA CGI .
+CDL - aaa aba aca ada .
+CFQ - JHA .
+CGX - CHA CHI .
+CHL - aai abi aci adi .
+CIT - DPA .
+CJT - DQA .
+CKX - CIA .
+CLL - aaq abq acq adq .
+CMT - PCB .
+CNL - OMA .
+COX - NAA .
+CPL - HBA OIA OKA OLA .
+CQQ - KAB .
+CRA - KAC KAD .
+CSM - OAA OEA .
+CTM - OCA OGA .
+CUT - EIA .
+CVH - FAH fca .
+CWM - OEI .
+CXM - OCI OGI .
+D3L - DEB DFB EEB EFB .
+D4L - NDB NEB HAA HAB .
+D7L - DGB DHB EGB EHB .
+DDL - BAB BBB BCB BDB .
+DHL - BAJ BBJ BCJ BDJ .
+DLL - BAR BBR BCR BDR .
+DML - ECB EDB NBB NCB .
+DNL - NFB NGB NHB NIB .
+DOL - NJB NKB NLB NMB .
+DPL - NNB NOB NPB NQB .
+DSL - DAB DBB EAB EBB .
+DWL - DCB DDB .
+E1X - CBB CBJ .
+E3Q - JBB .
+E5X - CCB CCJ .
+E7Q - JCB .
+E8T - DLB .
+EAX - CDB CDJ .
+ECQ - JDB .
+EDT - DMB .
+EEX - CEB CEJ .
+EGQ - JEB .
+EHL - ack .
+EIX - CFB CFJ .
+EKQ - JFB .
+ELT - DOB .
+EML - NRB NSB .
+ENT - DNB .
+EQT - DKB .
+ETQ - KBA .
+EUX - CAB CAJ .
+EWQ - JAB .
+EXT - DJB .
+F1T - EJB *** DIB .
+F2H - FBG .
+F3M - OBB OFB .
+F4M - ODB .
+F5T - EKB .
+F6H - GAB GBB .
+F7M - OBJ .
+F8M - ODJ OHJ .
+FAT - DQB .
+FBQ - JGB .
+FCX - CGB CGJ .
+FDL - aab abb acb adb .
+FEQ - KBB .
+FFQ - JHB .
+FGX - CHB CHJ .
+FHL - aaj abj acj adj .
+FIT - DPB .
+FJM - OFJ .
+FKX - CIB .
+FLL - aar abr acr adr .
+FNL - OMB .
+FOX - NAB .
+FPL - HBB OIB OKB OLB .
+FQM - OHB .
+FRA - KBC KBD .
+FSM - OAB OEB .
+FTM - OCB OGB .
+FUT - EIB .
+FVH - FAG fcb .
+FWM - OAJ OEJ .
+FXM - OCJ OGJ .
+G2L - EFC EFD .
+G3L - DEC DFC DFD EEC .
+G4L - EHD DCC .
+G7L - DGC DHC EGC EHC .
+GDL - BAC BBC BCC BDC .
+GHL - BAK BBK BCK BDK .
+GIL - BDS .
+GLL - BAS BAT BBS BCS .
+GML - NBC NCC NEC NDC .
+GNL - NFC NGC NHC NIC .
+GOL - NJC NKC NLC NMC .
+GPL - NNC NOC NPC NQC .
+GSL - DAC DBC DBD EAC .
+GVL - EAD EBC EBD .
+GWL - DCD DDC ECC EDC .
+H1X - CBC CBK .
+H3Q - JBC .
+H5X - CCC CCK .
+H7Q - JCC .
+H8T - DLC .
+HAX - CDC CDK .
+HBT - DKC .
+HCQ - JDC .
+HDT - DMC .
+HEX - CEC CEK .
+HGQ - JEC .
+HHT - DNC .
+HIX - CFC CFK .
+HJX - CFP .
+HKQ - JFC .
+HLT - DOC .
+HML - NRC NSC .
+HQL - TBC .
+HTQ - KCA .
+HUX - CAC CAK .
+HWQ - JAC .
+HXT - DJC .
+I1T - EJC *** DIC .
+I2H - FBF .
+I3M - OBC OFC .
+I4M - ODC .
+I5T - EKC .
+I6H - GAC GBC .
+I7M - OBK .
+I8M - ODK OHK .
+IAM - OFK .
+IBQ - JGC .
+ICX - CGC CGK .
+IDL - aac acc adc .
+IFQ - JHC .
+IGX - CHC CHK .
+IHL - aak abk adk .
+IIT - DPC .
+IJT - DQC .
+IKX - CIC .
+ILL - aas abs acs ads .
+IMQ - KCB .
+INL - OMC .
+IOX - NAC .
+IPL - HBC OIC OKC OLC .
+IQM - OHC .
+IRA - KCC KCD .
+ISM - OAC OEC .
+ITM - OCC OGC .
+IUT - EIC *** HAC .
+IVH - FAF fcc .
+IWM - OAK OEK .
+IXM - OCK OGK .
+J3L - DED EED .
+J7L - DGD DHD EGD .
+JDL - BAD BBD BCD BDD .
+JHL - BAL BBL BCL BDL .
+JLL - BBT BCT BDT .
+JML - NBD NCD NDD NED .
+JNL - NFD NGD NHD NID .
+JOL - NJD NKD NLD NMD .
+JPL - NND NOD NPD NQD .
+JSL - DAD .
+JWL - DDD ECD EDD .
+K1X - CBD CBL .
+K3Q - JBD .
+K4T - DKD .
+K5X - CCD CCL .
+K7Q - JCD .
+K8T - DLD .
+KAX - CDD CDL .
+KCQ - JDD .
+KDT - DMD .
+KEX - CED CEL .
+KGQ - JED .
+KHT - DND .
+KIX - CFD CFL .
+KKQ - JFD .
+KLT - DOD .
+KML - NRD NSD PSD .
+KTQ - KDA .
+KUX - CAD CAL .
+KWQ - JAD .
+KXT - DJD .
+L1T - EJD *** DID .
+L2H - FBE .
+L3M - OBD OFD .
+L4M - ODD .
+L5T - EKD .
+L6H - GAD GBD .
+L7M - OBL OFL .
+L8M - ODL OHL .
+LBQ - JGD .
+LCX - CGD CGL .
+LDL - aad abd acd add .
+LFQ - JHD .
+LGX - CHD CHL .
+LHL - aal abl acl adl .
+LIT - DPD .
+LJT - DQD .
+LKX - CID .
+LLL - aat abt act adt .
+LMQ - KDB .
+LOX - NAD PAD .
+LPL - HBD OID OKD OLD .
+LQM - OHD .
+LRA - KDC KDD .
+LSM - OAD OED .
+LTM - OCD OGD .
+LUT - EID *** HAD .
+LVH - FAE fcd .
+LWM - OAL OEL .
+LXM - OCL OGL .
+M3L - DEE DFE EEE EFE .
+M7L - DGE DHE EGE EHE .
+MAX - CDH .
+MDL - BAE BBE BCE BDE .
+MEX - CEM .
+MHL - BAM BBM BCM BDM .
+MLL - BAU BBU BCU BDU .
+MML - NBE NCE NDE NEE .
+MNL - NFE NGE NHE NIE .
+MOL - NJE NKE NLE NME .
+MPL - NNE NOE NPE NQE .
+MSL - DAE DBE EAE EBE .
+MWL - DCE DDE EDE ECE .
+N1X - CBE CBM .
+N3Q - JBE *** JBG .
+N4T - DKE .
+N5X - CCE CCM .
+N7Q - JCE *** JCG .
+N8T - DLE .
+NAX - CDE CDM .
+NCQ - JDE .
+NDT - DME .
+NEX - CEE .
+NFI - JDG .
+NGQ - JEE *** .
+NHT - DNE .
+NIX - CFE CFM .
+NJI - JEG .
+NKQ - JFE *** JFG .
+NLT - DOE .
+NML - NRE NSE PSE .
+NNQ - JAG .
+NOQ - KEA .
+NTP - PCC .
+NUX - CAE CAM .
+NWQ - JAE .
+NXT - DJE .
+O1T - EJE *** DIE .
+O2H - FBD .
+O3M - OBE OFE .
+O4M - OHE .
+O5T - EKE .
+O6H - GAE GBE .
+O7M - OBM OFM .
+O8M - ODM OHM .
+OBQ - JGE *** JGG .
+OCX - CGE CGM .
+ODL - aae abe ace ade .
+OEQ - KEB .
+OFQ - JHE *** JHG .
+OGX - CHE CHM .
+OHL - aam abm acm adm .
+OIT - DPE .
+OJT - DQE .
+OKX - CIE .
+OLL - aau abu acu adu .
+OMI - JIA JIB JIC .
+ONL - OMD .
+OOX - NAE PAE .
+OPL - HBE OIE OKE OLE .
+OQM - ODE .
+ORA - KEC KED .
+OSM - OAE OEE .
+OTM - OCE OGE .
+OUT - EIE *** HAE .
+OVH - FAD fce .
+OWM - OAM OEM .
+OXM - OCM OGM .
+P3L - DEF DFF EEF EFF .
+P7L - DGF DHF EGF EHF .
+PDL - BAF BBF BCF BDF .
+PEL - DCF .
+PHL - BAN BBN BCN BDN .
+PLL - BAV BBV BCV BDV .
+PML - NBF NCF NDF NEF .
+PNL - NFF NGF NHF NIF .
+POL - NJF NKF NLF NMF .
+PPL - NNF NOF NPF NQF .
+PSL - DAF DBF EAF EBF .
+PWL - DDF ECF EDF .
+Q1X - CBF CBN .
+Q3I - jqd .
+Q4Q - *** jqa .
+Q5X - CCF CCN .
+QAX - CDF CDN .
+QEX - CEF CEN .
+QIX - CFF CFN .
+QML - NRF NSF PSF .
+QTQ - KFA .
+QUX - CAF CAN .
+R1T - EJF .
+R2H - FBC .
+R3M - OBF OFF .
+R4M - ODF OHF .
+R5T - EKF .
+R6H - GAF GBF .
+R7M - OBN OFN .
+R8M - ODN OHN .
+RCX - CGF CGN .
+RDL - aaf abf acf adf .
+REL - aan abn acn adn .
+RGX - CHF CHN .
+RHM - OEN .
+RIT - DIF .
+RKX - CIF .
+RLL - aav abv acv adv .
+RMI - JID .
+RNI - JIE .
+ROX - NAF PAF .
+RPL - HBF OIF ONC OOC .
+RQQ - KFB .
+RRA - KFC KFD .
+RSM - OAF OEF .
+RTM - OCF OGF .
+RUT - EIF *** HAF .
+RVH - FAC fcf .
+RWM - OAN .
+RXM - OCN OGN .
+S3L - DEG DFG EEG EFG .
+S7L - DGG DHG EGG EHG .
+SDL - BAG BBG BCG BDG .
+SHL - BAO BBO BCO BDO .
+SLL - BAW BBW BCW BDW .
+SSL - DAG DBG EAG EBG .
+SWL - DCG DDG ECG EDG .
+T1X - CBO .
+T4X - OPA .
+T5X - CCG CCO .
+TAX - CDG CDO .
+TDL - abc .
+TEX - CEG CEO .
+TIX - CFG CFO .
+TLX - CBG .
+TPT - LAA lba .
+TTQ - KGA .
+TUX - CAG CAO .
+U1T - EJG *** DIG .
+U2H - FBB .
+U3M - OBG OFG .
+U4M - ODG OHG .
+U5T - EKG .
+U6H - GAG GBG .
+U7M - OBO OFO .
+U8M - ODO OHO .
+UCX - CGG CGO .
+UDL - aag abg acg adg .
+UEI - mac .
+UGX - CHG CHO .
+UHL - aao abo aco ado .
+UJQ - MAA mab .
+UKX - CIG .
+ULL - aaw abw acw adw .
+UMT - LAB lbb .
+UNT - LAC lbc .
+UOP - OJA ojb .
+UPL - HBG OIG ONA OOA .
+UQQ - KGB .
+URA - KGC KGD .
+USM - OAG OEG .
+UTM - OCG OGG .
+UUT - EIG *** HAG .
+UVH - FAB fcg .
+UWM - OAO OEO .
+UXM - OCO OGO .
+V3L - DEH DFH EEH EFH .
+V7L - DGH DHH EGH EHH .
+VDL - BAH BBH BCH BDH .
+VHL - BAP BBP BCP BDP .
+VLL - BAX BBX BCX BDX .
+VSL - DAH DBH EAH EBH .
+VWL - DCH DDH ECH EDH .
+W1X - CBP .
+W2Q - *** jqb .
+W3I - JBF .
+W4Q - JQC .
+W5X - CCH CCP .
+W7I - JCF .
+WAX - CDP .
+WCI - JDF .
+WEX - CEH CEP .
+WGI - JEF .
+WIX - CFH CBH .
+WML - TAD TBD TCD TDD .
+WNL - TAE TBE TCE TDE .
+WOL - TAF TBF TCF TDF .
+WPL - TAI TBI TCI TDI .
+WQL - TAC TCC TDC .
+WRL - TAB TBB TCB TDB .
+WSL - TAA TBA TCA TDA .
+WTQ - KHA .
+WUX - CAH CAP .
+WWI - JAF .
+WXI - JFF .
+X1T - EJH *** DIH .
+X2H - FBA .
+X3M - OBH OFH .
+X4M - ODH .
+X5T - EKH .
+X6H - GAH GBH .
+X7M - OBP OFP .
+X8M - ODP OHP .
+XAQ - KHB .
+XBI - JGF .
+XCX - CGH CGP .
+XDL - aah abh ach adh .
+XEM - jja jjb .
+XFI - JHF .
+XGX - CHH CHP .
+XHL - aap abp acp adp .
+XIQ - JPA .
+XJT - PCA .
+XKX - CIH .
+XLL - aax abx acx adx .
+XML - TAH TBH TCH TDH .
+XNL - TAG TBG TCG TDG .
+XOL - QAA QAB QAC QAD .
+XPL - HBH OIH ONB OOB .
+XQM - OHH .
+XRA - KHC KHD .
+XSM - OAH OEH .
+XTM - OCH OGH .
+XUT - EIH *** HAH .
+XVH - FAA fch .
+XWM - OAP OEP .
+XXM - OCP OGP .

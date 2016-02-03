@@ -1,0 +1,1264 @@
+*
+* Boolean Definitions
+* Module: RA
+* Description: Look up for reciprocal and reciprocal square root
+* Revision: 
+* Date: 
+*        
+---  AAA = ICE TLC + IGA TLD + AAA THA + ECA TGA .         Bank O
+---  AAB = ICF TLA + AAB THA + ECB TGA .         Bank O
+---  AAC = ICG TLB + AAC THB + ECC TGB .         Address hold latches
+---  AAD = ICH TLB + AAD THB + ECD TGB .
+---  AAE = ICI TLA + AAE THA + ECE TGA .
+---  AAF = ICJ TLA + AAF THA + ECF TGA .    ICE-ICP k operand from VR
+---  AAG = ICK TLB + AAG THB + ECG TGB .
+---  AAH = ICL TLB + AAH THB + ECH TGB .
+---  AAI = ICM TLA + AAI THA + ECI TGA .
+---  AAJ = ICN TLA + AAJ THA + ECJ TGA .
+---  AAK = ICO TLB + AAK THB + ECK TGB .
+---  AAL = QRA TLB + AAL THB + ECL TGB .
+
+---  ABA = ICE TLC + IGA TLD + ABA THA + ECA TGA .   Bank O address
+---  ABB = ICF TLA + AAB THA + ECB TGA .         bits O-1,4-5...36-7
+---  ABC = ICG TLB + AAC THB + ECC TGB .
+---  ABD = ICH TLB + AAD THB + ECD TGB .
+---  ABE = ICI TLA + AAE THA + ECE TGA .
+---  ABF = ICJ TLA + AAF THA + ECF TGA .
+---  ABG = ICK TLB + AAG THB + ECG TGB .
+---  ABH = ICL TLB + AAH THB + ECH TGB .
+---  ABI = ICM TLA + AAI THA + ECI TGA .
+---  ABJ = ICN TLA + AAJ THA + ECJ TGA .
+---  ABK = ICO TLB + AAK THB + ECK TGB .
+---  ABL = QRA TLB + AAL THB + ECL TGB .
+
+---  ACA = ICE TLC + IGA TLD + ABA THA + ECA TGA .   Bank O address
+---  ACB = ICF TLA + AAB THA + ECB TGA .         bits 2-3,6-7..38-9
+---  ACC = ICG TLB + AAC THB + ECC TGB .
+---  ACD = ICH TLB + AAD THB + ECD TGB .
+---  ACE = ICI TLA + AAE THA + ECE TGA .
+---  ACF = ICJ TLA + AAF THA + ECF TGA .
+---  ACG = ICK TLB + AAG THB + ECG TGB .
+---  ACH = ICL TLB + AAH THB + ECH TGB .
+---  ACI = ICM TLA + AAI THA + ECI TGA .
+---  ACJ = ICN TLA + AAJ THA + ECJ TGA .
+---  ACK = ICO TLB + AAK THB + ECK TGB .
+---  ACL = QRA TLB + AAL THB + ECL TGB .
+
+---  ADB = ICF TMA + ADB TIA + ECB TGC .         Bank 1
+---  ADC = ICG TMB + ADC TIB + ECC TGD .         Address hold latches
+---  ADD = ICH TMB + ADD TIB + ECD TGD .
+---  ADE = ICI TMA + ADE TIA + ECE TGC .
+---  ADF = ICJ TMA + ADF TIA + ECF TGC .
+---  ADG = ICK TMB + ADG TIB + ECG TGD .
+---  ADH = ICL TMB + ADH TIB + ECH TGD .
+---  ADI = ICM TMA + ADI TIA + ECI TGC .
+---  ADJ = ICN TMA + ADJ TIA + ECJ TGC .
+---  ADK = ICO TMB + ADK TIB + ECK TGD .
+---  ADL = QRA TMB + ADL TIB + ECL TGD .
+
+---  AEA = ICE TMC + IGA TMD + AEA TIA + ECA TGC .   Bank 1 address
+---  AEB = ICF TMA + ADB TIA + ECB TGC .          bits O-1,3-5...36-7
+---  AEC = ICG TMB + ADC TIB + ECC TGD .
+---  AED = ICH TMB + ADD TIB + ECD TGD .
+---  AEE = ICI TMA + ADE TIA + ECE TGC .
+---  AEF = ICJ TMA + ADF TIA + ECF TGC .
+---  AEG = ICK TMB + ADG TIB + ECG TGD .
+---  AEH = ICL TMB + ADH TIB + ECH TGD .
+---  AEI = ICM TMA + ADI TIA + ECI TGC .
+---  AEJ = ICN TMA + ADJ TIA + ECJ TGC .
+---  AEK = ICO TMB + ADK TIB + ECK TGD .
+---  AEL = QRA TMB + ADL TIB + ECL TGD .
+
+---  AFA = ICE TMC + IGA TMD + AEA TIA + ECA TGC .   Bank 1 address
+---  AFB = ICF TMA + ADB TIA + ECB TGC .          bits 2-3,6-7...38-9
+---  AFC = ICG TMB + ADC TIB + ECC TGD .
+---  AFD = ICH TMB + ADD TIB + ECD TGD .
+---  AFE = ICI TMA + ADE TIA + ECE TGC .
+---  AFF = ICJ TMA + ADF TIA + ECF TGC .
+---  AFG = ICK TMB + ADG TIB + ECG TGD .
+---  AFH = ICL TMB + ADH TIB + ECH TGD .
+---  AFI = ICM TMA + ADI TIA + ECI TGC .
+---  AFJ = ICN TMA + ADJ TIA + ECJ TGC .
+---  AFK = ICO TMB + ADK TIB + ECK TGD .
+---  AFL = QRA TMB + ADL TIB + ECL TGD .
+
+---  agb = icf TNA + agb TJA + ecb TGE .          Bank 2
+---  agc = icg TNB + agc TJB + ecc TGF .          Address hold latches
+---  agd = ich TNB + agd TJB + ecd TGF .
+---  age = ici TNA + age TJA + ece TGE .
+---  agf = icj TNA + agf TJA + ecf TGE .
+---  agg = ick TNB + agg TJB + ecg TGF .
+---  agh = icl TNB + agh TJB + ech TGF .
+---  agi = icm TNA + agi TJA + eci TGE .
+---  agj = icn TNA + agj TJA + ecj TGE .
+---  agk = ico TNB + agk TJB + eck TGF .
+---  agl = qra TNB + agl TJB + ecl TGF .
+
+---  aha = ice TNC + iga TND + aha TJA + eca TGE .   Bank 2 address
+---  ahb = icf TNA + agb TJA + ecb TGE .          bits O-1,4-5...36-7
+---  ahc = icg TNB + agc TJB + ecc TGF .
+---  ahd = ich TNB + agd TJB + ecd TGF .
+---  ahe = ici TNA + age TJA + ece TGE .
+---  ahf = icj TNA + agf TJA + ecf TGE .
+---  ahg = ick TNB + agg TJB + ecg TGF .
+---  ahh = icl TNB + agh TJB + ech TGF .
+---  ahi = icm TNA + agi TJA + eci TGE .
+---  ahj = icn TNA + agj TJA + ecj TGE .
+---  ahk = ico TNB + agk TJB + eck TGF .
+---  ahl = qra TNB + agl TJB + ecl TGF .
+
+---  aia = ice TNC + iga TND + aha TJA + eca TGE .   Bank 2 address
+---  aib = icf TNA + agb TJA + ecb TGE .          bits 2-3,6-7...38-9
+---  aic = icg TNB + agc TJB + ecc TGF .
+---  aid = ich TNB + agd TJB + ecd TGF .
+---  aie = ici TNA + age TJA + ece TGE .
+---  aif = icj TNA + agf TJA + ecf TGE .
+---  aig = ick TNB + agg TJB + ecg TGF .
+---  aih = icl TNB + agh TJB + ech TGF .
+---  aii = icm TNA + agi TJA + eci TGE .
+---  aij = icn TNA + agj TJA + ecj TGE .
+---  aik = ico TNB + agk TJB + eck TGF .
+---  ail = qra TNB + agl TJB + ecl TGF .
+
+---  ajb = icf TOA + ajb TKA + ecb TGG .          Bank 3
+---  ajc = icg TOB + ajc TKB + ecc TGH .          Address hold latches
+---  ajd = ich TOB + ajd TKB + ecd TGH .
+---  aje = ici TOA + aje TKA + ece TGG .
+---  ajf = icj TOA + ajf TKA + ecf TGG .
+---  ajg = ick TOB + ajg TKB + ecg TGH .
+---  ajh = icl TOB + ajh TKB + ech TGH .
+---  aji = icm TOA + aji TKA + eci TGG .
+---  ajj = icn TOA + ajj TKA + ecj TGG .
+---  ajk = ico TOB + ajk TKB + eck TGH .
+---  ajl = qra TOB + ajl TKB + ecl TGH .
+
+---  aka = ice TOC + iga TOD + aka TKA + eca TGG .   Bank 3 address
+---  akb = icf TOA + ajb TKA + ecb TGG .          bitS O-1,4-5...36-7
+---  akc = icg TOB + ajc TKB + ecc TGH .
+---  akd = ich TOB + ajd TKB + ecd TGH .
+---  ake = ici TOA + aje TKA + ece TGG .
+---  akf = icj TOA + ajf TKA + ecf TGG .
+---  akg = ick TOB + ajg TKB + ecg TGH .
+---  akh = icl TOB + ajh TKB + ech TGH .
+---  aki = icm TOA + aji TKA + eci TGG .
+---  akj = icn TOA + ajj TKA + ecj TGG .
+---  akk = ico TOB + ajk TKB + eck TGH .
+---  akl = qra TOB + ajl TKB + ecl TGH .
+
+---  ala = ice TOC + iga TOD + aka TKA + eca TGG .   Bank 3 address
+---  alb = icf TOA + ajb TKA + ecb TGG .          bitS 2-3,6-7...38-9
+---  alc = icg TOB + ajc TKB + ecc TGH .
+---  ald = ich TOB + ajd TKB + ecd TGH .
+---  ale = ici TOA + aje TKA + ece TGG .
+---  alf = icj TOA + ajf TKA + ecf TGG .
+---  alg = ick TOB + ajg TKB + ecg TGH .
+---  alh = icl TOB + ajh TKB + ech TGH .   
+---  ali = icm TOA + aji TKA + eci TGG .
+---  alj = icn TOA + ajj TKA + ecj TGG .
+---  alk = ico TOB + ajk TKB + eck TGH .
+---  all = qra TOB + ajl TKB + ecl TGH .
+
+---  AMA = ICA TPD + BEA TUD .  32             Sk operand data
+---  AMB = ICB TPB + BEB TUB .                k delay path  ICA-ICP 
+---  AMC = ICC TPC + BEC TUC .
+---  AMD = ICD TPA + BED TUA .
+---  AME = ICE TPA + BEE TUA .
+---  AMF = ICF TPC + BEF TUC .
+---  AMG = ICG TPD + BEG TUD .
+---  AMH = ICH TPB + BEH TUB .
+---  AMI = ICI TPC + BEI TUC .
+---  AMJ = ICJ TPA + BEJ TUA .
+---  AMK = ICK TPB + BEK TUB .
+---  AML = ICL TPD + BEL TUD .
+---  AMM = ICM TPA + BEM TUA .
+---  AMN = ICN TPC + BEN TUC .
+---  AMO = ICO TPB + BEO TUB .      
+---  AMP = ICP TPD + BEP TUD .  47
+
+---  BAK = NAK + IAA TBG + CAA .              j operand    IAA-AP  from VR
+---  BAL = NAL + IAB TBE + CAB .                          
+---  BAM = NAM + IAC TBE + CAC .
+---  BAN = NAN + IAD TBG + CAD .
+---  BAO = NAO + IAE TBA + CAE .
+---  BAP = NAP + IAF TBC + CAF .
+---  BAQ = NAQ + IAG TBA + CAG .
+---  BAR = NAR + IAH TBC + CAH .
+---  BAS = NAS + IAI TBE + CAI .
+---  BAT = NAT + IAJ TBG + CAJ .
+---  BAU = NBA + IAK TBG + CAK .
+---  BAV = NBB + IAL TBE + CAL .
+---  BAW = NBC + IAM TBC + CAM .
+---  BAX = NBD + IAN TBA + CAN .
+---  BAY = NBE + IAO TBC + CAO .
+---  BAZ = NBF + IAP TBA + CAP .                             
+
+---  bba = ica .                        k operand, delay 1
+---  bbb = icb .
+---  bbc = icc .
+---  bbd = icd .
+---  bbe = ice .
+---  bbf = icf .
+---  bbg = icg .
+---  bbh = ich .
+---  bbi = ici .
+---  bbj = icj .
+---  bbk = ick .
+---  bbl = icl .
+---  bbm = icm .
+---  bbn = icn .
+---  bbo = ico .
+---  bbp = icp .
+
+---  BCA = BBA .                        k operand, delay 2
+---  BCB = BBB .
+---  BCC = BBC .
+---  BCD = BBD .
+---  BCE = BBE .                
+---  BCF = BBF .
+---  BCG = BBG .
+---  BCH = BBH .
+---  BCI = BBI .
+---  BCJ = BBJ .   
+---  BCK = BBK .
+---  BCL = BBL .
+---  BCM = BBM .
+---  BCN = BBN .
+---  BCO = BBO .
+---  BCP = BBP .
+
+---  BDA = BCA .                        k operand, delay 3
+---  BDB = BCB .
+---  BDC = BCC .                        
+---  BDD = BCD .
+---  BDE = BCE .
+---  BDF = BCF .
+---  BDG = BCG .
+---  BDH = BCH .
+---  BDI = BCI .
+---  BDJ = BCJ .
+---  BDK = BCK .
+---  BDL = BCL .
+---  BDM = BCM .
+---  BDN = BCN .
+---  BDO = BCO .
+---  BDP = BCP .
+
+---  BEA = BDA .                        k operand, delay 4
+---  BEB = BDB .
+---  BEC = BDC .                        
+---  BED = BDD .
+---  BEE = BDE .
+---  BEF = BDF .
+---  BEG = BDG .
+---  BEH = BDH .
+---  BEI = BDI .
+---  BEJ = BDJ .
+---  BEK = BDK .
+---  BEL = BDL .
+---  BEM = BDM .
+---  BEN = BDN .
+---  BEO = BDO .
+---  BEP = BDP .
+
+---  BFA = BDA bdd + bda BDD .            Hard round bits
+---  BFB = BDB bdd + bdb BDD .
+---  BFC = BDC bdd + bdc BDD .
+
+           J op       K op
+	   
+---  CAA = BAK TCA + AMA TDA .                j operand hold path 32
+---  CAB = BAL TCB + AMB TDB .                or from k path
+---  CAC = BAM TCA + AMC TDA .
+---  CAD = BAN TCB + AMD TDB .
+---  CAE = BAO TCA + AME TDA .
+---  CAF = BAP TCB + AMF TDB .
+
+---  CAG = BAQ TCA + AMG TDA .
+---  CAH = BAR TCB + AMH TDB .
+---  CAI = BAS TCA + AMI TDA .
+---  CAJ = BAT TCB + AMJ TDB .
+---  CAK = BAU TCA + AMK TDA .
+---  CAL = BAV TCB + AML TDB .
+---  CAM = BAW TCA + AMM TDA .
+---  CAN = BAX TCB + AMN TDB .
+---  CAO = BAY TCA + AMO TDA .
+---  CAP = BAZ TCB + AMP TDB .                                   47
+
+---  DAA = DIA .                         Bank O
+---  DAB = DIB .                         Look-up table
+---  DAC = DIC .                         data fanout
+---  DAD = DID .
+---  DAE = DIE .
+---  DAF = DIF .
+---  DAG = DIG .
+---  DAH = DIH .
+
+---  DBA = DIA .                         Bank 1
+---  DBB = DIB .                         Look-up table
+---  DBC = DIC .                         data fanout
+---  DBD = DID .
+---  DBE = DIE .
+---  DBF = DIF .
+---  DBG = DIG .
+---  DBH = DIH .
+
+---  dca = dia .                         Bank 2
+---  dcb = dib .                         Look-up table
+---  dcc = dic .                         data f_nout
+---  dcd = did .
+---  dce = die .
+---  dcf = dif .
+---  dcg = dig .
+---  dch = dih .
+
+---  dda = dia .                         Bank 3
+---  ddb = dib .                         Look-up table
+---  ddc = dic .                         data fanout
+---  ddd = did .
+---  dde = die .
+---  ddf = dif .
+---  ddg = dig .
+---  ddh = dih .
+
+---  DIA = ILA .                        Look-up table write data
+---  DIB = ILB .                        from KA
+---  DIC = ILC .
+---  DID = ILD .
+---  DIE = ILE .
+---  DIF = ILF .
+---  DIG = ILG .
+---  DIH = ILH .
+
+---  eaa = EAA QIA + eaa qia + QDH .            Address counter 0
+---  eab = EAB FAB + eab fab + QDH .                 
+---  eac = EAC FAC + eac fac + QDG .
+---  ead = EAD FAD + ead fad + QDG .
+---  eae = EAE FAE + eae fae + QDH .
+---  eaf = EAF FAF + eaf faf + QDH .
+---  eag = EAG FAG + eag fag + QDG .
+---  eah = EAH FAH + eah fah + QDG .
+---  eai = EAI FAI + eai fai + QDH .
+---  eaj = EAJ FAJ + eaj faj + QDH .                 
+---  eak = EAK FAK + eak fak + QDG .
+---  eal = EAL FAL + eal fal + QDG .     11
+
+---  eba = EAA QIA + eaa qia + QDH .   0
+---  ebb = EAB FAB + eab fab + QDH .
+---  ebc = EAC FAC + eac fac + QDG .
+---  ebd = EAD FAD + ead fad + QDG .
+---  ebe = EAE FAE + eae fae + QDH .
+---  ebf = EAF FAF + eaf faf + QDH .
+---  ebg = EAG FAG + eag fag + QDG .
+---  ebh = EAH FAH + eah fah + QDG .
+---  ebi = EAI FAI + eai fai + QDH .
+---  ebj = EAJ FAJ + eaj faj + QDH .
+---  ebk = EAK FAK + eak fak + QDG .
+---  ebl = EAL FAL + eal fal + QDG .    11
+
+---  eca = EAA QIA + eaa qia + QDH .     0
+---  ecb = EAB FAB + eab fab + QDH .
+---  ecc = EAC FAC + eac fac + QDG .
+---  ecd = EAD FAD + ead fad + QDG .
+---  ece = EAE FAE + eae fae + QDH .
+---  ecf = EAF FAF + eaf faf + QDH .
+---  ecg = EAG FAG + eag fag + QDG .
+---  ech = EAH FAH + eah fah + QDG .
+---  eci = EAI FAI + eai fai + QDH .
+---  ecj = EAJ FAJ + eaj faj + QDH .
+---  eck = EAK FAK + eak fak + QDG .
+---  ecl = EAL FAL + eal fal + QDG .   11
+
+---  FAB = QIB EBA .                      Address counter carries
+---  FAC = QIA EBA EBB .
+---  FAD = QIB EBA EBB EBC .
+---  FAE = QIA EBA EBB EBC EBD .
+---  FAF = QIB EBA EBB EBC EBD EBE .
+---  FAG = QIA FBA EBF .
+---  FAH = QIB FBA EBF EBG .
+---  FAI = QIA FBA EBF EBG EBH .
+---  FAJ = QIB FBA EBF EBG EBH EBI .
+---  FAK = QIC FCA FBB EBJ .
+---  FAL = QIC FCA FBB EBJ EBK .
+
+---  fba = eaa + eab + eac + ead + eae .
+---  fbb = eaf + eag + eah + eai  .
+---  fca = eaa + eab + eac + ead + eae .
+
+    Bank 0- Byte 0
+
+---  MAA = DAA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAA .
+---  MAB = DAB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAB .
+---  MAC = DAC ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WAC .
+---  MAD = DAD ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WAD .
+---  MAE = DAE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WAE .
+---  MAF = DAF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WAF .
+---  MAG = DAG ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WAG .
+---  MAH = DAH ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WAH .
+
+    Byte 1
+
+---  MAI = DAA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WBA .
+---  MAJ = DAB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WBB .
+---  MAK = DAC ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBC .
+---  MAL = DAD ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBD .
+---  MAM = DAE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WBE .
+---  MAN = DAF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WBF .
+---  MAO = DAG ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WBG .
+---  MAP = DAH ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WBH .
+
+     Byte 2
+
+---  MAQ = DAA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WCA .
+---  MAR = DAB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WCB .
+---  MAS = DAC ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WCC .
+---  MAT = DAD ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WCD .
+---  MBA = DAE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WCE .
+---  MBB = DAF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WCF .
+---  MBC = DAG ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WCG .
+---  MBD = DAH ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WCH .
+
+       Byte 3
+
+---  MBE = DAA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WDA .
+---  MBF = DAB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WDB .
+---  MBG = DAC ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WDC .
+---  MBH = DAD ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WDD .
+---  MBI = DAE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WDE .
+---  MBJ = DAF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WDF .
+---  MBK = DAG ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WDG .
+---  MBL = DAH ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WDH .
+
+        Byte 4
+
+---  MBM = DAA ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WEA .
+---  MBN = DAB ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WEB .
+---  MBO = DAC ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WEC .
+---  MBP = DAD ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WED .
+---  MBQ = DAE ; AAA AAB AAC AAD AAE AAF AAG AAH AAI AAJ AAK AAL ; *** WEE .
+---  MBR = DAF ; aaa aab aac aad aae aaf aag aah aai aaj aak aal ; *** WEF .
+---  MBS = DAG ; ABA ABB ABC ABD ABE ABF ABG ABH ABI ABJ ABK ABL ; *** WEG .
+---  MBT = DAH ; aba abb abc abd abe abf abg abh abi abj abk abl ; *** WEH .
+
+
+        Bank 1- Byte 0
+
+---  MCA = DBA ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAA .
+---  MCB = DBB ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAB .
+---  MCC = DBC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WAC .
+---  MCD = DBD ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WAD .
+---  MCE = DBE ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WAE .
+---  MCF = DBF ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WAF .
+---  MCG = DBG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WAG .
+---  MCH = DBH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WAH .
+
+         Byte 1
+
+---  MCI = DBA ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WBA .
+---  MCJ = DBB ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WBB .
+---  MCK = DBC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBC .
+---  MCL = DBD ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBD .
+---  MCM = DBE ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WBE .
+---  MCN = DBF ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WBF .
+---  MCO = DBG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WBG .
+---  MCP = DBH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WBH .
+
+         Byte 2
+
+---  MCQ = DBA ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WCA .
+---  MCR = DBB ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WCB .
+---  MCS = DBC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WCC .
+---  MCT = DBD ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WCD .
+---  MDA = DBE ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WCE .
+---  MDB = DBF ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WCF .
+---  MDC = DBG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WCG .
+---  MDD = DBH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WCH .
+
+          Byte 3
+
+---  MDE = DBA ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WDA .
+---  MDF = DBB ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WDB .
+---  MDG = DBC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WDC .
+---  MDH = DBD ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WDD .
+---  MDI = DBE ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WDE .
+---  MDJ = DBF ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WDF .
+---  MDK = DBG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WDG .
+---  MDL = DBH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WDH .
+
+    Byte 4
+
+---  MDM = DBA ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WEA .
+---  MDN = DBB ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WEB .
+---  MDO = DBC ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WEC .
+---  MDP = DBD ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WED .
+---  MDQ = DBE ; AEA AEB AEC AED AEE AEF AEG AEH AEI AEJ AEK AEL ; *** WEE .
+---  MDR = DBF ; aea aeb aec aed aee aef aeg aeh aei aej aek ael ; *** WEF .
+---  MDS = DBG ; AFA AFB AFC AFD AFE AFF AFG AFH AFI AFJ AFK AFL ; *** WEG .
+---  MDT = DBH ; afa afb afc afd afe aff afg afh afi afj afk afl ; *** WEH .
+
+       Bank 2- Byte 0
+
+---  MEA = DCA ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WAA .
+---  MEB = DCB ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WAB .
+---  MEC = DCC ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WAC .
+---  MED = DCD ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WAD .
+---  MEE = DCE ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WAE .
+---  MEF = DCF ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WAF .
+---  MEG = DCG ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WAG .
+---  MEH = DCH ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WAH .
+
+           Byte 1
+
+---  MEI = DCA ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WBA .
+---  MEJ = DCB ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WBB .
+---  MEK = DCC ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WBC .
+---  MEL = DCD ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WBD .
+---  MEM = DCE ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WBE .
+---  MEN = DCF ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WBF .
+---  MEO = DCG ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WBG .
+---  MEP = DCH ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WBH .
+
+           Byte 2
+
+---  MEQ = DCA ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WCA .
+---  MER = DCB ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WCB .
+---  MES = DCC ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WCC .
+---  MET = DCD ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WCD .
+---  MFA = DCE ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WCE .
+---  MFB = DCF ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WCF .
+---  MFC = DCG ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WCG .
+---  MFD = DCH ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WCH .
+
+          Byte 3
+
+---  MFE = DCA ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDA .
+---  MFF = DCB ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDB .
+---  MFG = DCC ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WDC .
+---  MFH = DCD ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WDD .
+---  MFI = DCE ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WDE .
+---  MFJ = DCF ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WDF .
+---  MFK = DCG ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WDG .
+---  MFL = DCH ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WDH .
+
+      Byte 4
+
+---  MFM = DCA ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WEA .
+---  MFN = DCB ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WEB .
+---  MFO = DCC ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WEC .
+---  MFP = DCD ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WED .
+---  MFQ = DCE ; AHA AHB AHC AHD AHE AHF AHG AHH AHI AHJ AHK AHL ; *** WEE .
+---  MFR = DCF ; aha ahb ahc ahd ahe ahf ahg ahh ahi ahj ahk ahl ; *** WEF .
+---  MFS = DCG ; AIA AIB AIC AID AIE AIF AIG AIH AII AIJ AIK AIL ; *** WEG .
+---  MFT = DCH ; aia aib aic aid aie aif aig aih aii aij aik ail ; *** WEH .
+
+   Bank 3- Byte 0
+
+---  MGA = DDA ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WAA .
+---  MGB = DDB ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WAB .
+---  MGC = DDC ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WAC .
+---  MGD = DDD ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WAD .
+---  MGE = DDE ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WAE .
+---  MGF = DDF ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WAF .
+---  MGG = DDG ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WAG .
+---  MGH = DDH ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WAH .
+
+       Byte 1
+
+---  MGI = DDA ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WBA .
+---  MGJ = DDB ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WBB .
+---  MGK = DDC ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WBC .
+---  MGL = DDD ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WBD .
+---  MGM = DDE ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WBE .
+---  MGN = DDF ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WBF .
+---  MGO = DDG ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WBG .
+---  MGP = DDH ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WBH .
+
+      Byte 2
+
+---  MGQ = DDA ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WCA .
+---  MGR = DDB ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WCB .
+---  MGS = DDC ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WCC .
+---  MGT = DDD ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WCD .
+---  MHA = DDE ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WCE .
+---  MHB = DDF ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WCF .
+---  MHC = DDG ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WCG .
+---  MHD = DDH ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WCH .
+
+          Byte 3
+
+---  MHE = DDA ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WDA .
+---  MHF = DDB ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WDB .
+---  MHG = DDC ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WDC .
+---  MHH = DDD ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WDD .
+---  MHI = DDE ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WDE .
+---  MHJ = DDF ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WDF .
+---  MHK = DDG ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WDG .
+---  MHL = DDH ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WDH .
+
+          Byte 4
+
+---  MHM = DDA ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WEA .
+---  MHN = DDB ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WEB .
+---  MHO = DDC ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WEC .
+---  MHP = DDD ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WED .
+---  MHQ = DDE ; AKA AKB AKC AKD AKE AKF AKG AKH AKI AKJ AKK AKL ; *** WEE .
+---  MHR = DDF ; aka akb akc akd ake akf akg akh aki akj akk akl ; *** WEF .
+---  MHS = DDG ; ALA ALB ALC ALD ALE ALF ALG ALH ALI ALJ ALK ALL ; *** WEG .
+---  MHT = DDH ; ala alb alc ald ale alf alg alh ali alj alk all ; *** WEH .
+
+---  NAA = MAA TQA + MCA TRA + MEA TSA + MGA TTA .   Table read out  0
+---  NAB = MAB TQB + MCB TRB + MEB TSB + MGB TTB .   merge 4O bits
+---  NAC = MAC TQA + MCC TRA + MEC TSA + MGC TTA .
+---  NAD = MAD TQB + MCD TRB + MED TSB + MGD TTB .
+---  NAE = MAE TQC + MCE TRC + MEE TSC + MGE TTC .
+---  NAF = MAF TQD + MCF TRD + MEF TSD + MGF TTD .
+---  NAG = MAG TQC + MCG TRC + MEG TSC + MGG TTC .
+---  NAH = MAH TQD + MCH TRD + MEH TSD + MGH TTD .
+---  NAI = MAI TQE + MCI TRE + MEI TSE + MGI TTE .
+---  NAJ = MAJ TQF + MCJ TRF + MEJ TSF + MGJ TTF .
+---  NAK = MAK TQE + MCK TRE + MEK TSE + MGK TTE .
+---  NAL = MAL TQF + MCL TRF + MEL TSF + MGL TTF .
+---  NAM = MAM TQG + MCM TRG + MEM TSG + MGM TTG .
+---  NAN = MAN TQH + MCN TRH + MEN TSH + MGN TTH .
+---  NAO = MAO TQG + MCO TRG + MEO TSG + MGO TTG .
+---  NAP = MAP TQH + MCP TRH + MEP TSH + MGP TTH .
+---  NAQ = MAQ TQI + MCQ TRI + MEQ TSI + MGQ TTT .
+---  NAR = MAR TQJ + MCR TRJ + MER TSJ + MGR TTJ .
+---  NAS = MAS TQE + MCS TRI + MES TST + MGS TTI .
+---  NAT = MAT TQJ + MCT TRJ + MET TSJ + MGT TTJ .                   19
+
+---  NBA = MBA TQK + MDA TRK + MFA TSK + MHA TTK .                   20
+---  NBB = MBB TQL + MDB TRL + MFB TSL + MHB TTL .
+---  NBC = MBC TQK + MDC TRK + MFC TSK + MHC TTK .
+---  NBD = MBD TQL + MDD TRL + MFD TSL + MHD TTL .
+---  NBE = MBE TQM + MDE TRM + MFE TSM + MHE TTM .
+---  NBF = MBF TQN + MDF TRN + MFF TSN + MHF TTM .
+
+---  NBG = MBG TQM + MDG TRM + MFG TSM + MHG TTM .
+---  NBH = MBH TQN + MDH TRN + MFH TSN + MHH TTN .
+---  NBI = MBI TQO + MDI TRO + MFI TSO + MHI TTO .
+---  NBJ = MBJ TQP + MDJ TRP + MFJ TSP + MHJ TTP .
+---  NBK = MBK TQO + MDK TRO + MFK TSO + MHK TTO .
+---  NBL = MBL TQP + MDL TRP + MFL TSP + MHL TTP .
+---  NBM = MBM TQQ + MDM TRQ + MFM TSQ + MHM TTQ .
+---  NBN = MBN TQR + MDN TRR + MFN TSR + MHN TTR .
+---  NBO = MBO TQQ + MDO TRQ + MFO TSQ + MHO TTQ .
+---  NBP = MBP TQR + MDP TRR + MFP TSR + MHP TTR .
+---  NBQ = MBQ TQS + MDQ TRS + MFQ TSS + MHQ TTS .
+---  NBR = MBR TQT + MDR TRT + MFR TST + MHR TTT .
+---  NBS = MBS TQS + MDS TRS + MFS TSS + MHS TTS .
+---  NBT = MBT TQT + MDT TRT + MFT TST + MHT TTT .                  39
+
+---  OAA = NAA .           Mantissa 0   Outputs to MA      Pyramid 0-9
+---  OAB = NAB .                        Look-up data or
+---  OAC = NAC .                        j operand
+---  OAD = NAD .
+---  OAE = NAE .
+---  OAF = NAF .
+---  OAG = NAG .
+---  OAH = NAH .
+---  OAI = NAI .
+---  OAJ = NAJ .           Mantissa 9
+                           
+	   Inv             J
+	   Sqrt   J 32-37   or 
+	   RO              K
+---  OAK = NAK + IAA TBG + CAA .         2^32-2^47 to MA     Mantissa 10-26
+---  OAL = NAL + IAB TBE + CAB .
+---  OAM = NAM + IAC TBE + CAC .
+---  OAN = NAN + IAD TBG + CAD .
+---  OAO = NAO + IAE TBA + CAE .
+---  OAP = NAP + IAF TBC + CAF .       Mantissa 15
+
+                 J 38-47  
+---  OAQ = NAQ + IAG TBA + CAG .       Mantissa 16
+---  OAR = NAR + IAH TBC + CAH .
+---  OAS = NAS + IAI TBE + CAI .
+---  OAT = NAT + IAJ TBG + CAJ .
+---  OAU = NBA + IAK TBG + CAK .
+---  OAV = NBB + IAL TBE + CAL .
+---  OAW = NBC + IAM TBC + CAM .
+---  OAX = NBD + IAN TBA + CAN .       
+---  OAY = NBE + IAO TBC + CAO .       
+---  OAZ = NBF + IAP TBA + CAP .       Mantissa 25
+
+---  OBA = NAA .         Mantissa 0    Outputs to MB  
+---  OBB = NAB .                        Look-up data or
+---  OBC = NAC .                        j operand
+---  OBD = NAD .
+---  OBE = NAE .
+---  OBF = NAF .
+---  OBG = NAG .
+---  OBH = NAH .         Mantissa 7
+
+---  OBI = NAI .         Mantissa 8
+---  OBJ = NAJ .         Mantissa 9
+
+---  OBK = NAK + IAA TBG + CAA .            Mantissa 10
+---  OBL = NAL + IAB TBE + CAB .
+---  OBM = NAM + IAC TBE + CAC .
+---  OBN = NAN + IAD TBG + CAD .
+---  OBO = NAO + IAE TBA + CAE .
+---  OBP = NAP + IAF TBC + CAF .            Mantissa 15
+
+---  OBQ = NAQ + IAG TBA + CAG .            Mantissa 16
+---  OBR = NAR + IAH TBC + CAH .               
+---  OBS = NAS + IAI TBE + CAI .
+---  OBT = NAT + IAJ TBG + CAJ .
+---  OBU = NBA + IAK TBG + CAK .
+---  OBV = NBB + IAL TBE + CAL .
+---  OBW = NBC + IAM TBC + CAM .
+---  OBX = NBD + IAN TBA + CAN .           Mantissa 23
+
+---  OBY = NBE + IAO TBC + CAO .           Mantissa 24
+---  OBZ = NBF + IAP TBA + CAP .           Mantissa 25
+
+---  OCA = NAA .            Mantissa 0           Outputs to MC
+---  OCB = NAB .                        Look-up data or
+---  OCC = NAC .                        j operand
+---  OCD = NAD .
+---  OCE = NAE .
+---  OCF = NAF .
+---  OCG = NAG .
+---  OCH = NAH .            Mantissa 7
+---  OCI = NAI .            Mantissa 8
+---  OCJ = NAJ .            Mantissa 9
+
+---  OCK = NAK + IAA TBH + CAA .      2^32   Mantissa 10
+---  OCL = NAL + IAB TBF + CAB .
+---  OCM = NAM + IAC TBF + CAC .
+---  OCN = NAN + IAD TBH + CAD .         
+---  OCO = NAO + IAE TBB + CAE .
+---  OCP = NAP + IAF TBD + CAF .
+---  OCQ = NAQ + IAG TBB + CAG .
+---  OCR = NAR + IAH TBD + CAH .
+---  OCS = NAS + IAI TBF + CAI .
+---  OCT = NAT + IAJ TBH + CAJ .
+---  OCU = NBA + IAK TBH + CAK .
+---  OCV = NBB + IAL TBF + CAL .
+---  OCW = NBC + IAM TBD + CAM .
+---  OCX = NBD + IAN TBB + CAN .
+---  OCY = NBE + IAO TBD + CAO .
+---  OCZ = NBF + IAP TBB + CAP .           Mantissa 25        
+
+---  ODA = NAA .           Mantissa 0          Outputs to MD
+---  ODB = NAB .                        Look-up data or
+---  ODC = NAC .                        j operand
+---  ODD = NAD .
+---  ODE = NAE .
+---  ODF = NAF .
+---  ODG = NAG .
+---  ODH = NAH .
+---  ODI = NAI .
+---  ODJ = NAJ .           Mantissa 9
+
+---  ODK = NAK + IAA TBH + CAA .        J 2^32-47 to MD        32 Mantissa 10
+---  ODL = NAL + IAB TBF + CAB .
+---  ODM = NAM + IAC TBF + CAC .
+---  ODN = NAN + IAD TBH + CAD .
+---  ODO = NAO + IAE TBB + CAE .
+---  ODP = NAP + IAF TBD + CAF .
+---  ODQ = NAQ + IAG TBB + CAG .
+---  ODR = NAR + IAH TBD + CAH .
+---  ODS = NAS + IAI TBF + CAI .
+---  ODT = NAT + IAJ TBH + CAJ .
+---  ODU = NBA + IAK TBH + CAK .
+---  ODV = NBB + IAL TBF + CAL .
+---  ODW = NBC + IAM TBD + CAM .
+---  ODX = NBD + IAN TBB + CAN .
+---  ODY = NBE + IAO TBD + CAO .
+---  ODZ = NBF + IAP TBB + CAP .                               47 Mantissa 25
+
+---  OEA = ICA TPD + BEA TUD .                k operand to MA  immediate 32
+---  OEB = ICB TPB + BEB TUB .                  or 4 cycle delay 
+---  OEC = ICC TPC + BEC TUC .
+---  OED = ICD TPA + BED TUA .
+---  OEE = ICE TPA + BEE TUA .
+---  OEF = ICF TPC + BEF TUC .
+---  OEG = ICG TPD + BEG TUD .
+---  OEH = ICH TPB + BEH TUB .
+---  OEI = ICI TPC + BEI TUC .
+---  OEJ = ICJ TPA + BEJ TUA .
+---  OEK = ICK TPB + BEK TUB .
+---  OEL = ICL TPD + BEL TUD .
+---  OEM = ICM TPA + BEM TUA .
+---  OEN = ICN TPC + BEN TUC .
+---  OEO = ICO TPB + BEO TUB .
+---  OEP = ICP TPD + BEP TUD .                                  47
+
+---  OFA = ICA TPD + BEA TUD .                k operand to MB     32
+---  OFB = ICB TPB + BEB TUB .                  immediate or 4 cycle delay
+---  OFC = ICC TPC + BEC TUC .
+---  OFD = ICD TPA + BED TUA .
+---  OFE = ICE TPA + BEE TUA .
+---  OFF = ICF TPC + BEF TUC .
+---  OFG = ICG TPD + BEG TUD .
+---  OFH = ICH TPB + BEH TUB .
+---  OFI = ICI TPC + BEI TUC .
+---  OFJ = ICJ TPA + BEJ TUA .
+---  OFK = ICK TPB + BEK TUB .
+---  OFL = ICL TPD + BEL TUD .
+---  OFM = ICM TPA + BEM TUA .
+---  OFN = ICN TPC + BEN TUC .
+---  OFO = ICO TPB + BEO TUB .
+---  OFP = ICP TPD + BEP TUD .                                 47
+
+                     K op
+	   K op	     delayed
+		     
+---  oga = ica tud + bea tpd + tpd tud .          k operand to MC   32
+---  ogb = icb tub + beb tpb + tpb tub .
+---  ogc = icc tuc + bec tpc + tpc tuc .
+---  ogd = icd tua + bed tpa + tpa tua .
+---  oge = ice tua + bee tpa + tpa tua .
+---  ogf = icf tuc + bef tpc + tpc tuc .
+---  ogg = icg tud + beg tpd + tpd tud .
+---  ogh = ich tub + beh tpb + tpb tub .
+---  ogi = ici tuc + bei tpc + tpc tuc .
+---  ogj = icj tua + bej tpa + tpa tua .
+---  ogk = ick tub + bek tpb + tpb tub .
+---  ogl = icl tud + bel tpd + tpd tud .
+---  ogm = icm tua + bem tpa + tpa tua .
+---  ogn = icn tuc + ben tpc + tpc tuc .
+---  ogo = ico tub + beo tpb + tpb tub .
+---  ogp = icp tud + bep tpd + tpd tud .                        47
+
+---  oha = ica tud + bea tpd + tpd tud .       k operand to MD   32
+---  ohb = icb tub + beb tpb + tpb tub .
+---  ohc = icc tuc + bec tpc + tpc tuc .
+---  ohd = icd tua + bed tpa + tpa tua .
+---  ohe = ice tua + bee tpa + tpa tua .
+---  ohf = icf tuc + bef tpc + tpc tuc .
+---  ohg = icg tud + beg tpd + tpd tud .
+---  ohh = ich tub + beh tpb + tpb tub .
+---  ohi = ici tuc + bei tpc + tpc tuc .
+---  ohj = icj tua + bej tpa + tpa tua .
+---  ohk = ick tub + bek tpb + tpb tub .
+---  ohl = icl tud + bel tpd + tpd tud .
+---  ohm = icm tua + bem tpa + tpa tua .
+---  ohn = icn tuc + ben tpc + tpc tuc .
+---  oho = ico tub + beo tpb + tpb tub .
+---  ohp = icp tud + bep tpd + tpd tud .                         47
+
+---  OIA = NBG .              2^20          2(26) - 2(39) of   Mantissa 26
+---  OIB = NBH .                        look-up data to MD
+---  OIC = NBI .
+---  OID = NBJ .    
+---  OIE = NBK .
+---  OIF = NBL .
+---  OIG = NBM .
+---  OIH = MBN .
+---  OII = NBO .
+---  OIJ = NBP .
+---  OIK = NBQ .
+---  OIL = NBR .
+---  OIM = NBS .               2^8                               Mantissa 38
+
+---  oja = iga .             2(48) of k operand (2^0) of exponent to ME
+
+           TEA = 60 recip,  TEB = 50 recip
+	   TEC = recip 44 or sqrt 70
+	   TED = recip 40 or sqrt 50,60
+---  OKA = BFA TEA .                       Outputs to MC and MD
+---  OKB = BFB TEA + BFA TEB .               approximation hard
+---  OKC = BFC TEA + BFB TEB + BFA TEC .        round bits
+---  OKD = TEB BFC + TEC BFB + TED BFA .
+---  OKE = TEC BFC + TED BFB + TEE BFA .           
+---  OKF = TED BFC + BFB TEE .
+---  OKG = TEE BFC .
+
+---  OLA = ILA .                        8 outputs
+---  OLB = ILB .                        Write data to
+---  OLC = ILC .                        other RA's
+---  OLD = ILD .
+---  OLE = ILE .
+---  OLF = ILF .
+---  OLG = ILG .
+---  OLH = ILH .
+---  OLI = ILI .                        Enable write to other RA's
+
+---  OMA = IKA .                        Dead start to other RA's
+---  ONA = PEA peb + pea PEB .               Parity error to EA
+
+---  paa = naa .                          First rank
+---  pab = nab .                          parity generation
+---  pac = nac .
+---  pad = nad .
+---  pae = nae .
+---  paf = naf .
+---  pag = nag .
+---  pah = nah .
+
+---  pai = nai .
+---  paj = naj .
+---  pak = nak .
+---  pal = nal .
+---  pam = nam .
+---  pan = nan .
+---  pao = nao .
+---  pap = nap .
+
+---  paq = naq .
+---  par = nar .
+---  pas = nas .
+---  pat = nat .
+
+---  pba = nba .
+---  pbb = nbb .
+---  pbc = nbc .
+---  pbd = nbd .
+---  pbe = nbe .
+---  pbf = nbf .
+---  pbg = nbg .
+---  pbh = nbh .
+
+---  pbi = nbi .
+---  pbj = nbj .
+---  pbk = nbk .
+---  pbl = nbl .
+---  pbm = nbm .
+---  pbn = nbn .
+---  pbo = nbo .
+---  pbp = nbp .
+
+---  pbq = nbq .
+---  pbr = nbr .
+---  pbs = nbs .
+---  pbt = nbt .
+
+---  PCA = PBM paq paa + pbm PAQ paa + pbm paq PAA + PBM PAQ PAA .
+---  PCB = PBT pah pbd + pbt PAH pbd + pbt pah PBD + PBT PAH PBD .
+---  PCC = PBK pao pbf + pbk PAO pbf + pbk pao PBF + PBK PAO PBF .
+---  PCD = PBN par pab + pbn PAR pab + pbn par PAB + PBN PAR PAB .
+---  PCE = PAJ pbe pai + paj PBE pai + paj pbe PAI + PAJ PBE PAI .
+---  PCF = PBS pbc pag + pbs PBC pag + pbs pbc PAG + PBS PBC PAG .
+---  PCG = PBR pbb paf + pbr PBB paf + pbr pbb PAF + PBR PBB PAF .
+---  PCH = PBI pam pbl + pbi PAM pbl + pbi pam PBL + PBI PAM PBL .
+---  PCI = PBH pal pap + pbh PAL pap + pbh pal PAP + PBH PAL PAP .
+---  PCJ = PBO pas pac + pbo PAS pac + pbo pas PAC + PBO PAS PAC .
+---  PCK = PBQ pba pae + pbq PBA pae + pbq pba PAE + PBQ PBA PAE .
+---  PCL = PBP pat pad + pbp PAT pad + pbp pat PAD + PBP PAT PAD .
+---  PCM = PBG pak pbj + pbg PAK pbj + pbg pak PBJ + PBG PAK PBJ .
+---  PCN = PAN .
+---  PDA = PCM pcn pcl + pcm PCN pcl + pcm pcn PCL + PCM PCN PCL .
+---  PDB = PCK pcj pci + pck PCJ pci + pck pcj PCI + PCK PCJ PCI .
+---  PDC = PCH pcg pcf + pch PCG pcf + pch pcg PCF + PCH PCG PCF .
+---  PDD = PCE pcd pcc + pce PCD pcc + pce pcd PCC + PCE PCD PCC .
+---  PDE = PCB .
+---  PDF = PCA .
+---  PEA = PDD pde pdf + pdd PDE pdf + pdd pde PDF + PDD PDE PDF .
+---  PEB = PDA pdb pdc + pda PDB pdc + pda pdb PDC + PDA PDB PDC .
+
+---  QAA = QLA QDA .                      Master timing chain
+---  QAB = QAA qdi .                      for table load ( load byte)
+---  QAC = QAB qdi .
+---  QAD = QAC qdi .
+---  QAE = QAD qdi .
+---  QAF = QAE qdi .
+---  QAG = QAF qdi .
+---  QAH = QAG qdi .
+---  QAI = QAH qdi .
+
+---  QBA = QCJ QAI .                      Pointer 4 enable start up
+---  QBB = QBA + QCB qbc + QDF .               Byte pointer 4
+---  QBC = QCB QAI .                            enable for pointer 3
+---  QBD = QCD qbe qdj + QBC .                Byte pointer 3
+---  QBE = QCD QAI .                            pointer 2 enable
+---  QBF = QCF qbg qdj + QBE .                Byte pointer 2
+---  QBG = QCF QAI .                             pointer 1 enable
+---  QBH = QCH qbi qdj + QBG .                Byte pointer 1
+---  QBI = QCH QAI .                             pointer O enable
+---  QBJ = QCJ qba qdj + QBI .                Byte pointer 0
+
+---  QCB = QBA + QCB qbc + QDF .               Pointer 4
+---  QCD = QCD qbe qdj + QBC .                  ''     3
+---  QCF = QCF qbg qdj + QBE .                  ''     2
+---  QCH = QCH qbi qdj + QBG .                  ''     1
+---  QCJ = QCJ qba qdj + QBI .                  ''     O
+
+---  QDA = IKA .                         Dead start
+---  QDB = QDA .                         Dead start chain
+---  QDC = QDB .
+---  QDD = QDC .
+---  QDE = QDD .
+---  QDF = QDD qde .                      Dead start onset
+---  QDG = QDD qde .
+---  QDH = QDD qde .
+---  QDI = qde QDA .                      Dead start stretch
+
+---  QDJ = qde QDA .
+
+---  QEA = QAD + QAE + QAF + QAG .             Only up for 4 clock periods
+---  QEB = QAD + QAE + QAF + QAG .              (during write strobe )
+
+---  qfa = qda .                         Dead start fanout
+---  qfb = qda .
+
+---  QGA = qga qfa .                      Master 2 bit free 
+---  QGB = QGB qga qfa + qgb QGA .        running readout
+---  QGC = qga qfa .                      pointer counter
+---  QGD = QGB qga qfa + qgb QGA .
+---  QGE = qga qfa .
+---  QGF = QGB qga qfa + qgb QGA .
+
+---  QHA = qga qgb .                      Address latch enables
+---  QHB = QGA qgb .
+---  QHC = qga QGB .
+---  QHD = QGA QGB .
+
+---  qhe = QGC + QGD + qja .                 Readout pointer
+---  qhf = QGC + QGD + qja .                 Bank O
+---  qhg = QGE + QGF + qjb .
+---  qhh = QGE + QGF + qjb .
+---  qhi = qgc + QGD + qja .                 Bank 1
+---  qhj = qgc + QGD + qja .                 Readout pointer
+---  qhk = qge + QGF + qjb .
+---  qhl = qge + QGF + qjb .
+---  qhm = QGC + qgd + qja .                 Bank 2
+---  qhn = QGC + qgd + qja .                 Readout pointer
+---  qho = QGE + qgf + qjb .
+---  qhp = QGE + qgf + qjb .
+---  qhq = qgc + qgd + qja .                 Bank 3
+---  qhr = qgc + qgd + qja .                 Readout pointer
+---  qhs = qge + qgf + qjb .
+---  qht = qge + qgf + qjb .
+
+---  qia = qba .                         Table load 
+---  qib = qba .                         chain complete
+---  qic = qba .
+
+---  QJA = IJA .                         Valid SQRT or
+---  QJB = IJA .                         function bit 1
+
+---  QLA = ILI .                         Load byte signal
+
+---  QMA = BBO .                         Reciprocal ranges, 2^46 bit
+---  QMB = BBN bbo .
+---  qmc = bbm + BBM + BBO .
+---  qmd = BBM + BBN + BBO .
+
+---  QME = BBN BBO .                     Square root ranges
+---  QMF = *** + bbn bbo .
+
+---  QNA = QMA IRB .                    Propagation
+---  QNB = QMB IRB .                    reciprocal value
+---  QNC = QMC IRB .
+---  QND = QMD IRB .
+
+---  QNE = QME ISA .                    Square root range
+---  QNF = qme qmf ISA .
+---  QNG = QMF ISA .
+
+---  QPA = IPA .                      Gate k data
+---  QPB = IPB .                      Gate delayed k data
+
+---  QQA = IQA .                      Gate j data
+---  QQB = IQB .                      Gate j data
+---  QQC = IQC .                      Gate  data to j path
+
+---  QRA = IRA .                      Select reciprocal from ME
+
+---  TBA = QQA .                      Gate j data
+---  TBB = QQA .              
+---  TBC = QQA .
+---  TBD = QQA .
+---  TBE = QQA .
+---  TBF = QQA .
+---  TBG = QQA .
+---  TBH = QQA .
+
+---  TCA = QQB .                      Hold j data
+---  TCB = QQB .
+
+---  TDA = QQC .                      Gate k to j path
+---  TDB = QQC .
+
+---  TEA = QMA .                      6O reciprocal
+---  TEB = QNB .                      5O reciprocal
+
+---  TEC = QNC + QNE .                   Reciprocal 44 or sqrt 70
+---  TED = QND + QNF .                   Reciprocal 4O or sqrt 50,60
+---  TEE = QNG .
+
+---  TGA = QFA .                      Address reset to
+---  TGB = QFA .                       on deadstart
+---  TGC = QFA .
+---  TGD = QFA .
+
+---  tge = qfa .
+---  tgf = qfa .
+---  tgg = qfa .
+---  tgh = qfa .
+
+---  THA = qha qfb .                    Bank O address latch
+---  THB = qha qfb .
+---  TIA = qhb qfb .                    Bank 1 address latch
+---  TIB = qhb qfb .
+---  TJA = qhc qfb .                    Bank 2 address latch
+---  TJB = qhc qfb .
+---  TKA = qhd qfb .                    Bank 3 address latch
+---  TKB = qhd qfb .
+
+---  TLA = QHA qfb .                    Bank O address latch
+---  TLB = QHA qfb .                    entry enable
+---  tlc = qha + QFB + ira .               Bank O reciprocal
+---  tld = qha + QFB + IRA .               Bank O square root
+
+---  TMA = QHB qfb .                    Bank 1 address latch
+---  TMB = QHB qfb .                    entry enable
+---  tmc = qhb + QFB + ira .               Bank 1 reciprocal
+---  tmd = qhb + QFB + IRA .               Bank 1 square root
+
+---  TNA = QHC qfb .                    Bank 2 address latch
+---  TNB = QHC qfb .                    entry enable
+---  tnc = qhc + QFB + ira .               Bank 2 reciprocal select
+---  tnd = qhc + QFB + IRA .               Bank 2 square root select
+
+---  TOA = QHD qfb .                    Bank 3 address latch
+---  TOB = QHD qfb .                    entry enable
+---  toc = qhd + QFB + ira .               Bank 3 reciprocal select
+---  tod = qhd + QFB + IRA .               Bank 3 square root select
+
+---  TPA = QPA .                      Gate k/j data
+---  TPB = QPA .
+---  TPC = QPA .
+---  TPD = QPA .
+
+---  tqa = qhg .                      Data output enable
+---  TQB = QHF .                      from Bank O
+---  tqc = qhe .
+---  TQD = QHH .
+---  tqe = qhf .
+---  TQF = QHG .
+---  tqg = qhh .
+---  TQH = QHE .
+---  tqi = qhg .
+---  TQJ = QHF .
+---  tqk = qhh .
+---  TQL = QHE .
+---  tqm = qhf .
+---  TQN = QHG .
+---  tqo = qhe .
+---  TQP = QHH .
+---  tqq = qhg .
+---  TQR = QHF .
+---  tqs = qhh .
+---  TQT = QHE .
+
+---  tra = qhk .                       Data output enable
+---  TRB = QHJ .                       from Bank 1
+---  trc = qhi .
+---  TRD = QHL .
+---  tre = qhj .
+---  TRF = QHK .    
+---  trg = qhl .
+---  TRH = QHI .
+---  tri = qhk .
+---  TRJ = QHJ .
+---  trk = qhl .
+---  TRL = QHI .
+---  trm = qhj .
+---  TRN = QHK .
+---  tro = qhi .
+---  TRP = QHL .
+---  trq = qhk .
+---  TRR = QHJ .
+---  trs = qhl .
+---  TRT = QHI .
+
+---  tsa = qho .                       Data output enable
+---  TSB = QHM .                       from Bank 2
+---  tsc = qhm .
+---  TSD = QHP .
+---  tse = qhn .
+---  TSF = QHO .
+---  tsg = qhp .
+---  TSH = QHM .
+---  tsi = qho .
+---  TSJ = QHN .
+---  tsk = qhp .
+---  TSL = QHM .
+---  tsm = qhn .
+---  TSN = QHO .                                
+---  tso = qhm .
+---  TSP = QHP .
+---  tsq = qho .
+---  TSR = QHN .
+---  tss = qhp .
+---  TST = QHM .
+---  tta = qhs .                      Data output enable
+---  TTB = QHR .                      from Bank 3
+---  ttc = qhq .
+---  TTD = QHT .
+---  tte = qhr .
+---  TTF = QHS .
+---  ttg = qht .
+---  TTH = QHQ .
+---  tti = qhs .
+---  TTJ = QHR .
+---  ttk = qht .
+---  TTL = QHQ .
+---  ttm = qhr .
+---  TTN = QHS .
+---  tto = qhq .        
+---  TTP = QHT .
+---  ttq = qhs .
+---  TTR = QHR .
+---  tts = qht .
+---  TTT = QHQ .
+
+---  TUA = QPB .                      Gate delayed k data
+---  TUB = QPB .
+---  TUC = QPB .
+---  TUD = QPB .
+
+                         Write stobe 4 clocks after Load Byte
+			 
+---  WAA = QBJ QEA .                   Byte O write strobe
+---  WAB = QBJ QEA .
+---  WAC = QBJ QEA .
+---  WAD = QBJ QEA .
+
+---  WAE = QBJ QEA .                   Byte O write strobe
+---  WAF = QBJ QEA .
+---  WAG = QBJ QEA .
+---  WAH = QBJ QEA .
+
+---  WBA = QBH QEB .                   Byte 1 write strobe
+---  WBB = QBH QEB .
+---  WBC = QBH QEB .
+---  WBD = QBH QEB .
+
+---  WBE = QBH QEB .                   Byte 1 write strobe
+---  WBF = QBH QEB .
+---  WBG = QBH QEB .
+---  WBH = QBH QEB .
+
+---  WCA = QBF QEB .                   Byte 2 write strobe
+---  WCB = QBF QEB .
+---  WCC = QBF QEB .
+---  WCD = QBF QEB .
+
+---  WCE = QBF QEB .                   Byte 2 write strobe
+---  WCF = QBF QEB .
+---  WCG = QBF QEB .
+---  WCH = QBF QEB .
+
+---  WDA = QBD QEA .                   Byte 3 write strobe
+---  WDB = QBD QEA .
+---  WDC = QBD QEA .
+---  WDD = QBD QEA .
+
+---  WDE = QBD QEA .                   Byte 3 write strobe
+---  WDF = QBD QEA .
+---  WDG = QBD QEA .
+---  WDH = QBD QEA .
+
+---  WEA = QBB QEA .                   Byte 4 write strobe
+---  WEB = QBB QEA .
+---  WEC = QBB QEA .
+---  WED = QBB QEA .
+
+---  WEE = QBB QEA .                   Byte 4 write strobe
+---  WEF = QBB QEA .
+---  WEG = QBB QEA .
+---  WEH = QBB QEA .

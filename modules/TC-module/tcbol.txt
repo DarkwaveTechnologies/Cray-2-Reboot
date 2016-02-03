@@ -1,0 +1,1509 @@
+*
+* Boolean Definitions
+* Module: TC
+* Description: Memory interface modules, packetize address and data, SECDED
+* Revision:
+* Date: 
+*
+           Address   Data 
+           Packet   Packet
+
+---  AAA = IEA TKA + IAA tka .	 0	    Phase 0 
+---  AAB = IEB TKA + IAB tka .
+---  AAC = IEC TKA + IAC tka .
+---  AAD = IED TKA + IAD tka .
+---  AAE = IEE TKA + IAE tka .
+---  AAF = IEF TKA + IAF tka .
+---  AAG = IEG TKA + IAG tka .
+---  AAH = IEH TKA + IAH tka .	7
+			     
+---  AAI = IEI TKA + IAI tka .	8
+---  AAJ = IEJ TKB + IAJ tkb .
+---  AAK = IEK TKB + IAK tkb .
+---  AAL = IEL TKB + IAL tkb .
+---  AAM = IEM TKB + IAM tkb .
+---  AAN = IEN TKB + IAN tkb .
+---  AAO = IEO TKB + IAO tkb .
+---  AAP = IEP TKB + IAP tkb .	15
+			     
+---  AAQ = IEQ TKB + IAQ tkb .	16
+---  AAR = IER TKB + IAR tkb .
+---  AAS = IES TKC + IAS tkc .
+---  AAT = IET TKC + IAT tkc .
+---  AAU = IEU TKC + IAU tkc .
+---  AAV = IEV TKC + IAV tkc .
+---  AAW = IEW TKC + IAW tkc .
+---  AAX = IEX TKC + IAX tkc .  23
+
+
+           Address   Data 
+           Packet   Packet
+
+---  BAA = IEA TKD + IAA tkd .	 0
+---  BAB = IEB TKD + IAB tkd .
+---  BAC = IEC TKD + IAC tkd .
+---  BAD = IED TKD + IAD tkd .
+---  BAE = IEE TKD + IAE tkd .
+---  BAF = IEF TKD + IAF tkd .
+---  BAG = IEG TKD + IAG tkd .
+---  BAH = IEH TKD + IAH tkd .	7
+		  	     
+---  BAI = IEI TKD + IAI tkd .	8
+---  BAJ = IEJ TKE + IAJ tke .
+---  BAK = IEK TKE + IAK tke .
+---  BAL = IEL TKE + IAL tke .
+---  BAM = IEM TKE + IAM tke .
+---  BAN = IEN TKE + IAN tke .
+---  BAO = IEO TKE + IAO tke .
+---  BAP = IEP TKE + IAP tke .	15
+			     
+---  BAQ = IEQ TKE + IAQ tke .	16
+---  BAR = IER TKE + IAR tke .
+---  BAS = IES TKF + IAS tkf .
+---  BAT = IET TKF + IAT tkf .
+---  BAU = IEU TKF + IAU tkf .
+---  BAV = IEV TKF + IAV tkf .
+---  BAW = IEW TKF + IAW tkf .
+---  BAX = IEX TKF + IAX tkf .  23
+
+
+           Address   Data 
+           Packet   Packet
+
+---  ABA = IEA TLA + IBA tla .	0	    Phase 1
+---  ABB = IEB TLA + IBB tla .
+---  ABC = IEC TLA + IBC tla .
+---  ABD = IED TLA + IBD tla .
+---  ABE = IEE TLA + IBE tla .
+---  ABF = IEF TLA + IBF tla .
+---  ABG = IEG TLA + IBG tla .
+---  ABH = IEH TLA + IBH tla .	7
+			     
+---  ABI = IEI TLA + IBI tla .	8
+---  ABJ = IEJ TLB + IBJ tlb .
+---  ABK = IEK TLB + IBK tlb .
+---  ABL = IEL TLB + IBL tlb .
+---  ABM = IEM TLB + IBM tlb .
+---  ABN = IEN TLB + IBN tlb .
+---  ABO = IEO TLB + IBO tlb .
+---  ABP = IEP TLB + IBP tlb .	15
+			     
+---  ABQ = IEQ TLB + IBQ tlb .	16
+---  ABR = IER TLB + IBR tlb .
+---  ABS = IES TLC + IBS tlc .
+---  ABT = IET TLC + IBT tlc .
+---  ABU = IEU TLC + IBU tlc .
+---  ABV = IEV TLC + IBV tlc .
+---  ABW = IEW TLC + IBW tlc .
+---  ABX = IEX TLC + IBX tlc .  23
+
+
+           Address   Data 
+           Packet   Packet
+
+---  BBA = IEA TLD + IBA tld .	0
+---  BBB = IEB TLD + IBB tld .
+---  BBC = IEC TLD + IBC tld .
+---  BBD = IED TLD + IBD tld .
+---  BBE = IEE TLD + IBE tld .
+---  BBF = IEF TLD + IBF tld .
+---  BBG = IEG TLD + IBG tld .
+---  BBH = IEH TLD + IBH tld .	7
+			     
+---  BBI = IEI TLD + IBI tld .	8
+---  BBJ = IEJ TLE + IBJ tle .
+---  BBK = IEK TLE + IBK tle .
+---  BBL = IEL TLE + IBL tle .
+---  BBM = IEM TLE + IBM tle .
+---  BBN = IEN TLE + IBN tle .
+---  BBO = IEO TLE + IBO tle .
+---  BBP = IEP TLE + IBP tle .	15
+			     
+---  BBQ = IEQ TLE + IBQ tle .	16
+---  BBR = IER TLE + IBR tle .
+---  BBS = IES TLF + IBS tlf .
+---  BBT = IET TLF + IBT tlf .
+---  BBU = IEU TLF + IBU tlf .
+---  BBV = IEV TLF + IBV tlf .
+---  BBW = IEW TLF + IBW tlf .
+---  BBX = IEX TLF + IBX tlf .  23
+
+
+           Address   Data 
+           Packet   Packet
+
+---  ACA = IEA TMA + ICA tma .	0	    Phase 2
+---  ACB = IEB TMA + ICB tma .
+---  ACC = IEC TMA + ICC tma .
+---  ACD = IED TMA + ICD tma .
+---  ACE = IEE TMA + ICE tma .
+---  ACF = IEF TMA + ICF tma .
+---  ACG = IEG TMA + ICG tma .
+---  ACH = IEH TMA + ICH tma .	7
+			     
+---  ACI = IEI TMA + ICI tma .	8
+---  ACJ = IEJ TMB + ICJ tmb .
+---  ACK = IEK TMB + ICK tmb .
+---  ACL = IEL TMB + ICL tmb .
+---  ACM = IEM TMB + ICM tmb .
+---  ACN = IEN TMB + ICN tmb .
+---  ACO = IEO TMB + ICO tmb .
+---  ACP = IEP TMB + ICP tmb .	15
+			     
+---  ACQ = IEQ TMB + ICQ tmb .	16
+---  ACR = IER TMB + ICR tmb .
+---  ACS = IES TMC + ICS tmc .
+---  ACT = IET TMC + ICT tmc .
+---  ACU = IEU TMC + ICU tmc .
+---  ACV = IEV TMC + ICV tmc .
+---  ACW = IEW TMC + ICW tmc .
+---  ACX = IEX TMC + ICX tmc .  23
+
+           Address   Data 
+           Packet   Packet
+
+---  BCA = IEA TMD + ICA tmd .	0
+---  BCB = IEB TMD + ICB tmd .
+---  BCC = IEC TMD + ICC tmd .
+---  BCD = IED TMD + ICD tmd .
+---  BCE = IEE TMD + ICE tmd .
+---  BCF = IEF TMD + ICF tmd .
+---  BCG = IEG TMD + ICG tmd .
+---  BCH = IEH TMD + ICH tmd .	7
+			     
+---  BCI = IEI TMD + ICI tmd .	8
+---  BCJ = IEJ TME + ICJ tme .
+---  BCK = IEK TME + ICK tme .
+---  BCL = IEL TME + ICL tme .
+---  BCM = IEM TME + ICM tme .
+---  BCN = IEN TME + ICN tme .
+---  BCO = IEO TME + ICO tme .
+---  BCP = IEP TME + ICP tme .	15
+			     
+---  BCQ = IEQ TME + ICQ tme .	16
+---  BCR = IER TME + ICR tme .
+---  BCS = IES TMF + ICS tmf .
+---  BCT = IET TMF + ICT tmf .
+---  BCU = IEU TMF + ICU tmf .
+---  BCV = IEV TMF + ICV tmf .
+---  BCW = IEW TMF + ICW tmf .
+---  BCX = IEX TMF + ICX tmf .  23
+
+           Address   Data 
+           Packet   Packet
+
+---  ADA = IEA TNA + IDA tna .	0	    Phase 3
+---  ADB = IEB TNA + IDB tna .
+---  ADC = IEC TNA + IDC tna .
+---  ADD = IED TNA + IDD tna .
+---  ADE = IEE TNA + IDE tna .
+---  ADF = IEF TNA + IDF tna .
+---  ADG = IEG TNA + IDG tna .
+---  ADH = IEH TNA + IDH tna .	7
+			     
+---  ADI = IEI TNA + IDI tna .	8
+---  ADJ = IEJ TNB + IDJ tnb .
+---  ADK = IEK TNB + IDK tnb .
+---  ADL = IEL TNB + IDL tnb .
+---  ADM = IEM TNB + IDM tnb .
+---  ADN = IEN TNB + IDN tnb .
+---  ADO = IEO TNB + IDO tnb .
+---  ADP = IEP TNB + IDP tnb .	15
+			     
+---  ADQ = IEQ TNB + IDQ tnb .	16
+---  ADR = IER TNB + IDR tnb .
+---  ADS = IES TNC + IDS tnc .
+---  ADT = IET TNC + IDT tnc .
+---  ADU = IEU TNC + IDU tnc .
+---  ADV = IEV TNC + IDV tnc .
+---  ADW = IEW TNC + IDW tnc .
+---  ADX = IEX TNC + IDX tnc .  23
+
+           Address   Data 
+           Packet   Packet
+
+---  BDA = IEA TND + IDA tnd .	0
+---  BDB = IEB TND + IDB tnd .
+---  BDC = IEC TND + IDC tnd .
+---  BDD = IED TND + IDD tnd .
+---  BDE = IEE TND + IDE tnd .
+---  BDF = IEF TND + IDF tnd .
+---  BDG = IEG TND + IDG tnd .
+---  BDH = IEH TND + IDH tnd .	7
+			     
+---  BDI = IEI TND + IDI tnd .	8
+---  BDJ = IEJ TNE + IDJ tne .
+---  BDK = IEK TNE + IDK tne .
+---  BDL = IEL TNE + IDL tne .
+---  BDM = IEM TNE + IDM tne .
+---  BDN = IEN TNE + IDN tne .
+---  BDO = IEO TNE + IDO tne .
+---  BDP = IEP TNE + IDP tne .	15
+			     
+---  BDQ = IEQ TNE + IDQ tne .	16
+---  BDR = IER TNE + IDR tne .
+---  BDS = IES TNF + IDS tnf .
+---  BDT = IET TNF + IDT tnf .
+---  BDU = IEU TNF + IDU tnf .
+---  BDV = IEV TNF + IDV tnf .
+---  BDW = IEW TNF + IDW tnf .
+---  BDX = IEX TNF + IDX tnf .  23
+
+                        Quad 0 Buffers
+
+---  EAA = EDA TAA + ACA taa .	  Secondary Buffer Phase 3
+---  EAB = EDB TAA + ACB taa .
+---  EAC = EDC TAA + ACC taa .	  EA <- ED or AC
+---  EAD = EDD TAA + ACD taa .
+---  EAE = EDE TAA + ACE taa .
+---  EAF = EDF TAA + ACF taa .
+---  EAG = EDG TAA + ACG taa .
+---  EAH = EDH TAA + ACH taa .
+			     
+---  EAI = EDI TAA + ACI taa .
+---  EAJ = EDJ TAA + ACJ taa .
+---  EAK = EDK TAA + ACK taa .
+---  EAL = EDL TAA + ACL taa .
+---  EAM = EDM TAA + ACM taa .
+---  EAN = EDN TAA + ACN taa .
+---  EAO = EDO TAA + ACO taa .
+---  EAP = EDP TAA + ACP taa .
+			     
+---  EAQ = EDQ TAA + ACQ taa .
+---  EAR = EDR TAA + ACR taa .
+---  EAS = EDS TAA + ACS taa .
+---  EAT = EDT TAA + ACT taa .
+---  EAU = EDU TAA + ACU taa .
+---  EAV = EDV TAA + ACV taa .
+---  EAW = EDW TAA + ACW taa .
+---  EAX = EDX TAA + ACX taa .
+
+
+---  EBA = EAA TBA + ADA tba .	  Secondary Buffer Phase 0
+---  EBB = EAB TBA + ADB tba .
+---  EBC = EAC TBA + ADC tba .	  EB <- EA or AD
+---  EBD = EAD TBA + ADD tba .
+---  EBE = EAE TBA + ADE tba .
+---  EBF = EAF TBA + ADF tba .
+---  EBG = EAG TBA + ADG tba .
+---  EBH = EAH TBA + ADH tba .
+			     
+---  EBI = EAI TBA + ADI tba .
+---  EBJ = EAJ TBA + ADJ tba .
+---  EBK = EAK TBA + ADK tba .
+---  EBL = EAL TBA + ADL tba .
+---  EBM = EAM TBA + ADM tba .
+---  EBN = EAN TBA + ADN tba .
+---  EBO = EAO TBA + ADO tba .
+---  EBP = EAP TBA + ADP tba .
+			     
+---  EBQ = EAQ TBA + ADQ tba .
+---  EBR = EAR TBA + ADR tba .
+---  EBS = EAS TBA + ADS tba .
+---  EBT = EAT TBA + ADT tba .
+---  EBU = EAU TBA + ADU tba .
+---  EBV = EAV TBA + ADV tba .
+---  EBW = EAW TBA + ADW tba .
+---  EBX = EAX TBA + ADX tba .
+
+
+---  ECA = EBA TCA + AAA tca .	  Secondary Buffer Phase 1
+---  ECB = EBB TCA + AAB tca .
+---  ECC = EBC TCA + AAC tca .	  EC <- EB or AA
+---  ECD = EBD TCA + AAD tca .
+---  ECE = EBE TCA + AAE tca .
+---  ECF = EBF TCA + AAF tca .
+---  ECG = EBG TCA + AAG tca .
+---  ECH = EBH TCA + AAH tca .
+			     
+---  ECI = EBI TCA + AAI tca .
+---  ECJ = EBJ TCA + AAJ tca .
+---  ECK = EBK TCA + AAK tca .
+---  ECL = EBL TCA + AAL tca .
+---  ECM = EBM TCA + AAM tca .
+---  ECN = EBN TCA + AAN tca .
+---  ECO = EBO TCA + AAO tca .
+---  ECP = EBP TCA + AAP tca .
+			     
+---  ECQ = EBQ TCA + AAQ tca .
+---  ECR = EBR TCA + AAR tca .
+---  ECS = EBS TCA + AAS tca .
+---  ECT = EBT TCA + AAT tca .
+---  ECU = EBU TCA + AAU tca .
+---  ECV = EBV TCA + AAV tca .
+---  ECW = EBW TCA + AAW tca .
+---  ECX = EBX TCA + AAX tca .
+
+
+---  EDA = ECA TDA + ABA tda .	  Secondary Buffer Phase 2
+---  EDB = ECB TDA + ABB tda .
+---  EDC = ECC TDA + ABC tda .	  ED <- EC or AB
+---  EDD = ECD TDA + ABD tda .
+---  EDE = ECE TDA + ABE tda .
+---  EDF = ECF TDA + ABF tda .
+---  EDG = ECG TDA + ABG tda .
+---  EDH = ECH TDA + ABH tda .
+			     
+---  EDI = ECI TDA + ABI tda .
+---  EDJ = ECJ TDA + ABJ tda .
+---  EDK = ECK TDA + ABK tda .
+---  EDL = ECL TDA + ABL tda .
+---  EDM = ECM TDA + ABM tda .
+---  EDN = ECN TDA + ABN tda .
+---  EDO = ECO TDA + ABO tda .
+---  EDP = ECP TDA + ABP tda .
+			     
+---  EDQ = ECQ TDA + ABQ tda .
+---  EDR = ECR TDA + ABR tda .
+---  EDS = ECS TDA + ABS tda .
+---  EDT = ECT TDA + ABT tda .
+---  EDU = ECU TDA + ABU tda .
+---  EDV = ECV TDA + ABV tda .
+---  EDW = ECW TDA + ABW tda .
+---  EDX = ECX TDA + ABX tda .
+
+---  EEA = EHA TEA + ACA tea .	  Primary Buffer Phase 3
+---  EEB = EHB TEA + ACB tea .
+---  EEC = EHC TEA + ACC tea .	  EE <- EH or AC
+---  EED = EHD TEA + ACD tea .
+---  EEE = EHE TEA + ACE tea .
+---  EEF = EHF TEA + ACF tea .
+---  EEG = EHG TEA + ACG tea .
+---  EEH = EHH TEA + ACH tea .
+			     
+---  EEI = EHI TEA + ACI tea .
+---  EEJ = EHJ TEA + ACJ tea .
+---  EEK = EHK TEA + ACK tea .
+---  EEL = EHL TEA + ACL tea .
+---  EEM = EHM TEA + ACM tea .
+---  EEN = EHN TEA + ACN tea .
+---  EEO = EHO TEA + ACO tea .
+---  EEP = EHP TEA + ACP tea .
+			     
+---  EEQ = EHQ TEA + ACQ tea .
+---  EER = EHR TEA + ACR tea .
+---  EES = EHS TEA + ACS tea .
+---  EET = EHT TEA + ACT tea .
+---  EEU = EHU TEA + ACU tea .
+---  EEV = EHV TEA + ACV tea .
+---  EEW = EHW TEA + ACW tea .
+---  EEX = EHX TEA + ACX tea .
+
+
+---  EFA = EEA TFA + ADA tfa .	  Primary Buffer Phase 0
+---  EFB = EEB TFA + ADB tfa .
+---  EFC = EEC TFA + ADC tfa .	  EF <- EE or AD
+---  EFD = EED TFA + ADD tfa .
+---  EFE = EEE TFA + ADE tfa .
+---  EFF = EEF TFA + ADF tfa .
+---  EFG = EEG TFA + ADG tfa .
+---  EFH = EEH TFA + ADH tfa .
+			     
+---  EFI = EEI TFA + ADI tfa .
+---  EFJ = EEJ TFA + ADJ tfa .
+---  EFK = EEK TFA + ADK tfa .
+---  EFL = EEL TFA + ADL tfa .
+---  EFM = EEM TFA + ADM tfa .
+---  EFN = EEN TFA + ADN tfa .
+---  EFO = EEO TFA + ADO tfa .
+---  EFP = EEP TFA + ADP tfa .
+			     
+---  EFQ = EEQ TFA + ADQ tfa .
+---  EFR = EER TFA + ADR tfa .
+---  EFS = EES TFA + ADS tfa .
+---  EFT = EET TFA + ADT tfa .
+---  EFU = EEU TFA + ADU tfa .
+---  EFV = EEV TFA + ADV tfa .
+---  EFW = EEW TFA + ADW tfa .
+---  EFX = EEX TFA + ADX tfa .
+
+
+---  EGA = EFA .                       Primary Buffer Phase 1
+---  EGB = EFB .
+---  EGC = EFC .                       EG <- EF 
+---  EGD = EFD .
+---  EGE = EFE .
+---  EGF = EFF .
+---  EGG = EFG .
+---  EGH = EFH .
+
+---  EGI = EFI .                   
+---  EGJ = EFJ .
+---  EGK = EFK . 
+---  EGL = EFL .
+---  EGM = EFM .
+---  EGN = EFN .
+---  EGO = EFO .
+---  EGP = EFP .
+
+---  EGQ = EFQ .
+---  EGR = EFR .
+---  EGS = EFS .
+---  EGT = EFT .
+---  EGU = EFU .
+---  EGV = EFV .
+---  EGW = EFW .
+---  EGX = EFX .
+
+
+---  EHA = EGA tga tha + ABA TGA + ECA THA .	Primary Buffer Phase 2
+---  EHB = EGB tga tha + ABB TGA + ECB THA .
+---  EHC = EGC tga tha + ABC TGA + ECC THA .	EH <- EG or EC or AB
+---  EHD = EGD tga tha + ABD TGA + ECD THA .
+---  EHE = EGE tga tha + ABE TGA + ECE THA .
+---  EHF = EGF tga tha + ABF TGA + ECF THA .
+---  EHG = EGG tga tha + ABG TGA + ECG THA .
+---  EHH = EGH tga tha + ABH TGA + ECH THA .
+							
+---  EHI = EGI tga tha + ABI TGA + ECI THA .
+---  EHJ = EGJ tga tha + ABJ TGA + ECJ THA .
+---  EHK = EGK tga tha + ABK TGA + ECK THA .
+---  EHL = EGL tga tha + ABL TGA + ECL THA .
+---  EHM = EGM tge the + ABM TGE + ECM THE .
+---  EHN = EGN tge the + ABN TGE + ECN THE .
+---  EHO = EGO tge the + ABO TGE + ECO THE .
+---  EHP = EGP tge the + ABP TGE + ECP THE .
+							
+---  EHQ = EGQ tge the + ABQ TGE + ECQ THE .
+---  EHR = EGR tge the + ABR TGE + ECR THE .
+---  EHS = EGS tge the + ABS TGE + ECS THE .
+---  EHT = EGT tge the + ABT TGE + ECT THE .
+---  EHU = EGU tge the + ABU TGE + ECU THE .
+---  EHV = EGV tge the + ABV TGE + ECV THE .
+---  EHW = EGW tge the + ABW TGE + ECW THE .
+---  EHX = EGX tge the + ABX TGE + ECX THE .
+							
+---  OAA = EGA tga tha + ABA TGA + ECA THA .	Primary Buffer Output
+---  OAB = EGB tga tha + ABB TGA + ECB THA .
+---  OAC = EGC tga tha + ABC TGA + ECC THA .	OA <- EG or EC or AB
+---  OAD = EGD tga tha + ABD TGA + ECD THA .
+---  OAE = EGE tga tha + ABE TGA + ECE THA .
+---  OAF = EGF tga tha + ABF TGA + ECF THA .
+---  OAG = EGG tga tha + ABG TGA + ECG THA .
+---  OAH = EGH tga tha + ABH TGA + ECH THA .
+							
+---  OAI = EGI tga tha + ABI TGA + ECI THA .
+---  OAJ = EGJ tga tha + ABJ TGA + ECJ THA .
+---  OAK = EGK tga tha + ABK TGA + ECK THA .
+---  OAL = EGL tga tha + ABL TGA + ECL THA .
+---  OAM = EGM tge the + ABM TGE + ECM THE .
+---  OAN = EGN tge the + ABN TGE + ECN THE .
+---  OAO = EGO tge the + ABO TGE + ECO THE .
+---  OAP = EGP tge the + ABP TGE + ECP THE .
+							
+---  OAQ = EGQ tge the + ABQ TGE + ECQ THE .
+---  OAR = EGR tge the + ABR TGE + ECR THE .
+---  OAS = EGS tge the + ABS TGE + ECS THE .
+---  OAT = EGT tge the + ABT TGE + ECT THE .
+---  OAU = EGU tge the + ABU TGE + ECU THE .
+---  OAV = EGV tge the + ABV TGE + ECV THE .
+---  OAW = EGW tge the + ABW TGE + ECW THE .
+---  OAX = EGX tge the + ABX TGE + ECX THE .
+
+                        Quad 1 Buffers
+
+---  FAA = ADA TAB + FDA tab .	  Secondary Buffer Phase 0
+---  FAB = ADB TAB + FDB tab .
+---  FAC = ADC TAB + FDC tab .	  FA <- FD or AD
+---  FAD = ADD TAB + FDD tab .
+---  FAE = ADE TAB + FDE tab .
+---  FAF = ADF TAB + FDF tab .
+---  FAG = ADG TAB + FDG tab .
+---  FAH = ADH TAB + FDH tab .
+		     
+---  FAI = ADI TAB + FDI tab .
+---  FAJ = ADJ TAB + FDJ tab .
+---  FAK = ADK TAB + FDK tab .
+---  FAL = ADL TAB + FDL tab .
+---  FAM = ADM TAB + FDM tab .
+---  FAN = ADN TAB + FDN tab .
+---  FAO = ADO TAB + FDO tab .
+---  FAP = ADP TAB + FDP tab .
+		     
+---  FAQ = ADQ TAB + FDQ tab .
+---  FAR = ADR TAB + FDR tab .
+---  FAS = ADS TAB + FDS tab .
+---  FAT = ADT TAB + FDT tab .
+---  FAU = ADU TAB + FDU tab .
+---  FAV = ADV TAB + FDV tab .
+---  FAW = ADW TAB + FDW tab .
+---  FAX = ADX TAB + FDX tab .
+		     
+		     
+---  FBA = AAA TBB + FAA tbb .	  Secondary Buffer Phase 1
+---  FBB = AAB TBB + FAB tbb .
+---  FBC = AAC TBB + FAC tbb .	  FB <- FA or AA
+---  FBD = AAD TBB + FAD tbb .
+---  FBE = AAE TBB + FAE tbb .
+---  FBF = AAF TBB + FAF tbb .
+---  FBG = AAG TBB + FAG tbb .
+---  FBH = AAH TBB + FAH tbb .
+		     
+---  FBI = AAI TBB + FAI tbb .
+---  FBJ = AAJ TBB + FAJ tbb .
+---  FBK = AAK TBB + FAK tbb .
+---  FBL = AAL TBB + FAL tbb .
+---  FBM = AAM TBB + FAM tbb .
+---  FBN = AAN TBB + FAN tbb .
+---  FBO = AAO TBB + FAO tbb .
+---  FBP = AAP TBB + FAP tbb .
+		     
+---  FBQ = AAQ TBB + FAQ tbb .
+---  FBR = AAR TBB + FAR tbb .
+---  FBS = AAS TBB + FAS tbb .
+---  FBT = AAT TBB + FAT tbb .
+---  FBU = AAU TBB + FAU tbb .
+---  FBV = AAV TBB + FAV tbb .
+---  FBW = AAW TBB + FAW tbb .
+---  FBX = AAX TBB + FAX tbb .
+		     
+		     
+---  FCA = ABA TCB + FBA tcb .	  Secondary Buffer Phase 2
+---  FCB = ABB TCB + FBB tcb .
+---  FCC = ABC TCB + FBC tcb .	  FC <- FB or AB
+---  FCD = ABD TCB + FBD tcb .
+---  FCE = ABE TCB + FBE tcb .
+---  FCF = ABF TCB + FBF tcb .
+---  FCG = ABG TCB + FBG tcb .
+---  FCH = ABH TCB + FBH tcb .
+		     
+---  FCI = ABI TCB + FBI tcb .
+---  FCJ = ABJ TCB + FBJ tcb .
+---  FCK = ABK TCB + FBK tcb .
+---  FCL = ABL TCB + FBL tcb .
+---  FCM = ABM TCB + FBM tcb .
+---  FCN = ABN TCB + FBN tcb .
+---  FCO = ABO TCB + FBO tcb .
+---  FCP = ABP TCB + FBP tcb .
+		     
+---  FCQ = ABQ TCB + FBQ tcb .
+---  FCR = ABR TCB + FBR tcb .
+---  FCS = ABS TCB + FBS tcb .
+---  FCT = ABT TCB + FBT tcb .
+---  FCU = ABU TCB + FBU tcb .
+---  FCV = ABV TCB + FBV tcb .
+---  FCW = ABW TCB + FBW tcb .
+---  FCX = ABX TCB + FBX tcb .
+		     
+		     
+---  FDA = ACA TDB + FCA tdb .	  Secondary Buffer Phase 3
+---  FDB = ACB TDB + FCB tdb .
+---  FDC = ACC TDB + FCC tdb .	  FD <- FC or AC
+---  FDD = ACD TDB + FCD tdb .
+---  FDE = ACE TDB + FCE tdb .
+---  FDF = ACF TDB + FCF tdb .
+---  FDG = ACG TDB + FCG tdb .
+---  FDH = ACH TDB + FCH tdb .
+		     
+---  FDI = ACI TDB + FCI tdb .
+---  FDJ = ACJ TDB + FCJ tdb .
+---  FDK = ACK TDB + FCK tdb .
+---  FDL = ACL TDB + FCL tdb .
+---  FDM = ACM TDB + FCM tdb .
+---  FDN = ACN TDB + FCN tdb .
+---  FDO = ACO TDB + FCO tdb .
+---  FDP = ACP TDB + FCP tdb .
+		     
+---  FDQ = ACQ TDB + FCQ tdb .
+---  FDR = ACR TDB + FCR tdb .
+---  FDS = ACS TDB + FCS tdb .
+---  FDT = ACT TDB + FCT tdb .
+---  FDU = ACU TDB + FCU tdb .
+---  FDV = ACV TDB + FCV tdb .
+---  FDW = ACW TDB + FCW tdb .
+---  FDX = ACX TDB + FCX tdb .
+		     
+---  FEA = ADA TEB + FHA teb .	  Primary Buffer Phase 0
+---  FEB = ADB TEB + FHB teb .
+---  FEC = ADC TEB + FHC teb .	  FE <- FH or AD
+---  FED = ADD TEB + FHD teb .
+---  FEE = ADE TEB + FHE teb .
+---  FEF = ADF TEB + FHF teb .
+---  FEG = ADG TEB + FHG teb .
+---  FEH = ADH TEB + FHH teb .
+		     
+---  FEI = ADI TEB + FHI teb .
+---  FEJ = ADJ TEB + FHJ teb .
+---  FEK = ADK TEB + FHK teb .
+---  FEL = ADL TEB + FHL teb .
+---  FEM = ADM TEB + FHM teb .
+---  FEN = ADN TEB + FHN teb .
+---  FEO = ADO TEB + FHO teb .
+---  FEP = ADP TEB + FHP teb .
+		     
+---  FEQ = ADQ TEB + FHQ teb .
+---  FER = ADR TEB + FHR teb .
+---  FES = ADS TEB + FHS teb .
+---  FET = ADT TEB + FHT teb .
+---  FEU = ADU TEB + FHU teb .
+---  FEV = ADV TEB + FHV teb .
+---  FEW = ADW TEB + FHW teb .
+---  FEX = ADX TEB + FHX teb .
+	       
+	       
+---  FFA = AAA TFB + FEA tfb .	  Primary Buffer Phase 1
+---  FFB = AAB TFB + FEB tfb .
+---  FFC = AAC TFB + FEC tfb .	  FF <- FE or AA
+---  FFD = AAD TFB + FED tfb .
+---  FFE = AAE TFB + FEE tfb .
+---  FFF = AAF TFB + FEF tfb .
+---  FFG = AAG TFB + FEG tfb .
+---  FFH = AAH TFB + FEH tfb .
+			 
+---  FFI = AAI TFB + FEI tfb .
+---  FFJ = AAJ TFB + FEJ tfb .
+---  FFK = AAK TFB + FEK tfb .
+---  FFL = AAL TFB + FEL tfb .
+---  FFM = AAM TFB + FEM tfb .
+---  FFN = AAN TFB + FEN tfb .
+---  FFO = AAO TFB + FEO tfb .
+---  FFP = AAP TFB + FEP tfb .
+			 
+---  FFQ = AAQ TFB + FEQ tfb .
+---  FFR = AAR TFB + FER tfb .
+---  FFS = AAS TFB + FES tfb .
+---  FFT = AAT TFB + FET tfb .
+---  FFU = AAU TFB + FEU tfb .
+---  FFV = AAV TFB + FEV tfb .
+---  FFW = AAW TFB + FEW tfb .
+---  FFX = AAX TFB + FEX tfb .
+
+
+---  FGA = FFA .                       Primary Buffer Phase 2
+---  FGB = FFB .
+---  FGC = FFC .                       FG <- FF 
+---  FGD = FFD .
+---  FGE = FFE .
+---  FGF = FFF .
+---  FGG = FFG .
+---  FGH = FFH .
+
+---  FGI = FFI .                   
+---  FGJ = FFJ .
+---  FGK = FFK . 
+---  FGL = FFL .
+---  FGM = FFM .
+---  FGN = FFN .
+---  FGO = FFO .
+---  FGP = FFP .
+
+---  FGQ = FFQ .
+---  FGR = FFR .
+---  FGS = FFS .
+---  FGT = FFT .
+---  FGU = FFU .
+---  FGV = FFV .
+---  FGW = FFW .
+---  FGX = FFX .
+
+
+---  FHA = FGA tgb thb + ACA TGB + FCA THB .	Primary Buffer Phase 3
+---  FHB = FGB tgb thb + ACB TGB + FCB THB .
+---  FHC = FGC tgb thb + ACC TGB + FCC THB .	FH <- FG or FC or AC
+---  FHD = FGD tgb thb + ACD TGB + FCD THB .
+---  FHE = FGE tgb thb + ACE TGB + FCE THB .
+---  FHF = FGF tgb thb + ACF TGB + FCF THB .
+---  FHG = FGG tgb thb + ACG TGB + FCG THB .
+---  FHH = FGH tgb thb + ACH TGB + FCH THB .
+								   
+---  FHI = FGI tgb thb + ACI TGB + FCI THB .
+---  FHJ = FGJ tgb thb + ACJ TGB + FCJ THB .
+---  FHK = FGK tgb thb + ACK TGB + FCK THB .
+---  FHL = FGL tgb thb + ACL TGB + FCL THB .
+---  FHM = FGM tgf thf + ACM TGF + FCM THF .
+---  FHN = FGN tgf thf + ACN TGF + FCN THF .
+---  FHO = FGO tgf thf + ACO TGF + FCO THF .
+---  FHP = FGP tgf thf + ACP TGF + FCP THF .
+								   
+---  FHQ = FGQ tgf thf + ACQ TGF + FCQ THF .
+---  FHR = FGR tgf thf + ACR TGF + FCR THF .
+---  FHS = FGS tgf thf + ACS TGF + FCS THF .
+---  FHT = FGT tgf thf + ACT TGF + FCT THF .
+---  FHU = FGU tgf thf + ACU TGF + FCU THF .
+---  FHV = FGV tgf thf + ACV TGF + FCV THF .
+---  FHW = FGW tgf thf + ACW TGF + FCW THF .
+---  FHX = FGX tgf thf + ACX TGF + FCX THF .
+							
+							
+---  OBA = FGA tgb thb + ACA TGB + FCA THB .	Primary Buffer Output
+---  OBB = FGB tgb thb + ACB TGB + FCB THB .
+---  OBC = FGC tgb thb + ACC TGB + FCC THB .	OB <- FG or FC or AC
+---  OBD = FGD tgb thb + ACD TGB + FCD THB .
+---  OBE = FGE tgb thb + ACE TGB + FCE THB .
+---  OBF = FGF tgb thb + ACF TGB + FCF THB .
+---  OBG = FGG tgb thb + ACG TGB + FCG THB .
+---  OBH = FGH tgb thb + ACH TGB + FCH THB .
+								   
+---  OBI = FGI tgb thb + ACI TGB + FCI THB .
+---  OBJ = FGJ tgb thb + ACJ TGB + FCJ THB .
+---  OBK = FGK tgb thb + ACK TGB + FCK THB .
+---  OBL = FGL tgb thb + ACL TGB + FCL THB .
+---  OBM = FGM tgf thf + ACM TGF + FCM THF .
+---  OBN = FGN tgf thf + ACN TGF + FCN THF .
+---  OBO = FGO tgf thf + ACO TGF + FCO THF .
+---  OBP = FGP tgf thf + ACP TGF + FCP THF .
+								   
+---  OBQ = FGQ tgf thf + ACQ TGF + FCQ THF .
+---  OBR = FGR tgf thf + ACR TGF + FCR THF .
+---  OBS = FGS tgf thf + ACS TGF + FCS THF .
+---  OBT = FGT tgf thf + ACT TGF + FCT THF .
+---  OBU = FGU tgf thf + ACU TGF + FCU THF .
+---  OBV = FGV tgf thf + ACV TGF + FCV THF .
+---  OBW = FGW tgf thf + ACW TGF + FCW THF .
+---  OBX = FGX tgf thf + ACX TGF + FCX THF .
+
+                        Quad 2 Buffers
+
+---  GAA = BAA TAC + GDA tac .	   Secondary Buffer Phase 1
+---  GAB = BAB TAC + GDB tac .
+---  GAC = BAC TAC + GDC tac .	  GC <- GD or BA
+---  GAD = BAD TAC + GDD tac .
+---  GAE = BAE TAC + GDE tac .
+---  GAF = BAF TAC + GDF tac .
+---  GAG = BAG TAC + GDG tac .
+---  GAH = BAH TAC + GDH tac .
+				
+---  GAI = BAI TAC + GDI tac .
+---  GAJ = BAJ TAC + GDJ tac .
+---  GAK = BAK TAC + GDK tac .
+---  GAL = BAL TAC + GDL tac .
+---  GAM = BAM TAC + GDM tac .
+---  GAN = BAN TAC + GDN tac .
+---  GAO = BAO TAC + GDO tac .
+---  GAP = BAP TAC + GDP tac .
+				
+---  GAQ = BAQ TAC + GDQ tac .
+---  GAR = BAR TAC + GDR tac .
+---  GAS = BAS TAC + GDS tac .
+---  GAT = BAT TAC + GDT tac .
+---  GAU = BAU TAC + GDU tac .
+---  GAV = BAV TAC + GDV tac .
+---  GAW = BAW TAC + GDW tac .
+---  GAX = BAX TAC + GDX tac .
+				
+				
+---  GBA = BBA TBC + GAA tbc .	  Secondary Buffer Phase 2
+---  GBB = BBB TBC + GAB tbc .
+---  GBC = BBC TBC + GAC tbc .	  GB <- GA or BB
+---  GBD = BBD TBC + GAD tbc .
+---  GBE = BBE TBC + GAE tbc .
+---  GBF = BBF TBC + GAF tbc .
+---  GBG = BBG TBC + GAG tbc .
+---  GBH = BBH TBC + GAH tbc .
+				
+---  GBI = BBI TBC + GAI tbc .
+---  GBJ = BBJ TBC + GAJ tbc .
+---  GBK = BBK TBC + GAK tbc .
+---  GBL = BBL TBC + GAL tbc .
+---  GBM = BBM TBC + GAM tbc .
+---  GBN = BBN TBC + GAN tbc .
+---  GBO = BBO TBC + GAO tbc .
+---  GBP = BBP TBC + GAP tbc .
+				
+---  GBQ = BBQ TBC + GAQ tbc .
+---  GBR = BBR TBC + GAR tbc .
+---  GBS = BBS TBC + GAS tbc .
+---  GBT = BBT TBC + GAT tbc .
+---  GBU = BBU TBC + GAU tbc .
+---  GBV = BBV TBC + GAV tbc .
+---  GBW = BBW TBC + GAW tbc .
+---  GBX = BBX TBC + GAX tbc .
+				
+				
+---  GCA = BCA TCC + GBA tcc .	  Secondary Buffer Phase 3
+---  GCB = BCB TCC + GBB tcc .
+---  GCC = BCC TCC + GBC tcc .	  GC <- GB or BC
+---  GCD = BCD TCC + GBD tcc .
+---  GCE = BCE TCC + GBE tcc .
+---  GCF = BCF TCC + GBF tcc .
+---  GCG = BCG TCC + GBG tcc .
+---  GCH = BCH TCC + GBH tcc .
+			     
+---  GCI = BCI TCC + GBI tcc .
+---  GCJ = BCJ TCC + GBJ tcc .
+---  GCK = BCK TCC + GBK tcc .
+---  GCL = BCL TCC + GBL tcc .
+---  GCM = BCM TCC + GBM tcc .
+---  GCN = BCN TCC + GBN tcc .
+---  GCO = BCO TCC + GBO tcc .
+---  GCP = BCP TCC + GBP tcc .
+			     
+---  GCQ = BCQ TCC + GBQ tcc .
+---  GCR = BCR TCC + GBR tcc .
+---  GCS = BCS TCC + GBS tcc .
+---  GCT = BCT TCC + GBT tcc .
+---  GCU = BCU TCC + GBU tcc .
+---  GCV = BCV TCC + GBV tcc .
+---  GCW = BCW TCC + GBW tcc .
+---  GCX = BCX TCC + GBX tcc .
+				
+				
+---  GDA = BDA TDC + GCA tdc .	  Secondary Buffer Phase 0
+---  GDB = BDB TDC + GCB tdc .
+---  GDC = BDC TDC + GCC tdc .	  GD <- GC or BD
+---  GDD = BDD TDC + GCD tdc .
+---  GDE = BDE TDC + GCE tdc .
+---  GDF = BDF TDC + GCF tdc .
+---  GDG = BDG TDC + GCG tdc .
+---  GDH = BDH TDC + GCH tdc .
+			     
+---  GDI = BDI TDC + GCI tdc .
+---  GDJ = BDJ TDC + GCJ tdc .
+---  GDK = BDK TDC + GCK tdc .
+---  GDL = BDL TDC + GCL tdc .
+---  GDM = BDM TDC + GCM tdc .
+---  GDN = BDN TDC + GCN tdc .
+---  GDO = BDO TDC + GCO tdc .
+---  GDP = BDP TDC + GCP tdc .
+			     
+---  GDQ = BDQ TDC + GCQ tdc .
+---  GDR = BDR TDC + GCR tdc .
+---  GDS = BDS TDC + GCS tdc .
+---  GDT = BDT TDC + GCT tdc .
+---  GDU = BDU TDC + GCU tdc .
+---  GDV = BDV TDC + GCV tdc .
+---  GDW = BDW TDC + GCW tdc .
+---  GDX = BDX TDC + GCX tdc .
+			     
+			     
+---  GEA = BAA TEC + GHA tec .	  Primary Buffer Phase 1
+---  GEB = BAB TEC + GHB tec .
+---  GEC = BAC TEC + GHC tec .	  GE <- GH or BA
+---  GED = BAD TEC + GHD tec .
+---  GEE = BAE TEC + GHE tec .
+---  GEF = BAF TEC + GHF tec .
+---  GEG = BAG TEC + GHG tec .
+---  GEH = BAH TEC + GHH tec .
+				  
+---  GEI = BAI TEC + GHI tec .
+---  GEJ = BAJ TEC + GHJ tec .
+---  GEK = BAK TEC + GHK tec .
+---  GEL = BAL TEC + GHL tec .
+---  GEM = BAM TEC + GHM tec .
+---  GEN = BAN TEC + GHN tec .
+---  GEO = BAO TEC + GHO tec .
+---  GEP = BAP TEC + GHP tec .
+				  
+---  GEQ = BAQ TEC + GHQ tec .
+---  GER = BAR TEC + GHR tec .
+---  GES = BAS TEC + GHS tec .
+---  GET = BAT TEC + GHT tec .
+---  GEU = BAU TEC + GHU tec .
+---  GEV = BAV TEC + GHV tec .
+---  GEW = BAW TEC + GHW tec .
+---  GEX = BAX TEC + GHX tec .
+			    
+			    
+---  GFA = BBA TFC + GEA tfc .	  Primary Buffer Phase 2
+---  GFB = BBB TFC + GEB tfc .
+---  GFC = BBC TFC + GEC tfc .	  GF <- GE or BB
+---  GFD = BBD TFC + GED tfc .
+---  GFE = BBE TFC + GEE tfc .
+---  GFF = BBF TFC + GEF tfc .
+---  GFG = BBG TFC + GEG tfc .
+---  GFH = BBH TFC + GEH tfc .
+				    
+---  GFI = BBI TFC + GEI tfc .
+---  GFJ = BBJ TFC + GEJ tfc .
+---  GFK = BBK TFC + GEK tfc .
+---  GFL = BBL TFC + GEL tfc .
+---  GFM = BBM TFC + GEM tfc .
+---  GFN = BBN TFC + GEN tfc .
+---  GFO = BBO TFC + GEO tfc .
+---  GFP = BBP TFC + GEP tfc .
+				    
+---  GFQ = BBQ TFC + GEQ tfc .
+---  GFR = BBR TFC + GER tfc .
+---  GFS = BBS TFC + GES tfc .
+---  GFT = BBT TFC + GET tfc .
+---  GFU = BBU TFC + GEU tfc .
+---  GFV = BBV TFC + GEV tfc .
+---  GFW = BBW TFC + GEW tfc .
+---  GFX = BBX TFC + GEX tfc .  
+
+
+---  GGA = GFA .                       Primary Buffer Phase 3
+---  GGB = GFB .
+---  GGC = GFC .                       GG <- GF 
+---  GGD = GFD .
+---  GGE = GFE .
+---  GGF = GFF .
+---  GGG = GFG .
+---  GGH = GFH .
+
+---  GGI = GFI .                   
+---  GGJ = GFJ .
+---  GGK = GFK . 
+---  GGL = GFL .
+---  GGM = GFM . 
+---  GGN = GFN .
+---  GGO = GFO .
+---  GGP = GFP .
+
+---  GGQ = GFQ .
+---  GGR = GFR .
+---  GGS = GFS .
+---  GGT = GFT .
+---  GGU = GFU .
+---  GGV = GFV .
+---  GGW = GFW .
+---  GGX = GFX .
+
+
+---  GHA = GGA tgc thc + BDA TGC + GCA THC .	Primary Buffer Phase 0
+---  GHB = GGB tgc thc + BDB TGC + GCB THC .
+---  GHC = GGC tgc thc + BDC TGC + GCC THC .	GH <- GG or GC or BD
+---  GHD = GGD tgc thc + BDD TGC + GCD THC .
+---  GHE = GGE tgc thc + BDE TGC + GCE THC .
+---  GHF = GGF tgc thc + BDF TGC + GCF THC .
+---  GHG = GGG tgc thc + BDG TGC + GCG THC .
+---  GHH = GGH tgc thc + BDH TGC + GCH THC .
+						   
+---  GHI = GGI tgc thc + BDI TGC + GCI THC .
+---  GHJ = GGJ tgc thc + BDJ TGC + GCJ THC .
+---  GHK = GGK tgc thc + BDK TGC + GCK THC .
+---  GHL = GGL tgc thc + BDL TGC + GCL THC .
+---  GHM = GGM tgg thg + BDM TGG + GCM THG .
+---  GHN = GGN tgg thg + BDN TGG + GCN THG .
+---  GHO = GGO tgg thg + BDO TGG + GCO THG .
+---  GHP = GGP tgg thg + BDP TGG + GCP THG .
+						   
+---  GHQ = GGQ tgg thg + BDQ TGG + GCQ THG .
+---  GHR = GGR tgg thg + BDR TGG + GCR THG .
+---  GHS = GGS tgg thg + BDS TGG + GCS THG .
+---  GHT = GGT tgg thg + BDT TGG + GCT THG .
+---  GHU = GGU tgg thg + BDU TGG + GCU THG .
+---  GHV = GGV tgg thg + BDV TGG + GCV THG .
+---  GHW = GGW tgg thg + BDW TGG + GCW THG .
+---  GHX = GGX tgg thg + BDX TGG + GCX THG .
+
+---  OCA = GGA tgc thc + BDA TGC + GCA THC .	Primary Buffer Phase 0
+---  OCB = GGB tgc thc + BDB TGC + GCB THC .
+---  OCC = GGC tgc thc + BDC TGC + GCC THC .	GH <- GG or GC or BD
+---  OCD = GGD tgc thc + BDD TGC + GCD THC .
+---  OCE = GGE tgc thc + BDE TGC + GCE THC .
+---  OCF = GGF tgc thc + BDF TGC + GCF THC .
+---  OCG = GGG tgc thc + BDG TGC + GCG THC .
+---  OCH = GGH tgc thc + BDH TGC + GCH THC .
+						   
+---  OCI = GGI tgc thc + BDI TGC + GCI THC .
+---  OCJ = GGJ tgc thc + BDJ TGC + GCJ THC .
+---  OCK = GGK tgc thc + BDK TGC + GCK THC .
+---  OCL = GGL tgc thc + BDL TGC + GCL THC .
+---  OCM = GGM tgg thg + BDM TGG + GCM THG .
+---  OCN = GGN tgg thg + BDN TGG + GCN THG .
+---  OCO = GGO tgg thg + BDO TGG + GCO THG .
+---  OCP = GGP tgg thg + BDP TGG + GCP THG .
+						   
+---  OCQ = GGQ tgg thg + BDQ TGG + GCQ THG .
+---  OCR = GGR tgg thg + BDR TGG + GCR THG .
+---  OCS = GGS tgg thg + BDS TGG + GCS THG .
+---  OCT = GGT tgg thg + BDT TGG + GCT THG .
+---  OCU = GGU tgg thg + BDU TGG + GCU THG .
+---  OCV = GGV tgg thg + BDV TGG + GCV THG .
+---  OCW = GGW tgg thg + BDW TGG + GCW THG .
+---  OCX = GGX tgg thg + BDX TGG + GCX THG .
+
+
+
+                        Quad 3 Buffers
+
+---  HAA = BBA TAD + HDA tad .	  Secondary Buffer Phase 2
+---  HAB = BBB TAD + HDB tad .
+---  HAC = BBC TAD + HDC tad .	  HA <- HD or BB
+---  HAD = BBD TAD + HDD tad .
+---  HAE = BBE TAD + HDE tad .
+---  HAF = BBF TAD + HDF tad .
+---  HAG = BBG TAD + HDG tad .
+---  HAH = BBH TAD + HDH tad .
+			 
+---  HAI = BBI TAD + HDI tad .
+---  HAJ = BBJ TAD + HDJ tad .
+---  HAK = BBK TAD + HDK tad .
+---  HAL = BBL TAD + HDL tad .
+---  HAM = BBM TAD + HDM tad .
+---  HAN = BBN TAD + HDN tad .
+---  HAO = BBO TAD + HDO tad .
+---  HAP = BBP TAD + HDP tad .
+			 
+---  HAQ = BBQ TAD + HDQ tad .
+---  HAR = BBR TAD + HDR tad .
+---  HAS = BBS TAD + HDS tad .
+---  HAT = BBT TAD + HDT tad .
+---  HAU = BBU TAD + HDU tad .
+---  HAV = BBV TAD + HDV tad .
+---  HAW = BBW TAD + HDW tad .
+---  HAX = BBX TAD + HDX tad .
+			 
+			 
+---  HBA = BCA TBD + HAA tbd .	  Secondary Buffer Phase 3
+---  HBB = BCB TBD + HAB tbd .
+---  HBC = BCC TBD + HAC tbd .	  HB <- HA or BC
+---  HBD = BCD TBD + HAD tbd .
+---  HBE = BCE TBD + HAE tbd .
+---  HBF = BCF TBD + HAF tbd .
+---  HBG = BCG TBD + HAG tbd .
+---  HBH = BCH TBD + HAH tbd .
+			 
+---  HBI = BCI TBD + HAI tbd .
+---  HBJ = BCJ TBD + HAJ tbd .
+---  HBK = BCK TBD + HAK tbd .
+---  HBL = BCL TBD + HAL tbd .
+---  HBM = BCM TBD + HAM tbd .
+---  HBN = BCN TBD + HAN tbd .
+---  HBO = BCO TBD + HAO tbd .
+---  HBP = BCP TBD + HAP tbd .
+			 
+---  HBQ = BCQ TBD + HAQ tbd .
+---  HBR = BCR TBD + HAR tbd .
+---  HBS = BCS TBD + HAS tbd .
+---  HBT = BCT TBD + HAT tbd .
+---  HBU = BCU TBD + HAU tbd .
+---  HBV = BCV TBD + HAV tbd .
+---  HBW = BCW TBD + HAW tbd .
+---  HBX = BCX TBD + HAX tbd .
+			 
+			 
+---  HCA = BDC TCD + HBA tcd .	  Secondary Buffer Phase 0
+---  HCB = BDB TCD + HBB tcd .
+---  HCC = BDC TCD + HBC tcd .	  HC <- HB or BD
+---  HCD = BDD TCD + HBD tcd .
+---  HCE = BDE TCD + HBE tcd .
+---  HCF = BDF TCD + HBF tcd .
+---  HCG = BDG TCD + HBG tcd .
+---  HCH = BDH TCD + HBH tcd .
+			 
+---  HCI = BDI TCD + HBI tcd .
+---  HCJ = BDJ TCD + HBJ tcd .
+---  HCK = BDK TCD + HBK tcd .
+---  HCL = BDL TCD + HBL tcd .
+---  HCM = BDM TCD + HBM tcd .
+---  HCN = BDN TCD + HBN tcd .
+---  HCO = BDO TCD + HBO tcd .
+---  HCP = BDP TCD + HBP tcd .
+			 
+---  HCQ = BDQ TCD + HBQ tcd .
+---  HCR = BDR TCD + HBR tcd .
+---  HCS = BDS TCD + HBS tcd .
+---  HCT = BDT TCD + HBT tcd .
+---  HCU = BDU TCD + HBU tcd .
+---  HCV = BDV TCD + HBV tcd .
+---  HCW = BDW TCD + HBW tcd .
+---  HCX = BDX TCD + HBX tcd .
+			 
+			 
+---  HDA = BAA TDD + HCA tdd .	  Secondary Buffer Phase 1
+---  HDB = BAB TDD + HCB tdd .
+---  HDC = BAC TDD + HCC tdd .	  HD <- HC or BA
+---  HDD = BAD TDD + HCD tdd .
+---  HDE = BAE TDD + HCE tdd .
+---  HDF = BAF TDD + HCF tdd .
+---  HDG = BAG TDD + HCG tdd .
+---  HDH = BAH TDD + HCH tdd .
+			 
+---  HDI = BAI TDD + HCI tdd .
+---  HDJ = BAJ TDD + HCJ tdd .
+---  HDK = BAK TDD + HCK tdd .
+---  HDL = BAL TDD + HCL tdd .
+---  HDM = BAM TDD + HCM tdd .
+---  HDN = BAN TDD + HCN tdd .
+---  HDO = BAO TDD + HCO tdd .
+---  HDP = BAP TDD + HCP tdd .
+			 
+---  HDQ = BAQ TDD + HCQ tdd .
+---  HDR = BAR TDD + HCR tdd .
+---  HDS = BAS TDD + HCS tdd .
+---  HDT = BAT TDD + HCT tdd .
+---  HDU = BAU TDD + HCU tdd .
+---  HDV = BAV TDD + HCV tdd .
+---  HDW = BAW TDD + HCW tdd .
+---  HDX = BAX TDD + HCX tdd .
+			 
+			 
+---  HEA = BBA TED + HHA ted .	  Primary Buffer Phase 2
+---  HEB = BBB TED + HHB ted .
+---  HEC = BBC TED + HHC ted .	  HE <- HH or BB
+---  HED = BBD TED + HHD ted .
+---  HEE = BBE TED + HHE ted .
+---  HEF = BBF TED + HHF ted .
+---  HEG = BBG TED + HHG ted .
+---  HEH = BBH TED + HHH ted .
+			 
+---  HEI = BBI TED + HHI ted .
+---  HEJ = BBJ TED + HHJ ted .
+---  HEK = BBK TED + HHK ted .
+---  HEL = BBL TED + HHL ted .
+---  HEM = BBM TED + HHM ted .
+---  HEN = BBN TED + HHN ted .
+---  HEO = BBO TED + HHO ted .
+---  HEP = BBP TED + HHP ted .
+			 
+---  HEQ = BBQ TED + HHQ ted .
+---  HER = BBR TED + HHR ted .
+---  HES = BBS TED + HHS ted .
+---  HET = BBT TED + HHT ted .
+---  HEU = BBU TED + HHU ted .
+---  HEV = BBV TED + HHV ted .
+---  HEW = BBW TED + HHW ted .
+---  HEX = BBX TED + HHX ted .
+			 
+			 
+---  HFA = BCA TFD + HEA tfd .	  Primary Buffer Phase 3
+---  HFB = BCB TFD + HEB tfd .
+---  HFC = BCC TFD + HEC tfd .	  HF <- HE or BC
+---  HFD = BCD TFD + HED tfd .
+---  HFE = BCE TFD + HEE tfd .
+---  HFF = BCF TFD + HEF tfd .
+---  HFG = BCG TFD + HEG tfd .
+---  HFH = BCH TFD + HEH tfd .
+			 
+---  HFI = BCI TFD + HEI tfd .
+---  HFJ = BCJ TFD + HEJ tfd .
+---  HFK = BCK TFD + HEK tfd .
+---  HFL = BCL TFD + HEL tfd .
+---  HFM = BCM TFD + HEM tfd .
+---  HFN = BCN TFD + HEN tfd .
+---  HFO = BCO TFD + HEO tfd .
+---  HFP = BCP TFD + HEP tfd .
+			 
+---  HFQ = BCQ TFD + HEQ tfd .
+---  HFR = BCR TFD + HER tfd .
+---  HFS = BCS TFD + HES tfd .
+---  HFT = BCT TFD + HET tfd .
+---  HFU = BCU TFD + HEU tfd .
+---  HFV = BCV TFD + HEV tfd .
+---  HFW = BCW TFD + HEW tfd .
+---  HFX = BCX TFD + HEX tfd .
+
+
+---  HGA = HFA .                       Primary Buffer Phase 0
+---  HGB = HFB .
+---  HGC = HFC .                       HG <- HF 
+---  HGD = HFD .
+---  HGE = HFE .
+---  HGF = HFF .
+---  HGG = HFG .
+---  HGH = HFH .
+
+---  HGI = HFI .                   
+---  HGJ = HFJ .
+---  HGK = HFK . 
+---  HGL = HFL .
+---  HGM = HFM .
+---  HGN = HFN .
+---  HGO = HFO .
+---  HGP = HFP .
+
+---  HGQ = HFQ .
+---  HGR = HFR .
+---  HGS = HFS .
+---  HGT = HFT .
+---  HGU = HFU .
+---  HGV = HFV .
+---  HGW = HFW .
+---  HGX = HFX .
+
+
+---  HHA = HGA tgd thd + TGD BAA + THD HCA .	Primary Buffer Phase 3
+---  HHB = HGB tgd thd + TGD BAB + THD HCB .
+---  HHC = HGC tgd thd + TGD BAC + THD HCC .	HH <- HG or HC or BA
+---  HHD = HGD tgd thd + TGD BAD + THD HCD .
+---  HHE = HGE tgd thd + TGD BAE + THD HCE .
+---  HHF = HGF tgd thd + TGD BAF + THD HCF .
+---  HHG = HGG tgd thd + TGD BAG + THD HCG .
+---  HHH = HGH tgd thd + TGD BAH + THD HCH .
+					
+---  HHI = HGI tgd thd + TGD BAI + THD HCI .
+---  HHJ = HGJ tgd thd + TGD BAJ + THD HCJ .
+---  HHK = HGK tgd thd + TGD BAK + THD HCK .
+---  HHL = HGL tgd thd + TGD BAL + THD HCL .
+---  HHM = HGM tgh thh + TGH BAM + THH HCM .
+---  HHN = HGN tgh thh + TGH BAN + THH HCN .
+---  HHO = HGO tgh thh + TGH BAO + THH HCO .
+---  HHP = HGP tgh thh + TGH BAP + THH HCP .
+					
+---  HHQ = HGQ tgh thh + TGH BAQ + THH HCQ .
+---  HHR = HGR tgh thh + TGH BAR + THH HCR .
+---  HHS = HGS tgh thh + TGH BAS + THH HCS .
+---  HHT = HGT tgh thh + TGH BAT + THH HCT .
+---  HHU = HGU tgh thh + TGH BAU + THH HCU .
+---  HHV = HGV tgh thh + TGH BAV + THH HCV .
+---  HHW = HGW tgh thh + TGH BAW + THH HCW .
+---  HHX = HGX tgh thh + TGH BAX + THH HCX .
+					
+					
+---  ODA = HGA tgd thd + TGD BAA + THD HCA .	Primary Buffer Output
+---  ODB = HGB tgd thd + TGD BAB + THD HCB .
+---  ODC = HGC tgd thd + TGD BAC + THD HCC .	OD <- HG or HC or BA
+---  ODD = HGD tgd thd + TGD BAD + THD HCD .
+---  ODE = HGE tgd thd + TGD BAE + THD HCE .
+---  ODF = HGF tgd thd + TGD BAF + THD HCF .
+---  ODG = HGG tgd thd + TGD BAG + THD HCG .
+---  ODH = HGH tgd thd + TGD BAH + THD HCH .
+					
+---  ODI = HGI tgd thd + TGD BAI + THD HCI .
+---  ODJ = HGJ tgd thd + TGD BAJ + THD HCJ .
+---  ODK = HGK tgd thd + TGD BAK + THD HCK .
+---  ODL = HGL tgd thd + TGD BAL + THD HCL .
+---  ODM = HGM tgh thh + TGH BAM + THH HCM .
+---  ODN = HGN tgh thh + TGH BAN + THH HCN .
+---  ODO = HGO tgh thh + TGH BAO + THH HCO .
+---  ODP = HGP tgh thh + TGH BAP + THH HCP .
+					
+---  ODQ = HGQ tgh thh + TGH BAQ + THH HCQ .
+---  ODR = HGR tgh thh + TGH BAR + THH HCR .
+---  ODS = HGS tgh thh + TGH BAS + THH HCS .
+---  ODT = HGT tgh thh + TGH BAT + THH HCT .
+---  ODU = HGU tgh thh + TGH BAU + THH HCU .
+---  ODV = HGV tgh thh + TGH BAV + THH HCV .
+---  ODW = HGW tgh thh + TGH BAW + THH HCW .
+---  ODX = HGX tgh thh + TGH BAX + THH HCX .
+
+
+---  NAA = IHA .                          Packet Phase from JB
+---  NAB = NAA .                          
+---  NAC = NAB .
+---  NAD = NAC .
+
+---  PAA = NAD .
+---  PAE = NAD .
+---  PAF = NAD .
+
+---  PBA = NAA .
+---  PBE = NAA .
+---  PBF = NAA .
+
+---  PCA = NAB .
+---  PCE = NAB .
+---  PCF = NAB .
+
+---  PDA = NAC .
+---  PDE = NAC .
+---  PDF = NAC .
+
+---  QAA = IFA ihd .                       IFA = Go Quad 0 from TA
+                                           IHD = Backup cond from TA
+
+---  QAB = IFB ihd .                       IFB = Go Quad 1 from TA
+                                           IHD = Backup cond from TA
+
+---  QAC = IFC ihd .                       IFC = Go Quad 2 from TA
+                                           IHD = Backup cond from TA
+
+---  QAD = IFD ihd .                       IFD = Go Quad 3 from TA
+                                           IHD = Backup cond from TA
+
+---  QBA = IGA IGB IHC .                   IHC = Deadstart from EA
+                                           IGA = Release from Q_  Quad 0
+                                           IGB = Release from Q_
+
+---  QBB = IGC IGD IHC .                   IHC = Deadstart from EA
+                                           IGC = Release from Q_  Quad 1
+                                           IGD = Release from Q_
+
+---  QBC = IGE IGF IHC .                   IHC = Deadstart from EA
+                                           IGE = Release from Q_  Quad 2
+                                           IGF = Release from Q_
+
+---  QBD = IGG IGH IHC .                   IHC = Deadstart from EA
+                                           IGG = Release from Q_  Quad 3
+                                           IGH = Release from Q_
+
+---  JAA = GEG + QES .   ???
+---  JBA = QEG QES .
+
+               Quad 0 Controls
+
+---  QEA = QEV QAA PCA + QEA pca + QEJ PCA .    Enable Sec - EA_
+---  QEB = QEV QAA PCA + QEA pca + QEJ PCA .   
+	               
+---  QED = QEM QAA PDA + QED pda + QEA PDA .    Enable Sec - EB_
+---  QEE = QEM QAA PDA + QED pda + QEA PDA .    
+
+---  QEG = QEG paa + QED PAA + PAA QAA .        Enable Sec - EC_
+---  QEH = QEG paa + QED PAA + PAA QAA .
+---  QEI = QEG paa + QED PAA + PAA QAA .
+	                   
+---  QEJ = JAA QAA PBA + QEJ pba + JBA PBA .    Enable Sec - ED_
+---  QEK = JAA QAA PBA + QEJ pba + JBA PBA .   
+
+---  QEM = QEM pca + QEV PCA + PCA QAA .        Enable Prim - EE_
+---  QEN = QEM pca + QEV PCA + PCA QAA .       
+
+---  QEP = QEP pda + QEM PDA + PAA QAA .        Enable Prim - EF_
+
+---  QES = QEP PAA qba + QES paa .	        Enable Prim - EG_
+---  QET = QEP PAA qba + QES paa .
+---  QEU = QEP PAA qba + QES paa .
+
+---  QEV = QEV pba + JAA PBA + PAA QAA .        Enable Prim - EH_
+---  QEW = QEV pba + JAA PBA + PAA QAA .       
+
+             Quad 1 Controls
+
+---  QFA = QFV QAB PCA + QFA pca + QFJ PCA .    Enable Sec - EA_
+---  QFB = QFV QAB PCA + QFA pca + QFJ PCA .   
+	               
+---  QFD = QFM QAB PDA + QFD pda + QFA PDA .    Enable Sec - EB_
+---  QFE = QFM QAB PDA + QFD pda + QFA PDA .    
+
+---  QFG = QFG paa + QFD PAA + PAA QAB .        Enable Sec - EC_
+---  QFH = QFG paa + QFD PAA + PAA QAB .
+---  QFI = QFG paa + QFD PAA + PAA QAB .
+	                   
+---  QFJ = JAA QAB PBA + QFJ pba + JBA PBA .    Enable Sec - ED_
+---  QFK = JAA QAB PBA + QFJ pba + JBA PBA .   
+
+---  QFM = QFM pca + QFV PCA + PCA QAB .        Enable Prim - EE_
+---  QFN = QFM pca + QFV PCA + PCA QAB .       
+
+---  QFP = QFP pda + QFM PDA + PAA QAB .        Enable Prim - EF_
+
+---  QFS = QFP PAA qbb + QFS paa .	        Enable Prim - EG_
+---  QFT = QFP PAA qbb + QFS paa .
+---  QFU = QFP PAA qbb + QFS paa .
+
+---  QFV = QFV pba + JAA PBA + PAA QAB .        Enable Prim - EH_
+---  QFW = QFV pba + JAA PBA + PAA QAB .       
+
+             Quad 2 Controls
+
+---  QGA = QGV QAC PCA + QGA pca + QGJ PCA .    Enable Sec - EA_
+---  QGB = QGV QAC PCA + QGA pca + QGJ PCA .   
+	               
+---  QGD = QGM QAC PDA + QGD pda + QGA PDA .    Enable Sec - EB_
+---  QGE = QGM QAC PDA + QGD pda + QGA PDA .    
+
+---  QGG = QGG paa + QGD PAA + PAA QAC .        Enable Sec - EC_
+---  QGH = QGG paa + QGD PAA + PAA QAC .
+---  QGI = QGG paa + QGD PAA + PAA QAC .
+	                   
+---  QGJ = JAA QAC PBA + QGJ pba + JBA PBA .    Enable Sec - ED_
+---  QGK = JAA QAC PBA + QGJ pba + JBA PBA .   
+
+---  QGM = QGM pca + QGV PCA + PCA QAC .        Enable Prim - EE_
+---  QGN = QGM pca + QGV PCA + PCA QAC .       
+
+---  QGP = QGP pda + QGM PDA + PAA QAC .        Enable Prim - EF_
+
+---  QGS = QGP PAA qbc + QGS paa .	        Enable Prim - EG_
+---  QGT = QGP PAA qbc + QGS paa .
+---  QGU = QGP PAA qbc + QGS paa .
+
+---  QGV = QGV pba + JAA PBA + PAA QAC .        Enable Prim - EH_
+---  QGW = QGV pba + JAA PBA + PAA QAC .       
+
+             Quad 3 Controls
+
+---  QHA = QHV QAD PCA + QHA pca + QHJ PCA .    Enable Sec - EA_
+---  QHB = QHV QAD PCA + QHA pca + QHJ PCA .   
+	               
+---  QHD = QHM QAD PDA + QHD pda + QHA PDA .    Enable Sec - EB_
+---  QHE = QHM QAD PDA + QHD pda + QHA PDA .    
+
+---  QHG = QHG paa + QHD PAA + PAA QAD .        Enable Sec - EC_
+---  QHH = QHG paa + QHD PAA + PAA QAD .
+---  QHI = QHG paa + QHD PAA + PAA QAD .
+	                   
+---  QHJ = JAA QAC PBA + QHJ pba + JBA PBA .    Enable Sec - ED_
+---  QHK = JAA QAC PBA + QHJ pba + JBA PBA .   
+
+---  QHM = QHM pca + QHV PCA + PCA QAD .        Enable Prim - EE_
+---  QHN = QHM pca + QHV PCA + PCA QAD .       
+
+---  QHP = QHP pda + QHM PDA + PAA QAD .        Enable Prim - EF_
+
+---  QHS = QHP PAA qbd + QHS paa .	        Enable Prim - EG_
+---  QHT = QHP PAA qbd + QHS paa .
+---  QHU = QHP PAA qbd + QHS paa .
+
+---  QHV = QHV pba + JAA PBA + PAA QAD .        Enable Prim - EH_
+---  QHW = QHV pba + JAA PBA + PAA QAD .       
+
+
+---  TAA = qek .                            (ed empty)  Quad 0
+---  TAB = qfk .                            (ed empty)  Quad 1
+---  TAC = qgk .                                        Quad 2
+---  TAD = qhk .                                        Quad 3
+
+---  TBA = qeb .                            (ea empty)  Quad 0
+---  TBB = qfb .                                        Quad 1
+---  TBC = qgb .                                        Quad 2
+---  TBD = qhb .                                        Quad 3
+
+---  TCA = qee .                            (eb empty)  Quad 0
+---  TCB = qfe .                                        Quad 1
+---  TCC = qhe .                                        Quad 2
+---  TCD = qhe .                                        Quad 3
+
+---  tda = QEH QET .                        (ec empty or eq empty)  Quad 0
+---  tdb = QFH QFT .                                                Quad 1
+---  tdc = QGH QGT .                                                Quad 2
+---  tdd = QHH QHT .                                                Quad 3
+
+---  TEA = qew .                            (eh empty)              Quad 0
+---  TEB = qfw .                                                    Quad 1
+---  TEC = qgw .                                                    Quad 2
+---  TED = qhw .                                                    Quad 3
+
+---  TFA = qen .                            (ee empty)              Quad 0
+---  TFB = qfn .                                                    Quad 1
+---  TFC = qgn .                                                    Quad 2
+---  TFD = qhn .                                                    Quad 3
+
+
+---  TGA = qeh qet .                         (ec full and eg empty)  Quad 0
+---  TGB = qfh qft .                                                 Quad 1
+---  TGC = qgh qgt .                                                 Quad 2
+---  TGD = qhh qht .                                                 Quad 3
+
+---  TGE = qeh qet .                                                 Quad 0
+---  TGF = qeh qet .                                                 Quad 1
+---  TGG = qeh qet .                                                 Quad 2
+---  TGH = qeh qet .                                                 Quad 3
+
+---  THA = QEI qet .                                                 Quad 0
+---  THB = QFI qft .                                                 Quad 1
+---  THC = QGI qgt .                                                 Quad 2
+---  THD = QHI qht .                                                 Quad 3
+
+---  THE = QEI qet .                                                 Quad 0
+---  THF = QFI qft .                                                 Quad 1
+---  THG = QGI qgt .                                                 Quad 2
+---  THH = QHI qht .                                                 Quad 3
+
+---  TKA = PDE .                                                     Quad 0
+---  TKB = PDE .                                                     Quad 1
+---  TKC = PDE .                                                     Quad 2
+---  TKD = PDE .                                                     Quad 3
+
+---  TKE = PDF .
+---  TKF = PDF .
+
+---  TLA = PAE .                                                     Quad 0
+---  TLB = PAE .                                                     Quad 1
+---  TLC = PAE .                                                     Quad 2
+---  TLD = PAE .                                                     Quad 3
+
+---  TLE = PAF .
+---  TLF = PAF .
+
+---  TMA = PBE .
+---  TMB = PBE .
+---  TMC = PBE .
+---  TMD = PBE .
+
+---  TME = PBF .
+---  TMF = PBF .
+
+---  TNA = PCE .
+---  TNB = PCE .
+---  TNC = PCE .
+---  TND = PCE .
+
+---  TNE = PCF .
+---  TNF = PCF .
+
+
+
+

@@ -1,4 +1,6 @@
-The guide for the CPU modules
+Please read the files in the module documentation folder to understand how the modules interconnect (busses) and what data is within each module directory.
+
+The guide for the CPU modules are as follows:
 
 Module Name	Description
 AM		Address multiply
